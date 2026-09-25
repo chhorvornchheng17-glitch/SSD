@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>អ្នកគ្រូ ឆេង ឆវ័ន្ត | គ្រូបង្រៀនគណិតវិទ្យាឆ្នើម & គ្រូបង្វឹកសិស្សពូកែជាតិ</title>
+  <meta name="description" content="គេហទំព័រផ្លូវការរបស់អ្នកគ្រូ ឆេង ឆវ័ន្ត (Chheng Chhovorn) - គ្រូបង្រៀនគណិតវិទ្យាដែលមានបទពិសោធន៍ជាង ១០ ឆ្នាំ ថ្នាក់ត្រៀមបាក់ឌុប និទ្ទេស A និងបង្វឹកសិស្សពូកែទូទាំងប្រទេស។">
+  
+  <!-- Favicon Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/academic.css">
+
+  <!-- KaTeX for Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. NAVBAR
+       ============================================================ -->
+  <header class="navbar" id="main-navbar">
+    <div class="container nav-container">
+      <div class="nav-brand-container">
+        <a href="#hero" class="nav-brand" title="Hover ដើម្បីមើលព័ត៌មានទំនាក់ទំនង">
+          <div class="brand-icon">f(x)</div>
+          <div class="brand-text">
+            <span class="brand-name">
+              ឆេង ឆវ័ន្ត
+              <span class="brand-contact-indicator" title="Hover ដើម្បីមើលលេខទូរស័ព្ទ & អ៊ីមែល">
+                <span class="indicator-pulse"></span>
+                <span>ទំនាក់ទំនង</span>
+              </span>
+            </span>
+            <span class="brand-sub">MATH SPECIALIST</span>
+          </div>
+        </a>
+
+        <!-- Popover Hover Card for Teacher Contact Info -->
+        <div class="teacher-hover-card" role="tooltip" aria-label="ព័ត៌មានទំនាក់ទំនងអ្នកគ្រូ ឆេង ឆវ័ន្ត">
+          <div class="hover-card-header">
+            <div class="hover-avatar-box">
+              <img src="assets/images/teacher-chhovorn.png" alt="អ្នកគ្រូ ឆេង ឆវ័ន្ត" class="hover-avatar-img" onerror="this.onerror=null; this.src='assets/images/teacher-chhovorn.jpg';">
+              <span class="hover-status-dot" title="កំពុងបម្រើការងារ & អាចទាក់ទងបាន"></span>
+            </div>
+            <div class="hover-header-text">
+              <div class="hover-name">
+                អ្នកគ្រូ ឆេង ឆវ័ន្ត
+                <span class="hover-verified" title="គ្រូបង្រៀនគណិតវិទ្យាផ្លូវការ">✓</span>
+              </div>
+              <div class="hover-title">Teacher Chheng Chhovorn</div>
+              <div class="hover-tag">គ្រូបង្រៀនគណិតវិទ្យាឯកទេស (NIE & RUPP)</div>
+            </div>
+          </div>
+
+          <div class="hover-card-divider"></div>
+
+          <div class="hover-contact-list">
+            <!-- Phone Number Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">លេខទូរស័ព្ទទំនាក់ទំនង (Phone)</div>
+                <a href="tel:099775501" class="hover-contact-val hover-contact-link">099 77 5501</a>
+              </div>
+              <button type="button" class="hover-copy-btn" onclick="copyContactText(event, '099775501', this)" title="ចម្លងលេខទូរស័ព្ទ">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>ចម្លង</span>
+              </button>
+            </div>
+
+            <!-- Email Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">អ៊ីមែលផ្លូវការ (Email)</div>
+                <a href="mailto:chhorvornk@gmail.com" class="hover-contact-val hover-contact-link">chhorvornk@gmail.com</a>
+              </div>
+              <button type="button" class="hover-copy-btn" onclick="copyContactText(event, 'chhorvornk@gmail.com', this)" title="ចម្លងអ៊ីមែល">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>ចម្លង</span>
+              </button>
+            </div>
+
+            <!-- Telegram Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">Telegram ផ្លូវការ</div>
+                <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-contact-val hover-contact-link">@chhovorn_math</a>
+              </div>
+              <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-copy-btn" title="បើក Telegram">
+                <span>ឆាត</span>
+              </a>
+            </div>
+
+            <!-- Teaching Location Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-location">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">ទីតាំងបង្រៀន (Workplace)</div>
+                <div class="hover-contact-val" style="font-size: 0.78rem; font-weight: 500;">វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hover-card-footer">
+            <a href="tel:099775501" class="hover-action-btn btn-call">
+              <span>📞 Call ផ្ទាល់</span>
+            </a>
+            <a href="mailto:chhorvornk@gmail.com" class="hover-action-btn btn-email">
+              <span>✉️ ផ្ញើ Email</span>
+            </a>
+            <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-action-btn btn-telegram">
+              <span>✈️ Telegram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Menu (5 Main Menus with Submenus) -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <!-- 1. ទំព័រដើម -->
+          <li class="nav-item">
+            <a href="#hero" class="nav-link active" data-nav="hero">
+              <span>ទំព័រដើម</span>
+            </a>
+          </li>
+
+          <!-- 2. ឯកសារបង្រៀន (Teaching Hub Dropdown) -->
+          <li class="nav-item nav-item-has-dropdown" data-nav-group="teaching">
+            <a href="lessons.html" class="nav-link nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-nav="teaching">
+              <span>ឯកសារបង្រៀន</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <div class="dropdown-menu-header">ឯកសារបង្រៀន & កម្មវិធីសិក្សា</div>
+              <a href="lessons.html" class="dropdown-item" data-section="teaching-hub">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">មេរៀនលម្អិត</div>
+                  <div class="dropdown-item-desc">ជំពូកពេញលេញស្របតាមសៀវភៅគោលក្រសួង</div>
+                </div>
+              </a>
+              <!-- Sub-menu Grade Categories Grid -->
+              <div class="dropdown-grade-chips">
+                <a href="lessons.html?grade=grade11" class="dropdown-grade-chip active-chip" title="សៀវភៅគណិតថ្នាក់ទី១១ ភាគ១">
+                  <span class="chip-icon">📐</span>
+                  <span class="chip-text">ថ្នាក់ទី ១១ <small>(សៀវភៅគោល ភាគ១)</small></span>
+                  <span class="chip-badge">ថ្មី</span>
+                </a>
+                <a href="lessons.html?grade=grade12" class="dropdown-grade-chip" title="ថ្នាក់ទី ១២ ត្រៀមបាក់ឌុប">
+                  <span class="chip-icon">🎓</span>
+                  <span class="chip-text">ថ្នាក់ទី ១២ <small>(បាក់ឌុប)</small></span>
+                </a>
+                <a href="lessons.html?grade=grade10" class="dropdown-grade-chip" title="ថ្នាក់ទី ១០ ស្ពានចម្លង">
+                  <span class="chip-icon">🌱</span>
+                  <span class="chip-text">ថ្នាក់ទី ១០ <small>(ស្ពានចម្លង)</small></span>
+                </a>
+                <a href="game-grade9.html" class="dropdown-grade-chip" title="ថ្នាក់ទី ៩ Math Hero">
+                  <span class="chip-icon">⚔️</span>
+                  <span class="chip-text">ថ្នាក់ទី ៩ <small>(Math Hero)</small></span>
+                </a>
+              </div>
+              <a href="lesson-plan-exponential-ibl.html" class="dropdown-item" data-section="teaching-hub" onclick="openLessonPlanModal(event)">
+                <div class="dropdown-item-icon" style="color: #10b981;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title" style="color: #34d399;">កិច្ចតែងការបង្រៀន (IBL) <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #34d399; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-left: 4px;">ថ្មី</span></div>
+                  <div class="dropdown-item-desc">កិច្ចតែងការគំរូ 5E Model (Print / Save as PDF)</div>
+                </div>
+              </a>
+              <a href="slides.html" class="dropdown-item" data-section="teaching-hub">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ស្លាយបង្រៀន (Slides)</div>
+                  <div class="dropdown-item-desc">ស្លាយបទបង្ហាញអន្តរកម្មសម្រាប់បង្រៀនក្នុងថ្នាក់រៀន</div>
+                </div>
+              </a>
+              <a href="exercises.html" class="dropdown-item" data-section="teaching-hub">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">កម្រងលំហាត់អនុវត្ត</div>
+                  <div class="dropdown-item-desc">លំហាត់តាមជំពូក បែងចែកកម្រិត និងដំណោះស្រាយលម្អិត</div>
+                </div>
+              </a>
+              <a href="exams.html" class="dropdown-item" data-section="teaching-hub">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វិញ្ញាសាប្រឡងជាតិ & តេស្ត</div>
+                  <div class="dropdown-item-desc">វិញ្ញាសាបាក់ឌុប សិស្សពូកែ និងនាឡិកា Mock Exam ១៥០នាទី</div>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- 3. អំពីអ្នកគ្រូ (Dropdown) -->
+          <li class="nav-item nav-item-has-dropdown" data-nav-group="about">
+            <a href="#about" class="nav-link nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-nav="about">
+              <span>អំពីអ្នកគ្រូ</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <div class="dropdown-menu-header">ព័ត៌មាន & ស្នាដៃ</div>
+              <a href="#about" class="dropdown-item" data-section="about">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">អំពីអ្នកគ្រូ ឆេង ឆវ័ន្ត</div>
+                  <div class="dropdown-item-desc">ប្រវត្តិការងារ គរុកោសល្យ NIE & ទស្សនវិជ្ជា</div>
+                  <div style="font-size: 0.72rem; color: #38bdf8; margin-top: 3px; display: flex; gap: 0.6rem; flex-wrap: wrap; font-weight: 500;">
+                    <span>📞 099 77 5501</span>
+                    <span>📧 chhorvornk@gmail.com</span>
+                  </div>
+                </div>
+              </a>
+              <a href="#testimonials" class="dropdown-item" data-section="testimonials">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ជោគជ័យសិស្សឆ្នើម</div>
+                  <div class="dropdown-item-desc">សិស្សនិទ្ទេស A បាក់ឌុប & មេដាយសិស្សពូកែជាតិ</div>
+                </div>
+              </a>
+              <a href="#stats-section" class="dropdown-item" data-section="stats-section">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ស្ថិតិ & សមិទ្ធផល</div>
+                  <div class="dropdown-item-desc">សិស្សជាង ២,៥០០ នាក់ និងអត្រាជោគជ័យ ៩៨%</div>
+                </div>
+              </a>
+              <a href="#courses" class="dropdown-item" data-section="courses">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វគ្គសិក្សាទាំងអស់</div>
+                  <div class="dropdown-item-desc">ថ្នាក់ទី១០-១២, ត្រៀមបាក់ឌុប & Olympiad</div>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- 4. ឧបករណ៍ & វីដេអូ (Dropdown) -->
+          <li class="nav-item nav-item-has-dropdown" data-nav-group="tools">
+            <a href="#playground" class="nav-link nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-nav="tools">
+              <span>ឧបករណ៍ & វីដេអូ</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <div class="dropdown-menu-header">បច្ចេកវិទ្យា & ស្ទូឌីយោគណិតវិទ្យា</div>
+              <a href="grapher-3d.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <span style="font-size: 1.15rem;">🧊</span>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">បន្ទប់ពិសោធន៍ក្រាហ្វិក 3D (Oxyz)</div>
+                  <div class="dropdown-item-desc">សង់ក្រាប $z=f(x,y)$ & កូអរដោនេ, វ៉ិចទ័រ, ប្លង់</div>
+                </div>
+              </a>
+              <a href="#playground" class="dropdown-item" data-section="playground">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path>
+                    <line x1="8.5" y1="2" x2="15.5" y2="2"></line>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">បន្ទប់ពិសោធន៍ក្រាហ្វិក</div>
+                  <div class="dropdown-item-desc">គូស និងក្លែងធ្វើអនុគមន៍គណិតវិទ្យា 2D អន្តរកម្មផ្ទាល់</div>
+                </div>
+              </a>
+              <a href="game-activities.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <span style="font-size: 1.15rem;">🎲</span>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">សង្វៀនល្បែងសិក្សាទាំង ៦</div>
+                  <div class="dropdown-item-desc">Kahoot, Bingo, Dice, Escape, Match, Monty Hall</div>
+                </div>
+              </a>
+              <a href="game-grade9.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <span style="font-size: 1.15rem;">⚔️</span>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ល្បែងគណិតវិទ្យាថ្នាក់ទី ៩</div>
+                  <div class="dropdown-item-desc">Math Hero 9 & និនចាកាប់រ៉ាឌីកាល់</div>
+                </div>
+              </a>
+              <a href="game-exponential.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <span style="font-size: 1.15rem;">🚀</span>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ល្បែងអនុគមន៍អិចស្ប៉ូណង់ស្យែល</div>
+                  <div class="dropdown-item-desc">Exponential Odyssey (ថ្នាក់ទី១១ ភាគ១)</div>
+                </div>
+              </a>
+              <a href="game-grade11.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <span style="font-size: 1.15rem;">🎮</span>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ល្បែងគណិតវិទ្យាថ្នាក់ទី១១</div>
+                  <div class="dropdown-item-desc">Math Quest 11 & សំឡេង FX</div>
+                </div>
+              </a>
+              <a href="#curve-video-studio" class="dropdown-item" data-section="curve-video-studio">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វីដេអូគូសក្រាបខ្សែកោង</div>
+                  <div class="dropdown-item-desc">ស្ទូឌីយោបង្រៀនគូសក្រាប និងសិក្សាអថេរភាព</div>
+                </div>
+              </a>
+              <a href="#trig-video-studio" class="dropdown-item" data-section="trig-video-studio">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វីដេអូអនុវត្តត្រីកោណមាត្រ</div>
+                  <div class="dropdown-item-desc">រង្វង់ត្រីកោណមាត្រ & រលក Sine Cosine</div>
+                </div>
+              </a>
+              <a href="#derivative-video-studio" class="dropdown-item" data-section="derivative-video-studio">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វីដេអូបម្រើបម្រាស់ដេរីវេ</div>
+                  <div class="dropdown-item-desc">ចលនារ៉ុក្កែត សេដ្ឋកិច្ច ប្រអប់អតិបរមា វេជ្ជសាស្ត្រ</div>
+                </div>
+              </a>
+              <a href="#arithmetic-video-studio" class="dropdown-item" data-section="arithmetic-video-studio">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វីដេអូបម្រើបម្រាស់ស្វ៊ីតនព្វន្ត</div>
+                  <div class="dropdown-item-desc">សន្សំប្រាក់ កៅអីកីឡដ្ឋាន ម៉ារ៉ាតុង បំពង់ដែក តាក់ស៊ី</div>
+                </div>
+              </a>
+              <a href="#geometric-video-studio" class="dropdown-item" data-section="geometric-video-studio">
+                <div class="dropdown-item-icon" style="color: #34d399;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 3v18h18"></path>
+                    <path d="M18 9l-5 5-4-4-3 3"></path>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វីដេអូបម្រើបម្រាស់ស្វ៊ីតធរណីមាត្រ</div>
+                  <div class="dropdown-item-desc">បាក់តេរី ការប្រាក់សមាស បាល់លោត បត់ក្រដាស វិទ្យុសកម្ម</div>
+                </div>
+              </a>
+              <a href="#formulas" class="dropdown-item" data-section="formulas">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="6" cy="6" r="3"></circle>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                    <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                    <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">បណ្ណាល័យរូបមន្តគន្លឹះ</div>
+                  <div class="dropdown-item-desc">រូបមន្តសង្ខេប អាំងតេក្រាល លីមីត ធរណីមាត្រ</div>
+                </div>
+              </a>
+              <a href="#resources" class="dropdown-item" data-section="resources">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វិញ្ញាសា & ឯកសារទាញយក</div>
+                  <div class="dropdown-item-desc">វិញ្ញាសាប្រឡងគំរូ និងឯកសារ PDF ឥតគិតថ្លៃ</div>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- 5. ទំនាក់ទំនង -->
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" data-nav="contact">
+              <span>ទំនាក់ទំនង</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Dark/Light Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" title="ប្តូរពណ៌ Theme">
+          <span id="theme-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+        </button>
+
+        <button class="btn btn-primary btn-sm" onclick="window.openEnrollModal()">
+          <span>ចុះឈ្មោះរៀន</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="បើក Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer (Accordion Groups) -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-inner">
+      <!-- 1. ទំព័រដើម -->
+      <a href="#hero" class="mobile-nav-link active" data-section="hero">
+        <span class="mobile-link-icon">🏠</span>
+        <span>ទំព័រដើម</span>
+      </a>
+
+      <!-- 2. ឯកសារបង្រៀន Accordion -->
+      <div class="mobile-accordion" data-mobile-group="teaching">
+        <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+          <span class="mobile-link-text">
+            <span class="mobile-link-icon">📖</span>
+            <span>ឯកសារបង្រៀន</span>
+          </span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="lessons.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">មេរៀនលម្អិត</div>
+              <div class="sub-desc">ជំពូកពេញលេញស្របតាមសៀវភៅគោលក្រសួង</div>
+            </div>
+          </a>
+          <!-- Mobile Grade Chips -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; padding: 0.25rem 0.5rem 0.55rem 1.6rem;">
+            <a href="lessons.html?grade=grade11" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.4); border-radius: 6px; color: #38bdf8; text-decoration: none; font-weight: 700;">📐 ថ្នាក់ទី ១១ (ភាគ១)</a>
+            <a href="lessons.html?grade=grade12" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-secondary); text-decoration: none;">🎓 ថ្នាក់ទី ១២</a>
+            <a href="lessons.html?grade=grade10" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-secondary); text-decoration: none;">🌱 ថ្នាក់ទី ១០</a>
+            <a href="game-grade9.html" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); border-radius: 6px; color: #f59e0b; text-decoration: none;">⚔️ ថ្នាក់ទី ៩</a>
+          </div>
+          <a href="lesson-plan-exponential-ibl.html" class="mobile-sub-link" onclick="openLessonPlanModal(event)">
+            <span class="sub-dot" style="background: #10b981;"></span>
+            <div>
+              <div class="sub-title" style="color: #34d399;">កិច្ចតែងការបង្រៀន (IBL)</div>
+              <div class="sub-desc">កិច្ចតែងការគំរូ 5E Model (Print/PDF)</div>
+            </div>
+          </a>
+          <a href="slides.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">ស្លាយបង្រៀន (Slides)</div>
+              <div class="sub-desc">ស្លាយបទបង្ហាញអន្តរកម្មសម្រាប់បង្រៀន</div>
+            </div>
+          </a>
+          <a href="exercises.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">កម្រងលំហាត់អនុវត្ត</div>
+              <div class="sub-desc">លំហាត់តាមជំពូក និងដំណោះស្រាយមួយជំហានៗ</div>
+            </div>
+          </a>
+          <a href="exams.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">វិញ្ញាសាប្រឡងជាតិ & តេស្ត</div>
+              <div class="sub-desc">វិញ្ញាសាបាក់ឌុប & នាឡិកា Mock Exam</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. អំពីអ្នកគ្រូ Accordion -->
+      <div class="mobile-accordion" data-mobile-group="about">
+        <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+          <span class="mobile-link-text">
+            <span class="mobile-link-icon">👩‍🏫</span>
+            <span>អំពីអ្នកគ្រូ</span>
+          </span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="#about" class="mobile-sub-link" data-section="about">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">អំពីអ្នកគ្រូ ឆេង ឆវ័ន្ត</div>
+              <div class="sub-desc">ប្រវត្តិការងារ &middot; 📞 099 77 5501 &middot; 📧 chhorvornk@gmail.com</div>
+            </div>
+          </a>
+          <a href="#testimonials" class="mobile-sub-link" data-section="testimonials">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">ជោគជ័យសិស្សឆ្នើម</div>
+              <div class="sub-desc">សិស្សនិទ្ទេស A & មេដាយសិស្សពូកែជាតិ</div>
+            </div>
+          </a>
+          <a href="#stats-section" class="mobile-sub-link" data-section="stats-section">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">ស្ថិតិ & សមិទ្ធផល</div>
+              <div class="sub-desc">សិស្សជាង ២,៥០០ នាក់ និងអត្រាជោគជ័យ ៩៨%</div>
+            </div>
+          </a>
+          <a href="#courses" class="mobile-sub-link" data-section="courses">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">វគ្គសិក្សាទាំងអស់</div>
+              <div class="sub-desc">ថ្នាក់ទី១០-១២, ត្រៀមបាក់ឌុប & Olympiad</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. ឧបករណ៍ & វីដេអូ Accordion -->
+      <div class="mobile-accordion" data-mobile-group="tools">
+        <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+          <span class="mobile-link-text">
+            <span class="mobile-link-icon">📐</span>
+            <span>ឧបករណ៍ & វីដេអូ</span>
+          </span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="grapher-3d.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">🧊 បន្ទប់ពិសោធន៍ក្រាហ្វិក 3D (Oxyz)</div>
+              <div class="sub-desc">សង់ក្រាប $z=f(x,y)$ & កូអរដោនេ, វ៉ិចទ័រ, ប្លង់</div>
+            </div>
+          </a>
+          <a href="#playground" class="mobile-sub-link" data-section="playground">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">បន្ទប់ពិសោធន៍ក្រាហ្វិក</div>
+              <div class="sub-desc">ពិសោធន៍ក្រាហ្វិកអនុគមន៍ 2D អន្តរកម្ម</div>
+            </div>
+          </a>
+          <a href="game-activities.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">🎲 សង្វៀនល្បែងសិក្សាទាំង ៦</div>
+              <div class="sub-desc">Kahoot, Bingo, Dice, Escape, Match, Monty Hall</div>
+            </div>
+          </a>
+          <a href="game-grade9.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">⚔️ ល្បែងគណិតវិទ្យាថ្នាក់ទី ៩</div>
+              <div class="sub-desc">Math Hero 9 & និនចាកាប់រ៉ាឌីកាល់</div>
+            </div>
+          </a>
+          <a href="game-exponential.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">🚀 ល្បែងអនុគមន៍អិចស្ប៉ូណង់ស្យែល</div>
+              <div class="sub-desc">Exponential Odyssey (ថ្នាក់ទី១១ ភាគ១)</div>
+            </div>
+          </a>
+          <a href="game-grade11.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">🎮 ល្បែងគណិតវិទ្យាថ្នាក់ទី១១</div>
+              <div class="sub-desc">Math Quest 11 & សំឡេង FX</div>
+            </div>
+          </a>
+          <a href="#curve-video-studio" class="mobile-sub-link" data-section="curve-video-studio">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">វីដេអូគូសក្រាបខ្សែកោង</div>
+              <div class="sub-desc">ស្ទូឌីយោបង្រៀនគូសក្រាប & អថេរភាព</div>
+            </div>
+          </a>
+          <a href="#trig-video-studio" class="mobile-sub-link" data-section="trig-video-studio">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">វីដេអូអនុវត្តត្រីកោណមាត្រ</div>
+              <div class="sub-desc">រង្វង់ត្រីកោណមាត្រ & រលក Sine Cosine</div>
+            </div>
+          </a>
+          <a href="#derivative-video-studio" class="mobile-sub-link" data-section="derivative-video-studio">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">វីដេអូបម្រើបម្រាស់ដេរីវេ</div>
+              <div class="sub-desc">ចលនារ៉ុក្កែត សេដ្ឋកិច្ច ប្រអប់ & វេជ្ជសាស្ត្រ</div>
+            </div>
+          </a>
+          <a href="#arithmetic-video-studio" class="mobile-sub-link" data-section="arithmetic-video-studio">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">វីដេអូបម្រើបម្រាស់ស្វ៊ីតនព្វន្ត</div>
+              <div class="sub-desc">សន្សំប្រាក់ កៅអីកីឡដ្ឋាន ម៉ារ៉ាតុង បំពង់ដែក តាក់ស៊ី</div>
+            </div>
+          </a>
+          <a href="#geometric-video-studio" class="mobile-sub-link" data-section="geometric-video-studio">
+            <span class="sub-dot" style="background: #34d399;"></span>
+            <div>
+              <div class="sub-title">វីដេអូបម្រើបម្រាស់ស្វ៊ីតធរណីមាត្រ</div>
+              <div class="sub-desc">បាក់តេរី ការប្រាក់សមាស បាល់លោត បត់ក្រដាស វិទ្យុសកម្ម</div>
+            </div>
+          </a>
+          <a href="#formulas" class="mobile-sub-link" data-section="formulas">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">បណ្ណាល័យរូបមន្តគន្លឹះ</div>
+              <div class="sub-desc">រូបមន្តសង្ខេបងាយចាំ និងអនុវត្ត</div>
+            </div>
+          </a>
+          <a href="#resources" class="mobile-sub-link" data-section="resources">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">វិញ្ញាសា & ឯកសារទាញយក</div>
+              <div class="sub-desc">វិញ្ញាសាគំរូ & លំហាត់បំប៉នឥតគិតថ្លៃ</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. ទំនាក់ទំនង -->
+      <a href="#contact" class="mobile-nav-link" data-section="contact">
+        <span class="mobile-link-icon">📞</span>
+        <span>ទំនាក់ទំនង</span>
+      </a>
+
+      <!-- Quick Action Button in Drawer -->
+      <div class="mobile-menu-action">
+        <button class="btn btn-primary" style="width: 100%;" onclick="window.openEnrollModal(); const mn = document.getElementById('mobile-nav'); if (mn) { mn.classList.remove('active'); document.body.style.overflow=''; }">
+          <span>ចុះឈ្មោះចូលរៀនឥឡូវនេះ</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         2. HERO SECTION
+         ============================================================ -->
+    <section class="hero-section" id="hero">
+      <!-- Background Interactive Math Particles Canvas -->
+      <canvas id="hero-math-canvas" class="hero-canvas-bg"></canvas>
+
+      <div class="container hero-content-wrap">
+        <!-- Hero Left Text -->
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="sparkle">✨</span>
+            <span>គ្រូបង្រៀនគណិតវិទ្យា វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថានជាតិអប់រំ (SHINE)</span>
+          </div>
+
+          <h1 class="hero-title">
+            ស្វែងយល់ពិភពគណិតវិទ្យាជាមួយ <br>
+            <span class="text-gradient">អ្នកគ្រូ ឆេង ឆវ័ន្ត</span>
+          </h1>
+
+          <p class="hero-tagline">
+            គ្រូបង្រៀនគណិតវិទ្យាបញ្ចប់បរិញ្ញាបត្រពីសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) និងគរុកោសល្យពីវិទ្យាស្ថានជាតិអប់រំ (NIE)។ បណ្តុះបណ្តាលសិស្សពូកែគណិតវិទ្យា និងពង្រឹងមូលដ្ឋានគ្រឹះរឹងមាំ។
+          </p>
+
+          <div class="hero-quote-box">
+            «គណិតវិទ្យាមិនមែនជាការទន្ទេញរូបមន្តទេ តែជាសិល្បៈនៃការគិតស៊ីជម្រៅនិងដោះស្រាយបញ្ហា»
+          </div>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg" onclick="window.openEnrollModal()">
+              <span>ចុះឈ្មោះចូលរៀនភ្លាមៗ</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <a href="#playground" class="btn btn-outline btn-lg">
+              <span>សាកល្បង Grapher អន្តរកម្ម</span>
+              <span>📈</span>
+            </a>
+          </div>
+
+          <div class="hero-quick-features">
+            <div class="feature-pill">
+              <span class="feature-pill-icon">✓</span>
+              <span>បង្រៀនងាយយល់ ១០០%</span>
+            </div>
+            <div class="feature-pill">
+              <span class="feature-pill-icon">✓</span>
+              <span>វិញ្ញាសាស្របតាមក្រសួងអប់រំ</span>
+            </div>
+            <div class="feature-pill">
+              <span class="feature-pill-icon">✓</span>
+              <span>ក្រុមជំនួយសួរ-ឆ្លើយ ២៤/៧</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Portrait Card -->
+        <div class="hero-visual">
+          <div class="portrait-card">
+            <div class="portrait-img-wrap">
+              <img src="assets/images/teacher-chhovorn.png" alt="អ្នកគ្រូ ឆេង ឆវ័ន្ត - គ្រូបង្រៀនគណិតវិទ្យា" class="portrait-img" loading="eager">
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="floating-badge badge-top-left">
+              <span class="floating-badge-icon">🏫</span>
+              <div>
+                <div class="floating-badge-title">វិទ្យាល័យសសរស្តម្ភ & SHINE</div>
+                <div class="floating-badge-desc">គ្រូបង្រៀនគណិតវិទ្យា (២០២០ - បច្ចុប្បន្ន)</div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-right student-badge-honor">
+              <div class="badge-student-avatar-wrap">
+                <img src="assets/images/student-kimchhi.jpg" alt="សិស្សពូកែ តោ គីមឈី" class="badge-student-avatar">
+                <span class="badge-medal-tag">🥈</span>
+              </div>
+              <div>
+                <div class="floating-badge-title">សិស្សពូកែខេត្តលេខ ២</div>
+                <div class="floating-badge-desc">តោ គីមឈី វិទ្យាស្ថាន SHINE (២០២៥)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. STATS COUNTERS
+         ============================================================ -->
+    <section class="stats-section" id="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-box glass-card">
+            <div class="stat-number" data-counter="6" data-suffix="+ ឆ្នាំ">0+</div>
+            <div class="stat-label">បទពិសោធន៍បង្រៀនជាក់ស្តែង</div>
+          </div>
+          <div class="stat-box glass-card">
+            <div class="stat-number" data-counter="2" data-suffix="">0</div>
+            <div class="stat-label">ជ័យលាភីសិស្សពូកែខេត្តលេខ ២ (២០២៥)</div>
+          </div>
+          <div class="stat-box glass-card">
+            <div class="stat-number" data-counter="100" data-suffix="%">0%</div>
+            <div class="stat-label">បញ្ចប់ NIE & បរិញ្ញាបត្រ RUPP</div>
+          </div>
+          <div class="stat-box glass-card">
+            <div class="stat-number" data-counter="1500" data-suffix="+">0+</div>
+            <div class="stat-label">សិស្សានុសិស្សបានបណ្តុះបណ្តាល</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3.5 TEACHING MANAGEMENT HUB (ប្រព័ន្ធគ្រប់គ្រងការបង្រៀន)
+         ============================================================ -->
+    <section class="section academic-hub-section" id="teaching-hub" style="padding-top: 2rem; padding-bottom: 3.5rem;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <div class="section-badge">
+            <span>🎓</span>
+            <span>ប្រព័ន្ធគ្រប់គ្រងការបង្រៀនទំនើប (Teaching Hub)</span>
+          </div>
+          <h2 class="section-title">ស្វែងរកខ្លឹមសារបង្រៀនតាមទំព័រដាច់ដោយឡែក</h2>
+          <p class="section-subtitle">
+            រចនាឡើងដាច់ដោយឡែកដើម្បីភាពងាយស្រួលក្នុងការរៀន និងបង្រៀន ស្របតាមកម្មវិធីសិក្សាគោលរបស់ក្រសួងអប់រំ យុវជន និងកីឡា
+          </p>
+        </div>
+
+        <div class="academic-hub-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+          <!-- Card 1: Lessons -->
+          <a href="lessons.html" class="academic-portal-card glass-card" style="text-decoration: none; color: inherit; padding: 1.75rem; border-radius: 18px; border: 1px solid var(--border-glass); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; background: var(--surface-glass);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(59, 130, 246, 0.12); color: #3b82f6; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  📖
+                </div>
+                <span class="badge" style="background: rgba(59, 130, 246, 0.12); color: #2563eb; font-weight: 600; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem;">ថ្នាក់ទី ១០-១២</span>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-heading);">មេរៀនលម្អិតតាមកម្រិតថ្នាក់</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                រៀបចំតាមជំពូកពេញលេញនៃសៀវភៅសិក្សាគោល MoEYS មានទ្រឹស្តី រូបមន្តគន្លឹះ ឧទាហរណ៍គំរូ និងលំហាត់អនុវត្ត។
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #2563eb; font-size: 0.9rem;">
+              <span>ចូលអានមេរៀនលម្អិត</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Card 2: Slides -->
+          <a href="slides.html" class="academic-portal-card glass-card" style="text-decoration: none; color: inherit; padding: 1.75rem; border-radius: 18px; border: 1px solid var(--border-glass); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; background: var(--surface-glass);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(16, 185, 129, 0.12); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  🖥️
+                </div>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.12); color: #059669; font-weight: 600; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem;">Interactive Decks</span>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-heading);">ស្លាយបង្រៀន (Slides)</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                ស្លាយបទបង្ហាញអន្តរកម្មជាមួយ Keyboard Navigation, Fullscreen Mode និង Speaker Notes សម្រាប់គ្រូនិងសិស្ស។
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #059669; font-size: 0.9rem;">
+              <span>បើកស្លាយបទបង្ហាញ</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Card 3: Exercises -->
+          <a href="exercises.html" class="academic-portal-card glass-card" style="text-decoration: none; color: inherit; padding: 1.75rem; border-radius: 18px; border: 1px solid var(--border-glass); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; background: var(--surface-glass);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(245, 158, 11, 0.12); color: #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  ✍️
+                </div>
+                <span class="badge" style="background: rgba(245, 158, 11, 0.12); color: #d97706; font-weight: 600; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem;">ធនាគារលំហាត់</span>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-heading);">កម្រងលំហាត់ & ដំណោះស្រាយ</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                លំហាត់បែងចែកតាមកម្រិត ងាយ-មធ្យម-លំបាក ព្រមទាំងប៊ូតុងបង្ហាញដំណោះស្រាយលម្អិតមួយជំហានៗ។
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #d97706; font-size: 0.9rem;">
+              <span>អនុវត្តលំហាត់ជាក់ស្តែង</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Card 4: Exams -->
+          <a href="exams.html" class="academic-portal-card glass-card" style="text-decoration: none; color: inherit; padding: 1.75rem; border-radius: 18px; border: 1px solid var(--border-glass); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; background: var(--surface-glass);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(239, 68, 68, 0.12); color: #ef4444; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  ⏱️
+                </div>
+                <span class="badge" style="background: rgba(239, 68, 68, 0.12); color: #dc2626; font-weight: 600; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem;">Mock Exam ១៥០ នាទី</span>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-heading);">វិញ្ញាសាប្រឡងជាតិ & តេស្ត</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                វិញ្ញាសាប្រឡងបាក់ឌុបផ្លូវការ វិញ្ញាសាសិស្សពូកែជាតិ អមដោយនាឡិការាប់ថយក្រោយ និងកម្រងពិន្ទុ Mark Scheme។
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #dc2626; font-size: 0.9rem;">
+              <span>ធ្វើតេស្តសាកល្បង</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Card 5: Grade 9 Math Hero Game -->
+          <a href="game-grade9.html" class="academic-portal-card glass-card" style="text-decoration: none; color: inherit; padding: 1.75rem; border-radius: 18px; border: 1.5px solid rgba(245, 158, 11, 0.4); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(239, 68, 68, 0.08) 100%);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  ⚔️
+                </div>
+                <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; font-weight: 700; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem;">Math Hero 9</span>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-heading);">ល្បែងគណិតវិទ្យាថ្នាក់ទី ៩</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                ដំណើរផ្សងព្រេងប្រឡងឌីប្លូម៖ និនចាកាប់រ៉ាឌីកាល់ សាងសង់ត្រីកោណពីតាករ ថ្លឹងជញ្ជីងសមីការ រួមជាមួយសំឡេង FX និងតារាងកិត្តិយស!
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #f59e0b; font-size: 0.9rem;">
+              <span>លេងល្បែងកម្សាន្តថ្នាក់ទី ៩</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Card 6: Grade 11 Math Quest Game -->
+          <a href="game-grade11.html" class="academic-portal-card glass-card" style="text-decoration: none; color: inherit; padding: 1.75rem; border-radius: 18px; border: 1.5px solid rgba(139, 92, 246, 0.4); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(139, 92, 246, 0.15); color: #8b5cf6; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  🎮
+                </div>
+                <span class="badge" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6; font-weight: 700; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem;">Math Quest 11</span>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-heading);">ល្បែងគណិតវិទ្យាថ្នាក់ទី ១១</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                ប្រយុទ្ធចំណេះដឹងគណិតវិទ្យា 50+ សំណួរ ល្បែងបាញ់ធ្នូមុំត្រីកោណមាត្រ រទេះភ្លើងស្វ៊ីត និងរាវរកកោនិក ជាមួយប្រព័ន្ធសំឡេង FX និង XP!
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #8b5cf6; font-size: 0.9rem;">
+              <span>លេងល្បែងកម្សាន្តថ្នាក់ទី ១១</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Card 7: Lesson Plans (IBL Model) -->
+          <a href="lesson-plan-exponential-ibl.html" class="academic-portal-card glass-card" onclick="openLessonPlanModal(event)" style="text-decoration: none; color: inherit; padding: 1.75rem; border-radius: 18px; border: 1.5px solid rgba(16, 185, 129, 0.45); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(16, 185, 129, 0.15); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  📋
+                </div>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #059669; font-weight: 700; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem;">គរុកោសល្យ NIE / 5E</span>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-heading);">កិច្ចតែងការបង្រៀនគរុកោសល្យ (IBL)</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                កិច្ចតែងការបង្រៀនគំរូបែបការរិះរក (IBL - 5E Model) ៥០ នាទី សម្រាប់ថ្នាក់ទី ១១ ភាគ១ (អនុគមន៍អិចស្ប៉ូណង់ស្យែល) ស្របតាម MoEYS អាចបោះពុម្ព ឬទាញយកជា PDF។
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #059669; font-size: 0.9rem;">
+              <span>មើលកិច្ចតែងការបង្រៀន</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. ABOUT SECTION
+         ============================================================ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>👩‍🏫</span>
+            <span>អំពីអ្នកគ្រូ ឆេង ឆវ័ន្ត</span>
+          </div>
+          <h2 class="section-title">គរុកោសល្យទំនើប & ចក្ខុវិស័យអប់រំ</h2>
+          <p class="section-subtitle">
+            ការបង្រៀនដែលផ្តោតលើការយល់ដឹងស៊ីជម្រៅ ជំរុញសមត្ថភាពវិភាគ និងបណ្តុះស្មារតីស្រឡាញ់វិទ្យាសាស្ត្រគណិត
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: Philosophy & Bio -->
+          <div class="about-philosophy-card glass-card">
+            <h3 class="philosophy-title">ប្រវត្តិរូបសង្ខេប & ការប្តេជ្ញាចិត្តគរុកោសល្យ</h3>
+            <p class="philosophy-text">
+              អ្នកគ្រូ <strong>ឆេង ឆវ័ន្ត</strong> ជាគ្រូបង្រៀនគណិតវិទ្យាដែលមានចំណេះដឹងឯកទេសជ្រៅជ្រះ និងបទពិសោធន៍គរុកោសល្យជាក់ស្តែង។ បច្ចុប្បន្នអ្នកគ្រូកំពុងបម្រើការងារជា <strong>គ្រូបង្រៀនគណិតវិទ្យានៅវិទ្យាល័យសសរស្តម្ភ</strong> (ចាប់ពីឆ្នាំ ២០២០ ដល់បច្ចុប្បន្ន) និងជា <strong>គ្រូបង្រៀន Part-time នៅវិទ្យាស្ថានជាតិអប់រំ (SHINE)</strong> (ចាប់ពីឆ្នាំ ២០២១ ដល់បច្ចុប្បន្ន)។
+            </p>
+            <p class="philosophy-text">
+              អ្នកគ្រូបានឆ្លងកាត់ការសិក្សា និងការបណ្តុះបណ្តាលគរុកោសល្យកម្រិតខ្ពស់៖ បានប្រឡងចប់សញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិនៅ <strong>វិទ្យាល័យ ហ៊ុន សែន ស្វាយធំ</strong> (២០១៥), បញ្ចប់បរិញ្ញាបត្រឯកទេសគណិតវិទ្យាពី <strong>សាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP)</strong> (២០១៩), និងបានបញ្ចប់គរុកោសល្យពី <strong>វិទ្យាស្ថានជាតិអប់រំ (NIE)</strong> (២០២០)។
+            </p>
+            <p class="philosophy-text">
+              ជាមួយនឹងបទពិសោធន៍បង្រៀនជាក់ស្តែង នៅឆ្នាំ ២០២៥ អ្នកគ្រូបាន <strong>បំប៉នសិស្សពូកែ តោ គីមឈី (វិទ្យាស្ថាន SHINE) ក្នុងការប្រឡងសិស្សពូកែគណិតវិទ្យាថ្នាក់ទី ៩ ទទួលបានជ័យលាភី «ជាប់ថ្នាក់ខេត្តលេខ ២»</strong> ប្រកបដោយមោទនភាពខ្ពស់។
+            </p>
+            <div class="hero-cta-group" style="margin-top: 1.5rem; margin-bottom: 0;">
+              <a href="#contact" class="btn btn-outline btn-sm">
+                <span>ជួបពិភាក្សា ឬសាកសួរព័ត៌មានជាមួយអ្នកគ្រូ</span>
+                <span>💬</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: 4 Teaching Pillars -->
+          <div class="teaching-pillars-grid">
+            <div class="pillar-card glass-card">
+              <div class="pillar-icon">🎯</div>
+              <h4 class="pillar-title">Visual Mathematics</h4>
+              <p class="pillar-desc">ប្រើប្រាស់គំនូសក្រាហ្វិក ធរណីមាត្រ និងរូបភាពជាក់ស្តែង ដើម្បីពន្យល់ទ្រឹស្តី បំបាត់ការទន្ទេញដោយខ្វាក់ភ្នែក។</p>
+            </div>
+
+            <div class="pillar-card glass-card">
+              <div class="pillar-icon">⚡</div>
+              <h4 class="pillar-title">Step-by-Step Logic</h4>
+              <p class="pillar-desc">បំបែកលំហាត់វែងៗជាដំណាក់កាលតូចៗ បង្កើតទម្លាប់វិភាគរកគន្លឹះដោះស្រាយយ៉ាងត្រឹមត្រូវ ១០០%។</p>
+            </div>
+
+            <div class="pillar-card glass-card">
+              <div class="pillar-icon">💡</div>
+              <h4 class="pillar-title">Real BacII Mastery</h4>
+              <p class="pillar-desc">បង្វឹកវិញ្ញាសាជាក់ស្តែងស្របតាមទម្រង់ក្រសួងអប់រំ បង្រៀនរបៀបបែងចែកពេលវេលា និងចាប់យកពិន្ទុពេញ។</p>
+            </div>
+
+            <div class="pillar-card glass-card">
+              <div class="pillar-icon">🤝</div>
+              <h4 class="pillar-title">Dedicated Mentorship</h4>
+              <p class="pillar-desc">តាមដានវឌ្ឍនភាពសិស្សជាបុគ្គល ផ្តល់ការលើកទឹកចិត្ត និងឆ្លើយតបចម្ងល់លំហាត់គ្រប់ពេលវេលា។</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Career Milestones Timeline -->
+        <div class="timeline-wrap">
+          <h3 class="timeline-title">ប្រវត្តិការសិក្សា & បទពិសោធន៍ការងារ</h3>
+          <div class="timeline">
+            <div class="timeline-item left">
+              <div class="timeline-content glass-card">
+                <div class="timeline-year">2015</div>
+                <h4 class="timeline-heading">ប្រឡងចប់បាក់ឌុប - វិទ្យាល័យ ហ៊ុន សែន ស្វាយធំ</h4>
+                <p class="timeline-desc">បានប្រឡងចប់សញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិ (បាក់ឌុប) នៅវិទ្យាល័យ ហ៊ុន សែន ស្វាយធំ ប្រកបដោយលទ្ធផលល្អប្រសើរ។</p>
+              </div>
+            </div>
+
+            <div class="timeline-item right">
+              <div class="timeline-content glass-card">
+                <div class="timeline-year">2019</div>
+                <h4 class="timeline-heading">បរិញ្ញាបត្រគណិតវិទ្យា - សាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP)</h4>
+                <p class="timeline-desc">បានប្រឡងចប់បរិញ្ញាបត្រឯកទេសគណិតវិទ្យា ពីសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ កសាងគ្រឹះចំណេះដឹងទ្រឹស្តី និងការវិភាគគណិតវិទ្យាកម្រិតឧត្តមសិក្សា។</p>
+              </div>
+            </div>
+
+            <div class="timeline-item left">
+              <div class="timeline-content glass-card">
+                <div class="timeline-year">2020</div>
+                <h4 class="timeline-heading">បញ្ចប់គរុកោសល្យ - វិទ្យាស្ថានជាតិអប់រំ (NIE)</h4>
+                <p class="timeline-desc">បានបញ្ចប់ការបណ្តុះបណ្តាលគរុកោសល្យផ្លូវការពីវិទ្យាស្ថានជាតិអប់រំ (NIE) ក្លាយជាគ្រូបង្រៀនកម្រិតឧត្តមប្រកបដោយវិជ្ជាជីវៈ និងជំនាញបង្រៀនទំនើប។</p>
+              </div>
+            </div>
+
+            <div class="timeline-item right">
+              <div class="timeline-content glass-card">
+                <div class="timeline-year">2020 - បច្ចុប្បន្ន</div>
+                <h4 class="timeline-heading">គ្រូបង្រៀននៅវិទ្យាល័យសសរស្តម្ភ</h4>
+                <p class="timeline-desc">បម្រើការងារជាគ្រូបង្រៀនគណិតវិទ្យាផ្លូវការនៅវិទ្យាល័យសសរស្តម្ភ ដឹកនាំសិស្សានុសិស្សក្នុងការរៀនសូត្រ និងត្រៀមប្រឡងបាក់ឌុប។</p>
+              </div>
+            </div>
+
+            <div class="timeline-item left">
+              <div class="timeline-content glass-card">
+                <div class="timeline-year">2021 - បច្ចុប្បន្ន</div>
+                <h4 class="timeline-heading">គ្រូបង្រៀន Part-time នៅវិទ្យាស្ថានជាតិអប់រំ (SHINE)</h4>
+                <p class="timeline-desc">បង្រៀន និងបំប៉នសិស្សានុសិស្សនៅវិទ្យាស្ថាន SHINE ផ្តោតលើការពង្រឹងសមត្ថភាពគណិតវិទ្យា និងការដោះស្រាយលំហាត់ស្មុគស្មាញ។</p>
+              </div>
+            </div>
+
+            <div class="timeline-item right">
+              <div class="timeline-content glass-card timeline-student-highlight">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-student-media">
+                  <img src="assets/images/student-kimchhi.jpg" alt="សិស្សពូកែ តោ គីមឈី" class="timeline-student-avatar">
+                  <div>
+                    <h4 class="timeline-heading">សមិទ្ធផលឆ្នើម៖ បំប៉នសិស្សពូកែ តោ គីមឈី ជាប់លេខ ២ ថ្នាក់ខេត្ត (២០២៥)</h4>
+                    <p class="timeline-desc">បានបំប៉នសិស្សឆ្នើម <strong>តោ គីមឈី</strong> នៅវិទ្យាស្ថាន SHINE ក្នុងការប្រឡងសិស្សពូកែគណិតវិទ្យាថ្នាក់ទី ៩ ទទួលបានជ័យលាភី «ជាប់ថ្នាក់ខេត្តលេខ ២» យ៉ាងត្រចះត្រចង់។</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. COURSES SECTION
+         ============================================================ -->
+    <section class="section" id="courses" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>📚</span>
+            <span>កម្មវិធីសិក្សា & វគ្គបំប៉ន</span>
+          </div>
+          <h2 class="section-title">វគ្គសិក្សាគណិតវិទ្យាគ្រប់កម្រិត</h2>
+          <p class="section-subtitle">
+            រៀបចំឡើងជាពិសេសតាមស្តង់ដារគុណភាពខ្ពស់ ដើម្បីធានាឱ្យសិស្សទទួលបានលទ្ធផលជាក់ស្តែង
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-course-filter="all">ទាំងអស់</button>
+          <button class="filter-btn" data-course-filter="grade12">ថ្នាក់ទី ១២ (បាក់ឌុប)</button>
+          <button class="filter-btn" data-course-filter="olympiad">សិស្សពូកែជាតិ (Olympiad)</button>
+          <button class="filter-btn" data-course-filter="grade11">ថ្នាក់ទី ១១</button>
+          <button class="filter-btn" data-course-filter="grade10">ថ្នាក់ទី ១០</button>
+          <button class="filter-btn" data-course-filter="higher">ឧត្តមសិក្សា & អាហារូបករណ៍</button>
+          <button class="filter-btn" data-course-filter="private">វគ្គឯកជន VIP</button>
+        </div>
+
+        <!-- Courses Grid Container -->
+        <div class="courses-grid" id="courses-grid">
+          <!-- Dynamically populated from js/courses-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. INTERACTIVE MATH PLAYGROUND
+         ============================================================ -->
+    <section class="section" id="playground">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>⚡</span>
+            <span>បន្ទប់ពិសោធន៍អន្តរកម្ម</span>
+          </div>
+          <h2 class="section-title">Interactive Math Playground</h2>
+          <p class="section-subtitle">
+            សាកល្បងផ្លាស់ប្តូរតម្លៃមេគុណ និងមុំ ដើម្បីសង្កេតមើលបម្រែបម្រួលក្រាហ្វិកគណិតវិទ្យាភ្លាមៗ
+          </p>
+        </div>
+
+        <div class="playground-grid">
+          <!-- TOOL 1: QUADRATIC GRAPH EXPLORER -->
+          <div class="math-tool-card glass-card">
+            <div class="tool-header">
+              <h3 class="tool-title">
+                <span>📈</span>
+                <span>ក្រាហ្វិកអនុគមន៍ដឺក្រេទី ២</span>
+              </h3>
+              <span class="formula-badge" id="quadratic-formula-display">y = ax² + bx + c</span>
+            </div>
+
+            <!-- Canvas -->
+            <div class="canvas-wrapper">
+              <canvas id="quadratic-canvas" class="interactive-canvas"></canvas>
+            </div>
+
+            <!-- Sliders Controls -->
+            <div class="controls-panel">
+              <div class="slider-group">
+                <span class="slider-label">a =</span>
+                <input type="range" id="slider-a" class="math-slider" min="-4" max="4" step="0.2" value="1">
+                <span class="slider-value" id="val-a">1.0</span>
+              </div>
+
+              <div class="slider-group">
+                <span class="slider-label">b =</span>
+                <input type="range" id="slider-b" class="math-slider" min="-8" max="8" step="0.5" value="-2">
+                <span class="slider-value" id="val-b">-2.0</span>
+              </div>
+
+              <div class="slider-group">
+                <span class="slider-label">c =</span>
+                <input type="range" id="slider-c" class="math-slider" min="-8" max="8" step="0.5" value="-3">
+                <span class="slider-value" id="val-c">-3.0</span>
+              </div>
+
+              <!-- Quick Presets -->
+              <div class="tool-presets">
+                <span style="font-size: 0.8rem; color: var(--text-muted); align-self: center;">គំរូ៖</span>
+                <button class="preset-btn active" data-preset="standard">ឫស ២ ផ្សេងគ្នា</button>
+                <button class="preset-btn" data-preset="tangent">ឫសឌុប (Δ = 0)</button>
+                <button class="preset-btn" data-preset="no-root">គ្មានឫសក្នុង ℝ (Δ &lt; 0)</button>
+                <button class="preset-btn" data-preset="simple">y = x²</button>
+              </div>
+
+              <!-- Computed Info -->
+              <div class="math-results-box">
+                <p id="calc-nature">ប៉ារ៉ាបូលផ្ងារឡើងលើ (a > 0) | កាត់អ័ក្ស x ត្រង់ ២ ចំណុច</p>
+                <p id="calc-delta">Δ = (-2)² - 4(1)(-3) = <strong>16.00</strong></p>
+                <p id="calc-vertex">កំពូល V(h, k): <strong>(1.00, -4.00)</strong></p>
+                <p id="calc-roots">ឫសពិត ២: x₁ = <strong>-1.00</strong>, x₂ = <strong>3.00</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOOL 2: TRIGONOMETRIC UNIT CIRCLE -->
+          <div class="math-tool-card glass-card">
+            <div class="tool-header">
+              <h3 class="tool-title">
+                <span>🔄</span>
+                <span>រង្វង់ត្រីកោណមាត្រ (Unit Circle)</span>
+              </h3>
+              <span class="formula-badge">sin²θ + cos²θ = 1</span>
+            </div>
+
+            <!-- Canvas -->
+            <div class="canvas-wrapper">
+              <canvas id="trig-canvas" class="interactive-canvas"></canvas>
+            </div>
+
+            <!-- Angle Slider -->
+            <div class="controls-panel">
+              <div class="slider-group">
+                <span class="slider-label">មុំ θ =</span>
+                <input type="range" id="trig-angle-slider" class="math-slider" min="0" max="360" step="1" value="45">
+                <span class="slider-value" id="trig-deg-text">45°</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);" id="trig-rad-text">0.25π rad</span>
+              </div>
+
+              <!-- Angle Presets -->
+              <div class="tool-presets">
+                <span style="font-size: 0.8rem; color: var(--text-muted); align-self: center;">មុំពិសេស៖</span>
+                <button class="preset-btn" data-angle="0">0°</button>
+                <button class="preset-btn" data-angle="30">30° (π/6)</button>
+                <button class="preset-btn active" data-angle="45">45° (π/4)</button>
+                <button class="preset-btn" data-angle="60">60° (π/3)</button>
+                <button class="preset-btn" data-angle="90">90° (π/2)</button>
+                <button class="preset-btn" data-angle="180">180° (π)</button>
+              </div>
+
+              <!-- Trig Values Readout -->
+              <div class="trig-readouts">
+                <div class="trig-metric-card metric-sin">
+                  <div class="metric-label">sin(θ) (ឈម)</div>
+                  <div class="metric-val" id="trig-val-sin">0.707</div>
+                </div>
+                <div class="trig-metric-card metric-cos">
+                  <div class="metric-label">cos(θ) (ជាប់)</div>
+                  <div class="metric-val" id="trig-val-cos">0.707</div>
+                </div>
+                <div class="trig-metric-card metric-tan">
+                  <div class="metric-label">tan(θ) (តង់សង់)</div>
+                  <div class="metric-val" id="trig-val-tan">1.000</div>
+                </div>
+              </div>
+
+              <div class="math-results-box" style="border-left-color: #10b981;">
+                <p>📍 <strong>លក្ខណៈសំខាន់៖</strong> បន្ទាត់ផ្ដេកបៃតងតំណាងឱ្យ <code>cos(θ)</code>, បន្ទាត់ឈរបៃតងខ្ចីតំណាងឱ្យ <code>sin(θ)</code>។ ទំនាក់ទំនង <code>sin²θ + cos²θ = 1</code> ផ្ទៀងផ្ទាត់គ្រប់តម្លៃមុំទាំងអស់។</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Studio Promo Card -->
+        <div style="margin-top: 2rem; background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(2, 132, 199, 0.25)); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 16px; padding: 1.5rem 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+          <div style="display: flex; align-items: center; gap: 1.25rem;">
+            <div style="font-size: 2.5rem; background: rgba(56, 189, 248, 0.15); width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 14px; border: 1px solid rgba(56, 189, 248, 0.3);">
+              🧊
+            </div>
+            <div>
+              <div style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #38bdf8; background: rgba(56,189,248,0.12); padding: 0.2rem 0.6rem; border-radius: 20px; margin-bottom: 0.35rem;">
+                ឧបករណ៍ថ្មី 3D STUDIO
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 0.25rem;">
+                បន្ទប់ពិសោធន៍ក្រាហ្វិក 3D & ធរណីមាត្រលំហ Oxyz
+              </h3>
+              <p style="font-size: 0.88rem; color: #94a3b8; margin: 0; max-width: 600px;">
+                សង់ក្រាប 3D តាមសមីការ $z = f(x, y)$ និងដោះស្រាយលំហាត់កូអរដោនេ Oxyz (វ៉ិចទ័រ, ចម្ងាយ, ចំណុចកណ្តាល, សមីការប្លង់) ជាមួយម៉ាស៊ីន 3D Canvas 60 FPS បង្វិល 360°!
+              </p>
+            </div>
+          </div>
+          <a href="grapher-3d.html" class="btn btn-primary" style="padding: 0.65rem 1.35rem; font-size: 0.95rem; white-space: nowrap;">
+            <span>🧊 បើកស្ទូឌីយោ 3D ឥឡូវនេះ</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6.5 CINEMATIC CURVE GRAPH VIDEO STUDIO
+         ============================================================ -->
+    <section class="section" id="curve-video-studio">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>🎬</span>
+            <span>វីដេអូគូសក្រាបអន្តរកម្ម & ការពិសោធន៍អាំងតេក្រាល</span>
+          </div>
+          <h2 class="section-title">វីដេអូគូសក្រាប & ការពិសោធន៍អាំងតេក្រាលគណនាផ្ទៃក្រឡា</h2>
+          <p class="section-subtitle">
+            ទស្សនាការពិសោធន៍អាំងតេក្រាលបំប្លែងផលបូករីម៉ាន (Riemann Sums) ទៅជាផ្ទៃក្រឡាខ្សែកោងពិតប្រាកដ និងចលនាគូសក្រាបមួយជំហានម្តងៗដោយប៊ិច Laser ព្រមទាំងអាចថតទាញយកជាវីដេអូ 60 FPS បានភ្លាមៗ!
+          </p>
+        </div>
+
+        <!-- Master Video Player Box -->
+        <div class="video-studio-card">
+          <!-- Video Viewport & Canvas -->
+          <div class="studio-video-viewport">
+            <canvas id="curve-video-canvas" class="curve-video-canvas"></canvas>
+
+            <!-- Top HUD Overlay -->
+            <div class="studio-hud-top">
+              <div class="hud-pill">
+                <span>📐</span>
+                <span id="studio-hud-formula">A = ∫₀³ (-x² + 3x + 1) dx = 7.50</span>
+              </div>
+
+              <div class="rec-badge" id="studio-rec-badge">
+                <span class="rec-dot"></span>
+                <span>REC 60 FPS</span>
+              </div>
+            </div>
+
+            <!-- Bottom HUD Overlay -->
+            <div class="studio-hud-bottom">
+              <div class="hud-metric-pill" id="studio-hud-coord">
+                គោលអាំងតេក្រាល: [a = <strong>0</strong>, b = <strong>3</strong>]
+              </div>
+              <div class="hud-metric-pill" id="studio-hud-slope" style="color: #f59e0b;">
+                ផ្ទៃក្រឡាពិត S = <strong>7.50 ឯកតាផ្ទៃ</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Integral Specialized Toolbar (Active for Integral Preset) -->
+          <div id="studio-integral-toolbar" class="studio-integral-toolbar">
+            <div class="integral-toolbar-label">
+              <span>🔬</span>
+              <span>ការបែងចែកចតុកោណកែងរីម៉ាន (Riemann Sums):</span>
+            </div>
+            <div class="integral-buttons-group">
+              <button class="integral-step-btn" data-riemann-n="4">N = 4 (Δx = 0.75)</button>
+              <button class="integral-step-btn" data-riemann-n="8">N = 8 (Δx = 0.38)</button>
+              <button class="integral-step-btn" data-riemann-n="16">N = 16 (Δx = 0.19)</button>
+              <button class="integral-step-btn" data-riemann-n="32">N = 32 (Δx = 0.09)</button>
+              <button class="integral-step-btn" data-riemann-n="64">N = 64 (Δx → 0)</button>
+              <button class="integral-step-btn active-gold" data-riemann-n="exact">✨ ផ្ទៃអាំងតេក្រាលពិត (Exact Area)</button>
+            </div>
+          </div>
+
+          <!-- Video Controls Bar -->
+          <div class="studio-controls-bar">
+            <!-- Timeline Scrubber Row -->
+            <div class="timeline-control-row">
+              <input type="range" id="studio-progress-bar" class="studio-scrubber" min="0" max="100" step="0.1" value="0">
+              <span class="studio-time-text" id="studio-time-display">0.0s / 5.0s</span>
+            </div>
+
+            <!-- Action Controls Row -->
+            <div class="studio-actions-row">
+              <!-- Play / Pause / Replay Group -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="studio-play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                  <span>ផ្អាក (Pause)</span>
+                </button>
+
+                <button class="studio-btn" id="studio-replay-btn" title="គូសឡើងវិញ">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                  </svg>
+                  <span>គូសឡើងវិញ (Replay)</span>
+                </button>
+              </div>
+
+              <!-- Preset Function Dropdown -->
+              <div class="studio-btn-group">
+                <span style="font-size: 0.85rem; color: #94a3b8;">ជ្រើសរើសខ្សែកោង៖</span>
+                <select id="studio-preset-select" class="studio-preset-dropdown">
+                  <option value="integral_area" selected>🌟 ១. ការពិសោធន៍អាំងតេក្រាលគណនាផ្ទៃក្រឡា (Integral & Riemann Sums)</option>
+                  <option value="cubic">២. អនុគមន៍ដឺក្រេទី ៣ (Cubic Polynomial)</option>
+                  <option value="sine">៣. រលកស៊ីនុសអាម៉ូនិក (Harmonic Sine Wave)</option>
+                  <option value="damped">៤. រលកចុះថយ (Damped Oscillation)</option>
+                  <option value="quartic">៥. អនុគមន៍ដឺក្រេទី ៤ រាងអក្សរ W (Quartic)</option>
+                  <option value="heart">៦. ខ្សែកោងបេះដូងគណិតវិទ្យា (Heart Curve)</option>
+                  <option value="rose">៧. ខ្សែកោងផ្កា ៤ ស្រទាប់ (Polar Rose)</option>
+                </select>
+              </div>
+
+              <!-- Speed Group -->
+              <div class="studio-btn-group">
+                <span style="font-size: 0.85rem; color: #94a3b8;">ល្បឿន៖</span>
+                <button class="studio-btn" data-studio-speed="0.5">0.5x</button>
+                <button class="studio-btn active" data-studio-speed="1.0">1x</button>
+                <button class="studio-btn" data-studio-speed="2.0">2x</button>
+              </div>
+
+              <!-- Video Recording & Export -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="studio-record-btn" title="ថតវីដេអូក្រាហ្វិក">
+                  <span>🎥 ថតវីដេអូ (Record Video)</span>
+                </button>
+                <button class="studio-btn btn-pulse-gold" id="studio-download-btn" style="display: none;" title="ទាញយកឯកសារវីដេអូ">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>ទាញយកវីដេអូ (.webm)</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details and Mathematical Insights below Video -->
+        <div class="studio-details-grid">
+          <div class="studio-meta-box">
+            <h4 class="studio-meta-title">
+              <span>💡</span>
+              <span id="studio-meta-title-text">ការបកស្រាយលក្ខណៈរូបមន្ត និងទិសដៅអថេរភាព</span>
+            </h4>
+            <div class="studio-formula-highlight" id="studio-hud-derivative">
+              f(x) = -x² + 3x + 1  ⇒  F(x) = -x³/3 + 1.5x² + x
+            </div>
+            <p id="studio-hud-desc" style="font-size: 0.92rem; line-height: 1.7; color: var(--text-secondary);">
+              ការពិសោធន៍អាំងតេក្រាលក្នុងការគណនាផ្ទៃក្រឡាខ្សែកោង! បង្ហាញពីការបែងចែកផ្ទៃជាចតុកោណកែងតូចៗ (Riemann Sums) N = 4 → 8 → 16 → 32 → 64 រួចរលាយចូលទៅជាផ្ទៃក្រឡាពិតប្រាកដនៃអាំងតេក្រាលកំណត់ ∫₀³ f(x)dx = 7.50 ឯកតាផ្ទៃ។
+            </p>
+          </div>
+
+          <div class="studio-meta-box">
+            <h4 class="studio-meta-title">
+              <span>🏷️</span>
+              <span id="studio-legend-title">សញ្ញាសម្គាល់លើវីដេអូ (Visual Legend)</span>
+            </h4>
+            <div class="critical-points-legend" id="studio-legend-items">
+              <div class="legend-item">
+                <span class="legend-dot" style="background: rgba(6, 182, 212, 0.85); border-radius: 2px;"></span>
+                <span>ចតុកោណកែងរីម៉ាន (Riemann Rectangles: f(xᵢ) · Δx)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #10b981; border-radius: 2px;"></span>
+                <span>ផ្ទៃក្រឡាអាំងតេក្រាលពិតប្រាកដ (Exact Area ∫₀³ f(x)dx = 7.50)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #f59e0b; border-radius: 2px;"></span>
+                <span>ព្រំដែនកំណត់សងខាង x = a = 0 និង x = b = 3</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #38bdf8;"></span>
+                <span>ខ្សែកោងអនុគមន៍ f(x) = -x² + 3x + 1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6.6 TRIGONOMETRY PRACTICE VIDEO STUDIO & CLASSROOM LAB
+         ============================================================ -->
+    <section class="section" id="trig-video-studio" style="background: radial-gradient(ellipse at center top, rgba(6, 182, 212, 0.08), transparent 70%);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>📐</span>
+            <span>សិក្ខាសាលាអនុវត្តលំហាត់ត្រីកោណមាត្រអន្តរកម្ម</span>
+          </div>
+          <h2 class="section-title">វីដេអូសិស្សអនុវត្តលំហាត់អនុគមន៍ត្រីកោណមាត្រ (Trigonometry Practice Lab)</h2>
+          <p class="section-subtitle">
+            ទស្សនាការបកស្រាយ និងអនុវត្តលំហាត់អនុគមន៍ត្រីកោណមាត្រកម្រិតខ្ពស់របស់សិស្សឆ្នើមវិទ្យាស្ថានជាតិអប់រំ (SHINE) តាមរយៈចលនារង្វង់ត្រីកោណមាត្រ (Unit Circle) ផ្សារភ្ជាប់នឹងរលក Cartesian ដោយកាំរស្មីឡាស៊ែរ ព្រមទាំងអាចថតទាញយកជាវីដេអូ 60 FPS បានភ្លាមៗ!
+          </p>
+        </div>
+
+        <!-- Student Exercise Selection Carousel / Grid -->
+        <div class="trig-students-carousel-wrapper">
+          <div class="trig-carousel-header">
+            <span>🎓 ជ្រើសរើសសិស្សដើម្បីទស្សនាការអនុវត្តលំហាត់៖</span>
+          </div>
+          <div class="trig-students-grid" id="trig-student-cards">
+            <!-- Dynamically populated and maintained by trig-studio.js -->
+          </div>
+        </div>
+
+        <!-- Master Video Player Box -->
+        <div class="video-studio-card">
+          <!-- Video Viewport & Canvas -->
+          <div class="studio-video-viewport">
+            <canvas id="trig-video-canvas" class="trig-video-canvas"></canvas>
+
+            <!-- Top HUD Overlay -->
+            <div class="studio-hud-top">
+              <div class="hud-pill">
+                <span>👤</span>
+                <span>សិស្ស៖ <strong id="trig-hud-student-name">តោ គីមឈី</strong></span>
+              </div>
+              <div class="hud-pill">
+                <span>📐</span>
+                <span id="trig-hud-formula">y = 2 sin(x)</span>
+              </div>
+              <div class="rec-badge" id="trig-rec-badge">
+                <span class="rec-dot"></span>
+                <span>REC 60 FPS</span>
+              </div>
+            </div>
+
+            <!-- Bottom HUD Overlay -->
+            <div class="studio-hud-bottom">
+              <div class="hud-metric-pill" id="trig-hud-angle">
+                មុំ θ = <strong>0.0°</strong> (0.00π rad)
+              </div>
+              <div class="hud-metric-pill" id="trig-hud-yval" style="color: #10b981;">
+                តម្លៃ f(θ) = <strong>0.000</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Controls Bar -->
+          <div class="studio-controls-bar">
+            <!-- Timeline Scrubber Row -->
+            <div class="timeline-control-row">
+              <input type="range" id="trig-progress-bar" class="studio-scrubber" min="0" max="100" step="0.1" value="0">
+              <span class="studio-time-text" id="trig-time-display">0.0s / 6.0s</span>
+            </div>
+
+            <!-- Action Controls Row -->
+            <div class="studio-actions-row">
+              <!-- Play / Pause / Replay Group -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="trig-play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                  <span>ផ្អាក (Pause)</span>
+                </button>
+
+                <button class="studio-btn" id="trig-replay-btn" title="គូសឡើងវិញ">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                  </svg>
+                  <span>គូសឡើងវិញ (Replay)</span>
+                </button>
+              </div>
+
+              <!-- Speed Group -->
+              <div class="studio-btn-group">
+                <span style="font-size: 0.85rem; color: #94a3b8;">ល្បឿន៖</span>
+                <button class="studio-btn" data-trig-speed="0.5">0.5x</button>
+                <button class="studio-btn active" data-trig-speed="1.0">1x</button>
+                <button class="studio-btn" data-trig-speed="1.5">1.5x</button>
+                <button class="studio-btn" data-trig-speed="2.0">2x</button>
+              </div>
+
+              <!-- Video Recording & Export -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="trig-record-btn" title="ថតវីដេអូអនុវត្ត">
+                  <span>🎥 ថតវីដេអូ (Record Video)</span>
+                </button>
+                <button class="studio-btn btn-pulse-gold" id="trig-download-btn" style="display: none;" title="ទាញយកឯកសារវីដេអូ">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>ទាញយកវីដេអូ (.webm)</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details and Pedagogical Insights below Video -->
+        <div class="studio-details-grid">
+          <!-- Student Commentary Card -->
+          <div class="studio-meta-box">
+            <div class="trig-meta-student-header">
+              <div class="trig-meta-avatar-wrap">
+                <img id="trig-detail-student-photo" src="assets/images/students/student-kimchhi.jpg" alt="Student" class="trig-meta-avatar">
+                <span class="trig-meta-star-badge">★</span>
+              </div>
+              <div class="trig-meta-student-info">
+                <h4 class="trig-meta-name" id="trig-detail-student-name">តោ គីមឈី</h4>
+                <p class="trig-meta-badge-text" id="trig-detail-student-badge">ជ័យលាភីលេខ ២ ខេត្ត (២០២៥) • វិទ្យាស្ថានជាតិអប់រំ (SHINE)</p>
+              </div>
+            </div>
+
+            <h5 class="trig-meta-exercise-heading" id="trig-detail-exercise-title">
+              លំហាត់ទី ១៖ សិក្សា និងសង់ក្រាបអនុគមន៍ស៊ីនុសគ្រឹះ
+            </h5>
+            <div class="studio-formula-highlight" id="trig-detail-formula">
+              y = 2 sin(x)
+            </div>
+            <p id="trig-detail-explanation" style="font-size: 0.92rem; line-height: 1.7; color: var(--text-secondary);">
+              ប្អូនស្រី តោ គីមឈី បង្ហាញពីរបៀបទាញរលកស៊ីនុសចេញពីចលនាវិលនៃរង្វង់ត្រីកោណមាត្រកាំ R = 2 ដោយបន្ទាត់ឡាស៊ែរផ្ដេកតភ្ជាប់ចំណុច P(cos θ, sin θ) ទៅកាន់ក្រាហ្វិកកូអរដោនេ Cartesian។
+            </p>
+          </div>
+
+          <!-- Step-by-Step Solving Logic Card -->
+          <div class="studio-meta-box">
+            <h4 class="studio-meta-title">
+              <span>📋</span>
+              <span>ជំហានដោះស្រាយលំហាត់ជាលំដាប់</span>
+            </h4>
+            <ul class="trig-steps-list" id="trig-detail-steps">
+              <!-- Dynamically populated -->
+            </ul>
+
+            <div class="critical-points-legend" style="margin-top: 1.25rem; border-top: 1px solid var(--border-color); padding-top: 0.85rem;">
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #f59e0b;"></span>
+                <span>កាំរស្មីឡាស៊ែរផ្ដេក (Laser Beam: y = sin θ)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #38bdf8;"></span>
+                <span>កូស៊ីនុស (cos θ លើអ័ក្សផ្ដេកនៃរង្វង់)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #10b981;"></span>
+                <span>ស៊ីនុស (sin θ លើអ័ក្សឈរនៃរង្វង់)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #fbbf24;"></span>
+                <span>ចំណុចគន្លឹះ (Max, Min, Roots, Intersections)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6.7 DERIVATIVE REAL-LIFE APPLICATIONS VIDEO STUDIO & SIMULATION LAB
+         ============================================================ -->
+    <section class="section" id="derivative-video-studio" style="background: radial-gradient(ellipse at center top, rgba(56, 189, 248, 0.08), transparent 70%);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>🚀</span>
+            <span>អនុវត្តន៍ដេរីវេក្នុងជីវភាពជាក់ស្តែង</span>
+          </div>
+          <h2 class="section-title">វីដេអូក្លែងធ្វើបម្រើបម្រាស់ដេរីវេក្នុងជីវភាពជាក់ស្តែង (Real-Life Derivative Applications)</h2>
+          <p class="section-subtitle">
+            ទស្សនា និងពិសោធន៍ការអនុវត្តគណិតវិទ្យាដេរីវេក្នុងជីវិតពិត ស្របតាមកម្មវិធីសិក្សាថ្នាក់ទី១២ របស់ក្រសួងអប់រំ យុវជន និងកីឡា (ជំពូក ២៖ ដេរីវេ និងអនុវត្តន៍) រួមមាន រូបវិទ្យារ៉ុក្កែត សេដ្ឋកិច្ចរកប្រាក់ចំណេញអតិបរមា វិស្វកម្មវេចខ្ចប់ វេជ្ជសាស្ត្រកំហាប់ឱសថក្នុងឈាម និងធារាសាស្ត្រអត្រាបម្រែបម្រួលទាក់ទង ជាមួយចលនា 60 FPS ការគណនាមេគុណប្រាប់ទិសបន្ទាត់ប៉ះផ្ទាល់ និងការថតទាញយកជាវីដេអូ!
+          </p>
+        </div>
+
+        <!-- 5 Real-Life Scenario Quick Buttons -->
+        <div class="trig-students-carousel-wrapper" style="margin-bottom: 1.5rem;">
+          <div class="trig-carousel-header">
+            <span>🌐 ជ្រើសរើសវិស័យជាក់ស្តែងនៃបម្រើបម្រាស់ដេរីវេ (Real-Life Applications)៖</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 0.75rem;">
+            <button type="button" class="studio-btn active" data-deriv-scenario="rocket" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">🚀</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">១. រូបវិទ្យា & លំហ</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">ល្បឿនខណៈ v(t) = s'(t)</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-deriv-scenario="profit" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">💰</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">២. សេដ្ឋកិច្ច & ធុរកិច្ច</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">ចំណេញអតិបរមា MR = MC</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-deriv-scenario="box" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">📦</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">៣. វិស្វកម្មវេចខ្ចប់</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">បត់ប្រអប់មាឌអតិបរមា</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-deriv-scenario="medicine" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">💊</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">៤. វេជ្ជសាស្ត្រ & ឱសថ</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">កំហាប់ថ្នាំក្នុងឈាម C(t)</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-deriv-scenario="hydrology" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">🚰</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">៥. ធារាសាស្ត្រ & ទំនប់</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">អត្រាបម្រែបម្រួលទាក់ទង</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Master Video Studio Box -->
+        <div class="video-studio-card">
+          <!-- Video Viewport & Canvas -->
+          <div class="studio-video-viewport">
+            <canvas id="derivative-video-canvas" class="curve-video-canvas"></canvas>
+
+            <!-- Top HUD Overlay -->
+            <div class="studio-hud-top">
+              <div class="hud-pill">
+                <span>📐</span>
+                <span id="deriv-hud-formula">s(t) = 6t² - 0.25t³</span>
+              </div>
+              <div class="rec-badge" id="deriv-rec-badge">
+                <span class="rec-dot"></span>
+                <span>REC 60 FPS</span>
+              </div>
+            </div>
+
+            <!-- Bottom HUD Overlay -->
+            <div class="studio-hud-bottom" id="deriv-hud-metrics" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <!-- Dynamic Metric Pills -->
+            </div>
+          </div>
+
+          <!-- Video Controls Bar -->
+          <div class="studio-controls-bar">
+            <!-- Real-Time Khmer Narration / Subtitles Banner -->
+            <div class="studio-narration-banner" style="background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: var(--radius-sm); padding: 0.75rem 1.1rem; display: flex; align-items: flex-start; gap: 0.75rem; box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);">
+              <span style="font-size: 1.25rem; line-height: 1;">🎙️</span>
+              <div style="flex: 1;">
+                <span style="font-size: 0.78rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.15rem;">ការពន្យល់តាមខណៈពេល (Live Audio-Visual Narration)៖</span>
+                <span id="deriv-narration-text" style="font-size: 0.92rem; color: #f8fafc; font-weight: 500; line-height: 1.6;">
+                  កំពុងដំណើរការក្លែងធ្វើគំរូដេរីវេក្នុងជីវភាពជាក់ស្តែង...
+                </span>
+              </div>
+            </div>
+
+            <!-- Timeline Scrubber Row -->
+            <div class="timeline-control-row">
+              <input type="range" id="deriv-progress-bar" class="studio-scrubber" min="0" max="100" step="0.1" value="0">
+              <span class="studio-time-text" id="deriv-time-display">0.0s / 12.0s</span>
+            </div>
+
+            <!-- Action Controls Row -->
+            <div class="studio-actions-row">
+              <!-- Play / Pause / Replay Group -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="deriv-play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                  <span>ផ្អាក (Pause)</span>
+                </button>
+
+                <button class="studio-btn" id="deriv-replay-btn" title="គូសឡើងវិញ">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                  </svg>
+                  <span>គូសឡើងវិញ (Replay)</span>
+                </button>
+              </div>
+
+              <!-- Speed Group -->
+              <div class="studio-btn-group">
+                <span style="font-size: 0.85rem; color: #94a3b8;">ល្បឿន៖</span>
+                <button class="studio-btn" data-deriv-speed="0.5">0.5x</button>
+                <button class="studio-btn active" data-deriv-speed="1.0">1x</button>
+                <button class="studio-btn" data-deriv-speed="1.5">1.5x</button>
+                <button class="studio-btn" data-deriv-speed="2.0">2x</button>
+              </div>
+
+              <!-- Video Recording & Export -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="deriv-record-btn" title="ថតវីដេអូក្លែងធ្វើ">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3" fill="#ef4444"></circle>
+                  </svg>
+                  <span>🎥 ថតវីដេអូ 60 FPS (Record Video)</span>
+                </button>
+              </div>
+
+              <!-- Scenario Dropdown -->
+              <div class="studio-btn-group">
+                <select id="deriv-scenario-select" class="studio-preset-dropdown" style="max-width: 280px;" aria-label="ជ្រើសរើសវិស័យជាក់ស្តែង">
+                  <option value="rocket" selected>🚀 ១. រូបវិទ្យា & លំហ (Rocket)</option>
+                  <option value="profit">💰 ២. សេដ្ឋកិច្ច & ធុរកិច្ច (Profit Max)</option>
+                  <option value="box">📦 ៣. វិស្វកម្មវេចខ្ចប់ (Box Volume)</option>
+                  <option value="medicine">💊 ៤. វេជ្ជសាស្ត្រ & ឱសថ (Drug Rate)</option>
+                  <option value="hydrology">🚰 ៥. ធារាសាស្ត្រ (Related Rates)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details and Pedagogical Insights below Video -->
+        <div class="studio-details-grid" id="deriv-details-container">
+          <!-- Scenario Concept & Real-Life Significance -->
+          <div class="studio-meta-box">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge" id="deriv-detail-category" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
+                រូបវិទ្យា & លំហអាកាស (Physics & Aerospace)
+              </span>
+              <span class="badge" id="deriv-detail-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
+                កម្ពស់ & ល្បឿនខណៈ v(t) = s'(t)
+              </span>
+            </div>
+
+            <h3 class="studio-meta-title" id="deriv-detail-title" style="color: #f8fafc; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">
+              🚀 ចលនារ៉ុក្កែត & ល្បឿនខណៈ (Rocket Kinematics)
+            </h3>
+
+            <div class="studio-formula-highlight" id="deriv-detail-formula">
+              s(t) = 6t² - 0.25t³ (m)
+            </div>
+
+            <div class="studio-formula-highlight" id="deriv-detail-derivative" style="border-left-color: #f59e0b; color: #fbbf24; background: rgba(245, 158, 11, 0.08); font-size: 0.95rem;">
+              v(t) = s'(t) = 12t - 0.75t² (m/s)  |  a(t) = v'(t) = 12 - 1.5t (m/s²)
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <h4 style="font-size: 0.95rem; color: #38bdf8; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+                <span>💡</span><span>គោលគំនិតគណិតវិទ្យាក្នុងជីវភាពជាក់ស្តែង៖</span>
+              </h4>
+              <p id="deriv-detail-theory" style="font-size: 0.92rem; line-height: 1.7; color: var(--text-secondary);">
+                ក្នុងរូបវិទ្យា និងវិស្វកម្មអវកាស អត្រាបម្រែបម្រួលនៃទីតាំងធៀបនឹងពេលគឺជាល្បឿនខណៈ...
+              </p>
+            </div>
+
+            <div style="margin-top: 1.2rem; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-sm); padding: 0.85rem 1rem;">
+              <h5 style="color: #fbbf24; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem;">
+                <span>🎯</span><span>គន្លឹះប្រឡងបាក់ឌុប (MoEYS BacII Tip)៖</span>
+              </h5>
+              <p id="deriv-detail-exam-tip" style="font-size: 0.85rem; color: #e2e8f0; line-height: 1.6; margin: 0;">
+                ក្នុងការប្រឡងបាក់ឌុប កាលណាប្រធានសួររក «ល្បឿនខណៈ» ត្រូវចាំថាគណនាដេរីវេទី ១...
+              </p>
+            </div>
+          </div>
+
+          <!-- Step-by-Step Mathematical Derivation & Slope Analysis -->
+          <div class="studio-meta-box">
+            <h4 class="studio-meta-title">
+              <span>📐</span>
+              <span>ជំហានគណនាដេរីវេ & រកចំណុចបរមា</span>
+            </h4>
+            <ol class="trig-steps-list" id="deriv-detail-steps" style="list-style-type: decimal; padding-left: 1.2rem;">
+              <!-- Dynamically populated by derivative-studio.js -->
+            </ol>
+
+            <div class="critical-points-legend" style="margin-top: 1.25rem; border-top: 1px solid var(--border-color); padding-top: 0.85rem;">
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #f59e0b; border-radius: 2px;"></span>
+                <span>បន្ទាត់ប៉ះ (Tangent Line: មេគុណប្រាប់ទិស m = f'(t))</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #38bdf8;"></span>
+                <span>ខ្សែកោងអនុគមន៍ជាក់ស្តែង f(t)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #10b981;"></span>
+                <span>ចំណុចបរមាអតិបរមា f'(t) = 0 (Peak / Extremum)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: rgba(245, 158, 11, 0.6); border-radius: 0;"></span>
+                <span>ត្រីកោណចំណោត (Slope Triangle: Δy / Δx)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6.2 ARITHMETIC SEQUENCES REAL-LIFE VIDEO STUDIO
+         ============================================================ -->
+    <section class="section" id="arithmetic-video-studio" style="background: radial-gradient(ellipse at center top, rgba(245, 158, 11, 0.08), transparent 70%);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);">
+            <span>📈</span>
+            <span>អនុវត្តន៍ស្វ៊ីតនព្វន្តក្នុងជីវភាពជាក់ស្តែង</span>
+          </div>
+          <h2 class="section-title">វីដេអូក្លែងធ្វើបម្រើបម្រាស់ស្វ៊ីតនព្វន្តក្នុងជីវភាពរស់នៅ (Real-Life Arithmetic Sequences)</h2>
+          <p class="section-subtitle">
+            ទស្សនា និងពិសោធន៍ការអនុវត្តស្វ៊ីតនព្វន្តក្នុងជីវិតពិត ស្របតាមកម្មវិធីសិក្សាថ្នាក់ទី១១ និងទី១២ របស់ក្រសួងអប់រំ យុវជន និងកីឡា (ជំពូក ស្វ៊ីតចំនួនពិត) រួមមាន ផែនការសន្សំប្រាក់កូនជ្រូក ស្ថាបត្យកម្មកៅអីកីឡដ្ឋាន កម្មវិធីហ្វឹកហាត់កីឡាករម៉ារ៉ាតុង គំនរបំពង់ដែកសំណង់ និងសេវាតាក់ស៊ីគិតតាមគីឡូម៉ែត្រ ជាមួយចលនា 60 FPS ក្រាហ្វតួ $u_n$ & ផលបូក $S_n$ និងការថតទាញយកជាវីដេអូ!
+          </p>
+        </div>
+
+        <!-- 5 Real-Life Scenario Quick Buttons -->
+        <div class="trig-students-carousel-wrapper" style="margin-bottom: 1.5rem;">
+          <div class="trig-carousel-header">
+            <span>🌐 ជ្រើសរើសវិស័យជាក់ស្តែងនៃបម្រើបម្រាស់ស្វ៊ីតនព្វន្ត (Real-Life Applications)៖</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 0.75rem;">
+            <button type="button" class="studio-btn active" data-arith-scenario="savings" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">🏦</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">១. ផែនការសន្សំប្រាក់</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">កូនជ្រូកវិនិយោគ u_1=50, d=25</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-arith-scenario="stadium" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">🏟️</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">២. កៅអីកីឡដ្ឋាន & មហោស្រព</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">ធ្នូកោង u_1=30, d=4 កៅអី</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-arith-scenario="marathon" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">🏃</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">៣. ហ្វឹកហាត់រត់ម៉ារ៉ាតុង</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">ចម្ងាយសប្តាហ៍ u_1=5, d=3 km</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-arith-scenario="pipes" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">🏗️</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">៤. ជង់បំពង់ដែកសំណង់</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">ពីរ៉ាមីតត្រីកោណ u_1=3, d=2</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-arith-scenario="taxi" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">🚕</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">៥. សេវាតាក់ស៊ីគិតតាមចម្ងាយ</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">នាឡិកាម៉ែត្រ u_1=1.5$, d=0.5$</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Master Video Studio Box -->
+        <div class="video-studio-card">
+          <!-- Video Viewport & Canvas -->
+          <div class="studio-video-viewport">
+            <canvas id="arithmetic-video-canvas" class="curve-video-canvas"></canvas>
+
+            <!-- Top HUD Overlay -->
+            <div class="studio-hud-top">
+              <div class="hud-pill">
+                <span>📈</span>
+                <span id="arith-hud-formula">u_n = 50 + 25(n - 1)</span>
+              </div>
+              <div class="rec-badge" id="arith-rec-badge">
+                <span class="rec-dot"></span>
+                <span>REC 60 FPS</span>
+              </div>
+            </div>
+
+            <!-- Bottom HUD Overlay -->
+            <div class="studio-hud-bottom" id="arith-hud-metrics" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <!-- Dynamic Metric Pills -->
+            </div>
+          </div>
+
+          <!-- Video Controls Bar -->
+          <div class="studio-controls-bar">
+            <!-- Real-Time Khmer Narration / Subtitles Banner -->
+            <div class="studio-narration-banner" style="background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-sm); padding: 0.75rem 1.1rem; display: flex; align-items: flex-start; gap: 0.75rem; box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);">
+              <span style="font-size: 1.25rem; line-height: 1;">🎙️</span>
+              <div style="flex: 1;">
+                <span style="font-size: 0.78rem; text-transform: uppercase; color: #fbbf24; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.15rem;">ការពន្យល់តាមខណៈពេល (Live Audio-Visual Narration)៖</span>
+                <span id="arith-narration-text" style="font-size: 0.92rem; color: #f8fafc; font-weight: 500; line-height: 1.6;">
+                  កំពុងដំណើរការក្លែងធ្វើគំរូស្វ៊ីតនព្វន្តក្នុងជីវភាពជាក់ស្តែង...
+                </span>
+              </div>
+            </div>
+
+            <!-- Timeline Scrubber Row -->
+            <div class="timeline-control-row">
+              <input type="range" id="arith-progress-bar" class="studio-scrubber" min="0" max="100" step="0.1" value="0">
+              <span class="studio-time-text" id="arith-time-display">0.0s / 12.0s</span>
+            </div>
+
+            <!-- Action Controls Row -->
+            <div class="studio-actions-row">
+              <!-- Play / Pause / Replay Group -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="arith-play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                  <span>ផ្អាក (Pause)</span>
+                </button>
+
+                <button class="studio-btn" id="arith-replay-btn" title="គូសឡើងវិញ">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                  </svg>
+                  <span>គូសឡើងវិញ (Replay)</span>
+                </button>
+              </div>
+
+              <!-- Speed Group -->
+              <div class="studio-btn-group">
+                <span style="font-size: 0.85rem; color: #94a3b8;">ល្បឿន៖</span>
+                <button class="studio-btn" data-arith-speed="0.5">0.5x</button>
+                <button class="studio-btn active" data-arith-speed="1.0">1x</button>
+                <button class="studio-btn" data-arith-speed="1.5">1.5x</button>
+                <button class="studio-btn" data-arith-speed="2.0">2x</button>
+              </div>
+
+              <!-- Video Recording & Export -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="arith-record-btn" title="ថតវីដេអូក្លែងធ្វើ">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3" fill="#ef4444"></circle>
+                  </svg>
+                  <span id="arith-record-btn-text">ថតវីដេអូក្លែងធ្វើ (Record)</span>
+                </button>
+              </div>
+
+              <!-- Scenario Select Dropdown for mobile -->
+              <div class="studio-btn-group mobile-only" style="margin-left: auto;">
+                <select id="arith-scenario-select" class="form-control" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; background: var(--bg-surface);">
+                  <option value="savings">🏦 ១. ផែនការសន្សំប្រាក់</option>
+                  <option value="stadium">🏟️ ២. កៅអីកីឡដ្ឋាន</option>
+                  <option value="marathon">🏃 ៣. ហ្វឹកហាត់ម៉ារ៉ាតុង</option>
+                  <option value="pipes">🏗️ ៤. ជង់បំពង់ដែក</option>
+                  <option value="taxi">🚕 ៥. សេវាតាក់ស៊ី</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details and Pedagogical Insights below Video -->
+        <div class="studio-details-grid" id="arith-details-container">
+          <!-- Scenario Concept & Real-Life Significance -->
+          <div class="studio-meta-box">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge" id="arith-detail-category" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
+                ហិរញ្ញវត្ថុផ្ទាល់ខ្លួន (Personal Finance)
+              </span>
+              <span class="badge" id="arith-detail-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
+                តួទី n: u_n = 50 + 25(n - 1)  |  ផលបូកសរុប S_n
+              </span>
+            </div>
+
+            <h3 class="studio-meta-title" id="arith-detail-title" style="color: #f8fafc; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">
+              🏦 ផែនការសន្សំប្រាក់ & កូនជ្រូកវិនិយោគ (Savings & Investment Plan)
+            </h3>
+
+            <div class="studio-formula-highlight" id="arith-detail-formula">
+              u_n = 50 + 25(n - 1) ($/ខែ)
+            </div>
+
+            <div class="studio-formula-highlight" id="arith-detail-sum-formula" style="border-left-color: #ec4899; color: #f472b6; background: rgba(236, 72, 153, 0.08); font-size: 0.95rem;">
+              S_n = (n/2)(u_1 + u_n) = (n/2)(75 + 25n) ($)
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <h4 style="font-size: 0.95rem; color: #38bdf8; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+                <span>💡</span><span>គោលគំនិតគណិតវិទ្យាក្នុងជីវភាពជាក់ស្តែង៖</span>
+              </h4>
+              <p id="arith-detail-theory" style="font-size: 0.92rem; line-height: 1.7; color: var(--text-secondary);">
+                ក្នុងសេដ្ឋកិច្ច និងការគ្រប់គ្រងហិរញ្ញវត្ថុ វិធីសាស្ត្រ «Step-Up Savings Plan» ប្រើប្រាស់គោលការណ៍ស្វ៊ីតនព្វន្តយ៉ាងជាក់ស្តែង...
+              </p>
+            </div>
+
+            <div style="margin-top: 1.2rem; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-sm); padding: 0.85rem 1rem;">
+              <h5 style="color: #fbbf24; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem;">
+                <span>🎯</span><span>គន្លឹះប្រឡងបាក់ឌុប (MoEYS BacII Tip)៖</span>
+              </h5>
+              <p id="arith-detail-exam-tip" style="font-size: 0.85rem; color: #e2e8f0; line-height: 1.6; margin: 0;">
+                លំហាត់ប្រាក់សន្សំ ឬប្រាក់បៀវត្សរ៍ក្នុងវិញ្ញាសាបាក់ឌុប៖ ត្រូវកំណត់ឱ្យច្បាស់រវាង «ប្រាក់ក្នុងខែទី n» (គណនា $u_n$) និង «ប្រាក់សន្សំសរុបទាំងអស់» (គណនា $S_n$) កុំឱ្យច្រឡំរូបមន្តគ្នា!
+              </p>
+            </div>
+          </div>
+
+          <!-- Step-by-Step Mathematical Derivation -->
+          <div class="studio-meta-box">
+            <h4 class="studio-meta-title">
+              <span>📐</span>
+              <span>ជំហានគណនាតួទូទៅ $u_n$ & ផលបូកសរុប $S_n$</span>
+            </h4>
+            <ol class="trig-steps-list" id="arith-detail-steps" style="list-style-type: decimal; padding-left: 1.2rem;">
+              <!-- Dynamically populated by arithmetic-studio.js -->
+            </ol>
+
+            <div class="critical-points-legend" style="margin-top: 1.25rem; border-top: 1px solid var(--border-color); padding-top: 0.85rem;">
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #38bdf8;"></span>
+                <span>តួនៃស្វ៊ីតនព្វន្ត ($u_n = u_1 + (n - 1)d$)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #10b981;"></span>
+                <span>ផលសងរួម ($d = u_{n+1} - u_n = \text{const}$)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: rgba(56, 189, 248, 0.4); border-radius: 0;"></span>
+                <span>ផលបូកសរុប $n$ តួដំបូង ($S_n = \sum_{k=1}^n u_k$)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #f59e0b;"></span>
+                <span>តួបច្ចុប្បន្នដែលកំពុងគណនា ($u_n$ Highlight)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GEOMETRIC SEQUENCES VIDEO STUDIO (Real-Life Applications)
+         ============================================================ -->
+    <section class="section" id="geometric-video-studio" style="background: radial-gradient(ellipse at center top, rgba(16, 185, 129, 0.08), transparent 70%);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">
+            <span>📈</span>
+            <span>អនុវត្តន៍ស្វ៊ីតធរណីមាត្រក្នុងជីវភាពជាក់ស្តែង</span>
+          </div>
+          <h2 class="section-title">វីដេអូក្លែងធ្វើបម្រើបម្រាស់ស្វ៊ីតធរណីមាត្រក្នុងជីវភាពរស់នៅ (Real-Life Geometric Sequences)</h2>
+          <p class="section-subtitle">
+            ទស្សនា និងពិសោធន៍ការអនុវត្តស្វ៊ីតធរណីមាត្រក្នុងជីវិតពិត ស្របតាមកម្មវិធីសិក្សាថ្នាក់ទី១១ និងទី១២ របស់ក្រសួងអប់រំ យុវជន និងកីឡា (ជំពូក ស្វ៊ីតចំនួនពិត & អនុគមន៍អិចស្ប៉ូណង់ស្យែល) រួមមាន ការបំបែកកោសិកាបាក់តេរី ការប្រាក់សមាស ចលនាបាល់លោតផ្លាត (ផលបូកអនន្ត $S_\infty$) ការបត់ក្រដាសដល់ឋានព្រះច័ន្ទ និងអាយុកាលពាក់កណ្តាលវិទ្យុសកម្ម ជាមួយចលនា 60 FPS ក្រាហ្វតួ $u_n$ & ផលបូក $S_n$ ម៉ាស៊ីនគិតលេខស្វ៊ីត និងការថតទាញយកជាវីដេអូ!
+          </p>
+        </div>
+
+        <!-- 5 Real-Life Scenario Quick Buttons -->
+        <div class="trig-students-carousel-wrapper" style="margin-bottom: 1.5rem;">
+          <div class="trig-carousel-header">
+            <span>🌐 ជ្រើសរើសវិស័យជាក់ស្តែងនៃបម្រើបម្រាស់ស្វ៊ីតធរណីមាត្រ (Real-Life Geometric Applications)៖</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 0.75rem;">
+            <button type="button" class="studio-btn active" data-geom-scenario="bacteria" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">🦠</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">១. បាក់តេរីបំបែកខ្លួន</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">កោសិកា u_1=100, q=2</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-geom-scenario="compound" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">💰</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">២. ការប្រាក់សមាស</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">វិនិយោគ u_1=1000$, q=1.10</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-geom-scenario="bouncing" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">🏀</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">៣. បាល់លោតផ្លាត</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">កម្ពស់ u_1=10m, q=0.7, S_∞</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-geom-scenario="paper_fold" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">📄</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">៤. បត់ក្រដាសដល់ព្រះច័ន្ទ</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">កម្រាស់ u_1=0.1mm, q=2</div>
+              </div>
+            </button>
+            <button type="button" class="studio-btn" data-geom-scenario="radiation" style="justify-content: flex-start; padding: 0.75rem 1rem; border-radius: var(--radius-md); text-align: left;">
+              <span style="font-size: 1.4rem; margin-right: 0.3rem;">☢️</span>
+              <div>
+                <div style="font-weight: 700; font-size: 0.9rem;">៥. បំបែកវិទ្យុសកម្ម</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">អាយុកាលពាក់កណ្តាល q=0.5</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Master Video Studio Box -->
+        <div class="video-studio-card" style="border-color: rgba(16, 185, 129, 0.35); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 35px rgba(16, 185, 129, 0.2);">
+          <!-- Video Viewport & Canvas -->
+          <div class="studio-video-viewport">
+            <canvas id="geometric-video-canvas" class="curve-video-canvas"></canvas>
+
+            <!-- Top HUD Overlay -->
+            <div class="studio-hud-top">
+              <div class="hud-pill" style="color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                <span>📈</span>
+                <span id="geom-hud-formula">u_n = 100 × 2^(n - 1)</span>
+              </div>
+              <div class="rec-badge" id="geom-rec-badge">
+                <span class="rec-dot"></span>
+                <span>REC 60 FPS</span>
+              </div>
+            </div>
+
+            <!-- Bottom HUD Overlay -->
+            <div class="studio-hud-bottom" id="geom-hud-metrics" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <!-- Dynamic Metric Pills -->
+            </div>
+          </div>
+
+          <!-- Video Controls Bar -->
+          <div class="studio-controls-bar">
+            <!-- Real-Time Khmer Narration / Subtitles Banner -->
+            <div class="studio-narration-banner" style="background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-sm); padding: 0.75rem 1.1rem; display: flex; align-items: flex-start; gap: 0.75rem; box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);">
+              <span style="font-size: 1.25rem; line-height: 1;">🎙️</span>
+              <div style="flex: 1;">
+                <span style="font-size: 0.78rem; text-transform: uppercase; color: #34d399; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.15rem;">ការពន្យល់តាមខណៈពេល (Live Audio-Visual Narration)៖</span>
+                <span id="geom-narration-text" style="font-size: 0.92rem; color: #f8fafc; font-weight: 500; line-height: 1.6;">
+                  កំពុងដំណើរការក្លែងធ្វើគំរូស្វ៊ីតធរណីមាត្រក្នុងជីវភាពជាក់ស្តែង...
+                </span>
+              </div>
+            </div>
+
+            <!-- Timeline Scrubber Row -->
+            <div class="timeline-control-row">
+              <input type="range" id="geom-progress-bar" class="studio-scrubber" min="0" max="100" step="0.1" value="0">
+              <span class="studio-time-text" id="geom-time-display">0.0s / 12.0s</span>
+            </div>
+
+            <!-- Action Controls Row -->
+            <div class="studio-actions-row">
+              <!-- Play / Pause / Replay Group -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="geom-play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                  <span>ផ្អាក (Pause)</span>
+                </button>
+
+                <button class="studio-btn" id="geom-replay-btn" title="គូសឡើងវិញ">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                  </svg>
+                  <span>គូសឡើងវិញ (Replay)</span>
+                </button>
+              </div>
+
+              <!-- Speed Group -->
+              <div class="studio-btn-group">
+                <span style="font-size: 0.85rem; color: #94a3b8;">ល្បឿន៖</span>
+                <button class="studio-btn" data-geom-speed="0.5">0.5x</button>
+                <button class="studio-btn active" data-geom-speed="1.0">1x</button>
+                <button class="studio-btn" data-geom-speed="1.5">1.5x</button>
+                <button class="studio-btn" data-geom-speed="2.0">2x</button>
+              </div>
+
+              <!-- Video Recording & Export -->
+              <div class="studio-btn-group">
+                <button class="studio-btn" id="geom-record-btn" title="ថតវីដេអូក្លែងធ្វើ">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3" fill="#ef4444"></circle>
+                  </svg>
+                  <span id="geom-record-btn-text">ថតវីដេអូក្លែងធ្វើ (Record)</span>
+                </button>
+              </div>
+
+              <!-- Scenario Select Dropdown for mobile -->
+              <div class="studio-btn-group mobile-only" style="margin-left: auto;">
+                <select id="geom-scenario-select" class="form-control" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; background: var(--bg-surface);">
+                  <option value="bacteria">🦠 ១. បាក់តេរីបំបែកខ្លួន</option>
+                  <option value="compound">💰 ២. ការប្រាក់សមាស</option>
+                  <option value="bouncing">🏀 ៣. បាល់លោតផ្លាត</option>
+                  <option value="paper_fold">📄 ៤. បត់ក្រដាសដល់ព្រះច័ន្ទ</option>
+                  <option value="radiation">☢️ ៥. បំបែកវិទ្យុសកម្ម</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details and Pedagogical Insights below Video -->
+        <div class="studio-details-grid" id="geom-details-container">
+          <!-- Scenario Concept & Real-Life Significance -->
+          <div class="studio-meta-box">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge" id="geom-detail-category" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
+                មីក្រូជីវវិទ្យា & វេជ្ជសាស្ត្រ
+              </span>
+              <span class="badge" id="geom-detail-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
+                តួទី n: u_n = 100 × 2^(n-1)  |  ផលបូកសរុប S_n
+              </span>
+            </div>
+
+            <h3 class="studio-meta-title" id="geom-detail-title" style="color: #f8fafc; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">
+              🦠 កំណើនកោសិកាបាក់តេរី & មេរោគ (Bacterial Doubling)
+            </h3>
+
+            <div class="studio-formula-highlight" id="geom-detail-formula" style="border-left-color: #10b981; color: #34d399; background: rgba(16, 185, 129, 0.08);">
+              u_n = 100 \times 2^{n - 1} (កោសិកា)
+            </div>
+
+            <div class="studio-formula-highlight" id="geom-detail-sum-formula" style="border-left-color: #ec4899; color: #f472b6; background: rgba(236, 72, 153, 0.08); font-size: 0.95rem;">
+              S_n = u_1 \frac{q^n - 1}{q - 1} = 100(2^n - 1) (កោសិកា)
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <h4 style="font-size: 0.95rem; color: #34d399; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+                <span>💡</span><span>គោលគំនិតគណិតវិទ្យាក្នុងជីវភាពជាក់ស្តែង៖</span>
+              </h4>
+              <p id="geom-detail-theory" style="font-size: 0.92rem; line-height: 1.7; color: var(--text-secondary);">
+                ក្នុងជីវវិទ្យា និងវេជ្ជសាស្ត្រ បាក់តេរីបន្តពូជតាមវិធី «អសេក្ខៈបំបែកជាពីរ» (Binary Fission)...
+              </p>
+            </div>
+
+            <div style="margin-top: 1.2rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-sm); padding: 0.85rem 1rem;">
+              <h5 style="color: #34d399; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem;">
+                <span>🎯</span><span>គន្លឹះប្រឡងបាក់ឌុប (MoEYS BacII Tip)៖</span>
+              </h5>
+              <p id="geom-detail-exam-tip" style="font-size: 0.85rem; color: #e2e8f0; line-height: 1.6; margin: 0;">
+                ប្រធានលំហាត់បាក់តេរី ឬការចម្លងវីរុសកូវីដក្នុងប្រឡងបាក់ឌុប៖ ត្រូវប្រយ័ត្នត្រង់ពាក្យ «វដ្តទី n» ឬ «ក្រោយពេល t ម៉ោង»។
+              </p>
+            </div>
+
+            <!-- Interactive Geometric Sequence Calculator -->
+            <div style="margin-top: 1.25rem; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: var(--radius-md); padding: 1rem;">
+              <h5 style="color: #38bdf8; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem;">
+                <span>🧮</span><span>ម៉ាស៊ីនគិតលេខស្វ៊ីតធរណីមាត្រអន្តរកម្ម (Interactive Sequence Calculator)</span>
+              </h5>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.6rem; margin-bottom: 0.75rem;">
+                <div>
+                  <label style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 0.2rem;">តួទីមួយ u₁</label>
+                  <input type="number" id="geom-calc-u1" class="form-control" value="100" style="padding: 0.35rem 0.6rem; font-size: 0.88rem;">
+                </div>
+                <div>
+                  <label style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 0.2rem;">ផលធៀបរួម q</label>
+                  <input type="number" step="0.01" id="geom-calc-q" class="form-control" value="2" style="padding: 0.35rem 0.6rem; font-size: 0.88rem;">
+                </div>
+                <div>
+                  <label style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 0.2rem;">ចំនួនតួ n</label>
+                  <input type="number" id="geom-calc-n" class="form-control" value="8" min="1" max="100" style="padding: 0.35rem 0.6rem; font-size: 0.88rem;">
+                </div>
+              </div>
+              <button type="button" id="geom-calc-run-btn" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; margin-bottom: 0.6rem; background: linear-gradient(135deg, #059669, #10b981);">
+                <span>⚡ គណនាតួ u_n, ផលបូក S_n & S_∞</span>
+              </button>
+              <div id="geom-calc-result">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Step-by-Step Mathematical Derivation -->
+          <div class="studio-meta-box">
+            <h4 class="studio-meta-title">
+              <span>📐</span>
+              <span>ជំហានគណនាតួទូទៅ $u_n$ & ផលបូកសរុប $S_n$</span>
+            </h4>
+            <ol class="trig-steps-list" id="geom-detail-steps" style="list-style-type: decimal; padding-left: 1.2rem;">
+              <!-- Dynamically populated by geometric-studio.js -->
+            </ol>
+
+            <div class="critical-points-legend" style="margin-top: 1.25rem; border-top: 1px solid var(--border-color); padding-top: 0.85rem;">
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #34d399;"></span>
+                <span>តួនៃស្វ៊ីតធរណីមាត្រ ($u_n = u_1 \cdot q^{n - 1}$)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #f59e0b;"></span>
+                <span>ផលធៀបរួម ($q = \frac{u_{n+1}}{u_n} = \text{const}$)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: rgba(16, 185, 129, 0.4); border-radius: 0;"></span>
+                <span>ផលបូកសរុប $n$ តួដំបូង ($S_n = u_1 \frac{q^n - 1}{q - 1}$)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #38bdf8;"></span>
+                <span>ផលបូកអនន្ត ($S_\infty = \frac{u_1}{1 - q}$ កាលណា $|q| < 1$)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. FORMULA QUICK SEARCH & CHEAT SHEET
+         ============================================================ -->
+    <section class="section" id="formulas" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>📐</span>
+            <span>បណ្ណាល័យរូបមន្តសង្ខេប</span>
+          </div>
+          <h2 class="section-title">Formula Quick Reference</h2>
+          <p class="section-subtitle">
+            ស្វែងរករូបមន្តគណិតវិទ្យាសំខាន់ៗសម្រាប់ត្រៀមប្រឡងបាក់ឌុប និងប្រឡងសិស្សពូកែយ៉ាងរហ័ស
+          </p>
+        </div>
+
+        <!-- Search Bar & Filter -->
+        <div class="formula-search-bar">
+          <div class="search-input-wrap">
+            <span class="search-icon-inside">🔍</span>
+            <input type="text" id="formula-search-input" class="search-input" placeholder="ស្វែងរករូបមន្ត ឧ. ដេរីវេ, អាំងតេក្រាល, លីមីត, កុំផ្លិច, ធរណីមាត្រ...">
+          </div>
+          <span id="formula-match-count" style="font-size: 0.85rem; color: var(--text-muted); white-space: nowrap;">រកឃើញ ៩ រូបមន្ត</span>
+        </div>
+
+        <!-- Formula Category Tabs -->
+        <div class="filter-tabs" style="margin-bottom: 2rem;">
+          <button class="filter-btn active" data-formula-filter="all">ទាំងអស់</button>
+          <button class="filter-btn" data-formula-filter="derivative">ដេរីវេ (Derivatives)</button>
+          <button class="filter-btn" data-formula-filter="integral">អាំងតេក្រាល (Integrals)</button>
+          <button class="filter-btn" data-formula-filter="limits">លីមីត (Limits)</button>
+          <button class="filter-btn" data-formula-filter="complex">កុំផ្លិច (Complex)</button>
+          <button class="filter-btn" data-formula-filter="geometry">ធរណីមាត្រលំហ</button>
+          <button class="filter-btn" data-formula-filter="probability">ប្រូបាប (Probability)</button>
+        </div>
+
+        <!-- Formula Cards Grid -->
+        <div class="formula-cards-grid" id="formula-cards-grid">
+          <!-- Dynamically injected from js/math-tools.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. FREE RESOURCES & DOWNLOADS
+         ============================================================ -->
+    <section class="section" id="resources">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>🎁</span>
+            <span>ធនធានសិក្សាឥតគិតថ្លៃ</span>
+          </div>
+          <h2 class="section-title">វិញ្ញាសា & សៀវភៅជំនួយស្មារតី</h2>
+          <p class="section-subtitle">
+            ឯកសារចងក្រងដោយអ្នកគ្រូ ឆេង ឆវ័ន្ត ដោយផ្ទាល់ អាចទាញយកទៅហ្វឹកហាត់ដោយឥតគិតថ្លៃ
+          </p>
+        </div>
+
+        <div class="resources-grid" id="resources-grid">
+          <!-- Populated from js/main.js & courses-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. TESTIMONIALS & SUCCESS STORIES
+         ============================================================ -->
+    <section class="section" id="testimonials" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>🌟</span>
+            <span>ជោគជ័យរបស់សិស្ស</span>
+          </div>
+          <h2 class="section-title">សេចក្តីកោតសរសើរពីសិស្សានុសិស្ស</h2>
+          <p class="section-subtitle">
+            លទ្ធផលពិតពីការខិតខំប្រឹងប្រែង និងការណែនាំដ៏ត្រឹមត្រូវរបស់អ្នកគ្រូ ឆេង ឆវ័ន្ត
+          </p>
+        </div>
+
+        <div class="testimonials-grid" id="testimonials-grid">
+          <!-- Populated from js/main.js & courses-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10. ENROLLMENT & CONTACT SECTION
+         ============================================================ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span>✍️</span>
+            <span>ចុះឈ្មោះ & ទំនាក់ទំនង</span>
+          </div>
+          <h2 class="section-title">ចាប់ផ្តើមដំណើរឆ្ពោះទៅកាន់និទ្ទេស A ថ្ងៃនេះ!</h2>
+          <p class="section-subtitle">
+            សូមបំពេញព័ត៌មានខាងក្រោមដើម្បីចុះឈ្មោះចូលរៀន ឬទាក់ទងមកអ្នកគ្រូដោយផ្ទាល់
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Direct Contact Information -->
+          <div class="contact-info-card glass-card">
+            <h3 class="contact-info-title">ព័ត៌មានទំនាក់ទំនងផ្ទាល់</h3>
+            <p class="contact-info-desc">
+              លោកអ្នកអាចទាក់ទងមកកាន់អ្នកគ្រូ ឬក្រុមការងារដើម្បីសាកសួរព័ត៌មានបន្ថែមអំពីម៉ោងសិក្សា កម្រិតថ្នាក់ និងការប្រឹក្សាយោបល់ការសិក្សា។
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="method-label">លេខទូរស័ព្ទទំនាក់ទំនង</div>
+                  <div class="method-value">099 77 5501</div>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </div>
+                <div>
+                  <div class="method-label">Telegram ផ្លូវការ</div>
+                  <div class="method-value">@chhovorn_math</div>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div class="method-label">អ៊ីមែលផ្លូវការ</div>
+                  <div class="method-value">chhorvornk@gmail.com</div>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <div class="method-label">ទីតាំងបង្រៀន</div>
+                  <div class="method-value">វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="social-btn">
+                <span>✈️ Telegram</span>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn">
+                <span>📘 Facebook Page</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Enrollment / Inquiry Form -->
+          <div class="enroll-form-card glass-card">
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">ទម្រង់បែបបទចុះឈ្មោះចូលរៀន</h3>
+            <p style="font-size: 0.88rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
+              បំពេញព័ត៌មានរបស់អ្នកដើម្បីទទួលបានការបញ្ចុះតម្លៃពិសេស ១០% សម្រាប់សិស្ស ៥០ នាក់ដំបូង!
+            </p>
+
+            <form id="enroll-form">
+              <div class="form-group">
+                <label class="form-label" for="enroll-name">គោត្តនាម និងនាម (ឈ្មោះសិស្ស) *</label>
+                <input type="text" id="enroll-name" class="form-control" placeholder="ឧ. សុខ វាសនា" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="enroll-phone">លេខទូរស័ព្ទ / Telegram *</label>
+                  <input type="tel" id="enroll-phone" class="form-control" placeholder="099 77 5501" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="enroll-grade">កម្រិតថ្នាក់បច្ចុប្បន្ន</label>
+                  <select id="enroll-grade" class="form-control">
+                    <option value="12">ថ្នាក់ទី ១២ (ត្រៀមបាក់ឌុប)</option>
+                    <option value="11">ថ្នាក់ទី ១១</option>
+                    <option value="10">ថ្នាក់ទី ១០</option>
+                    <option value="olympiad">បំប៉នសិស្សពូកែ</option>
+                    <option value="university">ឧត្តមសិក្សា / អាហារូបករណ៍</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="enroll-course-select">ជ្រើសរើសវគ្គសិក្សាដែលចង់រៀន *</label>
+                <select id="enroll-course-select" class="form-control" required>
+                  <!-- Populated dynamically -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="enroll-message">សារបន្ថែម ឬសំណួរផ្សេងៗ (បើមាន)</label>
+                <textarea id="enroll-message" class="form-control" rows="3" placeholder="បញ្ជាក់ពីម៉ោងទំនេរ ឬចម្ងល់ដែលចង់សួរអ្នកគ្រូ..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                <span>បញ្ជូនការចុះឈ្មោះភ្លាមៗ</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       11. FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="nav-brand">
+            <div class="brand-icon">f(x)</div>
+            <div class="brand-text">
+              <span class="brand-name">ឆេង ឆវ័ន្ត</span>
+              <span class="brand-sub">MATH SPECIALIST</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            គេហទំព័រអប់រំ និង Portfolio ផ្លូវការរបស់អ្នកគ្រូ ឆេង ឆវ័ន្ត គ្រូបង្រៀនគណិតវិទ្យានៅវិទ្យាល័យសសរស្តម្ភ និងវិទ្យាស្ថានជាតិអប់រំ (SHINE)។ ជួយសិស្សកម្ពុជាឱ្យស្ទាត់ជំនាញគណិតវិទ្យាប្រកបដោយភាពច្នៃប្រឌិត។
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">ទំព័ររហ័ស</h4>
+          <ul class="footer-links">
+            <li><a href="#hero" class="footer-link">ទំព័រដើម</a></li>
+            <li><a href="#about" class="footer-link">អំពីអ្នកគ្រូ</a></li>
+            <li><a href="#courses" class="footer-link">វគ្គសិក្សាទាំងអស់</a></li>
+            <li><a href="#playground" class="footer-link">ពិសោធន៍ក្រាហ្វិក 2D</a></li>
+            <li><a href="grapher-3d.html" class="footer-link" style="color: #38bdf8; font-weight: 600;">🧊 បន្ទប់ពិសោធន៍ 3D (Oxyz)</a></li>
+            <li><a href="#formulas" class="footer-link">បណ្ណាល័យរូបមន្ត</a></li>
+            <li><a href="#arithmetic-video-studio" class="footer-link">វីដេអូបម្រើបម្រាស់ស្វ៊ីតនព្វន្ត</a></li>
+            <li><a href="#geometric-video-studio" class="footer-link">វីដេអូបម្រើបម្រាស់ស្វ៊ីតធរណីមាត្រ</a></li>
+            <li><a href="game-grade9.html" class="footer-link" style="color: #f59e0b;">⚔️ ល្បែងគណិតថ្នាក់ទី ៩</a></li>
+            <li><a href="game-grade11.html" class="footer-link" style="color: #a78bfa;">🎮 ល្បែងគណិតថ្នាក់ទី ១១</a></li>
+            <li><a href="lesson-plan-exponential-ibl.html" class="footer-link" style="color: #34d399; font-weight: 600;">📝 កិច្ចតែងការបង្រៀន (IBL)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">កម្មវិធីបំប៉ន</h4>
+          <ul class="footer-links">
+            <li><a href="#courses" class="footer-link">ត្រៀមប្រឡងបាក់ឌុប</a></li>
+            <li><a href="#courses" class="footer-link">សិស្សពូកែជាតិ Olympiad</a></li>
+            <li><a href="#courses" class="footer-link">ពង្រឹងគ្រឹះថ្នាក់ទី ១១</a></li>
+            <li><a href="#courses" class="footer-link">ស្ពានចម្លងថ្នាក់ទី ១០</a></li>
+            <li><a href="#courses" class="footer-link">គណិតវិទ្យាឧត្តមសិក្សា</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">ទំនាក់ទំនង</h4>
+          <ul class="footer-links">
+            <li class="footer-link">📞 099 77 5501</li>
+            <li class="footer-link">✈️ Telegram: @chhovorn_math</li>
+            <li class="footer-link">📧 chhorvornk@gmail.com</li>
+            <li class="footer-link">📍 វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE, ប្រទេសកម្ពុជា</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 អ្នកគ្រូ ឆេង ឆវ័ន្ត (Teacher Chheng Chhovorn). រក្សាសិទ្ធិគ្រប់យ៉ាង។
+        </div>
+        <div style="font-size: 0.8rem;">
+          Designed with ❤️ for Cambodian Math Students
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       12. MODALS & OVERLAYS
+       ============================================================ -->
+  <!-- Enrollment Quick Modal -->
+  <div class="modal-overlay" id="enroll-modal">
+    <div class="modal-container glass-card">
+      <button class="modal-close-btn" id="close-enroll-modal" aria-label="បិទ">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;">
+        <span style="font-size: 1.5rem;">📝</span>
+        <h3 class="modal-title" style="margin-bottom: 0;">ចុះឈ្មោះចូលរៀនរហ័ស</h3>
+      </div>
+      <p class="modal-subtitle">សូមបំពេញព័ត៌មានខាងក្រោមដើម្បីកក់កៅអីសិក្សាជាមួយអ្នកគ្រូ ឆេង ឆវ័ន្ត</p>
+
+      <!-- Instant Quick Form -->
+      <form id="quick-enroll-form">
+        <div class="form-group">
+          <label class="form-label" for="quick-name">គោត្តនាម និងនាម (ឈ្មោះសិស្ស) *</label>
+          <input type="text" id="quick-name" class="form-control" placeholder="ឧ. កែវ សម្បត្តិ" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="quick-phone">លេខទូរស័ព្ទ / Telegram *</label>
+          <input type="tel" id="quick-phone" class="form-control" placeholder="099 77 5501" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="quick-course-select">វគ្គសិក្សាដែលចង់រៀន *</label>
+          <select id="quick-course-select" class="form-control" required>
+            <!-- Populated dynamically -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="quick-grade">កម្រិតថ្នាក់បច្ចុប្បន្ន</label>
+          <select id="quick-grade" class="form-control">
+            <option value="12">ថ្នាក់ទី ១២ (ត្រៀមបាក់ឌុប)</option>
+            <option value="11">ថ្នាក់ទី ១១</option>
+            <option value="10">ថ្នាក់ទី ១០</option>
+            <option value="olympiad">បំប៉នសិស្សពូកែជាតិ</option>
+            <option value="university">ឧត្តមសិក្សា / អាហារូបករណ៍</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">
+          <span>បញ្ជាក់ការចុះឈ្មោះភ្លាមៗ</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+
+        <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+          🔒 ព័ត៌មានរបស់អ្នកត្រូវបានរក្សាការសម្ងាត់ ១០០%
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal-container glass-card" style="text-align: center;">
+      <div class="success-badge-icon">🎉</div>
+      <h3 class="modal-title" style="color: var(--accent-emerald);">ការចុះឈ្មោះបានជោគជ័យ!</h3>
+      <p class="modal-subtitle">សូមអរគុណប្អូនដែលបានទុកចិត្តលើអ្នកគ្រូ ឆេង ឆវ័ន្ត</p>
+
+      <div class="success-details" style="text-align: left;">
+        <p>👤 ឈ្មោះសិស្ស៖ <strong id="success-student-name">-</strong></p>
+        <p>📚 វគ្គសិក្សា៖ <strong id="success-course-name">-</strong></p>
+        <p>📱 លេខទូរស័ព្ទ៖ <strong id="success-phone">-</strong></p>
+        <p style="color: var(--accent-cyan); margin-top: 0.8rem; font-size: 0.85rem;">
+          ℹ️ ក្រុមការងារអ្នកគ្រូនឹងទាក់ទងមកតាមលេខទូរស័ព្ទ ឬ Telegram ក្នុងរយៈពេល ២៤ ម៉ោង ដើម្បីបញ្ជាក់ម៉ោងរៀន និងផ្ញើតំណភ្ជាប់បន្ទប់សិក្សា!
+        </p>
+      </div>
+
+      <button class="btn btn-primary" id="close-success-modal" style="width: 100%;">
+        <span>យល់ព្រម & ត្រឡប់មកវិញ</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Back To Top Floating Button -->
+  <button class="back-to-top" id="back-to-top-btn" title="ឡើងលើវិញ">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript Modules -->
+  <script src="js/courses-data.js"></script>
+  <script src="js/math-canvas.js"></script>
+  <script src="js/math-tools.js"></script>
+  <script src="js/curve-animator.js"></script>
+  <script src="js/trig-studio.js"></script>
+  <script src="js/derivative-studio.js"></script>
+  <script src="js/arithmetic-studio.js"></script>
+  <script src="js/geometric-studio.js"></script>
+  <script src="js/html2pdf.bundle.min.js"></script>
+  <script src="js/lesson-plan-modal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

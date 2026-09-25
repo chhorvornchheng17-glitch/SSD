@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ល្បែងអនុគមន៍អិចស្ប៉ូណង់ស្យែល ថ្នាក់ទី១១ | Exponential Odyssey - អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
+  <meta name="description" content="ល្បែងសិក្សាអន្តរកម្មអនុគមន៍អិចស្ប៉ូណង់ស្យែលថ្នាក់ទី១១ Exponential Odyssey ស្របតាមសៀវភៅគោលក្រសួងអប់រំ យុវជន និងកីឡា (ភាគ១)។ ហោះហើរលើខ្សែកោង y=a^x បាញ់កម្ទេចសមីការ និងមន្ទីរពិសោធន៍បាក់តេរី!">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/academic.css">
+  <link rel="stylesheet" href="css/game.css">
+
+  <!-- KaTeX for High Quality Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    /* Specific styling for Exponential Odyssey Game */
+    .exp-canvas-container {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      background: radial-gradient(circle at 50% 50%, #0d1933 0%, #060a14 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: inset 0 0 40px rgba(6, 182, 212, 0.15);
+    }
+    .exp-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: crosshair;
+    }
+    .exp-controls-panel {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.4rem;
+      margin-top: 1rem;
+    }
+    .base-picker-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .base-btn {
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      background: rgba(6, 182, 212, 0.1);
+      color: #38bdf8;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .base-btn:hover, .base-btn.active {
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+      color: #ffffff;
+      border-color: #38bdf8;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+      transform: translateY(-2px);
+    }
+    .exp-info-card {
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px dashed rgba(6, 182, 212, 0.35);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .laser-turret-bar {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 0.85rem;
+    }
+    .turret-btn {
+      padding: 0.6rem 1.25rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      color: #fbbf24;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .turret-btn:hover {
+      background: #f59e0b;
+      color: #0f172a;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+      transform: scale(1.05);
+    }
+    .lab-stage-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      .lab-stage-box {
+        grid-template-columns: 1fr;
+      }
+    }
+    .lab-colony-display {
+      background: radial-gradient(circle at center, #1e293b 0%, #090e1c 100%);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: var(--radius-md);
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. MAIN NAVBAR (5 Main Menus Architecture)
+       ============================================================ -->
+  <header class="navbar scrolled" id="main-navbar">
+    <div class="container nav-container">
+      <div class="nav-brand-container">
+        <a href="index.html" class="nav-brand" title="Hover ដើម្បីមើលព័ត៌មានទំនាក់ទំនង">
+          <div class="brand-icon">f(x)</div>
+          <div class="brand-text">
+            <span class="brand-name">
+              ឆេង ឆវ័ន្ត
+              <span class="brand-contact-indicator" title="Hover ដើម្បីមើលលេខទូរស័ព្ទ & អ៊ីមែល">
+                <span class="indicator-pulse"></span>
+                <span>ទំនាក់ទំនង</span>
+              </span>
+            </span>
+            <span class="brand-sub">MATH SPECIALIST</span>
+          </div>
+        </a>
+
+        <!-- Popover Hover Card for Teacher Contact Info -->
+        <div class="teacher-hover-card" role="tooltip" aria-label="ព័ត៌មានទំនាក់ទំនងអ្នកគ្រូ ឆេង ឆវ័ន្ត">
+          <div class="hover-card-header">
+            <div class="hover-avatar-box">
+              <img src="assets/images/teacher-chhovorn.png" alt="អ្នកគ្រូ ឆេង ឆវ័ន្ត" class="hover-avatar-img" onerror="this.onerror=null; this.src='assets/images/teacher-chhovorn.jpg';">
+              <span class="hover-status-dot" title="កំពុងបម្រើការងារ & អាចទាក់ទងបាន"></span>
+            </div>
+            <div class="hover-header-text">
+              <div class="hover-name">
+                អ្នកគ្រូ ឆេង ឆវ័ន្ត
+                <span class="hover-verified" title="គ្រូបង្រៀនគណិតវិទ្យាផ្លូវការ">✓</span>
+              </div>
+              <div class="hover-title">Teacher Chheng Chhovorn</div>
+              <div class="hover-tag">គ្រូបង្រៀនគណិតវិទ្យាឯកទេស (NIE & RUPP)</div>
+            </div>
+          </div>
+
+          <div class="hover-card-divider"></div>
+
+          <div class="hover-contact-list">
+            <!-- Phone Number Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">លេខទូរស័ព្ទទំនាក់ទំនង (Phone)</div>
+                <a href="tel:099775501" class="hover-contact-val hover-contact-link">099 77 5501</a>
+              </div>
+              <button type="button" class="hover-copy-btn" onclick="copyContactText(event, '099775501', this)" title="ចម្លងលេខទូរស័ព្ទ">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>ចម្លង</span>
+              </button>
+            </div>
+
+            <!-- Email Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">អ៊ីមែលផ្លូវការ (Email)</div>
+                <a href="mailto:chhorvornk@gmail.com" class="hover-contact-val hover-contact-link">chhorvornk@gmail.com</a>
+              </div>
+              <button type="button" class="hover-copy-btn" onclick="copyContactText(event, 'chhorvornk@gmail.com', this)" title="ចម្លងអ៊ីមែល">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>ចម្លង</span>
+              </button>
+            </div>
+
+            <!-- Telegram Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">Telegram ផ្លូវការ</div>
+                <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-contact-val hover-contact-link">@chhovorn_math</a>
+              </div>
+              <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-copy-btn" title="បើក Telegram">
+                <span>ឆាត</span>
+              </a>
+            </div>
+
+            <!-- Teaching Location Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-location">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">ទីតាំងបង្រៀន (Workplace)</div>
+                <div class="hover-contact-val" style="font-size: 0.78rem; font-weight: 500;">វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hover-card-footer">
+            <a href="tel:099775501" class="hover-action-btn btn-call">
+              <span>📞 Call ផ្ទាល់</span>
+            </a>
+            <a href="mailto:chhorvornk@gmail.com" class="hover-action-btn btn-email">
+              <span>✉️ ផ្ញើ Email</span>
+            </a>
+            <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-action-btn btn-telegram">
+              <span>✈️ Telegram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <!-- 1. ទំព័រដើម -->
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span>ទំព័រដើម</span>
+            </a>
+          </li>
+
+          <!-- 2. ឯកសារបង្រៀន (Teaching Hub) -->
+          <li class="nav-item nav-item-has-dropdown" data-nav-group="teaching">
+            <a href="lessons.html" class="nav-link nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
+              <span>ឯកសារបង្រៀន</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <div class="dropdown-menu-header">ការគ្រប់គ្រងការបង្រៀន</div>
+              <a href="lessons.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">មេរៀនលម្អិត</div>
+                  <div class="dropdown-item-desc">ជំពូកពេញលេញស្របតាមសៀវភៅគោលក្រសួង</div>
+                </div>
+              </a>
+              <!-- Sub-menu Grade Categories Grid -->
+              <div class="dropdown-grade-chips">
+                <a href="lessons.html?grade=grade11" class="dropdown-grade-chip" title="សៀវភៅគណិតថ្នាក់ទី១១ ភាគ១">
+                  <span class="chip-icon">📐</span>
+                  <span class="chip-text">ថ្នាក់ទី ១១ <small>(សៀវភៅគោល ភាគ១)</small></span>
+                  <span class="chip-badge">ថ្មី</span>
+                </a>
+                <a href="lessons.html?grade=grade12" class="dropdown-grade-chip" title="ថ្នាក់ទី ១២ ត្រៀមបាក់ឌុប">
+                  <span class="chip-icon">🎓</span>
+                  <span class="chip-text">ថ្នាក់ទី ១២ <small>(បាក់ឌុប)</small></span>
+                </a>
+                <a href="lessons.html?grade=grade10" class="dropdown-grade-chip" title="ថ្នាក់ទី ១០ ស្ពានចម្លង">
+                  <span class="chip-icon">🌱</span>
+                  <span class="chip-text">ថ្នាក់ទី ១០ <small>(ស្ពានចម្លង)</small></span>
+                </a>
+                <a href="game-grade9.html" class="dropdown-grade-chip" title="ថ្នាក់ទី ៩ Math Hero">
+                  <span class="chip-icon">⚔️</span>
+                  <span class="chip-text">ថ្នាក់ទី ៩ <small>(Math Hero)</small></span>
+                </a>
+              </div>
+              <a href="lesson-plan-exponential-ibl.html" class="dropdown-item" onclick="openLessonPlanModal(event)">
+                <div class="dropdown-item-icon" style="color: #10b981;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title" style="color: #34d399;">កិច្ចតែងការបង្រៀន (IBL) <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #34d399; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-left: 4px;">ថ្មី</span></div>
+                  <div class="dropdown-item-desc">កិច្ចតែងការគំរូ 5E Model (Print / Save as PDF)</div>
+                </div>
+              </a>
+              <a href="slides.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ស្លាយបង្រៀន</div>
+                  <div class="dropdown-item-desc">ស្លាយបង្ហាញមេរៀនអន្តរកម្ម</div>
+                </div>
+              </a>
+              <a href="exercises.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">កម្រងលំហាត់</div>
+                  <div class="dropdown-item-desc">លំហាត់អនុវត្តតាមកម្រិតថ្នាក់</div>
+                </div>
+              </a>
+              <a href="exams.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វិញ្ញាសាប្រឡង</div>
+                  <div class="dropdown-item-desc">វិញ្ញាសាបាក់ឌុប & តេស្តសមត្ថភាព</div>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- 3. អំពីអ្នកគ្រូ -->
+          <li class="nav-item nav-item-has-dropdown" data-nav-group="about">
+            <a href="index.html#about" class="nav-link nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
+              <span>អំពីអ្នកគ្រូ</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <div class="dropdown-menu-header">ប្រវត្តិ & សមិទ្ធផល</div>
+              <a href="index.html#about" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ជីវប្រវត្តិសង្ខេប</div>
+                  <div class="dropdown-item-desc">បទពិសោធន៍ & ការបណ្តុះបណ្តាល</div>
+                </div>
+              </a>
+              <a href="index.html#testimonials" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">មតិកោតសរសើរពីសិស្ស</div>
+                  <div class="dropdown-item-desc">សិស្សនិទ្ទេស A & ជ័យលាភី</div>
+                </div>
+              </a>
+              <a href="index.html#courses" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">វគ្គសិក្សាទាំងអស់</div>
+                  <div class="dropdown-item-desc">ថ្នាក់ពិសេស & បំប៉នសិស្សពូកែ</div>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- 4. ឧបករណ៍ & វីដេអូ (Active Menu) -->
+          <li class="nav-item nav-item-has-dropdown active" data-nav-group="tools">
+            <a href="game-exponential.html" class="nav-link nav-dropdown-toggle active" role="button" aria-haspopup="true" aria-expanded="false">
+              <span>ឧបករណ៍ & វីដេអូ</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <div class="dropdown-menu-header">ស្ទូឌីយោ & ល្បែងគណិតវិទ្យា</div>
+              <a href="game-exponential.html" class="dropdown-item active-sub">
+                <div class="dropdown-item-icon">
+                  <span style="font-size: 1.15rem;">🚀</span>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ល្បែងអនុគមន៍អិចស្ប៉ូណង់ស្យែល</div>
+                  <div class="dropdown-item-desc">Exponential Odyssey (ថ្នាក់ទី១១ ភាគ១)</div>
+                </div>
+              </a>
+              <a href="game-grade11.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <span style="font-size: 1.15rem;">🎮</span>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ល្បែងគណិតវិទ្យាថ្នាក់ទី១១</div>
+                  <div class="dropdown-item-desc">Math Quest 11 & សំឡេង FX</div>
+                </div>
+              </a>
+              <a href="game-activities.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <span style="font-size: 1.15rem;">🎲</span>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">សង្វៀនល្បែងសិក្សាទាំង ៦</div>
+                  <div class="dropdown-item-desc">Kahoot, Bingo, Dice, Escape, Match, Monty Hall</div>
+                </div>
+              </a>
+              <a href="game-grade9.html" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <span style="font-size: 1.15rem;">⚔️</span>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ល្បែងគណិតវិទ្យាថ្នាក់ទី ៩</div>
+                  <div class="dropdown-item-desc">Math Hero 9 & និនចាកាប់រ៉ាឌីកាល់</div>
+                </div>
+              </a>
+              <a href="index.html#playground" class="dropdown-item">
+                <div class="dropdown-item-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path><line x1="8.5" y1="2" x2="15.5" y2="2"></line></svg>
+                </div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">បន្ទប់ពិសោធន៍ក្រាហ្វិក</div>
+                  <div class="dropdown-item-desc">គូសអនុគមន៍ 2D អន្តរកម្ម</div>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- 5. ទំនាក់ទំនង -->
+          <li class="nav-item">
+            <a href="index.html#contact" class="nav-link">
+              <span>ទំនាក់ទំនង</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="lessons.html?grade=grade11" class="btn btn-primary btn-sm">
+          <span>📖 មេរៀនទី១១ ភាគ១</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="បើក Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-text">
+        <span class="brand-name">ឆេង ឆវ័ន្ត</span>
+        <span class="brand-sub">MATH SPECIALIST</span>
+      </div>
+      <button class="mobile-close-btn" id="mobile-drawer-close" aria-label="បិទ Menu">&times;</button>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">
+        <span class="mobile-link-icon">🏠</span>
+        <span>ទំព័រដើម</span>
+      </a>
+
+      <!-- Submenu: Teaching Hub -->
+      <div class="mobile-accordion-group">
+        <button class="mobile-accordion-toggle">
+          <div class="toggle-label">
+            <span class="mobile-link-icon">📖</span>
+            <span>ឯកសារបង្រៀន</span>
+          </div>
+          <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="lessons.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div><div class="sub-title">មេរៀនលម្អិត</div><div class="sub-desc">ជំពូកពេញលេញស្របតាមសៀវភៅគោល</div></div>
+          </a>
+          <!-- Mobile Grade Chips -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; padding: 0.25rem 0.5rem 0.55rem 1.6rem;">
+            <a href="lessons.html?grade=grade11" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.4); border-radius: 6px; color: #38bdf8; text-decoration: none; font-weight: 700;">📐 ថ្នាក់ទី ១១ (ភាគ១)</a>
+            <a href="lessons.html?grade=grade12" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-secondary); text-decoration: none;">🎓 ថ្នាក់ទី ១២</a>
+            <a href="lessons.html?grade=grade10" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-secondary); text-decoration: none;">🌱 ថ្នាក់ទី ១០</a>
+            <a href="game-grade9.html" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); border-radius: 6px; color: #f59e0b; text-decoration: none;">⚔️ ថ្នាក់ទី ៩</a>
+          </div>
+          <a href="lesson-plan-exponential-ibl.html" class="mobile-sub-link" onclick="openLessonPlanModal(event)">
+            <span class="sub-dot" style="background: #10b981;"></span>
+            <div>
+              <div class="sub-title" style="color: #34d399;">កិច្ចតែងការបង្រៀន (IBL)</div>
+              <div class="sub-desc">កិច្ចតែងការគំរូ 5E Model (Print/PDF)</div>
+            </div>
+          </a>
+          <a href="slides.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div><div class="sub-title">ស្លាយបង្រៀន</div><div class="sub-desc">ស្លាយបង្ហាញអន្តរកម្ម</div></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Submenu: Tools & Videos -->
+      <div class="mobile-accordion-group open">
+        <button class="mobile-accordion-toggle">
+          <div class="toggle-label">
+            <span class="mobile-link-icon">🛠️</span>
+            <span>ឧបករណ៍ & វីដេអូ</span>
+          </div>
+          <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-accordion-content" style="max-height: 500px;">
+          <a href="game-exponential.html" class="mobile-sub-link active">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">🚀 ល្បែងអនុគមន៍អិចស្ប៉ូណង់ស្យែល</div>
+              <div class="sub-desc">Exponential Odyssey (ថ្នាក់ទី១១ ភាគ១)</div>
+            </div>
+          </a>
+          <a href="game-grade11.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">🎮 ល្បែងគណិតវិទ្យាថ្នាក់ទី ១១</div>
+              <div class="sub-desc">Math Quest 11 & សំឡេង FX</div>
+            </div>
+          </a>
+          <a href="game-grade9.html" class="mobile-sub-link">
+            <span class="sub-dot"></span>
+            <div>
+              <div class="sub-title">⚔️ ល្បែងគណិតវិទ្យាថ្នាក់ទី ៩</div>
+              <div class="sub-desc">Math Hero 9 & និនចាកាប់រ៉ាឌីកាល់</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2. EXPONENTIAL ODYSSEY GAME ARENA
+       ============================================================ -->
+  <main class="game-section">
+    <div class="game-bg-grid"></div>
+
+    <div class="game-container">
+      <!-- Breadcrumb Header -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; font-size: 0.85rem; color: var(--text-secondary); flex-wrap: wrap; gap: 0.6rem;">
+        <div>
+          <a href="index.html" style="color: inherit; text-decoration: none;">ទំព័រដើម</a>
+          <span style="margin: 0 0.4rem;">/</span>
+          <a href="lessons.html?grade=grade11" style="color: inherit; text-decoration: none;">ថ្នាក់ទី ១១ ភាគ១</a>
+          <span style="margin: 0 0.4rem;">/</span>
+          <span style="color: #38bdf8; font-weight: 600;">ល្បែងអនុគមន៍អិចស្ប៉ូណង់ស្យែល</span>
+        </div>
+        <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+          <a href="lesson-plan-exponential-ibl.html" style="color: #34d399; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 700; background: rgba(16, 185, 129, 0.12); padding: 0.3rem 0.75rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.35);">
+            <span>📝 កិច្ចតែងការបង្រៀន (IBL)</span>
+          </a>
+          <a href="lessons.html?grade=grade11&ch=g11-ch2" style="color: #38bdf8; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600;">
+            <span>📖 មេរៀនសៀវភៅគោល</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Game Header -->
+      <div class="game-header">
+        <div class="game-badge">
+          <span>🚀 កម្មវិធីសិក្សាគណិតវិទ្យាថ្នាក់ទី ១១ ភាគ១ (ទំព័រ ៥៧ – ៨៨)</span>
+        </div>
+        <h1 class="game-title">
+          EXPONENTIAL <span class="gold-accent">ODYSSEY</span>
+        </h1>
+        <p class="game-subtitle">
+          ដំណើរផ្សងព្រេងក្នុងលំហអាកាសនៃអនុគមន៍អិចស្ប៉ូណង់ស្យែល $y = a^x$! សិក្សាស្វែងយល់ពីកំណើនអិចស្ប៉ូណង់ស្យែល ($a > 1$) ថយចុះ ($0 < a < 1$) អាស៊ីមតូត $y = 0$ បាញ់កម្ទេចសមីការ និងការអនុវត្តលើបាក់តេរី & វិទ្យុសកម្ម។
+        </p>
+      </div>
+
+      <!-- Interactive Top Game HUD Bar -->
+      <div class="game-hud-bar">
+        <!-- Profile / Level -->
+        <div class="hud-player-profile">
+          <div class="hud-avatar">👨‍🚀</div>
+          <div class="hud-player-info">
+            <div class="hud-player-name">
+              <span>បញ្ញវន្តអិចស្ប៉ូណង់ស្យែល</span>
+              <span class="hud-rank-tag" id="hud-rank-tag">កម្រិត ១</span>
+            </div>
+            <div class="hud-rank-title" id="hud-rank-title">Exp Explorer</div>
+            <div class="hud-xp-bar-wrapper">
+              <div class="hud-xp-fill" id="hud-xp-fill" style="width: 20%;"></div>
+            </div>
+            <div class="hud-xp-text" id="hud-xp-text">0 XP / 500 XP</div>
+          </div>
+        </div>
+
+        <!-- Center Match Stats -->
+        <div class="hud-stats-group">
+          <!-- Score -->
+          <div class="hud-stat-pill">
+            <span class="hud-stat-label">ពិន្ទុ</span>
+            <span class="hud-stat-val score" id="hud-score-val">0</span>
+          </div>
+
+          <!-- High Score -->
+          <div class="hud-stat-pill">
+            <span class="hud-stat-label">ឯកទគ្គកម្ម</span>
+            <span class="hud-stat-val" id="hud-highscore-val">0</span>
+          </div>
+
+          <!-- Combo Badge -->
+          <div class="hud-combo-badge hidden" id="hud-combo-badge">
+            <span>🔥</span>
+            <span id="hud-combo-count">2x</span>
+            <span>COMBO</span>
+          </div>
+
+          <!-- Health / Lives -->
+          <div class="hud-hearts-display" id="hud-hearts-container">
+            ❤️❤️❤️
+          </div>
+        </div>
+
+        <!-- Controls: Sound & Fullscreen -->
+        <div class="hud-controls-group">
+          <button class="hud-icon-btn" id="hud-sound-btn" title="បិទ/បើក សំឡេង Effects">
+            <span id="hud-sound-icon">🔊</span>
+          </button>
+          <button class="hud-icon-btn" id="hud-fullscreen-btn" title="ពង្រីកពេញអេក្រង់">
+            <span>⛶</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Game Mode Navigation Tabs -->
+      <div class="game-mode-tabs">
+        <button class="game-tab-btn active" data-exp-tab="pilot">
+          <span>🚀</span>
+          <span>យានអវកាសកាត់ខ្សែកោង (Curve Pilot)</span>
+        </button>
+        <button class="game-tab-btn" data-exp-tab="blaster">
+          <span>☄️</span>
+          <span>បាញ់សមីការអិចស្ប៉ូណង់ស្យែល (Blaster)</span>
+        </button>
+        <button class="game-tab-btn" data-exp-tab="lab">
+          <span>🧫</span>
+          <span>មន្ទីរពិសោធន៍បាក់តេរី & វិទ្យុសកម្ម</span>
+        </button>
+        <button class="game-tab-btn" data-exp-tab="quiz">
+          <span>🎯</span>
+          <span>សង្វៀនសំណួរប្រឡងសិស្សពូកែ (Quiz Arena)</span>
+        </button>
+      </div>
+
+      <!-- ============================================================
+           TAB 1: EXPONENTIAL CURVE PILOT (CANVAS GAME)
+           ============================================================ -->
+      <div class="exp-game-view" id="view-pilot">
+        <div class="mini-game-instruction">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="color: #38bdf8; font-size: 1.25rem; font-weight: 700; margin: 0;">
+              🚀 បេសកកម្ម៖ បើកបរយានអវកាសប្រមូលគ្រីស្តាល់តាមខ្សែកោង $y = a^x$
+            </h3>
+            <span id="pilot-mission-badge" style="background: rgba(6,182,212,0.15); border: 1px solid #06b6d4; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.82rem; color: #38bdf8; font-weight: 700;">
+              បេសកកម្ម ១/៥
+            </span>
+          </div>
+          <div id="pilot-mission-desc" style="font-size: 0.95rem; color: #e2e8f0; margin-top: 0.4rem;">
+            ជ្រើសរើសគោល $a$ នៃអនុគមន៍ $y = a^x$ ឱ្យសមស្រប ដើម្បីបាញ់យានអវកាសឱ្យហោះកាត់ចំណុចគោលដៅប្រមូលថាមពលគ្រីស្តាល់!
+          </div>
+        </div>
+
+        <div class="exp-canvas-container">
+          <canvas id="pilot-canvas" class="exp-canvas"></canvas>
+        </div>
+
+        <!-- Controls Toolbar -->
+        <div class="exp-controls-panel">
+          <div class="base-picker-group">
+            <span style="font-size: 0.9rem; font-weight: 700; color: #94a3b8;">ជ្រើសរើសគោល $a$៖</span>
+            <button class="base-btn active" data-base="2">$a = 2$ (កំណើន)</button>
+            <button class="base-btn" data-base="3">$a = 3$ (កើនលឿន)</button>
+            <button class="base-btn" data-base="4">$a = 4$</button>
+            <button class="base-btn" data-base="0.5">$a = 1/2$ (ថយចុះ)</button>
+            <button class="base-btn" data-base="0.33">$a = 1/3$</button>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <button class="btn btn-primary" id="btn-launch-rocket" style="padding: 0.55rem 1.4rem; font-weight: 700; font-size: 0.95rem;">
+              <span>🚀 បាញ់បង្ហោះយាន (Launch)</span>
+            </button>
+            <button class="btn btn-secondary" id="btn-reset-pilot" style="padding: 0.55rem 1rem;">
+              <span>🔄 ប្តូរបេសកកម្ម</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Educational Concept Note Card -->
+        <div class="exp-info-card">
+          <div>
+            <strong>💡 ចំណេះដឹងគន្លឹះពីសៀវភៅគោល៖</strong>
+            <span id="pilot-theory-text">
+              គ្រប់ខ្សែកោង $y = a^x$ កាត់ចំណុច $(0, 1)$ ជានិច្ច ពីព្រោះ $a^0 = 1$។ បើ $a > 1$ អនុគមន៍កើនដាច់ខាត។ បើ $0 < a < 1$ អនុគមន៍ចុះដាច់ខាត។ បន្ទាត់អាស៊ីមតូតដេកគឺអ័ក្ស $x$ ($y = 0$)។
+            </span>
+          </div>
+          <span style="font-size: 1.5rem; flex-shrink: 0;">🌌</span>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           TAB 2: EQUATION LASER BLASTER (ARCADE DEFENSE)
+           ============================================================ -->
+      <div class="exp-game-view hidden" id="view-blaster">
+        <div class="mini-game-instruction">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="color: #fbbf24; font-size: 1.25rem; font-weight: 700; margin: 0;">
+              ☄️ ការពារស្ថានីយអវកាស៖ បាញ់កម្ទេចអាចម៍ផ្កាយសមីការអិចស្ប៉ូណង់ស្យែល!
+            </h3>
+            <div style="display: flex; gap: 1rem; font-size: 0.9rem; color: #fbbf24; font-weight: 700;">
+              <span>រលកទី៖ <strong id="blaster-wave-num">១</strong></span>
+              <span>កម្ទេចបាន៖ <strong id="blaster-destroyed-num">០</strong></span>
+            </div>
+          </div>
+          <div style="font-size: 0.95rem; color: #e2e8f0; margin-top: 0.4rem;">
+            ដោះស្រាយតម្លៃ $x$ នៃសមីការលើអាចម៍ផ្កាយដែលកំពុងធ្លាក់ចុះ រួចចុចបាញ់កាំជ្រួញឡាស៊ែរដែលត្រូវគ្នាដើម្បីបំផ្ទុះមុនពេលវាប៉ះរបាំងការពារ!
+          </div>
+        </div>
+
+        <div class="exp-canvas-container" style="height: 420px;">
+          <canvas id="blaster-canvas" class="exp-canvas"></canvas>
+        </div>
+
+        <!-- Laser Turret Control Buttons -->
+        <div class="exp-controls-panel" style="justify-content: center; flex-direction: column; align-items: center;">
+          <div style="font-size: 0.9rem; color: #94a3b8; font-weight: 600;">
+            ⚡ ចុចលើលេខចម្លើយ $x$ ខាងក្រោម ដើម្បីបាញ់កាំភ្លើងឡាស៊ែរ៖
+          </div>
+          <div class="laser-turret-bar" id="laser-turret-bar">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           TAB 3: BACTERIA GROWTH & RADIOACTIVE DECAY LAB
+           ============================================================ -->
+      <div class="exp-game-view hidden" id="view-lab">
+        <div class="mini-game-instruction">
+          <h3 style="color: #10b981; font-size: 1.25rem; font-weight: 700; margin: 0;">
+            🧫 មន្ទីរពិសោធន៍អនុវត្តជាក់ស្តែង៖ កំណើនបាក់តេរី & ការបំបែកវិទ្យុសកម្ម
+          </h3>
+          <div style="font-size: 0.95rem; color: #cbd5e1; margin-top: 0.35rem;">
+            អនុវត្តរូបមន្តកំណើន $N(t) = N_0 \cdot 2^{t/T}$ និងថយចុះ $N(t) = N_0 \left(\frac{1}{2}\right)^{t/T_{1/2}}$ ក្នុងជីវភាពរស់នៅជាក់ស្តែងស្របតាមសៀវភៅគោល។
+          </div>
+        </div>
+
+        <div class="lab-stage-box">
+          <!-- Left: Simulation Canvas Box -->
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem;">
+              <span id="lab-scenario-title" style="font-weight: 700; color: #38bdf8;">🔬 អាណានិគមបាក់តេរី (Bacteria Doubling)</span>
+              <span id="lab-timer-display" style="font-size: 0.85rem; color: #fbbf24; font-weight: 700;">⏱️ ពេលវេលា: t = 0 នាទី</span>
+            </div>
+            <div class="lab-colony-display">
+              <canvas id="lab-canvas" style="width: 100%; height: 100%;"></canvas>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Puzzle Card -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-md); padding: 1.1rem; margin-bottom: 1rem;">
+                <div style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.35rem;">បញ្ហាពិសោធន៍ទី <span id="lab-level-num">១</span>៖</div>
+                <div id="lab-question-text" style="font-size: 1rem; color: #f8fafc; font-weight: 600; line-height: 1.55;">
+                  បាក់តេរីមួយប្រភេទកើនឡើងទ្វេដងរៀងរាល់ ២០ នាទីម្តង ($N(t) = N_0 \cdot 2^{t/20}$)។ បើដំបូងមានបាក់តេរី $N_0 = 100$ កោសិកា តើក្រោយពេល ១ ម៉ោង (៦០ នាទី) នឹងមានបាក់តេរីចំនួនប៉ុន្មាន?
+                </div>
+                <div id="lab-formula-display" style="margin-top: 0.75rem; color: #38bdf8; font-size: 1.1rem; text-align: center;">
+                  $$N(60) = 100 \cdot 2^{60/20} = 100 \cdot 2^3 = ?$$
+                </div>
+              </div>
+
+              <div id="lab-choices-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <!-- Pedagogical Breakdown -->
+            <div id="lab-solution-box" style="margin-top: 1rem; padding: 0.85rem 1rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-sm); font-size: 0.88rem; color: #a7f3d0; display: none;">
+              <!-- Solution details -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           TAB 4: EXPONENTIAL GRAND QUIZ ARENA
+           ============================================================ -->
+      <div class="exp-game-view hidden" id="view-quiz">
+        <div class="game-play-card" id="game-quiz-card">
+          <!-- Countdown Timer Bar -->
+          <div class="game-timer-wrapper">
+            <div class="game-timer-fill" id="game-timer-fill"></div>
+          </div>
+
+          <!-- Question Top Bar -->
+          <div class="question-top-bar">
+            <div class="question-realm-tag">
+              <span>📈</span>
+              <span>ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល</span>
+            </div>
+            <div class="question-counter-tag" id="question-counter-tag">
+              សំណួរ ១ / ២០
+            </div>
+
+            <!-- Lifelines Toolbar -->
+            <div class="lifelines-bar">
+              <button class="lifeline-btn" id="lifeline-fifty" title="កាត់ចម្លើយខុស ២ ចេញ">
+                <span>💡</span>
+                <span>50:50</span>
+              </button>
+              <button class="lifeline-btn" id="lifeline-freeze" title="ថែមពេលវេលា +១៥ វិនាទី">
+                <span>⏱️</span>
+                <span>+15s</span>
+              </button>
+              <button class="lifeline-btn" id="lifeline-hint" title="មើលគន្លឹះរូបមន្តសម្ងាត់">
+                <span>📜</span>
+                <span>គន្លឹះ</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question Body Area -->
+          <div class="question-body-box">
+            <h2 class="question-text-kh" id="question-text-kh">
+              កំពុងទាញយកសំណួរ...
+            </h2>
+            <div class="question-math-display" id="question-math-display">
+              $f(x) = a^x$
+            </div>
+          </div>
+
+          <!-- Multiple Choice Options (4 Buttons Grid) -->
+          <div class="options-grid" id="options-grid">
+            <!-- Populated dynamically by game-exponential.js -->
+          </div>
+
+          <!-- Solution & Pedagogical Breakdown -->
+          <div class="solution-panel" id="solution-panel">
+            <div class="solution-header">
+              <div class="solution-title">
+                <span>💡</span>
+                <span>ដំណោះស្រាយ & វិធីសាស្ត្រគន្លឹះ (Step-by-Step Breakdown)</span>
+              </div>
+            </div>
+            <div class="solution-steps" id="solution-steps-text">
+              <!-- Populated dynamically -->
+            </div>
+            <div class="next-action-bar">
+              <button class="btn-next-question" id="btn-next-question">
+                <span>សំណួរទៅមុខទៀត</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           ACHIEVEMENTS & BADGES SHOWCASE
+           ============================================================ -->
+      <div style="margin-top: 3.5rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1.25rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+            <span>🏆</span>
+            <span>សមិទ្ធផល & ពានរង្វាន់អិចស្ប៉ូណង់ស្យែល (Achievements)</span>
+          </h3>
+          <span style="font-size: 0.85rem; color: #38bdf8;" id="badges-unlocked-count">បានដោះសោ ០ / ៦</span>
+        </div>
+
+        <div class="achievements-grid" id="achievements-grid">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       3. VICTORY & SUMMARY MODAL
+       ============================================================ -->
+  <div class="modal-overlay" id="victory-modal">
+    <div class="game-modal-card">
+      <canvas id="confetti-canvas" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
+      <div class="modal-trophy-icon" id="modal-trophy-icon">🏆</div>
+      <h3 class="modal-heading" id="modal-heading">🎉 ជ័យជម្នះដ៏អស្ចារ្យ!</h3>
+      <p style="font-size: 0.95rem; color: #cbd5e1; margin-bottom: 1.25rem;">
+        អ្នកបានបញ្ចប់បេសកកម្មអិចស្ប៉ូណង់ស្យែលដោយជោគជ័យ!
+      </p>
+
+      <div class="modal-summary-grid">
+        <div class="modal-summary-item">
+          <div class="modal-summary-label">ពិន្ទុសរុប</div>
+          <div class="modal-summary-val" id="modal-score">0</div>
+        </div>
+        <div class="modal-summary-item">
+          <div class="modal-summary-label">ភាពត្រឹមត្រូវ</div>
+          <div class="modal-summary-val" id="modal-accuracy">100%</div>
+        </div>
+        <div class="modal-summary-item">
+          <div class="modal-summary-label">Combo ខ្ពស់បំផុត</div>
+          <div class="modal-summary-val" id="modal-streak">0x</div>
+        </div>
+        <div class="modal-summary-item">
+          <div class="modal-summary-label">ពិន្ទុពិសោធន៍ XP</div>
+          <div class="modal-summary-val" id="modal-xp">+250 XP</div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="btn-modal-close">
+          <span>បិទ</span>
+        </button>
+        <button class="btn btn-primary" id="btn-modal-replay">
+          <span>🔄 លេងម្តងទៀត</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="margin-top: 4rem;">
+    <div class="container footer-bottom">
+      <p>© 2026 អ្នកគ្រូ ឆេង ឆវ័ន្ត (Chheng Chhovorn) - វេទិកាគណិតវិទ្យាថ្នាក់ទី១០-១២</p>
+      <div class="footer-links">
+        <a href="lessons.html">មេរៀនលម្អិត</a>
+        <a href="lesson-plan-exponential-ibl.html" style="color: #34d399; font-weight: 600;">កិច្ចតែងការបង្រៀន (IBL)</a>
+        <a href="slides.html">ស្លាយបង្រៀន</a>
+        <a href="exercises.html">កម្រងលំហាត់</a>
+        <a href="exams.html">វិញ្ញាសាប្រឡង</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/game-exponential.js"></script>
+  <script src="js/lesson-plan-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>កិច្ចតែងការបង្រៀនបែបការរិះរក (IBL - 5E Model) | អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
+  
+  <!-- Google Fonts: Kantumruy Pro, Moul, & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Moul&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for High Quality Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- html2pdf.js for High Fidelity Client-Side PDF Export -->
+  <script src="js/html2pdf.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #10b981;
+      --accent-dark: #047857;
+      --accent-light: #ecfdf5;
+      --warning: #f59e0b;
+      --warning-light: #fef3c7;
+      --danger: #ef4444;
+      --danger-light: #fee2e2;
+      --purple: #8b5cf6;
+      --purple-light: #f3e8ff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --text-dark: #0f172a;
+      --border: #cbd5e1;
+      --border-light: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Kantumruy Pro', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+
+    .plan-container {
+      max-width: 1060px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 3rem 3.5rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    /* Print Controls Bar */
+    .controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px dashed var(--border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-preview {
+      background: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .btn-preview:hover {
+      background: #0369a1;
+      transform: translateY(-1px);
+    }
+
+    .btn-word {
+      background: #1e40af;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.25);
+    }
+    .btn-word:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .btn-pdf {
+      background: #dc2626;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+    }
+    .btn-pdf:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+    }
+
+    .btn-sm {
+      padding: 0.4rem 0.85rem;
+      font-size: 0.82rem;
+    }
+
+    /* Official Ministry Header */
+    .official-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .country-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .motto-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .header-divider {
+      width: 140px;
+      height: 2px;
+      background: var(--text-dark);
+      margin: 0.5rem auto 1.5rem;
+    }
+
+    /* School Metadata Vertical Card */
+    .metadata-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .meta-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .plan-main-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1rem 0 1.5rem;
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    .plan-main-title h1 {
+      font-family: 'Moul', cursive;
+      font-size: 1.45rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .plan-main-title .subtitle {
+      font-size: 1.02rem;
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    /* Section Styles */
+    .plan-section {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      border-left: 4px solid var(--primary);
+      padding-left: 0.85rem;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Tables: Standard Cambodian Vertical Columns */
+    .table-column-vertical {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.25rem;
+      font-size: 0.92rem;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .table-column-vertical th {
+      background: #f1f5f9;
+      color: var(--text-dark);
+      font-weight: 700;
+      text-align: center;
+      padding: 0.85rem 0.75rem;
+      border: 1px solid var(--border);
+      vertical-align: middle;
+      font-size: 0.92rem;
+    }
+
+    .table-column-vertical td {
+      border: 1px solid var(--border);
+      padding: 0.85rem 0.9rem;
+      vertical-align: top;
+      line-height: 1.65;
+    }
+
+    .table-column-vertical tbody tr:nth-child(even) {
+      background-color: #fafbfc;
+    }
+
+    .table-column-vertical tbody tr:hover {
+      background-color: #f0f7ff;
+    }
+
+    /* Master Teaching Process Table (5 Columns) */
+    .col-time {
+      width: 9%;
+      text-align: center;
+      font-weight: 700;
+      color: var(--primary-dark);
+      background: rgba(2, 132, 199, 0.03);
+    }
+    .col-stage {
+      width: 17%;
+      font-weight: 700;
+    }
+    .col-content {
+      width: 26%;
+      background: rgba(248, 250, 252, 0.6);
+    }
+    .col-teacher {
+      width: 24%;
+    }
+    .col-student {
+      width: 24%;
+    }
+
+    /* 5E Stage Badges */
+    .badge-stage {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .badge-engage { background: var(--primary-light); color: var(--primary-dark); border: 1px solid rgba(2, 132, 199, 0.3); }
+    .badge-explore { background: var(--warning-light); color: #92400e; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .badge-explain { background: var(--accent-light); color: var(--accent-dark); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-elaborate { background: var(--purple-light); color: #6b21a8; border: 1px solid rgba(139, 92, 246, 0.3); }
+    .badge-evaluate { background: var(--danger-light); color: #991b1b; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+    /* Mathematical Typography Styling (100% Pure Pre-rendered Semantic Math, Zero Raw Code) */
+    .math-clean {
+      font-family: 'Cambria Math', 'KaTeX_Math', 'Latin Modern Math', 'STIX Two Math', 'Outfit', serif;
+      font-weight: 600;
+      color: #0369a1;
+      display: inline-block;
+      padding: 0.05rem 0.35rem;
+      background: rgba(2, 132, 199, 0.06);
+      border: 1px solid rgba(2, 132, 199, 0.18);
+      border-radius: 5px;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+
+    .math-clean var, var.math-var {
+      font-style: italic;
+      font-family: 'Cambria Math', 'KaTeX_Math', 'Times New Roman', serif;
+      padding: 0 0.06em;
+    }
+
+    .math-display-card {
+      background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+      border: 1.5px solid #38bdf8;
+      border-radius: 10px;
+      padding: 0.85rem 1.25rem;
+      margin: 0.75rem 0;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0369a1;
+      font-family: 'Cambria Math', 'KaTeX_Math', 'Times New Roman', serif;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+    }
+
+    /* Stacked Fraction Typography */
+    .math-frac, .math-fraction {
+      display: inline-flex;
+      flex-direction: column;
+      vertical-align: -0.42em;
+      text-align: center;
+      font-size: 0.88em;
+      padding: 0 0.15em;
+      line-height: 1;
+    }
+    .math-frac .math-num, .math-fraction .num {
+      border-bottom: 1.2px solid currentColor;
+      padding: 0 2px 1px 2px;
+      display: block;
+    }
+    .math-frac .math-den, .math-fraction .den {
+      padding: 1px 2px 0 2px;
+      display: block;
+    }
+
+    /* Limit Expression Typography */
+    .math-lim {
+      display: inline-flex;
+      flex-direction: column;
+      vertical-align: -0.45em;
+      text-align: center;
+      line-height: 0.95;
+      font-size: 0.92em;
+      margin-right: 0.25em;
+    }
+    .math-lim .lim-op {
+      font-style: normal;
+      font-weight: 700;
+      font-family: 'Cambria Math', 'KaTeX_Math', serif;
+    }
+    .math-lim .lim-sub {
+      font-size: 0.65em;
+      color: #0284c7;
+      font-weight: 600;
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    .board-container .math-clean {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+    }
+
+    /* Realistic Classroom Blackboard Layout (3 Vertical Columns) */
+    .board-container {
+      background: #1e293b;
+      border: 8px solid #78350f; /* Wooden Chalkboard Frame */
+      border-radius: 10px;
+      padding: 1.25rem;
+      color: #f8fafc;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.2);
+      margin-top: 1rem;
+    }
+
+    .board-header {
+      text-align: center;
+      color: #fde047;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    }
+
+    .board-columns-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .board-column {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 1rem 0.9rem;
+      background: rgba(15, 23, 42, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .board-column-header {
+      font-weight: 700;
+      color: #38bdf8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .board-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.5rem 0;
+      font-size: 0.8rem;
+      color: #f8fafc;
+    }
+    .board-table td, .board-table th {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 3px 6px;
+      text-align: center;
+    }
+
+    /* Embedded Interactive Math Program / Simulator */
+    .math-app-container {
+      background: #ffffff;
+      border: 2px solid #0284c7;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 8px 30px rgba(2, 132, 199, 0.12);
+    }
+
+    .math-app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .math-app-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0369a1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .math-app-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .graph-canvas-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .graph-svg {
+      width: 100%;
+      height: 320px;
+      background: #ffffff;
+      border-radius: 6px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .math-controls-card {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .control-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .control-label {
+      font-weight: 700;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .slider-custom {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #cbd5e1;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .slider-custom::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #0284c7;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.4);
+    }
+
+    .preset-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip-btn {
+      padding: 0.3rem 0.65rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: #ffffff;
+      border: 1px solid #93c5fd;
+      border-radius: 6px;
+      color: #0369a1;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .chip-btn:hover, .chip-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+    }
+
+    .live-summary-pill {
+      background: #ffffff;
+      border: 1px solid #bae6fd;
+      border-radius: 6px;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      line-height: 1.6;
+    }
+
+    /* Student Worksheet Box */
+    .worksheet-box {
+      border: 2px dashed #0284c7;
+      background: #f0f9ff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    /* Toast Notification for Export Actions */
+    .export-toast {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 0.85rem 1.4rem;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      z-index: 100000;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      border-left: 4px solid #0284c7;
+    }
+    .export-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Print Preview Modal Overlay */
+    .preview-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .preview-toolbar {
+      background: #0f172a;
+      border-bottom: 1px solid #334155;
+      padding: 0.65rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      z-index: 10;
+      color: #f8fafc;
+    }
+
+    .preview-toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .preview-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #f8fafc;
+    }
+    .preview-badge {
+      background: #1e293b;
+      color: #38bdf8;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid #334155;
+    }
+
+    .preview-zoom-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #1e293b;
+      padding: 3px 6px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+    }
+    .zoom-btn {
+      background: transparent;
+      border: none;
+      color: #e2e8f0;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .zoom-btn:hover {
+      background: #334155;
+    }
+    .zoom-btn.reset-btn {
+      font-size: 0.78rem;
+      padding: 3px 8px;
+    }
+    .zoom-label {
+      min-width: 44px;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    .preview-toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .preview-close-btn {
+      background: #ef4444;
+      color: #ffffff;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      margin-left: 0.5rem;
+    }
+    .preview-close-btn:hover {
+      background: #dc2626;
+    }
+
+    .preview-viewport {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: auto;
+      padding: 2.5rem 1rem 4rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: #1e293b;
+    }
+
+    .preview-sheet-wrapper {
+      transition: transform 0.15s ease-out;
+      transform-origin: top center;
+    }
+
+    .preview-paper-sheet {
+      width: 210mm;
+      min-height: 297mm;
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+      border-radius: 3px;
+      padding: 16mm 18mm;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    /* Print Specific Styles */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        color: #000000;
+        font-size: 9.5pt;
+      }
+      .plan-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .controls-bar, #print-preview-modal, .export-toast {
+        display: none !important;
+      }
+      .math-controls-card {
+        display: none !important;
+      }
+      .math-app-grid {
+        grid-template-columns: 1fr;
+      }
+      .math-app-container {
+        border: 1px solid #94a3b8;
+        padding: 1rem;
+        box-shadow: none;
+      }
+      .table-column-vertical th {
+        background: #e2e8f0 !important;
+        color: #000000 !important;
+      }
+      .table-column-vertical td, .table-column-vertical th {
+        border-color: #94a3b8 !important;
+        padding: 6px 8px !important;
+      }
+      .board-container {
+        background: #f8fafc !important;
+        color: #0f172a !important;
+        border: 2px solid #000000 !important;
+        box-shadow: none !important;
+      }
+      .board-column {
+        border-color: #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      .board-column-header {
+        color: #0369a1 !important;
+        border-bottom-color: #94a3b8 !important;
+      }
+      .board-header {
+        color: #000000 !important;
+        border-bottom-color: #94a3b8 !important;
+      }
+      .board-table td, .board-table th {
+        border-color: #94a3b8 !important;
+        color: #000000 !important;
+      }
+      .page-break-before, .pdf-page-break-before {
+        page-break-before: always !important;
+        break-before: page !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="plan-container">
+    <!-- 1. Print & Navigation Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <a href="index.html" class="btn btn-outline">
+          <span>🏠 ទំព័រដើម</span>
+        </a>
+        <a href="lessons.html?grade=grade11&ch=g11-ch2" class="btn btn-outline" style="border-color: rgba(6, 182, 212, 0.5); color: #0284c7;">
+          <span>📖 មេរៀនសៀវភៅគោល ថ្នាក់ទី១១ (ភាគ១)</span>
+        </a>
+        <a href="lessons.html" class="btn btn-outline">
+          <span>📚 ឯកសារបង្រៀនទាំងអស់</span>
+        </a>
+        <a href="game-exponential.html" class="btn btn-outline" style="color: #0284c7; border-color: rgba(2, 132, 199, 0.4);">
+          <span>🚀 ល្បែងអិចស្ប៉ូណង់ស្យែល</span>
+        </a>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <button onclick="openPrintPreview()" class="btn btn-preview" title="ពិនិត្យមើលប្លង់ក្រដាស A4 មុននឹងបោះពុម្ព">
+          <span>👁️ មើលជាមុន (Preview)</span>
+        </button>
+        <button onclick="exportToWord()" class="btn btn-word" title="ទាញយកជាឯកសារ Microsoft Word (.doc) ជាមួយទម្រង់ត្រឹមត្រូវ">
+          <span>📄 Word (.doc)</span>
+        </button>
+        <button onclick="exportToPDF()" class="btn btn-pdf" title="ទាញយកជាឯកសារ PDF ផ្ទាល់">
+          <span>📑 PDF</span>
+        </button>
+        <button onclick="downloadLessonPlanPPTX()" class="btn" style="background: #ea580c; color: #fff; box-shadow: 0 4px 12px rgba(234,88,12,0.25);" title="ទាញយកជាស្លាយ PowerPoint (.pptx)">
+          <span>📊 PowerPoint (.pptx)</span>
+        </button>
+        <button onclick="downloadLessonPlanImage()" class="btn" style="background: #059669; color: #fff; box-shadow: 0 4px 12px rgba(5,150,105,0.25);" title="ទាញយកជារូបភាព Infographic (.png)">
+          <span>🖼️ រូបភាព (.png)</span>
+        </button>
+        <button onclick="window.print()" class="btn btn-primary" title="បោះពុម្ពឯកសារចេញក្រដាស A4">
+          <span>🖨️ បោះពុម្ព (Print)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Official Document Container (Wrapped for export & preview) -->
+    <div id="lesson-plan-document">
+      <!-- 2. Official Ministry Header -->
+      <div class="official-header">
+      <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
+      <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+      <div class="header-divider"></div>
+    </div>
+
+    <!-- 3. Administrative Metadata in Clean Vertical Columns -->
+    <div class="metadata-card">
+      <div class="meta-item">
+        <span class="meta-label">គ្រឹះស្ថានសិក្សា</span>
+        <span class="meta-value">វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">កម្រិតថ្នាក់ & មុខវិជ្ជា</span>
+        <span class="meta-value">ថ្នាក់ទី ១១ | គណិតវិទ្យា (ភាគ១)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">គ្រូបង្រៀនឯកទេស</span>
+        <span class="meta-value" title="📞 លេខទូរស័ព្ទ៖ 099 77 5501 | 📧 អ៊ីមែល៖ chhorvornk@gmail.com | ✈️ Telegram: @chhovorn_math">អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">ថិរវេលាបង្រៀន</span>
+        <span class="meta-value">៥០ នាទី (១ ម៉ោងសិក្សាពេញលេញ)</span>
+      </div>
+    </div>
+
+    <!-- 4. Plan Main Title -->
+    <div class="plan-main-title">
+      <h1>កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E Model)</h1>
+      <div class="subtitle">
+        ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងអនុគមន៍លោការីត (ទំព័រ ៥៧ – ៨៨)<br>
+        <strong>មេរៀនទី ១៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល (និយមន័យ ក្រាប និងលក្ខណៈគ្រឹះ)</strong>
+      </div>
+    </div>
+
+    <!-- I. Learning Objectives Table (3 Columns) -->
+    <div class="plan-section">
+      <h2 class="section-title">I. វត្ថុបំណងមេរៀន (Learning Objectives)</h2>
+      <table class="table-column-vertical">
+        <thead>
+          <tr>
+            <th style="width: 25%;">ដែនអភិវឌ្ឍន៍ (Domains)</th>
+            <th style="width: 50%;">វត្ថុបំណងជាក់លាក់ (បន្ទាប់ពីបញ្ចប់ការរៀន ៥០ នាទី សិស្សអាច៖)</th>
+            <th style="width: 25%;">ឧបករណ៍វាស់វែង & ភស្តុតាង</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>១. វិជ្ជាសម្បទា (Knowledge)</strong></td>
+            <td>
+              • កំណត់និយមន័យនៃអនុគមន៍អិចស្ប៉ូណង់ស្យែល <span class="math-clean"><var>y</var> = <var>a</var><sup><var>x</var></sup></span> (<span class="math-clean"><var>a</var> &gt; 0, <var>a</var> &ne; 1</span>) បានត្រឹមត្រូវ។<br>
+              • កំណត់បានដែនកំណត់ <span class="math-clean"><var>D</var> = ℝ = (&minus;∞, +∞)</span>, ដែនតម្លៃ <span class="math-clean"><var>R</var><sub><var>f</var></sub> = (0, +∞)</span>, បន្ទាត់អាស៊ីមតូតដេក <span class="math-clean"><var>y</var> = 0</span> (អ័ក្សអាប់ស៊ីស) និងចំណុចប្រសព្វលើអ័ក្សអរដោនេ <span class="math-clean">(0, 1)</span>។<br>
+              • បែងចែកភាពខុសគ្នានៃអាកប្បកិរិយាក្រាប៖ កើនដាច់ខាតកាលណា <span class="math-clean"><var>a</var> &gt; 1</span> និងចុះដាច់ខាតកាលណា <span class="math-clean">0 &lt; <var>a</var> &lt; 1</span>។
+            </td>
+            <td>
+              • សំណួរផ្ទាល់មាត់<br>
+              • ការបំពេញតារាងលក្ខណៈ<br>
+              • សន្លឹក Exit Ticket
+            </td>
+          </tr>
+          <tr>
+            <td><strong>២. បំណិនសម្បទា (Skills)</strong></td>
+            <td>
+              • ធ្វើការពិសោធន៍ប្រមូលទិន្នន័យជាក់ស្ដែង (ការបត់ក្រដាស A4) និងបំពេញតារាងតម្លៃបានរហ័ស និងត្រឹមត្រូវ។<br>
+              • សង្កេតរកឃើញគំរូទិន្នន័យ (Pattern Recognition) និងទាញរូបមន្តគណិតវិទ្យា <span class="math-clean"><var>y</var> = 2<sup><var>x</var></sup></span> ចេញពីទិន្នន័យពិសោធន៍។<br>
+              • សង់ក្រាបនៃអនុគមន៍ <span class="math-clean"><var>y</var> = 2<sup><var>x</var></sup></span> និង <span class="math-clean"><var>y</var> = (<span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span>)<sup><var>x</var></sup></span> ដោយដៃលើក្រដាសក្រឡាចត្រង្គបានស្អាត និងត្រឹមត្រូវតាមមាត្រដ្ឋាន។
+            </td>
+            <td>
+              • សន្លឹកកិច្ចការ IBL Worksheet<br>
+              • គំនូសក្រាបជាក់ស្តែងរបស់សិស្ស<br>
+              • ការពិសោធន៍លើកម្មវិធី Math App
+            </td>
+          </tr>
+          <tr>
+            <td><strong>៣. ចរិយាសម្បទា (Attitudes)</strong></td>
+            <td>
+              • បណ្ដុះស្មារតីចង់ដឹងចង់ឃើញ ចោទសួរដេញដោល និងការគិតបែបស៊ីជម្រៅ (Inquiry Mindset)។<br>
+              • មានស្មារតីសហការ សាមគ្គីភាព និងទទួលខុសត្រូវខ្ពស់ក្នុងការពិភាក្សាជាក្រុមតូចៗ។<br>
+              • យល់ដឹងពីសារប្រយោជន៍នៃអនុគមន៍អិចស្ប៉ូណង់ស្យែលក្នុងការគណនាកំណើនបាក់តេរី ការប្រាក់ ឬការឆ្លងរាលដាលនៃជំងឺក្នុងជីវភាពពិត។
+            </td>
+            <td>
+              • ការសង្កេតអាកប្បកិរិយាផ្ទាល់<br>
+              • ការចូលរួមពិភាក្សាក្នុងក្រុម<br>
+              • ស្មារតីជួយគ្នាទៅវិញទៅមក
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- II. Inquiry Question & Materials in Clean Vertical Cards -->
+    <div class="plan-section">
+      <h2 class="section-title">II. សំណួរគន្លឹះរិះរក និងសម្ភារឧបទេស (Inquiry Driving Question & Materials)</h2>
+      <div style="background: var(--accent-light); border: 1.5px solid var(--accent); border-radius: 10px; padding: 1.1rem 1.4rem; margin-bottom: 1.25rem;">
+        <strong style="color: var(--accent-dark); font-size: 1.05rem;">❓ សំណួរគន្លឹះបំផុសការរិះរក (Driving Question):</strong>
+        <p style="color: #065f46; margin-top: 0.35rem; font-size: 0.98rem; font-weight: 500; line-height: 1.7;">
+          «តើបំរែបំរួលប្រភេទណា ដែលធ្វើឱ្យបរិមាណមួយកើនឡើងទ្វេដង ឬកើនឡើងយ៉ាងគំហុកមិននឹកស្មានដល់ ហើយតើយើងអាចតាងវាដោយគំរូគណិតវិទ្យាបែបណា?»
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+        <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem;">
+          <strong style="color: var(--primary-dark); font-size: 0.95rem;">🛠️ សម្ភារឧបទេសសម្រាប់គ្រូ៖</strong>
+          <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.9rem; line-height: 1.7;">
+            <li>ក្ដារខៀន ប៊ិចហ្វឺត បន្ទាត់ត្រីកោណ និងម៉ែត្រវាស់</li>
+            <li>សន្លឹកកិច្ចការរិះរក IBL Inquiry Worksheet ចែកជូនសិស្ស</li>
+            <li>កុំព្យូទ័រ/ទូរស័ព្ទភ្ជាប់កម្មវិធីពិសោធន៍ក្រាហ្វិកគណិតវិទ្យា (Math Grapher)</li>
+          </ul>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem;">
+          <strong style="color: var(--accent-dark); font-size: 0.95rem;">👥 សម្ភារសម្រាប់ក្រុមសិស្ស (៤-៥ នាក់/ក្រុម)៖</strong>
+          <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.9rem; line-height: 1.7;">
+            <li>ក្រដាស A4 ស្អាតមួយចំនួន (សម្រាប់ធ្វើការពិសោធន៍បត់ក្រដាស)</li>
+            <li>សន្លឹកកិច្ចការរិះរកប្រចាំក្រុម (Inquiry Sheet)</li>
+            <li>បន្ទាត់ កន្ត្រៃ ខ្មៅដៃពណ៌ និងក្រដាសក្រឡាចត្រង្គ (Grid Paper)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- III. Master 5-Column Teaching Process Table -->
+    <div class="plan-section pdf-page-break-before">
+      <h2 class="section-title">III. តារាងដំណើរការបង្រៀន និងរៀនតាមទម្រង់ 5E IBL (៥ ជួរឈរស្តង់ដារជាតិ)</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+        រៀបចំតាមកម្រងជួរឈរផ្លូវការនៃគរុកោសល្យកម្ពុជា ចែកជា ៥ ដំណាក់កាលពេញលេញក្នុងរយៈពេល ៥០ នាទី៖
+      </p>
+
+      <table class="table-column-vertical">
+        <thead>
+          <tr>
+            <th class="col-time">ថិរវេលា</th>
+            <th class="col-step">ដំណាក់កាល 5E</th>
+            <th class="col-content">ខ្លឹមសារមេរៀន & គំនិតគន្លឹះ</th>
+            <th class="col-teacher">សកម្មភាពគ្រូ</th>
+            <th class="col-student">សកម្មភាពសិស្ស</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1. ENGAGE -->
+          <tr>
+            <td class="col-time"><strong>៧ នាទី</strong></td>
+            <td class="col-step">
+              <span class="badge-stage badge-engage">១. ENGAGE</span><br>
+              <strong>ការចូលរួម & បំផុសចម្ងល់</strong>
+            </td>
+            <td class="col-content">
+              <strong>អាថ៌កំបាំងនៃការបត់ក្រដាស A4៖</strong><br>
+              • បើក្រដាស ១ សន្លឹកមានកម្រាស់ 0.1 mm តើការបត់ជាពីរចំនួន ៥០ ដង កម្ពស់នឹងខ្ពស់ដល់ណា?<br>
+              • ការបង្កើតសម្មតិកម្ម (Hypothesis)<br>
+              • បែងចែកភាពខុសគ្នារវាងកំណើនរបៀបបូក និងកំណើនរបៀបគុណ
+            </td>
+            <td class="col-teacher">
+              • រៀបចំរបៀបរៀបរយក្នុងថ្នាក់ និងបែងចែកសិស្សជាក្រុមតូចៗ (៤ ទៅ ៥ នាក់/ក្រុម)។<br>
+              • លើកក្រដាស A4 មួយសន្លឹកឡើង ហើយបំផុសសំណួរ៖ <em>«ប្រសិនបើយើងបត់ក្រដាសនេះជាពីរជាបន្តបន្ទាប់ តើកម្រាស់របស់វានឹងកើនឡើងយ៉ាងដូចម្តេច?»</em><br>
+              • បង្ហាញអាថ៌កំបាំងជំរុញការគិត៖ <em>«តើបត់ ៥០ ដង ខ្ពស់ដល់ពិដាន? ភ្នំអេវឺរ៉េស? ឬដល់ឋានព្រះច័ន្ទ?»</em>
+            </td>
+            <td class="col-student">
+              • ចូលរួមតាមក្រុម និងស្ដាប់ដោយការយកចិត្តទុកដាក់។<br>
+              • សិស្សធ្វើការទស្សន៍ទាយ (Hypothesis) ដោយសេរី៖ អ្នកខ្លះថាដល់ពិដាន អ្នកខ្លះថាមិនលើស ១ ម៉ែត្រ...<br>
+              • ចាប់ផ្ដើមមានចម្ងល់ និងចង់ដឹងពីការពិតតាមរយៈការពិសោធន៍ជាក់ស្តែង។
+            </td>
+          </tr>
+
+          <!-- 2. EXPLORE -->
+          <tr>
+            <td class="col-time"><strong>១៥ នាទី</strong></td>
+            <td class="col-step">
+              <span class="badge-stage badge-explore">២. EXPLORE</span><br>
+              <strong>ការរុករក & ពិសោធន៍</strong>
+            </td>
+            <td class="col-content">
+              <strong>តារាងទិន្នន័យពិសោធន៍៖</strong><br>
+              <table class="board-table" style="color: #0f172a; margin: 0.35rem 0;">
+                <tr style="background: #e2e8f0;"><th>បត់ <var>x</var> ដង</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td><var>x</var></td></tr>
+                <tr><th>ស្រទាប់ <var>y</var></th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td>2<sup><var>x</var></sup></td></tr>
+              </table>
+              <strong>របកគំហើញគំរូទិន្នន័យ៖</strong><br>
+              តម្លៃ <var>y</var> គុណនឹង ២ ជានិច្ចរាល់ពេល <var>x</var> កើន ១ ឯកតា នាំឱ្យទាញបានរូបមន្ត <span class="math-clean"><var>y</var> = 2<sup><var>x</var></sup></span>។
+            </td>
+            <td class="col-teacher">
+              • ចែកក្រដាស A4 និងសន្លឹកកិច្ចការ IBL Worksheet ជូនគ្រប់ក្រុម។<br>
+              • ណែនាំសិស្សឱ្យចាប់ផ្ដើមបត់ក្រដាសជាពីរ និងរាប់ចំនួនស្រទាប់ក្រដាសដែលកើនឡើង (<var>x</var> = 0, 1, 2, 3, 4...)។<br>
+              • ដើរសម្របសម្រួល និងជួយគាំទ្រ (Scaffolding) ដោយមិនទាន់ប្រាប់រូបមន្តជាមុនឡើយ។<br>
+              • ជំរុញឱ្យសង្កេតគំរូទិន្នន័យរវាង <var>x</var> និង <var>y</var>។
+            </td>
+            <td class="col-student">
+              • ក្រុមសិស្សចាប់ផ្ដើមបត់ក្រដាសជាក់ស្ដែង៖<br>
+              - មិនទាន់បត់ (<var>x</var> = 0)៖ មាន <var>y</var> = 1 ស្រទាប់<br>
+              - បត់លើកទី ១ (<var>x</var> = 1)៖ មាន <var>y</var> = 2 ស្រទាប់<br>
+              - បត់លើកទី ២ (<var>x</var> = 2)៖ មាន <var>y</var> = 4 ស្រទាប់<br>
+              - បត់លើកទី ៣ (<var>x</var> = 3)៖ មាន <var>y</var> = 8 ស្រទាប់<br>
+              • បំពេញតារាងក្នុងសន្លឹកកិច្ចការ និងពិភាក្សាទាញរកទំនាក់ទំនងរវាង <var>y</var> និង <var>x</var>។
+            </td>
+          </tr>
+
+          <!-- 3. EXPLAIN -->
+          <tr>
+            <td class="col-time"><strong>១២ នាទី</strong></td>
+            <td class="col-step">
+              <span class="badge-stage badge-explain">៣. EXPLAIN</span><br>
+              <strong>ការពន្យល់ & បង្កើតគំនិត</strong>
+            </td>
+            <td class="col-content">
+              <strong>និយមន័យអនុគមន៍អិចស្ប៉ូណង់ស្យែល៖</strong><br>
+              <div class="math-display-card" style="margin: 0.35rem 0; padding: 0.5rem;">
+                <var>y</var> = <var>a</var><sup><var>x</var></sup> &nbsp;(<var>a</var> &gt; 0, <var>a</var> &ne; 1)
+              </div>
+              • <strong>ដែនកំណត់៖</strong> <span class="math-clean"><var>D</var> = ℝ = (&minus;∞, +∞)</span><br>
+              • <strong>ដែនតម្លៃ៖</strong> <span class="math-clean"><var>R</var><sub><var>f</var></sub> = (0, +∞)</span> (<var>a</var><sup><var>x</var></sup> &gt; 0 ជានិច្ច)<br>
+              • <strong>ចំណុចកាត់អ័ក្ស៖</strong> <span class="math-clean">(0, 1)</span> ព្រោះ <var>a</var><sup>0</sup> = 1<br>
+              • <strong>អាស៊ីមតូតដេក៖</strong> <span class="math-clean"><var>y</var> = 0</span> (អ័ក្សអាប់ស៊ីស)
+            </td>
+            <td class="col-teacher">
+              • អញ្ជើញតំណាងក្រុមឡើងរាយការណ៍ និងសរសេររូបមន្តដែលរកឃើញ។<br>
+              • ធ្វើទូទៅកម្មពីករណីជាក់ស្តែង <span class="math-clean"><var>y</var> = 2<sup><var>x</var></sup></span> ទៅករណីទូទៅ <span class="math-clean"><var>y</var> = <var>a</var><sup><var>x</var></sup></span>។<br>
+              • សួរសំណួរដេញដោល៖ <em>«ហេតុអ្វីចាំបាច់ត្រូវការលក្ខខណ្ឌ <var>a</var> &gt; 0 និង <var>a</var> &ne; 1?»</em><br>
+              • បង្ហាញកម្មវិធី Math Grapher គូសបង្ហាញក្រាប និងពន្យល់ពីអាស៊ីមតូតដេក <span class="math-clean"><var>y</var> = 0</span>។
+            </td>
+            <td class="col-student">
+              • តំណាងក្រុមឡើងរាយការណ៍៖ <em>«ក្រុមយើងរកឃើញរូបមន្ត <span class="math-clean"><var>y</var> = 2<sup><var>x</var></sup></span>»</em>។<br>
+              • សិស្សឆ្លើយសំណួរគ្រូ៖ <em>«បើ <var>a</var> = 1 នោះ 1<sup><var>x</var></sup> = 1 ជាអនុគមន៍ថេរ; បើ <var>a</var> &le; 0 មិនអាចកំណត់ស្វ័យគុណបានគ្រប់ចំនួនពិតឡើយ»</em>។<br>
+              • កត់ត្រានិយមន័យ ដែនកំណត់ ដែនតម្លៃ និងលក្ខណៈក្រាបចូលសៀវភៅ។
+            </td>
+          </tr>
+
+          <!-- 4. ELABORATE -->
+          <tr>
+            <td class="col-time"><strong>១០ នាទី</strong></td>
+            <td class="col-step">
+              <span class="badge-stage badge-elaborate">៤. ELABORATE</span><br>
+              <strong>ការពង្រីកចំណេះដឹង</strong>
+            </td>
+            <td class="col-content">
+              <strong>ការប្រៀបធៀបអថេរភាព៖</strong><br>
+              • បើ <span class="math-clean"><var>a</var> &gt; 1</span>៖ អនុគមន៍កើនដាច់ខាតលើ <span class="math-clean">ℝ</span><br>
+              • បើ <span class="math-clean">0 &lt; <var>a</var> &lt; 1</span>៖ អនុគមន៍ចុះដាច់ខាតលើ <span class="math-clean">ℝ</span><br>
+              • ក្រាប <span class="math-clean"><var>y</var> = 2<sup><var>x</var></sup></span> និង <span class="math-clean"><var>y</var> = (<span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span>)<sup><var>x</var></sup></span> ឆ្លុះគ្នាធៀបនឹងអ័ក្ស (<var>Oy</var>)<br><br>
+              <strong>ការអនុវត្តលើបាក់តេរី៖</strong><br>
+              <span class="math-clean"><var>N</var>(<var>t</var>) = 100 &middot; 2<sup><var>t</var></sup></span> ក្រោយ 3 ម៉ោង (<var>t</var> = 3):<br>
+              <span class="math-clean"><var>N</var>(3) = 100 &times; 8 = 800</span> កោសិកា
+            </td>
+            <td class="col-teacher">
+              • ដាក់បញ្ហាប្រឈមថ្មី៖ <em>«ចុះបើគោលជាប្រភាគ <var>a</var> = <span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span> តើក្រាប និងអថេរភាពរបស់ <var>y</var> = (<span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span>)<sup><var>x</var></sup> នឹងទៅជាយ៉ាងណា?»</em><br>
+              • ឱ្យសិស្សគណនាតម្លៃរហ័សសម្រាប់ <var>x</var> &isin; {&minus;2, &minus;1, 0, 1, 2}។<br>
+              • ណែនាំភ្ជាប់ទៅបាតុភូតជាក់ស្ដែង៖ ការរលាយសារធាតុវិទ្យុសកម្ម (Half-life) និងកំណើនបាក់តេរី។
+            </td>
+            <td class="col-student">
+              • គណនាក្នុងក្រុម៖<br>
+              - <var>x</var> = &minus;2 &rArr; <var>y</var> = (<span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span>)<sup>&minus;2</sup> = 2<sup>2</sup> = 4<br>
+              - <var>x</var> = &minus;1 &rArr; <var>y</var> = (<span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span>)<sup>&minus;1</sup> = 2<sup>1</sup> = 2<br>
+              - <var>x</var> = 0 &rArr; <var>y</var> = (<span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span>)<sup>0</sup> = 1<br>
+              - <var>x</var> = 1 &rArr; <var>y</var> = (<span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span>)<sup>1</sup> = <span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span><br>
+              - <var>x</var> = 2 &rArr; <var>y</var> = (<span class="math-frac"><span class="math-num">1</span><span class="math-den">2</span></span>)<sup>2</sup> = <span class="math-frac"><span class="math-num">1</span><span class="math-den">4</span></span><br>
+              • សន្និដ្ឋាន៖ <em>«កាលណា <var>x</var> កើន តម្លៃ <var>y</var> ថយចុះ ដូច្នេះវាជាអនុគមន៍ចុះដាច់ខាត!»</em><br>
+              • ដោះស្រាយលំហាត់បាក់តេរីបានត្រឹមត្រូវ (<var>N</var>(3) = 800)។
+            </td>
+          </tr>
+
+          <!-- 5. EVALUATE -->
+          <tr>
+            <td class="col-time"><strong>៦ នាទី</strong></td>
+            <td class="col-step">
+              <span class="badge-stage badge-evaluate">៥. EVALUATE</span><br>
+              <strong>ការវាយតម្លៃ & ឆ្លុះបញ្ចាំង</strong>
+            </td>
+            <td class="col-content">
+              <strong>Exit Ticket (សន្លឹកចាកចេញ)៖</strong><br>
+              1. ឱ្យ <span class="math-clean"><var>f</var>(<var>x</var>) = 3<sup><var>x</var></sup></span>។ តើ <var>f</var> កើន ឬចុះ? រក <var>f</var>(0) និង <var>f</var>(2)?<br>
+              2. តើក្រាប <span class="math-clean"><var>y</var> = <var>a</var><sup><var>x</var></sup></span> អាចប៉ះ ឬកាត់អ័ក្សអាប់ស៊ីសបានទេ? ហេតុអ្វី?<br><br>
+              <strong>ឆ្លុះបញ្ចាំងសរុប៖</strong><br>
+              បត់ ៥០ ដង = 112 លាន km (ជិតដល់ព្រះអាទិត្យ!)
+            </td>
+            <td class="col-teacher">
+              • ចែកសន្លឹក Exit Ticket ឱ្យសិស្សបំពេញក្នុងរយៈពេល ៣ នាទី។<br>
+              • ហៅសិស្ស ១-២ នាក់ឱ្យឆ្លើយ និងផ្ទៀងផ្ទាត់ចម្លើយរួមគ្នា។<br>
+              • ឆ្លុះបញ្ចាំងសរុប (Reflection) បកស្រាយចម្លើយនៃល្បែងបត់ក្រដាស ៥០ ដង បំផុសការស្រឡាញ់គណិតវិទ្យា។<br>
+              • ដាក់កិច្ចការផ្ទះ៖ លំហាត់ ១ និង ២ ទំព័រ ៦២។
+            </td>
+            <td class="col-student">
+              • សិស្សម្នាក់ៗបំពេញ Exit Ticket ដោយឯករាជ្យលើក្រដាសតូចមួយ។<br>
+              • ភ្ញាក់ផ្អើល និងជក់ចិត្តនឹងចម្លើយនៃកម្រាស់ក្រដាសបត់ ៥០ ដង។<br>
+              • កត់ត្រាកិច្ចការផ្ទះ និងត្រៀមសម្រាប់មេរៀនបន្ទាប់ (សមីការអិចស្ប៉ូណង់ស្យែល)។
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IV. Blackboard Layout Plan in 3 Clean Vertical Columns -->
+    <div class="plan-section pdf-page-break-before">
+      <h2 class="section-title">IV. គំនូរប្លង់ក្ដារខៀន (Blackboard Layout Plan — ៣ ជួរឈរ)</h2>
+      <div class="board-container">
+        <div class="board-header">
+          កាលបរិច្ឆេទ៖ ថ្ងៃទី ......... ខែ ......... ឆ្នាំ ២០២៦ &nbsp;|&nbsp; ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងអនុគមន៍លោការីត &nbsp;|&nbsp; មេរៀនទី ១៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល
+        </div>
+
+        <div class="board-columns-grid">
+          <!-- Column 1: Experiment & Data -->
+          <div class="board-column">
+            <div>
+              <div class="board-column-header">ផ្ទាំងទី ១៖ ទិន្នន័យពិសោធន៍</div>
+              <p><strong>១. ពិសោធន៍បត់ក្រដាស A4៖</strong></p>
+              <table class="board-table">
+                <tr><th>បត់ ($x$)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+                <tr><th>ស្រទាប់ ($y$)</th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td></tr>
+              </table>
+              <p style="margin-top: 0.4rem;">&rArr; គំរូទិន្នន័យ៖ <span style="color: #fde047; font-weight: 700;">y = 2<sup>x</sup></span></p>
+              <p style="margin-top: 0.5rem; font-size: 0.82rem; color: #94a3b8;">
+                • បត់ 14 ដង &approx; 1.64 m (កម្ពស់មនុស្ស)<br>
+                • បត់ 27 ដង &approx; 8.8 km (ភ្នំអេវឺរ៉េស)<br>
+                • បត់ 42 ដង &approx; 384,400 km (ដល់ឋានព្រះច័ន្ទ!)
+              </p>
+            </div>
+            <div style="font-size: 0.78rem; color: #38bdf8; margin-top: 0.5rem;">[ទិន្នន័យពិសោធន៍ជាក់ស្តែងសិស្ស]</div>
+          </div>
+
+          <!-- Column 2: Definition & Properties -->
+          <div class="board-column">
+            <div>
+              <div class="board-column-header">ផ្ទាំងទី ២៖ និយមន័យ & លក្ខណៈ</div>
+              <p><strong>២. និយមន័យអនុគមន៍៖</strong></p>
+              <div style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; padding: 0.35rem; border-radius: 4px; text-align: center; font-weight: 700; color: #38bdf8; margin: 0.3rem 0;">
+                y = a<sup>x</sup> &nbsp;(a &gt; 0, a &ne; 1)
+              </div>
+              <p>• ដែនកំណត់៖ $D = \mathbb{R}$</p>
+              <p>• ដែនតម្លៃ៖ $R_f = (0, +\infty)$ ($a^x > 0$ ជានិច្ច)</p>
+              <p>• ចំណុចកាត់អ័ក្ស៖ $(0, 1)$ ព្រោះ $a^0 = 1$</p>
+              <p>• អាស៊ីមតូតដេក៖ $y = 0$ (អ័ក្ស $x'x$)</p>
+              <p style="margin-top: 0.4rem;"><strong>៣. អថេរភាព៖</strong></p>
+              <p>• $a &gt; 1$ &rArr; អនុគមន៍កើនដាច់ខាត</p>
+              <p>• $0 &lt; a &lt; 1$ &rArr; អនុគមន៍ចុះដាច់ខាត</p>
+            </div>
+            <div style="font-size: 0.78rem; color: #34d399; margin-top: 0.5rem;">[ខ្លឹមសារស្នូលសម្រាប់កត់ត្រា]</div>
+          </div>
+
+          <!-- Column 3: Graph Vector & Homework -->
+          <div class="board-column">
+            <div>
+              <div class="board-column-header">ផ្ទាំងទី ៣៖ គំនូសក្រាប & កិច្ចការផ្ទះ</div>
+              <p><strong>៤. ក្រាប $y = 2^x$ និង $y = \left(\frac{1}{2}\right)^x$៖</strong></p>
+              
+              <!-- Clean High-Quality Chalkboard Vector SVG Graph -->
+              <svg viewBox="0 0 240 130" style="width: 100%; height: 110px; background: rgba(0,0,0,0.3); border-radius: 6px; margin: 0.35rem 0; border: 1px solid rgba(255,255,255,0.15);">
+                <!-- Grid Lines -->
+                <line x1="20" y1="105" x2="220" y2="105" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+                <line x1="20" y1="75" x2="220" y2="75" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+                <line x1="20" y1="45" x2="220" y2="45" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+                
+                <!-- Asymptote y = 0 -->
+                <line x1="15" y1="105" x2="225" y2="105" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3,3"/>
+                
+                <!-- Axes -->
+                <line x1="20" y1="105" x2="225" y2="105" stroke="#cbd5e1" stroke-width="1.5"/>
+                <line x1="120" y1="120" x2="120" y2="15" stroke="#cbd5e1" stroke-width="1.5"/>
+                <polyline points="222,102 228,105 222,108" fill="#cbd5e1"/>
+                <polyline points="117,18 120,12 123,18" fill="#cbd5e1"/>
+                <text x="222" y="98" fill="#94a3b8" font-size="9">x</text>
+                <text x="125" y="18" fill="#94a3b8" font-size="9">y</text>
+                
+                <!-- Curve y = 2^x (Rising, Blue/Cyan) -->
+                <path d="M 30,104 Q 90,103 120,75 T 180,20" fill="none" stroke="#38bdf8" stroke-width="2.2"/>
+                <text x="172" y="18" fill="#38bdf8" font-size="8.5" font-weight="bold">y = 2ˣ</text>
+                
+                <!-- Curve y = (1/2)^x (Falling, Orange) -->
+                <path d="M 60,20 Q 90,55 120,75 T 210,104" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="2,2"/>
+                <text x="30" y="24" fill="#f59e0b" font-size="8.5" font-weight="bold">y = (½)ˣ</text>
+                
+                <!-- Intersection Point (0, 1) -->
+                <circle cx="120" cy="75" r="3.5" fill="#fde047"/>
+                <text x="125" y="73" fill="#fde047" font-size="9" font-weight="bold">(0, 1)</text>
+              </svg>
+              
+              <p style="font-size: 0.8rem; color: #cbd5e1;">• ក្រាបទាំងពីរឆ្លុះគ្នាធៀបនឹងអ័ក្ស $(Oy)$</p>
+              <p style="margin-top: 0.4rem; color: #fde047;"><strong>៥. កិច្ចការផ្ទះ៖</strong></p>
+              <p style="font-size: 0.82rem;">• លំហាត់ទី ១ & ២ ទំព័រ ៦២ ក្នុងសៀវភៅគោល</p>
+            </div>
+            <div style="font-size: 0.78rem; color: #fde047; margin-top: 0.5rem;">[គំនូសក្រាប & កិច្ចការ]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- V. Embedded Interactive Math Program (Clean GUI & Visual Math) -->
+    <div class="plan-section" id="interactive-math-app">
+      <h2 class="section-title">V. ឧបករណ៍គណិតវិទ្យាឌីជីថល៖ បន្ទប់ពិសោធន៍អនុគមន៍អិចស្ប៉ូណង់ស្យែល (Interactive Explorer)</h2>
+      
+      <div class="math-app-container">
+        <div class="math-app-header">
+          <div class="math-app-title">
+            <span>⚙️</span>
+            <span>ពិសោធន៍អថេរភាព និងក្រាប $y = a^x$ តាមពេលវេលាជាក់ស្តែង (Real-Time Visualizer)</span>
+          </div>
+          <span style="font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 3px 10px; border-radius: 999px; font-weight: 700;">
+            ជំនួយការបង្រៀនក្នុងថ្នាក់ (Classroom Ready)
+          </span>
+        </div>
+
+        <div class="math-app-grid">
+          <!-- Left: High Precision Vector Graph -->
+          <div class="graph-canvas-box">
+            <svg id="interactive-graph-svg" class="graph-svg" viewBox="0 0 460 320">
+              <!-- Grid background rendered dynamically via JS -->
+            </svg>
+            <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; padding: 0 0.5rem;">
+              <span>បន្ទាត់ក្រហមដាច់៖ អាស៊ីមតូតដេក $y = 0$</span>
+              <span>ចំណុចមាស៖ ប្រសព្វអ័ក្ស $y$ ត្រង់ $(0, 1)$</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Controls & Real-Time Readout -->
+          <div class="math-controls-card">
+            <div class="control-group">
+              <div class="control-label">
+                <span>កែប្រែតម្លៃគោល $a$៖</span>
+                <span id="slider-val-display" style="color: #0284c7; font-size: 1.05rem;">a = 2.00</span>
+              </div>
+              <input type="range" id="base-slider" class="slider-custom" min="0.2" max="3.5" step="0.05" value="2.0">
+              
+              <!-- Quick Preset Buttons -->
+              <div class="preset-chips">
+                <button type="button" class="chip-btn active" onclick="setBaseVal(2.0)">a = 2 (ក្រដាស/បាក់តេរី)</button>
+                <button type="button" class="chip-btn" onclick="setBaseVal(3.0)">a = 3</button>
+                <button type="button" class="chip-btn" onclick="setBaseVal(0.5)">a = 0.5 (ប្រភាគ ½)</button>
+                <button type="button" class="chip-btn" onclick="setBaseVal(0.33)">a = 0.33 (ប្រភាគ ⅓)</button>
+                <button type="button" class="chip-btn" onclick="setBaseVal(2.72)">a = e &approx; 2.72</button>
+              </div>
+            </div>
+
+            <!-- Dynamic Property Readouts (Pure Styled Math, No Raw Code) -->
+            <div class="live-summary-pill">
+              <div style="font-weight: 700; color: #0369a1; margin-bottom: 0.25rem;">
+                សមីការ៖ <span id="dyn-equation" class="math-clean">y = 2.00<sup>x</sup></span>
+              </div>
+              <div>អាកប្បកិរិយា៖ <strong id="dyn-behavior" style="color: #059669;">កើនដាច់ខាតលើ ℝ</strong></div>
+              <div>ដែនកំណត់៖ $D = \mathbb{R} = (-\infty, +\infty)$</div>
+              <div>ដែនតម្លៃ៖ $R_f = (0, +\infty)$</div>
+              <div>ចំណុចកាត់អ័ក្ស $y$៖ $(0, 1)$</div>
+              <div>អាស៊ីមតូតដេក៖ $y = 0$ (អ័ក្សអាប់ស៊ីស)</div>
+            </div>
+
+            <!-- Calculated Reference Table -->
+            <div style="margin-top: 0.75rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-dark);">តារាងតម្លៃរហ័ស ($x \to y$)៖</span>
+              <table style="width: 100%; border-collapse: collapse; font-size: 0.78rem; text-align: center; margin-top: 0.25rem; background: #ffffff; border-radius: 4px; overflow: hidden; border: 1px solid #cbd5e1;">
+                <tr style="background: #e2e8f0;">
+                  <th style="padding: 2px 4px; border: 1px solid #cbd5e1;">x</th>
+                  <td style="border: 1px solid #cbd5e1;">-2</td>
+                  <td style="border: 1px solid #cbd5e1;">-1</td>
+                  <td style="border: 1px solid #cbd5e1;">0</td>
+                  <td style="border: 1px solid #cbd5e1;">1</td>
+                  <td style="border: 1px solid #cbd5e1;">2</td>
+                </tr>
+                <tr>
+                  <th style="padding: 2px 4px; border: 1px solid #cbd5e1; font-weight: 700; color: #0284c7;">y</th>
+                  <td id="calc-m2" style="border: 1px solid #cbd5e1;">0.25</td>
+                  <td id="calc-m1" style="border: 1px solid #cbd5e1;">0.50</td>
+                  <td id="calc-0" style="border: 1px solid #cbd5e1; font-weight: 700; color: #b45309;">1.00</td>
+                  <td id="calc-1" style="border: 1px solid #cbd5e1;">2.00</td>
+                  <td id="calc-2" style="border: 1px solid #cbd5e1;">4.00</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI. Student Inquiry Worksheet Template in Clean Column Format -->
+    <div class="plan-section">
+      <h2 class="section-title">VI. ឧបសម្ព័ន្ធ៖ សន្លឹកកិច្ចការរិះរករបស់សិស្ស (IBL Inquiry Worksheet)</h2>
+      <div class="worksheet-box">
+        <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #bae6fd; padding-bottom: 0.6rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div>
+            <strong style="color: #0369a1; font-size: 1.05rem;">សន្លឹកកិច្ចការរិះរកគណិតវិទ្យា (INQUIRY WORKSHEET)</strong><br>
+            <span style="font-size: 0.85rem; color: #64748b;">មេរៀន៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល (សកម្មភាពពិសោធន៍បត់ក្រដាស)</span>
+          </div>
+          <div style="font-size: 0.9rem; font-weight: 600; color: #0f172a;">
+            ក្រុមទី៖ ............ ថ្នាក់ទី៖ ១១ .........
+          </div>
+        </div>
+
+        <p style="font-size: 0.92rem; margin-bottom: 0.75rem; color: #0f172a;">
+          <strong>🧪 ការណែនាំសកម្មភាពពិសោធន៍៖</strong> យកក្រដាស A4 មួយសន្លឹក បត់ជាពីរស្មើគ្នាម្តងហើយម្តងទៀត រាប់ចំនួនស្រទាប់ក្រដាសដែលកើនឡើង និងបំពេញតារាងទិន្នន័យ៖
+        </p>
+
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem; background: #ffffff; border: 1.5px solid #0284c7; text-align: center;">
+          <thead>
+            <tr style="background: #e0f2fe; color: #0369a1;">
+              <th style="border: 1px solid #bae6fd; padding: 7px; font-weight: 700;">ចំនួនដងនៃការបត់ ($x$)</th>
+              <th style="border: 1px solid #bae6fd; padding: 7px;">0</th>
+              <th style="border: 1px solid #bae6fd; padding: 7px;">1</th>
+              <th style="border: 1px solid #bae6fd; padding: 7px;">2</th>
+              <th style="border: 1px solid #bae6fd; padding: 7px;">3</th>
+              <th style="border: 1px solid #bae6fd; padding: 7px;">4</th>
+              <th style="border: 1px solid #bae6fd; padding: 7px; background: #fef3c7; color: #92400e;">$x$ (ករណីទូទៅ)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #bae6fd; padding: 8px; font-weight: 700; text-align: left; background: #f8fafc;">ចំនួនស្រទាប់ក្រដាស ($y$)</td>
+              <td style="border: 1px solid #bae6fd; padding: 8px; font-weight: 700; color: #0284c7;">1</td>
+              <td style="border: 1px solid #bae6fd; padding: 8px; color: #94a3b8;">......</td>
+              <td style="border: 1px solid #bae6fd; padding: 8px; color: #94a3b8;">......</td>
+              <td style="border: 1px solid #bae6fd; padding: 8px; color: #94a3b8;">......</td>
+              <td style="border: 1px solid #bae6fd; padding: 8px; color: #94a3b8;">......</td>
+              <td style="border: 1px solid #bae6fd; padding: 8px; color: #94a3b8; font-weight: 700;">y = ..........</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="font-size: 0.92rem; line-height: 1.9; color: #1e293b;">
+          <p><strong>សំណួរពិភាក្សាក្នុងក្រុម (Inquiry Discussion Questions)៖</strong></p>
+          <p>១. នៅពេល $x$ កើនឡើង ១ ឯកតា តើតម្លៃ $y$ ប្រែប្រួលដូចម្តេច? (បូកថែម ឬគុណនឹងប៉ុន្មាន?) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;ចម្លើយ៖ ............................................................................................................................................................</p>
+          <p>២. ចូរទាញរូបមន្តទំនាក់ទំនងទូទៅរវាងចំនួនស្រទាប់ $y$ និងចំនួនដងនៃការបត់ $x$៖ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;ចម្លើយ៖ $y =$ ...................................................................................................................................................</p>
+          <p>៣. ប្រសិនបើយើងបត់បាន ៧ ដង តើនឹងទទួលបានក្រដាសចំនួនប៉ុន្មានស្រទាប់? <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;ចម្លើយ៖ ............................................................................................................................................................</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VII. Differentiation Strategies in 2 Vertical Columns -->
+    <div class="plan-section">
+      <h2 class="section-title">VII. យុទ្ធសាស្ត្រគាំទ្រសិស្សចម្រុះកម្រិត (Differentiation in Vertical Columns)</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+        <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 8px; padding: 1.15rem 1.3rem;">
+          <strong style="color: #92400e; font-size: 0.95rem;">🌱 សម្រាប់សិស្សរៀនយឺត (Scaffolding / Support):</strong>
+          <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.7;">
+            <li>ផ្ដល់ការណែនាំជាជំហានៗក្នុងការបត់ក្រដាសជាក់ស្តែង និងការរាប់ស្រទាប់។</li>
+            <li>ជួយគណនាតម្លៃស្វ័យគុណ $2^1 = 2$, $2^2 = 4$, $2^3 = 8$... ដើម្បីកត់សម្គាល់គំរូទិន្នន័យ។</li>
+            <li>ប្រើក្រដាសដែលមានក្រឡាចត្រង្គស្រាប់ និងចំណុចគោល $(0, 1)$ ដើម្បីងាយស្រួលសង់ក្រាប។</li>
+          </ul>
+        </div>
+        <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 1.15rem 1.3rem;">
+          <strong style="color: #1e40af; font-size: 0.95rem;">🚀 សម្រាប់សិស្សពូកែ (Extension / Challenge):</strong>
+          <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.7;">
+            <li>ចោទសួរអំពីការរកលីមីតនៅអនន្ត៖ $\lim_{x \to +\infty} 2^x = +\infty$ និង $\lim_{x \to -\infty} 2^x = 0$។</li>
+            <li>ឱ្យស្វែងយល់បន្ថែមអំពីអនុគមន៍អិចស្ប៉ូណង់ស្យែលធម្មជាតិ $y = e^x$ ($e \approx 2.71828$) ដែលប្រើក្នុងរូបវិទ្យា និងធនាគារ។</li>
+            <li>សាកល្បងដោះស្រាយសមីការអិចស្ប៉ូណង់ស្យែលគ្រឹះ $2^x = 32$ និង $3^{x+1} = 27$។</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIII. Official Approval & Signatures -->
+    <div style="display: flex; justify-content: space-between; margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.95rem;">
+      <div style="text-align: center; width: 40%;">
+        បានឃើញ និងឯកភាព<br>
+        <strong>នាយក / នាយិកាវិទ្យាល័យ</strong><br><br><br><br><br>
+        ...................................................
+      </div>
+      <div style="text-align: center; width: 40%;">
+        ថ្ងៃទី ........ ខែ ............. ឆ្នាំ ២០២៦<br>
+        <strong>គ្រូបង្រៀនឯកទេសគណិតវិទ្យា</strong><br><br><br><br><br>
+        <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong>
+      </div>
+    </div>
+    <!-- End #lesson-plan-document -->
+  </div>
+  <!-- End .plan-container -->
+
+  <!-- Interactive Math Program Script & KaTeX Initializer -->
+  <script>
+    // 1. Guaranteed KaTeX Math Rendering Initializer
+    function renderMathTypography() {
+      if (typeof renderMathInElement === 'function') {
+        try {
+          renderMathInElement(document.body, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false },
+              { left: '\\(', right: '\\)', display: false },
+              { left: '\\[', right: '\\]', display: true }
+            ],
+            throwOnError: false,
+            errorColor: '#0284c7'
+          });
+        } catch (e) {
+          console.warn('KaTeX rendering notice:', e);
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderMathTypography);
+    window.addEventListener('load', renderMathTypography);
+
+    // 2. Interactive Math Grapher Simulator Logic
+    let currentBase = 2.0;
+
+    function initInteractiveGraph() {
+      const slider = document.getElementById('base-slider');
+      if (slider) {
+        slider.addEventListener('input', function(e) {
+          setBaseVal(parseFloat(e.target.value));
+        });
+      }
+      drawGraph();
+    }
+
+    function setBaseVal(val) {
+      currentBase = Math.max(0.1, Math.min(4.0, parseFloat(val)));
+      
+      const slider = document.getElementById('base-slider');
+      if (slider) slider.value = currentBase;
+
+      const display = document.getElementById('slider-val-display');
+      if (display) display.textContent = 'a = ' + currentBase.toFixed(2);
+
+      const dynEq = document.getElementById('dyn-equation');
+      if (dynEq) {
+        if (currentBase === 0.5) {
+          dynEq.innerHTML = 'y = (<span class="math-fraction"><span class="num">1</span><span class="den">2</span></span>)<sup>x</sup> = 0.50<sup>x</sup>';
+        } else if (Math.abs(currentBase - 0.33) < 0.05) {
+          dynEq.innerHTML = 'y = (<span class="math-fraction"><span class="num">1</span><span class="den">3</span></span>)<sup>x</sup> &approx; 0.33<sup>x</sup>';
+        } else {
+          dynEq.innerHTML = 'y = ' + currentBase.toFixed(2) + '<sup>x</sup>';
+        }
+      }
+
+      const dynBeh = document.getElementById('dyn-behavior');
+      if (dynBeh) {
+        if (currentBase > 1.0) {
+          dynBeh.textContent = 'កើនដាច់ខាតលើ ℝ (Exponential Growth)';
+          dynBeh.style.color = '#059669';
+        } else if (currentBase === 1.0) {
+          dynBeh.textContent = 'អនុគមន៍ថេរ y = 1 (មិនកើន មិនចុះ)';
+          dynBeh.style.color = '#d97706';
+        } else {
+          dynBeh.textContent = 'ចុះដាច់ខាតលើ ℝ (Exponential Decay)';
+          dynBeh.style.color = '#b45309';
+        }
+      }
+
+      // Update Quick Table values
+      const m2 = Math.pow(currentBase, -2);
+      const m1 = Math.pow(currentBase, -1);
+      const p1 = Math.pow(currentBase, 1);
+      const p2 = Math.pow(currentBase, 2);
+
+      const elM2 = document.getElementById('calc-m2');
+      const elM1 = document.getElementById('calc-m1');
+      const elP1 = document.getElementById('calc-1');
+      const elP2 = document.getElementById('calc-2');
+
+      if (elM2) elM2.textContent = m2 >= 100 ? m2.toFixed(0) : m2.toFixed(2);
+      if (elM1) elM1.textContent = m1 >= 100 ? m1.toFixed(0) : m1.toFixed(2);
+      if (elP1) elP1.textContent = p1 >= 100 ? p1.toFixed(0) : p1.toFixed(2);
+      if (elP2) elP2.textContent = p2 >= 100 ? p2.toFixed(0) : p2.toFixed(2);
+
+      // Update preset chips active state
+      document.querySelectorAll('.chip-btn').forEach(btn => {
+        const text = btn.textContent;
+        if (
+          (currentBase === 2.0 && text.includes('a = 2')) ||
+          (currentBase === 3.0 && text.includes('a = 3')) ||
+          (currentBase === 0.5 && text.includes('a = 0.5')) ||
+          (Math.abs(currentBase - 0.33) < 0.05 && text.includes('0.33')) ||
+          (Math.abs(currentBase - 2.72) < 0.05 && text.includes('2.72'))
+        ) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      drawGraph();
+    }
+
+    function drawGraph() {
+      const svg = document.getElementById('interactive-graph-svg');
+      if (!svg) return;
+
+      const width = 460;
+      const height = 320;
+      const originX = width / 2;
+      const originY = 240; // Origin placed lower to see positive y
+      const scaleX = 40;  // 40px per 1 unit of x
+      const scaleY = 32;  // 32px per 1 unit of y
+
+      let html = '';
+
+      // Grid Lines
+      for (let x = -5; x <= 5; x++) {
+        const px = originX + x * scaleX;
+        html += `<line x1="${px}" y1="15" x2="${px}" y2="${height - 15}" stroke="#f1f5f9" stroke-width="1"/>`;
+        if (x !== 0) {
+          html += `<text x="${px}" y="${originY + 16}" fill="#94a3b8" font-size="10" text-anchor="middle">${x}</text>`;
+        }
+      }
+
+      for (let y = -1; y <= 7; y++) {
+        const py = originY - y * scaleY;
+        if (py >= 15 && py <= height - 15) {
+          html += `<line x1="20" y1="${py}" x2="${width - 20}" stroke="#f1f5f9" stroke-width="1"/>`;
+          if (y !== 0) {
+            html += `<text x="${originX - 10}" y="${py + 3}" fill="#94a3b8" font-size="10" text-anchor="end">${y}</text>`;
+          }
+        }
+      }
+
+      // Horizontal Asymptote y = 0
+      html += `<line x1="15" y1="${originY}" x2="${width - 15}" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="4,4"/>`;
+      html += `<text x="${width - 20}" y="${originY - 8}" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="end">អាស៊ីមតូតដេក y = 0</text>`;
+
+      // Coordinate Axes
+      html += `<line x1="20" y1="${originY}" x2="${width - 15}" stroke="#334155" stroke-width="1.8"/>`;
+      html += `<line x1="${originX}" y1="${height - 15}" x2="${originX}" y2="15" stroke="#334155" stroke-width="1.8"/>`;
+      
+      // Axis Arrows
+      html += `<polygon points="${width - 12},${originY} ${width - 18},${originY - 4} ${width - 18},${originY + 4}" fill="#334155"/>`;
+      html += `<polygon points="${originX},12 ${originX - 4},18 ${originX + 4},18" fill="#334155"/>`;
+      html += `<text x="${width - 8}" y="${originY + 16}" fill="#0f172a" font-weight="bold" font-size="11">x</text>`;
+      html += `<text x="${originX + 12}" y="18" fill="#0f172a" font-weight="bold" font-size="11">y</text>`;
+      html += `<text x="${originX - 10}" y="${originY + 16}" fill="#64748b" font-size="11">O</text>`;
+
+      // Plot Main Curve y = a^x
+      let curvePoints = [];
+      const step = 0.05;
+      for (let x = -5.5; x <= 5.5; x += step) {
+        const y = Math.pow(currentBase, x);
+        const px = originX + x * scaleX;
+        const py = originY - y * scaleY;
+        if (py >= -20 && py <= height + 20) {
+          curvePoints.push(`${px.toFixed(1)},${py.toFixed(1)}`);
+        }
+      }
+
+      if (curvePoints.length > 1) {
+        const strokeColor = currentBase > 1.0 ? '#0284c7' : '#d97706';
+        html += `<polyline points="${curvePoints.join(' ')}" fill="none" stroke="${strokeColor}" stroke-width="2.8"/>`;
+      }
+
+      // Plot Special Points: (0, 1)
+      const p0Y = originY - 1 * scaleY;
+      html += `<circle cx="${originX}" cy="${p0Y}" r="5" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>`;
+      html += `<text x="${originX + 10}" y="${p0Y - 6}" fill="#b45309" font-weight="bold" font-size="11">(0, 1)</text>`;
+
+      // Plot Point: (1, a)
+      const p1X = originX + 1 * scaleX;
+      const p1Y = originY - currentBase * scaleY;
+      if (p1Y >= 15 && p1Y <= height - 15) {
+        html += `<circle cx="${p1X}" cy="${p1Y}" r="4.5" fill="#0284c7" stroke="#ffffff" stroke-width="2"/>`;
+        html += `<text x="${p1X + 8}" y="${p1Y + 4}" fill="#0284c7" font-weight="bold" font-size="10">(1, ${currentBase.toFixed(1)})</text>`;
+      }
+
+      // Plot Point: (-1, 1/a)
+      const pm1X = originX - 1 * scaleX;
+      const pm1Y = originY - (1 / currentBase) * scaleY;
+      if (pm1Y >= 15 && pm1Y <= height - 15) {
+        html += `<circle cx="${pm1X}" cy="${pm1Y}" r="4" fill="#64748b" stroke="#ffffff" stroke-width="1.5"/>`;
+      }
+
+      svg.innerHTML = html;
+    }
+
+    window.addEventListener('DOMContentLoaded', initInteractiveGraph);
+
+    // 3. Toast Notification Helper
+    let toastTimeout;
+    function showToast(msg, duration = 3000) {
+      const toast = document.getElementById('export-toast');
+      if (!toast) return;
+
+      toast.innerHTML = msg;
+      toast.classList.add('show');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, duration);
+    }
+
+    // 4. Print Preview Modal Logic
+    let previewZoom = 0.85;
+
+    function openPrintPreview() {
+      const modal = document.getElementById('print-preview-modal');
+      const sheetContent = document.getElementById('preview-sheet-content');
+      const sourceDoc = document.getElementById('lesson-plan-document');
+
+      if (!modal || !sheetContent || !sourceDoc) return;
+
+      // Clone source content into preview sheet
+      sheetContent.innerHTML = sourceDoc.innerHTML;
+
+      // Hide interactive slider controls in preview sheet to show authentic paper format
+      const sliderInPreview = sheetContent.querySelector('.math-controls-card');
+      if (sliderInPreview) {
+        sliderInPreview.style.display = 'none';
+      }
+
+      // Rename duplicate ID on cloned SVG to avoid collision
+      const dupSvg = sheetContent.querySelector('#interactive-graph-svg');
+      if (dupSvg) {
+        dupSvg.id = 'preview-graph-svg';
+      }
+
+      // Render math expressions in sheetContent if KaTeX is available
+      if (typeof renderMathInElement === 'function') {
+        try {
+          renderMathInElement(sheetContent, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false }
+            ],
+            throwOnError: false
+          });
+        } catch (e) {
+          console.warn('KaTeX preview render:', e);
+        }
+      }
+
+      // Auto fit preview width
+      fitPreviewWidth();
+
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePrintPreview() {
+      const modal = document.getElementById('print-preview-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    function zoomPreview(delta) {
+      setPreviewZoom(previewZoom + delta);
+    }
+
+    function setPreviewZoom(val) {
+      previewZoom = Math.max(0.4, Math.min(1.6, parseFloat(val.toFixed(2))));
+      const wrapper = document.getElementById('preview-sheet-wrapper');
+      const label = document.getElementById('preview-zoom-label');
+      
+      if (wrapper) {
+        wrapper.style.transform = `scale(${previewZoom})`;
+      }
+      if (label) {
+        label.textContent = Math.round(previewZoom * 100) + '%';
+      }
+    }
+
+    function fitPreviewWidth() {
+      const viewport = document.querySelector('.preview-viewport');
+      if (!viewport) return;
+      
+      const viewportWidth = viewport.clientWidth - 50; // account for padding
+      // A4 paper width simulation: 210mm ~ 794px at 96dpi
+      const paperPx = 800;
+      let targetScale = viewportWidth / paperPx;
+      targetScale = Math.max(0.45, Math.min(1.0, targetScale));
+      setPreviewZoom(targetScale);
+    }
+
+    function handlePreviewBackdropClick(event) {
+      if (event.target.classList.contains('preview-viewport') || event.target.id === 'preview-sheet-wrapper') {
+        closePrintPreview();
+      }
+    }
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closePrintPreview();
+      }
+    });
+
+    // 5. Microsoft Word (.doc) Export
+    function exportToWord() {
+      if (typeof window.downloadLessonPlanWord === 'function') {
+        window.downloadLessonPlanWord();
+        return;
+      }
+      showToast("⏳ កំពុងរៀបចំឯកសារ Microsoft Word...", 2500);
+
+      const docEl = document.getElementById('lesson-plan-document');
+      if (!docEl) return;
+
+      // Clone document to manipulate safely without affecting current page
+      const clone = docEl.cloneNode(true);
+
+      // Remove web-only sliders and preset buttons
+      const webOnlyElements = clone.querySelectorAll('.math-controls-card, .slider-custom, .preset-chips');
+      webOnlyElements.forEach(el => el.remove());
+
+      // Ensure all tables have explicit borders and width for Word compatibility
+      const tables = clone.querySelectorAll('table');
+      tables.forEach(table => {
+        table.setAttribute('border', '1');
+        table.setAttribute('cellspacing', '0');
+        table.setAttribute('cellpadding', '5');
+        table.style.borderCollapse = 'collapse';
+        table.style.width = '100%';
+        table.style.margin = '10pt 0';
+      });
+
+      const wordDocTemplate = `
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset='utf-8'>
+  <title>កិច្ចតែងការបង្រៀនគណិតវិទ្យា ថ្នាក់ទី១១ - អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
+  <!--[if gte mso 9]>
+  <xml>
+    <w:WordDocument>
+      <w:View>Print</w:View>
+      <w:Zoom>100</w:Zoom>
+      <w:DoNotOptimizeForBrowser/>
+    </w:WordDocument>
+  </xml>
+  <![endif]-->
+  <style>
+    @page WordSection1 {
+      size: 210mm 297mm;
+      margin: 20mm 15mm 20mm 15mm;
+      mso-header-margin: 35.4pt;
+      mso-footer-margin: 35.4pt;
+      mso-paper-source: 0;
+    }
+    div.WordSection1 {
+      page: WordSection1;
+    }
+    body {
+      font-family: 'Kantumruy Pro', 'Khmer OS', 'Khmer OS Siemreap', 'Calibri', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #0f172a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12pt;
+    }
+    th, td {
+      border: 1px solid #475569;
+      padding: 6pt 8pt;
+      font-size: 10pt;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: bold;
+    }
+    .official-header { text-align: center; margin-bottom: 15pt; }
+    .country-title { font-size: 14pt; font-weight: bold; }
+    .motto-title { font-size: 11pt; font-weight: bold; }
+    .header-divider { border-bottom: 2pt solid #0284c7; width: 120pt; margin: 6pt auto; }
+    .metadata-card {
+      margin-bottom: 14pt;
+      border: 1px solid #cbd5e1;
+      padding: 8pt;
+      background-color: #f8fafc;
+    }
+    .plan-main-title { text-align: center; margin: 12pt 0; }
+    .plan-main-title h1 { font-size: 14pt; color: #0369a1; }
+    .section-title {
+      font-size: 12pt;
+      font-weight: bold;
+      color: #0369a1;
+      border-bottom: 1.5pt solid #0284c7;
+      padding-bottom: 4pt;
+      margin-top: 14pt;
+      margin-bottom: 8pt;
+    }
+    .board-container {
+      border: 2px solid #334155;
+      padding: 10pt;
+      background: #f8fafc;
+      margin: 10pt 0;
+    }
+    .board-header { font-weight: bold; text-align: center; margin-bottom: 8pt; }
+    .board-column { border: 1px solid #cbd5e1; padding: 8pt; background: #ffffff; margin-bottom: 8pt; }
+    .board-column-header { font-weight: bold; color: #0369a1; border-bottom: 1px solid #cbd5e1; padding-bottom: 4pt; margin-bottom: 6pt; }
+    .worksheet-box {
+      border: 1.5pt dashed #0284c7;
+      background: #f0f9ff;
+      padding: 10pt;
+      margin: 10pt 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="WordSection1">
+    ${clone.innerHTML}
+  </div>
+</body>
+</html>
+      `;
+
+      try {
+        const blob = new Blob(['\ufeff' + wordDocTemplate], {
+          type: 'application/msword;charset=utf-8'
+        });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'កិច្ចតែងការបង្រៀន_អនុគមន៍អិចស្ប៉ូណង់ស្យែល_ថ្នាក់ទី១១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.doc';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast("✅ បានទាញយកកិច្ចតែងការជា Word (.doc) ដោយជោគជ័យ!", 3500);
+      } catch (err) {
+        console.error("Word export error:", err);
+        showToast("❌ បរាជ័យក្នុងការទាញយកជា Word សូមព្យាយាមម្តងទៀត", 3500);
+      }
+    }
+
+    // 6. Direct Client-Side PDF Export (html2pdf with print fallback)
+    function exportToPDF() {
+      if (typeof window.downloadLessonPlanPDF === 'function') {
+        window.downloadLessonPlanPDF();
+        return;
+      }
+      showToast("⏳ កំពុងរៀបចំបង្កើតឯកសារ PDF សូមរង់ចាំបន្តិច...", 4500);
+
+      const element = document.getElementById('lesson-plan-document');
+      if (!element) {
+        window.print();
+        return;
+      }
+
+      // Temporarily hide slider controls so PDF prints clean vector content
+      const sliderCard = element.querySelector('.math-controls-card');
+      const originalDisplay = sliderCard ? sliderCard.style.display : '';
+      if (sliderCard) sliderCard.style.display = 'none';
+
+      const opt = {
+        margin: [10, 8, 10, 8],
+        filename: 'កិច្ចតែងការបង្រៀន_អនុគមន៍អិចស្ប៉ូណង់ស្យែល_ថ្នាក់ទី១១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { 
+          scale: 2, 
+          useCORS: true,
+          logging: false,
+          scrollY: 0
+        },
+        jsPDF: { 
+          unit: 'mm', 
+          format: 'a4', 
+          orientation: 'portrait' 
+        },
+        pagebreak: { 
+          mode: ['css', 'legacy'],
+          avoid: ['tr', '.metadata-card', '.worksheet-box', '.board-container', '.diff-card', '.section-title']
+        }
+      };
+
+      if (typeof html2pdf !== 'undefined') {
+        html2pdf().set(opt).from(element).save().then(() => {
+          if (sliderCard) sliderCard.style.display = originalDisplay;
+          showToast("✅ បានទាញយកកិច្ចតែងការជា PDF ដោយជោគជ័យ!", 3500);
+        }).catch(err => {
+          console.warn("html2pdf export notice, falling back to print:", err);
+          if (sliderCard) sliderCard.style.display = originalDisplay;
+          showToast("⚠️ ប្រព័ន្ធបានបើកផ្ទាំង Print ដើម្បីរក្សាទុកជា PDF...", 3000);
+          window.print();
+        });
+      } else {
+        if (sliderCard) sliderCard.style.display = originalDisplay;
+        showToast("⚠️ ប្រព័ន្ធបានបើកផ្ទាំង Print ដើម្បីរក្សាទុកជា PDF...", 3000);
+        window.print();
+      }
+    }
+  </script>
+
+  <!-- Floating Toast Notification for Status & Feedback -->
+  <div id="export-toast" class="export-toast"></div>
+
+  <!-- Print Preview Modal Overlay -->
+  <div id="print-preview-modal" class="preview-modal-backdrop" style="display: none;">
+    <!-- Fixed Top Toolbar -->
+    <div class="preview-toolbar">
+      <div class="preview-toolbar-left">
+        <span class="preview-title">👁️ មើលជាមុនមុននឹងបោះពុម្ព (Print Preview - A4)</span>
+        <span class="preview-badge">ទម្រង់ A4 បញ្ឈរ (Portrait)</span>
+      </div>
+      
+      <!-- Zoom Controls -->
+      <div class="preview-zoom-controls">
+        <button class="zoom-btn" onclick="zoomPreview(-0.1)" title="បង្រួមតូចជាងមុន (Zoom Out)">➖</button>
+        <span id="preview-zoom-label" class="zoom-label">85%</span>
+        <button class="zoom-btn" onclick="zoomPreview(0.1)" title="ពង្រីកធំជាងមុន (Zoom In)">➕</button>
+        <button class="zoom-btn reset-btn" onclick="setPreviewZoom(1.0)" title="ទំហំដើម 100%">100%</button>
+        <button class="zoom-btn reset-btn" onclick="fitPreviewWidth()" title="ពង្រីកសមល្មមផ្ទាំងអេក្រង់ (Fit Width)">📐 សមល្មម</button>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="preview-toolbar-actions">
+        <button onclick="window.print()" class="btn btn-primary btn-sm" title="បោះពុម្ព ឬរក្សាទុកជា PDF (Save as PDF) កម្រិត Vector ច្បាស់ ១០០%">
+          <span>🖨️ បោះពុម្ព / Save as PDF</span>
+        </button>
+        <button onclick="exportToWord()" class="btn btn-word btn-sm" title="ទាញយកជា Word">
+          <span>📄 Export ជា Word</span>
+        </button>
+        <button onclick="exportToPDF()" class="btn btn-pdf btn-sm" title="ទាញយកជា PDF">
+          <span>📑 ទាញយកជា PDF</span>
+        </button>
+        <button onclick="closePrintPreview()" class="preview-close-btn" title="បិទផ្ទាំងមើលជាមុន (Esc)">✕</button>
+      </div>
+    </div>
+
+    <!-- Scrollable Viewport with A4 Paper Sheet -->
+    <div class="preview-viewport" onclick="handlePreviewBackdropClick(event)">
+      <div id="preview-sheet-wrapper" class="preview-sheet-wrapper">
+        <div class="preview-paper-sheet">
+          <div id="preview-sheet-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/lesson-plan-modal.js"></script>
+</body>
+</html>

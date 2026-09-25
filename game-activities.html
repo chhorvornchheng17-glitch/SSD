@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>មជ្ឈមណ្ឌលល្បែងសិក្សាគណិតវិទ្យាទាំង ៦ | Math Game Arena - អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
+  <meta name="description" content="មជ្ឈមណ្ឌលល្បែងសិក្សាគណិតវិទ្យាអន្តរកម្មទាំង ៦ ប្រភេទ រួមមាន Kahoot, Math Bingo, Equation Dice, Math Escape Room, Function Match-Up និង The Monty Hall Game ជាមួយសៀវភៅណែនាំរបៀបលេងសម្រាប់សិស្ស និងលោកគ្រូអ្នកគ្រូ។">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/academic.css">
+  <link rel="stylesheet" href="css/game.css">
+
+  <!-- KaTeX for High Quality Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    /* Custom Scoped Styles for Math Game Arena */
+    :root {
+      --game-primary: #06b6d4;
+      --game-accent: #f59e0b;
+      --game-success: #10b981;
+      --game-danger: #ef4444;
+      --game-purple: #8b5cf6;
+    }
+
+    .arena-nav-tabs {
+      display: flex;
+      gap: 0.6rem;
+      overflow-x: auto;
+      padding: 0.5rem 0.25rem 1rem;
+      margin-bottom: 2rem;
+      scrollbar-width: thin;
+    }
+
+    .arena-tab-btn {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: var(--radius-md);
+      color: #94a3b8;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .arena-tab-btn:hover {
+      color: #f8fafc;
+      border-color: rgba(56, 189, 248, 0.5);
+      background: rgba(30, 41, 59, 0.85);
+      transform: translateY(-2px);
+    }
+
+    .arena-tab-btn.active {
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(59, 130, 246, 0.3) 100%);
+      border-color: #38bdf8;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    }
+
+    .arena-tab-btn .badge-pill {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 9999px;
+      background: rgba(245, 158, 11, 0.2);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+
+    .game-module {
+      display: none;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .game-module.active {
+      display: block;
+    }
+
+    .guide-card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .guide-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 9999px;
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .guide-step {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      border-left: 3px solid #38bdf8;
+    }
+
+    .guide-step h4 {
+      font-size: 0.95rem;
+      color: #38bdf8;
+      margin: 0 0 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .guide-step p {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Interactive Game Box */
+    .interactive-stage {
+      background: radial-gradient(circle at 50% 30%, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 1.5px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(6, 182, 212, 0.1);
+      position: relative;
+    }
+
+    /* Kahoot Styles */
+    .kahoot-timer-bar {
+      height: 8px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .kahoot-timer-progress {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, #10b981, #f59e0b, #ef4444);
+      transition: width 1s linear;
+    }
+
+    .kahoot-question-box {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .kahoot-question-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .kahoot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .kahoot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kahoot-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-md);
+      border: none;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .kahoot-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      filter: brightness(1.15);
+    }
+
+    .kahoot-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+      transform: none !important;
+    }
+
+    .kahoot-red { background: linear-gradient(135deg, #e11d48, #be123c); }
+    .kahoot-blue { background: linear-gradient(135deg, #0284c7, #1d4ed8); }
+    .kahoot-yellow { background: linear-gradient(135deg, #d97706, #b45309); }
+    .kahoot-green { background: linear-gradient(135deg, #059669, #047857); }
+
+    .kahoot-shape {
+      font-size: 1.3rem;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 6px;
+    }
+
+    /* Bingo Styles */
+    .bingo-board {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      max-width: 540px;
+      margin: 1.5rem auto;
+    }
+
+    .bingo-cell {
+      aspect-ratio: 1;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      position: relative;
+    }
+
+    .bingo-cell:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      transform: scale(1.03);
+    }
+
+    .bingo-cell.marked {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #0f172a;
+      border-color: #fbbf24;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    }
+
+    .bingo-cell.marked::after {
+      content: '★';
+      position: absolute;
+      top: 4px;
+      right: 6px;
+      font-size: 0.75rem;
+      color: #0f172a;
+    }
+
+    .bingo-cell.free {
+      background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);
+      color: #ffffff;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    /* Dice Styles */
+    .dice-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+
+    .dice {
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      color: #0f172a;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      user-select: none;
+    }
+
+    .dice.target {
+      background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+      color: #ffffff;
+      width: 80px;
+      height: 80px;
+      font-size: 2.3rem;
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+    }
+
+    .dice.used {
+      opacity: 0.35;
+      pointer-events: none;
+      transform: scale(0.9);
+    }
+
+    .dice:active {
+      transform: scale(0.95);
+    }
+
+    .equation-builder-bar {
+      min-height: 60px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 2px dashed rgba(56, 189, 248, 0.4);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      font-size: 1.35rem;
+      color: #38bdf8;
+      font-family: var(--font-mono);
+      margin: 1.5rem 0;
+    }
+
+    .op-btn {
+      padding: 0.5rem 1rem;
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius-sm);
+      color: #f8fafc;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .op-btn:hover {
+      background: #0284c7;
+      color: #fff;
+    }
+
+    /* Escape Room Styles */
+    .vault-box {
+      background: radial-gradient(circle at 50% 50%, #1e293b 0%, #090d16 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.2);
+    }
+
+    .vault-display {
+      background: #000;
+      border: 2px solid #22c55e;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: inset 0 0 15px rgba(34, 197, 94, 0.2);
+    }
+
+    .vault-digit {
+      font-family: var(--font-mono);
+      font-size: 2.5rem;
+      color: #22c55e;
+      min-width: 45px;
+      text-align: center;
+      border-bottom: 2px solid #22c55e;
+      text-shadow: 0 0 10px #22c55e;
+    }
+
+    .chambers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .chamber-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .chamber-card.solved {
+      border-color: #22c55e;
+      background: rgba(34, 197, 94, 0.08);
+    }
+
+    .chamber-num {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+
+    /* Monty Hall Doors */
+    .doors-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+
+    .monty-door {
+      width: 170px;
+      height: 250px;
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      border: 3px solid #38bdf8;
+      border-radius: 12px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      user-select: none;
+    }
+
+    .monty-door:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(56, 189, 248, 0.3);
+      border-color: #f59e0b;
+    }
+
+    .monty-door.selected {
+      border-color: #f59e0b;
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.15) 0%, #0f172a 100%);
+    }
+
+    .monty-door.opened {
+      background: radial-gradient(circle, #334155 0%, #0f172a 100%);
+      border-color: #64748b;
+    }
+
+    .door-knob {
+      width: 14px;
+      height: 14px;
+      background: #f59e0b;
+      border-radius: 50%;
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .door-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #38bdf8;
+    }
+
+    .door-content {
+      font-size: 4rem;
+      display: none;
+      animation: popIn 0.3s ease;
+    }
+
+    .monty-door.opened .door-number,
+    .monty-door.opened .door-knob {
+      display: none;
+    }
+
+    .monty-door.opened .door-content {
+      display: block;
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-pill {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    /* Match Up Styles */
+    .match-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .match-card {
+      min-height: 120px;
+      background: rgba(30, 41, 59, 0.75);
+      border: 1.5px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      user-select: none;
+    }
+
+    .match-card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      background: rgba(30, 41, 59, 0.95);
+    }
+
+    .match-card.selected {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.15);
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+    }
+
+    .match-card.matched {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.15);
+      pointer-events: none;
+      opacity: 0.75;
+    }
+
+    .card-type-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 9999px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .tag-eq { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+    .tag-graph { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
+    .tag-table { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .tag-prop { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. MAIN NAVBAR
+       ============================================================ -->
+  <header class="navbar scrolled" id="main-navbar">
+    <div class="container nav-container">
+      <div class="nav-brand-container">
+        <a href="index.html" class="nav-brand" title="Hover ដើម្បីមើលព័ត៌មានទំនាក់ទំនង">
+          <div class="brand-icon">f(x)</div>
+          <div class="brand-text">
+            <span class="brand-name">
+              ឆេង ឆវ័ន្ត
+              <span class="brand-contact-indicator" title="Hover ដើម្បីមើលលេខទូរស័ព្ទ & អ៊ីមែល">
+                <span class="indicator-pulse"></span>
+                <span>ទំនាក់ទំនង</span>
+              </span>
+            </span>
+            <span class="brand-sub">MATH SPECIALIST</span>
+          </div>
+        </a>
+
+        <!-- Popover Hover Card for Teacher Contact Info -->
+        <div class="teacher-hover-card" role="tooltip" aria-label="ព័ត៌មានទំនាក់ទំនងអ្នកគ្រូ ឆេង ឆវ័ន្ត">
+          <div class="hover-card-header">
+            <div class="hover-avatar-box">
+              <img src="assets/images/teacher-chhovorn.png" alt="អ្នកគ្រូ ឆេង ឆវ័ន្ត" class="hover-avatar-img" onerror="this.onerror=null; this.src='assets/images/teacher-chhovorn.jpg';">
+              <span class="hover-status-dot" title="កំពុងបម្រើការងារ & អាចទាក់ទងបាន"></span>
+            </div>
+            <div class="hover-header-text">
+              <div class="hover-name">
+                អ្នកគ្រូ ឆេង ឆវ័ន្ត
+                <span class="hover-verified" title="គ្រូបង្រៀនគណិតវិទ្យាផ្លូវការ">✓</span>
+              </div>
+              <div class="hover-title">Teacher Chheng Chhovorn</div>
+              <div class="hover-tag">គ្រូបង្រៀនគណិតវិទ្យាឯកទេស (NIE & RUPP)</div>
+            </div>
+          </div>
+
+          <div class="hover-card-divider"></div>
+
+          <div class="hover-contact-list">
+            <!-- Phone Number Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">លេខទូរស័ព្ទទំនាក់ទំនង (Phone)</div>
+                <a href="tel:099775501" class="hover-contact-val hover-contact-link">099 77 5501</a>
+              </div>
+              <button type="button" class="hover-copy-btn" onclick="copyContactText(event, '099775501', this)" title="ចម្លងលេខទូរស័ព្ទ">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>ចម្លង</span>
+              </button>
+            </div>
+
+            <!-- Email Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">អ៊ីមែលផ្លូវការ (Email)</div>
+                <a href="mailto:chhorvornk@gmail.com" class="hover-contact-val hover-contact-link">chhorvornk@gmail.com</a>
+              </div>
+              <button type="button" class="hover-copy-btn" onclick="copyContactText(event, 'chhorvornk@gmail.com', this)" title="ចម្លងអ៊ីមែល">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>ចម្លង</span>
+              </button>
+            </div>
+
+            <!-- Telegram Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">Telegram ផ្លូវការ</div>
+                <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-contact-val hover-contact-link">@chhovorn_math</a>
+              </div>
+              <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-copy-btn" title="បើក Telegram">
+                <span>ឆាត</span>
+              </a>
+            </div>
+
+            <!-- Teaching Location Item -->
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-location">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">ទីតាំងបង្រៀន (Workplace)</div>
+                <div class="hover-contact-val" style="font-size: 0.78rem; font-weight: 500;">វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hover-card-footer">
+            <a href="tel:099775501" class="hover-action-btn btn-call">
+              <span>📞 Call ផ្ទាល់</span>
+            </a>
+            <a href="mailto:chhorvornk@gmail.com" class="hover-action-btn btn-email">
+              <span>✉️ ផ្ញើ Email</span>
+            </a>
+            <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-action-btn btn-telegram">
+              <span>✈️ Telegram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link"><span>ទំព័រដើម</span></a></li>
+          <li class="nav-item"><a href="lessons.html" class="nav-link"><span>ឯកសារបង្រៀន</span></a></li>
+          <li class="nav-item"><a href="exercises.html" class="nav-link"><span>កម្រងលំហាត់</span></a></li>
+          <li class="nav-item"><a href="exams.html" class="nav-link"><span>វិញ្ញាសា</span></a></li>
+          
+          <!-- Dropdown Games -->
+          <li class="nav-item nav-item-has-dropdown active" data-nav-group="tools">
+            <a href="game-activities.html" class="nav-link nav-dropdown-toggle active" role="button" aria-haspopup="true" aria-expanded="false">
+              <span>ឧបករណ៍ & ល្បែង</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <div class="dropdown-menu-header">មជ្ឈមណ្ឌលល្បែងសិក្សាអន្តរកម្ម</div>
+              <a href="game-activities.html" class="dropdown-item active-sub">
+                <div class="dropdown-item-icon">🎲</div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">ល្បែងសិក្សាទាំង ៦ ប្រភេទ</div>
+                  <div class="dropdown-item-desc">Kahoot, Bingo, Dice, Escape, Match, Monty Hall</div>
+                </div>
+              </a>
+              <a href="game-grade11.html" class="dropdown-item">
+                <div class="dropdown-item-icon">🎮</div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">Math Quest 11</div>
+                  <div class="dropdown-item-desc">ដំណើរផ្សងព្រេងប្រយុទ្ធបញ្ញវន្តថ្នាក់ទី១១</div>
+                </div>
+              </a>
+              <a href="game-grade9.html" class="dropdown-item">
+                <div class="dropdown-item-icon">⚔️</div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">Math Hero 9</div>
+                  <div class="dropdown-item-desc">និនចាកាប់រ៉ាឌីកាល់ & ពិជគណិតថ្នាក់ទី ៩</div>
+                </div>
+              </a>
+              <a href="game-exponential.html" class="dropdown-item">
+                <div class="dropdown-item-icon">🚀</div>
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-title">Exponential Odyssey</div>
+                  <div class="dropdown-item-desc">បាញ់កម្ទេចសមីការអិចស្ប៉ូណង់ស្យែល</div>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Nav Controls -->
+      <div class="nav-controls">
+        <button class="hud-icon-btn" id="sound-toggle-btn" title="បិទ/បើកសំឡេង Effects">
+          <span id="sound-icon">🔊</span>
+        </button>
+        <button class="theme-toggle" id="theme-toggle-btn" title="ប្តូរ Dark / Light Mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       2. HERO SECTION
+       ============================================================ -->
+  <section class="game-section">
+    <div class="game-bg-grid"></div>
+    <div class="container game-container">
+      
+      <div class="game-header">
+        <div class="game-badge">
+          <span>✨</span>
+          <span>PEDAGOGICAL MATH GAME SUITE</span>
+          <span>✨</span>
+        </div>
+        <h1 class="game-title">
+          សង្វៀនល្បែងសិក្សា <span class="gold-accent">គណិតវិទ្យាទាំង ៦</span>
+        </h1>
+        <p class="game-subtitle">
+          ប្រព័ន្ធល្បែងសិក្សាអន្តរកម្មកម្រិតខ្ពស់ រចនាឡើងដើម្បីជួយឱ្យសិស្សានុសិស្សចូលចិត្តរៀនគណិតវិទ្យា អភិវឌ្ឍការគិតរហ័ស ភាពច្បាស់លាស់ និងការដោះស្រាយបញ្ហាជាក្រុម ស្របតាមកម្មវិធីអប់រំជាតិ។
+        </p>
+      </div>
+
+      <!-- Navigation Tabs Between 6 Games -->
+      <div class="arena-nav-tabs" role="tablist">
+        <button class="arena-tab-btn active" data-target="module-kahoot">
+          <span>🏆</span>
+          <span>1. Kahoot Arena</span>
+          <span class="badge-pill">Quiz Battle</span>
+        </button>
+        <button class="arena-tab-btn" data-target="module-bingo">
+          <span>🎯</span>
+          <span>2. Math Bingo</span>
+          <span class="badge-pill">5x5 Grid</span>
+        </button>
+        <button class="arena-tab-btn" data-target="module-dice">
+          <span>🎲</span>
+          <span>3. Equation Dice</span>
+          <span class="badge-pill">Number Crafter</span>
+        </button>
+        <button class="arena-tab-btn" data-target="module-escape">
+          <span>🗝️</span>
+          <span>4. Math Escape Room</span>
+          <span class="badge-pill">Secret Vault</span>
+        </button>
+        <button class="arena-tab-btn" data-target="module-match">
+          <span>🃏</span>
+          <span>5. Function Match-Up</span>
+          <span class="badge-pill">Card Pairing</span>
+        </button>
+        <button class="arena-tab-btn" data-target="module-monty">
+          <span>🚪</span>
+          <span>6. Monty Hall Casino</span>
+          <span class="badge-pill">Probability</span>
+        </button>
+      </div>
+
+      <!-- ============================================================
+           MODULE 1: KAHOOT ARENA
+           ============================================================ -->
+      <div class="game-module active" id="module-kahoot">
+        <!-- Student Guide Card -->
+        <div class="guide-card">
+          <div class="guide-badge">📖 សៀវភៅណែនាំរបៀបលេងសម្រាប់សិស្ស (Student Player Guide)</div>
+          <h3 style="color:#ffffff; margin: 0 0 0.5rem; font-size: 1.2rem;">
+            🏆 Kahoot Arena - សង្វៀនសំណួររហ័សទាន់ចិត្ត
+          </h3>
+          <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6;">
+            <strong>បេសកកម្ម៖</strong> អ្នកជា "អ្នកប្រយុទ្ធគណិតវិទ្យា" ត្រូវឆ្លើយសំណួរឱ្យបានត្រឹមត្រូវ និងរហ័សបំផុតដើម្បីដណ្តើមចំណាត់ថ្នាក់លេខ ១ លើកំពូលតារាង Podium!
+          </p>
+          <div class="guide-grid">
+            <div class="guide-step">
+              <h4><span>1️⃣</span> មើលសំណួរ & ពេលវេលា</h4>
+              <p>សំណួរគណិតវិទ្យានឹងបង្ហាញលើអេក្រង់ ជាមួយនាឡិការាប់ថយក្រោយ (២០ វិនាទី)។ សូមត្រៀមក្រដាសព្រាងក្បែរខ្លួនជានិច្ច។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>2️⃣</span> ជ្រើសរើសពណ៌/រាង</h4>
+              <p>ចុចលើប៊ូតុងពណ៌ទាំង ៤ (ក្រហម-ត្រីកោណ, ខៀវ-ពេជ្រ, លឿង-រង្វង់, បៃតង-ការ៉េ) ណាដែលត្រូវនឹងចម្លើយពិត។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>3️⃣</span> ប្រព័ន្ធគិតពិន្ទុ & Streak</h4>
+              <p>ឆ្លើយត្រូវ + លឿនបំផុត = រហូតដល់ ១០០០ ពិន្ទុ! បើឆ្លើយត្រូវជាប់ៗគ្នា នឹងទទួលបាន Streak Fire 🔥 គុណពិន្ទុបន្ថែម។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>💡</span> តិចនិកលេងឱ្យឈ្នះ</h4>
+              <p>កុំចុចប្រថុយ! ឆ្លើយលឿនតែខុសគឺ ០ ពិន្ទុ។ គិតឱ្យច្បាស់សិន តែឆ្លើយមុនពេលនាឡិកាអស់។</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Kahoot Stage -->
+        <div class="interactive-stage">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <div style="font-weight:700; color:#38bdf8; font-size: 1.1rem;">
+              សំណួរទី <span id="kh-qnum">1</span> / <span id="kh-total">6</span>
+            </div>
+            <div style="display:flex; gap:1rem; align-items:center;">
+              <span style="font-size:0.9rem; color:#f59e0b;">🔥 Streak: <strong id="kh-streak">0</strong></span>
+              <span style="font-size:1.1rem; color:#10b981; font-weight:800;">ពិន្ទុ: <strong id="kh-score">0</strong></span>
+            </div>
+          </div>
+
+          <div class="kahoot-timer-bar">
+            <div class="kahoot-timer-progress" id="kh-timer-bar"></div>
+          </div>
+
+          <div class="kahoot-question-box">
+            <div class="kahoot-question-text" id="kh-question-text">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <div class="kahoot-grid" id="kh-options-grid">
+            <button class="kahoot-btn kahoot-red" onclick="GameArena.kahoot.select(0)">
+              <div class="kahoot-shape">▲</div>
+              <span class="btn-text">ជម្រើស A</span>
+            </button>
+            <button class="kahoot-btn kahoot-blue" onclick="GameArena.kahoot.select(1)">
+              <div class="kahoot-shape">◆</div>
+              <span class="btn-text">ជម្រើស B</span>
+            </button>
+            <button class="kahoot-btn kahoot-yellow" onclick="GameArena.kahoot.select(2)">
+              <div class="kahoot-shape">●</div>
+              <span class="btn-text">ជម្រើស C</span>
+            </button>
+            <button class="kahoot-btn kahoot-green" onclick="GameArena.kahoot.select(3)">
+              <div class="kahoot-shape">■</div>
+              <span class="btn-text">ជម្រើស D</span>
+            </button>
+          </div>
+
+          <div id="kh-feedback" style="display:none; margin-top:1.5rem; text-align:center; padding:1rem; border-radius:8px;"></div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           MODULE 2: MATH BINGO
+           ============================================================ -->
+      <div class="game-module" id="module-bingo">
+        <!-- Student Guide Card -->
+        <div class="guide-card">
+          <div class="guide-badge">📖 សៀវភៅណែនាំរបៀបលេងសម្រាប់សិស្ស (Student Player Guide)</div>
+          <h3 style="color:#ffffff; margin: 0 0 0.5rem; font-size: 1.2rem;">
+            🎯 Math Bingo - ប៊ីងហ្គោគណិតវិទ្យា ក្រឡាជ័យលាភី ៥x៥
+          </h3>
+          <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6;">
+            <strong>បេសកកម្ម៖</strong> ដោះស្រាយលំហាត់គណិតវិទ្យាដែលបានចាប់ចេញ ហើយគូសសម្គាល់លេខចម្លើយលើក្រឡារបស់អ្នកដើម្បីបង្កើតជួរដេក ជួរឈរ ឬអង្កត់ទ្រូងពេញលេញ រួចស្រែកថា «BINGO!»
+          </p>
+          <div class="guide-grid">
+            <div class="guide-step">
+              <h4><span>1️⃣</span> ក្រឡាក្តារ 5x5</h4>
+              <p>អ្នកមានក្រឡា Bingo ផ្ទាល់ខ្លួនដែលមាន ២៤ លេខចម្លើយផ្សេងៗគ្នា និងក្រឡាកណ្តាល FREE 🎁 ដែលត្រូវបានសម្គាល់ជាស្រេច។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>2️⃣</span> ដោះស្រាយលំហាត់</h4>
+              <p>ចុចប៊ូតុង «ចាប់លំហាត់ថ្មី» ដើម្បីទទួលលំហាត់។ គណនាក្នុងក្រដាសព្រាងឱ្យបានចម្លើយពិតប្រាកដ។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>3️⃣</span> គូសសម្គាល់ចម្លើយ</h4>
+              <p>បើលេខចម្លើយមាននៅលើក្តារ Bingo របស់អ្នក ចុចលើក្រឡានោះដើម្បីសម្គាល់វា (វានឹងប្រែទៅជាពណ៌មាស)។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>🏆</span> លក្ខខណ្ឌ BINGO</h4>
+              <p>ពេលគូសបាន ៥ ក្រឡាជាប់គ្នាលើជួរដេក ជួរឈរ ឬអង្កត់ទ្រូង ចុចប៊ូតុង «ផ្ទៀងផ្ទាត់ BINGO» ដើម្បីឈ្នះជ័យជម្នះ!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Bingo Stage -->
+        <div class="interactive-stage">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+            <div>
+              <button class="btn btn-primary" id="bingo-call-btn" onclick="GameArena.bingo.callNext()">
+                🎲 ចាប់លំហាត់បន្ទាប់
+              </button>
+              <button class="btn btn-secondary" onclick="GameArena.bingo.generateBoard()" style="margin-left:0.5rem;">
+                🔄 បង្កើតក្តារថ្មី
+              </button>
+            </div>
+            <button class="btn btn-accent" onclick="GameArena.bingo.checkWin()">
+              🏆 ផ្ទៀងផ្ទាត់ BINGO!
+            </button>
+          </div>
+
+          <!-- Current Problem Box -->
+          <div id="bingo-current-problem" style="background:rgba(15,23,42,0.9); border:1px solid #38bdf8; border-radius:8px; padding:1.25rem; text-align:center; margin-bottom:1.5rem;">
+            <div style="font-size:0.85rem; color:#94a3b8; margin-bottom:0.25rem;">លំហាត់កំពុងហៅ (Current Problem)</div>
+            <div id="bingo-problem-text" style="font-size:1.35rem; font-weight:700; color:#ffffff;">
+              សូមចុចប៊ូតុង "ចាប់លំហាត់បន្ទាប់" ដើម្បីចាប់ផ្តើម!
+            </div>
+          </div>
+
+          <!-- 5x5 Board -->
+          <div class="bingo-board" id="bingo-board-grid">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <div id="bingo-alert" style="text-align:center; margin-top:1rem; font-weight:700;"></div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           MODULE 3: EQUATION DICE
+           ============================================================ -->
+      <div class="game-module" id="module-dice">
+        <!-- Student Guide Card -->
+        <div class="guide-card">
+          <div class="guide-badge">📖 សៀវភៅណែនាំរបៀបលេងសម្រាប់សិស្ស (Student Player Guide)</div>
+          <h3 style="color:#ffffff; margin: 0 0 0.5rem; font-size: 1.2rem;">
+            🎲 Equation Dice - គ្រាប់ឡុកឡាក់សមីការ & សិល្បៈគណិតវិទ្យា
+          </h3>
+          <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6;">
+            <strong>បេសកកម្ម៖</strong> ប្រើប្រាស់លេខដែលបោះបានពីគ្រាប់ឡុកឡាក់ រួមជាមួយសញ្ញាប្រមាណវិធី (+, -, ×, ÷, វង់ក្រចក) ដើម្បីបង្កើតកន្សោមគណិតវិទ្យាឱ្យបានលទ្ធផលស្មើនឹង "លេខគោលដៅ" (Target Number)!
+          </p>
+          <div class="guide-grid">
+            <div class="guide-step">
+              <h4><span>1️⃣</span> បោះគ្រាប់ឡុកឡាក់</h4>
+              <p>អ្នកនឹងទទួលបានលេខគ្រាប់ឡុកឡាក់ចំនួន ៥ និងលេខគោលដៅពណ៌មាស ១ (ឧ. គោលដៅ: 24)។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>2️⃣</span> ច្បាប់ប្រើលេខ</h4>
+              <p>លេខឡុកឡាក់នីមួយៗអាចប្រើបានតែម្តងគត់ (មិនអាចប្រើលេខដែលគ្មានក្នុងឡុកឡាក់បានទេ)។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>3️⃣</span> បង្កើតសមីការ</h4>
+              <p>ចុចលើគ្រាប់ឡុកឡាក់ និងសញ្ញា (+, -, *, /) ដើម្បីតម្រៀបកន្សោមគណិតវិទ្យា។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>💡</span> គន្លឹះដោះស្រាយ</h4>
+              <p>គិតពីកត្តាផលគុណមុន! ឧទាហរណ៍បើគោលដៅ 24 ត្រូវគិតដល់ (4 × 6) ឬ (3 × 8) ឬ (12 × 2)។</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Dice Stage -->
+        <div class="interactive-stage">
+          <div style="text-align:center; margin-bottom:1.5rem;">
+            <button class="btn btn-primary" onclick="GameArena.dice.roll()">
+              🎲 បោះគ្រាប់ឡុកឡាក់ជាថ្មី
+            </button>
+            <button class="btn btn-secondary" onclick="GameArena.dice.clearEq()" style="margin-left:0.5rem;">
+              🗑️ លុបសមីការ
+            </button>
+          </div>
+
+          <div style="display:flex; justify-content:center; align-items:center; gap:2rem; flex-wrap:wrap;">
+            <div style="text-align:center;">
+              <div style="font-size:0.85rem; color:#f59e0b; margin-bottom:0.4rem; font-weight:700;">🎯 លេខគោលដៅ (TARGET)</div>
+              <div class="dice target" id="dice-target">24</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:0.85rem; color:#38bdf8; margin-bottom:0.4rem; font-weight:700;">🎲 គ្រាប់ឡុកឡាក់ដែលអាចប្រើបាន (ចុចដើម្បីជ្រើស)</div>
+              <div class="dice-container" id="dice-list" style="margin:0;">
+                <!-- Populated via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Operators -->
+          <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:1.5rem;">
+            <button class="op-btn" onclick="GameArena.dice.addOp('+')">+</button>
+            <button class="op-btn" onclick="GameArena.dice.addOp('-')">-</button>
+            <button class="op-btn" onclick="GameArena.dice.addOp('*')">×</button>
+            <button class="op-btn" onclick="GameArena.dice.addOp('/')">÷</button>
+            <button class="op-btn" onclick="GameArena.dice.addOp('(')">(</button>
+            <button class="op-btn" onclick="GameArena.dice.addOp(')')">)</button>
+          </div>
+
+          <!-- Equation Display -->
+          <div class="equation-builder-bar" id="dice-eq-display">
+            ចុចលេខ និងសញ្ញាខាងលើដើម្បីបង្កើតសមីការ...
+          </div>
+
+          <div style="text-align:center;">
+            <button class="btn btn-accent" onclick="GameArena.dice.verify()">
+              ⚡ ផ្ទៀងផ្ទាត់ចម្លើយ
+            </button>
+          </div>
+
+          <div id="dice-feedback" style="text-align:center; margin-top:1rem; font-weight:700;"></div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           MODULE 4: MATH ESCAPE ROOM
+           ============================================================ -->
+      <div class="game-module" id="module-escape">
+        <!-- Student Guide Card -->
+        <div class="guide-card">
+          <div class="guide-badge">📖 សៀវភៅណែនាំរបៀបលេងសម្រាប់សិស្ស (Student Player Guide)</div>
+          <h3 style="color:#ffffff; margin: 0 0 0.5rem; font-size: 1.2rem;">
+            🗝️ Math Escape Room - បន្ទប់អាថ៌កំបាំងគណិតវិទ្យា
+          </h3>
+          <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6;">
+            <strong>សាច់រឿងបេសកកម្ម៖</strong> អ្នកនិងក្រុមការងារបានជាប់នៅក្នុងបន្ទប់ឃ្លាំងសម្ងាត់របស់មហាបណ្ឌិតគណិតវិទ្យា។ ដើម្បីគេចចេញបាន អ្នកត្រូវដោះស្រាយល្បែងផ្គុំគណិតវិទ្យាក្នុងបន្ទប់ទាំង ៤ ដើម្បីស្វែងរកលេខកូដសម្ងាត់ ៤ ខ្ទង់ដោះសោទ្វារសុវត្ថិភាព!
+          </p>
+          <div class="guide-grid">
+            <div class="guide-step">
+              <h4><span>1️⃣</span> ដំណាក់កាលទាំង ៤</h4>
+              <p>បន្ទប់ទី១ (ពិជគណិត), បន្ទប់ទី២ (ត្រីកោណមាត្រ), បន្ទប់ទី៣ (ដេរីវេ), បន្ទប់ទី៤ (ប្រូបាប)។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>2️⃣</span> ស្វែងរកលេខកូដ</h4>
+              <p>ចម្លើយនៃល្បែងផ្គុំក្នុងបន្ទប់នីមួយៗ គឺជាលេខ ១ ខ្ទង់ (0 ដល់ 9) នៃលេខកូដសុវត្ថិភាព។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>3️⃣</span> បញ្ចូលកូដ & ដោះសោ</h4>
+              <p>វាយបញ្ចូលលេខកូដទាំង ៤ ខ្ទង់ក្នុងក្តារចុចឌីជីថល រួចចុច "UNLOCK" ដើម្បីបើកទ្វារដែកថែប។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>💡</span> ការធ្វើការជាក្រុម</h4>
+              <p>បែងចែកសមាជិកដោះស្រាយបន្ទប់ផ្សេងៗគ្នាដើម្បីសន្សំពេលវេលា រួចផ្ទៀងផ្ទាត់រួមគ្នា។</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Escape Stage -->
+        <div class="interactive-stage">
+          <div class="vault-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+              <div style="font-weight:700; color:#f59e0b; font-size:1.15rem;">
+                🛡️ ឃ្លាំងសុវត្ថិភាពឌីជីថល (SECURITY VAULT LOCK)
+              </div>
+              <div style="color:#22c55e; font-family:var(--font-mono); font-weight:700;" id="vault-status">
+                STATUS: LOCKED 🔒
+              </div>
+            </div>
+
+            <!-- Chambers Puzzles -->
+            <div class="chambers-grid">
+              <!-- Chamber 1 -->
+              <div class="chamber-card" id="chamber-1">
+                <div class="chamber-num">CHAMBER 1</div>
+                <h5 style="color:#38bdf8; margin:0 0 0.5rem;">ពិជគណិត (Algebra)</h5>
+                <p style="font-size:0.85rem; color:#cbd5e1; margin-bottom:0.5rem;">
+                  ដោះស្រាយរកឫសវិជ្ជមាននៃសមីការ៖<br>
+                  $$x^2 - 5x - 24 = 0$$
+                </p>
+                <div style="font-size:0.8rem; color:#94a3b8;">→ លេខកូដខ្ទង់ទី ១ គឺតម្លៃនៃ $x$</div>
+              </div>
+
+              <!-- Chamber 2 -->
+              <div class="chamber-card" id="chamber-2">
+                <div class="chamber-num">CHAMBER 2</div>
+                <h5 style="color:#38bdf8; margin:0 0 0.5rem;">ត្រីកោណមាត្រ (Trig)</h5>
+                <p style="font-size:0.85rem; color:#cbd5e1; margin-bottom:0.5rem;">
+                  គណនាតម្លៃនៃកន្សោម៖<br>
+                  $$K = 2\sin(90^\circ) + \tan(45^\circ)$$
+                </p>
+                <div style="font-size:0.8rem; color:#94a3b8;">→ លេខកូដខ្ទង់ទី ២ គឺតម្លៃ $K$</div>
+              </div>
+
+              <!-- Chamber 3 -->
+              <div class="chamber-card" id="chamber-3">
+                <div class="chamber-num">CHAMBER 3</div>
+                <h5 style="color:#38bdf8; margin:0 0 0.5rem;">ដេរីវេ (Derivative)</h5>
+                <p style="font-size:0.85rem; color:#cbd5e1; margin-bottom:0.5rem;">
+                  គេឱ្យ $f(x) = x^3 - 2x + 5$។<br>
+                  គណនាតម្លៃដេរីវេ $f'(2)$?
+                </p>
+                <div style="font-size:0.8rem; color:#94a3b8;">→ លេខកូដខ្ទង់ទី ៣ គឺផលបូកខ្ទង់នៃ $f'(2)$ (បើបាន 10 គឺ $1+0=1$)</div>
+              </div>
+
+              <!-- Chamber 4 -->
+              <div class="chamber-card" id="chamber-4">
+                <div class="chamber-num">CHAMBER 4</div>
+                <h5 style="color:#38bdf8; margin:0 0 0.5rem;">ស្វ៊ីតចំនួនពិត (Sequence)</h5>
+                <p style="font-size:0.85rem; color:#cbd5e1; margin-bottom:0.5rem;">
+                  ស្វ៊ីតនព្វន្តមាន $u_1 = 3$ និងផលសងរួម $d = 2$។<br>
+                  តើតួទី ៣ ($u_3$) ស្មើប៉ុន្មាន?
+                </p>
+                <div style="font-size:0.8rem; color:#94a3b8;">→ លេខកូដខ្ទង់ទី ៤ គឺតម្លៃ $u_3$</div>
+              </div>
+            </div>
+
+            <!-- Vault Screen -->
+            <div class="vault-display">
+              <span class="vault-digit" id="code-0">-</span>
+              <span class="vault-digit" id="code-1">-</span>
+              <span class="vault-digit" id="code-2">-</span>
+              <span class="vault-digit" id="code-3">-</span>
+            </div>
+
+            <!-- Keypad -->
+            <div style="max-width:280px; margin:0 auto; display:grid; grid-template-columns:repeat(3, 1fr); gap:0.6rem;">
+              <button class="op-btn" onclick="GameArena.escape.pressKey('1')">1</button>
+              <button class="op-btn" onclick="GameArena.escape.pressKey('2')">2</button>
+              <button class="op-btn" onclick="GameArena.escape.pressKey('3')">3</button>
+              <button class="op-btn" onclick="GameArena.escape.pressKey('4')">4</button>
+              <button class="op-btn" onclick="GameArena.escape.pressKey('5')">5</button>
+              <button class="op-btn" onclick="GameArena.escape.pressKey('6')">6</button>
+              <button class="op-btn" onclick="GameArena.escape.pressKey('7')">7</button>
+              <button class="op-btn" onclick="GameArena.escape.pressKey('8')">8</button>
+              <button class="op-btn" onclick="GameArena.escape.pressKey('9')">9</button>
+              <button class="op-btn" onclick="GameArena.escape.clearKey()" style="background:#ef4444; color:#fff;">C</button>
+              <button class="op-btn" onclick="GameArena.escape.pressKey('0')">0</button>
+              <button class="op-btn" onclick="GameArena.escape.unlock()" style="background:#10b981; color:#fff; font-size:0.9rem;">ENTER</button>
+            </div>
+
+            <div id="vault-alert" style="text-align:center; margin-top:1.5rem; font-weight:700;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           MODULE 5: FUNCTION MATCH-UP
+           ============================================================ -->
+      <div class="game-module" id="module-match">
+        <!-- Student Guide Card -->
+        <div class="guide-card">
+          <div class="guide-badge">📖 សៀវភៅណែនាំរបៀបលេងសម្រាប់សិស្ស (Student Player Guide)</div>
+          <h3 style="color:#ffffff; margin: 0 0 0.5rem; font-size: 1.2rem;">
+            🃏 Function Match-Up - ល្បែងផ្គូផ្គងអនុគមន៍ ៤ វិមាត្រ
+          </h3>
+          <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6;">
+            <strong>បេសកកម្ម៖</strong> ផ្គូផ្គងប័ណ្ណទាំង ៤ សន្លឹកដែលតំណាងឱ្យអនុគមន៍តែមួយ រួមមាន៖ (១) រូបមន្តសមីការ, (២) រូបរាងក្រាបខ្សែកោង, (៣) តារាងតម្លៃលេខ, និង (៤) លក្ខណៈសម្គាល់សំខាន់ៗ។
+          </p>
+          <div class="guide-grid">
+            <div class="guide-step">
+              <h4><span>1️⃣</span> ប្រភេទកាតទាំង ៤</h4>
+              <p>កាតពណ៌ខៀវ (សមីការ), កាតពណ៌ស្វាយ (ក្រាប), កាតពណ៌លឿង (តារាងតម្លៃ), កាតពណ៌បៃតង (លក្ខណៈ)។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>2️⃣</span> ជ្រើសរើសដើម្បីផ្គូផ្គង</h4>
+              <p>ចុចលើកាតណាមួយដែលអ្នកយល់ថាស្ថិតក្នុង "គ្រួសារអនុគមន៍តែមួយ"។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>3️⃣</span> ចាក់សោជោគជ័យ</h4>
+              <p>ពេលផ្គូផ្គងត្រូវគ្រប់ ៤ សន្លឹក ឈុតនោះនឹងចាក់សោពណ៌បៃតង និងផ្តល់ ១០ ពិន្ទុ!</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>💡</span> តិចនិកវិភាគ</h4>
+              <p>ពិនិត្យចំណុចកាត់អ័ក្ស $y$ (ត្រង់ $x=0$) និងទិសដៅខ្សែកោង (ប៉ារ៉ាបូលផ្ងារ/ផ្កាប់) ដើម្បីរកកាតដែលត្រូវគ្នា។</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Match-up Stage -->
+        <div class="interactive-stage">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <div style="font-weight:700; color:#38bdf8;">
+              ផ្គូផ្គងបាន៖ <span id="match-completed">0</span> / 3 ឈុត
+            </div>
+            <button class="btn btn-secondary" onclick="GameArena.match.reset()">
+              🔄 ច្របល់កាតឡើងវិញ
+            </button>
+          </div>
+
+          <div class="match-grid" id="match-cards-container">
+            <!-- Cards populated dynamically via JS -->
+          </div>
+
+          <div id="match-alert" style="text-align:center; font-weight:700; margin-top:1rem;"></div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           MODULE 6: MONTY HALL & PROBABILITY CASINO
+           ============================================================ -->
+      <div class="game-module" id="module-monty">
+        <!-- Student Guide Card -->
+        <div class="guide-card">
+          <div class="guide-badge">📖 សៀវភៅណែនាំរបៀបលេងសម្រាប់សិស្ស (Student Player Guide)</div>
+          <h3 style="color:#ffffff; margin: 0 0 0.5rem; font-size: 1.2rem;">
+            🚪 The Monty Hall Game & កាស៊ីណូប្រូបាប៊ីលីតេ
+          </h3>
+          <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6;">
+            <strong>អាថ៌កំបាំងទ្វារទាំង ៣៖</strong> ពីក្រោយទ្វារមួយមានរថយន្តទំនើប 🚗 (រង្វាន់ធំ) ហើយពីក្រោយទ្វារពីរទៀតមានសត្វពពែ 🐐 (អត់រង្វាន់)។ តើអ្នកគួរ "រក្សាទុកទ្វារដដែល" ឬ "ប្តូរទ្វារ" ដើម្បីឱ្យឱកាសឈ្នះខ្ពស់បំផុត?
+          </p>
+          <div class="guide-grid">
+            <div class="guide-step">
+              <h4><span>1️⃣</span> ជ្រើសរើសទ្វារដំបូង</h4>
+              <p>ចុចជ្រើសរើសទ្វារមួយក្នុងចំណោមទ្វារទាំង ៣ (ទ្វារ ១, ២, ឬ ៣)។ ឱកាសត្រូវដំបូងគឺ 1/3 (33.3%)។</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>2️⃣</span> ពិធីករបើកទ្វារពពែ</h4>
+              <p>ពិធីករនឹងបើកទ្វារមួយផ្សេងទៀតដែលគ្មានឡាន (ឃើញសត្វពពែ 🐐) ជានិច្ច!</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>3️⃣</span> សម្រេចចិត្ត៖ ប្តូរ ឬមិនប្តូរ?</h4>
+              <p>ប្រព័ន្ធនឹងសួរអ្នកថាតើចង់ "រក្សាទុក" ឬ "ប្តូរទៅទ្វារដែលនៅសល់"?</p>
+            </div>
+            <div class="guide-step">
+              <h4><span>🧠</span> គណិតវិទ្យាដ៏អស្ចារ្យ</h4>
+              <p>បើអ្នក "ប្តូរ" ឱកាសឈ្នះឡើងដល់ 2/3 (66.7%) គឺកើនឡើងទ្វេដង! ចូរលេងច្រើនដងដើម្បីផ្ទៀងផ្ទាត់ស្ថិតិជាក់ស្តែង។</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Monty Hall Stage -->
+        <div class="interactive-stage">
+          <div style="text-align:center; margin-bottom:1.5rem;">
+            <div style="font-size:1.15rem; font-weight:700; color:#f59e0b;" id="monty-instruction">
+              👉 ជំហានទី ១៖ សូមចុចជ្រើសរើសទ្វារមួយដែលអ្នកស្រឡាញ់!
+            </div>
+          </div>
+
+          <!-- 3 Doors -->
+          <div class="doors-container">
+            <div class="monty-door" id="door-0" onclick="GameArena.monty.pickDoor(0)">
+              <div class="door-number">1</div>
+              <div class="door-knob"></div>
+              <div class="door-content" id="door-content-0">🚗</div>
+            </div>
+            <div class="monty-door" id="door-1" onclick="GameArena.monty.pickDoor(1)">
+              <div class="door-number">2</div>
+              <div class="door-knob"></div>
+              <div class="door-content" id="door-content-1">🐐</div>
+            </div>
+            <div class="monty-door" id="door-2" onclick="GameArena.monty.pickDoor(2)">
+              <div class="door-number">3</div>
+              <div class="door-knob"></div>
+              <div class="door-content" id="door-content-2">🐐</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons for Switch/Stay -->
+          <div id="monty-actions" style="display:none; text-align:center; margin-top:1.5rem; gap:1rem; justify-content:center;">
+            <button class="btn btn-secondary" onclick="GameArena.monty.finalize(false)" style="font-size:1rem; padding:0.75rem 1.5rem;">
+              ✋ រក្សាទុកទ្វារដដែល (Stay)
+            </button>
+            <button class="btn btn-accent" onclick="GameArena.monty.finalize(true)" style="font-size:1rem; padding:0.75rem 1.5rem;">
+              🔄 ប្តូរទៅទ្វារមួយទៀត (Switch)
+            </button>
+          </div>
+
+          <div id="monty-reset-bar" style="display:none; text-align:center; margin-top:1.5rem;">
+            <button class="btn btn-primary" onclick="GameArena.monty.startNewRound()">
+              ▶️ លេងជុំបន្ទាប់
+            </button>
+          </div>
+
+          <!-- Live Probability Statistics Tracker -->
+          <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:2rem; padding-top:1.5rem;">
+            <h4 style="text-align:center; color:#ffffff; margin:0 0 1rem; font-size:1rem;">
+              📊 តារាងស្ថិតិជាក់ស្តែង (Experimental Probability Tracker)
+            </h4>
+            <div class="stats-bar">
+              <div class="stat-pill">
+                <div class="stat-val" id="stat-total">0</div>
+                <div class="stat-label">ចំនួនលើកសរុប</div>
+              </div>
+              <div class="stat-pill">
+                <div class="stat-val" style="color:#10b981;" id="stat-switch-rate">0%</div>
+                <div class="stat-label">អត្រាឈ្នះពេល [ប្តូរ] (ទ្រឹស្តី 66.7%)</div>
+              </div>
+              <div class="stat-pill">
+                <div class="stat-val" style="color:#f59e0b;" id="stat-stay-rate">0%</div>
+                <div class="stat-label">អត្រាឈ្នះពេល [មិនប្តូរ] (ទ្រឹស្តី 33.3%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. TEACHER FACILITATION GUIDE (FOR EDUCATORS)
+       ============================================================ -->
+  <section style="padding: 4rem 0; background: rgba(10, 15, 29, 0.98); border-top: 1px solid var(--border-color);">
+    <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 1rem;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="guide-badge">🧑‍🏫 សម្រាប់លោកគ្រូ-អ្នកគ្រូ</span>
+        <h2 style="font-family: var(--font-khmer-display); font-size: 2rem; color: #ffffff; margin-bottom: 0.5rem;">
+          វិធីសាស្ត្រគរុកោសល្យក្នុងការដឹកនាំល្បែងក្នុងថ្នាក់រៀន
+        </h2>
+        <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+          ការអនុវត្តល្បែងទាំង ៦ នេះឱ្យមានប្រសិទ្ធភាពខ្ពស់ ទាំងការគ្រប់គ្រងវិន័យ និងការវាស់ស្ទង់សមត្ថភាពសិស្ស។
+        </p>
+      </div>
+
+      <div class="guide-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="guide-card" style="margin-bottom:0;">
+          <h4 style="color:#f59e0b; margin-top:0;">⚡ ការរៀបចំមុនពេលចាប់ផ្តើម</h4>
+          <p style="font-size:0.9rem; color:#cbd5e1; line-height:1.6;">
+            • បែងចែកសិស្សជាក្រុមតូចៗ (៣-៤ នាក់ក្នុងមួយក្រុម) ដើម្បីជំរុញកិច្ចសហការ។<br>
+            • ផ្តល់ក្រដាសព្រាង ប៊ិច និងក្តារខៀនតូច (Mini whiteboard) ដល់គ្រប់ក្រុម។<br>
+            • កំណត់ច្បាប់វិន័យឱ្យច្បាស់មុនលេង៖ មិនស្រែកកញ្ជ្រៀវរំខានថ្នាក់ក្បែរខាង និងគោរពវេនឆ្លើយ។
+          </p>
+        </div>
+
+        <div class="guide-card" style="margin-bottom:0;">
+          <h4 style="color:#38bdf8; margin-top:0;">🎯 ការភ្ជាប់ល្បែងទៅនឹងខ្លឹមសារមេរៀន</h4>
+          <p style="font-size:0.9rem; color:#cbd5e1; line-height:1.6;">
+            • ប្រើ <strong>Kahoot</strong> សម្រាប់កម្តៅសាច់ដុំ (Warm-up) ៥-១០ នាទីដំបូង។<br>
+            • ប្រើ <strong>Bingo & Dice</strong> សម្រាប់ម៉ោងអនុវត្តលំហាត់ពង្រឹងការចងចាំរូបមន្ត។<br>
+            • ប្រើ <strong>Escape Room & Match-Up</strong> សម្រាប់ម៉ោងរំលឹកមេរៀនមុនប្រឡងឆមាស។<br>
+            • ប្រើ <strong>Monty Hall</strong> សម្រាប់បង្រៀនប្រូបាប៊ីលីតេ និងសង្ឃឹមគណិត។
+          </p>
+        </div>
+
+        <div class="guide-card" style="margin-bottom:0;">
+          <h4 style="color:#10b981; margin-top:0;">💬 ការឆ្លុះបញ្ចាំងក្រោយលេង (Debriefing)</h4>
+          <p style="font-size:0.9rem; color:#cbd5e1; line-height:1.6;">
+            • ទុកពេល ៥ នាទីចុងក្រោយដើម្បីសួរសិស្ស៖ <em>«តើអ្នកបានរៀនយុទ្ធសាស្ត្រអ្វីខ្លះពីល្បែងនេះ?»</em><br>
+            • ពន្យល់កំហុសទូទៅ (Common Misconceptions) ដែលសិស្សតែងតែឆ្លើយខុសច្រើន។<br>
+            • កោតសរសើរការខិតខំប្រឹងប្រែង និងស្មារតីសហការ ជាជាងសរសើរតែអ្នកឈ្នះតែម្នាក់។
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-name" style="color: #ffffff; font-size: 1.4rem; font-weight: 700;">ឆេង ឆវ័ន្ត</span>
+            <span class="brand-sub" style="color: #f59e0b; font-size: 0.8rem; display: block;">MATH SPECIALIST</span>
+          </div>
+          <p class="footer-desc" style="margin-top: 0.8rem; color: #94a3b8; font-size: 0.9rem;">
+            គេហទំព័រអប់រំគណិតវិទ្យាផ្លូវការរបស់អ្នកគ្រូ ឆេង ឆវ័ន្ត។ គាំទ្រការរៀន និងបង្រៀនគណិតវិទ្យាបែបទំនើប ឌីជីថល និងស៊ីជម្រៅ។
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">ល្បែងអប់រំ</h4>
+          <ul class="footer-links">
+            <li><a href="game-activities.html" class="footer-link" style="color: #38bdf8;">🎲 សង្វៀនល្បែងទាំង ៦</a></li>
+            <li><a href="game-grade11.html" class="footer-link">🎮 Math Quest 11</a></li>
+            <li><a href="game-grade9.html" class="footer-link">⚔️ Math Hero 9</a></li>
+            <li><a href="game-exponential.html" class="footer-link">🚀 Exponential Odyssey</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">មេរៀន & វិញ្ញាសា</h4>
+          <ul class="footer-links">
+            <li><a href="lessons.html" class="footer-link">ឯកសារបង្រៀនទាំងអស់</a></li>
+            <li><a href="exercises.html" class="footer-link">កម្រងលំហាត់អនុវត្ត</a></li>
+            <li><a href="exams.html" class="footer-link">វិញ្ញាសាត្រៀមបាក់ឌុប</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">ទំនាក់ទំនង</h4>
+          <ul class="footer-links">
+            <li class="footer-link">📞 099 77 5501</li>
+            <li class="footer-link">✈️ Telegram: @chhovorn_math</li>
+            <li class="footer-link">📧 chhorvornk@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 អ្នកគ្រូ ឆេង ឆវ័ន្ត (Teacher Chheng Chhovorn). រក្សាសិទ្ធិគ្រប់យ៉ាង។</div>
+        <div style="font-size: 0.8rem;">Designed with ❤️ for Cambodian Math Students</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    /* ============================================================
+       GAME ARENA SUITE - CORE LOGIC & AUDIO SYNTHESIS
+       ============================================================ */
+
+    // 1. Web Audio Synthesizer (Zero External Dependencies)
+    const AudioFX = {
+      ctx: null,
+      enabled: true,
+      init() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          this.ctx = new AudioContext();
+        }
+      },
+      playTone(freq, type, duration, gain = 0.15) {
+        if (!this.enabled) return;
+        try {
+          this.init();
+          const osc = this.ctx.createOscillator();
+          const g = this.ctx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+          g.gain.setValueAtTime(gain, this.ctx.currentTime);
+          g.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+          osc.connect(g);
+          g.connect(this.ctx.destination);
+          osc.start();
+          osc.stop(this.ctx.currentTime + duration);
+        } catch (e) {}
+      },
+      click() { this.playTone(600, 'sine', 0.06, 0.1); },
+      correct() {
+        this.playTone(523.25, 'triangle', 0.12, 0.2); // C5
+        setTimeout(() => this.playTone(659.25, 'triangle', 0.12, 0.2), 100); // E5
+        setTimeout(() => this.playTone(783.99, 'triangle', 0.25, 0.2), 200); // G5
+      },
+      wrong() {
+        this.playTone(220, 'sawtooth', 0.15, 0.15);
+        setTimeout(() => this.playTone(180, 'sawtooth', 0.25, 0.15), 120);
+      },
+      roll() {
+        for (let i = 0; i < 4; i++) {
+          setTimeout(() => this.playTone(300 + Math.random() * 200, 'sine', 0.05, 0.08), i * 60);
+        }
+      },
+      win() {
+        const notes = [523.25, 659.25, 783.99, 1046.5];
+        notes.forEach((freq, idx) => {
+          setTimeout(() => this.playTone(freq, 'sine', 0.2, 0.25), idx * 120);
+        });
+      }
+    };
+
+    // Toggle Sound Button
+    const soundBtn = document.getElementById('sound-toggle-btn');
+    const soundIcon = document.getElementById('sound-icon');
+    if (soundBtn) {
+      soundBtn.addEventListener('click', () => {
+        AudioFX.enabled = !AudioFX.enabled;
+        soundIcon.textContent = AudioFX.enabled ? '🔊' : '🔇';
+      });
+    }
+
+    // Tab Switching
+    document.querySelectorAll('.arena-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        AudioFX.click();
+        document.querySelectorAll('.arena-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.game-module').forEach(m => m.classList.remove('active'));
+        btn.classList.add('active');
+        const targetId = btn.getAttribute('data-target');
+        const targetModule = document.getElementById(targetId);
+        if (targetModule) targetModule.classList.add('active');
+        if (window.renderMathInElement) {
+          renderMathInElement(targetModule, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+        }
+      });
+    });
+
+    /* ============================================================
+       GAME ARENA OBJECT
+       ============================================================ */
+    const GameArena = {
+
+      // ----------------------------------------------------
+      // 1. KAHOOT ARENA
+      // ----------------------------------------------------
+      kahoot: {
+        currentQ: 0,
+        score: 0,
+        streak: 0,
+        timer: null,
+        timeLeft: 20,
+        locked: false,
+        questions: [
+          {
+            q: "គណនាតម្លៃនៃ $\\sin^2(30^\\circ) + \\cos^2(30^\\circ) = ?$ ស្មើនឹងប៉ុន្មាន?",
+            opts: ["0", "1", "\\frac{1}{2}", "\\frac{\\sqrt{3}}{2}"],
+            correct: 1,
+            explain: "យោងតាមរូបមន្តគ្រឹះត្រីកោណមាត្រ $\\sin^2\\alpha + \\cos^2\\alpha = 1$ ជានិច្ចគ្រប់មុំ $\\alpha$!"
+          },
+          {
+            q: "តើដេរីវេនៃអនុគមន៍ $f(x) = x^4 - 3x^2 + 7$ ស្មើនឹងអ្វី?",
+            opts: ["$4x^3 - 6x$", "$4x^3 - 3x$", "$x^3 - 6x$", "$4x^3 - 6x + 7$"],
+            correct: 0,
+            explain: "យោងតាមរូបមន្ត $(x^n)' = n x^{n-1}$ ដូច្នេះ $(x^4)'=4x^3$ និង $(-3x^2)'=-6x$ ហើយ $(7)'=0$។"
+          },
+          {
+            q: "ស្វ៊ីតនព្វន្តមាន $u_1 = 5$ និងផលសងរួម $d = 3$។ តើតួទី ៤ ($u_4$) ស្មើនឹងប៉ុន្មាន?",
+            opts: ["12", "14", "17", "20"],
+            correct: 1,
+            explain: "$u_4 = u_1 + (4-1)d = 5 + 3(3) = 5 + 9 = 14$!"
+          },
+          {
+            q: "គណនាតម្លៃលីមីត $\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} = ?$",
+            opts: ["0", "2", "4", "អនន្ត"],
+            correct: 2,
+            explain: "ដាក់ជាកត្តា: $\\frac{(x-2)(x+2)}{x-2} = x+2$។ ជំនួស $x=2$ បាន $2+2 = 4$!"
+          },
+          {
+            q: "តើអនុគមន៍ $y = 3^x$ ឆ្លងកាត់ចំណុចណាលើអ័ក្សអ័រដោនេ?",
+            opts: ["$(0, 0)$", "$(0, 1)$", "$(0, 3)$", "$(1, 0)$"],
+            correct: 1,
+            explain: "ជំនួស $x=0$ នាំឱ្យ $y = 3^0 = 1$។ ដូច្នេះក្រាបកាត់អ័ក្ស $y$ ត្រង់ចំណុច $(0, 1)$។"
+          },
+          {
+            q: "បោះកាក់សុក្រឹតមួយចំនួន ២ ដង។ តើប្រូបាប៊ីលីតេចេញក្បាលទាំងពីរដងស្មើប៉ុន្មាន?",
+            opts: ["1/2", "1/4", "1/3", "3/4"],
+            correct: 1,
+            explain: "លទ្ធផលសរុបគឺ {HH, HT, TH, TT} = 4 ករណី។ ចេញក្បាលទាំងពីរ {HH} = 1 ករណី ដូច្នេះ $P = 1/4$!"
+          }
+        ],
+        init() {
+          this.loadQuestion();
+        },
+        loadQuestion() {
+          this.locked = false;
+          clearInterval(this.timer);
+          this.timeLeft = 20;
+          const q = this.questions[this.currentQ];
+          document.getElementById('kh-qnum').textContent = this.currentQ + 1;
+          document.getElementById('kh-total').textContent = this.questions.length;
+          document.getElementById('kh-question-text').innerHTML = q.q;
+          
+          const btns = document.querySelectorAll('#kh-options-grid .kahoot-btn');
+          btns.forEach((btn, idx) => {
+            btn.querySelector('.btn-text').innerHTML = q.opts[idx];
+            btn.disabled = false;
+            btn.style.opacity = '1';
+          });
+
+          const feedback = document.getElementById('kh-feedback');
+          feedback.style.display = 'none';
+
+          const timerBar = document.getElementById('kh-timer-bar');
+          timerBar.style.width = '100%';
+
+          if (window.renderMathInElement) {
+            renderMathInElement(document.getElementById('module-kahoot'), { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+          }
+
+          // Start Timer
+          this.timer = setInterval(() => {
+            this.timeLeft--;
+            timerBar.style.width = (this.timeLeft / 20 * 100) + '%';
+            if (this.timeLeft <= 0) {
+              clearInterval(this.timer);
+              this.timeOut();
+            }
+          }, 1000);
+        },
+        select(optIdx) {
+          if (this.locked) return;
+          this.locked = true;
+          clearInterval(this.timer);
+
+          const q = this.questions[this.currentQ];
+          const feedback = document.getElementById('kh-feedback');
+          feedback.style.display = 'block';
+
+          if (optIdx === q.correct) {
+            AudioFX.correct();
+            this.streak++;
+            const points = 500 + Math.round(this.timeLeft * 25);
+            this.score += points;
+            feedback.style.background = 'rgba(16, 185, 129, 0.2)';
+            feedback.style.border = '1px solid #10b981';
+            feedback.style.color = '#34d399';
+            feedback.innerHTML = `🎉 <strong>ត្រឹមត្រូវឥតខ្ចោះ!</strong> +${points} ពិន្ទុ! <br><small>${q.explain}</small>`;
+          } else {
+            AudioFX.wrong();
+            this.streak = 0;
+            feedback.style.background = 'rgba(239, 68, 68, 0.2)';
+            feedback.style.border = '1px solid #ef4444';
+            feedback.style.color = '#f87171';
+            feedback.innerHTML = `❌ <strong>មិនត្រឹមត្រូវទេ!</strong> ចម្លើយត្រឹមត្រូវគឺ៖ ${q.opts[q.correct]}<br><small>${q.explain}</small>`;
+          }
+
+          document.getElementById('kh-score').textContent = this.score;
+          document.getElementById('kh-streak').textContent = this.streak;
+
+          // Next question button
+          feedback.innerHTML += `<div style="margin-top:0.8rem;"><button class="btn btn-primary" onclick="GameArena.kahoot.next()">សំណួរដបន្ទាប់ ➔</button></div>`;
+          if (window.renderMathInElement) {
+            renderMathInElement(feedback, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+          }
+        },
+        timeOut() {
+          this.locked = true;
+          AudioFX.wrong();
+          this.streak = 0;
+          document.getElementById('kh-streak').textContent = '0';
+          const q = this.questions[this.currentQ];
+          const feedback = document.getElementById('kh-feedback');
+          feedback.style.display = 'block';
+          feedback.style.background = 'rgba(245, 158, 11, 0.2)';
+          feedback.style.border = '1px solid #f59e0b';
+          feedback.style.color = '#fbbf24';
+          feedback.innerHTML = `⏰ <strong>អស់ពេលហើយ!</strong> ចម្លើយត្រឹមត្រូវគឺ៖ ${q.opts[q.correct]}<div style="margin-top:0.8rem;"><button class="btn btn-primary" onclick="GameArena.kahoot.next()">សំណួរដបន្ទាប់ ➔</button></div>`;
+          if (window.renderMathInElement) {
+            renderMathInElement(feedback, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+          }
+        },
+        next() {
+          this.currentQ++;
+          if (this.currentQ < this.questions.length) {
+            this.loadQuestion();
+          } else {
+            AudioFX.win();
+            const feedback = document.getElementById('kh-feedback');
+            feedback.style.display = 'block';
+            feedback.style.background = 'rgba(6, 182, 212, 0.25)';
+            feedback.style.border = '2px solid #38bdf8';
+            feedback.style.color = '#ffffff';
+            feedback.innerHTML = `🏆 <strong>អបអរសាទរ! អ្នកបានបញ្ចប់ Kahoot Arena!</strong><br>ពិន្ទុសរុបរបស់អ្នកគឺ៖ <span style="color:#f59e0b; font-size:1.5rem; font-weight:800;">${this.score}</span> ពិន្ទុ!<div style="margin-top:1rem;"><button class="btn btn-accent" onclick="GameArena.kahoot.restart()">🔄 លេងម្តងទៀត</button></div>`;
+          }
+        },
+        restart() {
+          this.currentQ = 0;
+          this.score = 0;
+          this.streak = 0;
+          document.getElementById('kh-score').textContent = '0';
+          document.getElementById('kh-streak').textContent = '0';
+          this.loadQuestion();
+        }
+      },
+
+      // ----------------------------------------------------
+      // 2. MATH BINGO
+      // ----------------------------------------------------
+      bingo: {
+        pool: [
+          { p: "$$3^2 + 4^2 = ?$$", a: 25 },
+          { p: "$$\\sqrt{144} = ?$$", a: 12 },
+          { p: "$$2x + 6 = 20 \\Rightarrow x = ?$$", a: 7 },
+          { p: "$$\\log_2(32) = ?$$", a: 5 },
+          { p: "$$4! = 4 \\times 3 \\times 2 \\times 1 = ?$$", a: 24 },
+          { p: "$$\\lim_{x \\to 3}(x^2 - 1) = ?$$", a: 8 },
+          { p: "$$15 \\times 2 - 14 = ?$$", a: 16 },
+          { p: "$$\\sqrt{81} + 1 = ?$$", a: 10 },
+          { p: "$$2^4 - 1 = ?$$", a: 15 },
+          { p: "$$3 \\times 6 + 2 = ?$$", a: 20 },
+          { p: "$$50 \\div 5 + 3 = ?$$", a: 13 },
+          { p: "$$\\sqrt{196} = ?$$", a: 14 },
+          { p: "$$9 \\times 2 = ?$$", a: 18 },
+          { p: "$$2^3 + 3^2 = ?$$", a: 17 },
+          { p: "$$100 \\div 10 + 1 = ?$$", a: 11 },
+          { p: "$$6^2 - 15 = ?$$", a: 21 },
+          { p: "$$7 \\times 3 + 1 = ?$$", a: 22 },
+          { p: "$$5^2 - 2 = ?$$", a: 23 },
+          { p: "$$30 - 2 = ?$$", a: 28 },
+          { p: "$$10 + 19 = ?$$", a: 29 },
+          { p: "$$\\sqrt{900} = ?$$", a: 30 }
+        ],
+        boardNumbers: [],
+        marked: Array(25).fill(false),
+        calledProblems: [],
+        init() {
+          this.generateBoard();
+        },
+        generateBoard() {
+          AudioFX.click();
+          this.marked = Array(25).fill(false);
+          this.marked[12] = true; // FREE center
+          this.calledProblems = [];
+          document.getElementById('bingo-alert').innerHTML = '';
+          document.getElementById('bingo-problem-text').innerHTML = 'សូមចុចប៊ូតុង "ចាប់លំហាត់បន្ទាប់" ដើម្បីចាប់ផ្តើម!';
+
+          // Pick 24 unique numbers from 5 to 30
+          const nums = [];
+          while (nums.length < 24) {
+            const r = Math.floor(Math.random() * 26) + 5;
+            if (!nums.includes(r)) nums.push(r);
+          }
+
+          this.boardNumbers = [];
+          let nIdx = 0;
+          for (let i = 0; i < 25; i++) {
+            if (i === 12) {
+              this.boardNumbers.push('FREE');
+            } else {
+              this.boardNumbers.push(nums[nIdx++]);
+            }
+          }
+
+          this.renderBoard();
+        },
+        renderBoard() {
+          const container = document.getElementById('bingo-board-grid');
+          container.innerHTML = '';
+          this.boardNumbers.forEach((val, idx) => {
+            const cell = document.createElement('div');
+            cell.className = 'bingo-cell';
+            if (idx === 12) {
+              cell.classList.add('free', 'marked');
+              cell.textContent = '★ FREE';
+            } else {
+              cell.textContent = val;
+              if (this.marked[idx]) cell.classList.add('marked');
+              cell.onclick = () => this.toggleCell(idx);
+            }
+            container.appendChild(cell);
+          });
+        },
+        toggleCell(idx) {
+          AudioFX.click();
+          this.marked[idx] = !this.marked[idx];
+          this.renderBoard();
+        },
+        callNext() {
+          AudioFX.roll();
+          const uncalled = this.pool.filter(p => !this.calledProblems.includes(p));
+          if (uncalled.length === 0) {
+            document.getElementById('bingo-problem-text').textContent = "អស់លំហាត់ក្នុងប្រអប់ហើយ!";
+            return;
+          }
+          const chosen = uncalled[Math.floor(Math.random() * uncalled.length)];
+          this.calledProblems.push(chosen);
+          const pBox = document.getElementById('bingo-problem-text');
+          pBox.innerHTML = `${chosen.p} <br><span style="font-size:0.9rem; color:#f59e0b;">(ចម្លើយ: ${chosen.a})</span>`;
+          if (window.renderMathInElement) {
+            renderMathInElement(pBox, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+          }
+        },
+        checkWin() {
+          // Check rows, cols, diagonals
+          const m = this.marked;
+          let win = false;
+
+          // Rows
+          for (let r = 0; r < 5; r++) {
+            if (m[r*5] && m[r*5+1] && m[r*5+2] && m[r*5+3] && m[r*5+4]) win = true;
+          }
+          // Cols
+          for (let c = 0; c < 5; c++) {
+            if (m[c] && m[c+5] && m[c+10] && m[c+15] && m[c+20]) win = true;
+          }
+          // Diags
+          if (m[0] && m[6] && m[12] && m[18] && m[24]) win = true;
+          if (m[4] && m[8] && m[12] && m[16] && m[20]) win = true;
+
+          const alert = document.getElementById('bingo-alert');
+          if (win) {
+            AudioFX.win();
+            alert.style.color = '#f59e0b';
+            alert.innerHTML = '🎉🎊 BINGO! អបអរសាទរ! អ្នកបានឈ្នះជ័យជម្នះ Bingo គណិតវិទ្យាហើយ!';
+          } else {
+            AudioFX.wrong();
+            alert.style.color = '#ef4444';
+            alert.innerHTML = '⚠️ មិនទាន់គ្រប់ ៥ ក្រឡាជាប់គ្នាលើជួរដេក ជួរឈរ ឬអង្កត់ទ្រូងនៅឡើយទេ! សូមបន្តព្យាយាម!';
+          }
+        }
+      },
+
+      // ----------------------------------------------------
+      // 3. EQUATION DICE
+      // ----------------------------------------------------
+      dice: {
+        target: 24,
+        rolledNumbers: [3, 4, 6, 8, 2],
+        usedIndices: [],
+        currentEq: '',
+        init() {
+          this.roll();
+        },
+        roll() {
+          AudioFX.roll();
+          this.target = [24, 30, 36, 42, 18, 20][Math.floor(Math.random() * 6)];
+          this.rolledNumbers = Array.from({length: 5}, () => Math.floor(Math.random() * 9) + 1);
+          this.clearEq();
+          document.getElementById('dice-target').textContent = this.target;
+          this.renderDice();
+        },
+        renderDice() {
+          const list = document.getElementById('dice-list');
+          list.innerHTML = '';
+          this.rolledNumbers.forEach((num, idx) => {
+            const d = document.createElement('div');
+            d.className = 'dice' + (this.usedIndices.includes(idx) ? ' used' : '');
+            d.textContent = num;
+            d.onclick = () => this.addNum(num, idx);
+            list.appendChild(d);
+          });
+        },
+        addNum(num, idx) {
+          if (this.usedIndices.includes(idx)) return;
+          AudioFX.click();
+          this.usedIndices.push(idx);
+          this.currentEq += num;
+          this.renderDice();
+          this.updateDisplay();
+        },
+        addOp(op) {
+          AudioFX.click();
+          this.currentEq += op;
+          this.updateDisplay();
+        },
+        clearEq() {
+          AudioFX.click();
+          this.usedIndices = [];
+          this.currentEq = '';
+          this.renderDice();
+          this.updateDisplay();
+          document.getElementById('dice-feedback').innerHTML = '';
+        },
+        updateDisplay() {
+          const bar = document.getElementById('dice-eq-display');
+          bar.textContent = this.currentEq || 'ចុចលេខ និងសញ្ញាខាងលើដើម្បីបង្កើតសមីការ...';
+        },
+        verify() {
+          const fb = document.getElementById('dice-feedback');
+          try {
+            // Safe evaluation of arithmetic only
+            const sanitized = this.currentEq.replace(/[^0-9+\-*/()]/g, '');
+            if (!sanitized) throw new Error();
+            const result = Function(`'use strict'; return (${sanitized})`)();
+
+            if (Math.abs(result - this.target) < 0.001) {
+              AudioFX.win();
+              fb.style.color = '#10b981';
+              fb.innerHTML = `🎉 <strong>អស្ចារ្យណាស់!</strong> សមីការរបស់អ្នក៖ $${this.currentEq} = ${this.target}$ ត្រឹមត្រូវឥតខ្ចោះ! (+100 XP)`;
+            } else {
+              AudioFX.wrong();
+              fb.style.color = '#f59e0b';
+              fb.innerHTML = `⚠️ លទ្ធផលសមីការរបស់អ្នកឃើញ <strong>${result}</strong> មិនទាន់ស្មើនឹងលេខគោលដៅ <strong>${this.target}</strong> ទេ។ សូមកែសម្រួល!`;
+            }
+          } catch (e) {
+            AudioFX.wrong();
+            fb.style.color = '#ef4444';
+            fb.textContent = '❌ សមីការមិនត្រឹមត្រូវតាមទម្រង់គណិតវិទ្យាទេ! សូមពិនិត្យសញ្ញាវង់ក្រចក ឬប្រមាណវិធី។';
+          }
+          if (window.renderMathInElement) {
+            renderMathInElement(fb, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+          }
+        }
+      },
+
+      // ----------------------------------------------------
+      // 4. MATH ESCAPE ROOM
+      // ----------------------------------------------------
+      escape: {
+        correctCode: "8317",
+        currentInput: "",
+        init() {},
+        pressKey(num) {
+          if (this.currentInput.length >= 4) return;
+          AudioFX.click();
+          this.currentInput += num;
+          this.updateDisplay();
+        },
+        clearKey() {
+          AudioFX.click();
+          this.currentInput = "";
+          this.updateDisplay();
+          document.getElementById('vault-alert').textContent = '';
+        },
+        updateDisplay() {
+          for (let i = 0; i < 4; i++) {
+            const digitEl = document.getElementById('code-' + i);
+            digitEl.textContent = this.currentInput[i] || '-';
+          }
+        },
+        unlock() {
+          const alert = document.getElementById('vault-alert');
+          const status = document.getElementById('vault-status');
+          if (this.currentInput === this.correctCode) {
+            AudioFX.win();
+            status.textContent = 'STATUS: UNLOCKED! 🔓✨';
+            status.style.color = '#38bdf8';
+            alert.style.color = '#10b981';
+            alert.innerHTML = '🎉🎊 <strong>ទ្វារដែកថែបបានបើកហើយ!</strong> អបអរសាទរ! ក្រុមរបស់អ្នកបានដោះកូដចេញពីបន្ទប់សម្ងាត់ដោយជោគជ័យ!';
+            document.querySelectorAll('.chamber-card').forEach(c => c.classList.add('solved'));
+          } else {
+            AudioFX.wrong();
+            alert.style.color = '#ef4444';
+            alert.innerHTML = '❌ <strong>កូដសម្ងាត់មិនត្រឹមត្រូវទេ!</strong> សោសុវត្ថិភាពនៅតែចាក់ដដែល។ សូមផ្ទៀងផ្ទាត់ចម្លើយក្នុងបន្ទប់ទាំង ៤ ឡើងវិញ!';
+          }
+        }
+      },
+
+      // ----------------------------------------------------
+      // 5. FUNCTION MATCH-UP
+      // ----------------------------------------------------
+      match: {
+        cards: [
+          // Set 1: Parabola
+          { id: 1, family: 'parabola', type: 'eq', text: '$$f(x) = x^2 - 4$$', tag: 'សមីការ' },
+          { id: 2, family: 'parabola', type: 'graph', text: 'ប៉ារ៉ាបូលផ្ងារ កំពូល $(0, -4)$', tag: 'ក្រាប' },
+          { id: 3, family: 'parabola', type: 'table', text: '$(0,-4), (2,0), (-2,0)$', tag: 'តារាងតម្លៃ' },
+          { id: 4, family: 'parabola', type: 'prop', text: 'ឫស $x = \\pm 2$, ស៊ីមេទ្រីធៀប $Oy$', tag: 'លក្ខណៈ' },
+          
+          // Set 2: Exponential
+          { id: 5, family: 'exp', type: 'eq', text: '$$g(x) = 2^x$$', tag: 'សមីការ' },
+          { id: 6, family: 'exp', type: 'graph', text: 'ខ្សែកោងកើន ឆ្លងកាត់ $(0,1)$', tag: 'ក្រាប' },
+          { id: 7, family: 'exp', type: 'table', text: '$(0,1), (1,2), (2,4)$', tag: 'តារាងតម្លៃ' },
+          { id: 8, family: 'exp', type: 'prop', text: 'អាស៊ីមតូតដេក $y = 0$, $D = \\mathbb{R}$', tag: 'លក្ខណៈ' },
+
+          // Set 3: Absolute Value
+          { id: 9, family: 'abs', type: 'eq', text: '$$h(x) = |x|$$', tag: 'សមីការ' },
+          { id: 10, family: 'abs', type: 'graph', text: 'រាងអក្សរ V កំពូលត្រង់ $(0,0)$', tag: 'ក្រាប' },
+          { id: 11, family: 'abs', type: 'table', text: '(-2,2), (0,0), (2,2)', tag: 'តារាងតម្លៃ' },
+          { id: 12, family: 'abs', type: 'prop', text: 'អនុគមន៍គូ, ដែនតម្លៃ $[0, +\\infty)$', tag: 'លក្ខណៈ' }
+        ],
+        selected: [],
+        completedFamilies: [],
+        init() {
+          this.reset();
+        },
+        reset() {
+          this.selected = [];
+          this.completedFamilies = [];
+          document.getElementById('match-completed').textContent = '0';
+          document.getElementById('match-alert').innerHTML = '';
+          
+          // Shuffle
+          const shuffled = [...this.cards].sort(() => Math.random() - 0.5);
+          const container = document.getElementById('match-cards-container');
+          container.innerHTML = '';
+
+          shuffled.forEach(card => {
+            const cardEl = document.createElement('div');
+            cardEl.className = 'match-card';
+            cardEl.id = 'mcard-' + card.id;
+            
+            let tagClass = 'tag-eq';
+            if (card.type === 'graph') tagClass = 'tag-graph';
+            if (card.type === 'table') tagClass = 'tag-table';
+            if (card.type === 'prop') tagClass = 'tag-prop';
+
+            cardEl.innerHTML = `
+              <span class="card-type-tag ${tagClass}">${card.tag}</span>
+              <div style="font-size:0.95rem; font-weight:600; color:#fff;">${card.text}</div>
+            `;
+            cardEl.onclick = () => this.clickCard(card, cardEl);
+            container.appendChild(cardEl);
+          });
+
+          if (window.renderMathInElement) {
+            renderMathInElement(container, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+          }
+        },
+        clickCard(card, el) {
+          if (this.completedFamilies.includes(card.family)) return;
+          AudioFX.click();
+
+          const idx = this.selected.findIndex(s => s.card.id === card.id);
+          if (idx >= 0) {
+            this.selected.splice(idx, 1);
+            el.classList.remove('selected');
+            return;
+          }
+
+          this.selected.push({ card, el });
+          el.classList.add('selected');
+
+          // If 4 cards are selected, check if they belong to same family
+          if (this.selected.length === 4) {
+            const fam = this.selected[0].card.family;
+            const allMatch = this.selected.every(s => s.card.family === fam);
+
+            if (allMatch) {
+              AudioFX.win();
+              this.completedFamilies.push(fam);
+              this.selected.forEach(s => {
+                s.el.classList.remove('selected');
+                s.el.classList.add('matched');
+              });
+              this.selected = [];
+              document.getElementById('match-completed').textContent = this.completedFamilies.length;
+
+              if (this.completedFamilies.length === 3) {
+                document.getElementById('match-alert').innerHTML = '🎉🏆 <strong>អស្ចារ្យណាស់!</strong> អ្នកបានផ្គូផ្គងគ្រប់គ្រួសារអនុគមន៍ទាំងអស់!';
+              }
+            } else {
+              AudioFX.wrong();
+              setTimeout(() => {
+                this.selected.forEach(s => s.el.classList.remove('selected'));
+                this.selected = [];
+              }, 700);
+            }
+          }
+        }
+      },
+
+      // ----------------------------------------------------
+      // 6. MONTY HALL CASINO
+      // ----------------------------------------------------
+      monty: {
+        carDoor: 0,
+        playerPick: null,
+        openedHostDoor: null,
+        phase: 1, // 1: Pick, 2: Switch/Stay, 3: Revealed
+        totalGames: 0,
+        switchWins: 0,
+        switchPlays: 0,
+        stayWins: 0,
+        stayPlays: 0,
+        init() {
+          this.startNewRound();
+        },
+        startNewRound() {
+          AudioFX.click();
+          this.phase = 1;
+          this.carDoor = Math.floor(Math.random() * 3);
+          this.playerPick = null;
+          this.openedHostDoor = null;
+
+          document.getElementById('monty-instruction').textContent = '👉 ជំហានទី ១៖ សូមចុចជ្រើសរើសទ្វារមួយដែលអ្នកស្រឡាញ់!';
+          document.getElementById('monty-actions').style.display = 'none';
+          document.getElementById('monty-reset-bar').style.display = 'none';
+
+          for (let i = 0; i < 3; i++) {
+            const door = document.getElementById('door-' + i);
+            door.className = 'monty-door';
+            door.style.pointerEvents = 'auto';
+            const content = document.getElementById('door-content-' + i);
+            content.textContent = (i === this.carDoor) ? '🚗' : '🐐';
+          }
+        },
+        pickDoor(doorIdx) {
+          if (this.phase !== 1) return;
+          AudioFX.click();
+          this.playerPick = doorIdx;
+          this.phase = 2;
+
+          document.getElementById('door-' + doorIdx).classList.add('selected');
+
+          // Host opens one of the OTHER doors that has a GOAT
+          const availableToOpen = [0, 1, 2].filter(d => d !== this.playerPick && d !== this.carDoor);
+          this.openedHostDoor = availableToOpen[Math.floor(Math.random() * availableToOpen.length)];
+
+          setTimeout(() => {
+            AudioFX.playTone(350, 'sine', 0.2);
+            document.getElementById('door-' + this.openedHostDoor).classList.add('opened');
+            
+            document.getElementById('monty-instruction').innerHTML = `
+              🐐 ពិធីករបានបើក <strong>ទ្វារលេខ ${this.openedHostDoor + 1}</strong> ឃើញសត្វពពែ!<br>
+              <span style="color:#38bdf8;">តើអ្នកចង់ [រក្សាទុកទ្វារដដែល] ឬ [ប្តូរទៅទ្វារដែលនៅសល់]?</span>
+            `;
+            document.getElementById('monty-actions').style.display = 'flex';
+          }, 600);
+        },
+        finalize(didSwitch) {
+          if (this.phase !== 2) return;
+          this.phase = 3;
+          AudioFX.click();
+
+          document.getElementById('monty-actions').style.display = 'none';
+
+          let finalPick = this.playerPick;
+          if (didSwitch) {
+            // Pick the remaining door
+            finalPick = [0, 1, 2].find(d => d !== this.playerPick && d !== this.openedHostDoor);
+            document.querySelectorAll('.monty-door').forEach(d => d.classList.remove('selected'));
+            document.getElementById('door-' + finalPick).classList.add('selected');
+          }
+
+          // Open all doors
+          setTimeout(() => {
+            for (let i = 0; i < 3; i++) {
+              document.getElementById('door-' + i).classList.add('opened');
+              document.getElementById('door-' + i).style.pointerEvents = 'none';
+            }
+
+            this.totalGames++;
+            const won = (finalPick === this.carDoor);
+
+            if (didSwitch) {
+              this.switchPlays++;
+              if (won) this.switchWins++;
+            } else {
+              this.stayPlays++;
+              if (won) this.stayWins++;
+            }
+
+            if (won) {
+              AudioFX.win();
+              document.getElementById('monty-instruction').innerHTML = `
+                🎉🚗 <strong>អបអរសាទរ! អ្នកបានឈ្នះរថយន្តទំនើប!</strong> (${didSwitch ? 'ជោគជ័យតាមរយៈការ [ប្តូរទ្វារ]' : 'ជោគជ័យតាមរយៈការ [រក្សាទុកដដែល]'})
+              `;
+            } else {
+              AudioFX.wrong();
+              document.getElementById('monty-instruction').innerHTML = `
+                🐐😢 <strong>អ្នកទទួលបានសត្វពពែ!</strong> (${didSwitch ? 'បាន [ប្តូរទ្វារ]' : 'បាន [រក្សាទុកដដែល]'})
+              `;
+            }
+
+            this.updateStats();
+            document.getElementById('monty-reset-bar').style.display = 'block';
+          }, 500);
+        },
+        updateStats() {
+          document.getElementById('stat-total').textContent = this.totalGames;
+          const switchRate = this.switchPlays > 0 ? Math.round((this.switchWins / this.switchPlays) * 100) : 0;
+          const stayRate = this.stayPlays > 0 ? Math.round((this.stayWins / this.stayPlays) * 100) : 0;
+
+          document.getElementById('stat-switch-rate').textContent = `${switchRate}% (${this.switchWins}/${this.switchPlays})`;
+          document.getElementById('stat-stay-rate').textContent = `${stayRate}% (${this.stayWins}/${this.stayPlays})`;
+        }
+      }
+    };
+
+    // Auto initialize all game engines
+    window.addEventListener('DOMContentLoaded', () => {
+      GameArena.kahoot.init();
+      GameArena.bingo.init();
+      GameArena.dice.init();
+      GameArena.escape.init();
+      GameArena.match.init();
+      GameArena.monty.init();
+
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ]
+        });
+      }
+    });
+  </script>
+</body>
+</html>
