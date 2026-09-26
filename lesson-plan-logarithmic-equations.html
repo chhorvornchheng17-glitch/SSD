@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក | សមីការលោការីត</title>
+  
+  <!-- Google Fonts: Kantumruy Pro, Moul, & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Moul&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for High Quality Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- html2pdf.js for High Fidelity Client-Side PDF Export -->
+  <script src="js/html2pdf.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #10b981;
+      --accent-dark: #047857;
+      --accent-light: #ecfdf5;
+      --warning: #f59e0b;
+      --warning-light: #fef3c7;
+      --danger: #ef4444;
+      --danger-light: #fee2e2;
+      --purple: #8b5cf6;
+      --purple-light: #f3e8ff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --text-dark: #0f172a;
+      --border: #cbd5e1;
+      --border-light: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Kantumruy Pro', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+
+    .plan-container {
+      max-width: 1060px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 3rem 3.5rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    /* Print Controls Bar */
+    .controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px dashed var(--border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-word {
+      background: #1e40af;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.25);
+    }
+    .btn-word:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    /* Official Ministry Header */
+    .official-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .country-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .motto-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .header-divider {
+      width: 140px;
+      height: 2px;
+      background: var(--primary);
+      margin: 0 auto;
+    }
+
+    /* Metadata Card */
+    .metadata-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .meta-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .meta-value {
+      font-weight: 700;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+    }
+
+    /* Plan Title Banner */
+    .plan-main-title {
+      text-align: center;
+      margin-bottom: 2.25rem;
+      padding: 1.25rem;
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+      border: 1.5px solid rgba(2, 132, 199, 0.25);
+      border-radius: 12px;
+    }
+
+    .plan-main-title h1 {
+      font-family: 'Moul', cursive;
+      font-size: 1.35rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.4rem;
+      line-height: 1.6;
+    }
+
+    .plan-main-title .subtitle {
+      font-size: 1.05rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Section Headings */
+    .plan-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    /* Tables (Ministry 3-column pedagogical format) */
+    .table-column-vertical {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+      font-size: 0.93rem;
+    }
+
+    .table-column-vertical th {
+      background: #f1f5f9;
+      color: var(--text-dark);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .table-column-vertical td {
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.7;
+    }
+
+    /* 3-Column Pedagogy Layout */
+    .col-teacher-1 {
+      width: 33%;
+      background: #ffffff;
+    }
+
+    .col-content-2 {
+      width: 37%;
+      background: #fafaf9;
+    }
+
+    .col-student-3 {
+      width: 30%;
+      background: #ffffff;
+    }
+
+    .stage-badge {
+      display: inline-block;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+
+    .badge-stage-1 { background: #fee2e2; color: #991b1b; }
+    .badge-stage-2 { background: #fef3c7; color: #92400e; }
+    .badge-stage-3 { background: #e0f2fe; color: #075985; }
+    .badge-stage-4 { background: #dcfce7; color: #166534; }
+    .badge-stage-5 { background: #f3e8ff; color: #6b21a8; }
+
+    /* Blackboard Layout Design */
+    .board-container {
+      background: #0f172a;
+      border: 8px solid #334155;
+      border-radius: 10px;
+      color: #f8fafc;
+      padding: 1.5rem;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+      margin-top: 1rem;
+    }
+
+    .board-header {
+      text-align: center;
+      border-bottom: 1.5px dashed #475569;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+      color: #94a3b8;
+    }
+
+    .board-columns-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .board-column {
+      border-right: 1.5px dashed #334155;
+      padding-right: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .board-column:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .board-column-header {
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-weight: 700;
+      color: #38bdf8;
+      border-bottom: 1px solid #38bdf8;
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .board-column p, .board-column ul {
+      font-size: 0.86rem;
+      line-height: 1.7;
+      color: #e2e8f0;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Student Worksheet Container */
+    .worksheet-box {
+      border: 2px dashed #0284c7;
+      border-radius: 12px;
+      background: #f0f9ff;
+      padding: 1.5rem 1.75rem;
+      margin-top: 1rem;
+    }
+
+    /* KaTeX Typography Optimizations */
+    .katex {
+      font-size: 1.05em !important;
+      text-rendering: auto;
+    }
+    .katex-display {
+      margin: 0.6em 0 !important;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.2em 0;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        padding: 0;
+        background: #ffffff;
+      }
+      .controls-bar {
+        display: none !important;
+      }
+      .plan-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .board-container {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 2px solid #000000 !important;
+      }
+      .board-header {
+        color: #000000 !important;
+        border-bottom-color: #000000 !important;
+      }
+      .board-column {
+        border-right-color: #000000 !important;
+      }
+      .board-column-header {
+        color: #000000 !important;
+        border-bottom-color: #000000 !important;
+      }
+      .board-column p, .board-column ul {
+        color: #000000 !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="plan-container">
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <a href="index.html" class="btn btn-outline">
+          <span>🏠 ទំព័រដើម</span>
+        </a>
+        <a href="lessons.html?grade=grade11&ch=g11-ch2" class="btn btn-outline" style="border-color: rgba(6, 182, 212, 0.5); color: #0284c7;">
+          <span>📖 មេរៀនសៀវភៅគោល ថ្នាក់ទី១១</span>
+        </a>
+        <a href="lessons.html" class="btn btn-outline">
+          <span>📚 ឯកសារបង្រៀនទាំងអស់</span>
+        </a>
+        <a href="lesson-plan-sequences-ibl.html" class="btn btn-outline" style="border-color: #0284c7; color: #0284c7;">
+          <span>📑 កិច្ចតែងការ៖ ស្វ៊ីតចំនួនពិត</span>
+        </a>
+        <a href="lesson-plan-exponential-ibl.html" class="btn btn-outline" style="border-color: #10b981; color: #10b981;">
+          <span>📑 កិច្ចតែងការ៖ អិចស្ប៉ូណង់ស្យែល</span>
+        </a>
+        <span class="btn" style="background: rgba(14, 165, 233, 0.15); color: #0284c7; border: 1.5px solid #0284c7;">
+          <span>📌 កិច្ចតែងការ៖ សមីការលោការីត</span>
+        </span>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <button onclick="exportToWord()" class="btn btn-word" title="ទាញយកជាឯកសារ Word (.doc)">
+          <span>📄 Word (.doc)</span>
+        </button>
+        <button onclick="window.print()" class="btn btn-primary" title="បោះពុម្ពឯកសារចេញក្រដាស A4">
+          <span>🖨️ បោះពុម្ព (Print / PDF)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Official Document Container -->
+    <div id="lesson-plan-document">
+      <!-- Official Ministry Header -->
+      <div class="official-header">
+        <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
+        <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+        <div class="header-divider"></div>
+      </div>
+
+      <!-- Administrative Metadata Card -->
+      <div class="metadata-card">
+        <div class="meta-item">
+          <span class="meta-label">គ្រឹះស្ថានសិក្សា</span>
+          <span class="meta-value">វិទ្យាល័យសសរស្តម្ភ</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">កម្រិតថ្នាក់ & មុខវិជ្ជា</span>
+          <span class="meta-value">ថ្នាក់ទី ១១ | គណិតវិទ្យា (ភាគ១)</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">គ្រូបង្រៀនឯកទេស</span>
+          <span class="meta-value">អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">រយៈពេលបង្រៀន</span>
+          <span class="meta-value">៥០ នាទី (១ ម៉ោងសិក្សាពេញលេញ)</span>
+        </div>
+      </div>
+
+      <!-- Plan Main Title -->
+      <div class="plan-main-title">
+        <h1>កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក</h1>
+        <div class="subtitle">
+          ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងអនុគមន៍លោការីត &nbsp;|&nbsp; <strong>មេរៀនទី ២៖ អនុគមន៍លោការីត</strong><br>
+          ខ្លឹមសារម៉ោងបង្រៀន៖ <strong>៣. សមីការលោការីត (លក្ខខណ្ឌអត្ថិភាព និងវិធីដោះស្រាយទម្រង់គ្រឹះ)</strong>
+        </div>
+      </div>
+
+      <!-- I. Learning Objectives Table -->
+      <div class="plan-section">
+        <h2 class="section-title">I. វត្ថុបំណងមេរៀន</h2>
+        <table class="table-column-vertical">
+          <thead>
+            <tr>
+              <th style="width: 25%;">ដែនអភិវឌ្ឍន៍</th>
+              <th style="width: 50%;">វត្ថុបំណងជាក់លាក់ (ក្រោយបញ្ចប់ការរៀន ៥០ នាទី សិស្សអាច៖)</th>
+              <th style="width: 25%;">សម្ភារឧបទេស</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>១. វិជ្ជាសម្បទា</strong></td>
+              <td>
+                • កំណត់សញ្ញាណ និងឲ្យនិយមន័យនៃសមីការលោការីតបានត្រឹមត្រូវ។<br>
+                • កំណត់បានយ៉ាងច្បាស់នូវលក្ខខណ្ឌអត្ថិភាពនៃកន្សោមក្នុងលោការីត $\log_a f(x)$ គឺ $f(x) > 0$ (ជាមួយគោល $a > 0, a \ne 1$)។<br>
+                • ចងចាំ និងយល់ច្បាស់ពីទ្រឹស្តីបទនៃការដោះស្រាយសមីការលោការីតទម្រង់គ្រឹះទាំងពីរ៖<br>
+                &nbsp;&nbsp;+ ទម្រង់ទី ១៖ $\log_a f(x) = b \iff f(x) = a^b$<br>
+                &nbsp;&nbsp;+ ទម្រង់ទី ២៖ $\log_a f(x) = \log_a g(x) \iff f(x) = g(x)$ (ជាមួយ $f(x) > 0, g(x) > 0$)។
+              </td>
+              <td>
+                • សៀវភៅសិក្សាគោលគណិតវិទ្យាថ្នាក់ទី ១១ (ភាគ១ ទំព័រ ៧៨ ដល់ ៨០)<br>
+                • បន្ទះកាតរូបមន្តសមីការលោការីត និងលក្ខខណ្ឌអត្ថិភាព<br>
+                • តារាងប្រៀបធៀបទម្រង់សមីការ
+              </td>
+            </tr>
+            <tr>
+              <td><strong>២. បំណិនសម្បទា</strong></td>
+              <td>
+                • កំណត់លក្ខខណ្ឌអត្ថិភាព (ដែនកំណត់) នៃសមីការលោការីតបានរហ័ស និងត្រឹមត្រូវ ១០០% មុននឹងចាប់ផ្តើមដោះស្រាយ។<br>
+                • អនុវត្តនិយមន័យលោការីត និងរូបមន្តផលបូក ផលសងលោការីត ដើម្បីបំលែងសមីការលោការីតទៅជាសមីការដឺក្រេទី១ ឬទី២ បានស្ទាត់ជំនាញ។<br>
+                • ដោះស្រាយរកតម្លៃអថេរ $x$ ធ្វើការផ្ទៀងផ្ទាត់ជម្រុះឫសមិនយក (Extraneous roots) និងសរសេរសំណុំចម្លើយ $S$ បានត្រឹមត្រូវ។<br>
+                • ធ្វើការពិភាក្សាជាក្រុម និងរាយការណ៍បង្ហាញជំហាននៃការដោះស្រាយលើក្ដារខៀនបានក្បោះក្បាយ។
+              </td>
+              <td>
+                • សន្លឹកកិច្ចការរិះរកស្រាវជ្រាវប្រចាំក្រុម (Inquiry Worksheet)<br>
+                • ក្ដារខៀន ប៊ិចហ្វឺត បន្ទាត់គូសតារាង<br>
+                • ក្តារឈ្នួនតូច និងក្រដាសព្រាងសម្រាប់ដោះស្រាយប្រណាំង
+              </td>
+            </tr>
+            <tr>
+              <td><strong>៣. ចរិយាសម្បទា</strong></td>
+              <td>
+                • បណ្ដុះទម្លាប់ និងស្មារតីប្រុងប្រយ័ត្នខ្ពស់ក្នុងការពិនិត្យលក្ខខណ្ឌអត្ថិភាពជានិច្ច ជៀសវាងការធ្វេសប្រហែសយកឫសខុស។<br>
+                • បង្ហាញភាពជឿជាក់ ហ្មត់ចត់ និងភាពសហការជួយគ្នាទៅវិញទៅមកក្នុងការបំពេញការងារជាក្រុម។<br>
+                • យល់ដឹងពីសារប្រយោជន៍នៃសមីការលោការីតក្នុងការគណនាកម្រិតកំហាប់អាស៊ីត-បាស (pH), កម្រិតអាំងតង់ស៊ីតេសំឡេង (Decibel) និងកម្លាំងរញ្ជួយដី។
+              </td>
+              <td>
+                • បន្ទះកាតសំណួរគន្លឹះបំផុសការរិះរក<br>
+                • សន្លឹកកិច្ចការចាកចេញ (Exit Ticket) វាយតម្លៃចុងម៉ោង<br>
+                • ស្ថានភាពជាក់ស្តែងក្នុងវិទ្យាសាស្ត្រ និងជីវភាព
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- II. Inquiry Question & Materials -->
+      <div class="plan-section">
+        <h2 class="section-title">II. សំណួរគន្លឹះរិះរក និងសម្ភារឧបទេស</h2>
+        <div style="background: var(--accent-light); border: 1.5px solid var(--accent); border-radius: 10px; padding: 1.1rem 1.4rem; margin-bottom: 1.25rem;">
+          <strong style="color: var(--accent-dark); font-size: 1.05rem;">❓ សំណួរគន្លឹះបំផុសការរិះរក៖</strong>
+          <p style="color: #065f46; margin-top: 0.35rem; font-size: 0.98rem; font-weight: 500; line-height: 1.7;">
+            «តើយើងអាចដោះសោរអថេរ $x$ ដែលជាប់នៅក្នុងលោការីត $\log_2(x - 3) = 4$ ដោយរបៀបណា ហើយហេតុអ្វីបានជាចាំបាច់ត្រូវតែដាក់លក្ខខណ្ឌ $x - 3 > 0$ ជាដាច់ខាតមុននឹងចាប់ផ្តើមដោះស្រាយ?»
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+          <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem;">
+            <strong style="color: var(--primary-dark); font-size: 0.95rem;">🛠️ សម្ភារឧបទេសសម្រាប់គ្រូ៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.9rem; line-height: 1.7;">
+              <li>ក្ដារខៀន ប៊ិចហ្វឺត បន្ទាត់វែងគូសតារាង</li>
+              <li>បន្ទះកាតរូបមន្តសមីការលោការីត និងកាតសោរចាក់សោរអថេរ</li>
+              <li>សន្លឹកកិច្ចការរិះរកចែកជូនគ្រប់ក្រុម</li>
+              <li>សន្លឹកកិច្ចការចាកចេញ (Exit Ticket) សម្រាប់វាយតម្លៃចុងម៉ោង</li>
+            </ul>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem;">
+            <strong style="color: var(--accent-dark); font-size: 0.95rem;">👥 សម្ភារសម្រាប់ក្រុមសិស្ស (៤-៥ នាក់ក្នុងមួយក្រុម)៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.9rem; line-height: 1.7;">
+              <li>សៀវភៅសិក្សាគោលគណិតវិទ្យាថ្នាក់ទី ១១ (ភាគ១)</li>
+              <li>សន្លឹកកិច្ចការស្រាវជ្រាវប្រចាំក្រុម</li>
+              <li>ប៊ិច ក្រដាសព្រាង និងក្តារឈ្នួនតូចសម្រាប់បង្ហាញចម្លើយ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- III. 3-Column Teaching Process Table -->
+      <div class="plan-section">
+        <h2 class="section-title">III. តារាងដំណើរការបង្រៀន និងរៀនបែបការរិះរក (៣ ជួរឈរស្តង់ដារ)</h2>
+        <table class="table-column-vertical">
+          <thead>
+            <tr>
+              <th class="col-teacher-1">សកម្មភាពគ្រូ</th>
+              <th class="col-content-2">ដំណាក់កាល ខ្លឹមសារមេរៀន & ពេលវេលា</th>
+              <th class="col-student-3">សកម្មភាពសិស្ស</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 1. ENGAGE -->
+            <tr>
+              <td class="col-teacher-1">
+                • ពិនិត្យវត្តមាន អនាម័យ និងរៀបចំសិស្សជាក្រុម (៤-៥ នាក់ក្នុងមួយក្រុម)។<br>
+                • សរសេរសំណួររំលឹកលើក្តារខៀន៖ <em>«ប្រសិនបើ $2^3 = 8$ តើ $\log_2 8$ ស្មើនឹងប៉ុន្មាន?»</em><br>
+                • បង្ហាញសមីការថ្មី៖ <em>«ចុះបើ $\log_2 x = 3$ តើ $x$ ស្មើនឹងប៉ុន្មាន?»</em><br>
+                • បង្កើនកម្រិតចម្ងល់៖ <em>«ចុះបើ $\log_2(x - 1) = 3$ តើយើងដោះស្រាយដូចម្តេច? តើ $\log_2(-8)$ មានន័យទេ?»</em>
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-1">ជំហានទី ១៖ ការចូលរួម និងបំផុសចម្ងល់ (ពេលវេលា៖ ៧ នាទី)</span><br>
+                <strong>ការតភ្ជាប់ពីអិចស្ប៉ូណង់ស្យែលទៅលោការីត៖</strong><br>
+                • $2^3 = 8 \iff \log_2 8 = 3$<br>
+                • $\log_2 x = 3 \Rightarrow x = 2^3 = 8$<br><br>
+                <strong>ចម្ងល់គន្លឹះ៖</strong><br>
+                • ហេតុអ្វីបានជា $\log_2(-8)$ គ្មានន័យក្នុងសំណុំ $\mathbb{R}$?<br>
+                • តើកន្សោមនៅខាងក្នុងលោការីតត្រូវតែមានលក្ខណៈដូចម្តេច?
+              </td>
+              <td class="col-student-3">
+                • អង្គុយតាមក្រុម និងចូលរួមឆ្លើយសំណួរយ៉ាងសកម្ម។<br>
+                • សិស្សឆ្លើយ៖ $\log_2 8 = 3$ និងទស្សន៍ទាយ $x = 8$។<br>
+                • សិស្សសង្កេត និងឆ្លើយអំពី $\log_2(-8)$៖ <em>«គ្មានលេខណាដែល ២ ស្វ័យគុណចេញចំនួនដកទេ ដូច្នេះលោការីតនៃចំនួនអវិជ្ជមានគឺគ្មានន័យ!»</em>
+              </td>
+            </tr>
+
+            <!-- 2. EXPLORE -->
+            <tr>
+              <td class="col-teacher-1">
+                • ចែកសន្លឹកកិច្ចការរិះរកជូនគ្រប់ក្រុម។<br>
+                • ណែនាំសកម្មភាពទី ១៖ ឱ្យសិស្សរកលក្ខខណ្ឌដើម្បីឱ្យកន្សោមលោការីតមានន័យ (កន្សោមក្នុងលោការីត $> 0$)។<br>
+                • ណែនាំសកម្មភាពទី ២៖ ឱ្យសិស្សសាកល្បងប្រើនិយមន័យលោការីតដើម្បី «ដោះសោរ» រកតម្លៃ $x$ ក្នុងសមីការ $\log_3(2x - 1) = 2$។<br>
+                • ដាក់បញ្ហាប្រឈមទី ៣៖ ដោះស្រាយសមីការ $\log_2(x + 2) + \log_2(x - 2) = 5$ រួចពិនិត្យមើលឫសដែលទទួលបាន។<br>
+                • ដើរសម្របសម្រួល ផ្តល់ការណែនាំ និងកត់សម្គាល់ការយល់ដឹងរបស់ក្រុមនីមួយៗ។
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-2">ជំហានទី ២៖ ការរុករក និងពិសោធន៍ជាក្រុម (ពេលវេលា៖ ១៥ នាទី)</span><br>
+                <strong>ការពិសោធន៍ដោះសោរសមីការលោការីត៖</strong><br>
+                • <strong>សកម្មភាព ១ (លក្ខខណ្ឌអត្ថិភាព)៖</strong><br>
+                - $\log_2(x - 4) \Rightarrow x - 4 > 0 \iff x > 4$<br>
+                - $\log_5(3 - x) \Rightarrow 3 - x > 0 \iff x < 3$<br><br>
+                • <strong>សកម្មភាព ២ (ដោះស្រាយតាមនិយមន័យ)៖</strong><br>
+                $\log_3(2x - 1) = 2 \iff 2x - 1 = 3^2 = 9$<br>
+                $\Rightarrow 2x = 10 \iff x = 5$<br><br>
+                • <strong>សកម្មភាព ៣ (អន្ទាក់នៃឫសមិនយក)៖</strong><br>
+                $\log_2[(x+2)(x-2)] = 5 \iff x^2 - 4 = 2^5 = 32$<br>
+                $\Rightarrow x^2 = 36 \iff x = 6$ ឬ $x = -6$។<br>
+                <em>តើ $x = -6$ អាចយកបានទេ?</em>
+              </td>
+              <td class="col-student-3">
+                • ពិភាក្សាក្នុងក្រុម និងបំពេញសន្លឹកកិច្ចការ៖<br>
+                - កំណត់លក្ខខណ្ឌកន្សោម $> 0$ បានត្រឹមត្រូវ។<br>
+                - គណនាដោះសោរ $2x - 1 = 9 \Rightarrow x = 5$។<br>
+                • ពិភាក្សាយ៉ាងក្តៅគគុកលើសកម្មភាព ៣៖ <em>«បើជំនួស $x = -6$ ចូលក្នុងសមីការដើម យើងបាន $\log_2(-6+2) = \log_2(-4)$ ដែលមិនអាចគណនាបាន! ដូច្នេះ $x = -6$ ត្រូវតែបោះបង់ចោល!»</em>
+              </td>
+            </tr>
+
+            <!-- 3. EXPLAIN -->
+            <tr>
+              <td class="col-teacher-1">
+                • អញ្ជើញតំណាងក្រុមឡើងរាយការណ៍ និងសរសេរដំណោះស្រាយលើក្ដារខៀន។<br>
+                • កោតសរសើរការរកឃើញរបស់សិស្សអំពី «ឫសមិនយក (Extraneous root)»។<br>
+                • សង្គ្រោះ និងធ្វើទូទៅកម្មបង្កើតជា <strong>ក្បួន ៤ ជំហាន</strong> ក្នុងការដោះស្រាយសមីការលោការីត។<br>
+                • បង្ហាញទ្រឹស្តីបទនៃទម្រង់គ្រឹះទាំងពីរ៖<br>
+                &nbsp;&nbsp;1. $\log_a f(x) = b \iff f(x) = a^b$<br>
+                &nbsp;&nbsp;2. $\log_a f(x) = \log_a g(x) \iff f(x) = g(x)$ (ជាមួយ $f(x) > 0, g(x) > 0$)។
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-3">ជំហានទី ៣៖ ការពន្យល់ និងបង្កើតគំនិត (ពេលវេលា៖ ១២ នាទី)</span><br>
+                <strong>ក្បួន ៤ ជំហានដោះស្រាយសមីការលោការីត៖</strong><br>
+                ១. <strong>លក្ខខណ្ឌអត្ថិភាព៖</strong> កន្សោមក្នុងលោការីតត្រូវតែវិជ្ជមានដាច់ខាត ($> 0$)។<br>
+                ២. <strong>បំលែងសមីការ៖</strong> ប្រើនិយមន័យ ឬលក្ខណៈលោការីតដើម្បីបំបាត់សញ្ញាលោការីត។<br>
+                ៣. <strong>ដោះស្រាយសមីការពិជគណិត៖</strong> រកតម្លៃអថេរ $x$។<br>
+                ៤. <strong>ផ្ទៀងផ្ទាត់ & សន្និដ្ឋាន៖</strong> យកតម្លៃ $x$ ផ្ទៀងផ្ទាត់ជាមួយលក្ខខណ្ឌដើម រួចសន្និដ្ឋានសំណុំចម្លើយ $S$។<br><br>
+                <strong>ទម្រង់គ្រឹះ៖</strong><br>
+                $$\log_a f(x) = b \iff f(x) = a^b \quad (f(x) > 0)$$
+                $$\log_a f(x) = \log_a g(x) \iff f(x) = g(x) \quad (f(x) > 0, g(x) > 0)$$
+              </td>
+              <td class="col-student-3">
+                • តំណាងក្រុមឡើងធ្វើបទបង្ហាញពីរបកគំហើញ។<br>
+                • សិស្សទាំងអស់ស្តាប់ការពន្យល់ និងយល់ច្បាស់ពីមូលហេតុដែលត្រូវផ្ទៀងផ្ទាត់លក្ខខណ្ឌអត្ថិភាពជានិច្ច។<br>
+                • កត់ត្រាក្បួន ៤ ជំហាន និងទម្រង់គ្រឹះទាំងពីរចូលក្នុងសៀវភៅមេរៀនដោយរបៀបរៀបរយ។
+              </td>
+            </tr>
+
+            <!-- 4. ELABORATE -->
+            <tr>
+              <td class="col-teacher-1">
+                • ដាក់លំហាត់គំរូទី ១ និង ២ លើក្ដារខៀន៖<br>
+                &nbsp;&nbsp;+ គំរូ ១៖ $\log_2(3x - 1) = 3$<br>
+                &nbsp;&nbsp;+ គំរូ ២៖ $\log_3(x^2 - 4x + 3) = \log_3(2x - 2)$<br>
+                • ណែនាំគន្លឹះដោះស្រាយ៖ រកលក្ខខណ្ឌរួមជាមុន ដោះស្រាយសមីការដឺក្រេទី ២ និងផ្ទៀងផ្ទាត់ជម្រុះឫស។<br>
+                • ដាក់លំហាត់ប្រតិបត្តិរហ័ស៖ $\log_5(2x + 1) = 2$ ឱ្យសិស្សប្រកួតគ្នាធ្វើលើក្តារឈ្នួនជាក្រុមរយៈពេល ២ នាទី។<br>
+                • ត្រួតពិនិត្យ ផ្តល់ការកោតសរសើរ និងពន្យល់កែតម្រូវភ្លាមៗ។
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-4">ជំហានទី ៤៖ ការពង្រីកចំណេះដឹង និងអនុវត្ត (ពេលវេលា៖ ១០ នាទី)</span><br>
+                <strong>លំហាត់គំរូទី ១៖</strong> ដោះស្រាយ $\log_2(3x - 1) = 3$<br>
+                • លក្ខខណ្ឌ៖ $3x - 1 > 0 \iff x > \frac{1}{3}$<br>
+                • តាមនិយមន័យ៖ $3x - 1 = 2^3 = 8 \Rightarrow 3x = 9 \iff x = 3$<br>
+                • ផ្ទៀងផ្ទាត់៖ $x = 3 > \frac{1}{3}$ (យក) $\Rightarrow S = \{3\}$<br><br>
+                <strong>លំហាត់គំរូទី ២៖</strong> $\log_3(x^2 - 4x + 3) = \log_3(2x - 2)$<br>
+                • លក្ខខណ្ឌ៖ $x^2 - 4x + 3 > 0$ និង $2x - 2 > 0 \Rightarrow x > 1, x \ne 3$<br>
+                • សមីការ៖ $x^2 - 4x + 3 = 2x - 2 \iff x^2 - 6x + 5 = 0$<br>
+                $\Rightarrow x_1 = 1$ (មិនយក), $x_2 = 5$ (យក) $\Rightarrow S = \{5\}$<br><br>
+                <strong>ប្រតិបត្តិរហ័ស៖</strong> $\log_5(2x + 1) = 2 \Rightarrow 2x + 1 = 25 \iff x = 12$
+              </td>
+              <td class="col-student-3">
+                • ចូលរួមដោះស្រាយលំហាត់គំរូជាមួយគ្រូមួយជំហានម្តងៗ។<br>
+                • សិស្សសង្កេតឃើញថា $x = 1$ ធ្វើឱ្យកន្សោម $2(1) - 2 = 0$ ដែលមិនអាចយកបាន ទើបយកតែ $x = 5$។<br>
+                • ក្រុមទាំងអស់ប្រណាំងគ្នាដោះស្រាយលំហាត់ប្រតិបត្តិលើក្តារឈ្នួន និងលើកបង្ហាញចម្លើយ៖ $x = 12$ (លក្ខខណ្ឌ $x > -\frac{1}{2}$ ស្របច្បាប់)។
+              </td>
+            </tr>
+
+            <!-- 5. EVALUATE -->
+            <tr>
+              <td class="col-teacher-1">
+                • ចែកសន្លឹកកិច្ចការចាកចេញ (Exit Ticket) ឱ្យសិស្សម្នាក់ៗបំពេញរយៈពេល ២ នាទី។<br>
+                • ប្រមូលសន្លឹកកិច្ចការ និងឱ្យសិស្សស្ម័គ្រចិត្ត ១ នាក់ប្រាប់ចម្លើយខ្លីៗ។<br>
+                • ឆ្លុះបញ្ចាំងសរុប៖ <em>«ការដោះស្រាយសមីការលោការីត ចាំបាច់បំផុតគឺ "លក្ខខណ្ឌអត្ថិភាព" ប្រៀបដូចជាការត្រួតពិនិត្យសុពលភាពសំបុត្រមុននឹងអនុញ្ញាតឱ្យចូលទស្សនា»</em>។<br>
+                • ដាក់កិច្ចការផ្ទះ៖ លំហាត់ទំព័រ ៨០ (លំហាត់ទី ៣ ក, ខ, គ)។
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-5">ជំហានទី ៥៖ ការវាយតម្លៃ និងឆ្លុះបញ្ចាំង (ពេលវេលា៖ ៦ នាទី)</span><br>
+                <strong>សន្លឹកកិច្ចការចាកចេញ (Exit Ticket)៖</strong><br>
+                ១. តើសមីការ $\log_2(x - 5) = 3$ មានលក្ខខណ្ឌអត្ថិភាពយ៉ាងដូចម្តេច?<br>
+                ២. រកសំណុំចម្លើយ $S$ នៃសមីការ $\log_2(x - 5) = 3$។<br><br>
+                <strong>ឆ្លុះបញ្ចាំងសរុប & កិច្ចការផ្ទះ៖</strong><br>
+                • សៀវភៅពុម្ពទំព័រ ៨០ លំហាត់ ៣ (ក, ខ, គ)
+              </td>
+              <td class="col-student-3">
+                • បំពេញសន្លឹកកិច្ចការចាកចេញដោយឯករាជ្យ៖<br>
+                ១. លក្ខខណ្ឌ៖ $x - 5 > 0 \iff x > 5$<br>
+                ២. $x - 5 = 2^3 = 8 \Rightarrow x = 13 > 5 \Rightarrow S = \{13\}$<br>
+                • ស្ដាប់ការបូកសរុប និងកត់ត្រាកិច្ចការផ្ទះចូលសៀវភៅ។
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- IV. Blackboard Layout Plan -->
+      <div class="plan-section">
+        <h2 class="section-title">IV. គំនូរប្លង់ក្ដារខៀន (៣ ជួរឈរ)</h2>
+        <div class="board-container">
+          <div class="board-header">
+            កាលបរិច្ឆេទ៖ ថ្ងៃទី ......... ខែ ......... ឆ្នាំ ២០២៦ &nbsp;|&nbsp; ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត &nbsp;|&nbsp; មេរៀនទី ២៖ អនុគមន៍លោការីត (ម៉ោងទី ៣៖ សមីការលោការីត)
+          </div>
+
+          <div class="board-columns-grid">
+            <!-- Column 1 -->
+            <div class="board-column">
+              <div>
+                <div class="board-column-header">ផ្ទាំងទី ១៖ លក្ខខណ្ឌអត្ថិភាព & ក្បួន ៤ ជំហាន</div>
+                <p><strong>១. លក្ខខណ្ឌអត្ថិភាព៖</strong></p>
+                <p>$\log_a f(x)$ មានន័យកាលណា៖</p>
+                <div style="background: rgba(2, 132, 199, 0.2); border: 1px solid #38bdf8; padding: 0.35rem; border-radius: 4px; text-align: center; font-weight: 700; color: #38bdf8; margin: 0.35rem 0;">
+                  $f(x) > 0 \quad (a > 0, a \ne 1)$
+                </div>
+                <p style="margin-top: 0.5rem;"><strong>២. ក្បួន ៤ ជំហានដោះស្រាយ៖</strong></p>
+                <p>• ជំហាន ១៖ កំណត់លក្ខខណ្ឌ ($f(x) > 0$)</p>
+                <p>• ជំហាន ២៖ បំលែងទៅជាសមីការពិជគណិត</p>
+                <p>• ជំហាន ៣៖ ដោះស្រាយរកតម្លៃ $x$</p>
+                <p>• ជំហាន ៤៖ ផ្ទៀងផ្ទាត់ និងសន្និដ្ឋាន $S$</p>
+              </div>
+              <div style="font-size: 0.78rem; color: #38bdf8; margin-top: 0.5rem;">[គ្រឹះដាច់ខាតសម្រាប់ការពារកំហុស]</div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="board-column">
+              <div>
+                <div class="board-column-header">ផ្ទាំងទី ២៖ ទម្រង់គ្រឹះ & លំហាត់គំរូទី ១</div>
+                <p><strong>៣. ទម្រង់គ្រឹះទាំងពីរ៖</strong></p>
+                <p>ក. $\log_a f(x) = b \iff f(x) = a^b$</p>
+                <p>ខ. $\log_a f(x) = \log_a g(x) \iff f(x) = g(x)$</p>
+                <p style="margin-top: 0.5rem;"><strong>៤. លំហាត់គំរូទី ១៖</strong> ដោះស្រាយ $\log_2(3x - 1) = 3$</p>
+                <p>• លក្ខខណ្ឌ៖ $3x - 1 > 0 \iff x > \frac{1}{3}$</p>
+                <p>• តាមនិយមន័យ៖ $3x - 1 = 2^3 = 8$</p>
+                <p>&nbsp;&nbsp;$\Rightarrow 3x = 9 \iff x = 3$</p>
+                <p>• ផ្ទៀងផ្ទាត់៖ $x = 3 > \frac{1}{3}$ (យក)</p>
+                <div style="background: rgba(16, 185, 129, 0.2); border: 1px solid #34d399; padding: 0.3rem; border-radius: 4px; text-align: center; font-weight: 700; color: #34d399; margin-top: 0.35rem;">
+                  ដូចនេះ សំណុំចម្លើយ $S = \{3\}$
+                </div>
+              </div>
+              <div style="font-size: 0.78rem; color: #34d399; margin-top: 0.5rem;">[ខ្លឹមសារស្នូលសម្រាប់កត់ត្រា]</div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="board-column">
+              <div>
+                <div class="board-column-header">ផ្ទាំងទី ៣៖ លំហាត់គំរូទី ២ & ប្រតិបត្តិ</div>
+                <p><strong>៥. លំហាត់គំរូទី ២៖</strong></p>
+                <p>$\log_3(x^2 - 4x + 3) = \log_3(2x - 2)$</p>
+                <p>• លក្ខខណ្ឌ៖ $x > 1, x \ne 3$</p>
+                <p>• $x^2 - 4x + 3 = 2x - 2 \iff x^2 - 6x + 5 = 0$</p>
+                <p>• ទទួលបានឫស $x = 1$ (មិនយក) ឬ $x = 5$ (យក)</p>
+                <p style="color: #fde047;">$\Rightarrow$ សំណុំចម្លើយ $S = \{5\}$</p>
+                <p style="margin-top: 0.4rem;"><strong>៦. ប្រតិបត្តិរហ័ស៖</strong></p>
+                <p>$\log_5(2x + 1) = 2 \Rightarrow 2x + 1 = 25 \iff x = 12$</p>
+                <p style="margin-top: 0.4rem; color: #fde047;"><strong>៧. កិច្ចការផ្ទះ៖</strong></p>
+                <p>• សៀវភៅពុម្ពទំព័រ ៨០ លំហាត់ ៣ (ក, ខ, គ)</p>
+              </div>
+              <div style="font-size: 0.78rem; color: #fde047; margin-top: 0.5rem;">[ការអនុវត្ត និងពង្រឹងចំណេះ]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- V. Student Inquiry Worksheet Template -->
+      <div class="plan-section">
+        <h2 class="section-title">V. ឧបសម្ព័ន្ធ៖ សន្លឹកកិច្ចការរិះរករបស់សិស្ស</h2>
+        <div class="worksheet-box">
+          <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #bae6fd; padding-bottom: 0.6rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <strong style="color: #0369a1; font-size: 1.05rem;">សន្លឹកកិច្ចការរិះរកគណិតវិទ្យា</strong><br>
+              <span style="font-size: 0.85rem; color: #64748b;">មេរៀន៖ សមីការលោការីត (ថ្នាក់ទី ១១ ភាគ១)</span>
+            </div>
+            <div style="font-size: 0.9rem; font-weight: 600; color: #0f172a;">
+              ក្រុមទី៖ ............ ថ្នាក់ទី៖ ១១ .........
+            </div>
+          </div>
+
+          <p style="font-size: 0.92rem; margin-bottom: 0.5rem; color: #0f172a;">
+            <strong>សកម្មភាពទី ១៖ ការស្វែងរកលក្ខខណ្ឌអត្ថិភាពនៃសមីការលោការីត</strong><br>
+            ចូរពិនិត្យសមីការនីមួយៗខាងក្រោម រួចកំណត់លក្ខខណ្ឌអត្ថិភាពនៃកន្សោមក្នុងលោការីតឱ្យបានត្រឹមត្រូវ៖
+          </p>
+
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem; background: #ffffff; border: 1.5px solid #0284c7; text-align: center; font-size: 0.88rem;">
+            <thead>
+              <tr style="background: #e0f2fe; color: #0369a1;">
+                <th style="border: 1px solid #bae6fd; padding: 6px; width: 40%;">សមីការលោការីត</th>
+                <th style="border: 1px solid #bae6fd; padding: 6px; width: 35%;">វិសមីការលក្ខខណ្ឌអត្ថិភាព</th>
+                <th style="border: 1px solid #bae6fd; padding: 6px; width: 25%;">ចន្លោះតម្លៃអថេរ $x$</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 6px; text-align: left;">ក. $\log_2(x - 4) = 3$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">$x - 4 > 0$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px; font-weight: 600; color: #0284c7;">$x > 4$</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 6px; text-align: left;">ខ. $\log_3(2x + 6) = 2$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">$2x + 6 > 0$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px; color: #94a3b8;">...................</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 6px; text-align: left;">គ. $\log_5(8 - 2x) = 1$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">$8 - 2x > 0$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px; color: #94a3b8;">...................</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 6px; text-align: left;">ឃ. $\log_4(x^2 - 9) = 0$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">$x^2 - 9 > 0$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px; color: #94a3b8;">...................</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="font-size: 0.92rem; margin-bottom: 0.5rem; color: #0f172a;">
+            <strong>សកម្មភាពទី ២៖ ពិសោធន៍ដោះសោរសមីការ និងជម្រុះឫសមិនយក</strong><br>
+            គេឱ្យសមីការ $\log_2(x + 2) + \log_2(x - 2) = 5$។ ចូរពិភាក្សា និងបំពេញចន្លោះខាងក្រោម៖
+          </p>
+
+          <div style="background: #ffffff; border: 1.5px solid #0284c7; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 2;">
+            <div>• <strong>លក្ខខណ្ឌរួម៖</strong> $x + 2 > 0$ និង $x - 2 > 0 \iff x > \text{......}$</div>
+            <div>• <strong>អនុវត្តរូបមន្តផលបូកលោការីត៖</strong> $\log_2[(x + 2)(x - 2)] = 5 \iff \log_2(x^2 - 4) = 5$</div>
+            <div>• <strong>ដោះសោរតាមនិយមន័យ៖</strong> $x^2 - 4 = 2^5 = 32 \iff x^2 = 36$</div>
+            <div>• <strong>តម្លៃអថេរដែលរកបាន៖</strong> $x_1 = 6$ ឬ $x_2 = -6$</div>
+            <div>• <strong>ការផ្ទៀងផ្ទាត់៖</strong> $x = 6$ (.................) &nbsp;|&nbsp; $x = -6$ (................. ព្រោះធ្វើឱ្យកន្សោម .................)</div>
+            <div>• <strong>សំណុំចម្លើយចុងក្រោយ៖</strong> $S = \{\text{......}\}$</div>
+          </div>
+
+          <div style="font-size: 0.92rem; line-height: 1.9; color: #1e293b;">
+            <p><strong>សំណួរទាញសេចក្តីសន្និដ្ឋាន៖</strong></p>
+            <p>១. ហេតុអ្វីបានជាក្នុងការដោះស្រាយសមីការលោការីត យើងត្រូវកំណត់លក្ខខណ្ឌអត្ថិភាពមុនគេជានិច្ច? <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;ចម្លើយ៖ ............................................................................................................................................................</p>
+            <p>២. ចូរសង្ខេបក្បួន ៤ ជំហានក្នុងការដោះស្រាយសមីការលោការីតតាមការយល់ឃើញរបស់ក្រុមប្អូន៖ <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;ចម្លើយ៖ ............................................................................................................................................................</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- VI. Differentiation & Signatures -->
+      <div class="plan-section">
+        <h2 class="section-title">VI. យុទ្ធសាស្ត្រគាំទ្រសិស្សចម្រុះកម្រិត និងការឆ្លុះបញ្ចាំង</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+          <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 8px; padding: 1.15rem 1.3rem;">
+            <strong style="color: #92400e; font-size: 0.95rem;">🌱 សម្រាប់សិស្សរៀនយឺត៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.7;">
+              <li>ណែនាំឱ្យសរសេរពាក្យ «លក្ខខណ្ឌ៖ កន្សោមក្នុង $> 0$» ធំៗនៅដើមបន្ទាត់ជានិច្ចមុននឹងចាប់ផ្តើមគណនា។</li>
+              <li>ជួយរំលឹកការគណនាស្វ័យគុណសាមញ្ញដូចជា $2^3 = 8, 3^2 = 9, 5^2 = 25$ ជាដើម។</li>
+              <li>ណែនាំឱ្យយកតម្លៃ $x$ ទៅជំនួសផ្ទាល់ក្នុងសមីការដើមដើម្បីពិនិត្យថាមានសញ្ញាដកក្នុងលោការីតឬទេ។</li>
+            </ul>
+          </div>
+          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 1.15rem 1.3rem;">
+            <strong style="color: #1e40af; font-size: 0.95rem;">🚀 សម្រាប់សិស្សពូកែ៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.7;">
+              <li>ឱ្យសាកល្បងដោះស្រាយសមីការដែលមានគោលខុសគ្នា ដោយប្រើរូបមន្តប្តូរគោល៖ $\log_2 x + \log_4 x = 6$។</li>
+              <li>ឱ្យស្វែងយល់ពីសមីការលោការីតទម្រង់ដឺក្រេទី ២ ដោយការដាក់អថេរជំនួយ៖ $\log_2^2 x - 3\log_2 x + 2 = 0$។</li>
+              <li>ឱ្យស្រាវជ្រាវត្រៀមខ្លឹមសារ «វិសមីការលោការីត» សម្រាប់ម៉ោងសិក្សាបន្ទាប់។</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Signatures -->
+      <div style="display: flex; justify-content: space-between; margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.95rem;">
+        <div style="text-align: center; width: 40%;">
+          បានឃើញ និងឯកភាព<br>
+          <strong>នាយក</strong><br><br><br><br><br>
+          ...................................................
+        </div>
+        <div style="text-align: center; width: 40%;">
+          ថ្ងៃទី ........ ខែ ............. ឆ្នាំ ២០២៦<br>
+          <strong>គ្រូបង្រៀន</strong><br><br><br><br><br>
+          ...................................................
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KaTeX Initializer & Export Scripts -->
+  <script>
+    function renderMathTypography() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+          throwOnError: false
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", renderMathTypography);
+    window.addEventListener("load", renderMathTypography);
+
+    function exportToWord() {
+      const content = document.getElementById('lesson-plan-document').innerHTML;
+      const header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+            "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+            "xmlns='http://www.w3.org/TR/REC-html40'>" +
+            "<head><meta charset='utf-8'><title>កិច្ចតែងការបង្រៀនគណិតវិទ្យា - សមីការលោការីត</title>" +
+            "<style>body{font-family:'Kantumruy Pro', Arial, sans-serif; line-height:1.6;} table{border-collapse:collapse; width:100%;} th, td{border:1px solid #999; padding:6px;}</style></head><body>";
+      const footer = "</body></html>";
+      const sourceHTML = header + content + footer;
+      const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+      const fileDownload = document.createElement("a");
+      document.body.appendChild(fileDownload);
+      fileDownload.href = source;
+      fileDownload.download = 'កិច្ចតែងការបង្រៀន_សមីការលោការីត_ថ្នាក់ទី១១.doc';
+      fileDownload.click();
+      document.body.removeChild(fileDownload);
+    }
+  </script>
+</body>
+</html>
