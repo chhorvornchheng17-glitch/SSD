@@ -40,20 +40,39 @@
      1.5 KATEX MATH TYPOGRAPHY RENDER HELPER
      ============================================================ */
   const triggerMathRender = (element) => {
-    if (typeof window.renderMathInElement === 'function' && element) {
-      try {
-        window.renderMathInElement(element, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false }
-          ],
-          throwOnError: false
-        });
-      } catch (err) {
-        // Graceful fallback
+    if (!element) return;
+    const render = () => {
+      if (typeof window.renderMathInElement === 'function') {
+        try {
+          window.renderMathInElement(element, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false }
+            ],
+            throwOnError: false
+          });
+        } catch (err) {
+          // Graceful fallback
+        }
       }
+    };
+
+    if (typeof window.renderMathInElement === 'function') {
+      render();
+    } else {
+      let attempts = 0;
+      const interval = setInterval(() => {
+        attempts++;
+        if (typeof window.renderMathInElement === 'function') {
+          render();
+          clearInterval(interval);
+        } else if (attempts > 30) {
+          clearInterval(interval);
+        }
+      }, 100);
     }
   };
+  window.triggerMathRender = triggerMathRender;
 
   /* ============================================================
      2. GLOBAL NAVIGATION & MOBILE ACCORDIONS
@@ -75,6 +94,7 @@
     dropdownToggles.forEach(toggle => {
       toggle.addEventListener('click', (e) => {
         if (window.innerWidth <= 992) return;
+        e.preventDefault();
         const parent = toggle.closest('.nav-item-has-dropdown');
         if (!parent) return;
 
@@ -89,6 +109,45 @@
 
         parent.classList.toggle('is-open', !isCurrentlyOpen);
         toggle.setAttribute('aria-expanded', String(!isCurrentlyOpen));
+
+        // When closing parent dropdown, also close any open submenus
+        if (isCurrentlyOpen) {
+          parent.querySelectorAll('.dropdown-submenu-wrapper').forEach(w => w.classList.remove('is-open'));
+        }
+      });
+    });
+
+    // Submenu Toggle on Click (កិច្ចតែងការបង្រៀន)
+    const submenuToggles = document.querySelectorAll('.dropdown-submenu-toggle-btn');
+    submenuToggles.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const wrapper = btn.closest('.dropdown-submenu-wrapper');
+        if (!wrapper) return;
+        const wasOpen = wrapper.classList.contains('is-open');
+        document.querySelectorAll('.dropdown-submenu-wrapper').forEach(w => {
+          if (w !== wrapper) {
+            w.classList.remove('is-open');
+            const otherBtn = w.querySelector('.dropdown-submenu-toggle-btn');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+        wrapper.classList.toggle('is-open', !wasOpen);
+        btn.setAttribute('aria-expanded', String(!wasOpen));
+      });
+    });
+
+    // Mobile Submenu Accordion Toggle (កិច្ចតែងការបង្រៀន)
+    const mobileSubToggles = document.querySelectorAll('.mobile-sub-accordion-btn');
+    mobileSubToggles.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const wrapper = btn.closest('.mobile-sub-accordion-wrapper');
+        if (!wrapper) return;
+        const isOpen = wrapper.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', String(isOpen));
       });
     });
 
@@ -97,6 +156,13 @@
         navItemsWithDropdown.forEach(navItem => {
           navItem.classList.remove('is-open');
           const btn = navItem.querySelector('.nav-dropdown-toggle');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+      }
+      if (!e.target.closest('.dropdown-submenu-wrapper')) {
+        document.querySelectorAll('.dropdown-submenu-wrapper').forEach(w => {
+          w.classList.remove('is-open');
+          const btn = w.querySelector('.dropdown-submenu-toggle-btn');
           if (btn) btn.setAttribute('aria-expanded', 'false');
         });
       }
@@ -739,7 +805,7 @@
       this.gradeSelect = document.getElementById('exercise-grade-select');
       this.searchInput = document.getElementById('exercise-search-input');
       this.currentDifficulty = 'all';
-      this.currentGrade = 'all';
+      this.currentGrade = this.gradeSelect ? this.gradeSelect.value : 'all';
       this.searchQuery = '';
 
       if (this.listEl) {
@@ -748,6 +814,15 @@
     }
 
     init() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const gradeParam = urlParams.get('grade');
+      if (gradeParam && this.gradeSelect) {
+        this.gradeSelect.value = gradeParam;
+        this.currentGrade = gradeParam;
+      } else if (this.gradeSelect) {
+        this.currentGrade = this.gradeSelect.value;
+      }
+
       this.filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           this.filterBtns.forEach(b => b.classList.remove('active'));

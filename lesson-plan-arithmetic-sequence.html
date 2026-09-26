@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>កិច្ចតែងការបង្រៀនគណិតវិទ្យា | ស្វ៊ីតនព្វន្ត (តួទី n នៃស្វ៊ីតនព្វន្ត)</title>
+  
+  <!-- Google Fonts: Kantumruy Pro, Moul, & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Moul&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for High Quality Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- html2pdf.js for High Fidelity Client-Side PDF Export -->
+  <script src="js/html2pdf.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #10b981;
+      --accent-dark: #047857;
+      --accent-light: #ecfdf5;
+      --warning: #f59e0b;
+      --warning-light: #fef3c7;
+      --danger: #ef4444;
+      --danger-light: #fee2e2;
+      --purple: #8b5cf6;
+      --purple-light: #f3e8ff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --text-dark: #0f172a;
+      --border: #cbd5e1;
+      --border-light: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Kantumruy Pro', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+
+    .plan-container {
+      max-width: 1060px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 3rem 3.5rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    /* Print Controls Bar */
+    .controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px dashed var(--border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-word {
+      background: #1e40af;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.25);
+    }
+    .btn-word:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    /* Official Ministry Header */
+    .official-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .country-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .motto-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .header-divider {
+      width: 140px;
+      height: 2px;
+      background: var(--text-dark);
+      margin: 0.5rem auto 1.5rem;
+    }
+
+    /* Official Lesson Plan Heading & Information Table */
+    .plan-doc-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.45rem;
+      color: var(--primary-dark);
+      margin: 0.75rem 0 1.25rem 0;
+      letter-spacing: 0.03em;
+    }
+
+    .header-info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0 2.25rem 0;
+      font-size: 1.02rem;
+      line-height: 1.95;
+      color: var(--text-dark);
+    }
+
+    .header-info-table td {
+      border: none !important;
+      padding: 0.25rem 0.2rem;
+      vertical-align: top;
+    }
+
+    .info-label {
+      font-weight: 700;
+      white-space: nowrap;
+      width: 140px;
+      color: #0f172a;
+      font-size: 1.02rem;
+    }
+
+    .info-colon {
+      width: 30px;
+      font-weight: 700;
+      text-align: center;
+      color: #0f172a;
+      font-size: 1.02rem;
+    }
+
+    .info-value {
+      color: #1e293b;
+      font-size: 1.02rem;
+    }
+
+    .date-blank-line {
+      color: #334155;
+      font-family: inherit;
+      letter-spacing: 0.02em;
+    }
+
+    .sub-lesson-item {
+      padding-left: 2rem;
+      margin-top: 0.35rem;
+    }
+
+    .sub-lesson-detail {
+      padding-left: 2.2rem;
+      margin-top: 0.35rem;
+      display: flex;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Section Styles */
+    .plan-section {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      border-left: 4px solid var(--primary);
+      padding-left: 0.85rem;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-content {
+      padding-left: 1rem;
+    }
+
+    .section-content ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .section-content li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-content li::before {
+      content: "•";
+      position: absolute;
+      left: 0.2rem;
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* 3-Column Teaching Process Table */
+    .table-column-vertical {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.25rem;
+      font-size: 0.92rem;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .table-column-vertical th {
+      background: #f1f5f9;
+      color: var(--text-dark);
+      font-weight: 700;
+      text-align: center;
+      padding: 0.85rem 0.75rem;
+      border: 1px solid var(--border);
+      vertical-align: middle;
+      font-size: 0.95rem;
+    }
+
+    .table-column-vertical td {
+      border: 1px solid var(--border);
+      padding: 0.95rem 1rem;
+      vertical-align: top;
+      line-height: 1.7;
+    }
+
+    .table-column-vertical tbody tr:nth-child(even) {
+      background-color: #fafbfc;
+    }
+
+    .col-teacher-1 {
+      width: 32%;
+    }
+    .col-content-2 {
+      width: 38%;
+      background: rgba(248, 250, 252, 0.75);
+    }
+    .col-student-3 {
+      width: 30%;
+    }
+
+    .stage-row-header {
+      background: #e2e8f0 !important;
+      font-weight: 700;
+      color: #0f172a;
+      text-align: center;
+      padding: 0.6rem !important;
+      font-size: 0.95rem;
+    }
+
+    .stage-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .badge-stage-1 { background: var(--primary-light); color: var(--primary-dark); border: 1px solid rgba(2, 132, 199, 0.3); }
+    .badge-stage-2 { background: var(--warning-light); color: #92400e; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .badge-stage-3 { background: var(--accent-light); color: var(--accent-dark); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-stage-4 { background: var(--purple-light); color: #6b21a8; border: 1px solid rgba(139, 92, 246, 0.3); }
+    .badge-stage-5 { background: var(--danger-light); color: #991b1b; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+    .formula-box {
+      background: #eff6ff;
+      border: 2px solid #3b82f6;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      margin: 0.6rem 0;
+      box-shadow: 0 2px 6px rgba(59, 130, 246, 0.1);
+    }
+
+    .formula-title {
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 0.3rem;
+      font-size: 0.88rem;
+    }
+
+    /* Blackboard Layout */
+    .board-container {
+      background: #1e293b;
+      border: 8px solid #78350f;
+      border-radius: 10px;
+      padding: 1.25rem;
+      color: #f8fafc;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.2);
+      margin-top: 1rem;
+    }
+
+    .board-header {
+      text-align: center;
+      color: #fde047;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    }
+
+    .board-columns-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .board-column {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 1rem 0.9rem;
+      background: rgba(15, 23, 42, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .board-column-header {
+      font-weight: 700;
+      color: #38bdf8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    /* Worksheet Box */
+    .worksheet-box {
+      border: 2px dashed #0284c7;
+      background: #f0f9ff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        color: #000000;
+        font-size: 9.5pt;
+      }
+      .plan-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .controls-bar {
+        display: none !important;
+      }
+      .table-column-vertical th {
+        background: #e2e8f0 !important;
+        color: #000000 !important;
+      }
+      .board-container {
+        background: #f8fafc !important;
+        color: #0f172a !important;
+        border: 2px solid #000000 !important;
+      }
+      .board-column {
+        border-color: #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      .board-column-header {
+        color: #0369a1 !important;
+      }
+      .header-info-table {
+        margin: 0.8rem 0 1.25rem 0 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.8 !important;
+      }
+      .header-info-table td {
+        border: none !important;
+        padding: 0.1rem 0 !important;
+      }
+      .plan-doc-title {
+        font-size: 13pt !important;
+        margin: 0.3rem 0 0.8rem 0 !important;
+      }
+      @page {
+        size: A4;
+        margin: 1.2cm 1.5cm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="plan-container">
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <a href="index.html" class="btn btn-outline">
+          <span>🏠 ទំព័រដើម</span>
+        </a>
+        <a href="lessons.html" class="btn btn-outline">
+          <span>📚 ឯកសារបង្រៀនទាំងអស់</span>
+        </a>
+        <a href="lesson-plan-sequences-ibl.html" class="btn btn-outline" style="border-color: #0284c7; color: #0284c7;">
+          <span>📑 កិច្ចតែងការ៖ ស្វ៊ីតចំនួនពិត</span>
+        </a>
+        <a href="lesson-plan-exponential-ibl.html" class="btn btn-outline" style="border-color: #10b981; color: #047857;">
+          <span>📑 កិច្ចតែងការ៖ អិចស្ប៉ូណង់ស្យែល</span>
+        </a>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <button onclick="exportToWord()" class="btn btn-word" title="ទាញយកជាឯកសារ Word">
+          <span>📄 ឯកសារ Word</span>
+        </button>
+        <button onclick="window.print()" class="btn btn-primary" title="បោះពុម្ពឯកសារចេញក្រដាស A4">
+          <span>🖨️ បោះពុម្ពឯកសារ</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Official Document Container -->
+    <div id="lesson-plan-document">
+      <!-- Official Ministry Header -->
+      <div class="official-header">
+        <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
+        <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+        <div class="header-divider"></div>
+        <div class="plan-doc-title">កិច្ចតែងការបង្រៀន</div>
+      </div>
+
+      <!-- Header Information Section (Format matching sample image) -->
+      <table class="header-info-table">
+        <tbody>
+          <tr>
+            <td class="info-label">កាលបរិច្ឆេទ</td>
+            <td class="info-colon">៖</td>
+            <td class="info-value">
+              <div class="date-blank-line" contenteditable="true" title="ចុចទីនេះដើម្បីកែប្រែ ឬបំពេញកាលបរិច្ឆេទ">ថ្ងៃ..................... ...........កើត/រោច ខែ..................... ឆ្នាំ..................... ............ស័ក ព.ស.២៥.....</div>
+              <div class="date-blank-line" contenteditable="true" title="ចុចទីនេះដើម្បីកែប្រែ ឬបំពេញកាលបរិច្ឆេទ" style="margin-top: 0.35rem;">ត្រូវនឹងថ្ងៃទី........... ខែ..................... ឆ្នាំ ២០២.....</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="info-label">មុខវិជ្ជា</td>
+            <td class="info-colon">៖</td>
+            <td class="info-value"><strong style="font-size: 1.08rem;">គណិតវិទ្យា</strong></td>
+          </tr>
+          <tr>
+            <td class="info-label">ថ្នាក់ទី</td>
+            <td class="info-colon">៖</td>
+            <td class="info-value">១១ ( កម្រិតមូលដ្ឋាន )</td>
+          </tr>
+          <tr>
+            <td class="info-label">ជំពូកទី ១</td>
+            <td class="info-colon">៖</td>
+            <td class="info-value"><strong>ស្វីតចំនួនពិត</strong></td>
+          </tr>
+          <tr>
+            <td class="info-label">មេរៀនទី ២</td>
+            <td class="info-colon">៖</td>
+            <td class="info-value">
+              <strong style="font-size: 1.05rem;">ស្វ៊ីតនព្វន្ត</strong>
+              <div class="sub-lesson-item">
+                <div style="font-weight: 600;">២. តួទី $n$ នៃស្វ៊ីតនព្វន្ត</div>
+                <div class="sub-lesson-detail">
+                  <span>ក. រូបមន្តទូទៅ $u_n = u_1 + (n - 1)d$</span>
+                  <span>ខ. ផលសងរួម $d = u_n - u_{n-1}$</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="info-label">រយៈពេល</td>
+            <td class="info-colon">៖</td>
+            <td class="info-value">៥០ នាទី</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- I. Objectives -->
+      <div class="plan-section">
+        <h2 class="section-title">I. វត្ថុបំណងនៃមេរៀន</h2>
+        <div class="section-content">
+          <ul>
+            <li><strong>វិជ្ជាសម្បទា (ចំណេះដឹង)៖</strong> សិស្សកំណត់ និងចងចាំរូបមន្តតួទី $n$ នៃស្វ៊ីតនព្វន្ត $u_n = u_1 + (n - 1)d$ បានត្រឹមត្រូវច្បាស់លាស់តាមរយៈការពន្យល់ និងការទាញរកលំនាំជាមួយគ្រូ។</li>
+            <li><strong>បំណិនសម្បទា (បំណិន)៖</strong> សិស្សអនុវត្តរូបមន្តក្នុងការគណនាតួណាមួយនៃស្វ៊ីតនព្វន្ត រកផលសងរួម ($d$) និងរកតួទីមួយ ($u_1$) ក្នុងលំហាត់គំរូ និងលំហាត់ប្រតិបត្តិបានត្រឹមត្រូវដោយគ្មានកំហុស។</li>
+            <li><strong>ចរិយាសម្បទា (ឥរិយាបថ)៖</strong> បណ្តុះស្មារតីសិស្សឱ្យមានភាពក្លាហានក្នុងការដោះស្រាយបញ្ហាគណិតវិទ្យា មានការសហការគ្នាយ៉ាងសកម្មក្នុងក្រុម និងយកចិត្តទុកដាក់ខ្ពស់ក្នុងការរៀនសូត្រ។</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- II. Teaching Materials -->
+      <div class="plan-section">
+        <h2 class="section-title">II. សម្ភារឧបទេស</h2>
+        <div class="section-content">
+          <ul>
+            <li><strong>សម្រាប់គ្រូ៖</strong> សៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី១១ ភាគ១ (ក្រសួងអប់រំ យុវជន និងកីឡា), បន្ទាត់វែង, ហ្វឺត/ដីសពណ៌, បន្ទះក្រដាសសំណួរ, កាតរូបមន្តសង្ខេប។</li>
+            <li><strong>សម្រាប់សិស្ស៖</strong> សៀវភៅពុម្ព, សៀវភៅសរសេរ, ប៊ិច, បន្ទាត់ និងក្តារឈ្នួន ឬសន្លឹកកិច្ចការ។</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- III. Teaching Methodology -->
+      <div class="plan-section">
+        <h2 class="section-title">III. វិធីសាស្រ្តបង្រៀន</h2>
+        <div class="section-content">
+          <p>វិធីសាស្រ្តអនុវត្តតាមបែបសិស្សមជ្ឈមណ្ឌល (ការរិះរកលំនាំគំរូ, ការសួរសំណួរ-ចម្លើយ, ការពន្យល់ណែនាំរបស់គ្រូ និងការពិភាក្សាដោះស្រាយជាដៃគូ ឬក្រុមតូច)។</p>
+        </div>
+      </div>
+
+      <!-- IV. Teaching Process -->
+      <div class="plan-section">
+        <h2 class="section-title">IV. ដំណើរការបង្រៀន</h2>
+
+        <table class="table-column-vertical">
+          <thead>
+            <tr>
+              <th class="col-teacher-1">សកម្មភាពគ្រូ</th>
+              <th class="col-content-2">ខ្លឹមសារមេរៀន</th>
+              <th class="col-student-3">សកម្មភាពសិស្ស</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Stage 1 -->
+            <tr>
+              <td colspan="3" class="stage-row-header">
+                <span class="stage-badge badge-stage-1">ជំហានទី ១ ៖ រដ្ឋបាលថ្នាក់ (២ នាទី)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                • ពិនិត្យអនាម័យ សណ្តាប់ធ្នាប់ក្នុងថ្នាក់រៀន<br>
+                • ពិនិត្យវត្តមានសិស្ស<br>
+                • ពង្រឹងស្មារតី និងជំរុញទឹកចិត្តសិស្សមុនចូលរៀន
+              </td>
+              <td>
+                <strong>រដ្ឋបាលថ្នាក់ ៖</strong><br>
+                អវត្តមាន ៖ .......... នាក់, ស្រី .......... នាក់<br>
+                បរិយាកាសថ្នាក់រៀនស្អាតបាត និងមានរបៀបរៀបរយ
+              </td>
+              <td>
+                • ប្រធានថ្នាក់ក្រោកឈររាយការណ៍វត្តមាន<br>
+                • សិស្សទាំងអស់អង្គុយស្ងប់ស្ងាត់ មានរបៀបរៀបរយ និងត្រៀមសម្ភារសិក្សា
+              </td>
+            </tr>
+
+            <!-- Stage 2 -->
+            <tr>
+              <td colspan="3" class="stage-row-header">
+                <span class="stage-badge badge-stage-2">ជំហានទី ២ ៖ រំលឹកមេរៀនចាស់ និងត្រួតពិនិត្យកិច្ចការផ្ទះ (៥ នាទី)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                • ដាក់សំណួររំលឹកមេរៀន ៖<br>
+                &nbsp;&nbsp;១. តើអ្វីជាស្វ៊ីតនព្វន្ត?<br>
+                &nbsp;&nbsp;២. ចូររកផលសងរួម $d$ នៃស្វ៊ីត ៖ $3, 7, 11, 15, \dots$<br>
+                • ហៅសិស្ស ១-២ នាក់ឡើងឆ្លើយ<br>
+                • ត្រួតពិនិត្យ និងកែកិច្ចការផ្ទះដែលបានដាក់ពីម៉ោងមុន
+              </td>
+              <td>
+                <strong>សំណួររំលឹក ៖</strong><br>
+                ១. <strong>ស្វ៊ីតនព្វន្ត</strong> គឺជាស្វ៊ីតនៃចំនួនដែលតូនីមួយៗ (ចាប់ពីតួទី២) ស្មើនឹងតូមុនបន្ទាប់បូកនឹងចំនួនថេរ $d$ មួយ ហៅថា ផលសងរួម ៖<br>
+                $$u_{n+1} = u_n + d \quad (\forall n \ge 1)$$
+                ២. ផលសងរួម ៖<br>
+                $$d = 7 - 3 = 11 - 7 = 4$$
+              </td>
+              <td>
+                • សិស្សគិត ពិចារណា និងស្ម័គ្រចិត្តឡើងឆ្លើយសំណួរ<br>
+                • សិស្សឯទៀតស្តាប់ និងផ្ទៀងផ្ទាត់ចម្លើយ<br>
+                • សិស្សបើកសៀវភៅកិច្ចការផ្ទះឱ្យគ្រូពិនិត្យ និងផ្ទៀងកែ
+              </td>
+            </tr>
+
+            <!-- Stage 3 -->
+            <tr>
+              <td colspan="3" class="stage-row-header">
+                <span class="stage-badge badge-stage-3">ជំហានទី ៣ ៖ ដំណើរការបង្រៀន និងរៀន / មេរៀនថ្មី (៣៣ នាទី)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                • សរសេរចំណងជើងមេរៀនលើក្តារខៀន<br><br>
+                <strong>១. ការទាញរកទម្រង់ទូទៅ (១០ នាទី)</strong><br>
+                • ណែនាំសិស្សឱ្យពិនិត្យមើលលំនាំនៃស្វ៊ីតនព្វន្ត ៖<br>
+                &nbsp;&nbsp;- តួទីមួយ ៖ $u_1$<br>
+                &nbsp;&nbsp;- តួទីពីរ ៖ $u_2 = u_1 + d$<br>
+                &nbsp;&nbsp;- តួទីបី ៖ $u_3 = u_2 + d = u_1 + 2d$<br>
+                &nbsp;&nbsp;- តួទីបួន ៖ $u_4 = u_3 + d = u_1 + 3d$<br>
+                • សួរសំណួរគន្លឹះ ៖ <em>«ប្រសិនបើយើងចង់រកតួទី $n$ ($u_n$) តើមេគុណនៃ $d$ ស្មើនឹងប៉ុន្មាន?»</em><br>
+                • ធ្វើសំយោគ និងសរសេររូបមន្តក្នុងប្រអប់<br><br>
+                <strong>២. ឧទាហរណ៍គំរូ (១៣ នាទី)</strong><br>
+                • ដាក់ឧទាហរណ៍ទី ១ ៖<br>
+                <em>គេមានស្វ៊ីតនព្វន្ត $2, 7, 12, 17, \dots$<br>
+                ក. កំណត់តួទីមួយ $u_1$ និងផលសងរួម $d$<br>
+                ខ. រកកន្សោមតួទី $n$ ($u_n$)<br>
+                គ. គណនាតួទី $20$ ($u_{20}$)</em><br>
+                • ណែនាំ និងពន្យល់ជំហានដោះស្រាយ<br><br>
+                • ដាក់ឧទាហរណ៍ទី ២ ៖<br>
+                <em>គេមានស្វ៊ីតនព្វន្តមួយដែលមានតួទី $5$ គឺ $u_5 = 19$ និងតួទី $10$ គឺ $u_{10} = 39$។ ចូររកផលសងរួម $d$ និងតួទីមួយ $u_1$។</em><br>
+                • បង្ហាញរូបមន្តទូទៅបន្ថែម ៖ $u_n = u_p + (n - p)d$<br><br>
+                <strong>៣. លំហាត់ប្រតិបត្តិ (១០ នាទី)</strong><br>
+                • ដាក់លំហាត់ប្រតិបត្តិឱ្យសិស្សពិភាក្សាជាដៃគូ ឬក្រុមតូច ៖<br>
+                <em>«គេឱ្យស្វ៊ីតនព្វន្ត $5, 9, 13, 17, \dots$ ចូរគណនាតួទី $15$ ($u_{15}$) និងតួទី $50$ ($u_{50}$)»</em><br>
+                • ដើរសម្របសម្រួល និងជួយសិស្សដែលជួបការលំបាក
+              </td>
+              <td>
+                <div style="font-size: 1rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem;">
+                  មេរៀន ៖ តួទី $n$ នៃស្វ៊ីតនព្វន្ត
+                </div>
+
+                <strong>ក. រូបមន្តទូទៅ ៖</strong><br>
+                បើ $(u_n)$ ជាស្វ៊ីតនព្វន្តដែលមានតួទីមួយ $u_1$ និងផលសងរួម $d$ នោះតួទី $n$ កំណត់ដោយ ៖
+                <div class="formula-box">
+                  <div class="formula-title">រូបមន្តតួទី $n$ នៃស្វ៊ីតនព្វន្ត</div>
+                  <div style="font-size: 1.2rem; font-weight: 700; color: #1e3a8a;">
+                    $$u_n = u_1 + (n - 1)d$$
+                  </div>
+                </div>
+                <em>* កំណត់សម្គាល់ ៖ បើស្គាល់តួទី $p$ នោះ $u_n = u_p + (n - p)d$</em><br><br>
+
+                <strong>ខ. ឧទាហរណ៍គំរូ ៖</strong><br>
+                <u>ឧទាហរណ៍ ១</u> ៖<br>
+                ក. តួទីមួយ $u_1 = 2$, ផលសងរួម $d = 7 - 2 = 5$<br>
+                ខ. រកកន្សោម $u_n$ ៖<br>
+                តាមរូបមន្ត $u_n = u_1 + (n - 1)d$<br>
+                $\Rightarrow u_n = 2 + (n - 1) \times 5$<br>
+                $\Rightarrow u_n = 2 + 5n - 5 = 5n - 3$<br>
+                គ. គណនា $u_{20}$ ៖<br>
+                $\Rightarrow u_{20} = 5(20) - 3 = 100 - 3 = 97$<br><br>
+
+                <u>ឧទាហរណ៍ ២</u> ៖<br>
+                តាមរូបមន្ត $u_n = u_p + (n - p)d$<br>
+                $\Rightarrow u_{10} = u_5 + (10 - 5)d$<br>
+                $\Rightarrow 39 = 19 + 5d$<br>
+                $\Rightarrow 5d = 39 - 19 = 20 \Rightarrow d = 4$<br>
+                រកតួទីមួយ $u_1$ ៖<br>
+                $u_5 = u_1 + 4d \Rightarrow 19 = u_1 + 4(4)$<br>
+                $\Rightarrow u_1 = 19 - 16 = 3$<br>
+                ដូចនេះ $u_1 = 3$ និង $d = 4$។<br><br>
+
+                <strong>គ. ប្រតិបត្តិ ៖</strong><br>
+                ស្វ៊ីត $5, 9, 13, 17, \dots$<br>
+                • $u_1 = 5$, ផលសងរួម $d = 9 - 5 = 4$<br>
+                • $u_{15} = 5 + (15 - 1) \times 4 = 5 + 14 \times 4 = 5 + 56 = 61$<br>
+                • $u_{50} = 5 + (50 - 1) \times 4 = 5 + 49 \times 4 = 5 + 196 = 201$
+              </td>
+              <td>
+                • សិស្សកត់ត្រាចំណងជើងមេរៀនចូលក្នុងសៀវភៅ<br><br>
+                • សិស្សសង្កេត និងវិភាគលំនាំមេគុណនៃ $d$ (តួទី២ មាន $1d$, តួទី៣ មាន $2d$, តួទី៤ មាន $3d$)<br><br>
+                • សិស្សឆ្លើយ ៖ <em>«មេគុណនៃ $d$ គឺ $(n-1)$ ព្រោះវាតូចជាងលំដាប់តួចំនួន ១!»</em><br>
+                • សិស្សទន្ទេញ និងកត់ត្រារូបមន្តចូលក្នុងសៀវភៅ<br><br><br>
+                • សិស្សចូលរួមឆ្លើយតាមការណែនាំរបស់គ្រូ<br><br>
+                • សិស្សកត់ត្រាឧទាហរណ៍ និងរបៀបដោះស្រាយចូលក្នុងសៀវភៅ<br><br><br><br>
+                • សិស្សស្ម័គ្រចិត្តម្នាក់ឡើងដោះស្រាយលើក្តារខៀន<br>
+                • សិស្សឯទៀតផ្ទៀងផ្ទាត់ដំណោះស្រាយ<br><br><br><br><br>
+                • សិស្សធ្វើការជាដៃគូ ឬក្រុមតូច គិតលេខលើក្តារឈ្នួន ឬសៀវភៅព្រាង<br>
+                • តំណាងសិស្សឡើងធ្វើបង្ហាញលើក្តារខៀន
+              </td>
+            </tr>
+
+            <!-- Stage 4 -->
+            <tr>
+              <td colspan="3" class="stage-row-header">
+                <span class="stage-badge badge-stage-4">ជំហានទី ៤ ៖ ពង្រឹងពុទ្ធិ / ពង្រឹងចំណេះដឹង (៧ នាទី)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                • ដាក់លំហាត់ខ្លីដើម្បីវាស់ស្ទង់ការយល់ដឹងរបស់សិស្ស ៖<br>
+                <em>«គេមានស្វ៊ីតនព្វន្តមួយមាន $u_1 = -3$ និង $d = 2$។ ចូររកតួទី $11$ ($u_{11}$)។»</em><br>
+                • ហៅសិស្សកម្រិតមធ្យម ឬសិស្សរៀនយឺតឡើងគណនាលើក្តារខៀន<br>
+                • សម្របសម្រួល កែតម្រូវ និងផ្តល់ការលើកទឹកចិត្ត
+              </td>
+              <td>
+                <strong>លំហាត់ពង្រឹងចំណេះដឹង ៖</strong><br>
+                គណនា $u_{11}$ ៖<br>
+                តាមរូបមន្ត $u_n = u_1 + (n - 1)d$<br>
+                $u_{11} = -3 + (11 - 1) \times 2$<br>
+                $u_{11} = -3 + 10 \times 2 = -3 + 20 = 17$<br>
+                ដូចនេះ $u_{11} = 17$
+              </td>
+              <td>
+                • សិស្សទាំងអស់គិត និងគណនាក្នុងសៀវភៅព្រាងយ៉ាងសកម្ម<br>
+                • សិស្សដែលគ្រូហៅឡើងធ្វើបង្ហាញលើក្តារខៀន<br>
+                • សិស្សឯទៀតផ្ទៀងផ្ទាត់ចម្លើយ និងកែតម្រូវបើមានខុស
+              </td>
+            </tr>
+
+            <!-- Stage 5 -->
+            <tr>
+              <td colspan="3" class="stage-row-header">
+                <span class="stage-badge badge-stage-5">ជំហានទី ៥ ៖ បណ្តាំផ្ញើ និងកិច្ចការផ្ទះ (៣ នាទី)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                • ផ្តាំផ្ញើសិស្សឱ្យទន្ទេញរូបមន្តតួទី $n$ នៃស្វ៊ីតនព្វន្តឱ្យចាំច្បាស់<br>
+                • ដាក់កិច្ចការផ្ទះ ៖<br>
+                &nbsp;&nbsp;១. រកតួទី $30$ នៃស្វ៊ីតនព្វន្ត ៖ $1, 6, 11, 16, \dots$<br>
+                &nbsp;&nbsp;២. រកតួទីមួយ $u_1$ និង $d$ បើគេដឹងថា $u_3 = 8$ និង $u_8 = 23$<br>
+                • រំលឹកឱ្យសិស្សមើលមេរៀនបន្ទាប់ ៖ «ផលបូក $n$ តួដំបូងនៃស្វ៊ីតនព្វន្ត ($S_n$)»
+              </td>
+              <td>
+                <strong>កិច្ចការផ្ទះ ៖</strong><br>
+                ១. គណនា $u_{30}$ នៃស្វ៊ីត $1, 6, 11, 16, \dots$<br>
+                ២. រក $u_1$ និង $d$ បើ $u_3 = 8$ និង $u_8 = 23$<br>
+                ៣. អានស្វ័យសិក្សាទុកជាមុន ៖ ផលបូក $n$ តួដំបូងនៃស្វ៊ីតនព្វន្ត ($S_n$)
+              </td>
+              <td>
+                • ទទួល និងកត់ត្រាកិច្ចការផ្ទះចូលក្នុងសៀវភៅ<br>
+                • សម្អាតក្តារខៀន និងរៀបចំសម្ភារត្រៀមសម្រាប់ម៉ោងសិក្សាបន្ទាប់
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- V. Blackboard Layout -->
+      <div class="plan-section">
+        <h2 class="section-title">V. ប្លង់ក្តារខៀន</h2>
+        <div class="board-container">
+          <div class="board-header">ប្លង់ក្តារខៀន៖ ស្វ៊ីតនព្វន្ត (តួទី n នៃស្វ៊ីតនព្វន្ត)</div>
+          <div class="board-columns-grid">
+            <!-- Column 1 -->
+            <div class="board-column">
+              <div>
+                <div class="board-column-header">ផ្ទាំងទី ១៖ រំលឹក & រូបមន្តទូទៅ</div>
+                <p><strong>១. រំលឹក៖</strong></p>
+                <p>• ស្វ៊ីតនព្វន្ត ៖ $u_{n+1} = u_n + d$</p>
+                <p>• ផលសងរួម ៖ $d = u_{n+1} - u_n$</p>
+                <p style="margin-top: 0.5rem;"><strong>២. រូបមន្តតួទី $n$៖</strong></p>
+                <div style="background: rgba(56, 189, 248, 0.15); border: 1.5px solid #38bdf8; padding: 0.4rem; border-radius: 4px; text-align: center; font-weight: 700; color: #38bdf8; margin: 0.4rem 0;">
+                  $u_n = u_1 + (n - 1)d$
+                </div>
+                <p>• $u_1$ ៖ តួទីមួយ</p>
+                <p>• $d$ ៖ ផលសងរួម</p>
+                <p>• $n$ ៖ លំដាប់តួ ($n \in \mathbb{N}$)</p>
+                <p style="margin-top: 0.4rem; font-size: 0.82rem; color: #fde047;">• រូបមន្តពន្លាត៖ $u_n = u_p + (n - p)d$</p>
+              </div>
+              <div style="font-size: 0.78rem; color: #38bdf8; margin-top: 0.5rem;">[ទ្រឹស្តី និងរូបមន្តគ្រឹះ]</div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="board-column">
+              <div>
+                <div class="board-column-header">ផ្ទាំងទី ២៖ ឧទាហរណ៍គំរូ</div>
+                <p><strong>៣. ឧទាហរណ៍ ១៖</strong></p>
+                <p>• ស្វ៊ីត ៖ $2, 7, 12, 17, \dots$</p>
+                <p>• $u_1 = 2$, $d = 7 - 2 = 5$</p>
+                <p>• $u_n = 2 + 5(n - 1) = 5n - 3$</p>
+                <p>• $u_{20} = 5(20) - 3 = 97$</p>
+                <p style="margin-top: 0.5rem;"><strong>៤. ឧទាហរណ៍ ២៖</strong></p>
+                <p>• $u_5 = 19$, $u_{10} = 39$</p>
+                <p>• $39 = 19 + 5d \Rightarrow d = 4$</p>
+                <p>• $19 = u_1 + 4(4) \Rightarrow u_1 = 3$</p>
+              </div>
+              <div style="font-size: 0.78rem; color: #34d399; margin-top: 0.5rem;">[វិធីសាស្ត្រគណនា]</div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="board-column">
+              <div>
+                <div class="board-column-header">ផ្ទាំងទី ៣៖ ប្រតិបត្តិ & កិច្ចការផ្ទះ</div>
+                <p><strong>៥. ប្រតិបត្តិ៖</strong></p>
+                <p>• ស្វ៊ីត ៖ $5, 9, 13, 17, \dots$</p>
+                <p>• $u_1 = 5$, $d = 4$</p>
+                <p>• $u_{15} = 5 + 14(4) = 61$</p>
+                <p>• $u_{50} = 5 + 49(4) = 201$</p>
+                <p style="margin-top: 0.5rem;"><strong>៦. ពង្រឹង៖</strong> $u_{11} = -3 + 10(2) = 17$</p>
+                <p style="margin-top: 0.5rem; color: #fde047;"><strong>៧. កិច្ចការផ្ទះ៖</strong></p>
+                <p>• រក $u_{30}$ នៃ $1, 6, 11, \dots$</p>
+                <p>• រក $u_1, d$ បើ $u_3=8, u_8=23$</p>
+              </div>
+              <div style="font-size: 0.78rem; color: #fde047; margin-top: 0.5rem;">[អនុវត្ត & បណ្តាំផ្ញើ]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VI. Student Worksheet Template -->
+      <div class="plan-section">
+        <h2 class="section-title">VI. ឧបសម្ព័ន្ធ៖ សន្លឹកកិច្ចការប្រតិបត្តិរបស់សិស្ស</h2>
+        <div class="worksheet-box">
+          <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #bae6fd; padding-bottom: 0.6rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <strong style="color: #0369a1; font-size: 1.05rem;">សន្លឹកកិច្ចការអនុវត្តគណិតវិទ្យា</strong><br>
+              <span style="font-size: 0.85rem; color: #64748b;">មេរៀន៖ ស្វ៊ីតនព្វន្ត (ខ្លឹមសារ៖ តួទី n នៃស្វ៊ីតនព្វន្ត)</span>
+            </div>
+            <div style="font-size: 0.9rem; font-weight: 600; color: #0f172a;">
+              ឈ្មោះសិស្ស/ក្រុម៖ ................................. ថ្នាក់ទី៖ ១១ .........
+            </div>
+          </div>
+
+          <p style="font-size: 0.92rem; margin-bottom: 0.5rem; color: #0f172a;">
+            <strong>សកម្មភាពអនុវត្ត ៖</strong> ចូរគណនាតម្លៃនៃតួដែលចង់បានតាមតារាងខាងក្រោមដោយប្រើប្រាស់រូបមន្ត $u_n = u_1 + (n-1)d$៖
+          </p>
+
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem; background: #ffffff; border: 1.5px solid #0284c7; text-align: center; font-size: 0.88rem;">
+            <thead>
+              <tr style="background: #e0f2fe; color: #0369a1;">
+                <th style="border: 1px solid #bae6fd; padding: 7px; width: 35%;">ស្វ៊ីតនព្វន្ត $(u_n)$</th>
+                <th style="border: 1px solid #bae6fd; padding: 7px; width: 15%;">តួទីមួយ ($u_1$)</th>
+                <th style="border: 1px solid #bae6fd; padding: 7px; width: 15%;">ផលសងរួម ($d$)</th>
+                <th style="border: 1px solid #bae6fd; padding: 7px; width: 35%;">តួដែលត្រូវគណនា</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 7px; text-align: left;">ក. $4, 7, 10, 13, \dots$</td>
+                <td style="border: 1px solid #bae6fd; padding: 7px;">$4$</td>
+                <td style="border: 1px solid #bae6fd; padding: 7px;">$3$</td>
+                <td style="border: 1px solid #bae6fd; padding: 7px; text-align: left;">$u_{25} = ................................$</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 7px; text-align: left;">ខ. $10, 6, 2, -2, \dots$</td>
+                <td style="border: 1px solid #bae6fd; padding: 7px;">$10$</td>
+                <td style="border: 1px solid #bae6fd; padding: 7px;">$-4$</td>
+                <td style="border: 1px solid #bae6fd; padding: 7px; text-align: left;">$u_{15} = ................................$</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 7px; text-align: left;">គ. $u_1 = -5, d = 3$</td>
+                <td style="border: 1px solid #bae6fd; padding: 7px;">$-5$</td>
+                <td style="border: 1px solid #bae6fd; padding: 7px;">$3$</td>
+                <td style="border: 1px solid #bae6fd; padding: 7px; text-align: left;">$u_{30} = ................................$</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VII. Differentiation & Signatures -->
+      <div class="plan-section">
+        <h2 class="section-title">VII. យុទ្ធសាស្ត្រគាំទ្រសិស្សចម្រុះកម្រិត</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+          <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 8px; padding: 1.15rem 1.3rem;">
+            <strong style="color: #92400e; font-size: 0.95rem;">🌱 សម្រាប់សិស្សរៀនយឺត៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.7;">
+              <li>ណែនាំឱ្យសរសេរកំណត់ចំណាំធាតុ $u_1, d, n$ ឱ្យដាច់ដោយឡែកមុននឹងចាប់ផ្តើមជំនួសលេខចូលក្នុងរូបមន្ត។</li>
+              <li>ជួយពន្យល់ពីផលសង $d = u_2 - u_1$ ពិសេសករណីផលសងជាចំនួនអវិជ្ជមាន ($d < 0$)។</li>
+              <li>ផ្តល់តារាងលំនាំបូកបន្ថែមជាជំហានៗ ដើម្បីឱ្យសិស្សមើលឃើញរូបភាពច្បាស់។</li>
+            </ul>
+          </div>
+          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 1.15rem 1.3rem;">
+            <strong style="color: #1e40af; font-size: 0.95rem;">🚀 សម្រាប់សិស្សពូកែ៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.7;">
+              <li>ឱ្យសាកល្បងរកតួទីមួយ និងផលសងរួមតាមប្រព័ន្ធសមីការពីរអញ្ញាត ៖ $\begin{cases} u_3 + u_7 = 26 \\ u_2 + u_6 = 22 \end{cases}$។</li>
+              <li>ចោទសួរអំពីការរកចំនួនតួ $n$ នៅពេលស្គាល់តួចុងក្រោយ $u_n$ ៖ <em>«តើស្វ៊ីត $3, 7, 11, \dots, 403$ មានប៉ុន្មានតួ?»</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Signatures -->
+      <div style="display: flex; justify-content: space-between; margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.95rem;">
+        <div style="text-align: center; width: 40%;">
+          បានឃើញ និងឯកភាព<br>
+          <strong>នាយក</strong><br><br><br><br><br>
+          ...................................................
+        </div>
+        <div style="text-align: center; width: 40%;">
+          ថ្ងៃទី ........ ខែ ............. ឆ្នាំ ២០២...<br>
+          <strong>គ្រូបង្រៀនឯកទេស</strong><br><br><br><br><br>
+          <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KaTeX Initializer & Export Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    });
+
+    function exportToWord() {
+      const content = document.getElementById('lesson-plan-document').innerHTML;
+      const header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+            "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+            "xmlns='http://www.w3.org/TR/REC-html40'>" +
+            "<head><meta charset='utf-8'><title>កិច្ចតែងការបង្រៀនគណិតវិទ្យា ស្វ៊ីតនព្វន្ត</title>" +
+            "<style>body{font-family:'Kantumruy Pro', Arial, sans-serif; line-height:1.6;} table{border-collapse:collapse; width:100%;} th, td{border:1px solid #999; padding:6px;} table.header-info-table, table.header-info-table td{border:none !important; padding:3px 2px;}</style></head><body>";
+      const footer = "</body></html>";
+      const sourceHTML = header + content + footer;
+      const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+      const fileDownload = document.createElement("a");
+      document.body.appendChild(fileDownload);
+      fileDownload.href = source;
+      fileDownload.download = 'កិច្ចតែងការបង្រៀន_ស្វ៊ីតនព្វន្ត_តួទីn.doc';
+      fileDownload.click();
+      document.body.removeChild(fileDownload);
+    }
+  </script>
+</body>
+</html>

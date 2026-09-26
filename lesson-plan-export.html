@@ -14,18 +14,77 @@
     body {
       margin: 0;
       padding: 0;
-      background: #ffffff;
+      background: #f1f5f9;
       color: #0f172a;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media print {
+      body { background: #ffffff; }
+      .no-print { display: none !important; }
+      .pdf-plan-wrap { box-shadow: none !important; margin: 0 !important; }
+    }
+    .export-top-bar {
+      width: 100%;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-family: 'Kantumruy Pro', sans-serif;
+    }
+    .export-top-bar button {
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+    }
+    .export-top-bar button:hover { background: #0369a1; }
+    .export-top-bar a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .export-top-bar a:hover { text-decoration: underline; }
+    .pdf-plan-wrap {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin: 20px 0;
+      background: #ffffff;
     }
   </style>
 </head>
 <body>
+  <div class="export-top-bar no-print">
+    <div>
+      <strong>កិច្ចតែងការបង្រៀនគណិតវិទ្យា ថ្នាក់ទី១១ (IBL - 5E Model)</strong> — អ្នកគ្រូ ឆេង ឆវ័ន្ត
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <a href="index.html">← ត្រឡប់ទៅទំព័រដើម</a>
+      <button onclick="window.print()">🖨️ បោះពុម្ព / រក្សាទុកជា PDF</button>
+    </div>
+  </div>
   
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Moul&family=Outfit:wght@400;500;600;700&display=swap');
-        @import url('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css');
+
+        * { box-sizing: border-box; }
 
         .pdf-plan-wrap {
           font-family: 'Kantumruy Pro', 'Khmer OS Siemreap', 'Calibri', sans-serif;
@@ -33,380 +92,303 @@
           line-height: 1.6;
           font-size: 9pt;
           background: #ffffff;
-          box-sizing: border-box;
-          padding: 2px 4px;
+          width: 100%;
+          max-width: 794px;
+          padding: 10px 18px;
         }
-        .pdf-plan-wrap * {
-          box-sizing: border-box;
-        }
-        .pdf-section {
-          margin-bottom: 14pt;
-          page-break-inside: auto;
-        }
+        .pdf-section { margin-bottom: 14pt; }
         .pdf-page-break-before {
           page-break-before: always !important;
           break-before: page !important;
         }
 
-        /* 1. Official Ministry Header (Font Moul) */
-        .pdf-header {
-          text-align: center;
-          margin-bottom: 14pt;
+        /* Pure HTML/CSS Clean Mathematical Typography */
+        .math-sym {
+          font-family: 'Cambria Math', 'Georgia', 'Times New Roman', serif;
+          font-style: italic;
+          font-weight: 600;
+          color: #0369a1;
+          background: rgba(2, 132, 199, 0.08);
+          padding: 0 4px;
+          border-radius: 3px;
+          display: inline-block;
+          line-height: 1.3;
         }
+        .math-sym sup, .math-sym sub {
+          font-size: 0.72em;
+          font-style: normal;
+        }
+        .math-frac {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          vertical-align: middle;
+          font-size: 0.85em;
+          margin: 0 1px;
+        }
+        .math-frac .num {
+          border-bottom: 1px solid currentColor;
+          padding: 0 2px;
+          line-height: 1.05;
+        }
+        .math-frac .den {
+          padding: 0 2px;
+          line-height: 1.05;
+        }
+        .math-highlight-card {
+          background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+          border: 1.5px solid #bae6fd;
+          border-radius: 8px;
+          padding: 6px 14px;
+          margin: 6px 0;
+          text-align: center;
+          font-family: 'Cambria Math', 'Georgia', 'Times New Roman', serif;
+          font-size: 11pt;
+          font-weight: 700;
+          color: #0369a1;
+          page-break-inside: avoid;
+        }
+
+        /* Official Header */
+        .pdf-header { text-align: center; margin-bottom: 14pt; }
         .pdf-header .country-title {
           font-family: 'Moul', cursive;
-          font-size: 13pt;
-          font-weight: normal;
-          color: #0f172a;
-          letter-spacing: 0.05em;
-          margin-bottom: 3px;
-          line-height: 1.4;
+          font-size: 13pt; font-weight: normal;
+          color: #0f172a; letter-spacing: 0.05em;
+          margin-bottom: 3px; line-height: 1.5;
         }
         .pdf-header .motto-title {
           font-family: 'Moul', cursive;
-          font-size: 10.5pt;
-          font-weight: normal;
-          color: #0f172a;
-          margin-bottom: 6px;
-          line-height: 1.4;
+          font-size: 10.5pt; font-weight: normal;
+          color: #0f172a; margin-bottom: 6px; line-height: 1.4;
         }
         .pdf-header-divider {
-          width: 140px;
-          height: 2px;
-          background: #0f172a;
-          margin: 6px auto 14px auto;
+          width: 140px; height: 2px;
+          background: #0f172a; margin: 6px auto 14px auto;
         }
 
-        /* 2. Administrative Metadata Card (4 Vertical Items) */
-        .pdf-metadata-card {
-          background: #f8fafc;
-          border: 1px solid #cbd5e1;
-          border-radius: 8px;
-          padding: 10px 14px;
+        /* Metadata Table for 100% html2canvas stability */
+        .pdf-metadata-table {
+          width: 100%; border-collapse: collapse;
           margin-bottom: 14pt;
-          display: flex;
-          justify-content: space-between;
-          gap: 10px;
-          page-break-inside: avoid;
+          background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;
+          page-break-inside: avoid; overflow: hidden;
         }
-        .pdf-meta-item {
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-          flex: 1;
+        .pdf-metadata-table td {
+          padding: 9px 12px; vertical-align: top;
+          border-right: 1px solid #e2e8f0; width: 25%;
         }
+        .pdf-metadata-table td:last-child { border-right: none; }
         .pdf-meta-label {
-          font-size: 7.5pt;
-          color: #64748b;
-          font-weight: 600;
-          text-transform: uppercase;
+          font-size: 7pt; color: #64748b; font-weight: 700;
+          text-transform: uppercase; display: block; margin-bottom: 2px;
         }
-        .pdf-meta-value {
-          font-weight: 700;
-          color: #0f172a;
-          font-size: 8.8pt;
-        }
+        .pdf-meta-value { font-weight: 700; color: #0f172a; font-size: 8.8pt; }
 
-        /* 3. Main Title Block (Font Moul) */
+        /* Title Block */
         .pdf-title-block {
-          text-align: center;
-          margin-bottom: 14pt;
-          padding: 4px 0 10px 0;
-          border-bottom: 2px solid #e2e8f0;
+          text-align: center; margin-bottom: 14pt;
+          padding: 6px 0 10px 0; border-bottom: 2px solid #e2e8f0;
           page-break-inside: avoid;
         }
         .pdf-title-block h1 {
           font-family: 'Moul', cursive;
-          font-size: 13.5pt;
-          font-weight: normal;
-          color: #0369a1;
-          margin: 0 0 5px 0;
-          line-height: 1.5;
+          font-size: 13.5pt; font-weight: normal;
+          color: #0369a1; margin: 0 0 6px 0; line-height: 1.55;
         }
         .pdf-title-block .subtitle {
-          font-size: 9.5pt;
-          color: #1e293b;
-          font-weight: 600;
-          line-height: 1.6;
+          font-size: 9.5pt; color: #1e293b; font-weight: 600; line-height: 1.6;
         }
 
-        /* 4. Section Title with Left Cyan Accent Bar (Exact screen match) */
+        /* Section Title with Accent Bar */
         .pdf-section-title {
-          font-size: 11pt;
-          font-weight: 700;
-          color: #0369a1;
+          font-size: 10.5pt; font-weight: 700; color: #0369a1;
           border-left: 4px solid #0284c7;
-          padding-left: 8px;
-          margin: 14pt 0 8pt 0;
+          padding: 3px 0 3px 9px; margin: 14pt 0 8pt 0;
           page-break-after: avoid;
-          display: flex;
-          align-items: center;
-          gap: 6px;
         }
 
-        /* 5. Standard Cambodian Vertical Tables */
+        /* Standard 5-Column & Master Tables */
         .pdf-table {
-          width: 100%;
-          border-collapse: collapse;
-          margin-bottom: 10pt;
-          font-size: 8.5pt;
-          background: #ffffff;
-          border-radius: 6px;
-          border: 1px solid #cbd5e1;
+          width: 100%; border-collapse: collapse;
+          margin-bottom: 10pt; font-size: 8.5pt;
+          background: #ffffff; border: 1px solid #cbd5e1;
         }
         .pdf-table th {
-          background: #f1f5f9;
-          color: #0f172a;
-          font-weight: 700;
-          text-align: center;
-          padding: 6px 7px;
-          border: 1px solid #cbd5e1;
-          vertical-align: middle;
-          font-size: 8.5pt;
+          background: #f1f5f9; color: #0f172a; font-weight: 700;
+          text-align: center; padding: 6px 7px;
+          border: 1px solid #cbd5e1; vertical-align: middle; font-size: 8.5pt;
         }
         .pdf-table td {
-          border: 1px solid #cbd5e1;
-          padding: 6px 7px;
-          vertical-align: top;
-          line-height: 1.55;
+          border: 1px solid #cbd5e1; padding: 6px 7px;
+          vertical-align: top; line-height: 1.55;
         }
-        .pdf-table tbody tr:nth-child(even) {
-          background-color: #fafbfc;
-        }
-        .pdf-table tr {
-          page-break-inside: avoid;
-        }
+        .pdf-table tbody tr:nth-child(even) { background-color: #fafbfc; }
+        .pdf-table tr { page-break-inside: avoid; }
 
         /* 5E Stage Badges */
         .badge-stage {
-          display: inline-flex;
-          align-items: center;
-          gap: 3px;
-          padding: 2px 6px;
-          border-radius: 4px;
-          font-size: 7.8pt;
-          font-weight: 700;
-          margin-bottom: 4px;
+          display: inline-block; padding: 2px 7px; border-radius: 4px;
+          font-size: 7.5pt; font-weight: 700; margin-bottom: 4px;
         }
-        .badge-engage { background: #e0f2fe; color: #0369a1; border: 1px solid rgba(2, 132, 199, 0.3); }
+        .badge-engage  { background: #e0f2fe; color: #0369a1; border: 1px solid rgba(2, 132, 199, 0.3); }
         .badge-explore { background: #fef3c7; color: #92400e; border: 1px solid rgba(245, 158, 11, 0.3); }
         .badge-explain { background: #ecfdf5; color: #047857; border: 1px solid rgba(16, 185, 129, 0.3); }
         .badge-elaborate { background: #f3e8ff; color: #6b21a8; border: 1px solid rgba(139, 92, 246, 0.3); }
-        .badge-evaluate { background: #fee2e2; color: #991b1b; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-evaluate  { background: #fee2e2; color: #991b1b; border: 1px solid rgba(239, 68, 68, 0.3); }
 
-        /* Mathematical Display & Inline */
-        .math-clean {
-          font-family: 'KaTeX_Math', 'Cambria Math', 'Outfit', serif;
-          font-weight: 600;
-          color: #0369a1;
-          display: inline-block;
-          padding: 1px 4px;
-          background: rgba(2, 132, 199, 0.06);
-          border-radius: 3px;
-        }
-        .math-display-card {
-          background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
-          border: 1px solid #bae6fd;
-          border-radius: 6px;
-          padding: 6px 10px;
-          margin: 5px 0;
-          text-align: center;
-          font-size: 9.5pt;
-          font-weight: 700;
-          color: #0369a1;
-        }
-
-        /* Section II Inquiry & Materials */
+        /* Question Box */
         .pdf-question-box {
-          background: #ecfdf5;
-          border: 1.5px solid #10b981;
-          border-radius: 8px;
-          padding: 8px 12px;
-          margin-bottom: 8pt;
-          page-break-inside: avoid;
-        }
-        .pdf-materials-grid {
-          display: flex;
-          gap: 10px;
-          margin-bottom: 10pt;
-          page-break-inside: avoid;
-        }
-        .pdf-material-card {
-          flex: 1;
-          border: 1px solid #cbd5e1;
-          border-radius: 6px;
-          padding: 8px 10px;
-          background: #f8fafc;
-          font-size: 8.5pt;
+          background: #ecfdf5; border: 1.5px solid #10b981;
+          border-radius: 8px; padding: 8px 12px;
+          margin-bottom: 8pt; page-break-inside: avoid;
         }
 
-        /* Section IV Blackboard 3-Columns Layout (Chalkboard styling) */
+        /* Materials Table Layout */
+        .pdf-mats-table { width: 100%; border-collapse: collapse; margin-bottom: 10pt; page-break-inside: avoid; }
+        .pdf-mats-table td { width: 50%; vertical-align: top; padding: 0; }
+        .pdf-mats-table td:first-child { padding-right: 5px; }
+        .pdf-mats-table td:last-child  { padding-left: 5px; }
+        .pdf-material-card {
+          border: 1px solid #cbd5e1; border-radius: 6px;
+          padding: 8px 10px; background: #f8fafc; font-size: 8.5pt;
+          height: 100%;
+        }
+
+        /* Blackboard Layout (Chalkboard Styling with 3 Clean Columns) */
         .pdf-board-container {
-          background: #1e293b;
-          border: 6px solid #78350f;
-          border-radius: 8px;
-          padding: 10px;
-          color: #f8fafc;
-          margin-bottom: 10pt;
-          page-break-inside: avoid;
+          background: #1e293b; border: 6px solid #78350f;
+          border-radius: 8px; padding: 10px;
+          color: #f8fafc; margin-bottom: 10pt; page-break-inside: avoid;
         }
         .pdf-board-header {
-          text-align: center;
-          color: #fde047;
-          font-weight: 700;
-          font-size: 8.5pt;
-          margin-bottom: 8px;
-          padding-bottom: 4px;
+          text-align: center; color: #fde047; font-weight: 700;
+          font-size: 8pt; margin-bottom: 8px; padding-bottom: 4px;
           border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
         }
-        .pdf-board-grid {
-          display: flex;
-          gap: 8px;
-        }
+        .pdf-board-table-outer { width: 100%; border-collapse: collapse; }
+        .pdf-board-table-outer td { width: 33.33%; vertical-align: top; padding: 0; }
+        .pdf-board-table-outer td:not(:last-child) { padding-right: 6px; }
         .pdf-board-column {
-          flex: 1;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 5px;
-          padding: 8px;
-          background: rgba(15, 23, 42, 0.5);
-          font-size: 7.8pt;
-          line-height: 1.5;
+          border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 5px;
+          padding: 8px; background: rgba(15, 23, 42, 0.5);
+          font-size: 7.8pt; line-height: 1.5; height: 100%;
         }
         .pdf-board-col-header {
-          font-weight: 700;
-          color: #38bdf8;
+          font-weight: 700; color: #38bdf8;
           border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-          padding-bottom: 3px;
-          margin-bottom: 5px;
-          text-align: center;
-          font-size: 8.2pt;
+          padding-bottom: 3px; margin-bottom: 5px;
+          text-align: center; font-size: 8pt;
         }
-        .pdf-board-table {
-          width: 100%;
-          border-collapse: collapse;
-          margin: 4px 0;
-          font-size: 7.5pt;
-          color: #f8fafc;
+        .pdf-inner-table {
+          width: 100%; border-collapse: collapse; margin: 4px 0; font-size: 7.5pt; color: #f8fafc;
         }
-        .pdf-board-table td, .pdf-board-table th {
-          border: 1px solid rgba(255, 255, 255, 0.25);
-          padding: 2px 4px;
-          text-align: center;
+        .pdf-inner-table td, .pdf-inner-table th {
+          border: 1px solid rgba(255, 255, 255, 0.25); padding: 2px 4px; text-align: center;
         }
 
-        /* Section V Inquiry Worksheet */
+        /* Worksheet Box */
         .pdf-worksheet-box {
-          border: 2px dashed #0284c7;
-          background: #f0f9ff;
-          border-radius: 8px;
-          padding: 10px 12px;
-          margin-bottom: 10pt;
-          font-size: 8.5pt;
-          page-break-inside: avoid;
+          border: 2px dashed #0284c7; background: #f0f9ff;
+          border-radius: 8px; padding: 10px 12px;
+          margin-bottom: 10pt; font-size: 8.5pt; page-break-inside: avoid;
         }
 
-        /* Section VI Differentiation */
-        .pdf-diff-grid {
-          display: flex;
-          gap: 10px;
-          margin-bottom: 10pt;
-          page-break-inside: avoid;
-        }
-        .pdf-diff-card {
-          flex: 1;
-          border-radius: 6px;
-          padding: 8px 10px;
-          font-size: 8.5pt;
-        }
-        .pdf-diff-slow {
-          background: #fffbeb;
-          border: 1.5px solid #fde68a;
-        }
-        .pdf-diff-fast {
-          background: #eff6ff;
-          border: 1.5px solid #bfdbfe;
-        }
+        /* Differentiation Table Layout */
+        .pdf-diff-table { width: 100%; border-collapse: collapse; margin-bottom: 10pt; page-break-inside: avoid; }
+        .pdf-diff-table td { width: 50%; vertical-align: top; padding: 0; }
+        .pdf-diff-table td:first-child { padding-right: 5px; }
+        .pdf-diff-table td:last-child  { padding-left: 5px; }
+        .pdf-diff-card { border-radius: 6px; padding: 8px 10px; font-size: 8.5pt; height: 100%; }
+        .pdf-diff-slow { background: #fffbeb; border: 1.5px solid #fde68a; }
+        .pdf-diff-fast { background: #eff6ff; border: 1.5px solid #bfdbfe; }
 
-        /* Official Signatures */
-        .pdf-signatures {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 15pt;
-          padding-top: 10pt;
+        /* Signatures Table */
+        .pdf-sig-table {
+          width: 100%; border-collapse: collapse;
+          margin-top: 15pt; padding-top: 10pt;
           border-top: 1px solid #cbd5e1;
-          font-size: 9pt;
-          page-break-inside: avoid;
+          font-size: 9pt; page-break-inside: avoid;
         }
-        .pdf-sig-col {
-          text-align: center;
-          width: 45%;
-        }
+        .pdf-sig-table td { width: 50%; text-align: center; vertical-align: top; padding: 10px; }
       </style>
 
       <div class="pdf-plan-wrap">
-        <!-- 1. Official Header -->
+
+        <!-- 1. OFFICIAL HEADER -->
         <div class="pdf-header">
           <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
           <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
           <div class="pdf-header-divider"></div>
         </div>
 
-        <!-- 2. Administrative Metadata in Clean 4-Column Card -->
-        <div class="pdf-metadata-card">
-          <div class="pdf-meta-item">
-            <span class="pdf-meta-label">គ្រឹះស្ថានសិក្សា</span>
-            <span class="pdf-meta-value">វិទ្យាល័យសសរស្តម្ភ & SHINE</span>
-          </div>
-          <div class="pdf-meta-item">
-            <span class="pdf-meta-label">កម្រិតថ្នាក់ & មុខវិជ្ជា</span>
-            <span class="pdf-meta-value">ថ្នាក់ទី ១១ | គណិតវិទ្យា (ភាគ១)</span>
-          </div>
-          <div class="pdf-meta-item">
-            <span class="pdf-meta-label">គ្រូបង្រៀនឯកទេស</span>
-            <span class="pdf-meta-value">អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)</span>
-          </div>
-          <div class="pdf-meta-item">
-            <span class="pdf-meta-label">ថិរវេលាបង្រៀន</span>
-            <span class="pdf-meta-value">៥០ នាទី (១ ម៉ោងពេញលេញ)</span>
-          </div>
-        </div>
+        <!-- 2. METADATA TABLE -->
+        <table class="pdf-metadata-table">
+          <tr>
+            <td>
+              <span class="pdf-meta-label">គ្រឹះស្ថានសិក្សា</span>
+              <span class="pdf-meta-value">វិទ្យាល័យសសរស្តម្ភ &amp; SHINE</span>
+            </td>
+            <td>
+              <span class="pdf-meta-label">កម្រិតថ្នាក់ &amp; មុខវិជ្ជា</span>
+              <span class="pdf-meta-value">ថ្នាក់ទី ១១ | គណិតវិទ្យា (ភាគ១)</span>
+            </td>
+            <td>
+              <span class="pdf-meta-label">គ្រូបង្រៀនឯកទេស</span>
+              <span class="pdf-meta-value">អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE &amp; RUPP)</span>
+            </td>
+            <td>
+              <span class="pdf-meta-label">ថិរវេលាបង្រៀន</span>
+              <span class="pdf-meta-value">៥០ នាទី (១ ម៉ោងពេញលេញ)</span>
+            </td>
+          </tr>
+        </table>
 
-        <!-- 3. Plan Main Title Block (Font Moul) -->
+        <!-- 3. TITLE BLOCK -->
         <div class="pdf-title-block">
-          <h1>កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E Model)</h1>
+          <h1>កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL – 5E Model)</h1>
           <div class="subtitle">
-            ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងអនុគមន៍លោការីត (ទំព័រ ៥៧ – ៨៨)<br>
+            ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងអនុគមន៍លោការីត (ទំព័រ ៥៧–៨៨)<br>
             <strong>មេរៀនទី ១៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល (និយមន័យ ក្រាប និងលក្ខណៈគ្រឹះ)</strong>
           </div>
         </div>
 
-        <!-- I. Learning Objectives -->
+        <!-- I. LEARNING OBJECTIVES -->
         <div class="pdf-section">
           <div class="pdf-section-title">I. វត្ថុបំណងមេរៀន (Learning Objectives)</div>
           <table class="pdf-table">
             <thead>
               <tr>
-                <th style="width: 25%;">ដែនអភិវឌ្ឍន៍</th>
-                <th style="width: 50%;">វត្ថុបំណងជាក់លាក់ (៥០ នាទី សិស្សអាច៖)</th>
-                <th style="width: 25%;">ឧបករណ៍វាស់វែង & ភស្តុតាង</th>
+                <th style="width:25%">ដែនអភិវឌ្ឍន៍</th>
+                <th style="width:50%">វត្ថុបំណងជាក់លាក់ (៥០ នាទី សិស្សអាច៖)</th>
+                <th style="width:25%">ឧបករណ៍វាស់វែង &amp; ភស្តុតាង</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>១. វិជ្ជាសម្បទា (Knowledge)</strong></td>
                 <td>
-                  • កំណត់បាននូវនិយមន័យ <span class="math-clean"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> (<span class="math-clean"><i>a</i> &gt; 0, <i>a</i> &ne; 1</span>) បានត្រឹមត្រូវ។<br>
-                  • កំណត់បានដែនកំណត់ <span class="math-clean"><i>D</i> = ℝ</span>, ដែនតម្លៃ <span class="math-clean"><i>R</i><sub><i>f</i></sub> = (0, +∞)</span>, បន្ទាត់អាស៊ីមតូតដេក <span class="math-clean"><i>y</i> = 0</span>, និងចំណុចកាត់ (0, 1)។<br>
-                  • បែងចែកអាកប្បកិរិយាក្រាប៖ $a > 1 \Rightarrow$ កើនដាច់ខាត និង $0 < a < 1 \Rightarrow$ ចុះដាច់ខាត។
+                  • កំណត់បាននូវនិយមន័យ <span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span>
+                    (<span class="math-sym"><i>a</i> &gt; 0, <i>a</i> ≠ 1</span>) បានត្រឹមត្រូវ។<br>
+                  • កំណត់បានដែនកំណត់ <span class="math-sym"><i>D</i> = ℝ</span>, ដែនតម្លៃ
+                    <span class="math-sym"><i>R<sub>f</sub></i> = (0, +∞)</span>,
+                    បន្ទាត់អាស៊ីមតូតដេក <span class="math-sym"><i>y</i> = 0</span>,
+                    និងចំណុចកាត់ <span class="math-sym">(0, 1)</span>។<br>
+                  • បែងចែកអាកប្បកិរិយាក្រាប៖ <span class="math-sym"><i>a</i> &gt; 1 ⇒</span> កើនដាច់ខាត និង
+                    <span class="math-sym">0 &lt; <i>a</i> &lt; 1 ⇒</span> ចុះដាច់ខាត។
                 </td>
                 <td>• សំណួរផ្ទាល់មាត់<br>• ការបំពេញតារាងលក្ខណៈ<br>• សន្លឹក Exit Ticket</td>
               </tr>
               <tr>
                 <td><strong>២. បំណិនសម្បទា (Skills)</strong></td>
                 <td>
-                  • ពិសោធន៍បត់ក្រដាស A4 ប្រមូលទិន្នន័យជាក់ស្តែង និងបំពេញតារាងតម្លៃ $x \to y$។<br>
-                  • សង្កេតរកឃើញគំរូទិន្នន័យ (Pattern Recognition) និងទាញរូបមន្ត <span class="math-clean"><i>y</i> = 2<sup><i>x</i></sup></span>។<br>
-                  • សង់ក្រាបនៃ <span class="math-clean"><i>y</i> = 2<sup><i>x</i></sup></span> និង <span class="math-clean"><i>y</i> = (<span class="math-fraction"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span> លើក្រដាសក្រឡាបានត្រឹមត្រូវតាមមាត្រដ្ឋាន។
+                  • ពិសោធន៍បត់ក្រដាស A4 ប្រមូលទិន្នន័យជាក់ស្តែង និងបំពេញតារាងតម្លៃ
+                    <span class="math-sym"><i>x</i> → <i>y</i></span>។<br>
+                  • សង្កេតរកឃើញគំរូទិន្នន័យ (Pattern Recognition) និងទាញរូបមន្ត
+                    <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span>។<br>
+                  • សង់ក្រាបនៃ <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span> និង
+                    <span class="math-sym"><i>y</i> = (<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span>
+                    លើក្រដាសក្រឡាបានត្រឹមត្រូវតាមមាត្រដ្ឋាន។
                 </td>
                 <td>• សន្លឹកកិច្ចការ IBL Worksheet<br>• គំនូសក្រាបជាក់ស្តែងសិស្ស</td>
               </tr>
@@ -423,53 +405,59 @@
           </table>
         </div>
 
-        <!-- II. Driving Question & Materials -->
+        <!-- II. DRIVING QUESTION & MATERIALS -->
         <div class="pdf-section">
-          <div class="pdf-section-title">II. សំណួរគន្លឹះរិះរក និងសម្ភារឧបទេស (Inquiry Driving Question & Materials)</div>
+          <div class="pdf-section-title">II. សំណួរគន្លឹះរិះរក និងសម្ភារឧបទេស (Inquiry Driving Question &amp; Materials)</div>
           <div class="pdf-question-box">
-            <strong style="color: #065f46;">❓ សំណួរគន្លឹះបំផុសការរិះរក (Driving Question)៖</strong>
-            <div style="color: #047857; margin-top: 3px; font-weight: 500;">
+            <strong style="color:#065f46">❓ សំណួរគន្លឹះបំផុសការរិះរក (Driving Question)៖</strong>
+            <div style="color:#047857;margin-top:3px;font-weight:500">
               «តើបំរែបំរួលប្រភេទណា ដែលធ្វើឱ្យបរិមាណមួយកើនឡើងទ្វេដង ឬកើនឡើងយ៉ាងគំហុកមិននឹកស្មានដល់ ហើយតើយើងអាចតាងវាដោយគំរូគណិតវិទ្យាបែបណា?»
             </div>
           </div>
-          <div class="pdf-materials-grid">
-            <div class="pdf-material-card">
-              <strong style="color: #0369a1;">🛠️ សម្ភារឧបទេសសម្រាប់គ្រូ៖</strong>
-              <div style="margin-top: 3px; color: #334155; line-height: 1.5;">
-                • កិច្ចតែងការបង្រៀន, ស្លាយ 5E, បន្ទប់ពិសោធន៍ឌីជីថល GeoGebra/SVG<br>
-                • ក្ដារខៀន, ប៊ិចហ្វឺត, បន្ទាត់ត្រីកោណ, ក្រដាស A4 ពណ៌
-              </div>
-            </div>
-            <div class="pdf-material-card">
-              <strong style="color: #047857;">👥 សម្ភារសម្រាប់ក្រុមសិស្ស (៤-៥ នាក់/ក្រុម)៖</strong>
-              <div style="margin-top: 3px; color: #334155; line-height: 1.5;">
-                • សៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី១១ (ភាគ១), ក្រដាស A4 ពិសោធន៍<br>
-                • សន្លឹកកិច្ចការរិះរកប្រចាំក្រុម (Inquiry Sheet), ក្រដាសក្រឡាចត្រង្គ, បន្ទាត់, ប៊ិចពណ៌
-              </div>
-            </div>
-          </div>
+          <table class="pdf-mats-table">
+            <tr>
+              <td>
+                <div class="pdf-material-card">
+                  <strong style="color:#0369a1">🛠️ សម្ភារឧបទេសសម្រាប់គ្រូ៖</strong>
+                  <div style="margin-top:3px;color:#334155;line-height:1.5">
+                    • កិច្ចតែងការបង្រៀន, ស្លាយ 5E, បន្ទប់ពិសោធន៍ឌីជីថល GeoGebra/SVG<br>
+                    • ក្ដារខៀន, ប៊ិចហ្វឺត, បន្ទាត់ត្រីកោណ, ក្រដាស A4 ពណ៌
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="pdf-material-card">
+                  <strong style="color:#047857">👥 សម្ភារសម្រាប់ក្រុមសិស្ស (៤-៥ នាក់/ក្រុម)៖</strong>
+                  <div style="margin-top:3px;color:#334155;line-height:1.5">
+                    • សៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី១១ (ភាគ១), ក្រដាស A4 ពិសោធន៍<br>
+                    • សន្លឹកកិច្ចការរិះរកប្រចាំក្រុម (Inquiry Sheet), ក្រដាសក្រឡាចត្រង្គ, ប៊ិចពណ៌
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
 
-        <!-- III. Master 5-Column Teaching Process Table -->
+        <!-- III. 5E TEACHING PROCESS TABLE -->
         <div class="pdf-section pdf-page-break-before">
           <div class="pdf-section-title">III. តារាងដំណើរការបង្រៀន និងរៀនតាមទម្រង់ 5E IBL (៥ ជួរឈរស្តង់ដារជាតិ)</div>
           <table class="pdf-table">
             <thead>
               <tr>
-                <th style="width: 9%; text-align: center;">ថិរវេលា</th>
-                <th style="width: 17%;">ដំណាក់កាល 5E</th>
-                <th style="width: 28%;">ខ្លឹមសារមេរៀន & គំនិតគន្លឹះ</th>
-                <th style="width: 23%;">សកម្មភាពគ្រូ</th>
-                <th style="width: 23%;">សកម្មភាពសិស្ស</th>
+                <th style="width:9%;text-align:center">ថិរវេលា</th>
+                <th style="width:17%">ដំណាក់កាល 5E</th>
+                <th style="width:28%">ខ្លឹមសារមេរៀន &amp; គំនិតគន្លឹះ</th>
+                <th style="width:23%">សកម្មភាពគ្រូ</th>
+                <th style="width:23%">សកម្មភាពសិស្ស</th>
               </tr>
             </thead>
             <tbody>
-              <!-- 1. Engage -->
+              <!-- 1. ENGAGE -->
               <tr>
-                <td style="text-align: center; font-weight: bold; color: #0369a1; background: #f0f9ff;">៧ នាទី</td>
+                <td style="text-align:center;font-weight:bold;color:#0369a1;background:#f0f9ff">៧ នាទី</td>
                 <td>
                   <span class="badge-stage badge-engage">១. ENGAGE</span><br>
-                  <strong>ការចូលរួម & បំផុសចម្ងល់</strong>
+                  <strong>ការចូលរួម &amp; បំផុសចម្ងល់</strong>
                 </td>
                 <td>
                   <strong>អាថ៌កំបាំងបត់ក្រដាស A4៖</strong><br>
@@ -478,7 +466,7 @@
                   • បែងចែកកំណើនរបៀបបូក vs កំណើនរបៀបគុណ
                 </td>
                 <td>
-                  • រៀបចំថ្នាក់ & បែងចែកក្រុមសិស្ស (៤-៥ នាក់/ក្រុម)។<br>
+                  • រៀបចំថ្នាក់ &amp; បែងចែកក្រុមសិស្ស (៤-៥ នាក់/ក្រុម)។<br>
                   • លើកក្រដាស A4 ចោទសួរ៖ <em>«បើបត់ជាពីរជាបន្តបន្ទាប់ តើកម្រាស់កើនយ៉ាងដូចម្តេច?»</em><br>
                   • បំផុសចម្ងល់៖ <em>«តើបត់ ៥០ ដង ខ្ពស់ដល់ឋានព្រះច័ន្ទទេ?»</em>
                 </td>
@@ -489,98 +477,105 @@
                 </td>
               </tr>
 
-              <!-- 2. Explore -->
+              <!-- 2. EXPLORE -->
               <tr>
-                <td style="text-align: center; font-weight: bold; color: #0369a1; background: #f0f9ff;">១៥ នាទី</td>
+                <td style="text-align:center;font-weight:bold;color:#0369a1;background:#f0f9ff">១៥ នាទី</td>
                 <td>
                   <span class="badge-stage badge-explore">២. EXPLORE</span><br>
-                  <strong>ការរុករក & ពិសោធន៍</strong>
+                  <strong>ការរុករក &amp; ពិសោធន៍</strong>
                 </td>
                 <td>
                   <strong>តារាងទិន្នន័យពិសោធន៍៖</strong><br>
-                  • បត់ ($x$): 0, 1, 2, 3, 4, ... $x$<br>
-                  • ស្រទាប់ ($y$): 1, 2, 4, 8, 16, ... 2<sup><i>x</i></sup><br>
+                  • បត់ (<span class="math-sym"><i>x</i></span>): 0, 1, 2, 3, 4, … <span class="math-sym"><i>x</i></span><br>
+                  • ស្រទាប់ (<span class="math-sym"><i>y</i></span>): 1, 2, 4, 8, 16, … <span class="math-sym">2<sup><i>x</i></sup></span><br>
                   <strong>របកគំហើញគំរូទិន្នន័យ៖</strong><br>
-                  តម្លៃ $y$ គុណនឹង ២ ជានិច្ចពេល $x$ កើន ១ នាំឱ្យទាញបានរូបមន្ត <span class="math-clean"><i>y</i> = 2<sup><i>x</i></sup></span>។
+                  តម្លៃ <span class="math-sym"><i>y</i></span> គុណនឹង ២ ជានិច្ចពេល <span class="math-sym"><i>x</i></span> កើន ១ នាំឱ្យទាញបានរូបមន្ត <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span>។
                 </td>
                 <td>
                   • ចែកក្រដាស A4 និងសន្លឹកកិច្ចការ IBL ជូនគ្រប់ក្រុម។<br>
-                  • ណែនាំឱ្យបត់ និងរាប់ស្រទាប់ក្រដាស ($x = 0, 1, 2, 3, 4...$)។<br>
+                  • ណែនាំឱ្យបត់ និងរាប់ស្រទាប់ក្រដាស (<span class="math-sym"><i>x</i> = 0, 1, 2, 3, 4…</span>)។<br>
                   • ដើរសម្របសម្រួល និងជួយគាំទ្រ (Scaffolding) ដោយមិនទាន់ប្រាប់រូបមន្តជាមុនឡើយ។
                 </td>
                 <td>
-                  • ក្រុមសិស្សបត់ក្រដាសជាក់ស្តែង ($0 \to 1, 1 \to 2, 2 \to 4, 3 \to 8, 4 \to 16...$)។<br>
-                  • បំពេញតារាងក្នុងសន្លឹកកិច្ចការ និងពិភាក្សាទាញរកទំនាក់ទំនងរវាង $y$ និង $x$។<br>
+                  • ក្រុមសិស្សបត់ក្រដាសជាក់ស្តែង (0 → 1, 1 → 2, 2 → 4, 3 → 8, 4 → 16…)។<br>
+                  • បំពេញតារាងក្នុងសន្លឹកកិច្ចការ និងពិភាក្សាទាញរកទំនាក់ទំនងរវាង <span class="math-sym"><i>y</i></span> និង <span class="math-sym"><i>x</i></span>។<br>
                   • សន្និដ្ឋានឃើញគំរូទិន្នន័យស្វ័យគុណ។
                 </td>
               </tr>
 
-              <!-- 3. Explain -->
+              <!-- 3. EXPLAIN -->
               <tr>
-                <td style="text-align: center; font-weight: bold; color: #0369a1; background: #f0f9ff;">១២ នាទី</td>
+                <td style="text-align:center;font-weight:bold;color:#0369a1;background:#f0f9ff">១២ នាទី</td>
                 <td>
                   <span class="badge-stage badge-explain">៣. EXPLAIN</span><br>
-                  <strong>ការពន្យល់ & និយមន័យ</strong>
+                  <strong>ការពន្យល់ &amp; និយមន័យ</strong>
                 </td>
                 <td>
                   <strong>និយមន័យអនុគមន៍អិចស្ប៉ូណង់ស្យែល៖</strong><br>
-                  <span class="math-clean"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> (<span class="math-clean"><i>a</i> &gt; 0, <i>a</i> &ne; 1</span>)<br>
-                  • ដែនកំណត់៖ $D = \mathbb{R} = (-\infty, +\infty)$<br>
-                  • ដែនតម្លៃ៖ <span class="math-clean"><i>R</i><sub><i>f</i></sub> = (0, +∞)</span><br>
-                  • ចំណុចកាត់អ័ក្ស៖ (0, 1) ព្រោះ $a^0 = 1$<br>
-                  • អាស៊ីមតូតដេក៖ <span class="math-clean"><i>y</i> = 0</span> (អ័ក្សអាប់ស៊ីស)
+                  <div class="math-highlight-card">
+                    <i>y</i> = <i>a</i><sup><i>x</i></sup> &nbsp;(<i>a</i> &gt; 0, <i>a</i> ≠ 1)
+                  </div>
+                  • ដែនកំណត់៖ <span class="math-sym"><i>D</i> = ℝ = (−∞, +∞)</span><br>
+                  • ដែនតម្លៃ៖ <span class="math-sym"><i>R<sub>f</sub></i> = (0, +∞)</span><br>
+                  • ចំណុចកាត់អ័ក្ស៖ <span class="math-sym">(0, 1)</span> ព្រោះ <span class="math-sym"><i>a</i><sup>0</sup> = 1</span><br>
+                  • អាស៊ីមតូតដេក៖ <span class="math-sym"><i>y</i> = 0</span> (អ័ក្សអាប់ស៊ីស)
                 </td>
                 <td>
                   • អញ្ជើញតំណាងក្រុមឡើងរាយការណ៍ និងសរសេររូបមន្តដែលរកឃើញ។<br>
-                  • ធ្វើទូទៅកម្មពីករណីជាក់ស្តែង <span class="math-clean"><i>y</i> = 2<sup><i>x</i></sup></span> ទៅករណីទូទៅ <span class="math-clean"><i>y</i> = <i>a</i><sup><i>x</i></sup></span>។<br>
-                  • សួរសំណួរដេញដោល៖ <em>«ហេតុអ្វីចាំបាច់ត្រូវការលក្ខខណ្ឌ $a > 0$ និង $a \neq 1$?»</em><br>
-                  • បង្ហាញក្រាប និងពន្យល់អាស៊ីមតូតដេក <span class="math-clean"><i>y</i> = 0</span>។
+                  • ធ្វើទូទៅកម្មពីករណីជាក់ស្តែង <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span> ទៅករណីទូទៅ <span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span>។<br>
+                  • សួរសំណួរដេញដោល៖ <em>«ហេតុអ្វីចាំបាច់ត្រូវការលក្ខខណ្ឌ <span class="math-sym"><i>a</i> &gt; 0</span> និង <span class="math-sym"><i>a</i> ≠ 1</span>?»</em><br>
+                  • បង្ហាញក្រាប និងពន្យល់អាស៊ីមតូតដេក <span class="math-sym"><i>y</i> = 0</span>។
                 </td>
                 <td>
-                  • តំណាងក្រុមឡើងរាយការណ៍៖ <em>«ក្រុមយើងរកឃើញរូបមន្ត <span class="math-clean"><i>y</i> = 2<sup><i>x</i></sup></span>»</em>។<br>
-                  • សិស្សឆ្លើយសំណួរគ្រូ៖ <em>«បើ $a=1$ នាំឱ្យ $1^x = 1$ ថេរ; បើ $a \le 0$ មិនអាចកំណត់លើ $\mathbb{R}$ បាន»</em>។<br>
+                  • តំណាងក្រុមឡើងរាយការណ៍៖ <em>«ក្រុមយើងរកឃើញរូបមន្ត <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span>»</em>។<br>
+                  • សិស្សឆ្លើយសំណួរគ្រូ៖ <em>«បើ <span class="math-sym"><i>a</i> = 1</span> នាំឱ្យ <span class="math-sym">1<sup><i>x</i></sup> = 1</span> ថេរ; បើ <span class="math-sym"><i>a</i> ≤ 0</span> មិនអាចកំណត់លើ <span class="math-sym">ℝ</span> បាន»</em>។<br>
                   • កត់ត្រានិយមន័យ និងលក្ខណៈស្នូលចូលសៀវភៅ។
                 </td>
               </tr>
 
-              <!-- 4. Elaborate -->
+              <!-- 4. ELABORATE -->
               <tr>
-                <td style="text-align: center; font-weight: bold; color: #0369a1; background: #f0f9ff;">១០ នាទី</td>
+                <td style="text-align:center;font-weight:bold;color:#0369a1;background:#f0f9ff">១០ នាទី</td>
                 <td>
                   <span class="badge-stage badge-elaborate">៤. ELABORATE</span><br>
                   <strong>ការពង្រីកចំណេះដឹង</strong>
                 </td>
                 <td>
-                  <strong>អថេរភាព & ក្រាបឆ្លុះ៖</strong><br>
-                  • $a > 1 \Rightarrow$ កើន | $0 < a < 1 \Rightarrow$ ចុះ<br>
-                  • ក្រាប <span class="math-clean"><i>y</i> = 2<sup><i>x</i></sup></span> និង <span class="math-clean"><i>y</i> = (<span class="math-fraction"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span> ឆ្លុះគ្នាធៀបនឹងអ័ក្ស (<i>Oy</i>)<br>
-                  • តម្លៃរហ័ស៖ <span class="math-clean"><i>x</i> = -2 &rArr; <i>y</i> = 4</span>; <span class="math-clean"><i>x</i> = -1 &rArr; <i>y</i> = 2</span>; <span class="math-clean"><i>x</i> = 0 &rArr; <i>y</i> = 1</span>; <span class="math-clean"><i>x</i> = 1 &rArr; <i>y</i> = <span class="math-fraction"><span class="num">1</span><span class="den">2</span></span></span>; <span class="math-clean"><i>x</i> = 2 &rArr; <i>y</i> = <span class="math-fraction"><span class="num">1</span><span class="den">4</span></span></span><br>
-                  • ម៉ូឌែលបាក់តេរី៖ $N(t) = 100 \cdot 2^t \Rightarrow N(3) = 800$
+                  <strong>អថេរភាព &amp; ក្រាបឆ្លុះ៖</strong><br>
+                  • <span class="math-sym"><i>a</i> &gt; 1 ⇒</span> កើន | <span class="math-sym">0 &lt; <i>a</i> &lt; 1 ⇒</span> ចុះ<br>
+                  • ក្រាប <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span> និង <span class="math-sym"><i>y</i> = (<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span> ឆ្លុះគ្នាធៀបនឹងអ័ក្ស <span class="math-sym">(<i>Oy</i>)</span><br>
+                  • តម្លៃរហ័ស៖
+                    <span class="math-sym"><i>x</i> = −2 ⇒ <i>y</i> = 4</span>;
+                    <span class="math-sym"><i>x</i> = −1 ⇒ <i>y</i> = 2</span>;
+                    <span class="math-sym"><i>x</i> = 0 ⇒ <i>y</i> = 1</span>;
+                    <span class="math-sym"><i>x</i> = 1 ⇒ <i>y</i> = <span class="math-frac"><span class="num">1</span><span class="den">2</span></span></span>;
+                    <span class="math-sym"><i>x</i> = 2 ⇒ <i>y</i> = <span class="math-frac"><span class="num">1</span><span class="den">4</span></span></span><br>
+                  • ម៉ូឌែលបាក់តេរី៖ <span class="math-sym"><i>N</i>(<i>t</i>) = 100 · 2<sup><i>t</i></sup> ⇒ <i>N</i>(3) = 800</span>
                 </td>
                 <td>
-                  • ដាក់បញ្ហាប្រឈមថ្មី៖ <em>«ចុះបើគោលជាប្រភាគ <span class="math-clean"><i>a</i> = <span class="math-fraction"><span class="num">1</span><span class="den">2</span></span></span> តើក្រាប និងអថេរភាពរបស់ <span class="math-clean"><i>y</i> = (<span class="math-fraction"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span> នឹងទៅជាយ៉ាងណា?»</em><br>
+                  • ដាក់បញ្ហាប្រឈមថ្មី៖ <em>«ចុះបើគោលជាប្រភាគ <span class="math-sym"><i>a</i> = <span class="math-frac"><span class="num">1</span><span class="den">2</span></span></span> តើក្រាប និងអថេរភាពរបស់ <span class="math-sym"><i>y</i> = (<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span> នឹងទៅជាយ៉ាងណា?»</em><br>
                   • ឱ្យសិស្សគណនាតម្លៃ និងសង់ក្រាបលើក្រដាសក្រឡា។<br>
-                  • ណែនាំភ្ជាប់ទៅម៉ូឌែលបាក់តេរី $N(t) = 100 \cdot 2^t$។
+                  • ណែនាំភ្ជាប់ទៅម៉ូឌែលបាក់តេរី <span class="math-sym"><i>N</i>(<i>t</i>) = 100 · 2<sup><i>t</i></sup></span>។
                 </td>
                 <td>
-                  • គណនាក្នុងក្រុមសម្រាប់ $x \in \{-2, -1, 0, 1, 2\}$។<br>
-                  • សង់ក្រាប និងសន្និដ្ឋាន៖ <em>«កាលណា $x$ កើន តម្លៃ $y$ ថយចុះ ដូច្នេះវាជាអនុគមន៍ចុះដាច់ខាត!»</em><br>
-                  • ដោះស្រាយលំហាត់បាក់តេរីបានត្រឹមត្រូវ ($N(3) = 800$ កោសិកា)។
+                  • គណនាក្នុងក្រុមសម្រាប់ <span class="math-sym"><i>x</i> ∈ {−2, −1, 0, 1, 2}</span>។<br>
+                  • សង់ក្រាប និងសន្និដ្ឋាន៖ <em>«កាលណា <span class="math-sym"><i>x</i></span> កើន តម្លៃ <span class="math-sym"><i>y</i></span> ថយចុះ ដូច្នេះវាជាអនុគមន៍ចុះដាច់ខាត!»</em><br>
+                  • ដោះស្រាយលំហាត់បាក់តេរីបានត្រឹមត្រូវ (<span class="math-sym"><i>N</i>(3) = 800</span> កោសិកា)។
                 </td>
               </tr>
 
-              <!-- 5. Evaluate -->
+              <!-- 5. EVALUATE -->
               <tr>
-                <td style="text-align: center; font-weight: bold; color: #0369a1; background: #f0f9ff;">៦ នាទី</td>
+                <td style="text-align:center;font-weight:bold;color:#0369a1;background:#f0f9ff">៦ នាទី</td>
                 <td>
                   <span class="badge-stage badge-evaluate">៥. EVALUATE</span><br>
-                  <strong>ការវាយតម្លៃ & ឆ្លុះបញ្ចាំង</strong>
+                  <strong>ការវាយតម្លៃ &amp; ឆ្លុះបញ្ចាំង</strong>
                 </td>
                 <td>
                   <strong>Exit Ticket (សន្លឹកចាកចេញ)៖</strong><br>
-                  1. ឱ្យ $f(x) = 3^x$។ តើ $f$ កើន ឬចុះ? រក $f(0)$ និង $f(2)$?<br>
-                  2. តើក្រាប <span class="math-clean"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> អាចប៉ះ ឬកាត់អ័ក្សអាប់ស៊ីសបានទេ? ហេតុអ្វី?<br>
-                  <strong>ឆ្លុះបញ្ចាំងសរុប៖</strong> បត់ ៥០ ដង = $112$ លាន km (ជិតដល់ព្រះអាទិត្យ!)
+                  1. ឱ្យ <span class="math-sym"><i>f</i>(<i>x</i>) = 3<sup><i>x</i></sup></span>។ តើ <span class="math-sym"><i>f</i></span> កើន ឬចុះ? រក <span class="math-sym"><i>f</i>(0)</span> និង <span class="math-sym"><i>f</i>(2)</span>?<br>
+                  2. តើក្រាប <span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> អាចប៉ះ ឬកាត់អ័ក្សអាប់ស៊ីសបានទេ? ហេតុអ្វី?<br>
+                  <strong>ឆ្លុះបញ្ចាំងសរុប៖</strong> បត់ ៥០ ដង = <span class="math-sym">112</span> លាន km (ជិតដល់ព្រះអាទិត្យ!)
                 </td>
                 <td>
                   • ចែកសន្លឹក Exit Ticket ឱ្យសិស្សបំពេញក្នុងរយៈពេល ៣ នាទី។<br>
@@ -598,158 +593,181 @@
           </table>
         </div>
 
-        <!-- IV. Blackboard Layout Plan in 3 Columns (Authentic Chalkboard Styling) -->
+        <!-- IV. BLACKBOARD LAYOUT PLAN (3 CLEAN COLUMNS) -->
         <div class="pdf-section pdf-page-break-before">
           <div class="pdf-section-title">IV. គំនូរប្លង់ក្ដារខៀន (Blackboard Layout Plan — ៣ ជួរឈរ)</div>
           <div class="pdf-board-container">
             <div class="pdf-board-header">
               កាលបរិច្ឆេទ៖ ថ្ងៃទី ......... ខែ ......... ឆ្នាំ ២០២៦ &nbsp;|&nbsp; ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងអនុគមន៍លោការីត &nbsp;|&nbsp; មេរៀនទី ១៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល
             </div>
-            <div class="pdf-board-grid">
-              <!-- Column 1 -->
-              <div class="pdf-board-column">
-                <div class="pdf-board-col-header">ផ្ទាំងទី ១៖ ទិន្នន័យពិសោធន៍</div>
-                <div><strong>១. ពិសោធន៍បត់ក្រដាស A4៖</strong></div>
-                <table class="pdf-board-table">
-                  <tr><th>បត់ ($x$)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-                  <tr><th>ស្រទាប់ ($y$)</th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td></tr>
-                </table>
-                <div style="margin-top: 3px;">➔ គំរូទិន្នន័យ៖ <span style="color: #fde047; font-weight: 700;"><span class="math-clean"><i>y</i> = 2<sup><i>x</i></sup></span></span></div>
-                <div style="color: #94a3b8; font-size: 7.5pt; margin-top: 4px; line-height: 1.4;">
-                  • បត់ 14 ដង &approx; 1.64m (កម្ពស់មនុស្ស)<br>
-                  • បត់ 27 ដង &approx; 8.8km (ភ្នំអេវឺរ៉េស)<br>
-                  • បត់ 42 ដង &approx; 384,400km (ដល់ឋានព្រះច័ន្ទ!)
-                </div>
-              </div>
+            <table class="pdf-board-table-outer">
+              <tr>
+                <!-- Column 1 -->
+                <td>
+                  <div class="pdf-board-column">
+                    <div class="pdf-board-col-header">ផ្ទាំងទី ១៖ ទិន្នន័យពិសោធន៍</div>
+                    <div><strong>១. ពិសោធន៍បត់ក្រដាស A4៖</strong></div>
+                    <table class="pdf-inner-table">
+                      <tr><th>បត់ (<i>x</i>)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+                      <tr><th>ស្រទាប់ (<i>y</i>)</th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td></tr>
+                    </table>
+                    <div style="margin-top: 3px;">➔ គំរូទិន្នន័យ៖ <span style="color: #fde047; font-weight: 700; font-family: 'Cambria Math', serif; font-style: italic;"><i>y</i> = 2<sup><i>x</i></sup></span></div>
+                    <div style="color: #94a3b8; font-size: 7.5pt; margin-top: 4px; line-height: 1.4;">
+                      • បត់ 14 ដង ≈ 1.64m (កម្ពស់មនុស្ស)<br>
+                      • បត់ 27 ដង ≈ 8.8km (ភ្នំអេវឺរ៉េស)<br>
+                      • បត់ 42 ដង ≈ 384,400km (ដល់ឋានព្រះច័ន្ទ!)
+                    </div>
+                  </div>
+                </td>
 
-              <!-- Column 2 -->
-              <div class="pdf-board-column">
-                <div class="pdf-board-col-header">ផ្ទាំងទី ២៖ និយមន័យ & លក្ខណៈ</div>
-                <div><strong>២. និយមន័យ៖ <span class="math-clean"><i>y</i> = <i>a</i><sup><i>x</i></sup></span></strong> (<span class="math-clean"><i>a</i> &gt; 0, <i>a</i> &ne; 1</span>)</div>
-                <div style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; padding: 3px; border-radius: 4px; text-align: center; font-weight: 700; color: #38bdf8; margin: 3px 0;">
-                  <span class="math-clean"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> (<span class="math-clean"><i>a</i> &gt; 0, <i>a</i> &ne; 1</span>)
-                </div>
-                <div style="font-size: 7.5pt; margin-top: 3px; line-height: 1.4;">
-                  • ដែនកំណត់៖ $D = \mathbb{R} = (-\infty, +\infty)$<br>
-                  • ដែនតម្លៃ៖ <span class="math-clean"><i>R</i><sub><i>f</i></sub> = (0, +∞)</span> ($a^x > 0$ ជានិច្ច)<br>
-                  • ចំណុចកាត់អ័ក្ស៖ (0, 1) ព្រោះ $a^0 = 1$<br>
-                  • អាស៊ីមតូតដេក៖ <span class="math-clean"><i>y</i> = 0</span> (អ័ក្ស $x'x$)<br>
-                  • $a > 1 \Rightarrow$ កើនដាច់ខាតលើ $\mathbb{R}$<br>
-                  • $0 < a < 1 \Rightarrow$ ចុះដាច់ខាតលើ $\mathbb{R}$
-                </div>
-              </div>
+                <!-- Column 2 -->
+                <td>
+                  <div class="pdf-board-column">
+                    <div class="pdf-board-col-header">ផ្ទាំងទី ២៖ និយមន័យ &amp; លក្ខណៈ</div>
+                    <div><strong>២. និយមន័យ៖ <span style="color: #7dd3fc; font-family: 'Cambria Math', serif; font-style: italic;"><i>y</i> = <i>a</i><sup><i>x</i></sup></span></strong> (<i>a</i> &gt; 0, <i>a</i> ≠ 1)</div>
+                    <div style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; padding: 3px; border-radius: 4px; text-align: center; font-weight: 700; color: #38bdf8; margin: 3px 0; font-family: 'Cambria Math', serif; font-style: italic;">
+                      <i>y</i> = <i>a</i><sup><i>x</i></sup> &nbsp;(<i>a</i> &gt; 0, <i>a</i> ≠ 1)
+                    </div>
+                    <div style="font-size: 7.5pt; margin-top: 3px; line-height: 1.4;">
+                      • ដែនកំណត់៖ <i>D</i> = ℝ = (−∞, +∞)<br>
+                      • ដែនតម្លៃ៖ <i>R<sub>f</sub></i> = (0, +∞) (<i>a<sup>x</sup></i> &gt; 0 ជានិច្ច)<br>
+                      • ចំណុចកាត់អ័ក្ស៖ (0, 1) ព្រោះ <i>a</i><sup>0</sup> = 1<br>
+                      • អាស៊ីមតូតដេក៖ <i>y</i> = 0 (អ័ក្ស <i>x'x</i>)<br>
+                      • <i>a</i> &gt; 1 ⇒ កើនដាច់ខាតលើ ℝ<br>
+                      • 0 &lt; <i>a</i> &lt; 1 ⇒ ចុះដាច់ខាតលើ ℝ
+                    </div>
+                  </div>
+                </td>
 
-              <!-- Column 3 -->
-              <div class="pdf-board-column">
-                <div class="pdf-board-col-header">ផ្ទាំងទី ៣៖ គំនូសក្រាប & កិច្ចការ</div>
-                <div><strong>៣. ក្រាប <span class="math-clean"><i>y</i> = 2<sup><i>x</i></sup></span> និង <span class="math-clean"><i>y</i> = (<span class="math-fraction"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span></strong></div>
-                <div style="font-size: 7pt; color: #94a3b8; margin-bottom: 2px;">(កាត់ (0, 1) និងឆ្លុះគ្នាធៀប (<i>Oy</i>))</div>
-                
-                <!-- Clean High-Quality Chalkboard Vector SVG Graph -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="95" viewBox="0 0 240 95" style="background: rgba(0,0,0,0.3); border-radius: 4px; display: block; margin: 4px 0; border: 1px solid rgba(255,255,255,0.15);">
-                  <line x1="20" y1="75" x2="220" y2="75" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
-                  <line x1="20" y1="50" x2="220" y2="50" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
-                  <line x1="15" y1="75" x2="225" y2="75" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3,3"/>
-                  <line x1="20" y1="75" x2="225" y2="75" stroke="#cbd5e1" stroke-width="1.5"/>
-                  <line x1="120" y1="88" x2="120" y2="12" stroke="#cbd5e1" stroke-width="1.5"/>
-                  <polyline points="222,72 228,75 222,78" fill="#cbd5e1"/>
-                  <polyline points="117,16 120,10 123,16" fill="#cbd5e1"/>
-                  <text x="222" y="70" fill="#94a3b8" font-size="8">x</text>
-                  <text x="125" y="14" fill="#94a3b8" font-size="8">y</text>
-                  <path d="M 30,74 Q 90,73 120,50 T 180,15" fill="none" stroke="#38bdf8" stroke-width="2"/>
-                  <text x="175" y="14" fill="#38bdf8" font-size="7.5" font-weight="bold">y = 2ˣ</text>
-                  <path d="M 60,15 Q 90,40 120,50 T 210,74" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="2,2"/>
-                  <text x="30" y="16" fill="#f59e0b" font-size="7.5" font-weight="bold">y = (½)ˣ</text>
-                  <circle cx="120" cy="50" r="3" fill="#fde047"/>
-                  <text x="124" y="48" fill="#fde047" font-size="7.5" font-weight="bold">(0, 1)</text>
-                </svg>
+                <!-- Column 3 -->
+                <td>
+                  <div class="pdf-board-column">
+                    <div class="pdf-board-col-header">ផ្ទាំងទី ៣៖ គំនូសក្រាប &amp; កិច្ចការ</div>
+                    <div style="font-size: 7.8pt;"><strong>៣. ក្រាប <span style="color: #38bdf8; font-family: 'Cambria Math', serif; font-style: italic;"><i>y</i> = 2<sup><i>x</i></sup></span> និង <span style="color: #f59e0b; font-family: 'Cambria Math', serif; font-style: italic;"><i>y</i> = (½)<sup><i>x</i></sup></span></strong></div>
+                    <div style="font-size: 7pt; color: #94a3b8; margin-bottom: 2px;">(កាត់ (0, 1) និងឆ្លុះគ្នាធៀប (<i>Oy</i>))</div>
 
-                <div style="margin-top: 3px; font-size: 7.5pt; color: #cbd5e1;">• ក្រាបទាំងពីរឆ្លុះគ្នាធៀបនឹងអ័ក្ស (<i>Oy</i>)</div>
-                <div style="margin-top: 4px; color: #fde047;"><strong>៤. កិច្ចការផ្ទះ៖</strong></div>
-                <div style="font-size: 7.5pt; color: #f8fafc;">• លំហាត់ទី ១ & ២ ទំព័រ ៦២ ក្នុងសៀវភៅគោល</div>
-              </div>
-            </div>
+                    <!-- Clean High-Quality Chalkboard Vector SVG Graph -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="90" viewBox="0 0 240 90" style="background: rgba(0,0,0,0.3); border-radius: 4px; display: block; margin: 4px 0; border: 1px solid rgba(255,255,255,0.15);">
+                      <line x1="20" y1="70" x2="220" y2="70" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+                      <line x1="20" y1="46" x2="220" y2="46" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+                      <line x1="15" y1="70" x2="225" y2="70" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3,3"/>
+                      <line x1="20" y1="70" x2="225" y2="70" stroke="#cbd5e1" stroke-width="1.5"/>
+                      <line x1="120" y1="84" x2="120" y2="10" stroke="#cbd5e1" stroke-width="1.5"/>
+                      <polyline points="222,67 228,70 222,73" fill="#cbd5e1"/>
+                      <polyline points="117,14 120,8 123,14" fill="#cbd5e1"/>
+                      <text x="222" y="65" fill="#94a3b8" font-size="8">x</text>
+                      <text x="125" y="12" fill="#94a3b8" font-size="8">y</text>
+                      <path d="M 30,69 Q 90,68 120,46 T 180,12" fill="none" stroke="#38bdf8" stroke-width="2"/>
+                      <text x="175" y="12" fill="#38bdf8" font-size="7.5" font-weight="bold">y = 2ˣ</text>
+                      <path d="M 60,12 Q 90,36 120,46 T 210,69" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="2,2"/>
+                      <text x="28" y="14" fill="#f59e0b" font-size="7.5" font-weight="bold">y = (½)ˣ</text>
+                      <circle cx="120" cy="46" r="3" fill="#fde047"/>
+                      <text x="124" y="44" fill="#fde047" font-size="7.5" font-weight="bold">(0, 1)</text>
+                    </svg>
+
+                    <div style="margin-top: 2px; font-size: 7.5pt; color: #cbd5e1;">• ក្រាបទាំងពីរឆ្លុះគ្នាធៀបនឹងអ័ក្ស (<i>Oy</i>)</div>
+                    <div style="margin-top: 3px; color: #fde047;"><strong>៤. កិច្ចការផ្ទះ៖</strong></div>
+                    <div style="font-size: 7.5pt; color: #f8fafc;">• លំហាត់ទី ១ &amp; ២ ទំព័រ ៦២ ក្នុងសៀវភៅគោល</div>
+                  </div>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
 
-        <!-- V. Student Inquiry Worksheet Template -->
+        <!-- V. STUDENT INQUIRY WORKSHEET TEMPLATE -->
         <div class="pdf-section">
           <div class="pdf-section-title">V. ឧបសម្ព័ន្ធ៖ សន្លឹកកិច្ចការរិះរករបស់សិស្ស (IBL Student Inquiry Worksheet)</div>
           <div class="pdf-worksheet-box">
-            <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #bae6fd; padding-bottom: 4px; margin-bottom: 6px;">
-              <strong style="color: #0369a1;">សន្លឹកកិច្ចការរិះរកគណិតវិទ្យា (INQUIRY WORKSHEET) — មេរៀន៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល</strong>
-              <span style="font-weight: bold;">ក្រុមទី៖ ............ ថ្នាក់ទី៖ ១១ .........</span>
-            </div>
+            <table style="width:100%; border-collapse:collapse; margin-bottom:6px;">
+              <tr>
+                <td style="padding:0 0 4px 0; border-bottom:1.5px solid #bae6fd;">
+                  <strong style="color: #0369a1;">សន្លឹកកិច្ចការរិះរកគណិតវិទ្យា (INQUIRY WORKSHEET) — មេរៀន៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល</strong>
+                </td>
+                <td style="padding:0 0 4px 0; border-bottom:1.5px solid #bae6fd; text-align:right; white-space:nowrap;">
+                  <strong>ក្រុមទី៖ ............ ថ្នាក់ទី៖ ១១ .........</strong>
+                </td>
+              </tr>
+            </table>
             <div style="margin-bottom: 5px;"><strong>🧪 ការណែនាំសកម្មភាពពិសោធន៍៖</strong> យកក្រដាស A4 មួយសន្លឹក បត់ជាពីរស្មើគ្នាម្តងហើយម្តងទៀត រាប់ចំនួនស្រទាប់ក្រដាសដែលកើនឡើង និងបំពេញតារាងទិន្នន័យ៖</div>
             <table style="width: 100%; border-collapse: collapse; font-size: 8pt; text-align: center; margin-bottom: 6px; background: #ffffff;">
               <thead>
                 <tr style="background: #e0f2fe; color: #0369a1;">
-                  <th style="border: 1px solid #bae6fd; padding: 4px; font-weight: bold;">ចំនួនដងនៃការបត់ ($x$)</th>
+                  <th style="border: 1px solid #bae6fd; padding: 4px; font-weight: bold;">ចំនួនដងនៃការបត់ (<span class="math-sym"><i>x</i></span>)</th>
                   <th style="border: 1px solid #bae6fd; padding: 4px;">0</th>
                   <th style="border: 1px solid #bae6fd; padding: 4px;">1</th>
                   <th style="border: 1px solid #bae6fd; padding: 4px;">2</th>
                   <th style="border: 1px solid #bae6fd; padding: 4px;">3</th>
                   <th style="border: 1px solid #bae6fd; padding: 4px;">4</th>
-                  <th style="border: 1px solid #bae6fd; padding: 4px; background: #fef3c7; color: #92400e;">$x$ (ទូទៅ)</th>
+                  <th style="border: 1px solid #bae6fd; padding: 4px; background: #fef3c7; color: #92400e;"><span class="math-sym"><i>x</i></span> (ទូទៅ)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="border: 1px solid #bae6fd; padding: 4px; font-weight: bold; text-align: left; background: #f8fafc;">ចំនួនស្រទាប់ក្រដាស ($y$)</td>
+                  <td style="border: 1px solid #bae6fd; padding: 4px; font-weight: bold; text-align: left; background: #f8fafc;">ចំនួនស្រទាប់ក្រដាស (<span class="math-sym"><i>y</i></span>)</td>
                   <td style="border: 1px solid #bae6fd; padding: 4px; font-weight: bold; color: #0284c7;">1</td>
                   <td style="border: 1px solid #bae6fd; padding: 4px; color: #94a3b8;">......</td>
                   <td style="border: 1px solid #bae6fd; padding: 4px; color: #94a3b8;">......</td>
                   <td style="border: 1px solid #bae6fd; padding: 4px; color: #94a3b8;">......</td>
                   <td style="border: 1px solid #bae6fd; padding: 4px; color: #94a3b8;">......</td>
-                  <td style="border: 1px solid #bae6fd; padding: 4px; font-weight: bold; color: #0369a1;">y = ..........</td>
+                  <td style="border: 1px solid #bae6fd; padding: 4px; font-weight: bold; color: #0369a1;"><span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span></td>
                 </tr>
               </tbody>
             </table>
-            <div style="line-height: 1.6; font-size: 8pt;">
+            <div style="line-height: 1.65; font-size: 8pt;">
               <div><strong>សំណួរពិភាក្សាក្នុងក្រុម (Discussion Questions)៖</strong></div>
-              <div>១. នៅពេល $x$ កើន ១ ឯកតា តើតម្លៃ $y$ ប្រែប្រួលដូចម្តេច? (បូកថែម ឬគុណនឹងប៉ុន្មាន?) ➔ ចម្លើយ៖ .............................................</div>
-              <div>២. ចូរទាញរូបមន្តទំនាក់ទំនងទូទៅរវាងចំនួនស្រទាប់ $y$ និងចំនួនដងបត់ $x$ ➔ ចម្លើយ៖ $y =$ ....................................................</div>
+              <div>១. នៅពេល <span class="math-sym"><i>x</i></span> កើន ១ ឯកតា តើតម្លៃ <span class="math-sym"><i>y</i></span> ប្រែប្រួលដូចម្តេច? (បូកថែម ឬគុណនឹងប៉ុន្មាន?) ➔ ចម្លើយ៖ .............................................</div>
+              <div>២. ចូរទាញរូបមន្តទំនាក់ទំនងទូទៅរវាងចំនួនស្រទាប់ <span class="math-sym"><i>y</i></span> និងចំនួនដងបត់ <span class="math-sym"><i>x</i></span> ➔ ចម្លើយ៖ <span class="math-sym"><i>y</i> =</span> ....................................................</div>
               <div>៣. ប្រសិនបើយើងបត់បាន ៧ ដង តើនឹងទទួលបានក្រដាសចំនួនប៉ុន្មានស្រទាប់? ➔ ចម្លើយ៖ .............................................................</div>
             </div>
           </div>
         </div>
 
-        <!-- VI. Differentiation Strategies in 2 Columns -->
+        <!-- VI. DIFFERENTIATION STRATEGIES -->
         <div class="pdf-section">
           <div class="pdf-section-title">VI. យុទ្ធសាស្ត្រគាំទ្រសិស្សចម្រុះកម្រិត (Differentiation Strategies)</div>
-          <div class="pdf-diff-grid">
-            <div class="pdf-diff-card pdf-diff-slow">
-              <strong style="color: #92400e;">🌱 សម្រាប់សិស្សរៀនយឺត (Scaffolding / Support):</strong>
-              <div style="margin-top: 3px; color: #78350f; line-height: 1.5;">
-                • ផ្ដល់ការណែនាំជាជំហានៗក្នុងការបត់ក្រដាសជាក់ស្តែង និងការរាប់ស្រទាប់។<br>
-                • ជួយគណនាតម្លៃស្វ័យគុណ $2^1 = 2$, $2^2 = 4$, $2^3 = 8$... ដើម្បីកត់សម្គាល់គំរូទិន្នន័យ។<br>
-                • ប្រើក្រដាសដែលមានក្រឡាចត្រង្គស្រាប់ និងចំណុចគោល (0, 1) ដើម្បីងាយស្រួលសង់ក្រាប។
-              </div>
-            </div>
-            <div class="pdf-diff-card pdf-diff-fast">
-              <strong style="color: #1e40af;">🚀 សម្រាប់សិស្សពូកែ (Extension / Challenge):</strong>
-              <div style="margin-top: 3px; color: #1e3a8a; line-height: 1.5;">
-                • ចោទសួរអំពីការរកលីមីតនៅអនន្ត៖ $\lim_{x \to +\infty} 2^x = +\infty$ និង $\lim_{x \to -\infty} 2^x = 0$។<br>
-                • ឱ្យស្វែងយល់បន្ថែមអំពីអនុគមន៍អិចស្ប៉ូណង់ស្យែលធម្មជាតិ $y = e^x$ ($e \approx 2.71828$)។<br>
-                • សាកល្បងដោះស្រាយសមីការអិចស្ប៉ូណង់ស្យែលគ្រឹះ $2^x = 32$ និង $3^{x+1} = 27$។
-              </div>
-            </div>
-          </div>
+          <table class="pdf-diff-table">
+            <tr>
+              <td>
+                <div class="pdf-diff-card pdf-diff-slow">
+                  <strong style="color: #92400e;">🌱 សម្រាប់សិស្សរៀនយឺត (Scaffolding / Support):</strong>
+                  <div style="margin-top: 4px; color: #78350f; line-height: 1.55;">
+                    • ផ្ដល់ការណែនាំជាជំហានៗក្នុងការបត់ក្រដាសជាក់ស្តែង និងការរាប់ស្រទាប់។<br>
+                    • ជួយគណនាតម្លៃស្វ័យគុណ <span class="math-sym">2<sup>1</sup> = 2</span>, <span class="math-sym">2<sup>2</sup> = 4</span>, <span class="math-sym">2<sup>3</sup> = 8</span>... ដើម្បីកត់សម្គាល់គំរូទិន្នន័យ។<br>
+                    • ប្រើក្រដាសដែលមានក្រឡាចត្រង្គស្រាប់ និងចំណុចគោល <span class="math-sym">(0, 1)</span> ដើម្បីងាយស្រួលសង់ក្រាប។
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="pdf-diff-card pdf-diff-fast">
+                  <strong style="color: #1e40af;">🚀 សម្រាប់សិស្សពូកែ (Extension / Challenge):</strong>
+                  <div style="margin-top: 4px; color: #1e3a8a; line-height: 1.55;">
+                    • ចោទសួរអំពីការរកលីមីតនៅអនន្ត៖ <span class="math-sym">lim<sub><i>x</i> → +∞</sub> 2<sup><i>x</i></sup> = +∞</span> និង <span class="math-sym">lim<sub><i>x</i> → −∞</sub> 2<sup><i>x</i></sup> = 0</span>។<br>
+                    • ឱ្យស្វែងយល់បន្ថែមអំពីអនុគមន៍អិចស្ប៉ូណង់ស្យែលធម្មជាតិ <span class="math-sym"><i>y</i> = <i>e</i><sup><i>x</i></sup></span> (<span class="math-sym"><i>e</i> ≈ 2.71828</span>)។<br>
+                    • សាកល្បងដោះស្រាយសមីការអិចស្ប៉ូណង់ស្យែលគ្រឹះ <span class="math-sym">2<sup><i>x</i></sup> = 32</span> និង <span class="math-sym">3<sup><i>x</i>+1</sup> = 27</span>។
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
 
-        <!-- VII. Official Approval & Signatures -->
-        <div class="pdf-signatures">
-          <div class="pdf-sig-col">
-            បានឃើញ និងឯកភាព<br>
-            <strong>នាយក / នាយិកាវិទ្យាល័យ</strong><br><br><br><br>
-            ...................................................
-          </div>
-          <div class="pdf-sig-col">
-            ថ្ងៃទី ........ ខែ ............. ឆ្នាំ ២០២៦<br>
-            <strong>គ្រូបង្រៀនឯកទេសគណិតវិទ្យា</strong><br><br><br><br>
-            <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong>
-          </div>
-        </div>
+        <!-- VII. OFFICIAL APPROVAL & SIGNATURES -->
+        <table class="pdf-sig-table">
+          <tr>
+            <td>
+              បានឃើញ និងឯកភាព<br>
+              <strong>នាយក / នាយិកាវិទ្យាល័យ</strong><br><br><br><br>
+              ...................................................
+            </td>
+            <td>
+              ថ្ងៃទី ........ ខែ ............. ឆ្នាំ ២០២៦<br>
+              <strong>គ្រូបង្រៀនឯកទេសគណិតវិទ្យា</strong><br><br><br><br>
+              <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong>
+            </td>
+          </tr>
+        </table>
+
       </div>
     
 </body>

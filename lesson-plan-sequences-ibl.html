@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក | ស្វ៊ីតចំនួនពិត</title>
+  
+  <!-- Google Fonts: Kantumruy Pro, Moul, & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Moul&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for High Quality Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- html2pdf.js for High Fidelity Client-Side PDF Export -->
+  <script src="js/html2pdf.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #10b981;
+      --accent-dark: #047857;
+      --accent-light: #ecfdf5;
+      --warning: #f59e0b;
+      --warning-light: #fef3c7;
+      --danger: #ef4444;
+      --danger-light: #fee2e2;
+      --purple: #8b5cf6;
+      --purple-light: #f3e8ff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --text-dark: #0f172a;
+      --border: #cbd5e1;
+      --border-light: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Kantumruy Pro', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+
+    .plan-container {
+      max-width: 1060px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 3rem 3.5rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    /* Print Controls Bar */
+    .controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px dashed var(--border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-word {
+      background: #1e40af;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.25);
+    }
+    .btn-word:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .btn-pdf {
+      background: #dc2626;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+    }
+    .btn-pdf:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+    }
+
+    /* Official Ministry Header */
+    .official-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .country-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .motto-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .header-divider {
+      width: 140px;
+      height: 2px;
+      background: var(--text-dark);
+      margin: 0.5rem auto 1.5rem;
+    }
+
+    /* School Metadata Vertical Card */
+    .metadata-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .meta-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .plan-main-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1rem 0 1.5rem;
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    .plan-main-title h1 {
+      font-family: 'Moul', cursive;
+      font-size: 1.45rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .plan-main-title .subtitle {
+      font-size: 1.02rem;
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    /* Section Styles */
+    .plan-section {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      border-left: 4px solid var(--primary);
+      padding-left: 0.85rem;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Tables */
+    .table-column-vertical {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.25rem;
+      font-size: 0.92rem;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .table-column-vertical th {
+      background: #f1f5f9;
+      color: var(--text-dark);
+      font-weight: 700;
+      text-align: center;
+      padding: 0.85rem 0.75rem;
+      border: 1px solid var(--border);
+      vertical-align: middle;
+      font-size: 0.92rem;
+    }
+
+    .table-column-vertical td {
+      border: 1px solid var(--border);
+      padding: 0.85rem 0.9rem;
+      vertical-align: top;
+      line-height: 1.65;
+    }
+
+    .table-column-vertical tbody tr:nth-child(even) {
+      background-color: #fafbfc;
+    }
+
+    /* Swapped 3-Column Teaching Process Layout */
+    .col-teacher-1 {
+      width: 32%;
+    }
+    .col-content-2 {
+      width: 36%;
+      background: rgba(248, 250, 252, 0.7);
+    }
+    .col-student-3 {
+      width: 32%;
+    }
+
+    /* Stage Badges */
+    .stage-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .badge-stage-1 { background: var(--primary-light); color: var(--primary-dark); border: 1px solid rgba(2, 132, 199, 0.3); }
+    .badge-stage-2 { background: var(--warning-light); color: #92400e; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .badge-stage-3 { background: var(--accent-light); color: var(--accent-dark); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-stage-4 { background: var(--purple-light); color: #6b21a8; border: 1px solid rgba(139, 92, 246, 0.3); }
+    .badge-stage-5 { background: var(--danger-light); color: #991b1b; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+    /* Blackboard Layout */
+    .board-container {
+      background: #1e293b;
+      border: 8px solid #78350f;
+      border-radius: 10px;
+      padding: 1.25rem;
+      color: #f8fafc;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.2);
+      margin-top: 1rem;
+    }
+
+    .board-header {
+      text-align: center;
+      color: #fde047;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    }
+
+    .board-columns-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .board-column {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 1rem 0.9rem;
+      background: rgba(15, 23, 42, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .board-column-header {
+      font-weight: 700;
+      color: #38bdf8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    /* Worksheet Box */
+    .worksheet-box {
+      border: 2px dashed #0284c7;
+      background: #f0f9ff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        color: #000000;
+        font-size: 9.5pt;
+      }
+      .plan-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .controls-bar {
+        display: none !important;
+      }
+      .table-column-vertical th {
+        background: #e2e8f0 !important;
+        color: #000000 !important;
+      }
+      .board-container {
+        background: #f8fafc !important;
+        color: #0f172a !important;
+        border: 2px solid #000000 !important;
+      }
+      .board-column {
+        border-color: #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      .board-column-header {
+        color: #0369a1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="plan-container">
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <a href="index.html" class="btn btn-outline">
+          <span>🏠 ទំព័រដើម</span>
+        </a>
+        <a href="lessons.html" class="btn btn-outline">
+          <span>📚 ឯកសារបង្រៀនទាំងអស់</span>
+        </a>
+        <a href="lesson-plan-exponential-ibl.html" class="btn btn-outline" style="border-color: #0284c7; color: #0284c7;">
+          <span>📑 កិច្ចតែងការ៖ អិចស្ប៉ូណង់ស្យែល</span>
+        </a>
+        <a href="lesson-plan-arithmetic-sequence.html" class="btn btn-outline" style="border-color: #f59e0b; color: #d97706;">
+          <span>📑 កិច្ចតែងការ៖ ស្វ៊ីតនព្វន្ត (តួទី n)</span>
+        </a>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <button onclick="exportToWord()" class="btn btn-word" title="ទាញយកជាឯកសារ Word (.doc)">
+          <span>📄 Word (.doc)</span>
+        </button>
+        <button onclick="window.print()" class="btn btn-primary" title="បោះពុម្ពឯកសារចេញក្រដាស A4">
+          <span>🖨️ បោះពុម្ព (Print / PDF)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Official Document Container -->
+    <div id="lesson-plan-document">
+      <!-- Official Ministry Header -->
+      <div class="official-header">
+        <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
+        <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+        <div class="header-divider"></div>
+      </div>
+
+      <!-- Administrative Metadata Card -->
+      <div class="metadata-card">
+        <div class="meta-item">
+          <span class="meta-label">គ្រឹះស្ថានសិក្សា</span>
+          <span class="meta-value">វិទ្យាល័យសសរស្តម្ភ</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">កម្រិតថ្នាក់ & មុខវិជ្ជា</span>
+          <span class="meta-value">ថ្នាក់ទី ១១ | គណិតវិទ្យា (ភាគ១)</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">គ្រូបង្រៀន</span>
+          <span class="meta-value">គ្រូបង្រៀនគណិតវិទ្យា</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">ពេលវេលា</span>
+          <span class="meta-value">៥០ នាទី (១ ម៉ោងសិក្សាពេញលេញ)</span>
+        </div>
+      </div>
+
+      <!-- Plan Main Title -->
+      <div class="plan-main-title">
+        <h1>កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក</h1>
+        <div class="subtitle">
+          <strong>មេរៀនទី ១៖ ស្វ៊ីតចំនួនពិត</strong><br>
+          ខ្លឹមសារម៉ោងបង្រៀន៖ <strong>១. សញ្ញាណស្វ៊ីត (ស្វ៊ីតរាប់អស់ ស្វ៊ីតអនន្ត និយមន័យ និងតួនៃស្វ៊ីត)</strong>
+        </div>
+      </div>
+
+      <!-- I. Learning Objectives Table -->
+      <div class="plan-section">
+        <h2 class="section-title">I. វត្ថុបំណងមេរៀន</h2>
+        <table class="table-column-vertical">
+          <thead>
+            <tr>
+              <th style="width: 25%;">ដែនអភិវឌ្ឍន៍</th>
+              <th style="width: 50%;">វត្ថុបំណងជាក់លាក់ (ក្រោយបញ្ចប់ការរៀន ៥០ នាទី សិស្សអាច៖)</th>
+              <th style="width: 25%;">សម្ភារឧបទេស</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>១. វិជ្ជាសម្បទា</strong></td>
+              <td>
+                • កំណត់សញ្ញាណស្វ៊ីតចំនួនពិត និងឲ្យនិយមន័យស្វ៊ីតចំនួនពិតថាជាអនុគមន៍លេខកំណត់ពី $\mathbb{N}$ ទៅ $\mathbb{R}$ បានត្រឹមត្រូវ។<br>
+                • បែងចែកភាពខុសគ្នាយ៉ាងច្បាស់រវាងស្វ៊ីតរាប់អស់ និងស្វ៊ីតអនន្ត។<br>
+                • កំណត់សម្គាល់និមិត្តសញ្ញាស្វ៊ីត $(a_n)$ និងស្គាល់តួទី $1$ ($a_1$), តួទី $2$ ($a_2$), ..., តួទី $n$ ($a_n$) បានច្បាស់លាស់។
+              </td>
+              <td>
+                • សៀវភៅសិក្សាគោលគណិតវិទ្យាថ្នាក់ទី ១១ (ភាគ១)<br>
+                • បន្ទះកាតលេខល្បែងទស្សន៍ទាយគំរូ<br>
+                • តារាងចំណាត់ថ្នាក់ស្វ៊ីតរាប់អស់ និងស្វ៊ីតអនន្ត
+              </td>
+            </tr>
+            <tr>
+              <td><strong>២. បំណិនសម្បទា</strong></td>
+              <td>
+                • សង្កេតរកឃើញលំនាំគំរូទិន្នន័យនៃស្វ៊ីតលេខ និងសរសេរបំពេញតួបន្តបន្ទាប់បានយ៉ាងត្រឹមត្រូវ។<br>
+                • គណនាតម្លៃនៃបណ្តាតួស្វ៊ីត $a_1, a_2, a_3, \dots$ ដោយជំនួសលេខរាប់ $n = 1, 2, 3, \dots$ ចូលក្នុងកន្សោមតួទី $n$ ($a_n$) បានរហ័ស និងត្រឹមត្រូវ។<br>
+                • ធ្វើការពិភាក្សាជាក្រុម និងរាយការណ៍បង្ហាញលទ្ធផលពីរបកគំហើញរបស់ក្រុមបានក្បោះក្បាយ។
+              </td>
+              <td>
+                • សន្លឹកកិច្ចការរិះរកស្រាវជ្រាវប្រចាំក្រុម<br>
+                • ក្ដារខៀន ប៊ិចហ្វឺត បន្ទាត់គូសតារាង<br>
+                • ក្តារឈ្នួនតូច និងក្រដាសព្រាងសម្រាប់ដោះស្រាយ
+              </td>
+            </tr>
+            <tr>
+              <td><strong>៣. ចរិយាសម្បទា</strong></td>
+              <td>
+                • បណ្ដុះស្មារតីចង់ដឹងចង់ឃើញ សង្កេតពិនិត្យ និងការគិតបែបវិភាគស៊ីជម្រៅ។<br>
+                • បង្ហាញភាពសហការ ការទទួលខុសត្រូវ និងការជួយគ្នាទៅវិញទៅមកក្នុងការបំពេញការងារជាក្រុម។<br>
+                • យល់ដឹងពីតម្លៃនៃការរៀបចំទិន្នន័យតាមលំដាប់ជាក់លាក់ក្នុងជីវភាពរស់នៅប្រចាំថ្ងៃ និងវិទ្យាសាស្ត្រ។
+              </td>
+              <td>
+                • បន្ទះកាតសំណួរគន្លឹះ និងកិច្ចការពិភាក្សាជាក្រុម<br>
+                • សន្លឹកកិច្ចការចាកចេញ (Exit Ticket) វាយតម្លៃចុងម៉ោង<br>
+                • ស្ថានភាពជាក់ស្តែងក្នុងជីវភាពប្រចាំថ្ងៃ
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- II. Inquiry Question & Materials -->
+      <div class="plan-section">
+        <h2 class="section-title">II. សំណួរគន្លឹះរិះរក និងសម្ភារឧបទេស</h2>
+        <div style="background: var(--accent-light); border: 1.5px solid var(--accent); border-radius: 10px; padding: 1.1rem 1.4rem; margin-bottom: 1.25rem;">
+          <strong style="color: var(--accent-dark); font-size: 1.05rem;">❓ សំណួរគន្លឹះបំផុសការរិះរក៖</strong>
+          <p style="color: #065f46; margin-top: 0.35rem; font-size: 0.98rem; font-weight: 500; line-height: 1.7;">
+            «តើលេខដែលរៀបជាជួរៗមានក្បួនខ្នាតលំដាប់ និងទំនាក់ទំនងអ្វីខ្លះ ហើយតើយើងអាចបង្កើតម៉ាស៊ីនអនុគមន៍គណិតវិទ្យាដើម្បីទស្សន៍ទាយលេខដែលនៅឆ្ងាយៗបានដោយរបៀបណា?»
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+          <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem;">
+            <strong style="color: var(--primary-dark); font-size: 0.95rem;">🛠️ សម្ភារឧបទេសសម្រាប់គ្រូ៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.9rem; line-height: 1.7;">
+              <li>ក្ដារខៀន ប៊ិចហ្វឺត បន្ទាត់គូសតារាង</li>
+              <li>បន្ទះកាតលេខល្បែងទស្សន៍ទាយគំរូ</li>
+              <li>សន្លឹកកិច្ចការរិះរកចែកជូនគ្រប់ក្រុម</li>
+              <li>សន្លឹកកិច្ចការចាកចេញសម្រាប់វាយតម្លៃចុងម៉ោង</li>
+            </ul>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem;">
+            <strong style="color: var(--accent-dark); font-size: 0.95rem;">👥 សម្ភារសម្រាប់ក្រុមសិស្ស (៤-៥ នាក់ក្នុងមួយក្រុម)៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.9rem; line-height: 1.7;">
+              <li>សៀវភៅសិក្សាគោលគណិតវិទ្យាថ្នាក់ទី ១១ (ភាគ១)</li>
+              <li>សន្លឹកកិច្ចការស្រាវជ្រាវប្រចាំក្រុម</li>
+              <li>ប៊ិច ក្រដាសព្រាង និងក្តារឈ្នួនតូចសម្រាប់បង្ហាញចម្លើយ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- III. 3-Column Teaching Process Table (Swapped Columns) -->
+      <div class="plan-section">
+        <h2 class="section-title">III. តារាងដំណើរការបង្រៀន និងរៀនបែបការរិះរក (៣ ជួរឈរស្តង់ដារ)</h2>
+        <table class="table-column-vertical">
+          <thead>
+            <tr>
+              <th class="col-teacher-1">សកម្មភាពគ្រូ</th>
+              <th class="col-content-2">ដំណាក់កាល ខ្លឹមសារមេរៀន & ពេលវេលា</th>
+              <th class="col-student-3">សកម្មភាពសិស្ស</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 1. ENGAGE -->
+            <tr>
+              <td class="col-teacher-1">
+                • ពិនិត្យវត្តមាន អនាម័យ និងរៀបចំសិស្សជាក្រុម (៤-៥ នាក់ក្នុងមួយក្រុម)។<br>
+                • សរសេរបញ្ជីលេខទាំង ៤ លើក្តារខៀន រួចចោទសួរ៖ <em>«តើលេខទាំងនេះរៀបចំដោយចៃដន្យ ឬមានក្បួនខ្នាត? តើប្អូនៗអាចទស្សន៍ទាយលេខបន្ទាប់បានទេ?»</em><br>
+                • ចោទសួរប្រៀបធៀប៖ <em>«ហេតុអ្វីបញ្ជីទី ១ និង ២ មានសញ្ញាចុចបី (...) ចំណែកបញ្ជីទី ៣ និង ៤ ឈប់ត្រឹម ១៥ និង ១/៦?»</em>
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-1">ជំហានទី ១៖ ការចូលរួម និងបំផុសចម្ងល់ (ពេលវេលា៖ ៧ នាទី)</span><br>
+                <strong>ល្បែងទស្សន៍ទាយលេខបន្តបន្ទាប់៖</strong><br>
+                • បញ្ជីទី ១៖ $1, 2, 3, 4, 5, \dots$<br>
+                • បញ្ជីទី ២៖ $2, 4, 6, 8, 10, \dots$<br>
+                • បញ្ជីទី ៣៖ $1, 3, 5, 7, 9, 11, 13, 15$<br>
+                • បញ្ជីទី ៤៖ $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}$<br><br>
+                <strong>ចម្ងល់គន្លឹះ៖</strong> តើបញ្ជីណាមានទីបញ្ចប់ ហើយបញ្ជីណាគ្មានទីបញ្ចប់?
+              </td>
+              <td class="col-student-3">
+                • អង្គុយតាមក្រុម និងចូលរួមសង្កេតដោយយកចិត្តទុកដាក់។<br>
+                • សិស្សឆ្លើយទស្សន៍ទាយ៖<br>
+                - បញ្ជី ១ បូកថែម ១ (លេខបន្ទាប់គឺ ៦)<br>
+                - បញ្ជី ២ បូកថែម ២ (លេខបន្ទាប់គឺ ១២)<br>
+                • ឆ្លើយអំពីភាពខុសគ្នា៖ <em>«ចុចបីមានន័យថានៅមានលេខតទៅទៀតរាប់មិនអស់ ចំណែកអត់ចុចៗគឺអស់ត្រឹមហ្នឹង»</em>។
+              </td>
+            </tr>
+
+            <!-- 2. EXPLORE -->
+            <tr>
+              <td class="col-teacher-1">
+                • ចែកសន្លឹកកិច្ចការរិះរកជូនគ្រប់ក្រុម។<br>
+                • ណែនាំសិស្សឱ្យបំពេញសកម្មភាពទី ១ (ចាត់ថ្នាក់ស្វ៊ីតរាប់អស់ និងស្វ៊ីតអនន្ត)។<br>
+                • ណែនាំសកម្មភាពទី ២៖ ឱ្យសិស្សដើរតួជាម៉ាស៊ីនអនុគមន៍ ដោយយកចំនួនរាប់ $n=1, 2, 3, 4$ ទៅជំនួសក្នុង $f(n) = 2n + 1$ ដើម្បីទាញរកលេខទិន្នផល។<br>
+                • ដើរសម្របសម្រួល លើកទឹកចិត្ត និងជួយណែនាំដល់ក្រុមដែលជួបការលំបាក។
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-2">ជំហានទី ២៖ ការរុករក និងពិសោធន៍ជាក្រុម (ពេលវេលា៖ ១៥ នាទី)</span><br>
+                <strong>ការចាត់ថ្នាក់ និងម៉ាស៊ីនអនុគមន៍៖</strong><br>
+                • <strong>កិច្ចការទី ១៖</strong> បែងចែកជា ២ ក្រុមធំៗ<br>
+                - ស្វ៊ីតរាប់អស់<br>
+                - ស្វ៊ីតអនន្ត<br><br>
+                • <strong>កិច្ចការទី ២៖</strong> សាកល្បងម៉ាស៊ីនអនុគមន៍ $f(n) = 2n + 1$ ចំពោះ $n \in \{1, 2, 3, 4\}$៖<br>
+                - $n=1 \Rightarrow f(1) = 2(1)+1 = 3$<br>
+                - $n=2 \Rightarrow f(2) = 2(2)+1 = 5$<br>
+                - $n=3 \Rightarrow f(3) = 2(3)+1 = 7$<br>
+                - $n=4 \Rightarrow f(4) = 2(4)+1 = 9$<br>
+                បង្កើតបានលំដាប់លេខ៖ $3, 5, 7, 9, \dots$
+              </td>
+              <td class="col-student-3">
+                • ពិភាក្សាក្នុងក្រុម និងបំពេញសន្លឹកកិច្ចការ៖<br>
+                - ស្វ៊ីតរាប់អស់៖ បញ្ជី ៣ និង ៤ (ស្គាល់តួចុងក្រោយ)<br>
+                - ស្វ៊ីតអនន្ត៖ បញ្ជី ១ និង ២ (រាប់មិនអស់)<br>
+                • គណនាម៉ាស៊ីនអនុគមន៍៖<br>
+                - $f(1) = 3$<br>
+                - $f(2) = 5$<br>
+                - $f(3) = 7$<br>
+                - $f(4) = 9$<br>
+                • ពិភាក្សាថា៖ <em>«លេខលំដាប់ដែលបង្កើតបានគឺ ៣, ៥, ៧, ៩, ...»</em>។
+              </td>
+            </tr>
+
+            <!-- 3. EXPLAIN -->
+            <tr>
+              <td class="col-teacher-1">
+                • អញ្ជើញតំណាងក្រុមឡើងរាយការណ៍ និងសរសេរលទ្ធផលលើក្តារខៀន។<br>
+                • សង្គ្រោះ និងធ្វើទូទៅកម្មបង្កើតជានិយមន័យស្វ៊ីតចំនួនពិត។<br>
+                • ពន្យល់សង្កត់ធ្ងន់៖ <em>«ហេតុអ្វីដែនកំណត់នៃស្វ៊ីតត្រូវតែជា $\mathbb{N} = \{1, 2, 3, \dots\}$?»</em> (ព្រោះជាលំដាប់រាប់៖ តួទី ១, ទី ២, ទី ៣...)។<br>
+                • ណែនាំនិមិត្តសញ្ញា $(a_n)$ និងរបៀបអានតួទី $n$។
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-3">ជំហានទី ៣៖ ការពន្យល់ និងបង្កើតគំនិត (ពេលវេលា៖ ១២ នាទី)</span><br>
+                <strong>និយមន័យស្វ៊ីតចំនួនពិត៖</strong><br>
+                ស្វ៊ីតចំនួនពិត គឺជាអនុគមន៍លេខដែលកំណត់ពី $\mathbb{N}$ ទៅ $\mathbb{R}$៖<br>
+                $$f: \mathbb{N} \to \mathbb{R},\quad n \mapsto f(n) = a_n$$<br>
+                <strong>និមិត្តសញ្ញា & តួនៃស្វ៊ីត៖</strong><br>
+                • ស្វ៊ីតតាងដោយ $(a_n)$ ដែល $n \in \mathbb{N} = \{1, 2, 3, \dots\}$<br>
+                • $a_1$៖ តួទី ១, $a_2$៖ តួទី ២, $a_3$៖ តួទី ៣, ..., $a_n$៖ តួទី $n$ (តួទូទៅ)<br><br>
+                • <strong>ស្វ៊ីតរាប់អស់៖</strong> ស្គាល់ចំនួនតួ និងតួចុងក្រោយ<br>
+                • <strong>ស្វ៊ីតអនន្ត៖</strong> មានចំនួនតួច្រើនរាប់មិនអស់
+              </td>
+              <td class="col-student-3">
+                • តំណាងក្រុមឡើងរាយការណ៍ពីរបកគំហើញ។<br>
+                • សិស្សឆ្លើយសំណួរគ្រូ៖ <em>«ដែនកំណត់ត្រូវតែជា $\mathbb{N}$ ព្រោះយើងមិនអាចនិយាយថាតួទីកន្លះ ឬតួទីដកមួយបានឡើយ»</em>។<br>
+                • កត់ត្រានិយមន័យ និមិត្តសញ្ញា និងលក្ខណៈសម្គាល់ចូលក្នុងសៀវភៅមេរៀន។
+              </td>
+            </tr>
+
+            <!-- 4. ELABORATE -->
+            <tr>
+              <td class="col-teacher-1">
+                • ដាក់លំហាត់គំរូទី ១ និង ២ ពីសៀវភៅពុម្ពទំព័រ ២ លើក្តារខៀន។<br>
+                • ណែនាំគន្លឹះដោះស្រាយ៖ សង្កេតគម្លាតតួ (បូកថែម ឬស្វ័យគុណ) និងរបៀបគណនាស្វ័យគុណសញ្ញា $(-1)^{n+1}$។<br>
+                • ដាក់លំហាត់ប្រតិបត្តិ (ខ) ឱ្យសិស្សប្រកួតគ្នាធ្វើលើក្តារឈ្នួនជាក្រុមរយៈពេល ២ នាទី។<br>
+                • ត្រួតពិនិត្យ ផ្តល់ការកោតសរសើរ និងពន្យល់កែតម្រូវភ្លាមៗ។
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-4">ជំហានទី ៤៖ ការពង្រីកចំណេះដឹង និងអនុវត្ត (ពេលវេលា៖ ១០ នាទី)</span><br>
+                <strong>លំហាត់គំរូទី ១ (បំពេញ ៣ តួទៀត)៖</strong><br>
+                ក. $1, 5, 9, \dots \Rightarrow 13, 17, 21$ (+4)<br>
+                ខ. $1, 8, 27, \dots \Rightarrow 64, 125, 216$ ($n^3$)<br><br>
+                <strong>លំហាត់គំរូទី ២ (រក ៥ តួដំបូង)៖</strong><br>
+                $a_n = \frac{(-1)^{n+1}}{n+1}$ ចំពោះ $1 \le n \le 5$៖<br>
+                $a_1 = \frac{1}{2}, a_2 = -\frac{1}{3}, a_3 = \frac{1}{4}, a_4 = -\frac{1}{5}, a_5 = \frac{1}{6}$<br><br>
+                <strong>ប្រតិបត្តិរហ័ស (ខ)៖</strong><br>
+                $a_n = \frac{1}{n+2}, 1 \le n \le 4 \Rightarrow \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}$
+              </td>
+              <td class="col-student-3">
+                • ចូលរួមដោះស្រាយលំហាត់គំរូជាមួយគ្រូ។<br>
+                • សិស្សធ្វើការគណនាដោយជំនួស $n=1, 2, 3, 4, 5$ រកឃើញតួស្វ៊ីតមានសញ្ញាស្លាស់គ្នា ($+$, $-$, $+$, $-$, $+$)។<br>
+                • ក្រុមទាំងអស់ប្រណាំងគ្នាដោះស្រាយលំហាត់ប្រតិបត្តិលើក្តារឈ្នួន និងលើកបង្ហាញចម្លើយ៖ $\frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}$។
+              </td>
+            </tr>
+
+            <!-- 5. EVALUATE -->
+            <tr>
+              <td class="col-teacher-1">
+                • ចែកសន្លឹកកិច្ចការចាកចេញឱ្យសិស្សបំពេញរៀងៗខ្លួនរយៈពេល ២ នាទី។<br>
+                • ប្រមូលសន្លឹកកិច្ចការ និងឱ្យសិស្សស្ម័គ្រចិត្តឆ្លើយផ្ទាល់មាត់ ១ នាក់។<br>
+                • ឆ្លុះបញ្ចាំងសរុប៖ <em>«ស្វ៊ីតគឺដូចជាខ្សែច្រវាក់លេខដែលមានវិន័យ និងក្បួនច្បាប់ច្បាស់លាស់»</em>។<br>
+                • ដាក់កិច្ចការផ្ទះ៖ លំហាត់ប្រតិបត្តិ ក. និង គ. (ទំព័រ ២ សៀវភៅពុម្ព)។
+              </td>
+              <td class="col-content-2">
+                <span class="stage-badge badge-stage-5">ជំហានទី ៥៖ ការវាយតម្លៃ និងឆ្លុះបញ្ចាំង (ពេលវេលា៖ ៦ នាទី)</span><br>
+                <strong>សន្លឹកកិច្ចការចាកចេញ (២ នាទី)៖</strong><br>
+                ១. តើស្វ៊ីត $4, 7, 10, 13, \dots$ ជាស្វ៊ីតរាប់អស់ ឬអនន្ត?<br>
+                ២. បើ $a_n = 3n - 1$ ចូរគណនាតួទី $1$ ($a_1$) និងតួទី $3$ ($a_3$)។<br><br>
+                <strong>ឆ្លុះបញ្ចាំងសរុប & កិច្ចការផ្ទះ</strong>
+              </td>
+              <td class="col-student-3">
+                • បំពេញសន្លឹកកិច្ចការចាកចេញដោយស្មោះត្រង់ និងឯករាជ្យ៖<br>
+                ១. ស្វ៊ីតអនន្ត (ព្រោះមានចុចបីរាប់មិនអស់)<br>
+                ២. $a_1 = 3(1)-1 = 2$, $a_3 = 3(3)-1 = 8$<br>
+                • ស្ដាប់ការបូកសរុប និងកត់ត្រាកិច្ចការផ្ទះចូលសៀវភៅ។
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- IV. Blackboard Layout Plan -->
+      <div class="plan-section">
+        <h2 class="section-title">IV. គំនូរប្លង់ក្ដារខៀន (៣ ជួរឈរ)</h2>
+        <div class="board-container">
+          <div class="board-header">
+            កាលបរិច្ឆេទ៖ ថ្ងៃទី ......... ខែ ......... ឆ្នាំ ២០២៦ &nbsp;|&nbsp; ជំពូកទី ៣៖ ស្វ៊ីតចំនួនពិត &nbsp;|&nbsp; មេរៀនទី ១៖ ស្វ៊ីតចំនួនពិត (ម៉ោងទី ១)
+          </div>
+
+          <div class="board-columns-grid">
+            <!-- Column 1 -->
+            <div class="board-column">
+              <div>
+                <div class="board-column-header">ផ្ទាំងទី ១៖ សញ្ញាណស្វ៊ីត និងការចាត់ថ្នាក់</div>
+                <p><strong>១. ឧទាហរណ៍ជាក់ស្តែង៖</strong></p>
+                <p>• បញ្ជីទី ១៖ $1, 2, 3, 4, 5, \dots$</p>
+                <p>• បញ្ជីទី ២៖ $2, 4, 6, 8, 10, \dots$</p>
+                <p>• បញ្ជីទី ៣៖ $1, 3, 5, 7, \dots, 15$</p>
+                <p>• បញ្ជីទី ៤៖ $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}$</p>
+                <p style="margin-top: 0.5rem;"><strong>២. ចំណាត់ថ្នាក់ស្វ៊ីត៖</strong></p>
+                <p>• <strong>ស្វ៊ីតរាប់អស់៖</strong> ស្គាល់ចំនួនតួ និងតួចុងក្រោយ (បញ្ជីទី ៣ និង ៤)។</p>
+                <p>• <strong>ស្វ៊ីតអនន្ត៖</strong> មានចំនួនតួច្រើនរាប់មិនអស់ (បញ្ជីទី ១ និង ២)។</p>
+              </div>
+              <div style="font-size: 0.78rem; color: #38bdf8; margin-top: 0.5rem;">[សកម្មភាពរិះរក និងសង្កេតគំរូ]</div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="board-column">
+              <div>
+                <div class="board-column-header">ផ្ទាំងទី ២៖ និយមន័យ និងនិមិត្តសញ្ញា</div>
+                <p><strong>៣. និយមន័យស្វ៊ីតចំនួនពិត៖</strong></p>
+                <div style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; padding: 0.4rem; border-radius: 4px; text-align: center; font-weight: 700; color: #38bdf8; margin: 0.35rem 0;">
+                  $f: \mathbb{N} \to \mathbb{R},\quad n \mapsto f(n) = a_n$
+                </div>
+                <p>• ស្វ៊ីតជាអនុគមន៍លេខកំណត់ពី $\mathbb{N}$ ទៅ $\mathbb{R}$។</p>
+                <p>• ដែនកំណត់៖ $\mathbb{N} = \{1, 2, 3, \dots\}$</p>
+                <p style="margin-top: 0.4rem;"><strong>៤. និមិត្តសញ្ញាសម្គាល់៖</strong></p>
+                <p>• តាងស្វ៊ីតដោយ $(a_n)$ ឬ $(u_n)$</p>
+                <p>• $a_1$៖ តួទី ១ &nbsp;|&nbsp; $a_2$៖ តួទី ២</p>
+                <p>• $a_n$៖ តួទី $n$ (តួទូទៅនៃស្វ៊ីត)</p>
+              </div>
+              <div style="font-size: 0.78rem; color: #34d399; margin-top: 0.5rem;">[ខ្លឹមសារស្នូលសម្រាប់កត់ត្រា]</div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="board-column">
+              <div>
+                <div class="board-column-header">ផ្ទាំងទី ៣៖ លំហាត់គំរូ និងកិច្ចការផ្ទះ</div>
+                <p><strong>៥. លំហាត់គំរូ៖</strong></p>
+                <p>• រក ៣ តួទៀត៖ $1, 5, 9, \dots \Rightarrow 13, 17, 21$</p>
+                <p>• រក ៥ តួនៃ $a_n = \frac{(-1)^{n+1}}{n+1}$៖</p>
+                <p style="font-size: 0.82rem; color: #fde047;">
+                  $\frac{1}{2}, -\frac{1}{3}, \frac{1}{4}, -\frac{1}{5}, \frac{1}{6}$
+                </p>
+                <p style="margin-top: 0.4rem;"><strong>៦. ប្រតិបត្តិ (ខ)៖</strong></p>
+                <p style="font-size: 0.82rem;">$a_n = \frac{1}{n+2}, 1 \le n \le 4 \Rightarrow \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}$</p>
+                <p style="margin-top: 0.5rem; color: #fde047;"><strong>៧. កិច្ចការផ្ទះ៖</strong></p>
+                <p style="font-size: 0.82rem;">• ប្រតិបត្តិ ក. និង គ. (ទំព័រ ២ សៀវភៅពុម្ព)</p>
+              </div>
+              <div style="font-size: 0.78rem; color: #fde047; margin-top: 0.5rem;">[ការអនុវត្ត និងពង្រឹងចំណេះ]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- V. Student Inquiry Worksheet Template -->
+      <div class="plan-section">
+        <h2 class="section-title">V. ឧបសម្ព័ន្ធ៖ សន្លឹកកិច្ចការរិះរករបស់សិស្ស</h2>
+        <div class="worksheet-box">
+          <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #bae6fd; padding-bottom: 0.6rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <strong style="color: #0369a1; font-size: 1.05rem;">សន្លឹកកិច្ចការរិះរកគណិតវិទ្យា</strong><br>
+              <span style="font-size: 0.85rem; color: #64748b;">មេរៀន៖ ស្វ៊ីតចំនួនពិត (ម៉ោងទី ១៖ សញ្ញាណស្វ៊ីត)</span>
+            </div>
+            <div style="font-size: 0.9rem; font-weight: 600; color: #0f172a;">
+              ក្រុមទី៖ ............ ថ្នាក់ទី៖ ១១ .........
+            </div>
+          </div>
+
+          <p style="font-size: 0.92rem; margin-bottom: 0.5rem; color: #0f172a;">
+            <strong>សកម្មភាពទី ១៖ ការចាត់ថ្នាក់ស្វ៊ីត</strong><br>
+            ចូរពិនិត្យបញ្ជីលេខទាំងបួនខាងក្រោម រួចគូសសញ្ញា (✔) ក្នុងប្រអប់ដែលត្រឹមត្រូវ៖
+          </p>
+
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem; background: #ffffff; border: 1.5px solid #0284c7; text-align: center; font-size: 0.88rem;">
+            <thead>
+              <tr style="background: #e0f2fe; color: #0369a1;">
+                <th style="border: 1px solid #bae6fd; padding: 6px; width: 45%;">បញ្ជីលេខ</th>
+                <th style="border: 1px solid #bae6fd; padding: 6px; width: 25%;">ស្វ៊ីតរាប់អស់</th>
+                <th style="border: 1px solid #bae6fd; padding: 6px; width: 25%;">ស្វ៊ីតអនន្ត</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 6px; text-align: left;">ក. $1, 2, 3, 4, 5, \dots$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">[ &nbsp; ]</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">[ &nbsp; ]</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 6px; text-align: left;">ខ. $1, 3, 5, 7, 9, 11, 13, 15$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">[ &nbsp; ]</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">[ &nbsp; ]</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 6px; text-align: left;">គ. $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">[ &nbsp; ]</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">[ &nbsp; ]</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 6px; text-align: left;">ឃ. $2, 4, 6, 8, 10, \dots$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">[ &nbsp; ]</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">[ &nbsp; ]</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="font-size: 0.92rem; margin-bottom: 0.5rem; color: #0f172a;">
+            <strong>សកម្មភាពទី ២៖ ពិសោធន៍ម៉ាស៊ីនអនុគមន៍</strong><br>
+            គេមានអនុគមន៍ $f(n) = 2n + 1$។ ចូរគណនាទិន្នផល និងបំពេញតារាងខាងក្រោម៖
+          </p>
+
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem; background: #ffffff; border: 1.5px solid #0284c7; text-align: center; font-size: 0.88rem;">
+            <thead>
+              <tr style="background: #e0f2fe; color: #0369a1;">
+                <th style="border: 1px solid #bae6fd; padding: 6px;">ធាតុចូល ($n \in \mathbb{N}$)</th>
+                <th style="border: 1px solid #bae6fd; padding: 6px;">$n = 1$</th>
+                <th style="border: 1px solid #bae6fd; padding: 6px;">$n = 2$</th>
+                <th style="border: 1px solid #bae6fd; padding: 6px;">$n = 3$</th>
+                <th style="border: 1px solid #bae6fd; padding: 6px;">$n = 4$</th>
+                <th style="border: 1px solid #bae6fd; padding: 6px;">$n = 10$</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #bae6fd; padding: 6px; font-weight: 700; background: #f8fafc;">ទិន្នផល $f(n) = 2n + 1$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px;">$f(1) = 3$</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px; color: #94a3b8;">......</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px; color: #94a3b8;">......</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px; color: #94a3b8;">......</td>
+                <td style="border: 1px solid #bae6fd; padding: 6px; color: #94a3b8;">......</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="font-size: 0.92rem; line-height: 1.9; color: #1e293b;">
+            <p><strong>សំណួរទាញសេចក្តីសន្និដ្ឋាន៖</strong></p>
+            <p>១. តើលំដាប់លេខដែលទទួលបានពីម៉ាស៊ីនអនុគមន៍ខាងលើមានលក្ខណៈដូចម្តេច? <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;ចម្លើយ៖ ............................................................................................................................................................</p>
+            <p>២. ចូរឲ្យនិយមន័យស្វ៊ីតចំនួនពិតតាមការយល់ឃើញរបស់ក្រុមប្អូន៖ <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;ចម្លើយ៖ ............................................................................................................................................................</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- VI. Differentiation & Signatures -->
+      <div class="plan-section">
+        <h2 class="section-title">VI. យុទ្ធសាស្ត្រគាំទ្រសិស្សចម្រុះកម្រិត និងការឆ្លុះបញ្ចាំង</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+          <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 8px; padding: 1.15rem 1.3rem;">
+            <strong style="color: #92400e; font-size: 0.95rem;">🌱 សម្រាប់សិស្សរៀនយឺត៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.7;">
+              <li>ណែនាំឱ្យជំនួសលេខ $n=1, 2, 3$ មួយៗយឺតៗដោយសរសេរប្រមាណវិធីគណនាពេញលេញ។</li>
+              <li>ជួយពន្យល់ពីអត្ថន័យនៃសញ្ញាចុចបី (...) ថាជាសញ្ញាតាងស្វ៊ីតអនន្ត។</li>
+              <li>ពន្យល់អំពីស្វ័យគុណសញ្ញា $(-1)^1 = -1$, $(-1)^2 = 1$, $(-1)^3 = -1$... ឱ្យយល់ច្បាស់ពីសញ្ញាស្លាស់គ្នា។</li>
+            </ul>
+          </div>
+          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 1.15rem 1.3rem;">
+            <strong style="color: #1e40af; font-size: 0.95rem;">🚀 សម្រាប់សិស្សពូកែ៖</strong>
+            <ul style="padding-left: 1.3rem; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.7;">
+              <li>ឱ្យសាកល្បងទស្សន៍ទាយរូបមន្តតួទូទៅ $a_n$ នៃស្វ៊ីត $3, 8, 15, 24, \dots$ ($a_n = n(n+2)$ ឬ $a_n = (n+1)^2 - 1$)។</li>
+              <li>ចោទសួរអំពីស្វ៊ីតហ្វីបូណាស៊ី៖ $1, 1, 2, 3, 5, 8, 13, \dots$។</li>
+              <li>ឱ្យសិក្សាត្រៀមខ្លឹមសារ «តួទី $n$ នៃស្វ៊ីត» និងលំហាត់កម្ពស់បាល់លោតសម្រាប់ម៉ោងបន្ទាប់។</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Signatures -->
+      <div style="display: flex; justify-content: space-between; margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.95rem;">
+        <div style="text-align: center; width: 40%;">
+          បានឃើញ និងឯកភាព<br>
+          <strong>នាយក</strong><br><br><br><br><br>
+          ...................................................
+        </div>
+        <div style="text-align: center; width: 40%;">
+          ថ្ងៃទី ........ ខែ ............. ឆ្នាំ ២០២៦<br>
+          <strong>គ្រូបង្រៀន</strong><br><br><br><br><br>
+          ...................................................
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KaTeX Initializer & Export Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    });
+
+    function exportToWord() {
+      const content = document.getElementById('lesson-plan-document').innerHTML;
+      const header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+            "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+            "xmlns='http://www.w3.org/TR/REC-html40'>" +
+            "<head><meta charset='utf-8'><title>កិច្ចតែងការបង្រៀនគណិតវិទ្យា</title>" +
+            "<style>body{font-family:'Kantumruy Pro', Arial, sans-serif; line-height:1.6;} table{border-collapse:collapse; width:100%;} th, td{border:1px solid #999; padding:6px;}</style></head><body>";
+      const footer = "</body></html>";
+      const sourceHTML = header + content + footer;
+      const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+      const fileDownload = document.createElement("a");
+      document.body.appendChild(fileDownload);
+      fileDownload.href = source;
+      fileDownload.download = 'កិច្ចតែងការបង្រៀន_ស្វ៊ីតចំនួនពិត.doc';
+      fileDownload.click();
+      document.body.removeChild(fileDownload);
+    }
+  </script>
+</body>
+</html>

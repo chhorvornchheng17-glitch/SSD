@@ -1121,6 +1121,455 @@ const ACADEMIC_CURRICULUM = {
    ============================================================ */
 const TEACHING_SLIDES_DATA = [
   {
+    id: 'slide-exponential-g11',
+    grade: 'grade11',
+    gradeLabel: 'ថ្នាក់ទី ១១',
+    title: 'ជំពូកទី ២ មេរៀនទី ១៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល',
+    author: 'អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)',
+    slidesCount: 9,
+    badge: 'គរុកោសល្យ 5E / ថ្មី',
+    slides: [
+      {
+        number: 1,
+        title: 'អនុគមន៍អិចស្ប៉ូណង់ស្យែល (Exponential Functions)',
+        subtitle: 'ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងអនុគមន៍លោការីត (ថ្នាក់ទី ១១ ភាគ១)',
+        type: 'intro',
+        content: `
+          <div class="slide-intro-badge">📐 ថ្នាក់ទី ១១ | ជំពូកទី ២៖ មេរៀនទី ១</div>
+          <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 800; color: #38bdf8; margin: 0.5rem 0;">
+            អនុគមន៍អិចស្ប៉ូណង់ស្យែល
+          </h2>
+          <p class="slide-lead">រៀបចំ និងបង្រៀនដោយ៖ <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong> (NIE &amp; RUPP | វិទ្យាល័យសសរស្តម្ភ &amp; SHINE)</p>
+
+          <div class="slide-highlight-card" style="border-left: 4px solid var(--accent-cyan); margin-top: 1.25rem;">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 0.5rem; font-size: 1.05rem;">
+              🎯 វត្ថុបំណងមេរៀន ៣ ដែន (5E Inquiry Learning Model)៖
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 0.75rem;">
+              <div style="background: rgba(2, 132, 199, 0.1); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(2, 132, 199, 0.2);">
+                <strong style="color: #38bdf8;">១. វិជ្ជាសម្បទា៖</strong> កំណត់និយមន័យ <span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> (<span class="math-sym"><i>a</i> &gt; 0, <i>a</i> ≠ 1</span>), ដែនកំណត់, ដែនតម្លៃ, និងអាស៊ីមតូត។
+              </div>
+              <div style="background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                <strong style="color: #34d399;">២. បំណិនសម្បទា៖</strong> សង់តារាងតម្លៃ, សង់ក្រាបតំណាង, និងវិភាគទិសដៅអថេរភាព (កើន / ចុះ)។
+              </div>
+              <div style="background: rgba(245, 158, 11, 0.1); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                <strong style="color: #fbbf24;">៣. ចរិយាសម្បទា៖</strong> បណ្តុះស្មារតីរិះរក ចោទសួរដេញដោល និងយល់ដឹងពីសារប្រយោជន៍ក្នុងជីវភាពពិត។
+              </div>
+            </div>
+          </div>
+        `,
+        notes: 'សូមស្វាគមន៍សិស្សានុសិស្សមកកាន់ជំពូកទី ២! ថ្ងៃនេះយើងនឹងចាប់ផ្តើមមេរៀនទី ១ ស្តីពី "អនុគមន៍អិចស្ប៉ូណង់ស្យែល" តាមវិធីសាស្ត្ររិះរក 5E Model។'
+      },
+      {
+        number: 2,
+        title: 'អាថ៌កំបាំងនៃការបត់ក្រដាស A4 (Paper Folding Inquiry)',
+        subtitle: 'ដំណាក់កាល ENGAGE &amp; EXPLORE៖ រិះរកគំរូទិន្នន័យពីជីវភាពជាក់ស្តែង',
+        type: 'concept',
+        content: `
+          <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 0.85rem 1.1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem;">
+            <strong style="color: #34d399;">❓ សំណួរគន្លឹះបំផុសការរិះរក៖</strong>
+            <em>«ប្រសិនបើក្រដាស A4 មួយសន្លឹកកម្រាស់ 0.1mm ត្រូវបត់ជាពីរជាបន្តបន្ទាប់ តើកម្រាស់របស់វាកើនឡើងយ៉ាងដូចម្តេច ហើយបត់ ៤២ ដង តើខ្ពស់ដល់ណា?»</em>
+          </div>
+
+          <div style="overflow-x: auto; margin-bottom: 1rem;">
+            <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 0.92rem;">
+              <thead>
+                <tr style="background: rgba(6, 182, 212, 0.15); color: #38bdf8;">
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">ចំនួនដងបត់ (<span class="math-sym"><i>x</i></span>)</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">0</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">1</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">2</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">3</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">4</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color); background: rgba(245, 158, 11, 0.2); color: #fbbf24;"><span class="math-sym"><i>x</i></span> (ទូទៅ)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 8px; border: 1px solid var(--border-color); font-weight: 700; text-align: left;">ចំនួនស្រទាប់ (<span class="math-sym"><i>y</i></span>)</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color);">1 (<span class="math-sym">2<sup>0</sup></span>)</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color);">2 (<span class="math-sym">2<sup>1</sup></span>)</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color);">4 (<span class="math-sym">2<sup>2</sup></span>)</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color);">8 (<span class="math-sym">2<sup>3</sup></span>)</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color);">16 (<span class="math-sym">2<sup>4</sup></span>)</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color); font-weight: 800; color: #fbbf24; font-size: 1.1rem;"><span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="slide-grid-3">
+            <div class="slide-card">
+              <span class="slide-tag blue">បត់ ១៤ ដង</span>
+              <h4 style="margin: 0.3rem 0;">កម្ពស់ ≈ 1.64 ម៉ែត្រ</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">ស្មើនឹងកម្ពស់មនុស្សពេញវ័យម្នាក់</p>
+            </div>
+            <div class="slide-card">
+              <span class="slide-tag amber">បត់ ២៧ ដង</span>
+              <h4 style="margin: 0.3rem 0;">កម្ពស់ ≈ 8.8 គីឡូម៉ែត្រ</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">ខ្ពស់ជាងកំពូលភ្នំអេវឺរ៉េស (Everest)</p>
+            </div>
+            <div class="slide-card">
+              <span class="slide-tag purple">បត់ ៤២ ដង</span>
+              <h4 style="margin: 0.3rem 0;">កម្ពស់ ≈ 384,400 គីឡូម៉ែត្រ</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">ទៅដល់ឋានព្រះច័ន្ទ (Moon Distance)!</p>
+            </div>
+          </div>
+        `,
+        notes: 'ឱ្យសិស្សយកក្រដាស A4 ម្នាក់មួយសន្លឹក បត់ផ្ទាល់ដៃ និងកត់ត្រាចំនួនស្រទាប់។ បង្ហាញភាពខុសគ្នារវាងកំណើនរបៀបបូក និងកំណើនរបៀបគុណទ្វេដង។'
+      },
+      {
+        number: 3,
+        title: 'និយមន័យទូទៅនៃអនុគមន៍អិចស្ប៉ូណង់ស្យែល',
+        subtitle: 'ដំណាក់កាល EXPLAIN៖ រូបមន្តស្នូល និងលក្ខខណ្ឌនៃគោល a',
+        type: 'concept',
+        content: `
+          <div class="slide-math-hero">
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.35rem;">ទម្រង់ទូទៅ (Standard Form)៖</div>
+            <div class="math-formula-large">
+              <span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span>
+              <span style="font-size: 1.2rem; color: #fbbf24; font-family: 'Kantumruy Pro', sans-serif; font-weight: 600;">
+                (ដែល <span class="math-sym"><i>a</i> &gt; 0</span> និង <span class="math-sym"><i>a</i> ≠ 1</span>)
+              </span>
+            </div>
+          </div>
+
+          <div class="slide-grid-2">
+            <div class="slide-card" style="border-left: 3px solid #ef4444;">
+              <span class="slide-tag red">ហេតុអ្វីត្រូវ <span class="math-sym"><i>a</i> &gt; 0</span>?</span>
+              <p style="font-size: 0.9rem; line-height: 1.6; margin-top: 0.3rem;">
+                ប្រសិនបើ <span class="math-sym"><i>a</i> ≤ 0</span> នោះកន្សោមស្វ័យគុណសនិទាន ដូចជា <span class="math-sym">(−4)<sup><span class="math-frac"><span class="num">1</span><span class="den">2</span></span></sup> = √−4</span> មិនអាចកំណត់បានក្នុងសំណុំចំនួនពិត <span class="math-sym">ℝ</span> ឡើយ។
+              </p>
+            </div>
+            <div class="slide-card" style="border-left: 3px solid #f59e0b;">
+              <span class="slide-tag amber">ហេតុអ្វីត្រូវ <span class="math-sym"><i>a</i> ≠ 1</span>?</span>
+              <p style="font-size: 0.9rem; line-height: 1.6; margin-top: 0.3rem;">
+                ប្រសិនបើ <span class="math-sym"><i>a</i> = 1</span> នោះ <span class="math-sym"><i>y</i> = 1<sup><i>x</i></sup> = 1</span> ជានិច្ចគ្រប់តម្លៃ <span class="math-sym"><i>x</i></span> នាំឱ្យក្លាយជា <em>អនុគមន៍ថេរ</em> (បន្ទាត់ដេក) មិនមែនជាអនុគមន៍អិចស្ប៉ូណង់ស្យែលឡើយ។
+              </p>
+            </div>
+          </div>
+
+          <div class="slide-box-tip" style="margin-top: 1rem;">
+            💡 <strong>ចំណាំសំខាន់៖</strong> ក្នុងអនុគមន៍អិចស្ប៉ូណង់ស្យែល <span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> អថេរ <span class="math-sym"><i>x</i></span> ស្ថិតនៅលើ <strong>និទស្សន្ត (Exponent)</strong>។ វាខុសគ្នាស្រឡះពីអនុគមន៍ស្វ័យគុណ <span class="math-sym"><i>y</i> = <i>x</i><sup><i>n</i></sup></span> ដែលអថេរ <span class="math-sym"><i>x</i></span> នៅគោល!
+          </div>
+        `,
+        notes: 'ចោទសួរដេញដោលសិស្ស៖ "តើ y = 2^x និង y = x^2 ដូចគ្នាដែរឬទេ?" ដើម្បីឱ្យសិស្សបែងចែកឱ្យច្បាស់រវាងអនុគមន៍អិចស្ប៉ូណង់ស្យែល និងអនុគមន៍ពហុធា។'
+      },
+      {
+        number: 4,
+        title: 'លក្ខណៈគ្រឹះទាំង ៤ នៃអនុគមន៍អិចស្ប៉ូណង់ស្យែល',
+        subtitle: 'ដែនកំណត់ ដែនតម្លៃ ចំណុចកាត់អ័ក្ស និងអាស៊ីមតូតដេក',
+        type: 'concept',
+        content: `
+          <div class="slide-grid-2">
+            <div class="slide-card" style="border-left: 4px solid #38bdf8;">
+              <span class="slide-tag blue">១. ដែនកំណត់ (Domain)</span>
+              <h4 style="font-size: 1.25rem; color: #38bdf8; margin: 0.3rem 0;"><span class="math-sym"><i>D</i> = ℝ = (−∞, +∞)</span></h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+                អនុគមន៍មានន័យចំពោះគ្រប់ចំនួនពិត <span class="math-sym"><i>x</i></span> ទាំងអស់ (អាចយកតម្លៃអវិជ្ជមាន សូន្យ ឬវិជ្ជមាន)។
+              </p>
+            </div>
+
+            <div class="slide-card" style="border-left: 4px solid #10b981;">
+              <span class="slide-tag" style="background: rgba(16,185,129,0.2); color: #34d399;">២. ដែនតម្លៃ (Range)</span>
+              <h4 style="font-size: 1.25rem; color: #34d399; margin: 0.3rem 0;"><span class="math-sym"><i>R<sub>f</sub></i> = (0, +∞)</span></h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+                តម្លៃ <span class="math-sym"><i>a</i><sup><i>x</i></sup> &gt; 0</span> ជានិច្ចចំពោះគ្រប់ <span class="math-sym"><i>x</i> ∈ ℝ</span>។ ក្រាបស្ថិតនៅខាងលើអ័ក្សអាប់ស៊ីសជានិច្ច គ្មានតម្លៃអវិជ្ជមានឡើយ។
+              </p>
+            </div>
+
+            <div class="slide-card" style="border-left: 4px solid #f59e0b;">
+              <span class="slide-tag amber">៣. ចំណុចកាត់អ័ក្សអ័រដោនេ</span>
+              <h4 style="font-size: 1.25rem; color: #fbbf24; margin: 0.3rem 0;">កាត់ត្រង់ <span class="math-sym">(0, 1)</span></h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+                គ្រប់ក្រាបនៃ <span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> ទាំងអស់ត្រូវតែកាត់ត្រង់ចំណុច <span class="math-sym">(0, 1)</span> ព្រោះ <span class="math-sym"><i>a</i><sup>0</sup> = 1</span> ជានិច្ច។
+              </p>
+            </div>
+
+            <div class="slide-card" style="border-left: 4px solid #a855f7;">
+              <span class="slide-tag purple">៤. បន្ទាត់អាស៊ីមតូតដេក</span>
+              <h4 style="font-size: 1.25rem; color: #c084fc; margin: 0.3rem 0;">បន្ទាត់ <span class="math-sym"><i>y</i> = 0</span> (អ័ក្ស <span class="math-sym"><i>x'x</i></span>)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+                ខ្សែកោងខិតទៅជិតអ័ក្ស <span class="math-sym"><i>x'x</i></span> គ្មានទីបញ្ចប់ ប៉ុន្តែមិនដែលប៉ះ ឬកាត់អ័ក្សអាប់ស៊ីសឡើយ។
+              </p>
+            </div>
+          </div>
+        `,
+        notes: 'ចំណុច (0, 1) ហៅថា "ចំណុចគោល" (Key Anchor Point) របស់ក្រាបអិចស្ប៉ូណង់ស្យែល។ សិស្សត្រូវចាំថា a^x > 0 ដាច់ខាត។'
+      },
+      {
+        number: 5,
+        title: 'អថេរភាព៖ កំណើន និងការថយចុះ (Monotonicity)',
+        subtitle: 'ដំណាក់កាល ELABORATE៖ ប្រៀបធៀបករណី a > 1 និង 0 < a < 1',
+        type: 'concept',
+        content: `
+          <div class="slide-grid-2">
+            <!-- Case 1: a > 1 -->
+            <div class="slide-card" style="background: rgba(2, 132, 199, 0.08); border: 1.5px solid rgba(56, 189, 248, 0.4);">
+              <span class="slide-tag blue">ករណីទី ១៖ <span class="math-sym"><i>a</i> &gt; 1</span></span>
+              <h4 style="color: #38bdf8; font-size: 1.2rem; margin: 0.4rem 0;">📈 អនុគមន៍កើនដាច់ខាត (Growth)</h4>
+              <p style="font-size: 0.9rem; line-height: 1.6;">
+                កាលណា <span class="math-sym"><i>x</i></span> កើន តម្លៃ <span class="math-sym"><i>y</i></span> កើនឡើងយ៉ាងលឿន៖<br>
+                • បើ <span class="math-sym"><i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub> ⇔ <i>a</i><sup><i>x</i><sub>1</sub></sup> &lt; <i>a</i><sup><i>x</i><sub>2</sub></sup></span><br>
+                • លីមីតចុងដែន៖ <span class="math-sym">lim<sub><i>x</i> → +∞</sub> <i>a</i><sup><i>x</i></sup> = +∞</span><br>
+                • <span class="math-sym">lim<sub><i>x</i> → −∞</sub> <i>a</i><sup><i>x</i></sup> = 0</span> (អាស៊ីមតូតដេកខាងឆ្វេង)<br>
+                • <strong>ឧទាហរណ៍៖</strong> <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup>, <i>y</i> = 3<sup><i>x</i></sup>, <i>y</i> = <i>e</i><sup><i>x</i></sup></span>
+              </p>
+            </div>
+
+            <!-- Case 2: 0 < a < 1 -->
+            <div class="slide-card" style="background: rgba(245, 158, 11, 0.08); border: 1.5px solid rgba(245, 158, 11, 0.4);">
+              <span class="slide-tag amber">ករណីទី ២៖ <span class="math-sym">0 &lt; <i>a</i> &lt; 1</span></span>
+              <h4 style="color: #fbbf24; font-size: 1.2rem; margin: 0.4rem 0;">📉 អនុគមន៍ចុះដាច់ខាត (Decay)</h4>
+              <p style="font-size: 0.9rem; line-height: 1.6;">
+                កាលណា <span class="math-sym"><i>x</i></span> កើន តម្លៃ <span class="math-sym"><i>y</i></span> ថយចុះខិតជិត ០៖<br>
+                • បើ <span class="math-sym"><i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub> ⇔ <i>a</i><sup><i>x</i><sub>1</sub></sup> &gt; <i>a</i><sup><i>x</i><sub>2</sub></sup></span><br>
+                • លីមីតចុងដែន៖ <span class="math-sym">lim<sub><i>x</i> → +∞</sub> <i>a</i><sup><i>x</i></sup> = 0</span> (អាស៊ីមតូតដេកខាងស្តាំ)<br>
+                • <span class="math-sym">lim<sub><i>x</i> → −∞</sub> <i>a</i><sup><i>x</i></sup> = +∞</span><br>
+                • <strong>ឧទាហរណ៍៖</strong> <span class="math-sym"><i>y</i> = (<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup>, <i>y</i> = (0.5)<sup><i>x</i></sup></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="slide-box-tip" style="margin-top: 1.2rem;">
+            🔍 <strong>គន្លឹះដោះស្រាយវិសមីការ៖</strong><br>
+            • បើ <span class="math-sym"><i>a</i> &gt; 1</span> ➔ <span class="math-sym"><i>a</i><sup><i>u</i></sup> &lt; <i>a</i><sup><i>v</i></sup> ⇔ <i>u</i> &lt; <i>v</i></span> (រក្សាទិសដៅវិសមភាព)<br>
+            • បើ <span class="math-sym">0 &lt; <i>a</i> &lt; 1</span> ➔ <span class="math-sym"><i>a</i><sup><i>u</i></sup> &lt; <i>a</i><sup><i>v</i></sup> ⇔ <i>u</i> &gt; <i>v</i></span> (<strong>ត្រឡប់ទិសដៅ</strong> វិសមភាព!)
+          </div>
+        `,
+        notes: 'បញ្ជាក់សិស្សឱ្យច្បាស់ពីការត្រឡប់ទិសដៅវិសមភាពនៅពេលគោល 0 < a < 1។ ចំណុចនេះសិស្សច្រើនតែច្រឡំពេលប្រឡងបាក់ឌុប!'
+      },
+      {
+        number: 6,
+        title: 'ការសង់ក្រាប & ក្រាបឆ្លុះស៊ីមេទ្រី (Graph & Symmetry)',
+        subtitle: 'ប្រៀបធៀបក្រាប y = 2^x និង y = (1/2)^x លើតម្រុយតែមួយ',
+        type: 'concept',
+        content: `
+          <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 1.2rem; align-items: center;">
+            <!-- Left: Table of Values -->
+            <div>
+              <div style="font-weight: 700; color: #38bdf8; margin-bottom: 0.4rem;">📊 តារាងតម្លៃរហ័ស (Table of Values)៖</div>
+              <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 0.85rem;">
+                <thead>
+                  <tr style="background: rgba(255,255,255,0.08);">
+                    <th style="padding: 5px; border: 1px solid var(--border-color);"><span class="math-sym"><i>x</i></span></th>
+                    <th style="padding: 5px; border: 1px solid var(--border-color);">-2</th>
+                    <th style="padding: 5px; border: 1px solid var(--border-color);">-1</th>
+                    <th style="padding: 5px; border: 1px solid var(--border-color); color: #fbbf24;">0</th>
+                    <th style="padding: 5px; border: 1px solid var(--border-color);">1</th>
+                    <th style="padding: 5px; border: 1px solid var(--border-color);">2</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding: 5px; border: 1px solid var(--border-color); color: #38bdf8; font-weight: 700;"><span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span></td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color);"><span class="math-frac"><span class="num">1</span><span class="den">4</span></span></td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color);"><span class="math-frac"><span class="num">1</span><span class="den">2</span></span></td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color); font-weight: 700; color: #fbbf24;">1</td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color);">2</td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color);">4</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 5px; border: 1px solid var(--border-color); color: #fbbf24; font-weight: 700;"><span class="math-sym"><i>y</i> = (<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span></td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color);">4</td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color);">2</td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color); font-weight: 700; color: #fbbf24;">1</td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color);"><span class="math-frac"><span class="num">1</span><span class="den">2</span></span></td>
+                    <td style="padding: 5px; border: 1px solid var(--border-color);"><span class="math-frac"><span class="num">1</span><span class="den">4</span></span></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">
+                ✨ <strong>លក្ខណៈឆ្លុះ៖</strong> ដោយសារ <span class="math-sym">(<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup> = 2<sup>−<i>x</i></sup></span> ដូច្នេះក្រាបទាំងពីរ <strong>ឆ្លុះគ្នាធៀបនឹងអ័ក្សអ័រដោនេ <span class="math-sym">(<i>Oy</i>)</span></strong> ជានិច្ច!
+              </div>
+            </div>
+
+            <!-- Right: Beautiful Vector SVG Graph -->
+            <div style="background: #0f172a; border: 2px solid #334155; border-radius: 12px; padding: 12px; text-align: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" style="width: 100%; max-height: 180px; display: block;">
+                <!-- Grid Lines -->
+                <line x1="20" y1="140" x2="300" y2="140" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                <line x1="20" y1="95" x2="300" y2="95" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                <line x1="20" y1="50" x2="300" y2="50" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                <!-- Asymptote y = 0 -->
+                <line x1="15" y1="140" x2="305" y2="140" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="4,4"/>
+                <!-- Axes -->
+                <line x1="20" y1="140" x2="305" y2="140" stroke="#cbd5e1" stroke-width="1.8"/>
+                <line x1="160" y1="165" x2="160" y2="15" stroke="#cbd5e1" stroke-width="1.8"/>
+                <!-- Arrows -->
+                <polygon points="305,137 312,140 305,143" fill="#cbd5e1"/>
+                <polygon points="157,15 160,8 163,15" fill="#cbd5e1"/>
+                <text x="302" y="132" fill="#94a3b8" font-size="11" font-family="sans-serif">x</text>
+                <text x="168" y="18" fill="#94a3b8" font-size="11" font-family="sans-serif">y</text>
+                <text x="146" y="153" fill="#94a3b8" font-size="10" font-family="sans-serif">O</text>
+                <!-- Curve y = 2^x (Cyan) -->
+                <path d="M 30,138 Q 110,137 160,95 T 255,20" fill="none" stroke="#38bdf8" stroke-width="3"/>
+                <text x="245" y="18" fill="#38bdf8" font-size="12" font-weight="bold" font-family="sans-serif">y = 2ˣ</text>
+                <!-- Curve y = (1/2)^x (Amber) -->
+                <path d="M 65,20 Q 110,95 160,95 T 290,138" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="4,2"/>
+                <text x="35" y="22" fill="#f59e0b" font-size="12" font-weight="bold" font-family="sans-serif">y = (½)ˣ</text>
+                <!-- Key Point (0, 1) -->
+                <circle cx="160" cy="95" r="4.5" fill="#fde047" stroke="#0f172a" stroke-width="1.5"/>
+                <text x="168" y="93" fill="#fde047" font-size="11" font-weight="bold" font-family="sans-serif">(0, 1)</text>
+              </svg>
+              <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">ក្រាបឆ្លុះគ្នាធៀបនឹងអ័ក្ស <span class="math-sym"><i>Oy</i></span> និងមានអាស៊ីមតូតដេក <span class="math-sym"><i>y</i> = 0</span> ដូចគ្នា</div>
+            </div>
+          </div>
+        `,
+        notes: 'ណែនាំសិស្សឱ្យសង់ក្រាបដោយចាប់ផ្តើមពីចំណុចគោល (0, 1) រួចកំណត់ ២ ទៅ ៣ ចំណុចបន្ថែមទៀត ដូចជា (1, 2), (2, 4) និង (-1, 1/2)។'
+      },
+      {
+        number: 7,
+        title: 'គំរូអនុវត្តក្នុងជីវភាពពិត (Real-World Applications)',
+        subtitle: 'ពីកំណើនបាក់តេរី រហូតដល់ការប្រាក់ និងការបំបែកវិទ្យុសកម្ម',
+        type: 'concept',
+        content: `
+          <div class="slide-grid-3">
+            <!-- 1. Biology -->
+            <div class="slide-card" style="border-top: 4px solid #10b981;">
+              <span class="slide-tag" style="background: rgba(16,185,129,0.2); color: #34d399;">🔬 ជីវសាស្ត្រ &amp; វេជ្ជសាស្ត្រ</span>
+              <h4 style="margin: 0.4rem 0;">កំណើនបាក់តេរី</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                បាក់តេរីកើនឡើងទ្វេដងរៀងរាល់ម៉ោង៖
+              </p>
+              <div style="background: rgba(16,185,129,0.1); padding: 0.5rem; border-radius: 6px; font-weight: 700; color: #34d399; text-align: center; margin: 0.5rem 0;">
+                <span class="math-sym"><i>N</i>(<i>t</i>) = <i>N</i><sub>0</sub> · 2<sup><i>t</i></sup></span>
+              </div>
+              <p style="font-size: 0.8rem; color: #94a3b8;">បើ <span class="math-sym"><i>N</i><sub>0</sub> = 1000</span> ➔ ក្រោយ ៣ ម៉ោង <span class="math-sym"><i>N</i>(3) = 8000</span> កោសិកា!</p>
+            </div>
+
+            <!-- 2. Finance -->
+            <div class="slide-card" style="border-top: 4px solid #38bdf8;">
+              <span class="slide-tag blue">💰 សេដ្ឋកិច្ច &amp; ធនាគារ</span>
+              <h4 style="margin: 0.4rem 0;">ការប្រាក់សមាស</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                ប្រាក់សន្សំកើនឡើងជានិទស្សន្ត៖
+              </p>
+              <div style="background: rgba(2,132,199,0.1); padding: 0.5rem; border-radius: 6px; font-weight: 700; color: #38bdf8; text-align: center; margin: 0.5rem 0;">
+                <span class="math-sym"><i>A</i> = <i>P</i>(1 + <i>r</i>)<sup><i>t</i></sup></span>
+              </div>
+              <p style="font-size: 0.8rem; color: #94a3b8;">កំណើនលឿនជាងការប្រាក់ធម្មតា (Simple Interest) ឆ្ងាយណាស់!</p>
+            </div>
+
+            <!-- 3. Physics -->
+            <div class="slide-card" style="border-top: 4px solid #f59e0b;">
+              <span class="slide-tag amber">☢️ រូបវិទ្យានុយក្លេអ៊ែរ</span>
+              <h4 style="margin: 0.4rem 0;">ការបំបែកវិទ្យុសកម្ម</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                ពាក់កណ្តាលជីវិត (Half-life)៖
+              </p>
+              <div style="background: rgba(245,158,11,0.1); padding: 0.5rem; border-radius: 6px; font-weight: 700; color: #fbbf24; text-align: center; margin: 0.5rem 0;">
+                <span class="math-sym"><i>N</i>(<i>t</i>) = <i>N</i><sub>0</sub> · (<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>t</i>/<i>T</i></sup></span>
+              </div>
+              <p style="font-size: 0.8rem; color: #94a3b8;">ប្រើសម្រាប់កំណត់អាយុកាលបុរាណវត្ថុតាម Carbon-14 Dating។</p>
+            </div>
+          </div>
+
+          <div class="slide-box-tip" style="margin-top: 1rem;">
+            🌐 <strong>សន្និដ្ឋាន៖</strong> អនុគមន៍អិចស្ប៉ូណង់ស្យែល មិនមែនគ្រាន់តែជារូបមន្តទ្រឹស្តីនោះទេ ប៉ុន្តែជាគំរូគណិតវិទ្យាគ្រប់គ្រងបាតុភូតធម្មជាតិ និងសេដ្ឋកិច្ចសកលលោក!
+          </div>
+        `,
+        notes: 'ភ្ជាប់គណិតវិទ្យាទៅនឹងមុខវិជ្ជា STEM ផ្សេងទៀតដូចជា ជីវវិទ្យា និងរូបវិទ្យា ដើម្បីបង្កើតចំណាប់អារម្មណ៍សិក្សា។'
+      },
+      {
+        number: 8,
+        title: 'លំហាត់គំរូ និងវិធីសាស្ត្រដោះស្រាយ (Worked Examples)',
+        subtitle: 'គន្លឹះដោះស្រាយសមីការអិចស្ប៉ូណង់ស្យែលគ្រឹះ៖ ដាក់គោលឱ្យដូចគ្នា',
+        type: 'problem',
+        content: `
+          <div class="slide-problem-box">
+            <strong>📝 លំហាត់គំរូ៖</strong> ចូរដោះស្រាយសមីការអិចស្ប៉ូណង់ស្យែលខាងក្រោមក្នុងសំណុំ <span class="math-sym">ℝ</span>៖<br>
+            <strong>ក.</strong> <span class="math-sym">2<sup><i>x</i></sup> = 32</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>ខ.</strong> <span class="math-sym">3<sup>2<i>x</i> − 1</sup> = 27</span>
+          </div>
+
+          <div class="slide-steps-list">
+            <div>
+              <strong>🔹 ដំណោះស្រាយសំនួរ (ក)៖</strong>
+              <div style="padding-left: 1.2rem; margin-top: 0.2rem; line-height: 1.6;">
+                • បំប្លែង 32 ជាស្វ័យគុណនៃគោល 2៖ <span class="math-sym">32 = 2<sup>5</sup></span><br>
+                • សមីការក្លាយជា៖ <span class="math-sym">2<sup><i>x</i></sup> = 2<sup>5</sup> ⇔ <i>x</i> = 5</span>
+              </div>
+            </div>
+            <div style="margin-top: 0.5rem;">
+              <strong>🔹 ដំណោះស្រាយសំនួរ (ខ)៖</strong>
+              <div style="padding-left: 1.2rem; margin-top: 0.2rem; line-height: 1.6;">
+                • បំប្លែង 27 ជាស្វ័យគុណនៃគោល 3៖ <span class="math-sym">27 = 3<sup>3</sup></span><br>
+                • សមីការក្លាយជា៖ <span class="math-sym">3<sup>2<i>x</i> − 1</sup> = 3<sup>3</sup></span><br>
+                • ដោយគោលដូចគ្នា (<span class="math-sym"><i>a</i> = 3 &gt; 0, ≠ 1</span>) នាំឱ្យនិទស្សន្តស្មើគ្នា៖ <span class="math-sym">2<i>x</i> − 1 = 3 ⇔ 2<i>x</i> = 4 ⇔ <i>x</i> = 2</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <div class="slide-answer-badge">
+              ✓ ចម្លើយ៖ (ក) <span class="math-sym" style="color: #34d399;"><i>x</i> = 5</span> &nbsp;|&nbsp; (ខ) <span class="math-sym" style="color: #34d399;"><i>x</i> = 2</span>
+            </div>
+            <span style="font-size: 0.85rem; color: #94a3b8;">
+              🔑 គោលការណ៍គ្រឹះ៖ <span class="math-sym"><i>a</i><sup><i>u</i></sup> = <i>a</i><sup><i>v</i></sup> ⇔ <i>u</i> = <i>v</i></span> (ចំពោះ <span class="math-sym"><i>a</i> &gt; 0, <i>a</i> ≠ 1</span>)
+            </span>
+          </div>
+        `,
+        notes: 'សង្កត់ធ្ងន់លើក្បួន "ដាក់គោលឱ្យដូចគ្នា" (Same Base Method) ដែលជាវិធីសាស្ត្រមូលដ្ឋានបំផុតមុននឹងឈានទៅដល់ការប្រើលោការីត។'
+      },
+      {
+        number: 9,
+        title: 'សង្ខេបប្លង់ក្ដារខៀន ៣ ជួរឈរ &amp; កិច្ចការផ្ទះ',
+        subtitle: 'ដំណាក់កាល EVALUATE៖ សង្ខេបខ្លឹមសារស្នូល និងកិច្ចការស្វ័យសិក្សា',
+        type: 'concept',
+        content: `
+          <!-- 3-Column Blackboard Mimic -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; background: #1e293b; border: 4px solid #78350f; border-radius: 10px; padding: 10px; color: #f8fafc; font-size: 0.82rem;">
+            <!-- Column 1 -->
+            <div style="background: rgba(15,23,42,0.6); padding: 8px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15);">
+              <div style="font-weight: 700; color: #38bdf8; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 3px; margin-bottom: 5px; text-align: center;">
+                ផ្ទាំង ១៖ ពិសោធន៍
+              </div>
+              <div>• ពិសោធន៍បត់ក្រដាស A4</div>
+              <div>• គំរូទិន្នន័យ៖ <strong style="color: #fde047;"><span class="math-sym" style="color: #fde047;"><i>y</i> = 2<sup><i>x</i></sup></span></strong></div>
+              <div>• កំណើនទ្វេដង៖ 1, 2, 4, 8, 16...</div>
+              <div style="color: #94a3b8; font-size: 0.75rem; margin-top: 4px;">• បត់ 42 ដង ដល់ឋានព្រះច័ន្ទ!</div>
+            </div>
+
+            <!-- Column 2 -->
+            <div style="background: rgba(15,23,42,0.6); padding: 8px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15);">
+              <div style="font-weight: 700; color: #38bdf8; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 3px; margin-bottom: 5px; text-align: center;">
+                ផ្ទាំង ២៖ និយមន័យ &amp; លក្ខណៈ
+              </div>
+              <div>• <strong style="color: #38bdf8;"><span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span></strong> (<span class="math-sym"><i>a</i> &gt; 0, <i>a</i> ≠ 1</span>)</div>
+              <div>• ដែនកំណត់៖ <span class="math-sym"><i>D</i> = ℝ</span></div>
+              <div>• ដែនតម្លៃ៖ <span class="math-sym"><i>R<sub>f</sub></i> = (0, +∞)</span></div>
+              <div>• កាត់ <span class="math-sym">(0, 1)</span> | អាស៊ីមតូត <span class="math-sym"><i>y</i> = 0</span></div>
+              <div>• <span class="math-sym"><i>a</i> &gt; 1</span> កើន | <span class="math-sym">0 &lt; <i>a</i> &lt; 1</span> ចុះ</div>
+            </div>
+
+            <!-- Column 3 -->
+            <div style="background: rgba(15,23,42,0.6); padding: 8px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15);">
+              <div style="font-weight: 700; color: #38bdf8; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 3px; margin-bottom: 5px; text-align: center;">
+                ផ្ទាំង ៣៖ ក្រាប &amp; កិច្ចការ
+              </div>
+              <div>• ក្រាប <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span> និង <span class="math-sym"><i>y</i> = (<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span></div>
+              <div>• ឆ្លុះគ្នាធៀបនឹងអ័ក្ស <span class="math-sym">(<i>Oy</i>)</span></div>
+              <div style="margin-top: 4px; color: #fde047;"><strong>📚 កិច្ចការផ្ទះ៖</strong></div>
+              <div>• លំហាត់ ១, ២ ទំព័រ ៦២</div>
+              <div>• ត្រៀម៖ សមីការអិចស្ប៉ូណង់ស្យែល</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="font-size: 0.9rem; color: #34d399; font-weight: 700;">
+              ✨ សូមអបអរសាទរ! លោកអ្នកបានបញ្ចប់មេរៀនទី ១ ដោយជោគជ័យ។
+            </div>
+            <a href="exercises.html" class="btn btn-outline btn-sm">
+              <span>✏️ ធ្វើលំហាត់អនុវត្តបន្ថែម</span>
+            </a>
+          </div>
+        `,
+        notes: 'សង្ខេបប្លង់ក្ដារខៀន ៣ ជួរឈរ ដើម្បីឱ្យសិស្សងាយស្រួលកត់ត្រាសង្ខេបចូលសៀវភៅ និងណែនាំកិច្ចការផ្ទះ។'
+      }
+    ]
+  },
+  {
     id: 'slide-limits-mastery',
     grade: 'grade12',
     gradeLabel: 'ថ្នាក់ទី ១២',
@@ -1558,7 +2007,231 @@ const EXERCISES_DATA = [
       </ul>
       <p><strong>ចម្លើយ៖</strong> $m = -1$ (ឫសឌុប $x=-2$) ឬ $m = 4$ (ឫសឌុប $x=3$)</p>
     `
-  }
+  },
+  {
+    id: 'ex-g11-exp-01',
+    grade: 'grade11',
+    gradeLabel: 'ថ្នាក់ទី ១១',
+    chapterId: 'g11-ch2',
+    chapterName: 'អនុគមន៍អិចស្ប៉ូណង់ស្យែល',
+    difficulty: 'basic',
+    difficultyLabel: 'គ្រឹះ',
+    difficultyColor: 'emerald',
+    title: 'ផ្នែកទី ១៖ សម្រួល និងគណនាតម្លៃកន្សោមអ៊ិចស្ប៉ូណង់ស្យែល (ក ដល់ ឋ)',
+    problem: `
+      <p style="margin-bottom: 0.8rem; font-weight: 600;">គណនា និងសម្រួលកន្សោមខាងក្រោម (រៀបចំជា ៣ ជួរឈរតាមទម្រង់សន្លឹកកិច្ចការ)៖</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(2, 132, 199, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(56, 189, 248, 0.3);">
+        <div><strong>ក.</strong> $A = 2^3 \\cdot 2^5 \\cdot 2^{-4}$</div>
+        <div><strong>ខ.</strong> $B = \\dfrac{3^4 \\cdot 9^2}{27^2}$</div>
+        <div><strong>គ.</strong> $C = \\dfrac{5^{x+2} - 5^x}{5^{x-1}}$</div>
+        <div><strong>ឃ.</strong> $D = \\left(\\dfrac{1}{2}\\right)^{-3} + \\left(\\dfrac{2}{3}\\right)^{-2} - 16^{0.25}$</div>
+        <div><strong>ង.</strong> $E = \\sqrt[3]{2^6} \\cdot \\sqrt{4^3}$</div>
+        <div><strong>ច.</strong> $F = \\dfrac{a^{2/3} \\cdot b^{-1/2}}{(a^4 b^{-3})^{1/6}}$</div>
+        <div><strong>ឆ.</strong> $G = \\dfrac{2^{n+4} - 2 \\cdot 2^n}{2 \\cdot 2^{n+3}}$</div>
+        <div><strong>ជ.</strong> $H = \\dfrac{e^{3x} + e^{-3x}}{e^x + e^{-x}}$</div>
+        <div><strong>ឈ.</strong> $I = (e^x + 1)^2 - (e^x - 1)^2$</div>
+        <div><strong>ញ.</strong> $J = \\dfrac{e^{2x} - 1}{e^x - 1}$</div>
+        <div><strong>ដ.</strong> $K = \\sqrt{e^{4x} + 2e^{2x} + 1}$</div>
+        <div><strong>ឋ.</strong> $L = \\dfrac{e^x + e^{2x} + e^{3x}}{e^{-x} + e^{-2x} + e^{-3x}}$</div>
+      </div>
+    `,
+    hint: 'ប្រើប្រាស់លក្ខណៈគ្រឹះនៃស្វ័យគុណ៖ $a^m \\cdot a^n = a^{m+n}$, $\\frac{a^m}{a^n} = a^{m-n}$, $(a^m)^n = a^{mn}$, រូបមន្តផលបូកគូប $A^3+B^3 = (A+B)(A^2-AB+B^2)$ និងទាញកត្តារួម។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិតទាំង ១២ សំណួរ៖</strong></p>
+      <ul style="line-height: 1.8;">
+        <li><strong>ក.</strong> $A = 2^{3 + 5 - 4} = 2^4 = 16$</li>
+        <li><strong>ខ.</strong> $B = \\dfrac{3^4 \\cdot (3^2)^2}{(3^3)^2} = \\dfrac{3^4 \\cdot 3^4}{3^6} = \\dfrac{3^8}{3^6} = 3^{8-6} = 3^2 = 9$</li>
+        <li><strong>គ.</strong> $C = \\dfrac{5^x(5^2 - 1)}{5^x \\cdot 5^{-1}} = \\dfrac{25 - 1}{\\frac{1}{5}} = 24 \\times 5 = 120$</li>
+        <li><strong>ឃ.</strong> $D = 2^3 + \\left(\\dfrac{3}{2}\\right)^2 - (2^4)^{\\frac{1}{4}} = 8 + \\dfrac{9}{4} - 2 = 6 + \\dfrac{9}{4} = \\dfrac{33}{4} = 8.25$</li>
+        <li><strong>ង.</strong> $E = 2^{\\frac{6}{3}} \\cdot (2^2)^{\\frac{3}{2}} = 2^2 \\cdot 2^3 = 4 \\cdot 8 = 32$</li>
+        <li><strong>ច.</strong> $F = \\dfrac{a^{2/3} b^{-1/2}}{a^{4/6} b^{-3/6}} = \\dfrac{a^{2/3} b^{-1/2}}{a^{2/3} b^{-1/2}} = 1$ ($a>0, b>0$)</li>
+        <li><strong>ឆ.</strong> $G = \\dfrac{2^n(2^4 - 2)}{2^{n+4}} = \\dfrac{16 - 2}{16} = \\dfrac{14}{16} = \\dfrac{7}{8}$</li>
+        <li><strong>ជ.</strong> $H = \\dfrac{(e^x + e^{-x})(e^{2x} - e^x \\cdot e^{-x} + e^{-2x})}{e^x + e^{-x}} = e^{2x} - 1 + e^{-2x}$</li>
+        <li><strong>ឈ.</strong> $I = (e^{2x} + 2e^x + 1) - (e^{2x} - 2e^x + 1) = 4e^x$</li>
+        <li><strong>ញ.</strong> $J = \\dfrac{(e^x - 1)(e^x + 1)}{e^x - 1} = e^x + 1$ ($x \\ne 0$)</li>
+        <li><strong>ដ.</strong> $K = \\sqrt{(e^{2x} + 1)^2} = |e^{2x} + 1| = e^{2x} + 1$ (ដោយ $e^{2x} > 0$ ជានិច្ច)</li>
+        <li><strong>ឋ.</strong> $L = \\dfrac{e^x(1 + e^x + e^{2x})}{e^{-3x}(e^{2x} + e^x + 1)} = \\dfrac{e^x}{e^{-3x}} = e^{x - (-3x)} = e^{4x}$</li>
+      </ul>
+    `
+  },
+  {
+    id: 'ex-g11-exp-02',
+    grade: 'grade11',
+    gradeLabel: 'ថ្នាក់ទី ១១',
+    chapterId: 'g11-ch2',
+    chapterName: 'អនុគមន៍អិចស្ប៉ូណង់ស្យែល',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'ផ្នែកទី ២ (ក)៖ ដោះស្រាយសមីការអ៊ិចស្ប៉ូណង់ស្យែល (ក ដល់ ឋ)',
+    problem: `
+      <p style="margin-bottom: 0.8rem; font-weight: 600;">ដោះស្រាយសមីការអ៊ិចស្ប៉ូណង់ស្យែលខាងក្រោម (ទម្រង់គោលដូចគ្នា និងទាញកត្តារួម)៖</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(2, 132, 199, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(56, 189, 248, 0.3);">
+        <div><strong>ក.</strong> $2^{x-1} = 16$</div>
+        <div><strong>ខ.</strong> $3^{2x+1} = 27$</div>
+        <div><strong>គ.</strong> $5^{x^2 - 3x} = 5^4$</div>
+        <div><strong>ឃ.</strong> $4^x = \\dfrac{1}{64}$</div>
+        <div><strong>ង.</strong> $\\left(\\dfrac{2}{3}\\right)^x = \\dfrac{27}{8}$</div>
+        <div><strong>ច.</strong> $9^{x-2} = 27^{x+1}$</div>
+        <div><strong>ឆ.</strong> $2^{x^2 - 5x + 6} = 1$</div>
+        <div><strong>ជ.</strong> $e^{2x-3} = 1$</div>
+        <div><strong>ឈ.</strong> $4 \\cdot 2^{2x} = 2^{5x-4}$</div>
+        <div><strong>ញ.</strong> $2^{x+1} + 2^x = 24$</div>
+        <div><strong>ដ.</strong> $3^{x+1} - 2 \\cdot 3^{x-1} = 63$</div>
+        <div><strong>ឋ.</strong> $5^{x+1} + 5^{x-1} = 26$</div>
+      </div>
+    `,
+    hint: 'បំប្លែងអង្គសងខាងឱ្យទៅជាគោលដូចគ្នា $a^{f(x)} = a^{g(x)} \\iff f(x) = g(x)$ (ដោយ $a>0, a \\ne 1$)។ ចំពោះផលបូក ត្រូវទាញ $a^x$ ជាកត្តារួម។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul style="line-height: 1.8;">
+        <li><strong>ក.</strong> $2^{x-1} = 2^4 \\implies x - 1 = 4 \\implies x = 5$</li>
+        <li><strong>ខ.</strong> $3^{2x+1} = 3^3 \\implies 2x + 1 = 3 \\implies 2x = 2 \\implies x = 1$</li>
+        <li><strong>គ.</strong> $x^2 - 3x = 4 \\implies x^2 - 3x - 4 = 0 \\implies (x-4)(x+1) = 0 \\implies x = 4$ ឬ $x = -1$</li>
+        <li><strong>ឃ.</strong> $4^x = 4^{-3} \\implies x = -3$</li>
+        <li><strong>ង.</strong> $\\left(\\frac{2}{3}\\right)^x = \\left(\\frac{3}{2}\\right)^3 = \\left(\\frac{2}{3}\\right)^{-3} \\implies x = -3$</li>
+        <li><strong>ច.</strong> $3^{2(x-2)} = 3^{3(x+1)} \\implies 2x - 4 = 3x + 3 \\implies x = -7$</li>
+        <li><strong>ឆ.</strong> $2^{x^2 - 5x + 6} = 2^0 \\implies x^2 - 5x + 6 = 0 \\implies (x-2)(x-3) = 0 \\implies x = 2$ ឬ $x = 3$</li>
+        <li><strong>ជ.</strong> $e^{2x-3} = e^0 \\implies 2x - 3 = 0 \\implies x = \\frac{3}{2}$</li>
+        <li><strong>ឈ.</strong> $2^2 \\cdot 2^{2x} = 2^{5x-4} \\implies 2^{2x+2} = 2^{5x-4} \\implies 2x+2 = 5x-4 \\implies 3x = 6 \\implies x = 2$</li>
+        <li><strong>ញ.</strong> $2^x(2 + 1) = 24 \\implies 3 \\cdot 2^x = 24 \\implies 2^x = 8 = 2^3 \\implies x = 3$</li>
+        <li><strong>ដ.</strong> $3^x\\left(3 - \\frac{2}{3}\\right) = 63 \\implies 3^x\\left(\\frac{7}{3}\\right) = 63 \\implies 3^x = 27 = 3^3 \\implies x = 3$</li>
+        <li><strong>ឋ.</strong> $5^x\\left(5 + \\frac{1}{5}\\right) = 26 \\implies 5^x\\left(\\frac{26}{5}\\right) = 26 \\implies 5^x = 5 \\implies x = 1$</li>
+      </ul>
+    `
+  },
+  {
+    id: 'ex-g11-exp-03',
+    grade: 'grade11',
+    gradeLabel: 'ថ្នាក់ទី ១១',
+    chapterId: 'g11-ch2',
+    chapterName: 'អនុគមន៍អិចស្ប៉ូណង់ស្យែល',
+    difficulty: 'advanced',
+    difficultyLabel: 'បាក់ឌុប',
+    difficultyColor: 'cyan',
+    title: 'ផ្នែកទី ២ (ខ)៖ សមីការអ៊ិចស្ប៉ូណង់ស្យែលទម្រង់តាងអថេរជំនួយ & អូម៉ូសែន (ឌ ដល់ រ)',
+    problem: `
+      <p style="margin-bottom: 0.8rem; font-weight: 600;">ដោះស្រាយសមីការអ៊ិចស្ប៉ូណង់ស្យែលដោយតាងអថេរជំនួយ និងសមីការអូម៉ូសែន៖</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(2, 132, 199, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(56, 189, 248, 0.3);">
+        <div><strong>ឌ.</strong> $4^x - 3 \\cdot 2^x + 2 = 0$</div>
+        <div><strong>ឍ.</strong> $9^x - 4 \\cdot 3^x + 3 = 0$</div>
+        <div><strong>ណ.</strong> $25^x - 6 \\cdot 5^x + 5 = 0$</div>
+        <div><strong>ត.</strong> $4^x - 5 \\cdot 2^x + 4 = 0$</div>
+        <div><strong>ថ.</strong> $9^x - 10 \\cdot 3^x + 9 = 0$</div>
+        <div><strong>ទ.</strong> $16^x - 5 \\cdot 4^x + 4 = 0$</div>
+        <div><strong>ធ.</strong> $2^{2x+1} - 9 \\cdot 2^x + 4 = 0$</div>
+        <div><strong>ន.</strong> $3^{2x+1} - 10 \\cdot 3^x + 3 = 0$</div>
+        <div><strong>ប.</strong> $5^{2x+1} - 26 \\cdot 5^x + 5 = 0$</div>
+        <div><strong>ផ.</strong> $e^{2x} - 4e^x + 3 = 0$</div>
+        <div><strong>ព.</strong> $e^x + 2e^{-x} - 3 = 0$</div>
+        <div><strong>ភ.</strong> $2^x + 2^{2-x} = 5$</div>
+        <div><strong>ម.</strong> $3 \\cdot 4^x - 5 \\cdot 6^x + 2 \\cdot 9^x = 0$</div>
+        <div><strong>យ.</strong> $4^{x+1} - 9 \\cdot 2^x + 2 = 0$</div>
+        <div><strong>រ.</strong> $9^x + 6^x = 2 \\cdot 4^x$</div>
+      </div>
+    `,
+    hint: 'តាង $t = a^x$ (លក្ខខណ្ឌ $t > 0$) នាំឱ្យបានសមីការដឺក្រេទី ២ $At^2 + Bt + C = 0$។ ចំពោះសមីការអូម៉ូសែន $A\\cdot a^{2x} + B(ab)^x + C\\cdot b^{2x} = 0$ ត្រូវចែកអង្គសងខាងនឹង $b^{2x}$ រួចតាង $u = (a/b)^x > 0$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul style="line-height: 1.8;">
+        <li><strong>ឌ.</strong> តាង $t = 2^x > 0 \\implies t^2 - 3t + 2 = 0 \\implies t = 1$ ឬ $t = 2 \\implies x = 0$ ឬ $x = 1$</li>
+        <li><strong>ឍ.</strong> តាង $t = 3^x > 0 \\implies t^2 - 4t + 3 = 0 \\implies t = 1$ ឬ $t = 3 \\implies x = 0$ ឬ $x = 1$</li>
+        <li><strong>ណ.</strong> តាង $t = 5^x > 0 \\implies t^2 - 6t + 5 = 0 \\implies t = 1$ ឬ $t = 5 \\implies x = 0$ ឬ $x = 1$</li>
+        <li><strong>ត.</strong> តាង $t = 2^x > 0 \\implies t^2 - 5t + 4 = 0 \\implies t = 1$ ឬ $t = 4 \\implies x = 0$ ឬ $x = 2$</li>
+        <li><strong>ថ.</strong> តាង $t = 3^x > 0 \\implies t^2 - 10t + 9 = 0 \\implies t = 1$ ឬ $t = 9 \\implies x = 0$ ឬ $x = 2$</li>
+        <li><strong>ទ.</strong> តាង $t = 4^x > 0 \\implies t^2 - 5t + 4 = 0 \\implies t = 1$ ឬ $t = 4 \\implies x = 0$ ឬ $x = 1$</li>
+        <li><strong>ធ.</strong> $2(2^x)^2 - 9(2^x) + 4 = 0 \\implies (2t - 1)(t - 4) = 0 \\implies t = \\frac{1}{2} \\implies x = -1$ ឬ $t = 4 \\implies x = 2$</li>
+        <li><strong>ន.</strong> $3(3^x)^2 - 10(3^x) + 3 = 0 \\implies (3t - 1)(t - 3) = 0 \\implies t = \\frac{1}{3} \\implies x = -1$ ឬ $t = 3 \\implies x = 1$</li>
+        <li><strong>ប.</strong> $5(5^x)^2 - 26(5^x) + 5 = 0 \\implies (5t - 1)(t - 5) = 0 \\implies t = \\frac{1}{5} \\implies x = -1$ ឬ $t = 5 \\implies x = 1$</li>
+        <li><strong>ផ.</strong> តាង $t = e^x > 0 \\implies t^2 - 4t + 3 = 0 \\implies t = 1 \\implies x = 0$ ឬ $t = 3 \\implies x = \\ln 3$</li>
+        <li><strong>ព.</strong> គុណនឹង $e^x$៖ $(e^x)^2 - 3e^x + 2 = 0 \\implies e^x = 1 \\implies x = 0$ ឬ $e^x = 2 \\implies x = \\ln 2$</li>
+        <li><strong>ភ.</strong> $2^x + \\frac{4}{2^x} = 5 \\implies (2^x)^2 - 5(2^x) + 4 = 0 \\implies 2^x = 1 \\implies x = 0$ ឬ $2^x = 4 \\implies x = 2$</li>
+        <li><strong>ម.</strong> ចែកនឹង $9^x$៖ $3\\left(\\frac{2}{3}\\right)^{2x} - 5\\left(\\frac{2}{3}\\right)^x + 2 = 0 \\implies (3u - 2)(u - 1) = 0$ នាំឱ្យ $u = 1 \\implies x = 0$ ឬ $u = \\frac{2}{3} \\implies x = 1$</li>
+        <li><strong>យ.</strong> $4(2^x)^2 - 9(2^x) + 2 = 0 \\implies (4t - 1)(t - 2) = 0 \\implies 2^x = \\frac{1}{4} \\implies x = -2$ ឬ $2^x = 2 \\implies x = 1$</li>
+        <li><strong>រ.</strong> ចែកនឹង $4^x$៖ $\\left(\\frac{3}{2}\\right)^{2x} + \\left(\\frac{3}{2}\\right)^x - 2 = 0 \\implies (u + 2)(u - 1) = 0$។ ដោយ $u > 0$ យក $u = 1 \\implies x = 0$</li>
+      </ul>
+    `
+  },
+  {
+    id: 'ex-g11-exp-04',
+    grade: 'grade11',
+    gradeLabel: 'ថ្នាក់ទី ១១',
+    chapterId: 'g11-ch2',
+    chapterName: 'អនុគមន៍អិចស្ប៉ូណង់ស្យែល',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'ផ្នែកទី ៣៖ ដោះស្រាយវិសមីការអ៊ិចស្ប៉ូណង់ស្យែល (ក ដល់ ឋ)',
+    problem: `
+      <p style="margin-bottom: 0.8rem; font-weight: 600;">ដោះស្រាយវិសមីការអ៊ិចស្ប៉ូណង់ស្យែលខាងក្រោម៖</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(2, 132, 199, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(56, 189, 248, 0.3);">
+        <div><strong>ក.</strong> $2^{x+3} > 8$</div>
+        <div><strong>ខ.</strong> $3^{2x-1} \\le 27$</div>
+        <div><strong>គ.</strong> $5^{x^2 - 4} \\ge 1$</div>
+        <div><strong>ឃ.</strong> $\\left(\\dfrac{1}{2}\\right)^{2x-1} > \\left(\\dfrac{1}{2}\\right)^{x+2}$</div>
+        <div><strong>ង.</strong> $\\left(\\dfrac{1}{3}\\right)^{x^2 - 3} \\le \\dfrac{1}{9}$</div>
+        <div><strong>ច.</strong> $\\left(\\dfrac{2}{5}\\right)^{3x-2} > \\left(\\dfrac{5}{2}\\right)^{x-4}$</div>
+        <div><strong>ឆ.</strong> $4^x - 3 \\cdot 2^x + 2 < 0$</div>
+        <div><strong>ជ.</strong> $9^x - 4 \\cdot 3^x + 3 \\ge 0$</div>
+        <div><strong>ឈ.</strong> $25^x - 6 \\cdot 5^x + 5 \\le 0$</div>
+        <div><strong>ញ.</strong> $e^{2x} - 3e^x + 2 > 0$</div>
+        <div><strong>ដ.</strong> $2^{x+2} + 2^{x+1} + 2^x \\le 28$</div>
+        <div><strong>ឋ.</strong> $4^x - 5 \\cdot 2^x + 4 \\le 0$</div>
+      </div>
+    `,
+    hint: 'ចំពោះវិសមីការ $a^{f(x)} > a^{g(x)}$៖ បើ $a > 1 \\implies f(x) > g(x)$ (រក្សាទិសដៅ)។ បើ $0 < a < 1 \\implies f(x) < g(x)$ (ប្តូរទិសដៅវិសមភាព)។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul style="line-height: 1.8;">
+        <li><strong>ក.</strong> $2^{x+3} > 2^3 \\implies x + 3 > 3 \\implies x > 0$ ឬ $x \\in (0, +\\infty)$</li>
+        <li><strong>ខ.</strong> $3^{2x-1} \\le 3^3 \\implies 2x - 1 \\le 3 \\implies 2x \\le 4 \\implies x \\le 2$ ឬ $x \\in (-\\infty, 2]$</li>
+        <li><strong>គ.</strong> $5^{x^2 - 4} \\ge 5^0 \\implies x^2 - 4 \\ge 0 \\implies x \\in (-\\infty, -2] \\cup [2, +\\infty)$</li>
+        <li><strong>ឃ.</strong> ដោយគោល $0 < \\frac{1}{2} < 1$ នាំឱ្យប្តូរទិសដៅ៖ $2x - 1 < x + 2 \\implies x < 3$ ឬ $x \\in (-\\infty, 3)$</li>
+        <li><strong>ង.</strong> $\\left(\\frac{1}{3}\\right)^{x^2 - 3} \\le \\left(\\frac{1}{3}\\right)^2 \\implies x^2 - 3 \\ge 2 \\implies x^2 \\ge 5 \\implies x \\le -\\sqrt{5}$ ឬ $x \\ge \\sqrt{5}$</li>
+        <li><strong>ច.</strong> $\\left(\\frac{2}{5}\\right)^{3x-2} > \\left(\\frac{2}{5}\\right)^{-(x-4)} \\implies 3x - 2 < -x + 4 \\implies 4x < 6 \\implies x < \\frac{3}{2}$</li>
+        <li><strong>ឆ.</strong> $(2^x - 1)(2^x - 2) < 0 \\implies 1 < 2^x < 2 \\implies 2^0 < 2^x < 2^1 \\implies 0 < x < 1$</li>
+        <li><strong>ជ.</strong> $(3^x - 1)(3^x - 3) \\ge 0 \\implies 3^x \\le 1$ ឬ $3^x \\ge 3 \\implies x \\le 0$ ឬ $x \\ge 1$</li>
+        <li><strong>ឈ.</strong> $(5^x - 1)(5^x - 5) \\le 0 \\implies 1 \\le 5^x \\le 5 \\implies 0 \\le x \\le 1$</li>
+        <li><strong>ញ.</strong> $(e^x - 1)(e^x - 2) > 0 \\implies e^x < 1$ ឬ $e^x > 2 \\implies x < 0$ ឬ $x > \\ln 2$</li>
+        <li><strong>ដ.</strong> $2^x(4 + 2 + 1) \\le 28 \\implies 7 \\cdot 2^x \\le 28 \\implies 2^x \\le 4 = 2^2 \\implies x \\le 2$</li>
+        <li><strong>ឋ.</strong> $(2^x - 1)(2^x - 4) \\le 0 \\implies 1 \\le 2^x \\le 4 \\implies 0 \\le x \\le 2$</li>
+      </ul>
+    `
+  },
+  {
+    id: 'ex-g11-exp-05',
+    grade: 'grade11',
+    gradeLabel: 'ថ្នាក់ទី ១១',
+    chapterId: 'g11-ch2',
+    chapterName: 'អនុគមន៍អិចស្ប៉ូណង់ស្យែល',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'ផ្នែកទី ៤៖ រកដែនកំណត់នៃអនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល (ក ដល់ ច)',
+    problem: `
+      <p style="margin-bottom: 0.8rem; font-weight: 600;">រកដែនកំណត់ $D$ នៃអនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែលខាងក្រោម៖</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(2, 132, 199, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(56, 189, 248, 0.3);">
+        <div><strong>ក.</strong> $y = e^{\\frac{1}{x-2}}$</div>
+        <div><strong>ខ.</strong> $y = \\dfrac{1}{e^x - 1}$</div>
+        <div><strong>គ.</strong> $y = \\sqrt{e^{2x} - 3e^x + 2}$</div>
+        <div><strong>ឃ.</strong> $y = \\dfrac{x+1}{2^x - 8}$</div>
+        <div><strong>ង.</strong> $y = \\sqrt{1 - 3^{x-1}}$</div>
+        <div><strong>ច.</strong> $y = \\dfrac{\\sqrt{x}}{e^x - e^{-x}}$</div>
+      </div>
+    `,
+    hint: 'អនុគមន៍មានន័យកាលណា៖ ភាគបែងខុសពីសូន្យ ($B \\ne 0$) និងកន្សោមក្រោមរ៉ាឌីកាល់សន្ទស្សន៍គូមិនអវិជ្ជមាន ($A \\ge 0$)។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul style="line-height: 1.8;">
+        <li><strong>ក.</strong> អនុគមន៍មានន័យ $\\iff x - 2 \\ne 0 \\iff x \\ne 2$។<br>$\\implies D = \\mathbb{R} \\setminus \\{2\\} = (-\\infty, 2) \\cup (2, +\\infty)$</li>
+        <li><strong>ខ.</strong> អនុគមន៍មានន័យ $\\iff e^x - 1 \\ne 0 \\iff e^x \\ne 1 \\iff x \\ne 0$។<br>$\\implies D = \\mathbb{R}^* = \\mathbb{R} \\setminus \\{0\\}$</li>
+        <li><strong>គ.</strong> អនុគមន៍មានន័យ $\\iff e^{2x} - 3e^x + 2 \\ge 0 \\iff (e^x - 1)(e^x - 2) \\ge 0 \\iff e^x \\le 1$ ឬ $e^x \\ge 2$។<br>$\\implies x \\le 0$ ឬ $x \\ge \\ln 2$។ ដូចនេះ $D = (-\\infty, 0] \\cup [\\ln 2, +\\infty)$</li>
+        <li><strong>ឃ.</strong> អនុគមន៍មានន័យ $\\iff 2^x - 8 \\ne 0 \\iff 2^x \\ne 8 = 2^3 \\iff x \\ne 3$។<br>$\\implies D = \\mathbb{R} \\setminus \\{3\\}$</li>
+        <li><strong>ង.</strong> អនុគមន៍មានន័យ $\\iff 1 - 3^{x-1} \\ge 0 \\iff 3^{x-1} \\le 1 = 3^0 \\iff x - 1 \\le 0 \\iff x \\le 1$។<br>$\\implies D = (-\\infty, 1]$</li>
+        <li><strong>ច.</strong> អនុគមន៍មានន័យ $\\iff \\begin{cases} x \\ge 0 \\\\ e^x - e^{-x} \\ne 0 \\end{cases} \\iff \\begin{cases} x \\ge 0 \\\\ e^{2x} \\ne 1 \\iff x \\ne 0 \\end{cases} \\iff x > 0$។<br>$\\implies D = (0, +\\infty)$</li>
+      </ul>
+    `
+  },
 ];
 
 /* ============================================================

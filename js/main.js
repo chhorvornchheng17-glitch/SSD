@@ -151,6 +151,7 @@
         if (!parent) return;
 
         if (window.innerWidth <= 992) return;
+        e.preventDefault();
 
         const isCurrentlyOpen = parent.classList.contains('is-open');
         navItemsWithDropdown.forEach(item => {
@@ -163,12 +164,54 @@
 
         parent.classList.toggle('is-open', !isCurrentlyOpen);
         toggle.setAttribute('aria-expanded', String(!isCurrentlyOpen));
+
+        // When closing parent dropdown, also close any open submenus
+        if (isCurrentlyOpen) {
+          parent.querySelectorAll('.dropdown-submenu-wrapper').forEach(w => w.classList.remove('is-open'));
+        }
       });
     });
 
-    // Close desktop dropdowns on item click
+    // Submenu Toggle on Click (កិច្ចតែងការបង្រៀន)
+    const submenuToggles = document.querySelectorAll('.dropdown-submenu-toggle-btn');
+    submenuToggles.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const wrapper = btn.closest('.dropdown-submenu-wrapper');
+        if (!wrapper) return;
+        const wasOpen = wrapper.classList.contains('is-open');
+        document.querySelectorAll('.dropdown-submenu-wrapper').forEach(w => {
+          if (w !== wrapper) {
+            w.classList.remove('is-open');
+            const otherBtn = w.querySelector('.dropdown-submenu-toggle-btn');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+        wrapper.classList.toggle('is-open', !wasOpen);
+        btn.setAttribute('aria-expanded', String(!wasOpen));
+      });
+    });
+
+    // Mobile Submenu Accordion Toggle (កិច្ចតែងការបង្រៀន)
+    const mobileSubToggles = document.querySelectorAll('.mobile-sub-accordion-btn');
+    mobileSubToggles.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const wrapper = btn.closest('.mobile-sub-accordion-wrapper');
+        if (!wrapper) return;
+        const isOpen = wrapper.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+
+    // Close desktop dropdowns on item click (except submenu toggles)
     dropdownItems.forEach(item => {
-      item.addEventListener('click', () => {
+      item.addEventListener('click', (e) => {
+        if (item.classList.contains('dropdown-submenu-toggle-btn') || item.closest('.dropdown-submenu-toggle-btn')) {
+          return;
+        }
         navItemsWithDropdown.forEach(navItem => {
           navItem.classList.remove('is-open');
           const btn = navItem.querySelector('.nav-dropdown-toggle');
@@ -183,6 +226,13 @@
         navItemsWithDropdown.forEach(navItem => {
           navItem.classList.remove('is-open');
           const btn = navItem.querySelector('.nav-dropdown-toggle');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+      }
+      if (!e.target.closest('.dropdown-submenu-wrapper')) {
+        document.querySelectorAll('.dropdown-submenu-wrapper').forEach(w => {
+          w.classList.remove('is-open');
+          const btn = w.querySelector('.dropdown-submenu-toggle-btn');
           if (btn) btn.setAttribute('aria-expanded', 'false');
         });
       }

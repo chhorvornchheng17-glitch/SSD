@@ -198,21 +198,62 @@
                   <span class="chip-text">ថ្នាក់ទី ៩ <small>(Math Hero)</small></span>
                 </a>
               </div>
-              <a href="lesson-plan-exponential-ibl.html" class="dropdown-item" onclick="openLessonPlanModal(event)">
-                <div class="dropdown-item-icon" style="color: #10b981;">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                    <polyline points="10 9 9 9 8 9"></polyline>
-                  </svg>
+              <!-- Submenu: កិច្ចតែងការបង្រៀន (Click-Only Flyout Submenu) -->
+              <div class="dropdown-submenu-wrapper">
+                <button type="button" class="dropdown-submenu-toggle-btn" aria-haspopup="true" aria-expanded="false">
+                  <div class="dropdown-item-icon" style="background: rgba(16, 185, 129, 0.12); color: #10b981;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </div>
+                  <div class="dropdown-item-content" style="flex: 1;">
+                    <div class="dropdown-item-title" style="display: flex; align-items: center; justify-content: space-between;">
+                      <span>កិច្ចតែងការបង្រៀន</span>
+                      <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #10b981; font-size: 0.65rem; padding: 1px 7px; border-radius: 999px; font-weight: 700;">៣ មេរៀន</span>
+                    </div>
+                    <div class="dropdown-item-desc">ស្វ៊ីតនព្វន្ត, ស្វ៊ីតចំនួនពិត, អិចស្ប៉ូណង់ស្យែល (ចុចដើម្បីមើល)</div>
+                  </div>
+                  <div class="submenu-arrow-icon" style="margin-left: 6px; color: var(--text-muted); transition: transform 0.2s ease;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </div>
+                </button>
+                <div class="dropdown-submenu-flyout">
+                  <div class="dropdown-submenu-flyout-header">
+                    <span>📋 ជ្រើសរើសកិច្ចតែងការបង្រៀន</span>
+                    <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #10b981; font-size: 0.65rem; padding: 1px 7px; border-radius: 999px;">៣ មេរៀន</span>
+                  </div>
+                  <div class="dropdown-sub-items-list">
+                    <a href="lesson-plan-arithmetic-sequence.html" class="dropdown-sub-item-link" title="កិច្ចតែងការបង្រៀន៖ ស្វ៊ីតនព្វន្ត (តួទី n)">
+                      <span class="sub-link-dot" style="background: #f59e0b;"></span>
+                      <span class="sub-link-text">
+                        <strong>ស្វ៊ីតនព្វន្ត៖ តួទី n</strong>
+                        <small>រូបមន្ត $u_n = u_1 + (n-1)d$ (៥០ នាទី)</small>
+                      </span>
+                      <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; font-size: 0.62rem; padding: 1px 5px; border-radius: 4px;">ថ្មី</span>
+                    </a>
+                    <a href="lesson-plan-sequences-ibl.html" class="dropdown-sub-item-link" title="កិច្ចតែងការបង្រៀន៖ ស្វ៊ីតចំនួនពិត">
+                      <span class="sub-link-dot" style="background: #0284c7;"></span>
+                      <span class="sub-link-text">
+                        <strong>ស្វ៊ីតចំនួនពិត (ម៉ោងទី១)</strong>
+                        <small>ស្វ៊ីតរាប់អស់ ស្វ៊ីតអនន្ត និងនិយមន័យ (៥០ នាទី)</small>
+                      </span>
+                    </a>
+                    <a href="lesson-plan-exponential-ibl.html" class="dropdown-sub-item-link" onclick="openLessonPlanModal(event)" title="កិច្ចតែងការបង្រៀន៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល">
+                      <span class="sub-link-dot" style="background: #10b981;"></span>
+                      <span class="sub-link-text">
+                        <strong>អនុគមន៍អិចស្ប៉ូណង់ស្យែល</strong>
+                        <small>គរុកោសល្យរិះរក 5E Model (Print/PDF)</small>
+                      </span>
+                    </a>
+                  </div>
                 </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title" style="color: #34d399;">កិច្ចតែងការបង្រៀន (IBL) <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #34d399; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-left: 4px;">ថ្មី</span></div>
-                  <div class="dropdown-item-desc">កិច្ចតែងការគំរូ 5E Model (Print / Save as PDF)</div>
-                </div>
-              </a>
+              </div>
               <a href="slides.html" class="dropdown-item">
                 <div class="dropdown-item-icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
@@ -227,8 +268,8 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                 </div>
                 <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">កម្រងលំហាត់អនុវត្ត</div>
-                  <div class="dropdown-item-desc">លំហាត់តាមជំពូក និងដំណោះស្រាយមួយជំហានៗ</div>
+                  <div class="dropdown-item-title">កម្រងលំហាត់អនុវត្ត <span class="chip-badge" style="background: rgba(6,182,212,0.2); color: #38bdf8; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-left: 4px;">អ៊ិចស្ប៉ូណង់ស្យែល ១១</span></div>
+                  <div class="dropdown-item-desc">លំហាត់អនុវត្តអ៊ិចស្ប៉ូណង់ស្យែលថ្នាក់ទី១១ និងដំណោះស្រាយលម្អិត</div>
                 </div>
               </a>
               <a href="exams.html" class="dropdown-item">
@@ -507,13 +548,40 @@
             <a href="lessons.html?grade=grade10" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-secondary); text-decoration: none;">🌱 ថ្នាក់ទី ១០</a>
             <a href="game-grade9.html" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); border-radius: 6px; color: #f59e0b; text-decoration: none;">⚔️ ថ្នាក់ទី ៩</a>
           </div>
-          <a href="lesson-plan-exponential-ibl.html" class="mobile-sub-link" onclick="openLessonPlanModal(event)">
-            <span class="sub-dot" style="background: #10b981;"></span>
-            <div>
-              <div class="sub-title" style="color: #34d399;">កិច្ចតែងការបង្រៀន (IBL)</div>
-              <div class="sub-desc">កិច្ចតែងការគំរូ 5E Model (Print/PDF)</div>
+          <!-- Submenu: កិច្ចតែងការបង្រៀន (Mobile Click-to-Toggle Accordion) -->
+          <div class="mobile-sub-accordion-wrapper">
+            <button type="button" class="mobile-sub-accordion-btn">
+              <span style="font-size: 0.8rem; font-weight: 700; color: #10b981; display: flex; align-items: center; gap: 0.4rem;">
+                <span>📋</span>
+                <span>កិច្ចតែងការបង្រៀន</span>
+                <span class="chip-badge" style="background: rgba(16,185,129,0.25); color: #10b981; font-size: 0.62rem; padding: 1px 6px; border-radius: 999px;">៣ មេរៀន</span>
+              </span>
+              <span class="mobile-sub-chevron" style="color: #10b981; transition: transform 0.2s ease; font-size: 0.85rem;">▾</span>
+            </button>
+            <div class="mobile-sub-accordion-panel">
+              <a href="lesson-plan-arithmetic-sequence.html" class="mobile-sub-link" style="padding: 0.35rem 0.45rem; background: rgba(255,255,255,0.03); border-radius: 6px;">
+                <span class="sub-dot" style="background: #f59e0b;"></span>
+                <div>
+                  <div class="sub-title" style="color: #fbbf24; font-size: 0.8rem;">ស្វ៊ីតនព្វន្ត (តួទី n) <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; font-size: 0.58rem; padding: 0 4px; border-radius: 3px;">ថ្មី</span></div>
+                  <div class="sub-desc" style="font-size: 0.68rem;">កិច្ចតែងការ ៥០ នាទី (៣ ជួរឈរ)</div>
+                </div>
+              </a>
+              <a href="lesson-plan-sequences-ibl.html" class="mobile-sub-link" style="padding: 0.35rem 0.45rem; background: rgba(255,255,255,0.03); border-radius: 6px;">
+                <span class="sub-dot" style="background: #0284c7;"></span>
+                <div>
+                  <div class="sub-title" style="color: #38bdf8; font-size: 0.8rem;">ស្វ៊ីតចំនួនពិត</div>
+                  <div class="sub-desc" style="font-size: 0.68rem;">កិច្ចតែងការ ៥០ នាទី (៣ ជួរឈរ)</div>
+                </div>
+              </a>
+              <a href="lesson-plan-exponential-ibl.html" class="mobile-sub-link" onclick="openLessonPlanModal(event)" style="padding: 0.35rem 0.45rem; background: rgba(255,255,255,0.03); border-radius: 6px;">
+                <span class="sub-dot" style="background: #10b981;"></span>
+                <div>
+                  <div class="sub-title" style="color: #34d399; font-size: 0.8rem;">អនុគមន៍អិចស្ប៉ូណង់ស្យែល</div>
+                  <div class="sub-desc" style="font-size: 0.68rem;">កិច្ចតែងការ 5E Model (Print/PDF)</div>
+                </div>
+              </a>
             </div>
-          </a>
+          </div>
           <a href="slides.html" class="mobile-sub-link">
             <span class="sub-dot"></span>
             <div>
@@ -524,8 +592,8 @@
           <a href="exercises.html" class="mobile-sub-link">
             <span class="sub-dot"></span>
             <div>
-              <div class="sub-title">កម្រងលំហាត់អនុវត្ត</div>
-              <div class="sub-desc">លំហាត់ និងដំណោះស្រាយ</div>
+              <div class="sub-title">កម្រងលំហាត់អនុវត្ត <span class="chip-badge" style="background: rgba(6,182,212,0.2); color: #38bdf8; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-left: 4px;">អ៊ិចស្ប៉ូណង់ស្យែល ១១</span></div>
+              <div class="sub-desc">លំហាត់អនុវត្តអ៊ិចស្ប៉ូណង់ស្យែល & ដំណោះស្រាយ</div>
             </div>
           </a>
           <a href="exams.html" class="mobile-sub-link">
@@ -799,7 +867,9 @@
             <li><a href="exams.html" class="footer-link">វិញ្ញាសាប្រឡងជាតិ & តេស្ត</a></li>
             <li><a href="game-grade9.html" class="footer-link" style="color: #f59e0b;">⚔️ ល្បែងគណិតថ្នាក់ទី ៩</a></li>
             <li><a href="game-grade11.html" class="footer-link" style="color: #a78bfa;">🎮 ល្បែងគណិតថ្នាក់ទី ១១</a></li>
-            <li><a href="lesson-plan-exponential-ibl.html" class="footer-link" style="color: #34d399; font-weight: 600;">📝 កិច្ចតែងការបង្រៀន (IBL)</a></li>
+            <li><a href="lesson-plan-exponential-ibl.html" class="footer-link" style="color: #34d399; font-weight: 600;">📝 កិច្ចតែងការបង្រៀន៖ អិចស្ប៉ូណង់ស្យែល</a></li>
+            <li><a href="lesson-plan-sequences-ibl.html" class="footer-link" style="color: #38bdf8; font-weight: 600;">📝 កិច្ចតែងការបង្រៀន៖ ស្វ៊ីតចំនួនពិត</a></li>
+            <li><a href="lesson-plan-arithmetic-sequence.html" class="footer-link" style="color: #fbbf24; font-weight: 600;">📝 កិច្ចតែងការ៖ ស្វ៊ីតនព្វន្ត (តួទី n)</a></li>
             <li><a href="index.html#arithmetic-video-studio" class="footer-link">វីដេអូបម្រើបម្រាស់ស្វ៊ីតនព្វន្ត</a></li>
             <li><a href="index.html#geometric-video-studio" class="footer-link">វីដេអូបម្រើបម្រាស់ស្វ៊ីតធរណីមាត្រ</a></li>
           </ul>
