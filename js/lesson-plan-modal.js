@@ -297,10 +297,14 @@
     table { width: 100%; border-collapse: collapse; margin-bottom: 12pt; }
     th, td { border: 1px solid #475569; padding: 6pt 8pt; font-size: 10pt; vertical-align: top; }
     th { background-color: #f1f5f9; color: #0f172a; font-weight: bold; }
-    .official-header { text-align: center; margin-bottom: 15pt; }
-    .country-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 14pt; font-weight: bold; }
-    .motto-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 11pt; font-weight: bold; }
-    .header-divider { border-bottom: 2pt solid #0284c7; width: 120pt; margin: 6pt auto; }
+    .official-header { margin-bottom: 14pt; }
+    .header-national-top { text-align: center; margin-bottom: 8pt; }
+    .country-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 13pt; color: #1e3b88; font-weight: bold; }
+    .motto-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 10.5pt; color: #1e3b88; font-weight: bold; }
+    .header-hierarchy-left { text-align: left; margin-bottom: 12pt; line-height: 1.5; }
+    .ministry-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 11pt; color: #0f172a; font-weight: bold; }
+    .department-title { font-family: 'Kantumruy Pro', 'Khmer OS Battambang', sans-serif; font-size: 9.5pt; color: #475569; }
+    .school-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 11pt; color: #0f172a; font-weight: bold; }
     .metadata-card { margin-bottom: 14pt; border: 1px solid #cbd5e1; padding: 8pt; background-color: #f8fafc; }
     .plan-main-title { text-align: center; margin: 12pt 0; }
     .plan-main-title h1 { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 14pt; color: #0369a1; }
@@ -318,14 +322,21 @@
 <body>
   <div class="WordSection1">
     <div class="official-header">
-      <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
-      <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
-      <div class="header-divider"></div>
+      <div class="header-national-top">
+        <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
+        <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+        <div style="text-align: center; color: #1e3b88; font-size: 9pt; margin: 3pt 0 8pt 0;">~ ❖ ~</div>
+      </div>
+      <div class="header-hierarchy-left">
+        <div class="ministry-title">ក្រសួងអប់រំ យុវជន និងកីឡា</div>
+        <div class="department-title">មន្ទីរអប់រំ យុវជន និងកីឡា ខេត្តសៀមរាប</div>
+        <div class="school-title">វិទ្យាល័យសសរស្តម្ភ</div>
+      </div>
     </div>
 
     <table class="metadata-card">
       <tr>
-        <td style="border:none;"><strong>គ្រឹះស្ថានសិក្សា៖</strong> វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE</td>
+        <td style="border:none;"><strong>គ្រឹះស្ថានសិក្សា៖</strong> វិទ្យាល័យសសរស្តម្ភ</td>
         <td style="border:none;"><strong>កម្រិតថ្នាក់ & មុខវិជ្ជា៖</strong> ថ្នាក់ទី ១១ | គណិតវិទ្យា (ភាគ១)</td>
       </tr>
       <tr>
@@ -553,17 +564,24 @@
       </tr>
     </table>
 
-    <table style="margin-top: 30pt; border: none;">
+    <!-- VII. Signatures (ទម្រង់តាមរូបភាពទី១) -->
+    <table style="margin-top: 30pt; width: 100%; border: none; border-collapse: collapse;">
       <tr>
-        <td style="border:none; text-align:center; width:50%;">
-          បានឃើញ និងឯកភាព<br>
-          <strong>នាយក / នាយិកាវិទ្យាល័យ</strong><br><br><br><br><br>
-          ...................................................
+        <td style="border:none; text-align:center; vertical-align:top; width:33.33%;">
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:10.5pt; color:#0f172a; margin-bottom:4pt;">បានឃើញ និងឯកភាព</div>
+          <div style="font-family:'Kantumruy Pro', sans-serif; font-size:9.5pt; color:#334155; margin-bottom:4pt;">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:11pt; color:#1e3b88; margin-bottom:50pt;">នាយកវិទ្យាល័យ</div>
         </td>
-        <td style="border:none; text-align:center; width:50%;">
-          ថ្ងៃទី ........ ខែ ............. ឆ្នាំ ២០២៦<br>
-          <strong>គ្រូបង្រៀនឯកទេសគណិតវិទ្យា</strong><br><br><br><br><br>
-          <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong>
+        <td style="border:none; text-align:center; vertical-align:top; width:33.33%;">
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:10.5pt; color:#0f172a; margin-bottom:4pt;">បានពិនិត្យត្រឹមត្រូវ</div>
+          <div style="font-family:'Kantumruy Pro', sans-serif; font-size:9.5pt; color:#334155; margin-bottom:4pt;">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:11pt; color:#1e3b88; margin-bottom:50pt;">ប្រធានក្រុមបច្ចេកទេស</div>
+        </td>
+        <td style="border:none; text-align:center; vertical-align:top; width:33.33%;">
+          <div style="min-height:16pt; margin-bottom:4pt;">&nbsp;</div>
+          <div style="font-family:'Kantumruy Pro', sans-serif; font-size:9.5pt; color:#334155; margin-bottom:4pt;">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:11pt; color:#1e3b88; margin-bottom:40pt;">ហត្ថលេខាគ្រូបង្រៀន</div>
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:12pt; color:#1e3b88; font-weight:bold;">ឆេង ឆវ័ន្ត</div>
         </td>
       </tr>
     </table>
@@ -816,23 +834,38 @@
         .pdf-diff-slow { background: #fffbeb; border: 1.5px solid #fde68a; }
         .pdf-diff-fast { background: #eff6ff; border: 1.5px solid #bfdbfe; }
 
-        /* Signatures Table */
+        /* Signatures Table (ទម្រង់តាមរូបភាពទី១) */
         .pdf-sig-table {
           width: 100%; border-collapse: collapse;
           margin-top: 15pt; padding-top: 10pt;
-          border-top: 1px solid #cbd5e1;
           font-size: 9pt; page-break-inside: avoid;
         }
-        .pdf-sig-table td { width: 50%; text-align: center; vertical-align: top; padding: 10px; }
+        .pdf-sig-table td { width: 33.33%; text-align: center; vertical-align: top; padding: 6px 8px; border: none; }
+        .pdf-sig-approval { font-family: 'Moul', cursive; font-size: 9.5pt; color: #0f172a; margin-bottom: 4px; min-height: 14pt; }
+        .pdf-sig-date { font-family: 'Kantumruy Pro', sans-serif; font-size: 8.5pt; color: #334155; margin-bottom: 4px; white-space: nowrap; }
+        .pdf-sig-role { font-family: 'Moul', cursive; font-size: 9.8pt; color: #1e3b88; }
+        .pdf-sig-name { font-family: 'Moul', cursive; font-size: 11pt; color: #1e3b88; }
       </style>
 
       <div class="pdf-plan-wrap">
 
-        <!-- 1. OFFICIAL HEADER -->
+        <!-- 1. OFFICIAL HEADER (តាមគំរូរូបភាពទី២) -->
         <div class="pdf-header">
-          <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
-          <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
-          <div class="pdf-header-divider"></div>
+          <div class="header-national-top" style="text-align: center; margin-bottom: 8pt;">
+            <div class="country-title" style="font-family:'Moul', cursive; font-size:12.5pt; color:#1e3b88; margin-bottom:2px;">ព្រះរាជាណាចក្រកម្ពុជា</div>
+            <div class="motto-title" style="font-family:'Moul', cursive; font-size:10.5pt; color:#1e3b88; margin-bottom:4px;">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+            <div class="motto-ornament" style="text-align:center; margin-bottom:6px;">
+              <svg width="60" height="10" viewBox="0 0 60 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle;">
+                <path d="M0 5 H22 M38 5 H60" stroke="#1e3b88" stroke-width="1.2" stroke-linecap="round"/>
+                <polygon points="30,1 34,5 30,9 26,5" fill="#1e3b88"/>
+              </svg>
+            </div>
+          </div>
+          <div class="header-hierarchy-left" style="text-align: left; margin-bottom: 10pt; line-height: 1.45;">
+            <div class="ministry-title" style="font-family:'Moul', cursive; font-size:10.5pt; color:#0f172a; margin-bottom:2px;">ក្រសួងអប់រំ យុវជន និងកីឡា</div>
+            <div class="department-title" style="font-family:'Kantumruy Pro', sans-serif; font-size:9.2pt; font-weight:500; color:#475569; margin-bottom:2px;">មន្ទីរអប់រំ យុវជន និងកីឡា ខេត្តសៀមរាប</div>
+            <div class="school-title" style="font-family:'Moul', cursive; font-size:10.5pt; color:#0f172a;">វិទ្យាល័យសសរស្តម្ភ</div>
+          </div>
         </div>
 
         <!-- 2. METADATA TABLE -->
@@ -840,7 +873,7 @@
           <tr>
             <td>
               <span class="pdf-meta-label">គ្រឹះស្ថានសិក្សា</span>
-              <span class="pdf-meta-value">វិទ្យាល័យសសរស្តម្ភ &amp; SHINE</span>
+              <span class="pdf-meta-value">វិទ្យាល័យសសរស្តម្ភ</span>
             </td>
             <td>
               <span class="pdf-meta-label">កម្រិតថ្នាក់ &amp; មុខវិជ្ជា</span>
@@ -1265,18 +1298,27 @@
           </table>
         </div>
 
-        <!-- VII. OFFICIAL APPROVAL & SIGNATURES -->
+        <!-- VII. OFFICIAL APPROVAL & SIGNATURES (ទម្រង់តាមរូបភាពទី១) -->
         <table class="pdf-sig-table">
           <tr>
             <td>
-              បានឃើញ និងឯកភាព<br>
-              <strong>នាយក / នាយិកាវិទ្យាល័យ</strong><br><br><br><br>
-              ...................................................
+              <div class="pdf-sig-approval">បានឃើញ និងឯកភាព</div>
+              <div class="pdf-sig-date">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+              <div class="pdf-sig-role">នាយកវិទ្យាល័យ</div>
+              <div style="height: 48pt;"></div>
             </td>
             <td>
-              ថ្ងៃទី ........ ខែ ............. ឆ្នាំ ២០២៦<br>
-              <strong>គ្រូបង្រៀនឯកទេសគណិតវិទ្យា</strong><br><br><br><br>
-              <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong>
+              <div class="pdf-sig-approval">បានពិនិត្យត្រឹមត្រូវ</div>
+              <div class="pdf-sig-date">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+              <div class="pdf-sig-role">ប្រធានក្រុមបច្ចេកទេស</div>
+              <div style="height: 48pt;"></div>
+            </td>
+            <td>
+              <div style="min-height: 14pt; margin-bottom: 4px;">&nbsp;</div>
+              <div class="pdf-sig-date">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+              <div class="pdf-sig-role">ហត្ថលេខាគ្រូបង្រៀន</div>
+              <div style="height: 38pt;"></div>
+              <div class="pdf-sig-name">ឆេង ឆវ័ន្ត</div>
             </td>
           </tr>
         </table>
@@ -1601,7 +1643,7 @@
     ctx.textAlign = 'left';
     ctx.fillStyle = '#f8fafc';
     ctx.font = 'bold 18px "Kantumruy Pro", sans-serif';
-    ctx.fillText('គ្រឹះស្ថានសិក្សា៖ វិទ្យាល័យសសរស្តម្ភ & SHINE', 85, 168);
+    ctx.fillText('គ្រឹះស្ថានសិក្សា៖ វិទ្យាល័យសសរស្តម្ភ', 85, 168);
     ctx.fillText('គ្រូបង្រៀនឯកទេស៖ អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)', 85, 205);
 
     ctx.textAlign = 'right';
@@ -1824,7 +1866,7 @@
     ctx.fillStyle = '#64748b';
     ctx.font = '14px "Kantumruy Pro", sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('© 2026 អ្នកគ្រូ ឆេង ឆវ័ន្ត (Teacher Chheng Chhovorn) • វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE • រក្សាសិទ្ធិគ្រប់យ៉ាង', 600, 1650);
+    ctx.fillText('© 2026 អ្នកគ្រូ ឆេង ឆវ័ន្ត (Teacher Chheng Chhovorn) • វិទ្យាល័យសសរស្តម្ភ • រក្សាសិទ្ធិគ្រប់យ៉ាង', 600, 1650);
 
     // Download canvas as PNG
     canvas.toBlob(blob => {

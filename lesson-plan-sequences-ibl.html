@@ -133,32 +133,112 @@
       transform: translateY(-1px);
     }
 
-    /* Official Ministry Header */
+    /* Official Ministry Header (ទម្រង់តាមរូបភាពទី២) */
     .official-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .header-national-top {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
     }
 
     .country-title {
       font-family: 'Moul', cursive;
-      font-size: 1.25rem;
-      color: var(--text-dark);
+      font-size: 1.3rem;
+      color: #1e3b88;
       letter-spacing: 0.05em;
       margin-bottom: 0.25rem;
+      line-height: 1.5;
     }
 
     .motto-title {
       font-family: 'Moul', cursive;
-      font-size: 1.05rem;
-      color: var(--text-dark);
-      margin-bottom: 0.5rem;
+      font-size: 1.08rem;
+      color: #1e3b88;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
     }
 
-    .header-divider {
-      width: 140px;
-      height: 2px;
-      background: var(--text-dark);
-      margin: 0.5rem auto 1.5rem;
+    .motto-ornament {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    .header-hierarchy-left {
+      text-align: left;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .ministry-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.08rem;
+      color: #0f172a;
+      margin-bottom: 0.25rem;
+    }
+
+    .department-title {
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #475569;
+      margin-bottom: 0.25rem;
+    }
+
+    .school-title {
+      font-family: 'Moul', cursive;
+      font-size: 1.08rem;
+      color: #0f172a;
+    }
+
+    /* Signatures Table (ទម្រង់តាមរូបភាពទី១) */
+    .signatures-table {
+      width: 100%;
+      border: none !important;
+      border-collapse: collapse;
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .signatures-table td {
+      border: none !important;
+      padding: 0 8px;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    .sig-approval {
+      font-family: 'Moul', cursive;
+      font-size: 1.02rem;
+      color: #0f172a;
+      margin-bottom: 0.45rem;
+      min-height: 1.6rem;
+    }
+
+    .sig-date {
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-size: 0.92rem;
+      color: #334155;
+      margin-bottom: 0.45rem;
+      white-space: nowrap;
+    }
+
+    .sig-role {
+      font-family: 'Moul', cursive;
+      font-size: 1.05rem;
+      color: #1e3b88;
+      letter-spacing: 0.02em;
+    }
+
+    .sig-name {
+      font-family: 'Moul', cursive;
+      font-size: 1.15rem;
+      color: #1e3b88;
+      letter-spacing: 0.02em;
     }
 
     /* School Metadata Vertical Card */
@@ -419,11 +499,23 @@
 
     <!-- Official Document Container -->
     <div id="lesson-plan-document">
-      <!-- Official Ministry Header -->
+      <!-- Official Ministry Header (ដូចរូបភាពទី២) -->
       <div class="official-header">
-        <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
-        <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
-        <div class="header-divider"></div>
+        <div class="header-national-top">
+          <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
+          <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+          <div class="motto-ornament">
+            <svg width="65" height="10" viewBox="0 0 65 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle;">
+              <path d="M0 5 H25 M40 5 H65" stroke="#1e3b88" stroke-width="1.5" stroke-linecap="round"/>
+              <polygon points="32.5,1 36.5,5 32.5,9 28.5,5" fill="#1e3b88"/>
+            </svg>
+          </div>
+        </div>
+        <div class="header-hierarchy-left">
+          <div class="ministry-title">ក្រសួងអប់រំ យុវជន និងកីឡា</div>
+          <div class="department-title">មន្ទីរអប់រំ យុវជន និងកីឡា ខេត្តសៀមរាប</div>
+          <div class="school-title">វិទ្យាល័យសសរស្តម្ភ</div>
+        </div>
       </div>
 
       <!-- Administrative Metadata Card -->
@@ -437,8 +529,8 @@
           <span class="meta-value">ថ្នាក់ទី ១១ | គណិតវិទ្យា (ភាគ១)</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">គ្រូបង្រៀន</span>
-          <span class="meta-value">គ្រូបង្រៀនគណិតវិទ្យា</span>
+          <span class="meta-label">គ្រូបង្រៀនឯកទេស</span>
+          <span class="meta-value">អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">ពេលវេលា</span>
@@ -866,19 +958,32 @@
         </div>
       </div>
 
-      <!-- Signatures -->
-      <div style="display: flex; justify-content: space-between; margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.95rem;">
-        <div style="text-align: center; width: 40%;">
-          បានឃើញ និងឯកភាព<br>
-          <strong>នាយក</strong><br><br><br><br><br>
-          ...................................................
-        </div>
-        <div style="text-align: center; width: 40%;">
-          ថ្ងៃទី ........ ខែ ............. ឆ្នាំ ២០២៦<br>
-          <strong>គ្រូបង្រៀន</strong><br><br><br><br><br>
-          ...................................................
-        </div>
-      </div>
+      <!-- Signatures (ទម្រង់តាមរូបភាពទី១) -->
+      <table class="signatures-table">
+        <tbody>
+          <tr>
+            <td style="width: 33.33%;">
+              <div class="sig-approval">បានឃើញ និងឯកភាព</div>
+              <div class="sig-date">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+              <div class="sig-role">នាយកវិទ្យាល័យ</div>
+              <div style="height: 5.5rem;"></div>
+            </td>
+            <td style="width: 33.33%;">
+              <div class="sig-approval">បានពិនិត្យត្រឹមត្រូវ</div>
+              <div class="sig-date">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+              <div class="sig-role">ប្រធានក្រុមបច្ចេកទេស</div>
+              <div style="height: 5.5rem;"></div>
+            </td>
+            <td style="width: 33.33%;">
+              <div style="min-height: 1.6rem; margin-bottom: 0.45rem;">&nbsp;</div>
+              <div class="sig-date">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+              <div class="sig-role">ហត្ថលេខាគ្រូបង្រៀន</div>
+              <div style="height: 4.5rem;"></div>
+              <div class="sig-name">ឆេង ឆវ័ន្ត</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
