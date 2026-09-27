@@ -2695,36 +2695,36 @@ const EXERCISES_DATA = [
     problem: `
       <p style="margin-bottom: 0.8rem; font-weight: 600;">គណនា និងសម្រួលកន្សោមលោការីតខាងក្រោម (រៀបចំជា ៣ ជួរឈរតាមទម្រង់សន្លឹកកិច្ចការ A4)៖</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(139, 92, 246, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(139, 92, 246, 0.3);">
-        <div><strong>ក.</strong> $A = \log_2 16 + \log_3 27 - \log_5 125$</div>
-        <div><strong>ខ.</strong> $B = \log_2 \sqrt{8} + \log_3 \sqrt[3]{9}$</div>
-        <div><strong>គ.</strong> $C = \log_6 4 + \log_6 9$</div>
-        <div><strong>ឃ.</strong> $D = \log_2 40 - \log_2 5$</div>
-        <div><strong>ង.</strong> $E = 2\log_3 6 - \log_3 4$</div>
-        <div><strong>ច.</strong> $F = \log_2 3 \cdot \log_3 4 \cdot \log_4 8$</div>
-        <div><strong>ឆ.</strong> $G = 4^{\log_2 5} + 9^{\log_3 2}$</div>
-        <div><strong>ជ.</strong> $H = \ln(e^5) - \ln\left(\dfrac{1}{e^2}\right) + \ln 1$</div>
-        <div><strong>ឈ.</strong> $I = \log_{\frac{1}{2}} 8 + \log_{\frac{1}{3}} 81$</div>
-        <div><strong>ញ.</strong> $J = \dfrac{\log 8}{\log 4} + \dfrac{\log 27}{\log 9}$</div>
-        <div><strong>ដ.</strong> $K = \log_{\sqrt{3}} (9\sqrt{3})$</div>
-        <div><strong>ឋ.</strong> $L = e^{2\ln 3} - e^{-\ln 2}$</div>
+        <div><strong>ក.</strong> $A = \\log_2 16 + \\log_3 27 - \\log_5 125$</div>
+        <div><strong>ខ.</strong> $B = \\log_2 \\sqrt{8} + \\log_3 \\sqrt[3]{9}$</div>
+        <div><strong>គ.</strong> $C = \\log_6 4 + \\log_6 9$</div>
+        <div><strong>ឃ.</strong> $D = \\log_2 40 - \\log_2 5$</div>
+        <div><strong>ង.</strong> $E = 2\\log_3 6 - \\log_3 4$</div>
+        <div><strong>ច.</strong> $F = \\log_2 3 \\cdot \\log_3 4 \\cdot \\log_4 8$</div>
+        <div><strong>ឆ.</strong> $G = 4^{\\log_2 5} + 9^{\\log_3 2}$</div>
+        <div><strong>ជ.</strong> $H = \\ln(e^5) - \\ln\\left(\\dfrac{1}{e^2}\\right) + \\ln 1$</div>
+        <div><strong>ឈ.</strong> $I = \\log_{\\frac{1}{2}} 8 + \\log_{\\frac{1}{3}} 81$</div>
+        <div><strong>ញ.</strong> $J = \\dfrac{\\log 8}{\\log 4} + \\dfrac{\\log 27}{\\log 9}$</div>
+        <div><strong>ដ.</strong> $K = \\log_{\\sqrt{3}} (9\\sqrt{3})$</div>
+        <div><strong>ឋ.</strong> $L = e^{2\\ln 3} - e^{-\\ln 2}$</div>
       </div>
     `,
     hint: 'ប្រើប្រាស់លក្ខណៈគ្រឹះនៃលោការីត៖ $\\log_a(xy) = \\log_a x + \\log_a y$, $\\log_a(x/y) = \\log_a x - \\log_a y$, $\\log_a(x^n) = n\\log_a x$, $a^{\\log_a x} = x$ និងរូបមន្តប្តូរគោល $\\log_b a = \\frac{\\log_c a}{\\log_c b}$។',
     solution: `
       <p><strong>ដំណោះស្រាយលម្អិតទាំង ១២ សំណួរ៖</strong></p>
       <ul style="line-height: 1.8;">
-        <li><strong>ក.</strong> $A = \log_2(2^4) + \log_3(3^3) - \log_5(5^3) = 4 + 3 - 3 = 4$</li>
-        <li><strong>ខ.</strong> $B = \log_2(2^{3/2}) + \log_3(3^{2/3}) = \frac{3}{2} + \frac{2}{3} = \frac{9+4}{6} = \frac{13}{6}$</li>
-        <li><strong>គ.</strong> $C = \log_6(4 \times 9) = \log_6 36 = \log_6(6^2) = 2$</li>
-        <li><strong>ឃ.</strong> $D = \log_2\left(\frac{40}{5}\right) = \log_2 8 = \log_2(2^3) = 3$</li>
-        <li><strong>ង.</strong> $E = \log_3(6^2) - \log_3 4 = \log_3 36 - \log_3 4 = \log_3\left(\frac{36}{4}\right) = \log_3 9 = 2$</li>
-        <li><strong>ច.</strong> $F = \frac{\ln 3}{\ln 2} \cdot \frac{\ln 4}{\ln 3} \cdot \frac{\ln 8}{\ln 4} = \frac{\ln 8}{\ln 2} = \log_2 8 = 3$</li>
-        <li><strong>ឆ.</strong> $G = (2^2)^{\log_2 5} + (3^2)^{\log_3 2} = (2^{\log_2 5})^2 + (3^{\log_3 2})^2 = 5^2 + 2^2 = 25 + 4 = 29$</li>
-        <li><strong>ជ.</strong> $H = 5\ln e - \ln(e^{-2}) + 0 = 5 - (-2) = 7$</li>
-        <li><strong>ឈ.</strong> $I = \log_{2^{-1}}(2^3) + \log_{3^{-1}}(3^4) = \frac{3}{-1} + \frac{4}{-1} = -3 - 4 = -7$</li>
-        <li><strong>ញ.</strong> $J = \frac{\log(2^3)}{\log(2^2)} + \frac{\log(3^3)}{\log(3^2)} = \frac{3\log 2}{2\log 2} + \frac{3\log 3}{2\log 3} = \frac{3}{2} + \frac{3}{2} = 3$</li>
-        <li><strong>ដ.</strong> $K = \log_{3^{1/2}}(3^2 \cdot 3^{1/2}) = \log_{3^{1/2}}(3^{5/2}) = \frac{5/2}{1/2} = 5$</li>
-        <li><strong>ឋ.</strong> $L = e^{\ln(3^2)} - e^{\ln(2^{-1})} = 3^2 - 2^{-1} = 9 - \frac{1}{2} = \frac{17}{2} = 8.5$</li>
+        <li><strong>ក.</strong> $A = \\log_2(2^4) + \\log_3(3^3) - \\log_5(5^3) = 4 + 3 - 3 = 4$</li>
+        <li><strong>ខ.</strong> $B = \\log_2(2^{3/2}) + \\log_3(3^{2/3}) = \\frac{3}{2} + \\frac{2}{3} = \\frac{9+4}{6} = \\frac{13}{6}$</li>
+        <li><strong>គ.</strong> $C = \\log_6(4 \\times 9) = \\log_6 36 = \\log_6(6^2) = 2$</li>
+        <li><strong>ឃ.</strong> $D = \\log_2\\left(\\frac{40}{5}\\right) = \\log_2 8 = \\log_2(2^3) = 3$</li>
+        <li><strong>ង.</strong> $E = \\log_3(6^2) - \\log_3 4 = \\log_3 36 - \\log_3 4 = \\log_3\\left(\\frac{36}{4}\\right) = \\log_3 9 = 2$</li>
+        <li><strong>ច.</strong> $F = \\frac{\\ln 3}{\\ln 2} \\cdot \\frac{\\ln 4}{\\ln 3} \\cdot \\frac{\\ln 8}{\\ln 4} = \\frac{\\ln 8}{\\ln 2} = \\log_2 8 = 3$</li>
+        <li><strong>ឆ.</strong> $G = (2^2)^{\\log_2 5} + (3^2)^{\\log_3 2} = (2^{\\log_2 5})^2 + (3^{\\log_3 2})^2 = 5^2 + 2^2 = 25 + 4 = 29$</li>
+        <li><strong>ជ.</strong> $H = 5\\ln e - \\ln(e^{-2}) + 0 = 5 - (-2) = 7$</li>
+        <li><strong>ឈ.</strong> $I = \\log_{2^{-1}}(2^3) + \\log_{3^{-1}}(3^4) = \\frac{3}{-1} + \\frac{4}{-1} = -3 - 4 = -7$</li>
+        <li><strong>ញ.</strong> $J = \\frac{\\log(2^3)}{\\log(2^2)} + \\frac{\\log(3^3)}{\\log(3^2)} = \\frac{3\\log 2}{2\\log 2} + \\frac{3\\log 3}{2\\log 3} = \\frac{3}{2} + \\frac{3}{2} = 3$</li>
+        <li><strong>ដ.</strong> $K = \\log_{3^{1/2}}(3^2 \\cdot 3^{1/2}) = \\log_{3^{1/2}}(3^{5/2}) = \\frac{5/2}{1/2} = 5$</li>
+        <li><strong>ឋ.</strong> $L = e^{\\ln(3^2)} - e^{\\ln(2^{-1})} = 3^2 - 2^{-1} = 9 - \\frac{1}{2} = \\frac{17}{2} = 8.5$</li>
       </ul>
     `
   },
@@ -2741,24 +2741,24 @@ const EXERCISES_DATA = [
     problem: `
       <p style="margin-bottom: 0.8rem; font-weight: 600;">រកដែនកំណត់ $D$ នៃអនុគមន៍លោការីតខាងក្រោម៖</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(139, 92, 246, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(139, 92, 246, 0.3);">
-        <div><strong>ក.</strong> $f(x) = \log_2(3x - 6)$</div>
-        <div><strong>ខ.</strong> $g(x) = \log_5(x^2 - 9)$</div>
-        <div><strong>គ.</strong> $h(x) = \ln\left(\dfrac{x+1}{x-2}\right)$</div>
-        <div><strong>ឃ.</strong> $k(x) = \log_3(4 - x^2)$</div>
-        <div><strong>ង.</strong> $p(x) = \log_{(x-1)}(x+3)$</div>
-        <div><strong>ច.</strong> $q(x) = \sqrt{\log_2(x - 1)}$</div>
+        <div><strong>ក.</strong> $f(x) = \\log_2(3x - 6)$</div>
+        <div><strong>ខ.</strong> $g(x) = \\log_5(x^2 - 9)$</div>
+        <div><strong>គ.</strong> $h(x) = \\ln\\left(\\dfrac{x+1}{x-2}\\right)$</div>
+        <div><strong>ឃ.</strong> $k(x) = \\log_3(4 - x^2)$</div>
+        <div><strong>ង.</strong> $p(x) = \\log_{(x-1)}(x+3)$</div>
+        <div><strong>ច.</strong> $q(x) = \\sqrt{\\log_2(x - 1)}$</div>
       </div>
     `,
     hint: 'អនុគមន៍ $y = \\log_a u(x)$ មានន័យកាលណា $u(x) > 0$ (និងបើគោលមានអថេរ $a(x) > 0, a(x) \\ne 1$)។ ចំពោះរ៉ាឌីកាល់ $\\sqrt{v(x)}$ ត្រូវថែម $v(x) \\ge 0$។',
     solution: `
       <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
       <ul style="line-height: 1.8;">
-        <li><strong>ក.</strong> $f(x)$ មានន័យ $\iff 3x - 6 > 0 \iff 3x > 6 \iff x > 2$ <br>$\implies D = (2, +\infty)$</li>
-        <li><strong>ខ.</strong> $g(x)$ មានន័យ $\iff x^2 - 9 > 0 \iff (x-3)(x+3) > 0 \iff x < -3$ ឬ $x > 3$ <br>$\implies D = (-\infty, -3) \cup (3, +\infty)$</li>
-        <li><strong>គ.</strong> $h(x)$ មានន័យ $\iff \frac{x+1}{x-2} > 0$ និង $x \ne 2$ <br>តាមតារាងសញ្ញា ផលចែកវិជ្ជមានកាលណា $x < -1$ ឬ $x > 2$ <br>$\implies D = (-\infty, -1) \cup (2, +\infty)$</li>
-        <li><strong>ឃ.</strong> $k(x)$ មានន័យ $\iff 4 - x^2 > 0 \iff x^2 < 4 \iff -2 < x < 2$ <br>$\implies D = (-2, 2)$</li>
-        <li><strong>ង.</strong> $p(x)$ មានន័យ $\iff x+3 > 0$, គោល $x-1 > 0$ និង $x-1 \ne 1$ <br>$\iff x > -3, x > 1$ និង $x \ne 2 \iff x > 1$ និង $x \ne 2$ <br>$\implies D = (1, 2) \cup (2, +\infty)$</li>
-        <li><strong>ច.</strong> $q(x)$ មានន័យ $\iff x-1 > 0$ និង $\log_2(x-1) \ge 0 \iff x > 1$ និង $x-1 \ge 2^0 = 1 \iff x \ge 2$ <br>$\implies D = [2, +\infty)$</li>
+        <li><strong>ក.</strong> $f(x)$ មានន័យ $\\iff 3x - 6 > 0 \\iff 3x > 6 \\iff x > 2$ <br>$\\implies D = (2, +\\infty)$</li>
+        <li><strong>ខ.</strong> $g(x)$ មានន័យ $\\iff x^2 - 9 > 0 \\iff (x-3)(x+3) > 0 \\iff x < -3$ ឬ $x > 3$ <br>$\\implies D = (-\\infty, -3) \\cup (3, +\\infty)$</li>
+        <li><strong>គ.</strong> $h(x)$ មានន័យ $\\iff \\frac{x+1}{x-2} > 0$ និង $x \\ne 2$ <br>តាមតារាងសញ្ញា ផលចែកវិជ្ជមានកាលណា $x < -1$ ឬ $x > 2$ <br>$\\implies D = (-\\infty, -1) \\cup (2, +\\infty)$</li>
+        <li><strong>ឃ.</strong> $k(x)$ មានន័យ $\\iff 4 - x^2 > 0 \\iff x^2 < 4 \\iff -2 < x < 2$ <br>$\\implies D = (-2, 2)$</li>
+        <li><strong>ង.</strong> $p(x)$ មានន័យ $\\iff x+3 > 0$, គោល $x-1 > 0$ និង $x-1 \\ne 1$ <br>$\\iff x > -3, x > 1$ និង $x \\ne 2 \\iff x > 1$ និង $x \\ne 2$ <br>$\\implies D = (1, 2) \\cup (2, +\\infty)$</li>
+        <li><strong>ច.</strong> $q(x)$ មានន័យ $\\iff x-1 > 0$ និង $\\log_2(x-1) \\ge 0 \\iff x > 1$ និង $x-1 \\ge 2^0 = 1 \\iff x \\ge 2$ <br>$\\implies D = [2, +\\infty)$</li>
       </ul>
     `
   },
@@ -2775,36 +2775,36 @@ const EXERCISES_DATA = [
     problem: `
       <p style="margin-bottom: 0.8rem; font-weight: 600;">ដោះស្រាយសមីការលោការីតខាងក្រោម (ពិនិត្យលក្ខខណ្ឌអត្ថិភាពជាមុន)៖</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(139, 92, 246, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(139, 92, 246, 0.3);">
-        <div><strong>ក.</strong> $\log_2(x - 3) = 4$</div>
-        <div><strong>ខ.</strong> $\log_3(2x + 1) = 2$</div>
-        <div><strong>គ.</strong> $\log_5(x^2 - 4x) = 1$</div>
-        <div><strong>ឃ.</strong> $\log_2(x + 1) + \log_2(x - 1) = 3$</div>
-        <div><strong>ង.</strong> $\log_3(x + 2) - \log_3(x - 1) = 1$</div>
-        <div><strong>ច.</strong> $\log_4(x + 3) = \log_4(2x - 1)$</div>
-        <div><strong>ឆ.</strong> $\log_2(x + 2) + \log_2(x + 4) = 3$</div>
-        <div><strong>ជ.</strong> $\ln(2x - 1) = 0$</div>
-        <div><strong>ឈ.</strong> $\log(x - 2) + \log(x + 1) = 1$</div>
-        <div><strong>ញ.</strong> $\log_3(x^2 - 6) = \log_3 x$</div>
-        <div><strong>ដ.</strong> $\log_2(x - 5) + \log_2(x + 2) = 3$</div>
-        <div><strong>ឋ.</strong> $\log_{\frac{1}{2}}(3x - 1) = -2$</div>
+        <div><strong>ក.</strong> $\\log_2(x - 3) = 4$</div>
+        <div><strong>ខ.</strong> $\\log_3(2x + 1) = 2$</div>
+        <div><strong>គ.</strong> $\\log_5(x^2 - 4x) = 1$</div>
+        <div><strong>ឃ.</strong> $\\log_2(x + 1) + \\log_2(x - 1) = 3$</div>
+        <div><strong>ង.</strong> $\\log_3(x + 2) - \\log_3(x - 1) = 1$</div>
+        <div><strong>ច.</strong> $\\log_4(x + 3) = \\log_4(2x - 1)$</div>
+        <div><strong>ឆ.</strong> $\\log_2(x + 2) + \\log_2(x + 4) = 3$</div>
+        <div><strong>ជ.</strong> $\\ln(2x - 1) = 0$</div>
+        <div><strong>ឈ.</strong> $\\log(x - 2) + \\log(x + 1) = 1$</div>
+        <div><strong>ញ.</strong> $\\log_3(x^2 - 6) = \\log_3 x$</div>
+        <div><strong>ដ.</strong> $\\log_2(x - 5) + \\log_2(x + 2) = 3$</div>
+        <div><strong>ឋ.</strong> $\\log_{\\frac{1}{2}}(3x - 1) = -2$</div>
       </div>
     `,
     hint: 'ដំបូងត្រូវរកលក្ខខណ្ឌអត្ថិភាពនៃកន្សោមក្នុងលោការីត ($u(x) > 0$) រួចអនុវត្តរូបមន្ត $\\log_a u = b \\iff u = a^b$ ឬ $\\log_a u = \\log_a v \\iff u = v$ និងផ្ទៀងផ្ទាត់លក្ខខណ្ឌ។',
     solution: `
       <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
       <ul style="line-height: 1.8;">
-        <li><strong>ក.</strong> លក្ខខណ្ឌ $x > 3$៖ $x - 3 = 2^4 = 16 \implies x = 19$ (យក)</li>
-        <li><strong>ខ.</strong> លក្ខខណ្ឌ $x > -\frac{1}{2}$៖ $2x + 1 = 3^2 = 9 \implies 2x = 8 \implies x = 4$ (យក)</li>
-        <li><strong>គ.</strong> លក្ខខណ្ឌ $x^2 - 4x > 0$៖ $x^2 - 4x = 5^1 \implies x^2 - 4x - 5 = 0 \implies x = -1$ ឬ $x = 5$ (យកទាំងពីរ)</li>
-        <li><strong>ឃ.</strong> លក្ខខណ្ឌ $x > 1$៖ $\log_2[(x+1)(x-1)] = 3 \implies x^2 - 1 = 2^3 = 8 \implies x^2 = 9 \implies x = 3$ (ដោយ $x > 1$)</li>
-        <li><strong>ង.</strong> លក្ខខណ្ឌ $x > 1$៖ $\log_3\left(\frac{x+2}{x-1}\right) = 1 \implies \frac{x+2}{x-1} = 3 \implies x+2 = 3x - 3 \implies 2x = 5 \implies x = 2.5$ (យក)</li>
-        <li><strong>ច.</strong> លក្ខខណ្ឌ $x > \frac{1}{2}$៖ $x + 3 = 2x - 1 \implies x = 4$ (យក)</li>
-        <li><strong>ឆ.</strong> លក្ខខណ្ឌ $x > -2$៖ $(x+2)(x+4) = 2^3 = 8 \implies x^2 + 6x + 8 = 8 \implies x(x+6) = 0 \implies x = 0$ (ដោយ $x > -2$)</li>
-        <li><strong>ជ.</strong> លក្ខខណ្ឌ $x > \frac{1}{2}$៖ $2x - 1 = e^0 = 1 \implies 2x = 2 \implies x = 1$ (យក)</li>
-        <li><strong>ឈ.</strong> លក្ខខណ្ឌ $x > 2$៖ $(x-2)(x+1) = 10^1 = 10 \implies x^2 - x - 12 = 0 \implies (x-4)(x+3) = 0 \implies x = 4$ (ដោយ $x > 2$)</li>
-        <li><strong>ញ.</strong> លក្ខខណ្ឌ $x > \sqrt{6} \approx 2.45$៖ $x^2 - 6 = x \implies x^2 - x - 6 = 0 \implies (x-3)(x+2) = 0 \implies x = 3$ (ដោយ $x > \sqrt{6}$)</li>
-        <li><strong>ដ.</strong> លក្ខខណ្ឌ $x > 5$៖ $(x-5)(x+2) = 2^3 = 8 \implies x^2 - 3x - 18 = 0 \implies (x-6)(x+3) = 0 \implies x = 6$ (ដោយ $x > 5$)</li>
-        <li><strong>ឋ.</strong> លក្ខខណ្ឌ $x > \frac{1}{3}$៖ $3x - 1 = \left(\frac{1}{2}\right)^{-2} = 4 \implies 3x = 5 \implies x = \frac{5}{3}$ (យក)</li>
+        <li><strong>ក.</strong> លក្ខខណ្ឌ $x > 3$៖ $x - 3 = 2^4 = 16 \\implies x = 19$ (យក)</li>
+        <li><strong>ខ.</strong> លក្ខខណ្ឌ $x > -\\frac{1}{2}$៖ $2x + 1 = 3^2 = 9 \\implies 2x = 8 \\implies x = 4$ (យក)</li>
+        <li><strong>គ.</strong> លក្ខខណ្ឌ $x^2 - 4x > 0$៖ $x^2 - 4x = 5^1 \\implies x^2 - 4x - 5 = 0 \\implies x = -1$ ឬ $x = 5$ (យកទាំងពីរ)</li>
+        <li><strong>ឃ.</strong> លក្ខខណ្ឌ $x > 1$៖ $\\log_2[(x+1)(x-1)] = 3 \\implies x^2 - 1 = 2^3 = 8 \\implies x^2 = 9 \\implies x = 3$ (ដោយ $x > 1$)</li>
+        <li><strong>ង.</strong> លក្ខខណ្ឌ $x > 1$៖ $\\log_3\\left(\\frac{x+2}{x-1}\\right) = 1 \\implies \\frac{x+2}{x-1} = 3 \\implies x+2 = 3x - 3 \\implies 2x = 5 \\implies x = 2.5$ (យក)</li>
+        <li><strong>ច.</strong> លក្ខខណ្ឌ $x > \\frac{1}{2}$៖ $x + 3 = 2x - 1 \\implies x = 4$ (យក)</li>
+        <li><strong>ឆ.</strong> លក្ខខណ្ឌ $x > -2$៖ $(x+2)(x+4) = 2^3 = 8 \\implies x^2 + 6x + 8 = 8 \\implies x(x+6) = 0 \\implies x = 0$ (ដោយ $x > -2$)</li>
+        <li><strong>ជ.</strong> លក្ខខណ្ឌ $x > \\frac{1}{2}$៖ $2x - 1 = e^0 = 1 \\implies 2x = 2 \\implies x = 1$ (យក)</li>
+        <li><strong>ឈ.</strong> លក្ខខណ្ឌ $x > 2$៖ $(x-2)(x+1) = 10^1 = 10 \\implies x^2 - x - 12 = 0 \\implies (x-4)(x+3) = 0 \\implies x = 4$ (ដោយ $x > 2$)</li>
+        <li><strong>ញ.</strong> លក្ខខណ្ឌ $x > \\sqrt{6} \\approx 2.45$៖ $x^2 - 6 = x \\implies x^2 - x - 6 = 0 \\implies (x-3)(x+2) = 0 \\implies x = 3$ (ដោយ $x > \\sqrt{6}$)</li>
+        <li><strong>ដ.</strong> លក្ខខណ្ឌ $x > 5$៖ $(x-5)(x+2) = 2^3 = 8 \\implies x^2 - 3x - 18 = 0 \\implies (x-6)(x+3) = 0 \\implies x = 6$ (ដោយ $x > 5$)</li>
+        <li><strong>ឋ.</strong> លក្ខខណ្ឌ $x > \\frac{1}{3}$៖ $3x - 1 = \\left(\\frac{1}{2}\\right)^{-2} = 4 \\implies 3x = 5 \\implies x = \\frac{5}{3}$ (យក)</li>
       </ul>
     `
   },
@@ -2821,24 +2821,24 @@ const EXERCISES_DATA = [
     problem: `
       <p style="margin-bottom: 0.8rem; font-weight: 600;">ដោះស្រាយសមីការលោការីតកម្រិតខ្ពស់ខាងក្រោម៖</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(139, 92, 246, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(139, 92, 246, 0.3);">
-        <div><strong>ឌ.</strong> $\log_2^2 x - 3\log_2 x + 2 = 0$</div>
-        <div><strong>ឍ.</strong> $\log_3^2 x - 4\log_3 x + 3 = 0$</div>
-        <div><strong>ណ.</strong> $\log_2 x + \log_x 2 = 2$</div>
-        <div><strong>ត.</strong> $\log_2 x + 4\log_x 2 = 5$</div>
-        <div><strong>ថ.</strong> $x^{\log_3 x} = 81$</div>
-        <div><strong>ទ.</strong> $\ln^2 x - \ln(x^3) + 2 = 0$</div>
+        <div><strong>ឌ.</strong> $\\log_2^2 x - 3\\log_2 x + 2 = 0$</div>
+        <div><strong>ឍ.</strong> $\\log_3^2 x - 4\\log_3 x + 3 = 0$</div>
+        <div><strong>ណ.</strong> $\\log_2 x + \\log_x 2 = 2$</div>
+        <div><strong>ត.</strong> $\\log_2 x + 4\\log_x 2 = 5$</div>
+        <div><strong>ថ.</strong> $x^{\\log_3 x} = 81$</div>
+        <div><strong>ទ.</strong> $\\ln^2 x - \\ln(x^3) + 2 = 0$</div>
       </div>
     `,
     hint: 'តាង $t = \\log_a x$ ដើម្បីបំប្លែងសមីការទៅជាសមីការដឺក្រេទី ២។ ចំពោះសមីការមាន $\\log_x a$ ត្រូវប្តូរគោល $\\log_x a = \\frac{1}{\\log_a x}$។ ចំពោះ $x^{\\log_a x} = b$ ត្រូវបំពាក់ $\\log_a$ ទាំងសងខាង។',
     solution: `
       <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
       <ul style="line-height: 1.8;">
-        <li><strong>ឌ.</strong> លក្ខខណ្ឌ $x > 0$។ តាង $t = \log_2 x \implies t^2 - 3t + 2 = 0 \iff t = 1$ ឬ $t = 2$ <br>• $t = 1 \implies \log_2 x = 1 \iff x = 2$ <br>• $t = 2 \implies \log_2 x = 2 \iff x = 2^2 = 4$ <br><strong>ចម្លើយ៖</strong> $x = 2; 4$</li>
-        <li><strong>ឍ.</strong> លក្ខខណ្ឌ $x > 0$។ តាង $t = \log_3 x \implies t^2 - 4t + 3 = 0 \iff t = 1$ ឬ $t = 3$ <br>• $t = 1 \implies \log_3 x = 1 \iff x = 3$ <br>• $t = 3 \implies \log_3 x = 3 \iff x = 3^3 = 27$ <br><strong>ចម្លើយ៖</strong> $x = 3; 27$</li>
-        <li><strong>ណ.</strong> លក្ខខណ្ឌ $x > 0, x \ne 1$។ សមីការ $\iff \log_2 x + \frac{1}{\log_2 x} = 2$ <br>តាង $t = \log_2 x \implies t + \frac{1}{t} = 2 \iff t^2 - 2t + 1 = 0 \iff (t-1)^2 = 0 \iff t = 1$ <br>$\implies \log_2 x = 1 \iff x = 2$ <br><strong>ចម្លើយ៖</strong> $x = 2$</li>
-        <li><strong>ត.</strong> លក្ខខណ្ឌ $x > 0, x \ne 1$។ សមីការ $\iff \log_2 x + \frac{4}{\log_2 x} = 5$ <br>តាង $t = \log_2 x \implies t + \frac{4}{t} = 5 \iff t^2 - 5t + 4 = 0 \iff t = 1$ ឬ $t = 4$ <br>• $t = 1 \implies x = 2$ <br>• $t = 4 \implies x = 2^4 = 16$ <br><strong>ចម្លើយ៖</strong> $x = 2; 16$</li>
-        <li><strong>ថ.</strong> លក្ខខណ្ឌ $x > 0, x \ne 1$។ បំពាក់ $\log_3$ លើអង្គទាំងពីរ៖ <br>$\log_3(x^{\log_3 x}) = \log_3 81 \iff (\log_3 x) \cdot (\log_3 x) = 4 \iff (\log_3 x)^2 = 4$ <br>$\implies \log_3 x = 2$ ឬ $\log_3 x = -2$ <br>• $\log_3 x = 2 \iff x = 3^2 = 9$ <br>• $\log_3 x = -2 \iff x = 3^{-2} = \frac{1}{9}$ <br><strong>ចម្លើយ៖</strong> $x = 9; \frac{1}{9}$</li>
-        <li><strong>ទ.</strong> លក្ខខណ្ឌ $x > 0$។ សមីការ $\iff \ln^2 x - 3\ln x + 2 = 0$ <br>តាង $t = \ln x \implies t^2 - 3t + 2 = 0 \iff t = 1$ ឬ $t = 2$ <br>• $t = 1 \implies \ln x = 1 \iff x = e$ <br>• $t = 2 \implies \ln x = 2 \iff x = e^2$ <br><strong>ចម្លើយ៖</strong> $x = e; e^2$</li>
+        <li><strong>ឌ.</strong> លក្ខខណ្ឌ $x > 0$។ តាង $t = \\log_2 x \\implies t^2 - 3t + 2 = 0 \\iff t = 1$ ឬ $t = 2$ <br>• $t = 1 \\implies \\log_2 x = 1 \\iff x = 2$ <br>• $t = 2 \\implies \\log_2 x = 2 \\iff x = 2^2 = 4$ <br><strong>ចម្លើយ៖</strong> $x = 2; 4$</li>
+        <li><strong>ឍ.</strong> លក្ខខណ្ឌ $x > 0$។ តាង $t = \\log_3 x \\implies t^2 - 4t + 3 = 0 \\iff t = 1$ ឬ $t = 3$ <br>• $t = 1 \\implies \\log_3 x = 1 \\iff x = 3$ <br>• $t = 3 \\implies \\log_3 x = 3 \\iff x = 3^3 = 27$ <br><strong>ចម្លើយ៖</strong> $x = 3; 27$</li>
+        <li><strong>ណ.</strong> លក្ខខណ្ឌ $x > 0, x \\ne 1$។ សមីការ $\\iff \\log_2 x + \\frac{1}{\\log_2 x} = 2$ <br>តាង $t = \\log_2 x \\implies t + \\frac{1}{t} = 2 \\iff t^2 - 2t + 1 = 0 \\iff (t-1)^2 = 0 \\iff t = 1$ <br>$\\implies \\log_2 x = 1 \\iff x = 2$ <br><strong>ចម្លើយ៖</strong> $x = 2$</li>
+        <li><strong>ត.</strong> លក្ខខណ្ឌ $x > 0, x \\ne 1$។ សមីការ $\\iff \\log_2 x + \\frac{4}{\\log_2 x} = 5$ <br>តាង $t = \\log_2 x \\implies t + \\frac{4}{t} = 5 \\iff t^2 - 5t + 4 = 0 \\iff t = 1$ ឬ $t = 4$ <br>• $t = 1 \\implies x = 2$ <br>• $t = 4 \\implies x = 2^4 = 16$ <br><strong>ចម្លើយ៖</strong> $x = 2; 16$</li>
+        <li><strong>ថ.</strong> លក្ខខណ្ឌ $x > 0, x \\ne 1$។ បំពាក់ $\\log_3$ លើអង្គទាំងពីរ៖ <br>$\\log_3(x^{\\log_3 x}) = \\log_3 81 \\iff (\\log_3 x) \\cdot (\\log_3 x) = 4 \\iff (\\log_3 x)^2 = 4$ <br>$\\implies \\log_3 x = 2$ ឬ $\\log_3 x = -2$ <br>• $\\log_3 x = 2 \\iff x = 3^2 = 9$ <br>• $\\log_3 x = -2 \\iff x = 3^{-2} = \\frac{1}{9}$ <br><strong>ចម្លើយ៖</strong> $x = 9; \\frac{1}{9}$</li>
+        <li><strong>ទ.</strong> លក្ខខណ្ឌ $x > 0$។ សមីការ $\\iff \\ln^2 x - 3\\ln x + 2 = 0$ <br>តាង $t = \\ln x \\implies t^2 - 3t + 2 = 0 \\iff t = 1$ ឬ $t = 2$ <br>• $t = 1 \\implies \\ln x = 1 \\iff x = e$ <br>• $t = 2 \\implies \\ln x = 2 \\iff x = e^2$ <br><strong>ចម្លើយ៖</strong> $x = e; e^2$</li>
       </ul>
     `
   },
@@ -2855,36 +2855,36 @@ const EXERCISES_DATA = [
     problem: `
       <p style="margin-bottom: 0.8rem; font-weight: 600;">ដោះស្រាយវិសមីការលោការីតខាងក្រោម (ប្រយ័ត្នត្រឡប់ទិសដៅកាលណាគោល $0 < a < 1$)៖</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; background: rgba(139, 92, 246, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(139, 92, 246, 0.3);">
-        <div><strong>ក.</strong> $\log_2(x - 1) < 3$</div>
-        <div><strong>ខ.</strong> $\log_3(2x + 1) \ge 2$</div>
-        <div><strong>គ.</strong> $\log_{\frac{1}{2}}(x - 2) > -1$</div>
-        <div><strong>ឃ.</strong> $\log_{0.5}(2x - 3) \le \log_{0.5}(x + 1)$</div>
-        <div><strong>ង.</strong> $\log_2(x + 1) + \log_2(x - 1) \le 3$</div>
-        <div><strong>ច.</strong> $\log_2(x^2 - 2x) \le 3$</div>
-        <div><strong>ឆ.</strong> $\log_2^2 x - 3\log_2 x + 2 < 0$</div>
-        <div><strong>ជ.</strong> $\log_{\frac{1}{3}}(x^2 - 1) \ge -1$</div>
-        <div><strong>ឈ.</strong> $\ln(x^2 - 5x + 7) \le 0$</div>
-        <div><strong>ញ.</strong> $\log(x - 1) + \log(x + 2) < 1$</div>
-        <div><strong>ដ.</strong> $\log_2(3x - 2) > \log_2(x + 4)$</div>
-        <div><strong>ឋ.</strong> $\log_{\frac{1}{4}}(2x + 3) > -1$</div>
+        <div><strong>ក.</strong> $\\log_2(x - 1) < 3$</div>
+        <div><strong>ខ.</strong> $\\log_3(2x + 1) \\ge 2$</div>
+        <div><strong>គ.</strong> $\\log_{\\frac{1}{2}}(x - 2) > -1$</div>
+        <div><strong>ឃ.</strong> $\\log_{0.5}(2x - 3) \\le \\log_{0.5}(x + 1)$</div>
+        <div><strong>ង.</strong> $\\log_2(x + 1) + \\log_2(x - 1) \\le 3$</div>
+        <div><strong>ច.</strong> $\\log_2(x^2 - 2x) \\le 3$</div>
+        <div><strong>ឆ.</strong> $\\log_2^2 x - 3\\log_2 x + 2 < 0$</div>
+        <div><strong>ជ.</strong> $\\log_{\\frac{1}{3}}(x^2 - 1) \\ge -1$</div>
+        <div><strong>ឈ.</strong> $\\ln(x^2 - 5x + 7) \\le 0$</div>
+        <div><strong>ញ.</strong> $\\log(x - 1) + \\log(x + 2) < 1$</div>
+        <div><strong>ដ.</strong> $\\log_2(3x - 2) > \\log_2(x + 4)$</div>
+        <div><strong>ឋ.</strong> $\\log_{\\frac{1}{4}}(2x + 3) > -1$</div>
       </div>
     `,
     hint: 'វិធានស្នូល៖ បើគោល $a > 1$ នោះ $\\log_a u < \\log_a v \\iff 0 < u < v$ (រក្សាទិស)។ បើគោល $0 < a < 1$ នោះ $\\log_a u < \\log_a v \\iff u > v > 0$ (ត្រឡប់ទិសដៅ)។',
     solution: `
       <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
       <ul style="line-height: 1.8;">
-        <li><strong>ក.</strong> លក្ខខណ្ឌ $x > 1$។ គោល $2 > 1$៖ $x - 1 < 2^3 = 8 \iff x < 9 \implies 1 < x < 9$</li>
-        <li><strong>ខ.</strong> លក្ខខណ្ឌ $x > -0.5$។ គោល $3 > 1$៖ $2x + 1 \ge 3^2 = 9 \iff 2x \ge 8 \implies x \ge 4$</li>
-        <li><strong>គ.</strong> លក្ខខណ្ឌ $x > 2$។ គោល $\frac{1}{2} < 1$ ត្រឡប់ទិស៖ $x - 2 < (1/2)^{-1} = 2 \iff x < 4 \implies 2 < x < 4$</li>
-        <li><strong>ឃ.</strong> លក្ខខណ្ឌ $x > 1.5$។ គោល $0.5 < 1$ ត្រឡប់ទិស៖ $2x - 3 \ge x + 1 \iff x \ge 4$ (ផ្ទៀងផ្ទាត់)</li>
-        <li><strong>ង.</strong> លក្ខខណ្ឌ $x > 1$៖ $(x+1)(x-1) \le 2^3 = 8 \iff x^2 - 1 \le 8 \iff x^2 \le 9 \iff -3 \le x \le 3 \implies 1 < x \le 3$</li>
-        <li><strong>ច.</strong> លក្ខខណ្ឌ $x^2 - 2x > 0 \iff x < 0$ ឬ $x > 2$។ វិសមីការ $\iff x^2 - 2x \le 2^3 = 8 \iff x^2 - 2x - 8 \le 0 \iff -2 \le x \le 4 \implies [-2, 0) \cup (2, 4]$</li>
-        <li><strong>ឆ.</strong> លក្ខខណ្ឌ $x > 0$។ តាង $t = \log_2 x \implies t^2 - 3t + 2 < 0 \iff 1 < t < 2 \iff 1 < \log_2 x < 2 \implies 2 < x < 4$</li>
-        <li><strong>ជ.</strong> លក្ខខណ្ឌ $|x| > 1$ ($x < -1$ ឬ $x > 1$)។ គោល $1/3 < 1$ ត្រឡប់ទិស៖ $x^2 - 1 \le (1/3)^{-1} = 3 \iff x^2 \le 4 \iff -2 \le x \le 2 \implies [-2, -1) \cup (1, 2]$</li>
-        <li><strong>ឈ.</strong> លក្ខខណ្ឌ $x^2 - 5x + 7 > 0$ (ពិតជានិច្ច)៖ $x^2 - 5x + 7 \le e^0 = 1 \iff x^2 - 5x + 6 \le 0 \implies 2 \le x \le 3$</li>
-        <li><strong>ញ.</strong> លក្ខខណ្ឌ $x > 1$៖ $(x-1)(x+2) < 10 \iff x^2 + x - 12 < 0 \iff -4 < x < 3 \implies 1 < x < 3$</li>
-        <li><strong>ដ.</strong> លក្ខខណ្ឌ $x > 2/3$៖ $3x - 2 > x + 4 \iff 2x > 6 \implies x > 3$ (ផ្ទៀងផ្ទាត់)</li>
-        <li><strong>ឋ.</strong> លក្ខខណ្ឌ $x > -1.5$។ គោល $1/4 < 1$ ត្រឡប់ទិស៖ $2x + 3 < (1/4)^{-1} = 4 \iff 2x < 1 \implies -1.5 < x < 0.5$</li>
+        <li><strong>ក.</strong> លក្ខខណ្ឌ $x > 1$។ គោល $2 > 1$៖ $x - 1 < 2^3 = 8 \\iff x < 9 \\implies 1 < x < 9$</li>
+        <li><strong>ខ.</strong> លក្ខខណ្ឌ $x > -0.5$។ គោល $3 > 1$៖ $2x + 1 \\ge 3^2 = 9 \\iff 2x \\ge 8 \\implies x \\ge 4$</li>
+        <li><strong>គ.</strong> លក្ខខណ្ឌ $x > 2$។ គោល $\\frac{1}{2} < 1$ ត្រឡប់ទិស៖ $x - 2 < (1/2)^{-1} = 2 \\iff x < 4 \\implies 2 < x < 4$</li>
+        <li><strong>ឃ.</strong> លក្ខខណ្ឌ $x > 1.5$។ គោល $0.5 < 1$ ត្រឡប់ទិស៖ $2x - 3 \\ge x + 1 \\iff x \\ge 4$ (ផ្ទៀងផ្ទាត់)</li>
+        <li><strong>ង.</strong> លក្ខខណ្ឌ $x > 1$៖ $(x+1)(x-1) \\le 2^3 = 8 \\iff x^2 - 1 \\le 8 \\iff x^2 \\le 9 \\iff -3 \\le x \\le 3 \\implies 1 < x \\le 3$</li>
+        <li><strong>ច.</strong> លក្ខខណ្ឌ $x^2 - 2x > 0 \\iff x < 0$ ឬ $x > 2$។ វិសមីការ $\\iff x^2 - 2x \\le 2^3 = 8 \\iff x^2 - 2x - 8 \\le 0 \\iff -2 \\le x \\le 4 \\implies [-2, 0) \\cup (2, 4]$</li>
+        <li><strong>ឆ.</strong> លក្ខខណ្ឌ $x > 0$។ តាង $t = \\log_2 x \\implies t^2 - 3t + 2 < 0 \\iff 1 < t < 2 \\iff 1 < \\log_2 x < 2 \\implies 2 < x < 4$</li>
+        <li><strong>ជ.</strong> លក្ខខណ្ឌ $|x| > 1$ ($x < -1$ ឬ $x > 1$)។ គោល $1/3 < 1$ ត្រឡប់ទិស៖ $x^2 - 1 \\le (1/3)^{-1} = 3 \\iff x^2 \\le 4 \\iff -2 \\le x \\le 2 \\implies [-2, -1) \\cup (1, 2]$</li>
+        <li><strong>ឈ.</strong> លក្ខខណ្ឌ $x^2 - 5x + 7 > 0$ (ពិតជានិច្ច)៖ $x^2 - 5x + 7 \\le e^0 = 1 \\iff x^2 - 5x + 6 \\le 0 \\implies 2 \\le x \\le 3$</li>
+        <li><strong>ញ.</strong> លក្ខខណ្ឌ $x > 1$៖ $(x-1)(x+2) < 10 \\iff x^2 + x - 12 < 0 \\iff -4 < x < 3 \\implies 1 < x < 3$</li>
+        <li><strong>ដ.</strong> លក្ខខណ្ឌ $x > 2/3$៖ $3x - 2 > x + 4 \\iff 2x > 6 \\implies x > 3$ (ផ្ទៀងផ្ទាត់)</li>
+        <li><strong>ឋ.</strong> លក្ខខណ្ឌ $x > -1.5$។ គោល $1/4 < 1$ ត្រឡប់ទិស៖ $2x + 3 < (1/4)^{-1} = 4 \\iff 2x < 1 \\implies -1.5 < x < 0.5$</li>
       </ul>
     `
   },
@@ -2901,9 +2901,9 @@ const EXERCISES_DATA = [
     problem: `
       <p style="margin-bottom: 0.8rem; font-weight: 600;">ដោះស្រាយចំណោទអនុវត្តជាក់ស្តែងនៃអនុគមន៍លោការីតក្នុងវិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា៖</p>
       <div style="background: rgba(139, 92, 246, 0.05); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(139, 92, 246, 0.3); display: flex; flex-direction: column; gap: 0.85rem;">
-        <div><strong>១. កម្រិតសំឡេងដេស៊ីបែល (Sound Decibels)៖</strong> កម្រិតសំឡេងគិតជាដេស៊ីបែល (dB) កំណត់ដោយរូបមន្ត $\beta = 10\log_{10}\left(\dfrac{I}{I_0}\right)$ ដែល $I_0 = 10^{-12}\text{ W/m}^2$ ជាកម្រិតសំឡេងខ្សោយបំផុតដែលត្រចៀកមនុស្សអាចឮ។ គណនាកម្រិតសំឡេងនៃការប្រគំតន្ត្រីរ៉ុកដែលមានអាំងតង់ស៊ីតេ $I = 10^{-1}\text{ W/m}^2$។</div>
-        <div><strong>២. កម្រិតកំហាប់អាស៊ីត pH (Chemistry Scale)៖</strong> កម្រិត $\text{pH}$ នៃសូលុយស្យុងគីមីកំណត់ដោយរូបមន្ត $\text{pH} = -\log_{10}[H^+]$ ដែល $[H^+]$ ជាកំហាប់អ៊ីយ៉ុងអ៊ីដ្រូសែនគិតជាម៉ូលក្នុងមួយលីត្រ (M)។ បើសូលុយស្យុងទឹកខ្មេះមួយមាន $[H^+] = 10^{-3}\text{ M}$ ចូរគណនាតម្លៃ $\text{pH}$។</div>
-        <div><strong>៣. រង្វាស់កម្រិតរញ្ជួយដីរ៉ិចទ័រ (Richter Scale)៖</strong> កម្រិតរញ្ជួយដីកំណត់ដោយ $M = \dfrac{2}{3}\log_{10}\left(\dfrac{E}{E_0}\right)$។ ចូរប្រៀបធៀបថាមពល $E$ នៃការរញ្ជួយដីកម្រិត $M = 7$ ធៀបនឹងកម្រិត $M = 5$ (តើខ្លាំងជាងគ្នាប៉ុន្មានដង?)។</div>
+        <div><strong>១. កម្រិតសំឡេងដេស៊ីបែល (Sound Decibels)៖</strong> កម្រិតសំឡេងគិតជាដេស៊ីបែល (dB) កំណត់ដោយរូបមន្ត $\\beta = 10\\log_{10}\\left(\\dfrac{I}{I_0}\\right)$ ដែល $I_0 = 10^{-12}\\text{ W/m}^2$ ជាកម្រិតសំឡេងខ្សោយបំផុតដែលត្រចៀកមនុស្សអាចឮ។ គណនាកម្រិតសំឡេងនៃការប្រគំតន្ត្រីរ៉ុកដែលមានអាំងតង់ស៊ីតេ $I = 10^{-1}\\text{ W/m}^2$។</div>
+        <div><strong>២. កម្រិតកំហាប់អាស៊ីត pH (Chemistry Scale)៖</strong> កម្រិត $\\text{pH}$ នៃសូលុយស្យុងគីមីកំណត់ដោយរូបមន្ត $\\text{pH} = -\\log_{10}[H^+]$ ដែល $[H^+]$ ជាកំហាប់អ៊ីយ៉ុងអ៊ីដ្រូសែនគិតជាម៉ូលក្នុងមួយលីត្រ (M)។ បើសូលុយស្យុងទឹកខ្មេះមួយមាន $[H^+] = 10^{-3}\\text{ M}$ ចូរគណនាតម្លៃ $\\text{pH}$។</div>
+        <div><strong>៣. រង្វាស់កម្រិតរញ្ជួយដីរ៉ិចទ័រ (Richter Scale)៖</strong> កម្រិតរញ្ជួយដីកំណត់ដោយ $M = \\dfrac{2}{3}\\log_{10}\\left(\\dfrac{E}{E_0}\\right)$។ ចូរប្រៀបធៀបថាមពល $E$ នៃការរញ្ជួយដីកម្រិត $M = 7$ ធៀបនឹងកម្រិត $M = 5$ (តើខ្លាំងជាងគ្នាប៉ុន្មានដង?)។</div>
       </div>
     `,
     hint: 'ជំនួសតម្លៃលេខចូលក្នុងរូបមន្តលោការីត រួចប្រើប្រាស់លក្ខណៈ $\\log_{10}(10^k) = k$។ ចំពោះការប្រៀបធៀបថាមពលរញ្ជួយដី ត្រូវទាញរកកន្សោមថាមពល $E$ ជាមុន $E = E_0 \\cdot 10^{1.5M}$។',
@@ -2911,18 +2911,18 @@ const EXERCISES_DATA = [
       <p><strong>ដំណោះស្រាយលម្អិតទាំង ៣ ចំណោទ៖</strong></p>
       <div style="line-height: 1.8;">
         <p><strong>១. គណនាកម្រិតសំឡេងនៃការប្រគំតន្ត្រីរ៉ុក (dB)៖</strong></p>
-        <p>$$\beta = 10\log_{10}\left(\frac{10^{-1}}{10^{-12}}\right) = 10\log_{10}(10^{-1 - (-12)}) = 10\log_{10}(10^{11}) = 10 \times 11 = 110\text{ dB}$$</p>
-        <p><em>ចម្លើយ៖</em> កម្រិតសំឡេងគឺ $110\text{ dB}$ (កម្រិតសំឡេងខ្លាំងដែលអាចបង្កគ្រោះថ្នាក់ដល់ត្រចៀក)។</p>
+        <p>$$\\beta = 10\\log_{10}\\left(\\frac{10^{-1}}{10^{-12}}\\right) = 10\\log_{10}(10^{-1 - (-12)}) = 10\\log_{10}(10^{11}) = 10 \\times 11 = 110\\text{ dB}$$</p>
+        <p><em>ចម្លើយ៖</em> កម្រិតសំឡេងគឺ $110\\text{ dB}$ (កម្រិតសំឡេងខ្លាំងដែលអាចបង្កគ្រោះថ្នាក់ដល់ត្រចៀក)។</p>
 
         <p><strong>២. គណនាកម្រិត pH នៃសូលុយស្យុងទឹកខ្មេះ៖</strong></p>
-        <p>$$\text{pH} = -\log_{10}(10^{-3}) = -(-3\log_{10} 10) = -(-3) = 3$$</p>
-        <p><em>ចម្លើយ៖</em> សូលុយស្យុងមាន $\text{pH} = 3$ (ជាសូលុយស្យុងអាស៊ីតខ្លាំង)។</p>
+        <p>$$\\text{pH} = -\\log_{10}(10^{-3}) = -(-3\\log_{10} 10) = -(-3) = 3$$</p>
+        <p><em>ចម្លើយ៖</em> សូលុយស្យុងមាន $\\text{pH} = 3$ (ជាសូលុយស្យុងអាស៊ីតខ្លាំង)។</p>
 
         <p><strong>៣. ប្រៀបធៀបថាមពលរញ្ជួយដីកម្រិត ៧ ធៀបនឹងកម្រិត ៥៖</strong></p>
-        <p>តាមរូបមន្ត៖ $\frac{2}{3}\log_{10}\left(\frac{E}{E_0}\right) = M \implies \log_{10}\left(\frac{E}{E_0}\right) = \frac{3}{2}M = 1.5M$</p>
-        <p>$$\implies \frac{E}{E_0} = 10^{1.5M} \implies E = E_0 \cdot 10^{1.5M}$$</p>
+        <p>តាមរូបមន្ត៖ $\\frac{2}{3}\\log_{10}\\left(\\frac{E}{E_0}\\right) = M \\implies \\log_{10}\\left(\\frac{E}{E_0}\\right) = \\frac{3}{2}M = 1.5M$</p>
+        <p>$$\\implies \\frac{E}{E_0} = 10^{1.5M} \\implies E = E_0 \\cdot 10^{1.5M}$$</p>
         <p>ផលធៀបថាមពលរវាង $M=7$ និង $M=5$៖</p>
-        <p>$$\frac{E_7}{E_5} = \frac{E_0 \cdot 10^{1.5(7)}}{E_0 \cdot 10^{1.5(5)}} = 10^{1.5(7 - 5)} = 10^{1.5 \times 2} = 10^3 = 1,000\text{ ដង}$$</p>
+        <p>$$\\frac{E_7}{E_5} = \\frac{E_0 \\cdot 10^{1.5(7)}}{E_0 \\cdot 10^{1.5(5)}} = 10^{1.5(7 - 5)} = 10^{1.5 \\times 2} = 10^3 = 1,000\\text{ ដង}$$</p>
         <p><em>ចម្លើយ៖</em> ការរញ្ជួយដីកម្រិត ៧ បញ្ចេញថាមពលខ្លាំងជាងការរញ្ជួយដីកម្រិត ៥ រហូតដល់ <strong>១,០០០ ដង</strong>!</p>
       </div>
     `
