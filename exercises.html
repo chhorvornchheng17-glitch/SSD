@@ -352,6 +352,17 @@
                   </div>
                 </a>
 
+                <a href="exercises.html" class="dropdown-item teaching-scroll-item" style="padding-left: 1.75rem;" title="សន្លឹកកិច្ចការ៖ អនុគមន៍លោការីត (A4 Print)">
+                  <span class="teaching-item-dot" style="background: #0ea5e9; width: 6px; height: 6px;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span style="font-size: 0.82rem; color: var(--primary);">✦ លំហាត់អនុគមន៍លោការីត (A4)</span>
+                      <span class="badge-mini" style="background: rgba(14,165,233,0.15); color: #0284c7; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">ថ្មី</span>
+                    </div>
+                    <div class="teaching-item-desc">សន្លឹកកិច្ចការ A4, Word, PDF & ដំណោះស្រាយ</div>
+                  </div>
+                </a>
+
                 <a href="exams.html" class="dropdown-item teaching-scroll-item" title="វិញ្ញាសាប្រឡងជាតិ & តេស្ត">
                   <span class="teaching-item-dot" style="background: #f59e0b;"></span>
                   <div class="teaching-item-content">
@@ -802,6 +813,13 @@
                 <div class="sub-desc">លំហាត់អនុវត្ត & ដំណោះស្រាយ</div>
               </div>
             </a>
+            <a href="exercises.html" class="mobile-sub-link" style="padding-left: 1.5rem;">
+              <span class="sub-dot" style="background: #0ea5e9; width: 6px; height: 6px;"></span>
+              <div>
+                <div class="sub-title" style="font-size: 0.82rem; color: var(--primary);">✦ លំហាត់អនុគមន៍លោការីត (A4) <span style="font-size:0.65rem; background:rgba(14,165,233,0.2); color:#0284c7; padding:1px 5px; border-radius:3px;">ថ្មី</span></div>
+                <div class="sub-desc">A4 Print, Word & PDF</div>
+              </div>
+            </a>
             <a href="exams.html" class="mobile-sub-link">
               <span class="sub-dot" style="background: #f59e0b;"></span>
               <div>
@@ -1045,25 +1063,47 @@
     <!-- ==========================================
          VIEW 1: A4 WORKSHEET SHEET (EXACT REPLICA)
          ========================================== -->
-    <div id="worksheet-sheet-view">
-      <!-- Toolbar -->
+        <div id="worksheet-sheet-view">
+      <!-- Topic Switcher for A4 Worksheet -->
+      <div class="worksheet-topic-bar" style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; background: var(--bg-card); padding: 0.85rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <span style="font-weight: 700; font-size: 0.92rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.4rem;">
+          <span>🎯</span><span>ជ្រើសរើសសន្លឹកកិច្ចការ A4៖</span>
+        </span>
+        <button type="button" class="btn btn-primary btn-sm" id="btn-ws-log" onclick="switchWorksheetSubject('log')" style="font-weight: 700;">
+          <span>📘 អនុគមន៍លោការីត (ថ្នាក់ទី១១)</span>
+          <span class="chip-badge" style="background: rgba(255,255,255,0.25); color: #ffffff; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-left: 5px;">ថ្មី • ពេញលេញ</span>
+        </button>
+        <button type="button" class="btn btn-outline btn-sm" id="btn-ws-exp" onclick="switchWorksheetSubject('exp')">
+          <span>📙 អនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល (ថ្នាក់ទី១១)</span>
+        </button>
+      </div>
+
+      <!-- Action Toolbar -->
       <div class="worksheet-action-bar">
         <div>
-          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.25rem;">
-            សន្លឹកកិច្ចការលំហាត់អនុវត្ត៖ អនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល ថ្នាក់ទី១១
+          <h3 id="worksheet-active-title" style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin: 0 0 0.25rem;">
+            សន្លឹកកិច្ចការលំហាត់អនុវត្ត៖ អនុគមន៍លោការីត ថ្នាក់ទី១១ (Logarithmic Functions)
           </h3>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
-            រៀបចំតាមទម្រង់ក្រដាសប្រឡង/កិច្ចការ ៣ ជួរឈរ (បោះពុម្ពជាក្រដាស A4 ឬទាញយកជា PDF)
+          <p id="worksheet-active-desc" style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
+            រចនាតាមលំដាប់លំដោយមេរៀនពីតូចទៅធំ ៣ ជួរឈរ លើក្រដាស A4 (KaTeX ពេញលេញ មិនបាត់បង់ text)
           </p>
         </div>
         <div class="worksheet-action-btns">
-          <button class="btn btn-primary btn-sm" onclick="printExponentialSheet()" title="បោះពុម្ពលើក្រដាស A4">
+          <button class="btn btn-primary btn-sm" onclick="openWorksheetPreviewModal()" title="មើលផ្ទាំង A4 មុនបោះពុម្ព & នាំចេញ">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            <span>👁️ មើលជាមុន (Print Preview)</span>
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="printActiveWorksheet()" title="បោះពុម្ពលើក្រដាស A4">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
             <span>🖨️ បោះពុម្ព A4</span>
           </button>
-          <button class="btn btn-outline btn-sm" onclick="downloadExponentialPDF()" id="btn-download-pdf" title="ទាញយកជាឯកសារ PDF">
+          <button class="btn btn-outline btn-sm" onclick="downloadActiveWorksheetPDF()" id="btn-download-pdf" title="ទាញយកជាឯកសារ PDF ច្បាស់កម្រិតខ្ពស់">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             <span>📥 ទាញយកជា PDF</span>
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="exportActiveWorksheetWord()" style="border-color: #3b82f6; color: #60a5fa;" title="នាំចេញជាឯកសារ Microsoft Word (.doc)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>📄 នាំចេញជា Word</span>
           </button>
           <button class="btn btn-outline btn-sm" id="btn-toggle-answers" onclick="toggleWorksheetAnswers()" title="បង្ហាញ/លាក់ គន្លឹះចម្លើយសង្ខេប">
             👁️ បង្ហាញចម្លើយ
@@ -1071,8 +1111,352 @@
         </div>
       </div>
 
-      <!-- Printable A4 Worksheet Paper -->
-      <div class="worksheet-a4-sheet" id="worksheet-printable-area">
+      <!-- Sheet 1: Logarithmic Functions (Active by Default) -->
+
+      <!-- ========================================================
+           A4 WORKSHEET: អនុគមន៍លោការីត (LOGARITHMIC FUNCTIONS - G11)
+           ======================================================== -->
+      <div class="worksheet-a4-sheet" id="worksheet-logarithmic-sheet">
+        <!-- Subtle Watermark -->
+        <div class="worksheet-watermark">CHHENG CHHORVORN</div>
+
+        <div class="worksheet-content">
+          <!-- Header -->
+          <div class="worksheet-header-top">
+            <div>គណិតវិទ្យាថ្នាក់ទី១១(សង្ខេប)</div>
+            <div class="worksheet-main-title">លំហាត់</div>
+            <div>អនុគមន៍លោការីត(២០២៥-២០២៦)</div>
+          </div>
+
+          <!-- Section 1 -->
+          <div class="worksheet-section">
+            <div class="worksheet-section-title">១. សម្រួល និងគណនាតម្លៃកន្សោមលោការីតខាងក្រោម៖</div>
+            <div class="worksheet-grid-3">
+              <!-- Row 1 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ក.</span>
+                <span class="worksheet-item-math">$A = \\log_2 16 + \\log_3 27 - \\log_5 125$</span>
+                <span class="worksheet-item-answer">$= 4$</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ខ.</span>
+                <span class="worksheet-item-math">$B = \\log_2 \\sqrt{8} + \\log_3 \\sqrt[3]{9}$</span>
+                <span class="worksheet-item-answer">$= \\frac{13}{6}$</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">គ.</span>
+                <span class="worksheet-item-math">$C = \\log_6 4 + \\log_6 9$</span>
+                <span class="worksheet-item-answer">$= 2$</span>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឃ.</span>
+                <span class="worksheet-item-math">$D = \\log_2 40 - \\log_2 5$</span>
+                <span class="worksheet-item-answer">$= 3$</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ង.</span>
+                <span class="worksheet-item-math">$E = 2\\log_3 6 - \\log_3 4$</span>
+                <span class="worksheet-item-answer">$= 2$</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ច.</span>
+                <span class="worksheet-item-math">$F = \\log_2 3 \\cdot \\log_3 4 \\cdot \\log_4 8$</span>
+                <span class="worksheet-item-answer">$= 3$</span>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឆ.</span>
+                <span class="worksheet-item-math">$G = 4^{\\log_2 5} + 9^{\\log_3 2}$</span>
+                <span class="worksheet-item-answer">$= 29$</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ជ.</span>
+                <span class="worksheet-item-math">$H = \\ln(e^5) - \\ln\\left(\\dfrac{1}{e^2}\\right) + \\ln 1$</span>
+                <span class="worksheet-item-answer">$= 7$</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឈ.</span>
+                <span class="worksheet-item-math">$I = \\log_{\\frac{1}{2}} 8 + \\log_{\\frac{1}{3}} 81$</span>
+                <span class="worksheet-item-answer">$= -7$</span>
+              </div>
+
+              <!-- Row 4 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ញ.</span>
+                <span class="worksheet-item-math">$J = \\dfrac{\\log 8}{\\log 4} + \\dfrac{\\log 27}{\\log 9}$</span>
+                <span class="worksheet-item-answer">$= 3$</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ដ.</span>
+                <span class="worksheet-item-math">$K = \\log_{\\sqrt{3}} (9\\sqrt{3})$</span>
+                <span class="worksheet-item-answer">$= 5$</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឋ.</span>
+                <span class="worksheet-item-math">$L = e^{2\\ln 3} - e^{-\\ln 2}$</span>
+                <span class="worksheet-item-answer">$= 8.5$</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="worksheet-section">
+            <div class="worksheet-section-title">២. រកដែនកំណត់នៃអនុគមន៍លោការីតខាងក្រោម៖</div>
+            <div class="worksheet-grid-3">
+              <!-- Row 1 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ក.</span>
+                <span class="worksheet-item-math">$f(x) = \\log_2(3x - 6)$</span>
+                <span class="worksheet-item-answer">($x > 2$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ខ.</span>
+                <span class="worksheet-item-math">$g(x) = \\log_5(x^2 - 9)$</span>
+                <span class="worksheet-item-answer">($|x| > 3$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">គ.</span>
+                <span class="worksheet-item-math">$h(x) = \\ln\\left(\\dfrac{x+1}{x-2}\\right)$</span>
+                <span class="worksheet-item-answer">($x<-1 \\lor x>2$)</span>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឃ.</span>
+                <span class="worksheet-item-math">$k(x) = \\log_3(4 - x^2)$</span>
+                <span class="worksheet-item-answer">($-2 < x < 2$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ង.</span>
+                <span class="worksheet-item-math">$p(x) = \\log_{(x-1)}(x+3)$</span>
+                <span class="worksheet-item-answer">($x>1, x \\ne 2$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ច.</span>
+                <span class="worksheet-item-math">$q(x) = \\sqrt{\\log_2(x - 1)}$</span>
+                <span class="worksheet-item-answer">($x \\ge 2$)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="worksheet-section">
+            <div class="worksheet-section-title">៣. ដោះស្រាយសមីការលោការីតខាងក្រោម៖</div>
+            <div class="worksheet-grid-3">
+              <!-- Row 1 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ក.</span>
+                <span class="worksheet-item-math">$\\log_2(x - 3) = 4$</span>
+                <span class="worksheet-item-answer">($x = 19$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ខ.</span>
+                <span class="worksheet-item-math">$\\log_3(2x + 1) = 2$</span>
+                <span class="worksheet-item-answer">($x = 4$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">គ.</span>
+                <span class="worksheet-item-math">$\\log_5(x^2 - 4x) = 1$</span>
+                <span class="worksheet-item-answer">($x = -1; 5$)</span>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឃ.</span>
+                <span class="worksheet-item-math">$\\log_2(x+1) + \\log_2(x-1) = 3$</span>
+                <span class="worksheet-item-answer">($x = 3$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ង.</span>
+                <span class="worksheet-item-math">$\\log_3(x+2) - \\log_3(x-1) = 1$</span>
+                <span class="worksheet-item-answer">($x = 2.5$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ច.</span>
+                <span class="worksheet-item-math">$\\log_4(x + 3) = \\log_4(2x - 1)$</span>
+                <span class="worksheet-item-answer">($x = 4$)</span>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឆ.</span>
+                <span class="worksheet-item-math">$\\log_2(x+2) + \\log_2(x+4) = 3$</span>
+                <span class="worksheet-item-answer">($x = 0$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ជ.</span>
+                <span class="worksheet-item-math">$\\ln(2x - 1) = 0$</span>
+                <span class="worksheet-item-answer">($x = 1$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឈ.</span>
+                <span class="worksheet-item-math">$\\log(x - 2) + \\log(x + 1) = 1$</span>
+                <span class="worksheet-item-answer">($x = 4$)</span>
+              </div>
+
+              <!-- Row 4 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ញ.</span>
+                <span class="worksheet-item-math">$\\log_3(x^2 - 6) = \\log_3 x$</span>
+                <span class="worksheet-item-answer">($x = 3$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ដ.</span>
+                <span class="worksheet-item-math">$\\log_2(x-5) + \\log_2(x+2) = 3$</span>
+                <span class="worksheet-item-answer">($x = 6$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឋ.</span>
+                <span class="worksheet-item-math">$\\log_{\\frac{1}{2}}(3x - 1) = -2$</span>
+                <span class="worksheet-item-answer">($x = 5/3$)</span>
+              </div>
+
+              <!-- Row 5 (Advanced) -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឌ.</span>
+                <span class="worksheet-item-math">$\\log_2^2 x - 3\\log_2 x + 2 = 0$</span>
+                <span class="worksheet-item-answer">($x = 2; 4$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឍ.</span>
+                <span class="worksheet-item-math">$\\log_3^2 x - 4\\log_3 x + 3 = 0$</span>
+                <span class="worksheet-item-answer">($x = 3; 27$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ណ.</span>
+                <span class="worksheet-item-math">$\\log_2 x + \\log_x 2 = 2$</span>
+                <span class="worksheet-item-answer">($x = 2$)</span>
+              </div>
+
+              <!-- Row 6 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ត.</span>
+                <span class="worksheet-item-math">$\\log_2 x + 4\\log_x 2 = 5$</span>
+                <span class="worksheet-item-answer">($x = 2; 16$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ថ.</span>
+                <span class="worksheet-item-math">$x^{\\log_3 x} = 81$</span>
+                <span class="worksheet-item-answer">($x = 9; 1/9$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ទ.</span>
+                <span class="worksheet-item-math">$\\ln^2 x - \\ln(x^3) + 2 = 0$</span>
+                <span class="worksheet-item-answer">($x = e; e^2$)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4 -->
+          <div class="worksheet-section">
+            <div class="worksheet-section-title">៤. ដោះស្រាយវិសមីការលោការីតខាងក្រោម៖</div>
+            <div class="worksheet-grid-3">
+              <!-- Row 1 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ក.</span>
+                <span class="worksheet-item-math">$\\log_2(x - 1) < 3$</span>
+                <span class="worksheet-item-answer">($1 < x < 9$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ខ.</span>
+                <span class="worksheet-item-math">$\\log_3(2x + 1) \\ge 2$</span>
+                <span class="worksheet-item-answer">($x \\ge 4$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">គ.</span>
+                <span class="worksheet-item-math">$\\log_{\\frac{1}{2}}(x - 2) > -1$</span>
+                <span class="worksheet-item-answer">($2 < x < 4$)</span>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឃ.</span>
+                <span class="worksheet-item-math">$\\log_{0.5}(2x - 3) \\le \\log_{0.5}(x + 1)$</span>
+                <span class="worksheet-item-answer">($x \\ge 4$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ង.</span>
+                <span class="worksheet-item-math">$\\log_2(x+1) + \\log_2(x-1) \\le 3$</span>
+                <span class="worksheet-item-answer">($1 < x \\le 3$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ច.</span>
+                <span class="worksheet-item-math">$\\log_2(x^2 - 2x) \\le 3$</span>
+                <span class="worksheet-item-answer">($[-2,0) \\cup (2,4]$)</span>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឆ.</span>
+                <span class="worksheet-item-math">$\\log_2^2 x - 3\\log_2 x + 2 < 0$</span>
+                <span class="worksheet-item-answer">($2 < x < 4$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ជ.</span>
+                <span class="worksheet-item-math">$\\log_{\\frac{1}{3}}(x^2 - 1) \\ge -1$</span>
+                <span class="worksheet-item-answer">($[-2,-1) \\cup (1,2]$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឈ.</span>
+                <span class="worksheet-item-math">$\\ln(x^2 - 5x + 7) \\le 0$</span>
+                <span class="worksheet-item-answer">($2 \\le x \\le 3$)</span>
+              </div>
+
+              <!-- Row 4 -->
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ញ.</span>
+                <span class="worksheet-item-math">$\\log(x - 1) + \\log(x + 2) < 1$</span>
+                <span class="worksheet-item-answer">($1 < x < 3$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ដ.</span>
+                <span class="worksheet-item-math">$\\log_2(3x - 2) > \\log_2(x + 4)$</span>
+                <span class="worksheet-item-answer">($x > 3$)</span>
+              </div>
+              <div class="worksheet-grid-item">
+                <span class="worksheet-item-label">ឋ.</span>
+                <span class="worksheet-item-math">$\\log_{\\frac{1}{4}}(2x + 3) > -1$</span>
+                <span class="worksheet-item-answer">($-1.5 < x < 0.5$)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5 -->
+          <div class="worksheet-section">
+            <div class="worksheet-section-title">៥. បញ្ហាអនុវត្តជាក់ស្តែងក្នុងជីវភាព៖</div>
+            <div class="worksheet-grid-3">
+              <div class="worksheet-grid-item" style="grid-column: span 3; white-space: normal; line-height: 1.6; font-size: 0.88rem; margin-bottom: 2px;">
+                <span class="worksheet-item-label">១.</span>
+                <span class="worksheet-item-math"><strong>សំឡេង (dB)៖</strong> $\\beta = 10\\log_{10}(I/I_0)$ ដោយ $I_0 = 10^{-12}\\text{ W/m}^2$។ រក $\\beta$ បើ $I = 10^{-1}\\text{ W/m}^2$។</span>
+                <span class="worksheet-item-answer">($\\beta = 110\\text{ dB}$)</span>
+              </div>
+              <div class="worksheet-grid-item" style="grid-column: span 3; white-space: normal; line-height: 1.6; font-size: 0.88rem; margin-bottom: 2px;">
+                <span class="worksheet-item-label">២.</span>
+                <span class="worksheet-item-math"><strong>គីមីវិទ្យា (pH)៖</strong> $\\text{pH} = -\\log_{10}[H^+]$។ រក $\\text{pH}$ បើសូលុយស្យុងមាន $[H^+] = 10^{-3}\\text{ M}$។</span>
+                <span class="worksheet-item-answer">($\\text{pH} = 3$)</span>
+              </div>
+              <div class="worksheet-grid-item" style="grid-column: span 3; white-space: normal; line-height: 1.6; font-size: 0.88rem;">
+                <span class="worksheet-item-label">៣.</span>
+                <span class="worksheet-item-math"><strong>រញ្ជួយដី (Richter)៖</strong> $M = \\frac{2}{3}\\log_{10}(E/E_0)$។ ប្រៀបធៀបថាមពល $E$ នៃកម្រិត $M=7$ ធៀបនឹង $M=5$។</span>
+                <span class="worksheet-item-answer">($E_7/E_5 = 1,000\\text{ ដង}$)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="worksheet-footer-bottom">
+            <div>បង្រៀនដោយ៖ អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)</div>
+            <div>វិទ្យាល័យសសរស្តម្ភ | ០៩៩ ៧៧ ៥៥ ០១</div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Sheet 2: Exponential Functions -->
+<div class="worksheet-a4-sheet" id="worksheet-exponential-sheet" style="display: none;">
         <!-- Subtle Watermark -->
         <div class="worksheet-watermark">CHHENG CHHORVORN</div>
 
@@ -1380,7 +1764,8 @@
             <div>០៩៩ ៧៧ ៥៥ ០១</div>
           </div>
         </div>
-      </div>
+      
+    </div>
     </div>
 
     <!-- ==========================================
@@ -1426,7 +1811,69 @@
   </div>
 
   <!-- Inline Script for Worksheet Handling -->
+    <!-- ============================================================
+       WORKSHEET PRINT PREVIEW MODAL (CLEAN & ELEGANT DESIGN)
+       ============================================================ -->
+  <div id="worksheet-preview-modal" class="modal-overlay" style="display: none; z-index: 99999; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(15, 23, 42, 0.78);">
+    <div style="width: 96%; max-width: 1100px; height: 92vh; display: flex; flex-direction: column; background: #0f172a; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(56, 189, 248, 0.15); overflow: hidden; margin: auto;">
+      
+      <!-- Top Floating Glassmorphism Toolbar -->
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.5rem; background: rgba(30, 41, 59, 0.85); border-bottom: 1px solid rgba(255, 255, 255, 0.1); flex-wrap: wrap; gap: 0.75rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.5rem;">📄</span>
+          <div>
+            <div style="font-weight: 700; font-size: 1rem; color: #f8fafc;" id="preview-modal-title">
+              ទម្រង់បោះពុម្ពសន្លឹកកិច្ចការ A4 (A4 Print Preview)
+            </div>
+            <div style="font-size: 0.78rem; color: #94a3b8;">
+              ទំហំក្រដាស A4 បញ្ឈរ (210mm × 297mm) • រូបមន្ត KaTeX 100% Vector
+            </div>
+          </div>
+        </div>
+
+        <!-- Zoom & View Controls -->
+        <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(15, 23, 42, 0.6); padding: 4px 10px; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <button type="button" class="btn btn-outline btn-sm" onclick="zoomWorksheetPreview(-0.1)" style="padding: 2px 8px; border-radius: 20px;" title="បង្រួម (Zoom Out)">➖</button>
+          <span id="preview-zoom-val" style="font-size: 0.82rem; font-weight: 700; color: #38bdf8; min-width: 45px; text-align: center;">85%</span>
+          <button type="button" class="btn btn-outline btn-sm" onclick="zoomWorksheetPreview(0.1)" style="padding: 2px 8px; border-radius: 20px;" title="ពង្រីក (Zoom In)">➕</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="setWorksheetPreviewZoom(1.0)" style="padding: 2px 8px; border-radius: 20px;" title="ទំហំដើម 100%">100%</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="fitWorksheetPreviewWidth()" style="padding: 2px 10px; border-radius: 20px;" title="សមល្មមអេក្រង់">📐 សមល្មម</button>
+        </div>
+
+        <!-- Action Export Buttons -->
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <button type="button" class="btn btn-outline btn-sm" id="btn-preview-toggle-answers" onclick="toggleWorksheetAnswers()" style="font-size: 0.82rem;">
+            👁️ បង្ហាញចម្លើយ
+          </button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="exportActiveWorksheetWord()" style="border-color: #3b82f6; color: #60a5fa; font-size: 0.82rem;" title="នាំចេញជា Word">
+            📄 Word
+          </button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="downloadActiveWorksheetPDF()" style="border-color: #10b981; color: #34d399; font-size: 0.82rem;" title="ទាញយកជា PDF">
+            📥 PDF
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()" style="background: linear-gradient(135deg, #0284c7, #0369a1); border: none; font-size: 0.82rem;" title="បោះពុម្ពលើក្រដាស A4 ឬ Save as PDF">
+            🖨️ បោះពុម្ព
+          </button>
+          <button type="button" class="modal-close-btn" onclick="closeWorksheetPreviewModal()" style="position: static; width: 32px; height: 32px; margin-left: 0.4rem;" aria-label="បិទ">✕</button>
+        </div>
+      </div>
+
+      <!-- Preview Viewport (Scrollable with dark drafting background) -->
+      <div id="preview-viewport-scroll" style="flex: 1; overflow: auto; padding: 2.5rem 1rem; background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); display: flex; justify-content: center; align-items: flex-start;">
+        <div id="preview-sheet-stage" style="transform-origin: top center; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);">
+          <div id="preview-sheet-clone-container">
+            <!-- Active A4 Worksheet will be cloned and injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inline Script for Worksheet Handling & High-Fidelity Export -->
   <script>
+    let activeSubject = 'log'; // 'log' or 'exp'
+    let currentPreviewZoom = 0.85;
+
     function switchWorksheetTab(tab) {
       const sheetView = document.getElementById('worksheet-sheet-view');
       const bankView = document.getElementById('worksheet-bank-view');
@@ -1452,25 +1899,151 @@
       }
     }
 
-    function printExponentialSheet() {
-      // Switch to sheet view first
+    function switchWorksheetSubject(subj) {
+      activeSubject = subj;
+      const logSheet = document.getElementById('worksheet-logarithmic-sheet');
+      const expSheet = document.getElementById('worksheet-exponential-sheet');
+      const btnLog = document.getElementById('btn-ws-log');
+      const btnExp = document.getElementById('btn-ws-exp');
+      const titleEl = document.getElementById('worksheet-active-title');
+      const descEl = document.getElementById('worksheet-active-desc');
+
+      if (subj === 'log') {
+        if (logSheet) logSheet.style.display = 'block';
+        if (expSheet) expSheet.style.display = 'none';
+        if (btnLog) { btnLog.className = 'btn btn-primary btn-sm'; }
+        if (btnExp) { btnExp.className = 'btn btn-outline btn-sm'; }
+        if (titleEl) titleEl.textContent = 'សន្លឹកកិច្ចការលំហាត់អនុវត្ត៖ អនុគមន៍លោការីត ថ្នាក់ទី១១ (Logarithmic Functions)';
+        if (descEl) descEl.textContent = 'រចនាតាមលំដាប់លំដោយមេរៀនពីតូចទៅធំ ៣ ជួរឈរ លើក្រដាស A4 (KaTeX ពេញលេញ មិនបាត់បង់ text)';
+        if (typeof triggerMathRender === 'function' && logSheet) {
+          triggerMathRender(logSheet);
+        }
+      } else {
+        if (logSheet) logSheet.style.display = 'none';
+        if (expSheet) expSheet.style.display = 'block';
+        if (btnLog) { btnLog.className = 'btn btn-outline btn-sm'; }
+        if (btnExp) { btnExp.className = 'btn btn-primary btn-sm'; }
+        if (titleEl) titleEl.textContent = 'សន្លឹកកិច្ចការលំហាត់អនុវត្ត៖ អនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល ថ្នាក់ទី១១ (Exponential Functions)';
+        if (descEl) descEl.textContent = 'រៀបចំតាមទម្រង់ក្រដាសប្រឡង/កិច្ចការ ៣ ជួរឈរ (បោះពុម្ពជាក្រដាស A4 ឬទាញយកជា PDF)';
+        if (typeof triggerMathRender === 'function' && expSheet) {
+          triggerMathRender(expSheet);
+        }
+      }
+    }
+
+    function getActiveWorksheetElement() {
+      if (activeSubject === 'log') {
+        return document.getElementById('worksheet-logarithmic-sheet');
+      }
+      return document.getElementById('worksheet-exponential-sheet');
+    }
+
+    function toggleWorksheetAnswers() {
+      const activeSheet = getActiveWorksheetElement();
+      const btn = document.getElementById('btn-toggle-answers');
+      const previewBtn = document.getElementById('btn-preview-toggle-answers');
+      if (!activeSheet) return;
+
+      activeSheet.classList.toggle('show-answers');
+      const isShown = activeSheet.classList.contains('show-answers');
+
+      const text = isShown ? '👁️ លាក់ចម្លើយ' : '👁️ បង្ហាញចម្លើយ';
+      if (btn) {
+        btn.textContent = text;
+        btn.style.color = isShown ? 'var(--accent-cyan)' : '';
+      }
+      if (previewBtn) {
+        previewBtn.textContent = text;
+        previewBtn.style.color = isShown ? '#38bdf8' : '';
+      }
+
+      // If preview modal open, sync clone
+      const clone = document.querySelector('#preview-sheet-clone-container .worksheet-a4-sheet');
+      if (clone) {
+        clone.classList.toggle('show-answers', isShown);
+      }
+    }
+
+    function printActiveWorksheet() {
       switchWorksheetTab('sheet');
       window.print();
     }
 
-    function toggleWorksheetAnswers() {
-      const sheet = document.getElementById('worksheet-printable-area');
-      const btn = document.getElementById('btn-toggle-answers');
-      if (!sheet || !btn) return;
+    // ==========================================
+    // PRINT PREVIEW MODAL LOGIC
+    // ==========================================
+    function openWorksheetPreviewModal() {
+      const modal = document.getElementById('worksheet-preview-modal');
+      const cloneContainer = document.getElementById('preview-sheet-clone-container');
+      const modalTitle = document.getElementById('preview-modal-title');
+      const activeSheet = getActiveWorksheetElement();
+      if (!modal || !cloneContainer || !activeSheet) return;
 
-      sheet.classList.toggle('show-answers');
-      const isShown = sheet.classList.contains('show-answers');
-      btn.textContent = isShown ? '👁️ លាក់ចម្លើយ' : '👁️ បង្ហាញចម្លើយ';
-      btn.style.color = isShown ? 'var(--accent-cyan)' : '';
+      // Update Modal Title
+      if (modalTitle) {
+        modalTitle.textContent = activeSubject === 'log'
+          ? '📄 មើលជាមុនលើក្រដាស A4៖ អនុគមន៍លោការីត (Print Preview)'
+          : '📄 មើលជាមុនលើក្រដាស A4៖ អនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល (Print Preview)';
+      }
+
+      // Clone active sheet into container
+      cloneContainer.innerHTML = '';
+      const clone = activeSheet.cloneNode(true);
+      clone.style.display = 'block';
+      clone.style.margin = '0 auto';
+      clone.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.45)';
+      cloneContainer.appendChild(clone);
+
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+
+      // Auto fit width
+      setTimeout(() => {
+        fitWorksheetPreviewWidth();
+        if (typeof triggerMathRender === 'function') {
+          triggerMathRender(cloneContainer);
+        }
+      }, 50);
     }
 
-    async function downloadExponentialPDF() {
-      const element = document.getElementById('worksheet-printable-area');
+    function closeWorksheetPreviewModal() {
+      const modal = document.getElementById('worksheet-preview-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    function setWorksheetPreviewZoom(val) {
+      currentPreviewZoom = Math.min(1.5, Math.max(0.4, val));
+      const stage = document.getElementById('preview-sheet-stage');
+      const label = document.getElementById('preview-zoom-val');
+      if (stage) stage.style.transform = `scale(${currentPreviewZoom})`;
+      if (label) label.textContent = `${Math.round(currentPreviewZoom * 100)}%`;
+    }
+
+    function zoomWorksheetPreview(delta) {
+      setWorksheetPreviewZoom(currentPreviewZoom + delta);
+    }
+
+    function fitWorksheetPreviewWidth() {
+      const scrollArea = document.getElementById('preview-viewport-scroll');
+      if (!scrollArea) return;
+      const availableW = scrollArea.clientWidth - 48;
+      const fitZoom = Math.min(1.15, Math.max(0.45, availableW / 820));
+      setWorksheetPreviewZoom(fitZoom);
+    }
+
+    // Close preview on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeWorksheetPreviewModal();
+    });
+
+    // ==========================================
+    // HIGH-FIDELITY PDF EXPORT
+    // ==========================================
+    async function downloadActiveWorksheetPDF() {
+      const element = getActiveWorksheetElement();
       const btn = document.getElementById('btn-download-pdf');
       if (!element) return;
 
@@ -1480,20 +2053,19 @@
         return;
       }
 
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '⏳ កំពុងបង្កើត PDF...';
-      btn.disabled = true;
-
-      // 1. Ensure fonts & KaTeX are 100% rendered
-      if (document.fonts && document.fonts.ready) {
-        try {
-          await document.fonts.ready;
-        } catch (e) {}
+      const originalText = btn ? btn.innerHTML : '';
+      if (btn) {
+        btn.innerHTML = '⏳ កំពុងបង្កើត PDF...';
+        btn.disabled = true;
       }
 
-      // 2. Create high-fidelity export clone locked at exact A4 width (794px)
+      if (document.fonts && document.fonts.ready) {
+        try { await document.fonts.ready; } catch (e) {}
+      }
+
       const exportClone = element.cloneNode(true);
       exportClone.id = 'worksheet-pdf-clone';
+      exportClone.style.display = 'block';
       exportClone.style.position = 'fixed';
       exportClone.style.top = '-99999px';
       exportClone.style.left = '0';
@@ -1510,11 +2082,8 @@
       exportClone.style.zIndex = '-99999';
 
       document.body.appendChild(exportClone);
-
-      // Brief delay for clone layout settlement
       await new Promise(resolve => setTimeout(resolve, 300));
 
-      // 3. Ensure content fits on exactly 1 single A4 page
       const currentHeight = exportClone.scrollHeight || exportClone.offsetHeight;
       if (currentHeight > 1040) {
         const safeScale = 1020 / currentHeight;
@@ -1523,9 +2092,13 @@
         exportClone.style.width = `${Math.ceil(794 / safeScale)}px`;
       }
 
+      const filename = activeSubject === 'log'
+        ? 'សន្លឹកកិច្ចការ_អនុគមន៍លោការីត_ថ្នាក់ទី១១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.pdf'
+        : 'សន្លឹកកិច្ចការ_អនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល_ថ្នាក់ទី១១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.pdf';
+
       const opt = {
-        margin: [4, 4, 4, 4], // 4mm clean border margin
-        filename: 'សន្លឹកកិច្ចការ_អនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល_ថ្នាក់ទី១១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.pdf',
+        margin: [4, 4, 4, 4],
+        filename: filename,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
           scale: 2,
@@ -1549,28 +2122,195 @@
       try {
         await html2pdf().set(opt).from(exportClone).save();
         exportClone.remove();
-        btn.innerHTML = originalText;
-        btn.disabled = false;
+        if (btn) {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }
       } catch (err) {
         console.error('PDF export error:', err);
         exportClone.remove();
-        btn.innerHTML = originalText;
-        btn.disabled = false;
+        if (btn) {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }
         window.print();
       }
     }
 
-    // Auto-trigger math typography on page load
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof window.triggerMathRender === 'function') {
-        window.triggerMathRender(document.body);
-      }
-    });
-    window.addEventListener('load', function() {
-      if (typeof window.triggerMathRender === 'function') {
-        window.triggerMathRender(document.body);
-      }
-    });
+    // ==========================================
+    // CLEAN MICROSOFT WORD (.DOC) EXPORT
+    // ==========================================
+    function exportActiveWorksheetWord() {
+      const activeSheet = getActiveWorksheetElement();
+      if (!activeSheet) return;
+
+      const isLog = activeSubject === 'log';
+      const docTitle = isLog
+        ? 'សន្លឹកកិច្ចការលំហាត់អនុវត្ត៖ អនុគមន៍លោការីត ថ្នាក់ទី១១'
+        : 'សន្លឹកកិច្ចការលំហាត់អនុវត្ត៖ អនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល ថ្នាក់ទី១១';
+
+      const showAnswers = activeSheet.classList.contains('show-answers');
+
+      // Extract sections
+      const sections = activeSheet.querySelectorAll('.worksheet-section');
+      let sectionsHtml = '';
+
+      sections.forEach(sec => {
+        const titleEl = sec.querySelector('.worksheet-section-title');
+        const titleText = titleEl ? titleEl.textContent : '';
+        const items = sec.querySelectorAll('.worksheet-grid-item');
+
+        sectionsHtml += `
+          <div style="margin-top: 14pt; margin-bottom: 6pt; font-weight: bold; font-size: 11pt; color: #0f172a;">
+            ${titleText}
+          </div>
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 8pt;">
+        `;
+
+        let colCount = 0;
+        let rowOpen = false;
+
+        items.forEach((item, idx) => {
+          const isSpan3 = item.style.gridColumn && item.style.gridColumn.includes('span 3');
+          const label = item.querySelector('.worksheet-item-label')?.textContent || '';
+          
+          // Get text content of math, stripping unnecessary KaTeX wrappers if any
+          let mathText = item.querySelector('.worksheet-item-math')?.textContent || '';
+          const ansText = item.querySelector('.worksheet-item-answer')?.textContent || '';
+
+          if (isSpan3) {
+            if (rowOpen) {
+              sectionsHtml += '</tr>';
+              rowOpen = false;
+              colCount = 0;
+            }
+            sectionsHtml += `
+              <tr>
+                <td colspan="3" style="padding: 4pt 6pt; font-size: 10.5pt; border-bottom: 1px dotted #cbd5e1;">
+                  <strong>${label}</strong> ${mathText}
+                  ${showAnswers && ansText ? `<span style="color: #0284c7; font-weight: bold; margin-left: 8pt;">${ansText}</span>` : ''}
+                </td>
+              </tr>
+            `;
+            return;
+          }
+
+          if (colCount === 0) {
+            sectionsHtml += '<tr>';
+            rowOpen = true;
+          }
+
+          sectionsHtml += `
+            <td style="width: 33.33%; padding: 4pt 6pt; font-size: 10.5pt; vertical-align: top; border-bottom: 1px dotted #f1f5f9;">
+              <strong>${label}</strong> ${mathText}
+              ${showAnswers && ansText ? `<div style="color: #0284c7; font-weight: bold; font-size: 9.5pt; margin-top: 2pt;">${ansText}</div>` : ''}
+            </td>
+          `;
+
+          colCount++;
+          if (colCount === 3) {
+            sectionsHtml += '</tr>';
+            rowOpen = false;
+            colCount = 0;
+          }
+        });
+
+        if (rowOpen) {
+          while (colCount < 3) {
+            sectionsHtml += '<td style="width: 33.33%;"></td>';
+            colCount++;
+          }
+          sectionsHtml += '</tr>';
+        }
+
+        sectionsHtml += '</table>';
+      });
+
+      const wordDocHtml = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>${docTitle}</title>
+<style>
+@page {
+  size: 21.0cm 29.7cm;
+  margin: 1.2cm 1.5cm 1.2cm 1.5cm;
+  mso-page-orientation: portrait;
+}
+body {
+  font-family: 'Kantumruy Pro', 'Khmer OS Siemreap', 'Khmer OS Battambang', 'Cambria Math', 'Times New Roman', serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #ffffff;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td {
+  padding: 4pt 6pt;
+  font-family: inherit;
+}
+.header-box {
+  width: 100%;
+  border-bottom: 2pt solid #0f172a;
+  padding-bottom: 6pt;
+  margin-bottom: 10pt;
+}
+.header-table td {
+  padding: 2pt 4pt;
+}
+.footer-box {
+  border-top: 1.5pt solid #0f172a;
+  padding-top: 6pt;
+  margin-top: 16pt;
+  font-size: 10pt;
+}
+</style>
+</head>
+<body>
+  <!-- Header Table -->
+  <div class="header-box">
+    <table class="header-table">
+      <tr>
+        <td style="font-weight: bold; font-size: 10pt; text-align: left; width: 35%;">គណិតវិទ្យាថ្នាក់ទី១១(សង្ខេប)</td>
+        <td style="font-weight: 800; font-size: 14pt; text-align: center; width: 30%;">លំហាត់</td>
+        <td style="font-weight: bold; font-size: 10pt; text-align: right; width: 35%;">${isLog ? 'អនុគមន៍លោការីត(២០២៥-២០២៦)' : 'អនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល(២០២៥-២០២៦)'}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Sections Content -->
+  ${sectionsHtml}
+
+  <!-- Footer Box -->
+  <div class="footer-box">
+    <table style="width: 100%;">
+      <tr>
+        <td style="font-weight: bold; text-align: left;">បង្រៀនដោយ៖ អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)</td>
+        <td style="font-weight: bold; text-align: right;">វិទ្យាល័យសសរស្តម្ភ | ០៩៩ ៧៧ ៥៥ ០១</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>`;
+
+      const blob = new Blob([wordDocHtml], { type: 'application/msword;charset=utf-8' });
+      const filename = isLog
+        ? 'សន្លឹកកិច្ចការ_អនុគមន៍លោការីត_ថ្នាក់ទី១១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.doc'
+        : 'សន្លឹកកិច្ចការ_អនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល_ថ្នាក់ទី១១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.doc';
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 200);
+    }
   </script>
 
   <!-- ============================================================

@@ -1734,7 +1734,12 @@
   .navbar, .site-footer, .back-to-top, .chapters-sidebar, .exam-timer-card,
   .lesson-top-bar, .grade-tabs-wrap, .slides-controls, .filter-bar,
   .academic-hero, .worksheet-view-tabs, .worksheet-action-bar,
-  #exercises-list, #worksheet-bank-view, .nav-container, .mobile-drawer {
+  #exercises-list, #worksheet-bank-view, .nav-container, .mobile-drawer,
+  .worksheet-topic-bar, #worksheet-preview-modal {
+    display: none !important;
+  }
+
+  .worksheet-a4-sheet[style*="display: none"] {
     display: none !important;
   }
 
