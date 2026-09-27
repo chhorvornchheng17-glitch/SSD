@@ -1121,6 +1121,456 @@ const ACADEMIC_CURRICULUM = {
    ============================================================ */
 const TEACHING_SLIDES_DATA = [
   {
+    id: 'slide-sequences-g11',
+    grade: 'grade11',
+    gradeLabel: 'ថ្នាក់ទី ១១',
+    title: 'ជំពូកទី ៣ មេរៀនទី ១៖ ស្វ៊ីតចំនួនពិត',
+    author: 'អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)',
+    slidesCount: 10,
+    badge: 'គរុកោសល្យ IBL & 5E / លម្អិត',
+    slides: [
+      {
+        number: 1,
+        title: 'ស្វ៊ីតចំនួនពិត (Real Sequences)',
+        subtitle: 'ជំពូកទី ៣៖ ស្វ៊ីតចំនួនពិត (ថ្នាក់ទី ១១ ភាគ១ ក្រសួងអប់រំ យុវជន និងកីឡា)',
+        type: 'intro',
+        content: `
+          <div class="slide-intro-badge">📐 ថ្នាក់ទី ១១ | ជំពូកទី ៣៖ មេរៀនទី ១</div>
+          <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 800; color: #38bdf8; margin: 0.5rem 0;">
+            ស្វ៊ីតចំនួនពិត (Real Sequences)
+          </h2>
+          <p class="slide-lead">រៀបចំ និងបង្រៀនដោយ៖ <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong> (NIE &amp; RUPP | វិទ្យាល័យសសរស្តម្ភ &amp; SHINE)</p>
+
+          <div class="slide-highlight-card" style="border-left: 4px solid var(--accent-cyan); margin-top: 1.25rem;">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 0.5rem; font-size: 1.05rem;">
+              🎯 វត្ថុបំណងមេរៀន ៣ ដែន (Inquiry-Based Learning Model)៖
+            </div>
+            <div class="slide-grid-3" style="margin-top: 0.75rem;">
+              <div style="background: rgba(2, 132, 199, 0.1); padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(2, 132, 199, 0.25);">
+                <strong style="color: #38bdf8; display: block; margin-bottom: 0.35rem;">១. វិជ្ជាសម្បទា</strong>
+                កំណត់និយមន័យស្វ៊ីតជាអនុគមន៍ពី $\\mathbb{N}^* \\to \\mathbb{R}$, បែងចែកស្វ៊ីតរាប់អស់/អនន្ត, ស្វ៊ីតកើន/ចុះ (ម៉ូណូតូន), និងស្វ៊ីតទាល់។
+              </div>
+              <div style="background: rgba(16, 185, 129, 0.1); padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.25);">
+                <strong style="color: #34d399; display: block; margin-bottom: 0.35rem;">២. បំណិនសម្បទា</strong>
+                ចេះគណនាតួតាមរូបមន្ត $u_n = f(n)$ និងទំនាក់ទំនងស្វ័យប្រវត្តិ $u_{n+1} = f(u_n)$, វិភាគអថេរភាពតាមផលដក/ផលធៀប និងស្រាយបញ្ជាក់ភាពទាល់។
+              </div>
+              <div style="background: rgba(245, 158, 11, 0.1); padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.25);">
+                <strong style="color: #fbbf24; display: block; margin-bottom: 0.35rem;">៣. ចរិយាសម្បទា</strong>
+                បណ្តុះការគិតបែបតក្កវិជ្ជា ភាពហ្មត់ចត់ក្នុងការដោះស្រាយបញ្ហា និងការផ្សារភ្ជាប់ស្វ៊ីតទៅនឹងបាតុភូតជាក់ស្តែងក្នុងសង្គម។
+              </div>
+            </div>
+          </div>
+        `,
+        notes: 'សូមស្វាគមន៍សិស្សានុសិស្សមកកាន់ជំពូកទី ៣! ស្វ៊ីតជាមេរៀនស្នូលគ្រឹះបំផុតសម្រាប់គណិតវិទ្យាវិទ្យាល័យ និងការរៀនលីមីត ដេរីវេ និងអាំងតេក្រាលនៅថ្នាក់ទី ១២។'
+      },
+      {
+        number: 2,
+        title: 'គំរូទិន្នន័យជាក់ស្តែងបំផុសការរិះរក (Real-World Inquiry)',
+        subtitle: 'ដំណាក់កាល ENGAGE &amp; EXPLORE៖ រកឃើញគំរូ និងលំដាប់នៃលេខ',
+        type: 'concept',
+        content: `
+          <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 0.85rem 1.1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem;">
+            <strong style="color: #34d399;">❓ សំណួរគន្លឹះបំផុសការរិះរក៖</strong>
+            <em>«សិស្សម្នាក់សន្សំប្រាក់៖ ខែទី១ សន្សំ $10$, ខែទី២ $15$, ខែទី៣ $20$, ខែទី៤ $25$... តើខែទី $n$ សន្សំបានប៉ុន្មាន? ហើយតើអ្វីជាទំនាក់ទំនងរវាងលំដាប់ខែ និងចំនួនប្រាក់?»</em>
+          </div>
+
+          <div style="overflow-x: auto; margin-bottom: 1rem;">
+            <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 0.92rem;">
+              <thead>
+                <tr style="background: rgba(6, 182, 212, 0.15); color: #38bdf8;">
+                  <th style="padding: 8px; border: 1px solid var(--border-color); text-align: left;">លេខរៀងខែ ($n$)</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">1</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">2</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">3</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color);">4</th>
+                  <th style="padding: 8px; border: 1px solid var(--border-color); background: rgba(245, 158, 11, 0.2); color: #fbbf24;">ខែទី $n$ (ទូទៅ)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 8px; border: 1px solid var(--border-color); font-weight: 700; text-align: left;">ប្រាក់សន្សំ ($u_n$)</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color);">$10</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color);">$15</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color);">$20</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color);">$25</td>
+                  <td style="padding: 8px; border: 1px solid var(--border-color); font-weight: 800; color: #fbbf24; font-size: 1.05rem;">$u_n = 5n + 5$</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="slide-grid-3">
+            <div class="slide-card">
+              <span class="slide-tag blue">ឧទាហរណ៍ទី ១ (បូកថែម)</span>
+              <h4 style="margin: 0.3rem 0; color: #38bdf8;">$2, 5, 8, 11, 14, ...$</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">តួបន្ទាប់ = តួមុនបូកនឹង $3$ ($u_n = 3n - 1$)</p>
+            </div>
+            <div class="slide-card">
+              <span class="slide-tag amber">ឧទាហរណ៍ទី ២ (គុណថែម)</span>
+              <h4 style="margin: 0.3rem 0; color: #fbbf24;">$1, 2, 4, 8, 16, ...$</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">តួបន្ទាប់ = តួមុនគុណនឹង $2$ ($u_n = 2^{n-1}$)</p>
+            </div>
+            <div class="slide-card">
+              <span class="slide-tag purple">ឧទាហរណ៍ទី ៣ (ប្រភាគថយ)</span>
+              <h4 style="margin: 0.3rem 0; color: #c084fc;">$1, \\frac{1}{2}, \\frac{1}{3}, \\frac{1}{4}, ...$</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">តួខិតជិតទៅរក $0$ ($u_n = \\frac{1}{n}$)</p>
+            </div>
+          </div>
+        `,
+        notes: 'ឱ្យសិស្សសង្កេតឃើញថា ស្វ៊ីតគឺជាលំដាប់នៃលេខដែលផ្សារភ្ជាប់រវាងលេខរៀង n (1, 2, 3...) ជាមួយនឹងតម្លៃនៃតួនីមួយៗ។'
+      },
+      {
+        number: 3,
+        title: 'និយមន័យនៃស្វ៊ីតចំនួនពិត (Mathematical Definition)',
+        subtitle: 'ដំណាក់កាល EXPLAIN៖ អនុគមន៍ពី $\\mathbb{N}^* \\to \\mathbb{R}$',
+        type: 'concept',
+        content: `
+          <div class="slide-math-hero">
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.35rem;">និយមន័យគណិតវិទ្យា (Formal Definition)៖</div>
+            <div class="math-formula-large" style="color: #38bdf8;">
+              $u: \\mathbb{N}^* \\to \\mathbb{R}, \\quad n \\mapsto u(n) = u_n$
+            </div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.35rem;">
+              ដែល $\\mathbb{N}^* = \\{1, 2, 3, 4, ...\\}$ ជាសំណុំចំនួនគត់វិជ្ជមាន (មិនគិតសូន្យ)
+            </div>
+          </div>
+
+          <div class="slide-grid-2">
+            <div class="slide-card" style="border-left: 4px solid #38bdf8;">
+              <span class="slide-tag blue">និមិត្តសញ្ញា &amp; ធាតុនៃស្វ៊ីត</span>
+              <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.7; margin-top: 0.4rem;">
+                <li>$u_1$ ៖ តួទី ១ (First term)</li>
+                <li>$u_2$ ៖ តួទី ២ (Second term)</li>
+                <li>$u_n$ ៖ តួទី $n$ ឬ <strong>តួទូទៅ (General term)</strong></li>
+                <li>ស្វ៊ីតទាំងមូលតាងដោយ $(u_n)_{n \\ge 1}$ ឬសរសេរកាត់ $(u_n)$</li>
+              </ul>
+            </div>
+            <div class="slide-card" style="border-left: 4px solid #10b981;">
+              <span class="slide-tag" style="background: rgba(16,185,129,0.2); color: #34d399;">ភាពខុសគ្នារវាង អនុគមន៍ &amp; ស្វ៊ីត</span>
+              <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.7; margin-top: 0.4rem;">
+                <li><strong>អនុគមន៍ $f(x)$ ៖</strong> អថេរ $x \\in \\mathbb{R}$ ជាបន្ទាត់ជាប់ (Continuous graph)</li>
+                <li><strong>ស្វ៊ីត $u_n$ ៖</strong> អថេរ $n \\in \\mathbb{N}^*$ ជាចំនួនគត់ដាច់ៗពីគ្នា (Discrete points)</li>
+                <li>គ្មានតួទីកន្លះ ($u_{1.5}$) ឬតួទីអវិជ្ជមាន ($u_{-2}$) ឡើយ!</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="slide-box-tip" style="margin-top: 1rem;">
+            💡 <strong>ចំណាំសំខាន់៖</strong> ពេលខ្លះស្វ៊ីតអាចចាប់ផ្តើមពី $n = 0$ គឺ $\\mathbb{N} = \\{0, 1, 2, ...\\}$ ដោយតួដំបូងគេហៅថា $u_0$។
+          </div>
+        `,
+        notes: 'សង្កត់ធ្ងន់ថា អថេរ n ដើរតួជាលេខរៀង (Index) ដូច្នេះត្រូវតែជាចំនួនគត់វិជ្ជមាន (1, 2, 3...) ជានិច្ច។'
+      },
+      {
+        number: 4,
+        title: 'ស្វ៊ីតរាប់អស់ និងស្វ៊ីតអនន្ត (Finite vs Infinite Sequences)',
+        subtitle: 'ការបែងចែកស្វ៊ីតផ្អែកលើចំនួនតួនៃដែនកំណត់',
+        type: 'concept',
+        content: `
+          <div class="slide-grid-2">
+            <div class="slide-card" style="border-left: 4px solid #38bdf8;">
+              <span class="slide-tag blue">១. ស្វ៊ីតរាប់អស់ (Finite Sequence)</span>
+              <h4 style="font-size: 1.1rem; color: #38bdf8; margin: 0.3rem 0;">ដែនកំណត់ជាសំណុំរាប់អស់ $I_k = \\{1, 2, ..., k\\}$</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                ជាស្វ៊ីតដែលមានចំនួនតួកំណត់ជាក់លាក់ (មានតួទី ១ ដល់តួទី $k$)។
+              </p>
+              <div style="background: rgba(255,255,255,0.03); padding: 0.6rem; border-radius: 6px; margin-top: 0.5rem; font-size: 0.88rem;">
+                <strong>ឧទាហរណ៍៖</strong> $u_n = 2n$ ចំពោះ $1 \\le n \\le 5$<br>
+                $\\Rightarrow (u_n) = (2, 4, 6, 8, 10)$ (មានតែ ៥ តួគត់)
+              </div>
+            </div>
+
+            <div class="slide-card" style="border-left: 4px solid #8b5cf6;">
+              <span class="slide-tag purple">២. ស្វ៊ីតអនន្ត (Infinite Sequence)</span>
+              <h4 style="font-size: 1.1rem; color: #c084fc; margin: 0.3rem 0;">ដែនកំណត់ជាសំណុំ $\\mathbb{N}^* = \\{1, 2, 3, ...\\}$</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                ជាស្វ៊ីតដែលមានចំនួនតួច្រើនរាប់មិនអស់ បន្តរហូតគ្មានទីបញ្ចប់ (មានសញ្ញាចុចបី ...)។
+              </p>
+              <div style="background: rgba(255,255,255,0.03); padding: 0.6rem; border-radius: 6px; margin-top: 0.5rem; font-size: 0.88rem;">
+                <strong>ឧទាហរណ៍៖</strong> $v_n = \\frac{1}{n}$ ចំពោះ $n \\in \\mathbb{N}^*$<br>
+                $\\Rightarrow (v_n) = (1, \\frac{1}{2}, \\frac{1}{3}, \\frac{1}{4}, ..., \\frac{1}{n}, ...)$
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-box-tip" style="margin-top: 1.25rem;">
+            🔍 <strong>ចំណាំគរុកោសល្យ៖</strong> ស្វ៊ីតអនន្តគឺជាចំណុចស្នូលដែលនឹងត្រូវយកទៅសិក្សាអំពី <strong>លីមីតនៃស្វ៊ីត ($\\lim_{n \\to \\infty} u_n$)</strong> នៅថ្នាក់ទី ១២។
+          </div>
+        `,
+        notes: 'ពន្យល់សិស្សឱ្យស្គាល់សញ្ញាចុចបី (...) ដែលជាសញ្ញាតំណាងឱ្យភាពអនន្តនៃស្វ៊ីត។'
+      },
+      {
+        number: 5,
+        title: 'វិធីទាំង ២ ក្នុងការកំណត់ស្វ៊ីតចំនួនពិត',
+        subtitle: 'Explicit Formula (រូបមន្តផ្ទាល់) vs Recursive Formula (រូបមន្តស្វ័យប្រវត្តិ)',
+        type: 'concept',
+        content: `
+          <div class="slide-grid-2">
+            <div class="slide-card" style="border-left: 4px solid #10b981;">
+              <span class="slide-tag" style="background: rgba(16,185,129,0.2); color: #34d399;">វិធីទី ១៖ រូបមន្តតួទូទៅ (Explicit)</span>
+              <h4 style="color: #34d399; margin: 0.3rem 0;">$u_n = f(n)$</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                កំណត់តួ $u_n$ ដោយផ្ទាល់តាមរយៈតម្លៃនៃ $n$។ អាចគណនាតួទីប៉ុន្មានក៏បានភ្លាមៗ!
+              </p>
+              <div style="background: rgba(16,185,129,0.08); padding: 0.75rem; border-radius: 6px; margin-top: 0.5rem; font-size: 0.88rem;">
+                <strong>ឧទាហរណ៍៖</strong> $u_n = 3n - 1$<br>
+                • $u_1 = 3(1) - 1 = 2$<br>
+                • $u_2 = 3(2) - 1 = 5$<br>
+                • $u_{100} = 3(100) - 1 = 299$ (រកបានភ្លាមៗ!)
+              </div>
+            </div>
+
+            <div class="slide-card" style="border-left: 4px solid #f59e0b;">
+              <span class="slide-tag amber">វិធីទី ២៖ ទំនាក់ទំនងស្វ័យប្រវត្តិ (Recursive)</span>
+              <h4 style="color: #fbbf24; margin: 0.3rem 0;">$u_1 = a$ និង $u_{n+1} = f(u_n)$</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                ប្រាប់តួដើម និងរូបមន្តទាក់ទងរវាងតួបន្ទាប់ $u_{n+1}$ និងតួមុន $u_n$។
+              </p>
+              <div style="background: rgba(245,158,11,0.08); padding: 0.75rem; border-radius: 6px; margin-top: 0.5rem; font-size: 0.88rem;">
+                <strong>ឧទាហរណ៍៖</strong> $u_1 = 2$ និង $u_{n+1} = 2u_n + 1$<br>
+                • $u_2 = 2(2) + 1 = 5$<br>
+                • $u_3 = 2(5) + 1 = 11$<br>
+                • $u_4 = 2(11) + 1 = 23$ (ត្រូវគណនាតាមលំដាប់)
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-box-tip" style="margin-top: 1rem;">
+            🎯 <strong>បញ្ហាប្រឈម៖</strong> ចំពោះរូបមន្ត Recursive ដើម្បីរក $u_{100}$ យើងត្រូវរកពី $u_1$ ដល់ $u_{99}$ ជាមុនសិន។ ដូចនេះក្នុងគណិតវិទ្យា យើងរៀន <em>បម្លែងពី Recursive ទៅ Explicit</em>!
+          </div>
+        `,
+        notes: 'ចោទសួរសិស្ស៖ "តើវិធីណាស្រួលជាងក្នុងការរកតួទី 1000?" ដើម្បីឱ្យសិស្សយល់ពីសារៈសំខាន់នៃរូបមន្តតួទូទៅ។'
+      },
+      {
+        number: 6,
+        title: 'ស្វ៊ីតកើន ស្វ៊ីតចុះ និងស្វ៊ីតម៉ូណូតូន (Monotonic Sequences)',
+        subtitle: 'ដំណាក់កាល EXPLAIN៖ ការសិក្សាទិសដៅអថេរភាពនៃស្វ៊ីត',
+        type: 'concept',
+        content: `
+          <div class="slide-grid-3">
+            <div class="slide-card" style="border-top: 4px solid #10b981;">
+              <span class="slide-tag" style="background: rgba(16,185,129,0.2); color: #34d399;">១. ស្វ៊ីតកើនដាច់ខាត</span>
+              <h4 style="color: #34d399; margin: 0.4rem 0;">$u_{n+1} > u_n, \\; \\forall n \\in \\mathbb{N}^*$</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                តួបន្ទាប់ធំជាងតួមុនជានិច្ច៖<br>
+                $u_1 < u_2 < u_3 < ... < u_n < ...$
+              </p>
+              <div style="font-size: 0.82rem; color: #34d399; margin-top: 0.4rem; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 4px;">
+                ឧ. $u_n = 2n + 1 \\Rightarrow (3, 5, 7, 9, ...)$
+              </div>
+            </div>
+
+            <div class="slide-card" style="border-top: 4px solid #ef4444;">
+              <span class="slide-tag red">២. ស្វ៊ីតចុះដាច់ខាត</span>
+              <h4 style="color: #f87171; margin: 0.4rem 0;">$u_{n+1} < u_n, \\; \\forall n \\in \\mathbb{N}^*$</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                តួបន្ទាប់តូចជាងតួមុនជានិច្ច៖<br>
+                $u_1 > u_2 > u_3 > ... > u_n > ...$
+              </p>
+              <div style="font-size: 0.82rem; color: #f87171; margin-top: 0.4rem; background: rgba(239,68,68,0.1); padding: 4px 8px; border-radius: 4px;">
+                ឧ. $v_n = \\frac{1}{n} \\Rightarrow (1, \\frac{1}{2}, \\frac{1}{3}, \\frac{1}{4}, ...)$
+              </div>
+            </div>
+
+            <div class="slide-card" style="border-top: 4px solid #8b5cf6;">
+              <span class="slide-tag purple">៣. ស្វ៊ីតម៉ូណូតូន</span>
+              <h4 style="color: #c084fc; margin: 0.4rem 0;">Monotonic Sequence</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                ជាស្វ៊ីតដែល <strong>កើនដាច់ខាត</strong> ឬ <strong>ចុះដាច់ខាត</strong> តែមួយគត់។
+              </p>
+              <div style="font-size: 0.82rem; color: #f59e0b; margin-top: 0.4rem; background: rgba(245,158,11,0.1); padding: 4px 8px; border-radius: 4px;">
+                ចំណាំ៖ $w_n = (-1)^n$ មិនកើនមិនចុះ (មិនម៉ូណូតូន)
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-highlight-card" style="margin-top: 1rem;">
+            <strong>📌 លក្ខខណ្ឌមិនតឹងរ៉ឹង៖</strong>
+            • បើ $u_{n+1} \\ge u_n$ ហៅថា <em>ស្វ៊ីតមិនចុះ (Non-decreasing)</em><br>
+            • បើ $u_{n+1} \\le u_n$ ហៅថា <em>ស្វ៊ីតមិនកើន (Non-increasing)</em>
+          </div>
+        `,
+        notes: 'បញ្ជាក់ថាស្វ៊ីតម៉ូណូតូនមានទិសដៅតែមួយប៉ុណ្ណោះ គឺឡើងរហូត ឬចុះរហូត។ ស្វ៊ីតស្លាស់សញ្ញា (-1, 1, -1...) មិនមែនជាស្វ៊ីតម៉ូណូតូនឡើយ។'
+      },
+      {
+        number: 7,
+        title: 'វិធីសាស្ត្រគន្លឹះទាំង ២ ក្នុងការពិនិត្យអថេរភាព',
+        subtitle: 'ដំណាក់កាល ELABORATE៖ ក្បួនដោះស្រាយ និងការជ្រើសរើសវិធីសាស្ត្រ',
+        type: 'concept',
+        content: `
+          <div class="slide-grid-2">
+            <div class="slide-card" style="border-left: 4px solid #0284c7;">
+              <span class="slide-tag blue">វិធីសាស្ត្រទី ១៖ សិក្សាផលដក $u_{n+1} - u_n$</span>
+              <p style="font-size: 0.88rem; line-height: 1.6; margin-top: 0.35rem;">
+                ជាវិធីសកល (ប្រើបានគ្រប់ស្វ៊ីតទាំងអស់)៖
+              </p>
+              <ul style="padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.7; margin-top: 0.3rem;">
+                <li>បើ $u_{n+1} - u_n > 0 \\Rightarrow (u_n)$ <strong>ជាស្វ៊ីតកើន</strong></li>
+                <li>បើ $u_{n+1} - u_n < 0 \\Rightarrow (u_n)$ <strong>ជាស្វ៊ីតចុះ</strong></li>
+                <li>បើ $u_{n+1} - u_n = 0 \\Rightarrow (u_n)$ <strong>ជាស្វ៊ីតថេរ</strong></li>
+              </ul>
+              <div style="background: rgba(2,132,199,0.1); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; font-size: 0.82rem; color: #38bdf8;">
+                👍 ស័ក្តិសមបំផុតចំពោះ៖ ពហុធា, ប្រភាគសនិទាន
+              </div>
+            </div>
+
+            <div class="slide-card" style="border-left: 4px solid #f59e0b;">
+              <span class="slide-tag amber">វិធីសាស្ត្រទី ២៖ សិក្សាផលធៀប $\\frac{u_{n+1}}{u_n}$</span>
+              <p style="font-size: 0.88rem; line-height: 1.6; margin-top: 0.35rem;">
+                <strong style="color: #ef4444;">លក្ខខណ្ឌចាំបាច់៖</strong> ត្រូវតែមាន $u_n > 0, \\forall n$
+              </p>
+              <ul style="padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.7; margin-top: 0.3rem;">
+                <li>បើ $\\frac{u_{n+1}}{u_n} > 1 \\Rightarrow (u_n)$ <strong>ជាស្វ៊ីតកើន</strong></li>
+                <li>បើ $\\frac{u_{n+1}}{u_n} < 1 \\Rightarrow (u_n)$ <strong>ជាស្វ៊ីតចុះ</strong></li>
+                <li>បើ $\\frac{u_{n+1}}{u_n} = 1 \\Rightarrow (u_n)$ <strong>ជាស្វ៊ីតថេរ</strong></li>
+              </ul>
+              <div style="background: rgba(245,158,11,0.1); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; font-size: 0.82rem; color: #fbbf24;">
+                👍 ស័ក្តិសមបំផុតចំពោះ៖ ស្វ័យគុណ ($a^n$), ហ្វាក់តូរីយ៉ែល ($n!$)
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-box-tip" style="margin-top: 1rem;">
+            ⚠️ <strong>ការប្រុងប្រយ័ត្នខ្ពស់៖</strong> ហាមប្រើវិធីផលធៀប $\\frac{u_{n+1}}{u_n}$ ដាច់ខាត ប្រសិនបើតួស្វ៊ីតមានតម្លៃអវិជ្ជមាន ឬមិនទាន់ដឹងសញ្ញាច្បាស់លាស់!
+          </div>
+        `,
+        notes: 'សង្កត់ធ្ងន់លើលក្ខខណ្ឌវិជ្ជមានពេលប្រើផលធៀប។ សិស្សភាគច្រើនតែងតែភ្លេចត្រួតពិនិត្យលក្ខខណ្ឌ un > 0 នាំឱ្យបាត់បង់ពិន្ទុ។'
+      },
+      {
+        number: 8,
+        title: 'ស្វ៊ីតទាល់លើ ស្វ៊ីតទាល់ក្រោម និងស្វ៊ីតទាល់ (Bounded Sequences)',
+        subtitle: 'ព្រំដែនតម្លៃនៃស្វ៊ីត និងគោលលើ គោលក្រោម',
+        type: 'concept',
+        content: `
+          <div class="slide-grid-3">
+            <div class="slide-card" style="border-top: 4px solid #38bdf8;">
+              <span class="slide-tag blue">១. ស្វ៊ីតទាល់លើ</span>
+              <p style="font-size: 0.88rem; line-height: 1.6; margin-top: 0.4rem;">
+                មានចំនួនពិត $M$ ដែល៖<br>
+                <strong style="color: #38bdf8; font-size: 1.05rem;">$u_n \\le M, \\; \\forall n \\in \\mathbb{N}^*$</strong><br>
+                ($M$ ហៅថា <strong>គោលលើ</strong>)
+              </p>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem;">
+                ឧ. $u_n = 5 - \\frac{1}{n} \\le 5$ (ទាល់លើដោយ $5$)
+              </div>
+            </div>
+
+            <div class="slide-card" style="border-top: 4px solid #10b981;">
+              <span class="slide-tag" style="background: rgba(16,185,129,0.2); color: #34d399;">២. ស្វ៊ីតទាល់ក្រោម</span>
+              <p style="font-size: 0.88rem; line-height: 1.6; margin-top: 0.4rem;">
+                មានចំនួនពិត $m$ ដែល៖<br>
+                <strong style="color: #34d399; font-size: 1.05rem;">$u_n \\ge m, \\; \\forall n \\in \\mathbb{N}^*$</strong><br>
+                ($m$ ហៅថា <strong>គោលក្រោម</strong>)
+              </p>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem;">
+                ឧ. $v_n = n^2 + 1 \\ge 2$ (ទាល់ក្រោមដោយ $2$)
+              </div>
+            </div>
+
+            <div class="slide-card" style="border-top: 4px solid #f59e0b;">
+              <span class="slide-tag amber">៣. ស្វ៊ីតទាល់ (Bounded)</span>
+              <p style="font-size: 0.88rem; line-height: 1.6; margin-top: 0.4rem;">
+                ស្វ៊ីតដែល <strong>ទាល់លើផង និងទាល់ក្រោមផង</strong>៖<br>
+                <strong style="color: #fbbf24; font-size: 1.05rem;">$m \\le u_n \\le M$</strong><br>
+                (សមមូលនឹង $|u_n| \\le K$)
+              </p>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem;">
+                ឧ. $w_n = \\sin(n) \\Rightarrow -1 \\le w_n \\le 1$
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-math-hero" style="margin-top: 1rem; padding: 1rem;">
+            <div style="font-size: 0.95rem; font-weight: 700; color: #38bdf8;">
+              🌟 គន្លឹះដោះស្រាយ៖ បង្ហាញថា $u_n = \\frac{n}{n+1}$ ជាស្វ៊ីតទាល់
+            </div>
+            <div style="font-size: 0.92rem; color: var(--text-primary); margin-top: 0.35rem;">
+              • ចំពោះ $n \\ge 1 \\Rightarrow u_n = \\frac{n}{n+1} > 0$ (ទាល់ក្រោមដោយ $0$)<br>
+              • $u_n = \\frac{n+1-1}{n+1} = 1 - \\frac{1}{n+1} < 1$ (ទាល់លើដោយ $1$)<br>
+              $\\Rightarrow 0 < u_n < 1, \\; \\forall n \\in \\mathbb{N}^*$ <strong>នាំឱ្យ $(u_n)$ ជាស្វ៊ីតទាល់!</strong>
+            </div>
+          </div>
+        `,
+        notes: 'បង្រៀនសិស្សអំពីបច្ចេកទេសបំបែកភាគយក (Division / Remainder decomposition) ដើម្បីរកគោលលើ និងគោលក្រោមបានលឿន។'
+      },
+      {
+        number: 9,
+        title: 'ឧទាហរណ៍គំរូប្រឡង & ដំណោះស្រាយលម្អិត',
+        subtitle: 'ដំណាក់កាល EVALUATE៖ វិភាគ និងដោះស្រាយលំហាត់ស្ដង់ដារប្រឡង',
+        type: 'example',
+        content: `
+          <div class="slide-problem-box">
+            <strong style="color: #38bdf8;">លំហាត់គំរូទី ១៖</strong>
+            ចំពោះស្វ៊ីត $u_n = \\frac{2n - 1}{n + 1}$ ($n \\ge 1$)។<br>
+            ក. សិក្សាអថេរភាពនៃស្វ៊ីត $(u_n)$<br>
+            ខ. បង្ហាញថាស្វ៊ីត $(u_n)$ ជាស្វ៊ីតទាល់
+          </div>
+
+          <div class="slide-steps-list">
+            <div style="background: rgba(255,255,255,0.03); padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #10b981;">
+              <strong style="color: #34d399;">ដំណោះស្រាយ សំណួរ ក (សិក្សាអថេរភាព)៖</strong><br>
+              គណនា $u_{n+1} = \\frac{2(n+1) - 1}{(n+1) + 1} = \\frac{2n + 1}{n + 2}$<br>
+              ពិនិត្យផលដក៖ $u_{n+1} - u_n = \\frac{2n + 1}{n + 2} - \\frac{2n - 1}{n + 1} = \\frac{(2n+1)(n+1) - (2n-1)(n+2)}{(n+2)(n+1)}$<br>
+              $= \\frac{(2n^2 + 3n + 1) - (2n^2 + 3n - 2)}{(n+2)(n+1)} = \\frac{3}{(n+2)(n+1)}$<br>
+              ដោយ $n \\ge 1 \\Rightarrow n+1 > 0$ និង $n+2 > 0 \\Rightarrow u_{n+1} - u_n = \\frac{3}{(n+2)(n+1)} > 0$<br>
+              <span class="slide-answer-badge">ដូចនេះ $(u_n)$ ជាស្វ៊ីតកើនដាច់ខាត</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #38bdf8; margin-top: 0.5rem;">
+              <strong style="color: #38bdf8;">ដំណោះស្រាយ សំណួរ ខ (បង្ហាញស្វ៊ីតទាល់)៖</strong><br>
+              • ដោយ $n \\ge 1 \\Rightarrow 2n - 1 \\ge 1 > 0$ នាំឱ្យ $u_n = \\frac{2n-1}{n+1} > 0$ (ទាល់ក្រោម)<br>
+              • បំបែក $u_n = \\frac{2(n+1) - 3}{n+1} = 2 - \\frac{3}{n+1}$<br>
+              ដោយ $\\frac{3}{n+1} > 0 \\Rightarrow u_n = 2 - \\frac{3}{n+1} < 2$ (ទាល់លើ)<br>
+              <span class="slide-answer-badge" style="background: rgba(56,189,248,0.2); color: #38bdf8;">ដូចនេះ $0 < u_n < 2$ នាំឱ្យ $(u_n)$ ជាស្វ៊ីតទាល់</span>
+            </div>
+          </div>
+        `,
+        notes: 'ចង្អុលបង្ហាញជំហានគណនាឱ្យបានច្បាស់លាស់។ ក្រើនរំលឹកសិស្សឱ្យពន្លាតភាគយកដោយប្រុងប្រយ័ត្នបំផុតចំពោះសញ្ញាដក។'
+      },
+      {
+        number: 10,
+        title: 'សង្ខេបគន្លឹះប្រឡង & លំហាត់ស្វ័យវាយតម្លៃ',
+        subtitle: 'បូកសរុបខ្លឹមសារមេរៀន និងកម្រងលំហាត់អនុវត្តដោយខ្លួនឯង',
+        type: 'summary',
+        content: `
+          <div class="slide-grid-2">
+            <div class="slide-card" style="border-left: 4px solid var(--accent-cyan);">
+              <span class="slide-tag blue">📋 រូបមន្តសង្ខេបគន្លឹះ (Cheat Sheet)</span>
+              <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.7; margin-top: 0.35rem;">
+                <li><strong>ស្វ៊ីត៖</strong> $u: \\mathbb{N}^* \\to \\mathbb{R}, \\; n \\mapsto u_n$</li>
+                <li><strong>ស្វ៊ីតកើន៖</strong> $u_{n+1} - u_n > 0$ ឬ $\\frac{u_{n+1}}{u_n} > 1$ (ពេល $u_n > 0$)</li>
+                <li><strong>ស្វ៊ីតចុះ៖</strong> $u_{n+1} - u_n < 0$ ឬ $\\frac{u_{n+1}}{u_n} < 1$ (ពេល $u_n > 0$)</li>
+                <li><strong>ស្វ៊ីតទាល់៖</strong> $m \\le u_n \\le M, \\; \\forall n \\in \\mathbb{N}^*$</li>
+              </ul>
+            </div>
+
+            <div class="slide-card" style="border-left: 4px solid #10b981;">
+              <span class="slide-tag" style="background: rgba(16,185,129,0.2); color: #34d399;">✍️ លំហាត់ស្វ័យវាយតម្លៃ (Self-Practice)</span>
+              <ol style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.7; margin-top: 0.35rem;">
+                <li>រក ៤ តួដំបូងនៃ $u_n = \\frac{(-1)^n}{n^2 + 1}$</li>
+                <li>សិក្សាអថេរភាពនៃ $v_n = \\frac{3n + 2}{2n + 1}$</li>
+                <li>បង្ហាញថា $w_n = \\frac{n^2}{n^2 + 2}$ ជាស្វ៊ីតទាល់</li>
+              </ol>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap; justify-content: center;">
+            <a href="lesson-plan-sequences-ibl.html" class="btn btn-outline btn-sm">
+              <span>📝 មើលកិច្ចតែងការបង្រៀន (IBL)</span>
+            </a>
+            <a href="exercises.html" class="btn btn-primary btn-sm">
+              <span>✍️ ធ្វើលំហាត់អនុវត្តជំពូកនេះ</span>
+            </a>
+            <a href="teaching-materials.html" class="btn btn-outline btn-sm">
+              <span>📂 ត្រឡប់ទៅមជ្ឈមណ្ឌលឯកសារ</span>
+            </a>
+          </div>
+        `,
+        notes: 'ផ្តល់ការលើកទឹកចិត្តដល់សិស្ស និងណែនាំឱ្យសិស្សត្រៀមខ្លួនសម្រាប់មេរៀនបន្ទាប់ គឺ "ស្វ៊ីតនព្វន្ត (Arithmetic Sequences)"។'
+      }
+    ]
+  },
+  {
     id: 'slide-exponential-g11',
     grade: 'grade11',
     gradeLabel: 'ថ្នាក់ទី ១១',
