@@ -62,53 +62,200 @@
               <span class="lp-badge">🇰🇭 ក្រសួងអប់រំ យុវជន និងកីឡា</span>
               <span class="lp-badge">📐 ថ្នាក់ទី ១១ (ភាគ១)</span>
               <span class="lp-badge" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3);">🔬 5E Model (IBL)</span>
-              <span class="lp-badge">⏱️ ៥០ នាទី</span>
+              <span class="lp-badge">⏱️ ៥០ នាទី/ម៉ោង</span>
+              <span class="lp-badge" style="background: rgba(245,158,11,0.15); color: #fbbf24; border-color: rgba(245,158,11,0.3);">✨ ៦ កិច្ចតែងការបង្រៀន</span>
             </div>
-            <h3 class="lp-modal-title">កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក</h3>
+            <h3 class="lp-modal-title">មជ្ឈមណ្ឌលកិច្ចតែងការបង្រៀនគណិតវិទ្យា</h3>
             <div class="lp-modal-subtitle">
-              ជំពូកទី ២៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងអនុគមន៍លោការីត &nbsp;|&nbsp; <strong>មេរៀនទី ១៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល</strong><br>
-              គ្រូបង្រៀនឯកទេស៖ <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong> (NIE & RUPP | វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE)
+              រៀបរៀងដោយគ្រូបង្រៀនឯកទេស៖ <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong> (NIE & RUPP | វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE)<br>
+              ឯកសារកិច្ចតែងការគរុកោសល្យបែបការរិះរក (Inquiry-Based Learning - 5E Model) ស្របតាមសៀវភៅពុម្ពគោល
             </div>
           </div>
 
-          <div class="lp-summary-card">
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;">
-              <span>📋</span> ខ្លឹមសារ & រចនាសម្ព័ន្ធកិច្ចតែងការ៖
-            </div>
-            <div>• <strong>វត្ថុបំណង ៣ ដែន៖</strong> វិជ្ជាសម្បទា, បំណិនសម្បទា, និងចរិយាសម្បទា។</div>
-            <div>• <strong>តារាងមេ ៥ ជួរឈរ៖</strong> ថិរវេលា | ដំណាក់កាល 5E | ខ្លឹមសារមេរៀន | សកម្មភាពគ្រូ | សកម្មភាពសិស្ស។</div>
-            <div>• <strong>ពិសោធន៍បត់ក្រដាស A4៖</strong> រិះរកគំរូទិន្នន័យ <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span> ឈានទៅរកនិយមន័យ <span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> និងក្រាបចុះ <span class="math-sym"><i>y</i> = (<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span> ជាមួយអថេរភាព។</div>
-            <div>• <strong>ប្លង់ក្ដារខៀន ៣ ជួរឈរ & សន្លឹកកិច្ចការ៖</strong> គំនូសក្រាបវ៉ិចទ័រនៃ <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span> និង <span class="math-sym"><i>y</i> = (<span class="math-frac"><span class="num">1</span><span class="den">2</span></span>)<sup><i>x</i></sup></span>, អាស៊ីមតូតដេក <span class="math-sym"><i>y</i> = 0</span> និងលំហាត់អនុវត្ត។</div>
+          <!-- Category Filter Tabs -->
+          <div class="lp-modal-tabs">
+            <button type="button" class="lp-tab-btn active" data-filter="all" onclick="setLessonPlanTab('all')">
+              <span>✨ ទាំងអស់ (៦)</span>
+            </button>
+            <button type="button" class="lp-tab-btn" data-filter="sequences" onclick="setLessonPlanTab('sequences')">
+              <span>📐 ស្វ៊ីតចំនួនពិត (៣ ម៉ោង)</span>
+            </button>
+            <button type="button" class="lp-tab-btn" data-filter="arithmetic" onclick="setLessonPlanTab('arithmetic')">
+              <span>➕ ស្វ៊ីតនព្វន្ត (១ ម៉ោង)</span>
+            </button>
+            <button type="button" class="lp-tab-btn" data-filter="functions" onclick="setLessonPlanTab('functions')">
+              <span>📈 អិចស្ប៉ូណង់ស្យែល & លោការីត (២ ម៉ោង)</span>
+            </button>
           </div>
 
-          <!-- Actions Grid (Preview, Full Page) -->
-          <div class="lp-actions-grid">
-            <!-- 1. Print Preview -->
-            <div class="lp-action-card">
-              <div class="lp-action-top">
-                <div class="lp-action-icon-box icon-preview">👁️</div>
-                <div class="lp-action-info">
-                  <h4>មើលជាមុនសិនមុននឹងបោះពុម្ព</h4>
-                  <p>ត្រាប់តាមសន្លឹកក្រដាស A4 ពិតប្រាកដ មានប្រព័ន្ធ Zoom និងប៊ូតុង Print ផ្ទាល់</p>
+          <!-- Lesson Plans Portfolio Grid -->
+          <div class="lp-portfolio-grid" id="lp-portfolio-grid">
+            <!-- 1. ស្វ៊ីតចំនួនពិត ម៉ោងទី១ -->
+            <div class="lp-portfolio-card" data-category="sequences">
+              <div class="lp-card-top">
+                <div class="lp-card-badges">
+                  <span class="lp-chip lp-chip-hour">⏱️ ម៉ោងទី ១ (៥០ នាទី)</span>
+                  <span class="lp-chip lp-chip-chapter">ជំពូកទី ១ ស្វ៊ីតចំនួនពិត</span>
+                  <span class="lp-chip lp-chip-ibl">🔬 5E IBL</span>
                 </div>
+                <h4 class="lp-card-title">ស្វ៊ីតចំនួនពិត (ម៉ោងទី ១៖ សញ្ញាណស្វ៊ីត & និយមន័យ)</h4>
+                <ul class="lp-card-points">
+                  <li><strong>វត្ថុបំណង ៣ ដែន៖</strong> វិជ្ជាសម្បទា បំណិនសម្បទា និងចរិយាសម្បទា។</li>
+                  <li><strong>ខ្លឹមសារ 5E៖</strong> សញ្ញាណស្វ៊ីតរាប់អស់ ស្វ៊ីតអនន្ត និងរូបមន្តកំណត់តួ <span class="math-sym"><i>u</i><sub><i>n</i></sub> = 2<i>n</i> + 1</span>។</li>
+                  <li><strong>ប្លង់ក្ដារខៀន ៣ ផ្ទាំង៖</strong> តារាងមេ ៥ ជួរឈរ & សន្លឹកកិច្ចការពិភាក្សាជាក្រុម។</li>
+                </ul>
               </div>
-              <button type="button" class="lp-action-btn btn-lp-preview" onclick="previewLessonPlanPrint()">
-                <span>មើលជាមុន (Preview) 👁️</span>
-              </button>
+              <div class="lp-card-actions">
+                <a href="lesson-plan-sequences-ibl.html" class="lp-btn-action lp-btn-view" title="បើកទំព័រកិច្ចតែងការពេញលេញ">
+                  <span>📖 បើកពេញលេញ</span>
+                </a>
+                <button type="button" class="lp-btn-action lp-btn-doc" onclick="downloadLessonPlanDoc('sequences-h1')" title="ទាញយកជាឯកសារ Word (.doc)">
+                  <span>📄 Word</span>
+                </button>
+                <button type="button" class="lp-btn-action lp-btn-preview" onclick="previewLessonPlanPrint('sequences-h1')" title="មើលជាមុនលើក្រដាស A4">
+                  <span>👁️ មើល A4</span>
+                </button>
+              </div>
             </div>
 
-            <!-- 6. Interactive Web Document -->
-            <div class="lp-action-card">
-              <div class="lp-action-top">
-                <div class="lp-action-icon-box icon-interactive">🌐</div>
-                <div class="lp-action-info">
-                  <h4>ទំព័រកិច្ចតែងការពេញលេញ</h4>
-                  <p>ចូលទៅកាន់ទំព័រពេញលេញ ជាមួយបន្ទប់ពិសោធន៍ក្រាហ្វិក និង Simulator</p>
+            <!-- 2. ស្វ៊ីតចំនួនពិត ម៉ោងទី២ -->
+            <div class="lp-portfolio-card" data-category="sequences">
+              <div class="lp-card-top">
+                <div class="lp-card-badges">
+                  <span class="lp-chip lp-chip-hour" style="background: rgba(14,165,233,0.18); color: #38bdf8; border-color: rgba(14,165,233,0.35);">⏱️ ម៉ោងទី ២ (៥០ នាទី)</span>
+                  <span class="lp-chip lp-chip-chapter">ជំពូកទី ១ ស្វ៊ីតចំនួនពិត</span>
+                  <span class="lp-chip lp-chip-ibl">🔬 5E IBL</span>
                 </div>
+                <h4 class="lp-card-title">ស្វ៊ីតចំនួនពិត (ម៉ោងទី ២៖ ស្វ៊ីតកើន ស្វ៊ីតចុះ ម៉ូណូតូន)</h4>
+                <ul class="lp-card-points">
+                  <li><strong>វត្ថុបំណង ៣ ដែន៖</strong> សិក្សាអថេរភាព និងកំណត់ស្វ៊ីតកើន ស្វ៊ីតចុះ និងម៉ូណូតូន។</li>
+                  <li><strong>វិធីសាស្ត្រ ២ របៀប៖</strong> ពិនិត្យសញ្ញាផលដក <span class="math-sym"><i>u</i><sub><i>n</i>+1</sub> - <i>u</i><sub><i>n</i></sub></span> និងផលធៀប <span class="math-sym"><span class="math-frac"><span class="num"><i>u</i><sub><i>n</i>+1</sub></span><span class="den"><i>u</i><sub><i>n</i></sub></span></span></span>។</li>
+                  <li><strong>សកម្មភាព 5E៖</strong> ពិសោធន៍ទិន្នន័យ ការពន្យល់ ពង្រីកចំណេះ និង Exit Ticket។</li>
+                </ul>
               </div>
-              <a href="lesson-plan-exponential-ibl.html" class="lp-action-btn btn-lp-interactive">
-                <span>បើកទំព័រពេញលេញ 🚀</span>
-              </a>
+              <div class="lp-card-actions">
+                <a href="lesson-plan-sequences-hour2.html" class="lp-btn-action lp-btn-view" title="បើកទំព័រកិច្ចតែងការពេញលេញ">
+                  <span>📖 បើកពេញលេញ</span>
+                </a>
+                <button type="button" class="lp-btn-action lp-btn-doc" onclick="downloadLessonPlanDoc('sequences-h2')" title="ទាញយកជាឯកសារ Word (.doc)">
+                  <span>📄 Word</span>
+                </button>
+                <button type="button" class="lp-btn-action lp-btn-preview" onclick="previewLessonPlanPrint('sequences-h2')" title="មើលជាមុនលើក្រដាស A4">
+                  <span>👁️ មើល A4</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 3. ស្វ៊ីតចំនួនពិត ម៉ោងទី៣ -->
+            <div class="lp-portfolio-card" data-category="sequences">
+              <div class="lp-card-top">
+                <div class="lp-card-badges">
+                  <span class="lp-chip lp-chip-hour" style="background: rgba(2,132,199,0.18); color: #0284c7; border-color: rgba(2,132,199,0.35);">⏱️ ម៉ោងទី ៣ (៥០ នាទី)</span>
+                  <span class="lp-chip lp-chip-chapter">ជំពូកទី ១ ស្វ៊ីតចំនួនពិត</span>
+                  <span class="lp-chip lp-chip-ibl">🔬 5E IBL</span>
+                </div>
+                <h4 class="lp-card-title">ស្វ៊ីតចំនួនពិត (ម៉ោងទី ៣៖ ស្វ៊ីតទាល់ និងលំហាត់សរុប)</h4>
+                <ul class="lp-card-points">
+                  <li><strong>វត្ថុបំណង ៣ ដែន៖</strong> ស្វ៊ីតទាល់លើ (<span class="math-sym"><i>u</i><sub><i>n</i></sub> &le; <i>M</i></span>), ទាល់ក្រោម (<span class="math-sym"><i>u</i><sub><i>n</i></sub> &ge; <i>m</i></span>), និងស្វ៊ីតទាល់។</li>
+                  <li><strong>សំយោគចំណេះដឹង៖</strong> លំហាត់អនុវត្តសរុបទាំង ៣ ម៉ោង និងយុទ្ធសាស្ត្រគាំទ្រសិស្សចម្រុះកម្រិត។</li>
+                  <li><strong>ការវាយតម្លៃ៖</strong> តារាង Exit Ticket ៣ សំណួរ និងប្លង់ក្ដារខៀន ៣ ជួរឈរ។</li>
+                </ul>
+              </div>
+              <div class="lp-card-actions">
+                <a href="lesson-plan-sequences-hour3.html" class="lp-btn-action lp-btn-view" title="បើកទំព័រកិច្ចតែងការពេញលេញ">
+                  <span>📖 បើកពេញលេញ</span>
+                </a>
+                <button type="button" class="lp-btn-action lp-btn-doc" onclick="downloadLessonPlanDoc('sequences-h3')" title="ទាញយកជាឯកសារ Word (.doc)">
+                  <span>📄 Word</span>
+                </button>
+                <button type="button" class="lp-btn-action lp-btn-preview" onclick="previewLessonPlanPrint('sequences-h3')" title="មើលជាមុនលើក្រដាស A4">
+                  <span>👁️ មើល A4</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 4. ស្វ៊ីតនព្វន្ត -->
+            <div class="lp-portfolio-card" data-category="arithmetic">
+              <div class="lp-card-top">
+                <div class="lp-card-badges">
+                  <span class="lp-chip lp-chip-hour" style="background: rgba(245,158,11,0.18); color: #fbbf24; border-color: rgba(245,158,11,0.35);">⏱️ ៥០ នាទី</span>
+                  <span class="lp-chip lp-chip-chapter">ជំពូកទី ១ ស្វ៊ីតចំនួនពិត</span>
+                  <span class="lp-chip lp-chip-ibl">🔬 5E IBL</span>
+                </div>
+                <h4 class="lp-card-title">ស្វ៊ីតនព្វន្ត (រូបមន្តតួទី n: <i>u</i><sub><i>n</i></sub> = <i>u</i><sub>1</sub> + (<i>n</i>-1)<i>d</i>)</h4>
+                <ul class="lp-card-points">
+                  <li><strong>វត្ថុបំណង ៣ ដែន៖</strong> រកផលសងរួម <span class="math-sym"><i>d</i></span>, កំណត់តួទី <span class="math-sym"><i>n</i></span> និងដោះស្រាយចំណោទជីវភាព។</li>
+                  <li><strong>សកម្មភាពរិះរក៖</strong> សន្សំប្រាក់, កៅអីកីឡដ្ឋាន, និងប្លង់ក្ដារខៀនគរុកោសល្យ ៣ ជួរឈរ។</li>
+                  <li><strong>តារាងមេ ៥ ជួរឈរ៖</strong> ថិរវេលា | ដំណាក់កាល 5E | ខ្លឹមសារ | សកម្មភាពគ្រូ | សកម្មភាពសិស្ស។</li>
+                </ul>
+              </div>
+              <div class="lp-card-actions">
+                <a href="lesson-plan-arithmetic-sequence.html" class="lp-btn-action lp-btn-view" title="បើកទំព័រកិច្ចតែងការពេញលេញ">
+                  <span>📖 បើកពេញលេញ</span>
+                </a>
+                <button type="button" class="lp-btn-action lp-btn-doc" onclick="downloadLessonPlanDoc('arithmetic')" title="ទាញយកជាឯកសារ Word (.doc)">
+                  <span>📄 Word</span>
+                </button>
+                <button type="button" class="lp-btn-action lp-btn-preview" onclick="previewLessonPlanPrint('arithmetic')" title="មើលជាមុនលើក្រដាស A4">
+                  <span>👁️ មើល A4</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 5. អនុគមន៍អិចស្ប៉ូណង់ស្យែល -->
+            <div class="lp-portfolio-card" data-category="functions">
+              <div class="lp-card-top">
+                <div class="lp-card-badges">
+                  <span class="lp-chip lp-chip-hour">⏱️ ៥០ នាទី</span>
+                  <span class="lp-chip lp-chip-chapter">ជំពូកទី ២ អនុគមន៍</span>
+                  <span class="lp-chip lp-chip-ibl">🔬 5E IBL</span>
+                </div>
+                <h4 class="lp-card-title">អនុគមន៍អិចស្ប៉ូណង់ស្យែល (<i>y</i> = <i>a</i><sup><i>x</i></sup>)</h4>
+                <ul class="lp-card-points">
+                  <li><strong>ពិសោធន៍បត់ក្រដាស A4៖</strong> រិះរកគំរូទិន្នន័យ <span class="math-sym"><i>y</i> = 2<sup><i>x</i></sup></span> ឈានទៅរកនិយមន័យ <span class="math-sym"><i>y</i> = <i>a</i><sup><i>x</i></sup></span>។</li>
+                  <li><strong>លក្ខណៈក្រាប៖</strong> អាស៊ីមតូតដេក <span class="math-sym"><i>y</i> = 0</span>, កាត់ (0, 1), អថេរភាពកើន និងចុះ។</li>
+                  <li><strong>Simulator & Web Lab៖</strong> បន្ទប់ពិសោធន៍ឌីជីថល និងគំនូសក្រាបវ៉ិចទ័រ។</li>
+                </ul>
+              </div>
+              <div class="lp-card-actions">
+                <a href="lesson-plan-exponential-ibl.html" class="lp-btn-action lp-btn-view" title="បើកទំព័រកិច្ចតែងការពេញលេញ">
+                  <span>📖 បើកពេញលេញ</span>
+                </a>
+                <button type="button" class="lp-btn-action lp-btn-doc" onclick="downloadLessonPlanWord()" title="ទាញយកជាឯកសារ Word (.doc)">
+                  <span>📄 Word</span>
+                </button>
+                <button type="button" class="lp-btn-action lp-btn-preview" onclick="previewLessonPlanPrint('exponential')" title="មើលជាមុនលើក្រដាស A4">
+                  <span>👁️ មើល A4</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 6. សមីការលោការីត -->
+            <div class="lp-portfolio-card" data-category="functions">
+              <div class="lp-card-top">
+                <div class="lp-card-badges">
+                  <span class="lp-chip lp-chip-hour" style="background: rgba(139,92,246,0.18); color: #a78bfa; border-color: rgba(139,92,246,0.35);">⏱️ ៥០ នាទី</span>
+                  <span class="lp-chip lp-chip-chapter">ជំពូកទី ២ អនុគមន៍</span>
+                  <span class="lp-chip lp-chip-ibl">🔬 5E IBL</span>
+                </div>
+                <h4 class="lp-card-title">សមីការលោការីត (log<sub><i>a</i></sub> <i>f</i>(<i>x</i>) = log<sub><i>a</i></sub> <i>g</i>(<i>x</i>))</h4>
+                <ul class="lp-card-points">
+                  <li><strong>លក្ខខណ្ឌអត្ថិភាព៖</strong> កំណត់លក្ខខណ្ឌ <span class="math-sym"><i>f</i>(<i>x</i>) &gt; 0, <i>g</i>(<i>x</i>) &gt; 0</span> មុននឹងដោះស្រាយ។</li>
+                  <li><strong>វិធានបម្លែង៖</strong> អនុវត្តរូបមន្តផលបូក ផលដក និងស្វ័យគុណលោការីតដើម្បីបង្រួមសមីការ។</li>
+                  <li><strong>តារាងមេ ៥ ជួរឈរ៖</strong> 5E Model ពេញលេញ ប្លង់ក្ដារខៀន ៣ ផ្ទាំង និងការផ្ទៀងផ្ទាត់ឫស។</li>
+                </ul>
+              </div>
+              <div class="lp-card-actions">
+                <a href="lesson-plan-logarithmic-equations.html" class="lp-btn-action lp-btn-view" title="បើកទំព័រកិច្ចតែងការពេញលេញ">
+                  <span>📖 បើកពេញលេញ</span>
+                </a>
+                <button type="button" class="lp-btn-action lp-btn-doc" onclick="downloadLessonPlanDoc('logarithmic')" title="ទាញយកជាឯកសារ Word (.doc)">
+                  <span>📄 Word</span>
+                </button>
+                <button type="button" class="lp-btn-action lp-btn-preview" onclick="previewLessonPlanPrint('logarithmic')" title="មើលជាមុនលើក្រដាស A4">
+                  <span>👁️ មើល A4</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -219,17 +366,51 @@
     });
   }
 
+  // Category Tab Filter for Lesson Plan Hub Modal
+  window.setLessonPlanTab = function (category) {
+    const tabs = document.querySelectorAll('.lp-tab-btn');
+    tabs.forEach(tab => {
+      if (tab.getAttribute('data-filter') === category) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    });
+
+    const cards = document.querySelectorAll('.lp-portfolio-card');
+    cards.forEach(card => {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  };
+
   // Global Open & Close functions
-  window.openLessonPlanModal = function (event) {
+  window.openLessonPlanModal = function (event, category = 'all') {
     if (event) {
-      event.preventDefault();
-      event.stopPropagation();
+      if (typeof event.preventDefault === 'function') event.preventDefault();
+      if (typeof event.stopPropagation === 'function') event.stopPropagation();
+    }
+    // Close desktop dropdowns and flyout submenus
+    document.querySelectorAll('.dropdown-submenu-wrapper.is-open').forEach(w => w.classList.remove('is-open'));
+    document.querySelectorAll('.nav-item-has-dropdown.is-open').forEach(w => w.classList.remove('is-open'));
+    // Close mobile nav drawer if open
+    const mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav && mobileNav.classList.contains('active')) {
+      mobileNav.classList.remove('active');
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
     }
     ensureModalsInDOM();
     const modal = document.getElementById('lesson-plan-hub-modal');
     if (modal) {
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
+      if (category) {
+        setLessonPlanTab(category);
+      }
       // Automatically render mathematical formulas inside the modal
       renderMathFormulas(modal);
     }
@@ -604,6 +785,447 @@
     } catch (e) {
       console.error(e);
       notifyToast('❌ បរាជ័យក្នុងការទាញយក Word');
+    }
+  };
+
+  /* Helper to export Word Document for any Lesson Plan */
+  function exportWordFile(filename, title, subtitle, bodyHtml) {
+    notifyToast('⏳ កំពុងរៀបចំបង្កើតឯកសារ Microsoft Word...', 2500);
+
+    const docContent = `
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset='utf-8'>
+  <title>${title} - អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
+  <!--[if gte mso 9]>
+  <xml>
+    <w:WordDocument>
+      <w:View>Print</w:View>
+      <w:Zoom>100</w:Zoom>
+      <w:DoNotOptimizeForBrowser/>
+    </w:WordDocument>
+  </xml>
+  <![endif]-->
+  <style>
+    @page WordSection1 {
+      size: 210mm 297mm;
+      margin: 20mm 15mm 20mm 15mm;
+      mso-header-margin: 35.4pt;
+      mso-footer-margin: 35.4pt;
+      mso-paper-source: 0;
+    }
+    div.WordSection1 { page: WordSection1; }
+    body {
+      font-family: 'Kantumruy Pro', 'Khmer OS', 'Calibri', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #0f172a;
+    }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 12pt; }
+    th, td { border: 1px solid #475569; padding: 6pt 8pt; font-size: 10pt; vertical-align: top; }
+    th { background-color: #f1f5f9; color: #0f172a; font-weight: bold; }
+    .official-header { margin-bottom: 14pt; }
+    .header-national-top { text-align: center; margin-bottom: 8pt; }
+    .country-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 13pt; color: #1e3b88; font-weight: bold; }
+    .motto-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 10.5pt; color: #1e3b88; font-weight: bold; }
+    .header-hierarchy-left { text-align: left; margin-bottom: 12pt; line-height: 1.5; }
+    .ministry-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 11pt; color: #0f172a; font-weight: bold; }
+    .department-title { font-family: 'Kantumruy Pro', 'Khmer OS Battambang', sans-serif; font-size: 9.5pt; color: #475569; }
+    .school-title { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 11pt; color: #0f172a; font-weight: bold; }
+    .metadata-card { margin-bottom: 14pt; border: 1px solid #cbd5e1; padding: 8pt; background-color: #f8fafc; }
+    .plan-main-title { text-align: center; margin: 12pt 0; }
+    .plan-main-title h1 { font-family: 'Moul', 'Khmer OS Muol Light', cursive, serif; font-size: 13.5pt; color: #0369a1; }
+    .section-title { font-size: 12pt; font-weight: bold; color: #0369a1; border-left: 4pt solid #0284c7; padding-left: 6pt; margin-top: 14pt; margin-bottom: 8pt; }
+    .board-container { border: 2px solid #334155; padding: 10pt; background: #f8fafc; margin: 10pt 0; }
+    .board-column-header { font-weight: bold; color: #0369a1; border-bottom: 1px solid #cbd5e1; padding-bottom: 4pt; margin-bottom: 6pt; }
+  </style>
+</head>
+<body>
+  <div class="WordSection1">
+    <div class="official-header">
+      <div class="header-national-top">
+        <div class="country-title">ព្រះរាជាណាចក្រកម្ពុជា</div>
+        <div class="motto-title">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+        <div style="text-align: center; color: #1e3b88; font-size: 9pt; margin: 3pt 0 8pt 0;">~ ❖ ~</div>
+      </div>
+      <div class="header-hierarchy-left">
+        <div class="ministry-title">ក្រសួងអប់រំ យុវជន និងកីឡា</div>
+        <div class="department-title">មន្ទីរអប់រំ យុវជន និងកីឡា ខេត្តសៀមរាប</div>
+        <div class="school-title">វិទ្យាល័យសសរស្តម្ភ</div>
+      </div>
+    </div>
+
+    <table class="metadata-card">
+      <tr>
+        <td style="border:none;"><strong>គ្រឹះស្ថានសិក្សា៖</strong> វិទ្យាល័យសសរស្តម្ភ</td>
+        <td style="border:none;"><strong>កម្រិតថ្នាក់ & មុខវិជ្ជា៖</strong> ថ្នាក់ទី ១១ | គណិតវិទ្យា (ភាគ១)</td>
+      </tr>
+      <tr>
+        <td style="border:none;"><strong>គ្រូបង្រៀនឯកទេស៖</strong> អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)</td>
+        <td style="border:none;"><strong>ថិរវេលាបង្រៀន៖</strong> ៥០ នាទី (១ ម៉ោងពេញលេញ)</td>
+      </tr>
+    </table>
+
+    <div class="plan-main-title">
+      <h1>${title}</h1>
+      <p>${subtitle}</p>
+    </div>
+
+    ${bodyHtml}
+
+    <!-- Signatures -->
+    <table style="margin-top: 30pt; width: 100%; border: none; border-collapse: collapse;">
+      <tr>
+        <td style="border:none; text-align:center; vertical-align:top; width:33.33%;">
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:10.5pt; color:#0f172a; margin-bottom:4pt;">បានឃើញ និងឯកភាព</div>
+          <div style="font-family:'Kantumruy Pro', sans-serif; font-size:9.5pt; color:#334155; margin-bottom:4pt;">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:11pt; color:#1e3b88; margin-bottom:50pt;">នាយកវិទ្យាល័យ</div>
+        </td>
+        <td style="border:none; text-align:center; vertical-align:top; width:33.33%;">
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:10.5pt; color:#0f172a; margin-bottom:4pt;">បានពិនិត្យត្រឹមត្រូវ</div>
+          <div style="font-family:'Kantumruy Pro', sans-serif; font-size:9.5pt; color:#334155; margin-bottom:4pt;">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:11pt; color:#1e3b88; margin-bottom:50pt;">ប្រធានក្រុមបច្ចេកទេស</div>
+        </td>
+        <td style="border:none; text-align:center; vertical-align:top; width:33.33%;">
+          <div style="min-height:16pt; margin-bottom:4pt;">&nbsp;</div>
+          <div style="font-family:'Kantumruy Pro', sans-serif; font-size:9.5pt; color:#334155; margin-bottom:4pt;">ថ្ងៃ..................... ខែ............... ឆ្នាំ..........</div>
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:11pt; color:#1e3b88; margin-bottom:40pt;">ហត្ថលេខាគ្រូបង្រៀន</div>
+          <div style="font-family:'Moul', 'Khmer OS Muol Light', cursive; font-size:12pt; color:#1e3b88; font-weight:bold;">ឆេង ឆវ័ន្ត</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
+    `;
+
+    try {
+      const blob = new Blob(['\ufeff' + docContent], { type: 'application/msword;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      notifyToast('✅ បានទាញយកកិច្ចតែងការជា Word (.doc) ដោយជោគជ័យ!');
+    } catch (e) {
+      console.error(e);
+      notifyToast('❌ បរាជ័យក្នុងការទាញយក Word');
+    }
+  }
+
+  // Universal Lesson Plan Word Downloader
+  window.downloadLessonPlanDoc = function (key) {
+    if (key === 'exponential') {
+      window.downloadLessonPlanWord();
+      return;
+    }
+
+    if (key === 'sequences-h1') {
+      const bodyHtml = `
+      <div class="section-title">I. វត្ថុបំណងមេរៀន (Learning Objectives)</div>
+      <table>
+        <thead>
+          <tr><th style="width:25%;">ដែនអភិវឌ្ឍន៍</th><th style="width:50%;">វត្ថុបំណងជាក់លាក់ (៥០ នាទី)</th><th style="width:25%;">ឧបករណ៍វាស់វែង</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>១. វិជ្ជាសម្បទា</strong></td>
+            <td>• កំណត់បាននូវសញ្ញាណ និងនិយមន័យនៃស្វ៊ីតចំនួនពិត។<br>• បែងចែកបានច្បាស់លាស់រវាងស្វ៊ីតរាប់អស់ និងស្វ៊ីតអនន្ត។</td>
+            <td>សន្លឹកកិច្ចការ & សំណួរផ្ទាល់មាត់</td>
+          </tr>
+          <tr>
+            <td><strong>២. បំណិនសម្បទា</strong></td>
+            <td>• គណនាតម្លៃនៃបណ្តាតួ $u_1, u_2, u_3, u_n$ តាមរូបមន្តកំណត់តួជាក់លាក់។<br>• រកគំរូទិន្នន័យ (Pattern) និងកំណត់តួទូទៅនៃស្វ៊ីតសាមញ្ញ។</td>
+            <td>លំហាត់ប្រតិបត្តិក្នុងថ្នាក់</td>
+          </tr>
+          <tr>
+            <td><strong>៣. ចរិយាសម្បទា</strong></td>
+            <td>• បង្ហាញភាពសហការក្នុងការពិភាក្សាជាក្រុម និងមានទំនុកចិត្តក្នុងការដោះស្រាយលំហាត់។</td>
+            <td>ការសង្កេតឥរិយាបថ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">II. សម្ភារឧបទេស</div>
+      <p>• សៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី១១ (ភាគ១), កិច្ចតែងការបង្រៀន, សន្លឹកកិច្ចការរិះរក, ក្រដាស A4។</p>
+
+      <div class="section-title">III. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</div>
+      <table>
+        <thead>
+          <tr><th style="width:10%;">ថិរវេលា</th><th style="width:20%;">ដំណាក់កាល 5E</th><th style="width:26%;">ខ្លឹមសារមេរៀន</th><th style="width:22%;">សកម្មភាពគ្រូ</th><th style="width:22%;">សកម្មភាពសិស្ស</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:center;">៥ នាទី</td>
+            <td><strong>Engagement (រំញោច)</strong></td>
+            <td>• ពិនិត្យវត្តមាន & បរិយាកាស<br>• បញ្ហាចោទ៖ រៀបជួរកៅអី ៣, ៥, ៧, ៩...</td>
+            <td>• ស្វាគមន៍ & ត្រួតពិនិត្យ<br>• ចោទសួរដើម្បីបង្កើតការចាប់អារម្មណ៍</td>
+            <td>• គោរពគ្រូ<br>• ឆ្លើយ និងរកគំរូទិន្នន័យ</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">១២ នាទី</td>
+            <td><strong>Exploration (រិះរក)</strong></td>
+            <td>• ពិភាក្សាជាក្រុមលើស្វ៊ីតរាប់អស់ និងអនន្ត<br>• គណនាតួ $u_n = 2n+1$</td>
+            <td>• ចែកសន្លឹកកិច្ចការជាក្រុម<br>• សម្របសម្រួល និងតាមដាន</td>
+            <td>• ពិភាក្សាជាក្រុម<br>• បំពេញទិន្នន័យលើសន្លឹកកិច្ចការ</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">១៣ នាទី</td>
+            <td><strong>Explanation (ពន្យល់)</strong></td>
+            <td>• និយមន័យស្វ៊ីតចំនួនពិត<br>• តួទីមួយ តួទីពីរ... តួទី $n$<br>• ស្វ៊ីតកំណត់ដោយរូបមន្តតួទី $n$</td>
+            <td>• សង្ខេបចម្លើយសិស្ស<br>• ពន្យល់និយមន័យច្បាស់លាស់</td>
+            <td>• ផ្ទៀងផ្ទាត់ការយល់ដឹង<br>• កត់ត្រានិយមន័យចូលសៀវភៅ</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">១២ នាទី</td>
+            <td><strong>Elaboration (ពង្រីក)</strong></td>
+            <td>• ប្រតិបត្តិ៖ គណនា ៤ តួដំបូងនៃ $u_n = \\frac{n}{n+1}$ និង $u_n = (-1)^n \\cdot 2n$</td>
+            <td>• ដាក់លំហាត់លើក្ដារខៀន<br>• ហៅសិស្សឡើងដោះស្រាយ</td>
+            <td>• គណនាជាក់ស្តែង<br>• ឡើងកែលើក្ដារខៀន</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">៨ នាទី</td>
+            <td><strong>Evaluation (វាយតម្លៃ)</strong></td>
+            <td>• សំណួរ Exit Ticket ៣ សំណួរ<br>• សង្ខេបមេរៀន & ដាក់កិច្ចការផ្ទះ</td>
+            <td>• វាយតម្លៃការយល់ដឹង<br>• ដាក់កិច្ចការផ្ទះ</td>
+            <td>• បញ្ជូនចម្លើយ Exit Ticket<br>• កត់ត្រាកិច្ចការផ្ទះ</td>
+          </tr>
+        </tbody>
+      </table>
+      `;
+      exportWordFile('កិច្ចតែងការ_ស្វ៊ីតចំនួនពិត_ម៉ោងទី១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.doc', 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)', 'ជំពូកទី ១៖ ស្វ៊ីតចំនួនពិត (មេរៀនទី ១៖ ស្វ៊ីតចំនួនពិត — ម៉ោងទី ១៖ សញ្ញាណស្វ៊ីត និងនិយមន័យ)', bodyHtml);
+      return;
+    }
+
+    if (key === 'sequences-h2') {
+      const bodyHtml = `
+      <div class="section-title">I. វត្ថុបំណងមេរៀន (Learning Objectives)</div>
+      <table>
+        <thead>
+          <tr><th style="width:25%;">ដែនអភិវឌ្ឍន៍</th><th style="width:50%;">វត្ថុបំណងជាក់លាក់ (៥០ នាទី)</th><th style="width:25%;">ឧបករណ៍វាស់វែង</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>១. វិជ្ជាសម្បទា</strong></td>
+            <td>• កំណត់បាននូវនិយមន័យស្វ៊ីតកើន ស្វ៊ីតចុះ និងស្វ៊ីតម៉ូណូតូន។<br>• យល់ច្បាស់ពីលក្ខខណ្ឌ $u_{n+1} - u_n > 0$ និង $\\frac{u_{n+1}}{u_n} > 1$ (ចំពោះ $u_n > 0$)។</td>
+            <td>សន្លឹកកិច្ចការ & សំណួរផ្ទាល់មាត់</td>
+          </tr>
+          <tr>
+            <td><strong>២. បំណិនសម្បទា</strong></td>
+            <td>• អនុវត្តវិធីសាស្ត្រពិនិត្យសញ្ញានៃផលដក $u_{n+1}-u_n$ បានត្រឹមត្រូវ។<br>• អនុវត្តវិធីសាស្ត្រពិនិត្យផលធៀប $\\frac{u_{n+1}}{u_n}$ ចំពោះស្វ៊ីតដែលមានតួវិជ្ជមាន។</td>
+            <td>លំហាត់ប្រតិបត្តិក្នុងថ្នាក់</td>
+          </tr>
+          <tr>
+            <td><strong>៣. ចរិយាសម្បទា</strong></td>
+            <td>• មានភាពម៉ត់ចត់ក្នុងការគណនា និងមានស្មារតីសហការជាក្រុម។</td>
+            <td>ការសង្កេតឥរិយាបថ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">II. សម្ភារឧបទេស</div>
+      <p>• សៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី១១ (ភាគ១), កិច្ចតែងការបង្រៀន, សន្លឹកកិច្ចការរិះរក, ក្រដាស A4។</p>
+
+      <div class="section-title">III. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</div>
+      <table>
+        <thead>
+          <tr><th style="width:10%;">ថិរវេលា</th><th style="width:20%;">ដំណាក់កាល 5E</th><th style="width:26%;">ខ្លឹមសារមេរៀន</th><th style="width:22%;">សកម្មភាពគ្រូ</th><th style="width:22%;">សកម្មភាពសិស្ស</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:center;">៥ នាទី</td>
+            <td><strong>Engagement (រំញោច)</strong></td>
+            <td>• រំលឹកតួស្វ៊ីតពីម៉ោងទី១<br>• ប្រៀបធៀបស្វ៊ីត $u_n = 3n-1$ និង $v_n = \\frac{1}{n}$</td>
+            <td>• សួរបញ្ជាក់ទិសដៅកើនឡើង ឬថយចុះនៃតួ</td>
+            <td>• សង្កេត និងទស្សន៍ទាយលក្ខណៈកើន/ចុះ</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">១២ នាទី</td>
+            <td><strong>Exploration (រិះរក)</strong></td>
+            <td>• គណនា $u_{n+1}-u_n$ ចំពោះស្វ៊ីត $u_n = 2n+3$<br>• គណនាផលធៀបចំពោះ $u_n = 3^n$</td>
+            <td>• ចែកក្រុម និងណែនាំសិស្សគណនាតួបន្ទាប់</td>
+            <td>• ធ្វើការជាក្រុម រកឃើញសញ្ញាវិជ្ជមាន/អវិជ្ជមាន</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">១៣ នាទី</td>
+            <td><strong>Explanation (ពន្យល់)</strong></td>
+            <td>• និយមន័យផ្លូវការ៖ ស្វ៊ីតកើន, ស្វ៊ីតចុះ, ស្វ៊ីតម៉ូណូតូន<br>• លក្ខណៈវិនិច្ឆ័យ ២ របៀប</td>
+            <td>• បង្ហាញទ្រឹស្តីបទ និងវិធានគណនាឡើងក្ដារខៀន</td>
+            <td>• កត់ត្រា និងសួរបញ្ជាក់ចំណុចមិនទាន់ច្បាស់</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">១២ នាទី</td>
+            <td><strong>Elaboration (ពង្រីក)</strong></td>
+            <td>• សិក្សាអថេរភាពនៃ $u_n = \\frac{n}{n+1}$ និង $v_n = -n^2 + 4n$</td>
+            <td>• ណែនាំវិធីសាស្ត្រតម្រូវភាគបែង និងការវិភាគសញ្ញា</td>
+            <td>• ដោះស្រាយ និងពិភាក្សាវិធីគណនា</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">៨ នាទី</td>
+            <td><strong>Evaluation (វាយតម្លៃ)</strong></td>
+            <td>• Exit Ticket៖ កំណត់ប្រភេទស្វ៊ីត ៣ ឧទាហរណ៍<br>• ដាក់កិច្ចការផ្ទះ</td>
+            <td>• ប្រមូលសន្លឹក Exit Ticket & កែសម្រួល</td>
+            <td>• បញ្ជូនចម្លើយ និងកត់ត្រាកិច្ចការផ្ទះ</td>
+          </tr>
+        </tbody>
+      </table>
+      `;
+      exportWordFile('កិច្ចតែងការ_ស្វ៊ីតចំនួនពិត_ម៉ោងទី២_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.doc', 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)', 'ជំពូកទី ១៖ ស្វ៊ីតចំនួនពិត (មេរៀនទី ១៖ ស្វ៊ីតចំនួនពិត — ម៉ោងទី ២៖ ស្វ៊ីតកើន ស្វ៊ីតចុះ ម៉ូណូតូន)', bodyHtml);
+      return;
+    }
+
+    if (key === 'sequences-h3') {
+      const bodyHtml = `
+      <div class="section-title">I. វត្ថុបំណងមេរៀន (Learning Objectives)</div>
+      <table>
+        <thead>
+          <tr><th style="width:25%;">ដែនអភិវឌ្ឍន៍</th><th style="width:50%;">វត្ថុបំណងជាក់លាក់ (៥០ នាទី)</th><th style="width:25%;">ឧបករណ៍វាស់វែង</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>១. វិជ្ជាសម្បទា</strong></td>
+            <td>• កំណត់បាននូវនិយមន័យស្វ៊ីតទាល់លើ ស្វ៊ីតទាល់ក្រោម និងស្វ៊ីតទាល់។<br>• យល់ដឹងពីការរួមបញ្ចូលគ្នារវាងស្វ៊ីតម៉ូណូតូន និងស្វ៊ីតទាល់។</td>
+            <td>សន្លឹកកិច្ចការ & សំណួរផ្ទាល់មាត់</td>
+          </tr>
+          <tr>
+            <td><strong>២. បំណិនសម្បទា</strong></td>
+            <td>• បង្ហាញថាស្វ៊ីតមួយជាស្វ៊ីតទាល់លើ ទាល់ក្រោម ឬស្វ៊ីតទាល់តាមវិសមភាព។<br>• ដោះស្រាយលំហាត់សំយោគទាំង ៣ ម៉ោងបានយ៉ាងស្ទាត់ជំនាញ។</td>
+            <td>លំហាត់ប្រតិបត្តិក្នុងថ្នាក់</td>
+          </tr>
+          <tr>
+            <td><strong>៣. ចរិយាសម្បទា</strong></td>
+            <td>• មានទំនុកចិត្ត និងការគិតស៊ីជម្រៅក្នុងការវិភាគគណិតវិទ្យា។</td>
+            <td>ការសង្កេតឥរិយាបថ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">II. សម្ភារឧបទេស</div>
+      <p>• សៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី១១ (ភាគ១), កិច្ចតែងការបង្រៀន, សន្លឹកកិច្ចការរិះរក, ក្រដាស A4។</p>
+
+      <div class="section-title">III. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</div>
+      <table>
+        <thead>
+          <tr><th style="width:10%;">ថិរវេលា</th><th style="width:20%;">ដំណាក់កាល 5E</th><th style="width:26%;">ខ្លឹមសារមេរៀន</th><th style="width:22%;">សកម្មភាពគ្រូ</th><th style="width:22%;">សកម្មភាពសិស្ស</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:center;">៥ នាទី</td>
+            <td><strong>Engagement (រំញោច)</strong></td>
+            <td>• រំលឹកស្វ៊ីតកើន/ចុះ<br>• ពិនិត្យតម្លៃនៃ $u_n = \\frac{n}{n+1}$ ពេល $n$ កាន់តែធំ</td>
+            <td>• ចោទសួរ៖ តើតម្លៃអាចឡើងហួសលេខ ១ បានដែរឬទេ?</td>
+            <td>• គណនាតម្លៃ និងកត់សម្គាល់ព្រំដែន</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">១២ នាទី</td>
+            <td><strong>Exploration (រិះរក)</strong></td>
+            <td>• រកចំនួនពិត $M$ និង $m$ ដែល $m \\le u_n \\le M$<br>• ពិនិត្យស្វ៊ីត $u_n = \\sin(n)$ និង $u_n = \\frac{2n+1}{n}$</td>
+            <td>• ណែនាំការបំបែកកន្សោម និងការទាញរកព្រំដែន</td>
+            <td>• ធ្វើការជាក្រុម រកឃើញព្រំដែនលើ និងក្រោម</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">១៣ នាទី</td>
+            <td><strong>Explanation (ពន្យល់)</strong></td>
+            <td>• និយមន័យផ្លូវការនៃស្វ៊ីតទាល់លើ ទាល់ក្រោម ស្វ៊ីតទាល់<br>• លក្ខខណ្ឌ $|u_n| \\le K$</td>
+            <td>• ពន្យល់ទ្រឹស្តីបទឡើងក្ដារខៀន</td>
+            <td>• កត់ត្រា និងផ្ទៀងផ្ទាត់ឧទាហរណ៍</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">១២ នាទី</td>
+            <td><strong>Elaboration (ពង្រីក)</strong></td>
+            <td>• លំហាត់សំយោគ ៣ ម៉ោង៖ សិក្សាទាំងអថេរភាព និងភាពទាល់នៃស្វ៊ីត $u_n = \\frac{3n-1}{n+2}$</td>
+            <td>• តាមដាន និងជួយសិស្សរៀនយឺត (Scaffolding)</td>
+            <td>• អនុវត្តលំហាត់សំយោគពេញលេញ</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">៨ នាទី</td>
+            <td><strong>Evaluation (វាយតម្លៃ)</strong></td>
+            <td>• Exit Ticket សំយោគ ៣ ម៉ោង<br>• សង្ខេបជំពូកទី ១ មេរៀនទី ១ & ដាក់កិច្ចការផ្ទះ</td>
+            <td>• វាយតម្លៃសរុប និងកោតសរសើរការចូលរួម</td>
+            <td>• បញ្ជូន Exit Ticket និងកត់កិច្ចការផ្ទះ</td>
+          </tr>
+        </tbody>
+      </table>
+      `;
+      exportWordFile('កិច្ចតែងការ_ស្វ៊ីតចំនួនពិត_ម៉ោងទី៣_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.doc', 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)', 'ជំពូកទី ១៖ ស្វ៊ីតចំនួនពិត (មេរៀនទី ១៖ ស្វ៊ីតចំនួនពិត — ម៉ោងទី ៣៖ ស្វ៊ីតទាល់ និងលំហាត់សរុប)', bodyHtml);
+      return;
+    }
+
+    if (key === 'arithmetic') {
+      const bodyHtml = `
+      <div class="section-title">I. វត្ថុបំណងមេរៀន (Learning Objectives)</div>
+      <table>
+        <thead>
+          <tr><th style="width:25%;">ដែនអភិវឌ្ឍន៍</th><th style="width:50%;">វត្ថុបំណងជាក់លាក់ (៥០ នាទី)</th><th style="width:25%;">ឧបករណ៍វាស់វែង</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>១. វិជ្ជាសម្បទា</strong></td>
+            <td>• កំណត់បាននូវនិយមន័យស្វ៊ីតនព្វន្ត និងរូបមន្តតួទី $n$៖ $u_n = u_1 + (n-1)d$។<br>• កំណត់បាននូវផលសងរួម $d = u_{n+1} - u_n$។</td>
+            <td>សន្លឹកកិច្ចការ & សំណួរផ្ទាល់មាត់</td>
+          </tr>
+          <tr>
+            <td><strong>២. បំណិនសម្បទា</strong></td>
+            <td>• គណនាតួទី $n$ តួទីមួយ និងផលសងរួម $d$ ពីទិន្នន័យដែលបានផ្ដល់។<br>• ដោះស្រាយចំណោទអនុវត្តជាក់ស្តែងក្នុងជីវភាពពិត។</td>
+            <td>លំហាត់ប្រតិបត្តិក្នុងថ្នាក់</td>
+          </tr>
+          <tr>
+            <td><strong>៣. ចរិយាសម្បទា</strong></td>
+            <td>• បង្ហាញភាពជឿជាក់ និងស្មារតីសហការដោះស្រាយបញ្ហាជាក្រុម។</td>
+            <td>ការសង្កេតឥរិយាបថ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">II. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</div>
+      <p>• <strong>Engagement៖</strong> រំញោចតាមចំណោទសន្សំប្រាក់ ឬកៅអីកីឡដ្ឋាន (៥ នាទី)។</p>
+      <p>• <strong>Exploration៖</strong> ពិភាក្សាជាក្រុម រកផលសងរួម $d$ និងបង្កើតរូបមន្ត (១២ នាទី)។</p>
+      <p>• <strong>Explanation៖</strong> ពន្យល់រូបមន្តទូទៅ $u_n = u_1 + (n-1)d$ (១៣ នាទី)។</p>
+      <p>• <strong>Elaboration៖</strong> អនុវត្តលំហាត់រក $u_{20}$ និងរកចំនួនតួនៃស្វ៊ីត (១២ នាទី)។</p>
+      <p>• <strong>Evaluation៖</strong> Exit Ticket និងកិច្ចការផ្ទះ (៨ នាទី)។</p>
+      `;
+      exportWordFile('កិច្ចតែងការ_ស្វ៊ីតនព្វន្ត_តួទីn_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.doc', 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)', 'ជំពូកទី ១៖ ស្វ៊ីតចំនួនពិត (ស្វ៊ីតនព្វន្ត — រូបមន្តតួទី n)', bodyHtml);
+      return;
+    }
+
+    if (key === 'logarithmic') {
+      const bodyHtml = `
+      <div class="section-title">I. វត្ថុបំណងមេរៀន (Learning Objectives)</div>
+      <table>
+        <thead>
+          <tr><th style="width:25%;">ដែនអភិវឌ្ឍន៍</th><th style="width:50%;">វត្ថុបំណងជាក់លាក់ (៥០ នាទី)</th><th style="width:25%;">ឧបករណ៍វាស់វែង</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>១. វិជ្ជាសម្បទា</strong></td>
+            <td>• កំណត់បាននូវលក្ខខណ្ឌអត្ថិភាពនៃសមីការលោការីត $\\log_a f(x) = \\log_a g(x)$។<br>• ចងចាំវិធានបម្លែងលោការីតគ្រឹះ។</td>
+            <td>សន្លឹកកិច្ចការ & សំណួរផ្ទាល់មាត់</td>
+          </tr>
+          <tr>
+            <td><strong>២. បំណិនសម្បទា</strong></td>
+            <td>• ដោះស្រាយសមីការលោការីត និងផ្ទៀងផ្ទាត់លក្ខខណ្ឌឫសបានត្រឹមត្រូវ។</td>
+            <td>លំហាត់ប្រតិបត្តិក្នុងថ្នាក់</td>
+          </tr>
+          <tr>
+            <td><strong>៣. ចរិយាសម្បទា</strong></td>
+            <td>• មានភាពហ្មត់ចត់ និងប្រុងប្រយ័ត្នក្នុងការពិនិត្យលក្ខខណ្ឌដែនកំណត់។</td>
+            <td>ការសង្កេតឥរិយាបថ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">II. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</div>
+      <p>• <strong>Engagement៖</strong> រំលឹកនិយមន័យលោការីត និងលក្ខណៈគ្រឹះ (៥ នាទី)។</p>
+      <p>• <strong>Exploration៖</strong> ពិភាក្សាជាក្រុម រកលក្ខខណ្ឌ និងដោះស្រាយ $\\log_2(x-1) = \\log_2(3)$ (១២ នាទី)។</p>
+      <p>• <strong>Explanation៖</strong> ពន្យល់ទ្រឹស្តីបទ $\\log_a f(x) = \\log_a g(x) \\Leftrightarrow f(x) = g(x) > 0$ (១៣ នាទី)។</p>
+      <p>• <strong>Elaboration៖</strong> ដោះស្រាយសមីការដែលមានផលបូក និងផលដកលោការីត (១២ នាទី)។</p>
+      <p>• <strong>Evaluation៖</strong> Exit Ticket និងកិច្ចការផ្ទះ (៨ នាទី)។</p>
+      `;
+      exportWordFile('កិច្ចតែងការ_សមីការលោការីត_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.doc', 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)', 'ជំពូកទី ២៖ អនុគមន៍លោការីត (សមីការលោការីត)', bodyHtml);
+      return;
     }
   };
 
@@ -1885,9 +2507,12 @@
   /* ============================================================
      5. PRINT PREVIEW (A4 SHEET SIMULATION)
      ============================================================ */
+  /* ============================================================
+     5. PRINT PREVIEW (A4 SHEET SIMULATION)
+     ============================================================ */
   let lpPreviewZoom = 0.85;
 
-  window.previewLessonPlanPrint = function () {
+  window.previewLessonPlanPrint = function (key) {
     closeLessonPlanModal();
     ensureModalsInDOM();
 
@@ -1896,8 +2521,158 @@
 
     if (!previewModal || !sheetContent) return;
 
-    // Render complete 7-section Cambodian Ministry-standard lesson plan
-    sheetContent.innerHTML = getCompleteLessonPlanHTML();
+    if (!key || key === 'exponential') {
+      sheetContent.innerHTML = getCompleteLessonPlanHTML();
+    } else {
+      // Build standard A4 layout for the selected lesson plan
+      let title = '';
+      let subtitle = '';
+      let bodySections = '';
+
+      if (key === 'sequences-h1') {
+        title = 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)';
+        subtitle = 'ជំពូកទី ១៖ ស្វ៊ីតចំនួនពិត — ម៉ោងទី ១៖ សញ្ញាណស្វ៊ីត និងនិយមន័យ (៥០ នាទី)';
+        bodySections = `
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">I. វត្ថុបំណងមេរៀន (Learning Objectives)</h3>
+            <p>• <strong>វិជ្ជាសម្បទា៖</strong> កំណត់បាននូវសញ្ញាណ និងនិយមន័យនៃស្វ៊ីតចំនួនពិត និងបែងចែកស្វ៊ីតរាប់អស់/អនន្ត។</p>
+            <p>• <strong>បំណិនសម្បទា៖</strong> គណនាតម្លៃតួ និងរកគំរូទិន្នន័យ (Pattern) តាមរូបមន្តកំណត់តួ $u_n$។</p>
+            <p>• <strong>ចរិយាសម្បទា៖</strong> មានភាពសហការក្នុងការពិភាក្សាជាក្រុម និងមានទំនុកចិត្តក្នុងការដោះស្រាយលំហាត់។</p>
+          </div>
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">II. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</h3>
+            <table style="width:100%; border-collapse:collapse; font-size:8.5pt;" border="1">
+              <tr style="background:#f1f5f9;"><th>ថិរវេលា</th><th>ដំណាក់កាល 5E</th><th>ខ្លឹមសារមេរៀន</th><th>សកម្មភាពគ្រូ</th><th>សកម្មភាពសិស្ស</th></tr>
+              <tr><td style="text-align:center;">៥ នាទី</td><td>Engagement</td><td>រំញោច៖ គំរូកៅអី ៣, ៥, ៧, ៩...</td><td>ចោទសួរដើម្បីបង្កើតការចាប់អារម្មណ៍</td><td>ស្វែងយល់ និងឆ្លើយទស្សន៍ទាយ</td></tr>
+              <tr><td style="text-align:center;">១២ នាទី</td><td>Exploration</td><td>រិះរកស្វ៊ីតរាប់អស់/អនន្ត & គណនាតួ</td><td>ចែកសន្លឹកកិច្ចការ និងសម្របសម្រួល</td><td>ពិភាក្សាជាក្រុម និងបំពេញតារាង</td></tr>
+              <tr><td style="text-align:center;">១៣ នាទី</td><td>Explanation</td><td>និយមន័យស្វ៊ីត & រូបមន្តកំណត់តួ $u_n$</td><td>សង្ខេបចម្លើយ និងពន្យល់ទ្រឹស្តី</td><td>កត់ត្រានិយមន័យចូលសៀវភៅ</td></tr>
+              <tr><td style="text-align:center;">១២ នាទី</td><td>Elaboration</td><td>ប្រតិបត្តិ៖ $u_n = \\frac{n}{n+1}$ និង $(-1)^n \\cdot 2n$</td><td>ដាក់លំហាត់ និងណែនាំការគណនា</td><td>ដោះស្រាយជាក់ស្តែងលើក្ដារខៀន</td></tr>
+              <tr><td style="text-align:center;">៨ នាទី</td><td>Evaluation</td><td>Exit Ticket ៣ សំណួរ & ដាក់កិច្ចការផ្ទះ</td><td>វាយតម្លៃសិស្ស & ដាក់កិច្ចការផ្ទះ</td><td>បញ្ជូន Exit Ticket & កត់កិច្ចការផ្ទះ</td></tr>
+            </table>
+          </div>
+        `;
+      } else if (key === 'sequences-h2') {
+        title = 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)';
+        subtitle = 'ជំពូកទី ១៖ ស្វ៊ីតចំនួនពិត — ម៉ោងទី ២៖ ស្វ៊ីតកើន ស្វ៊ីតចុះ ម៉ូណូតូន (៥០ នាទី)';
+        bodySections = `
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">I. វត្ថុបំណងមេរៀន (Learning Objectives)</h3>
+            <p>• <strong>វិជ្ជាសម្បទា៖</strong> កំណត់បាននូវនិយមន័យស្វ៊ីតកើន ស្វ៊ីតចុះ និងស្វ៊ីតម៉ូណូតូន។</p>
+            <p>• <strong>បំណិនសម្បទា៖</strong> អនុវត្តវិធីសាស្ត្រពិនិត្យសញ្ញានៃផលដក $u_{n+1}-u_n$ និងផលធៀប $\\frac{u_{n+1}}{u_n}$។</p>
+            <p>• <strong>ចរិយាសម្បទា៖</strong> មានភាពម៉ត់ចត់ និងស្មារតីសហការដោះស្រាយបញ្ហាជាក្រុម។</p>
+          </div>
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">II. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</h3>
+            <table style="width:100%; border-collapse:collapse; font-size:8.5pt;" border="1">
+              <tr style="background:#f1f5f9;"><th>ថិរវេលា</th><th>ដំណាក់កាល 5E</th><th>ខ្លឹមសារមេរៀន</th><th>សកម្មភាពគ្រូ</th><th>សកម្មភាពសិស្ស</th></tr>
+              <tr><td style="text-align:center;">៥ នាទី</td><td>Engagement</td><td>រំលឹកតួស្វ៊ីត & ប្រៀបធៀបទិសដៅប្រែប្រួល</td><td>សួរបញ្ជាក់ទិសដៅកើនឡើង ឬថយចុះ</td><td>សង្កេត និងទស្សន៍ទាយ</td></tr>
+              <tr><td style="text-align:center;">១២ នាទី</td><td>Exploration</td><td>គណនា $u_{n+1}-u_n$ & ផលធៀប</td><td>ចែកក្រុម និងណែនាំសិស្សគណនា</td><td>ធ្វើការជាក្រុម រកឃើញសញ្ញា</td></tr>
+              <tr><td style="text-align:center;">១៣ នាទី</td><td>Explanation</td><td>និយមន័យស្វ៊ីតកើន/ចុះ & ស្វ៊ីតម៉ូណូតូន</td><td>ពន្យល់ទ្រឹស្តីបទ និងវិធានគណនា</td><td>កត់ត្រា និងផ្ទៀងផ្ទាត់រូបមន្ត</td></tr>
+              <tr><td style="text-align:center;">១២ នាទី</td><td>Elaboration</td><td>សិក្សាអថេរភាពនៃ $u_n = \\frac{n}{n+1}$</td><td>ណែនាំវិធីសាស្ត្រតម្រូវភាគបែង</td><td>ដោះស្រាយ និងពិភាក្សា</td></tr>
+              <tr><td style="text-align:center;">៨ នាទី</td><td>Evaluation</td><td>Exit Ticket ៣ សំណួរ & ដាក់កិច្ចការផ្ទះ</td><td>ប្រមូល Exit Ticket & វាយតម្លៃ</td><td>បញ្ជូនចម្លើយ & កត់កិច្ចការផ្ទះ</td></tr>
+            </table>
+          </div>
+        `;
+      } else if (key === 'sequences-h3') {
+        title = 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)';
+        subtitle = 'ជំពូកទី ១៖ ស្វ៊ីតចំនួនពិត — ម៉ោងទី ៣៖ ស្វ៊ីតទាល់ និងលំហាត់សរុប (៥០ នាទី)';
+        bodySections = `
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">I. វត្ថុបំណងមេរៀន (Learning Objectives)</h3>
+            <p>• <strong>វិជ្ជាសម្បទា៖</strong> កំណត់បាននូវនិយមន័យស្វ៊ីតទាល់លើ ស្វ៊ីតទាល់ក្រោម និងស្វ៊ីតទាល់។</p>
+            <p>• <strong>បំណិនសម្បទា៖</strong> បង្ហាញភាពទាល់ និងដោះស្រាយលំហាត់សំយោគទាំង ៣ ម៉ោង។</p>
+            <p>• <strong>ចរិយាសម្បទា៖</strong> មានការគិតពិចារណាស៊ីជម្រៅ និងទំនុកចិត្តក្នុងការអនុវត្ត។</p>
+          </div>
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">II. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</h3>
+            <table style="width:100%; border-collapse:collapse; font-size:8.5pt;" border="1">
+              <tr style="background:#f1f5f9;"><th>ថិរវេលា</th><th>ដំណាក់កាល 5E</th><th>ខ្លឹមសារមេរៀន</th><th>សកម្មភាពគ្រូ</th><th>សកម្មភាពសិស្ស</th></tr>
+              <tr><td style="text-align:center;">៥ នាទី</td><td>Engagement</td><td>រំលឹកស្វ៊ីតកើន/ចុះ & ចោទសួរអំពីព្រំដែន</td><td>ចោទសួររកតម្លៃធំបំផុត និងតូចបំផុត</td><td>ពិនិត្យតម្លៃតួដែលកើនជិត ១</td></tr>
+              <tr><td style="text-align:center;">១២ នាទី</td><td>Exploration</td><td>រកចំនួនពិត $M$ និង $m$ ដែល $m \\le u_n \\le M$</td><td>ណែនាំការបំបែកកន្សោមដើម្បីរកព្រំដែន</td><td>ធ្វើការជាក្រុម រកឃើញព្រំដែន</td></tr>
+              <tr><td style="text-align:center;">១៣ នាទី</td><td>Explanation</td><td>និយមន័យស្វ៊ីតទាល់លើ ទាល់ក្រោម ស្វ៊ីតទាល់</td><td>ពន្យល់ទ្រឹស្តីបទឡើងក្ដារខៀន</td><td>កត់ត្រានិយមន័យ និងឧទាហរណ៍</td></tr>
+              <tr><td style="text-align:center;">១២ នាទី</td><td>Elaboration</td><td>លំហាត់សំយោគ ៣ ម៉ោង៖ $u_n = \\frac{3n-1}{n+2}$</td><td>តាមដាន និងជួយសិស្សរៀនយឺត</td><td>ដោះស្រាយលំហាត់សំយោគ</td></tr>
+              <tr><td style="text-align:center;">៨ នាទី</td><td>Evaluation</td><td>Exit Ticket សរុប ៣ ម៉ោង & ដាក់កិច្ចការផ្ទះ</td><td>វាយតម្លៃសរុប និងកោតសរសើរ</td><td>បញ្ជូនចម្លើយ & កត់កិច្ចការផ្ទះ</td></tr>
+            </table>
+          </div>
+        `;
+      } else if (key === 'arithmetic') {
+        title = 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)';
+        subtitle = 'ជំពូកទី ១៖ ស្វ៊ីតចំនួនពិត — ស្វ៊ីតនព្វន្ត (រូបមន្តតួទី n: $u_n = u_1 + (n-1)d$)';
+        bodySections = `
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">I. វត្ថុបំណងមេរៀន (Learning Objectives)</h3>
+            <p>• <strong>វិជ្ជាសម្បទា៖</strong> កំណត់បាននូវនិយមន័យស្វ៊ីតនព្វន្ត និងរូបមន្តតួទី $n$៖ $u_n = u_1 + (n-1)d$។</p>
+            <p>• <strong>បំណិនសម្បទា៖</strong> គណនាតួទី $n$, តួទីមួយ $u_1$, និងផលសងរួម $d$ បានត្រឹមត្រូវ។</p>
+            <p>• <strong>ចរិយាសម្បទា៖</strong> មានទំនុកចិត្ត និងស្មារតីសហការដោះស្រាយបញ្ហាជាក្រុម។</p>
+          </div>
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">II. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</h3>
+            <p>• <strong>Engagement (៥ នាទី)៖</strong> រំញោចតាមចំណោទសន្សំប្រាក់ ឬកៅអីកីឡដ្ឋាន។</p>
+            <p>• <strong>Exploration (១២ នាទី)៖</strong> ពិភាក្សាជាក្រុម រកផលសងរួម $d$ និងបង្កើតរូបមន្តតួទូទៅ។</p>
+            <p>• <strong>Explanation (១៣ នាទី)៖</strong> ពន្យល់រូបមន្ត $u_n = u_1 + (n-1)d$ ឡើងក្ដារខៀន។</p>
+            <p>• <strong>Elaboration (១២ នាទី)៖</strong> អនុវត្តលំហាត់ជាក់ស្តែង និងរកចំនួនតួនៃស្វ៊ីត។</p>
+            <p>• <strong>Evaluation (៨ នាទី)៖</strong> Exit Ticket និងកិច្ចការផ្ទះ។</p>
+          </div>
+        `;
+      } else if (key === 'logarithmic') {
+        title = 'កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E)';
+        subtitle = 'ជំពូកទី ២៖ អនុគមន៍លោការីត — សមីការលោការីត (៥០ នាទី)';
+        bodySections = `
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">I. វត្ថុបំណងមេរៀន (Learning Objectives)</h3>
+            <p>• <strong>វិជ្ជាសម្បទា៖</strong> កំណត់បាននូវលក្ខខណ្ឌអត្ថិភាពនៃសមីការលោការីត $\\log_a f(x) = \\log_a g(x)$។</p>
+            <p>• <strong>បំណិនសម្បទា៖</strong> ដោះស្រាយសមីការលោការីត និងផ្ទៀងផ្ទាត់លក្ខខណ្ឌឫសបានត្រឹមត្រូវ។</p>
+            <p>• <strong>ចរិយាសម្បទា៖</strong> មានភាពហ្មត់ចត់ និងប្រុងប្រយ័ត្នក្នុងការពិនិត្យលក្ខខណ្ឌដែនកំណត់។</p>
+          </div>
+          <div class="pdf-section">
+            <h3 style="color:#0284c7; border-bottom:2px solid #0284c7; padding-bottom:4px; margin-bottom:8px;">II. ដំណើរការបង្រៀនតាមទម្រង់ 5E Model (៥០ នាទី)</h3>
+            <p>• <strong>Engagement (៥ នាទី)៖</strong> រំលឹកនិយមន័យលោការីត និងលក្ខណៈគ្រឹះ។</p>
+            <p>• <strong>Exploration (១២ នាទី)៖</strong> ពិភាក្សាជាក្រុម រកលក្ខខណ្ឌ និងដោះស្រាយសមីការគំរូ។</p>
+            <p>• <strong>Explanation (១៣ នាទី)៖</strong> ពន្យល់ទ្រឹស្តីបទ $\\log_a f(x) = \\log_a g(x) \\Leftrightarrow f(x) = g(x) > 0$។</p>
+            <p>• <strong>Elaboration (១២ នាទី)៖</strong> ដោះស្រាយសមីការដែលមានផលបូក និងផលដកលោការីត។</p>
+            <p>• <strong>Evaluation (៨ នាទី)៖</strong> Exit Ticket និងកិច្ចការផ្ទះ។</p>
+          </div>
+        `;
+      }
+
+      sheetContent.innerHTML = `
+        <div class="pdf-plan-wrap">
+          <div style="text-align:center; margin-bottom:12px;">
+            <div style="font-family:'Moul', serif; font-size:12pt; color:#1e3b88;">ព្រះរាជាណាចក្រកម្ពុជា</div>
+            <div style="font-family:'Moul', serif; font-size:10pt; color:#1e3b88;">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+            <div style="color:#1e3b88; font-size:8.5pt;">~ ❖ ~</div>
+          </div>
+          <div style="font-size:9pt; margin-bottom:12px; line-height:1.4;">
+            <div style="font-family:'Moul', serif; font-size:9.5pt;">ក្រសួងអប់រំ យុវជន និងកីឡា</div>
+            <div>មន្ទីរអប់រំ យុវជន និងកីឡា ខេត្តសៀមរាប</div>
+            <div style="font-family:'Moul', serif; font-size:9.5pt;">វិទ្យាល័យសសរស្តម្ភ</div>
+          </div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 10px; margin-bottom:12px; font-size:8.5pt; display:flex; justify-content:space-between;">
+            <div><strong>គ្រឹះស្ថាន៖</strong> វិទ្យាល័យសសរស្តម្ភ &nbsp;|&nbsp; <strong>ថ្នាក់ទី ១១</strong></div>
+            <div><strong>គ្រូបង្រៀន៖</strong> អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)</div>
+          </div>
+          <div style="text-align:center; margin:10px 0 14px 0;">
+            <h2 style="font-family:'Moul', serif; font-size:12.5pt; color:#0369a1; margin:0 0 4px 0;">${title}</h2>
+            <div style="font-size:9pt; color:#475569;">${subtitle}</div>
+          </div>
+          ${bodySections}
+          <div style="margin-top:24px; display:flex; justify-content:space-between; text-align:center; font-size:8.5pt;">
+            <div style="width:32%;">
+              <div style="font-family:'Moul', serif;">បានឃើញ និងឯកភាព</div>
+              <div>នាយកវិទ្យាល័យ</div>
+            </div>
+            <div style="width:32%;">
+              <div style="font-family:'Moul', serif;">បានពិនិត្យត្រឹមត្រូវ</div>
+              <div>ប្រធានក្រុមបច្ចេកទេស</div>
+            </div>
+            <div style="width:32%;">
+              <div>ហត្ថលេខាគ្រូបង្រៀន</div>
+              <div style="font-family:'Moul', serif; margin-top:24px; color:#1e3b88; font-weight:bold;">ឆេង ឆវ័ន្ត</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
 
     // Render mathematical expressions inside preview sheet
     renderMathFormulas(sheetContent);
@@ -1950,16 +2725,26 @@
     // Auto attach click interception to any anchor pointing to lesson-plan-exponential-ibl.html
     const lpLinks = document.querySelectorAll('a[href="lesson-plan-exponential-ibl.html"], a[href*="lesson-plan-exponential-ibl.html"]');
     lpLinks.forEach(link => {
-      // If it's a dropdown item or mobile sub-link, intercept click to open modal
       if (link.classList.contains('dropdown-item') || link.classList.contains('mobile-sub-link') || link.classList.contains('academic-portal-card')) {
         link.addEventListener('click', function (e) {
-          // If not holding Ctrl/Meta/Shift key (i.e. regular click)
           if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
             e.preventDefault();
             openLessonPlanModal();
           }
         });
       }
+    });
+
+    // Submenu Modal buttons & banner triggers
+    const modalTriggers = document.querySelectorAll('.dropdown-submenu-toggle-btn, .submenu-modal-trigger-chip, .modal-hub-banner, .modal-hub-banner-mob');
+    modalTriggers.forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+          e.preventDefault();
+          e.stopPropagation();
+          openLessonPlanModal(e);
+        }
+      });
     });
   });
 

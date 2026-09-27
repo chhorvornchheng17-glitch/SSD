@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>វិញ្ញាសាប្រឡងបាក់ឌុប & សិស្សពូកែជាតិ | អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
-  <meta name="description" content="កម្រងវិញ្ញាសាគំរូត្រៀមប្រឡងបាក់ឌុប វិញ្ញាសាសិស្សពូកែគណិតវិទ្យាទូទាំងប្រទេស និងនាឡិកាកំណត់ពេលប្រឡងសាកល្បង Mock Exam 150 នាទី។">
+  <title>មជ្ឈមណ្ឌលឯកសារបង្រៀន (Teaching Materials Hub) | អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
+  <meta name="description" content="មជ្ឈមណ្ឌលឯកសារបង្រៀនគណិតវិទ្យាពេញលេញ រួមមានមេរៀនលម្អិតតាមកម្រិតថ្នាក់ កិច្ចតែងការបង្រៀនគរុកោសល្យ ស្លាយបង្រៀនអន្តរកម្ម កម្រងលំហាត់ និងវិញ្ញាសាប្រឡង ដោយអ្នកគ្រូ ឆេង ឆវ័ន្ត។">
   
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
@@ -15,10 +15,294 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/academic.css">
 
-  <!-- KaTeX for High Quality Math Typography -->
+  <!-- KaTeX for Math Formatting -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    /* Dedicated Page Styling for Teaching Materials Hub */
+    .hub-hero {
+      position: relative;
+      padding: 7rem 0 3.5rem;
+      background: radial-gradient(circle at 50% 20%, rgba(6, 182, 212, 0.12) 0%, rgba(15, 23, 42, 0) 70%),
+                  radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.08) 0%, rgba(15, 23, 42, 0) 60%);
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+    [data-theme='light'] .hub-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(6, 182, 212, 0.1) 0%, rgba(248, 250, 252, 0) 70%),
+                  radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.08) 0%, rgba(248, 250, 252, 0) 60%);
+    }
+
+    .hub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0284c7;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      margin-bottom: 1.25rem;
+    }
+    [data-theme='dark'] .hub-badge {
+      color: #38bdf8;
+    }
+
+    .hub-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .hub-subtitle {
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      color: var(--text-secondary);
+      max-width: 820px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    /* Quick Stats Bar */
+    .hub-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .hub-stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+    .hub-stat-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(6, 182, 212, 0.4);
+    }
+    .hub-stat-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #0284c7;
+      margin-bottom: 0.25rem;
+    }
+    [data-theme='dark'] .hub-stat-num {
+      color: #38bdf8;
+    }
+    .hub-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    /* Section Headers */
+    .hub-section-head {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+    .hub-section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .hub-section-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .hub-section-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .hub-section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Grade Cards Grid */
+    .grade-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .grade-hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .grade-hub-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+      border-color: rgba(6, 182, 212, 0.4);
+    }
+    .grade-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .grade-card-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+    .grade-card-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0.5rem 0 0.4rem;
+    }
+    .grade-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .grade-topics-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      font-size: 0.84rem;
+      color: var(--text-primary);
+    }
+    .grade-topics-list li {
+      padding: 0.35rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      border-bottom: 1px dashed rgba(255,255,255,0.06);
+    }
+    [data-theme='light'] .grade-topics-list li {
+      border-bottom: 1px dashed rgba(0,0,0,0.06);
+    }
+    .grade-topics-list li::before {
+      content: '✓';
+      color: #10b981;
+      font-weight: 800;
+    }
+
+    /* Lesson Plans Hub Banner */
+    .plans-modal-cta-box {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(6, 182, 212, 0.12) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    /* Lesson Plan Cards Grid */
+    .plans-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+    .plan-hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+    .plan-hub-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 24px rgba(16, 185, 129, 0.08);
+    }
+    .plan-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+    }
+    .plan-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+    .plan-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    /* Teaching Aids Grid */
+    .aids-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .aid-hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+    .aid-hub-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+    .aid-card-slides::before { background: #8b5cf6; }
+    .aid-card-exercises::before { background: #3b82f6; }
+    .aid-card-exams::before { background: #f59e0b; }
+
+    .aid-hub-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    }
+  </style>
 </head>
 <body>
 
@@ -59,10 +343,8 @@
             </div>
           </div>
 
-          <div class="hover-card-divider"></div>
-
-          <div class="hover-contact-list">
-            <!-- Phone Number Item -->
+          <div class="hover-card-body">
+            <!-- Phone Item -->
             <div class="hover-contact-item">
               <div class="hover-contact-icon icon-phone">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -149,7 +431,7 @@
         </div>
       </div>
 
-      <!-- Desktop Nav Menu (5 Main Menus with Submenus) -->
+      <!-- Desktop Nav Menu -->
       <nav aria-label="Main Navigation">
         <ul class="nav-menu">
           <!-- 1. ទំព័រដើម -->
@@ -159,7 +441,7 @@
             </a>
           </li>
 
-                              <!-- 2. ឯកសារបង្រៀន (Scrollable Dropdown Hub) -->
+                    <!-- 2. ឯកសារបង្រៀន (Scrollable Dropdown Hub) -->
           <li class="nav-item nav-item-has-dropdown" data-nav-group="teaching">
             <a href="teaching-materials.html" class="nav-link nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-nav="teaching">
               <span>ឯកសារបង្រៀន</span>
@@ -371,44 +653,40 @@
               </svg>
             </a>
             <div class="nav-dropdown-menu">
-              <div class="dropdown-menu-header">ព័ត៌មាន & ស្នាដៃ</div>
-              <a href="index.html#about" class="dropdown-item">
+              <a href="index.html#about" class="dropdown-item" data-section="about">
                 <div class="dropdown-item-icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 </div>
                 <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">អំពីអ្នកគ្រូ ឆេង ឆវ័ន្ត</div>
-                  <div class="dropdown-item-desc">ប្រវត្តិការងារ គរុកោសល្យ NIE & ទស្សនវិជ្ជា</div>
+                  <div class="dropdown-item-title">ប្រវត្តិ & បទពិសោធន៍</div>
+                  <div class="dropdown-item-desc">សញ្ញាបត្រ គរុកោសល្យ និងស្នាដៃបង្រៀន</div>
                 </div>
               </a>
-              <a href="index.html#testimonials" class="dropdown-item">
+              <a href="index.html#testimonials" class="dropdown-item" data-section="testimonials">
                 <div class="dropdown-item-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 </div>
                 <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">ជោគជ័យសិស្សឆ្នើម</div>
-                  <div class="dropdown-item-desc">សិស្សនិទ្ទេស A បាក់ឌុប & មេដាយសិស្សពូកែជាតិ</div>
+                  <div class="dropdown-item-title">មតិកែលម្អពីសិស្ស</div>
+                  <div class="dropdown-item-desc">ចំណាប់អារម្មណ៍ពីសិស្សនិទ្ទេស A & B</div>
                 </div>
               </a>
-              <a href="index.html#stats-section" class="dropdown-item">
+              <a href="index.html#stats-section" class="dropdown-item" data-section="stats-section">
                 <div class="dropdown-item-icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                 </div>
                 <div class="dropdown-item-content">
                   <div class="dropdown-item-title">ស្ថិតិ & សមិទ្ធផល</div>
-                  <div class="dropdown-item-desc">សិស្សជាង ២,៥០០ នាក់ និងអត្រាជោគជ័យ ៩៨%</div>
+                  <div class="dropdown-item-desc">អត្រាជាប់បាក់ឌុប ៩៨% និងសិស្សពូកែ</div>
                 </div>
               </a>
-              <a href="index.html#courses" class="dropdown-item">
+              <a href="index.html#courses" class="dropdown-item" data-section="courses">
                 <div class="dropdown-item-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                  </svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                 </div>
                 <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">វគ្គសិក្សាទាំងអស់</div>
-                  <div class="dropdown-item-desc">ថ្នាក់ទី១០-១២, ត្រៀមបាក់ឌុប & Olympiad</div>
+                  <div class="dropdown-item-title">វគ្គបំប៉នពិសេស</div>
+                  <div class="dropdown-item-desc">ថ្នាក់ត្រៀមប្រឡងបាក់ឌុប និងថ្នាក់ពង្រឹងគ្រឹះ</div>
                 </div>
               </a>
             </div>
@@ -636,7 +914,7 @@
         <span>ទំព័រដើម</span>
       </a>
 
-                  <!-- 2. ឯកសារបង្រៀន Accordion -->
+            <!-- 2. ឯកសារបង្រៀន Accordion -->
       <div class="mobile-accordion" data-mobile-group="teaching">
         <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
           <span class="mobile-link-text">
@@ -785,8 +1063,7 @@
         </div>
       </div>
 
-
-
+      <!-- 3. អំពីអ្នកគ្រូ Accordion -->
       <div class="mobile-accordion" data-mobile-group="about">
         <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
           <span class="mobile-link-text">
@@ -798,31 +1075,19 @@
         <div class="mobile-accordion-content">
           <a href="index.html#about" class="mobile-sub-link">
             <span class="sub-dot"></span>
-            <div>
-              <div class="sub-title">អំពីអ្នកគ្រូ ឆេង ឆវ័ន្ត</div>
-              <div class="sub-desc">ប្រវត្តិការងារ & បទពិសោធន៍</div>
-            </div>
+            <div><div class="sub-title">ប្រវត្តិ & បទពិសោធន៍</div><div class="sub-desc">សញ្ញាបត្រ និងស្នាដៃបង្រៀន</div></div>
           </a>
           <a href="index.html#testimonials" class="mobile-sub-link">
             <span class="sub-dot"></span>
-            <div>
-              <div class="sub-title">ជោគជ័យសិស្សឆ្នើម</div>
-              <div class="sub-desc">សិស្សនិទ្ទេស A & មេដាយជាតិ</div>
-            </div>
+            <div><div class="sub-title">មតិកែលម្អពីសិស្ស</div><div class="sub-desc">សិស្សនិទ្ទេស A & B</div></div>
           </a>
           <a href="index.html#stats-section" class="mobile-sub-link">
             <span class="sub-dot"></span>
-            <div>
-              <div class="sub-title">ស្ថិតិ & សមិទ្ធផល</div>
-              <div class="sub-desc">សិស្សជាង ២,៥០០ នាក់</div>
-            </div>
+            <div><div class="sub-title">ស្ថិតិ & សមិទ្ធផល</div><div class="sub-desc">អត្រាជាប់បាក់ឌុប ៩៨%</div></div>
           </a>
           <a href="index.html#courses" class="mobile-sub-link">
             <span class="sub-dot"></span>
-            <div>
-              <div class="sub-title">វគ្គសិក្សាទាំងអស់</div>
-              <div class="sub-desc">ថ្នាក់ទី១០-១២ & Olympiad</div>
-            </div>
+            <div><div class="sub-title">វគ្គបំប៉នពិសេស</div><div class="sub-desc">ត្រៀមបាក់ឌុប & ពង្រឹងគ្រឹះ</div></div>
           </a>
         </div>
       </div>
@@ -952,8 +1217,7 @@
         </div>
       </div>
 
-
-
+      <!-- 5. ទំនាក់ទំនង -->
       <a href="index.html#contact" class="mobile-nav-link">
         <span class="mobile-link-icon">📞</span>
         <span>ទំនាក់ទំនង</span>
@@ -962,230 +1226,480 @@
   </div>
 
   <!-- ============================================================
-       2. EXAMS HERO HEADER
+       2. PAGE HERO & QUICK STATS
        ============================================================ -->
-  <section class="academic-hero">
+  <section class="hub-hero">
     <div class="container">
-      <div class="academic-breadcrumb">
-        <a href="index.html">ទំព័រដើម</a>
-        <span>/</span>
-        <a href="teaching-materials.html">ឯកសារបង្រៀន</a>
-        <span>/</span>
-        <span style="color: var(--accent-cyan);">វិញ្ញាសាប្រឡងជាតិ & តេស្ត</span>
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+        <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">ទំព័រដើម</a> &rsaquo; 
+        <span style="color: var(--accent-cyan); font-weight: 600;">ឯកសារបង្រៀន</span>
       </div>
 
-      <div class="academic-badge">
-        <span>🏆 ត្រៀមប្រឡងបាក់ឌុប & សិស្សពូកែជាតិ (National Mock Exams)</span>
+      <div class="hub-badge">
+        <span>📖</span>
+        <span>ប្រព័ន្ធឯកសារបង្រៀន & កម្មវិធីសិក្សាគណិតវិទ្យា</span>
       </div>
 
-      <h1 class="academic-title">
-        វិញ្ញាសាប្រឡងបាក់ឌុប <br>
-        <span class="text-gradient">& តេស្តសាកល្បងសមត្ថភាព (Mock Exam)</span>
-      </h1>
-
-      <p class="academic-desc">
-        វិញ្ញាសាគំរូផ្លូវការរៀបចំឡើងស្របតាមទម្រង់ក្រសួងអប់រំ យុវជន និងកីឡា ដោយមានកំណត់ពេលជាក់ស្តែង ១៥០ នាទី ការបែងចែកពិន្ទុ និងគន្លឹះដោះស្រាយយកពិន្ទុពេញ។
+      <h1 class="hub-title">មជ្ឈមណ្ឌលឯកសារបង្រៀន (Teaching Materials)</h1>
+      <p class="hub-subtitle">
+        ប្រភពធនធានគរុកោសល្យគណិតវិទ្យាពេញលេញ រៀបចំយ៉ាងល្អិតល្អន់ស្របតាមស្តង់ដារក្រសួងអប់រំ យុវជន និងកីឡា រួមមានមេរៀនលម្អិតតាមកម្រិតថ្នាក់ កិច្ចតែងការបង្រៀនគំរូ ស្លាយបង្រៀនអន្តរកម្ម កម្រងលំហាត់ និងវិញ្ញាសាប្រឡង។
       </p>
+
+      <!-- Quick Stats -->
+      <div class="hub-stats-grid">
+        <div class="hub-stat-card">
+          <div class="hub-stat-num">៤ កម្រិត</div>
+          <div class="hub-stat-label">ថ្នាក់ទី ៩ ដល់ ថ្នាក់ទី ១២</div>
+        </div>
+        <div class="hub-stat-card">
+          <div class="hub-stat-num" style="color: #10b981;">៦ កិច្ចតែងការ</div>
+          <div class="hub-stat-label">គំរូ ៥០ នាទី & 5E / IBL Model</div>
+        </div>
+        <div class="hub-stat-card">
+          <div class="hub-stat-num" style="color: #8b5cf6;">ស្លាយ & 3D</div>
+          <div class="hub-stat-label">គំនូរជីវចល & បន្ទប់ពិសោធន៍ Oxyz</div>
+        </div>
+        <div class="hub-stat-card">
+          <div class="hub-stat-num" style="color: #f59e0b;">១០០% ឥតគិតថ្លៃ</div>
+          <div class="hub-stat-label">សម្រាប់សិស្ស & លោកគ្រូ-អ្នកគ្រូ</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============================================================
-       3. MOCK EXAM TIMER & EXAM PAPERS
+       3. SECTION 1: មេរៀនលម្អិតតាមកម្រិតថ្នាក់ (GRADES)
        ============================================================ -->
-  <div class="container" style="padding: 2.5rem 0 5rem;">
-    <!-- Live Mock Exam Timer Card -->
-    <div class="exam-timer-card">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <span style="font-size: 2.2rem;">⏱️</span>
-        <div>
-          <h4 style="font-size: 0.95rem; margin-bottom: 0.2rem; color: var(--text-primary);">
-            នាឡិកាប្រឡងសាកល្បង (Mock Exam Stopwatch)
-          </h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary);">
-            កំណត់ពេល ១៥០ នាទី (២ ម៉ោង ៣០ នាទី) ដូចក្នុងបន្ទប់ប្រឡងបាក់ឌុបពិតប្រាកដ
-          </p>
+  <section class="section" id="grade-lessons" style="padding-top: 3.5rem;">
+    <div class="container">
+      <div class="hub-section-head">
+        <div class="hub-section-title-wrap">
+          <div class="hub-section-icon" style="background: rgba(6, 182, 212, 0.12); color: #0284c7;">
+            📚
+          </div>
+          <div>
+            <h2 class="hub-section-title">មេរៀនលម្អិតតាមកម្រិតថ្នាក់ (Grades 9 - 12)</h2>
+            <div class="hub-section-subtitle">ជំពូកពេញលេញ បកស្រាយរូបមន្ត គន្លឹះដោះស្រាយ និងឧទាហរណ៍អនុវត្តជាក់ស្ដែង</div>
+          </div>
         </div>
+        <a href="lessons.html" class="btn btn-outline btn-sm" style="border-color: rgba(6,182,212,0.4); color: #0284c7;">
+          <span>មើលមេរៀនទាំងអស់ (All Lessons) &rarr;</span>
+        </a>
       </div>
 
-      <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-        <div class="timer-digits" id="exam-timer-display">02:30:00</div>
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <button class="btn btn-primary btn-sm" id="exam-start-timer">
-            <span>▶ ចាប់ផ្តើម</span>
-          </button>
-          <button class="btn btn-outline btn-sm" id="exam-pause-timer">
-            <span>⏸ ផ្អាក</span>
-          </button>
-          <button class="btn btn-outline btn-sm" id="exam-reset-timer">
-            <span>🔄 កំណត់ឡើងវិញ</span>
-          </button>
+      <!-- Grade Cards Grid -->
+      <div class="grade-hub-grid">
+        <!-- Grade 11 -->
+        <div class="grade-hub-card" style="border-top: 4px solid #0284c7;">
+          <div>
+            <div class="grade-card-top">
+              <span class="grade-card-icon">📐</span>
+              <span class="chip-badge" style="background: rgba(6,182,212,0.2); color: #0284c7; font-weight: 700;">ពេញនិយមបំផុត</span>
+            </div>
+            <h3 class="grade-card-title">គណិតវិទ្យា ថ្នាក់ទី ១១</h3>
+            <p class="grade-card-desc">ស្របតាមសៀវភៅគោលក្រសួងអប់រំ ភាគ១ & ភាគ២ ពង្រឹងមូលដ្ឋានគ្រឹះស៊ីជម្រៅឆ្ពោះទៅបាក់ឌុប។</p>
+            <ul class="grade-topics-list">
+              <li>អនុគមន៍អិចស្ប៉ូណង់ស្យែល & លោការីត</li>
+              <li>ស្វ៊ីតចំនួនពិត និងស្វ៊ីតនព្វន្ត / ធរណីមាត្រ</li>
+              <li>ត្រីកោណមាត្រកម្រិតខ្ពស់ និងវ៉ិចទ័រ</li>
+              <li>ស្ថិតិពិពណ៌នា និងប្រូបាប៊ីលីតេ</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+            <a href="lessons.html?grade=grade11" class="btn btn-primary" style="flex: 1; text-align: center; font-size: 0.88rem; padding: 0.6rem;">
+              <span>ចូលរៀនថ្នាក់ទី ១១</span>
+            </a>
+            <a href="game-grade11.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.6rem 0.8rem; border-color: rgba(139,92,246,0.3); color: #a78bfa;" title="លេងល្បែង Math Quest 11">
+              🎮
+            </a>
+          </div>
+        </div>
+
+        <!-- Grade 12 -->
+        <div class="grade-hub-card" style="border-top: 4px solid #8b5cf6;">
+          <div>
+            <div class="grade-card-top">
+              <span class="grade-card-icon">🎓</span>
+              <span class="chip-badge" style="background: rgba(139,92,246,0.2); color: #8b5cf6; font-weight: 700;">ត្រៀមបាក់ឌុប</span>
+            </div>
+            <h3 class="grade-card-title">គណិតវិទ្យា ថ្នាក់ទី ១២</h3>
+            <p class="grade-card-desc">មេរៀនស្នូលសម្រាប់ប្រឡងសញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិ (បាក់ឌុប) ឆ្ពោះទៅកាន់និទ្ទេស A។</p>
+            <ul class="grade-topics-list">
+              <li>លីមីតនៃអនុគមន៍ និងភាពជាប់</li>
+              <li>ដេរីវេ និងការអនុវត្តអតិបរមា-អប្បបរមា</li>
+              <li>អាំងតេក្រាលមិនកំណត់ & កំណត់ (គណនាផ្ទៃក្រឡា)</li>
+              <li>ធរណីមាត្រក្នុងលំហ កូអរដោនេ Oxyz</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+            <a href="lessons.html?grade=grade12" class="btn btn-primary" style="flex: 1; text-align: center; font-size: 0.88rem; padding: 0.6rem; background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+              <span>ចូលរៀនថ្នាក់ទី ១២</span>
+            </a>
+            <a href="grapher-3d.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.6rem 0.8rem; border-color: rgba(6,182,212,0.3); color: #38bdf8;" title="ពិសោធន៍ក្រាហ្វិក 3D Oxyz">
+              🧊 3D
+            </a>
+          </div>
+        </div>
+
+        <!-- Grade 10 -->
+        <div class="grade-hub-card" style="border-top: 4px solid #10b981;">
+          <div>
+            <div class="grade-card-top">
+              <span class="grade-card-icon">🌱</span>
+              <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #10b981; font-weight: 700;">ស្ពានចម្លងគ្រឹះ</span>
+            </div>
+            <h3 class="grade-card-title">គណិតវិទ្យា ថ្នាក់ទី ១០</h3>
+            <p class="grade-card-desc">ពង្រឹងគ្រឹះតភ្ជាប់ពីអនុវិទ្យាល័យមកវិទ្យាល័យ ការគិតបែបតក្កវិទ្យា និងសមីការស្មុគស្មាញ។</p>
+            <ul class="grade-topics-list">
+              <li>ស្វ័យគុណ រ៉ាឌីកាល់ និងចំនួនកុំផ្លិចបឋម</li>
+              <li>សមីការ & វិសមីការដឺក្រេទី ២</li>
+              <li>អនុគមន៍ពហុធា និងអនុគមន៍សនិទាន</li>
+              <li>វ៉ិចទ័រក្នុងប្លង់ និងត្រីកោណមាត្រគ្រឹះ</li>
+            </ul>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="lessons.html?grade=grade10" class="btn btn-primary" style="width: 100%; text-align: center; font-size: 0.88rem; padding: 0.6rem; background: linear-gradient(135deg, #10b981, #059669);">
+              <span>ចូលរៀនថ្នាក់ទី ១០</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Grade 9 -->
+        <div class="grade-hub-card" style="border-top: 4px solid #f59e0b;">
+          <div>
+            <div class="grade-card-top">
+              <span class="grade-card-icon">⚔️</span>
+              <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #f59e0b; font-weight: 700;">ឌីប្លូម & ល្បែង</span>
+            </div>
+            <h3 class="grade-card-title">គណិតវិទ្យា ថ្នាក់ទី ៩</h3>
+            <p class="grade-card-desc">ត្រៀមប្រឡងសញ្ញាបត្របឋមភូមិ (ឌីប្លូម) តាមរយៈការរៀនបណ្តើរ និងលេងល្បែង Math Hero បណ្តើរ។</p>
+            <ul class="grade-topics-list">
+              <li>កន្សោមពីជគណិត និងការបំបែកជាកត្តា</li>
+              <li>ប្រព័ន្ធសមីការដឺក្រេទី ១ មានពីរអញាត</li>
+              <li>ទ្រឹស្តីបទពីតាក័រ និងសមាមាត្រធរណីមាត្រ</li>
+              <li>ល្បែងគណិតវិទ្យា Math Hero Battle</li>
+            </ul>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="game-grade9.html" class="btn btn-primary" style="width: 100%; text-align: center; font-size: 0.88rem; padding: 0.6rem; background: linear-gradient(135deg, #f59e0b, #d97706);">
+              <span>ចូលរៀន & លេងថ្នាក់ទី ៩</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Official Style Exam Paper Sheet -->
-    <div class="exam-paper-sheet">
-      <!-- Exam Sheet Header -->
-      <div class="exam-sheet-header">
-        <div class="exam-country-header">
-          ព្រះរាជាណាចក្រកម្ពុជា <br>
-          ជាតិ សាសនា ព្រះមហាក្សត្រ
-        </div>
-        <div style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0;">
-          ក្រសួងអប់រំ យុវជន និងកីឡា | រៀបចំដោយ៖ អ្នកគ្រូ ឆេង ឆវ័ន្ត
-        </div>
-        <h2 class="exam-official-title">
-          វិញ្ញាសាគំរូប្រឡងបាក់ឌុប គណិតវិទ្យា (ថ្នាក់វិទ្យាសាស្ត្រ)
-        </h2>
-        <div class="exam-meta-grid">
-          <span>📅 សម័យប្រឡង៖ <strong>២០២៦</strong></span>
-          <span>⏱️ រយៈពេល៖ <strong>១៥០ នាទី</strong></span>
-          <span>💯 ពិន្ទុពេញ៖ <strong>១២៥ ពិន្ទុ</strong></span>
-        </div>
-      </div>
-
-      <!-- Part I -->
-      <div class="exam-section-block">
-        <div class="exam-section-header">
-          <span class="exam-section-name">I. ចំនួនកុំផ្លិច (១៥ ពិន្ទុ)</span>
-          <button class="tool-action-btn" onclick="this.parentElement.nextElementSibling.nextElementSibling.classList.toggle('open');">
-            <span>🔑 បង្ហាញពិន្ទុ & គន្លឹះ</span>
-          </button>
-        </div>
-        <div class="exam-question-body">
-          ១. ដោះស្រាយសមីការក្នុង $\mathbb{C}$៖ $z^2 - 4z + 8 = 0$។ <br>
-          ២. តាង $z_1, z_2$ ជាឫសទាំងពីរនៃសមីការខាងលើ។ សរសេរ $z_1, z_2$ ជាទម្រង់ត្រីកោណមាត្រ រួចគណនា $T = z_1^6 + z_2^6$។
-        </div>
-        <div class="exam-mark-scheme-drawer">
-          <div class="mark-scheme-title">✅ ការបែងចែកពិន្ទុ (Mark Scheme)៖</div>
-          <ul class="mark-scheme-list">
-            <li>គណនា $\Delta' = (-2)^2 - 8 = -4 = (2i)^2$: <strong>៥ ពិន្ទុ</strong></li>
-            <li>រកឫស $z_1 = 2 + 2i, z_2 = 2 - 2i$: <strong>៥ ពិន្ទុ</strong></li>
-            <li>ទម្រង់ត្រីកោណមាត្រ $z_{1,2} = 2\sqrt{2}(\cos(\pm \pi/4) + i\sin(\pm \pi/4))$ និងទាញបាន $T = -1024$: <strong>៥ ពិន្ទុ</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Part II -->
-      <div class="exam-section-block">
-        <div class="exam-section-header">
-          <span class="exam-section-name">II. ប្រូបាប (១៥ ពិន្ទុ)</span>
-          <button class="tool-action-btn" onclick="this.parentElement.nextElementSibling.nextElementSibling.classList.toggle('open');">
-            <span>🔑 បង្ហាញពិន្ទុ & គន្លឹះ</span>
-          </button>
-        </div>
-        <div class="exam-question-body">
-          ក្នុងថង់មួយមានបាល់ពណ៌ក្រហម ៥ បាល់ពណ៌ខៀវ ៤ និងបាល់ពណ៌លឿង ៣។ គេចាប់យកបាល់ ៣ ព្រមគ្នាដោយចៃដន្យ។ <br>
-          គណនាប្រូបាបនៃបាតុភូតខាងក្រោម៖ <br>
-          ក. A: «ចាប់បានបាល់ទាំង ៣ មានពណ៌ខុសៗគ្នា» <br>
-          ខ. B: «ចាប់បានបាល់យ៉ាងតិចមានពណ៌ក្រហមមួយ»
-        </div>
-        <div class="exam-mark-scheme-drawer">
-          <div class="mark-scheme-title">✅ ការបែងចែកពិន្ទុ (Mark Scheme)៖</div>
-          <ul class="mark-scheme-list">
-            <li>ចំនួនករណីអាច $n(S) = C_{12}^3 = 220$: <strong>៣ ពិន្ទុ</strong></li>
-            <li>$P(A) = \frac{C_5^1 \times C_4^1 \times C_3^1}{220} = \frac{60}{220} = \frac{3}{11}$: <strong>៦ ពិន្ទុ</strong></li>
-            <li>$P(B) = 1 - P(\bar{B}) = 1 - \frac{C_7^3}{220} = 1 - \frac{35}{220} = \frac{37}{44}$: <strong>៦ ពិន្ទុ</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Part III -->
-      <div class="exam-section-block">
-        <div class="exam-section-header">
-          <span class="exam-section-name">III. ធរណីមាត្រក្នុងលំហ (២០ ពិន្ទុ)</span>
-          <button class="tool-action-btn" onclick="this.parentElement.nextElementSibling.nextElementSibling.classList.toggle('open');">
-            <span>🔑 បង្ហាញពិន្ទុ & គន្លឹះ</span>
-          </button>
-        </div>
-        <div class="exam-question-body">
-          ក្នុងតម្រុយអរតូណរមេ $(O, \vec{i}, \vec{j}, \vec{k})$ គេឱ្យចំណុច $A(1, 0, 2), B(2, -1, 4), C(0, 3, 1)$ និង $D(3, 1, 2)$។ <br>
-          ១. គណនាផលគុណវ៉ិចទ័រ $\vec{AB} \times \vec{AC}$ រួចទាញរកក្រឡាផ្ទៃត្រីកោណ $ABC$។ <br>
-          ២. សរសេរសមីការប្លង់ $(P)$ កាត់តាមចំណុច $A, B, C$។ <br>
-          ៣. គណនាចម្ងាយពីចំណុច $D$ ទៅប្លង់ $(P)$។
-        </div>
-        <div class="exam-mark-scheme-drawer">
-          <div class="mark-scheme-title">✅ ការបែងចែកពិន្ទុ (Mark Scheme)៖</div>
-          <ul class="mark-scheme-list">
-            <li>$\vec{AB} = (1, -1, 2), \vec{AC} = (-1, 3, -1) \implies \vec{AB} \times \vec{AC} = (-5, -1, 2)$: <strong>៧ ពិន្ទុ</strong></li>
-            <li>សមីការប្លង់ $(P): -5(x-1) - (y-0) + 2(z-2) = 0 \implies 5x + y - 2z - 1 = 0$: <strong>៧ ពិន្ទុ</strong></li>
-            <li>ចម្ងាយ $d(D, P) = \frac{|5(3) + 1 - 2(2) - 1|}{\sqrt{25+1+4}} = \frac{11}{\sqrt{30}}$: <strong>៦ ពិន្ទុ</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Part IV -->
-      <div class="exam-section-block">
-        <div class="exam-section-header">
-          <span class="exam-section-name">IV. អាំងតេក្រាល (២០ ពិន្ទុ)</span>
-          <button class="tool-action-btn" onclick="this.parentElement.nextElementSibling.nextElementSibling.classList.toggle('open');">
-            <span>🔑 បង្ហាញពិន្ទុ & គន្លឹះ</span>
-          </button>
-        </div>
-        <div class="exam-question-body">
-          ១. គណនាអាំងតេក្រាល $I = \int_0^1 (2x + 1) e^x dx$ ដោយប្រើអាំងតេក្រាលដោយផ្នែក។ <br>
-          ២. រកក្រឡាផ្ទៃដែនប្លង់ខណ្ឌដោយខ្សែកោង $y = x^2 - 4x + 3$ និងអ័ក្សអាប់ស៊ីស $Ox$ លើចន្លោះ $[1, 3]$។
-        </div>
-        <div class="exam-mark-scheme-drawer">
-          <div class="mark-scheme-title">✅ ការបែងចែកពិន្ទុ (Mark Scheme)៖</div>
-          <ul class="mark-scheme-list">
-            <li>អាំងតេក្រាលដោយផ្នែក $u = 2x+1, dv = e^x dx \implies I = e + 1$: <strong>១០ ពិន្ទុ</strong></li>
-            <li>ក្រឡាផ្ទៃ $S = -\int_1^3 (x^2 - 4x + 3)dx = \frac{4}{3}$ ឯកតាផ្ទៃ: <strong>១០ ពិន្ទុ</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Part V -->
-      <div class="exam-section-block" style="border-bottom: none;">
-        <div class="exam-section-header">
-          <span class="exam-section-name">V. សិក្សាអនុគមន៍ និងសង់ក្រាប (៥៥ ពិន្ទុ)</span>
-          <button class="tool-action-btn" onclick="this.parentElement.nextElementSibling.nextElementSibling.classList.toggle('open');">
-            <span>🔑 បង្ហាញពិន្ទុ & គន្លឹះ</span>
-          </button>
-        </div>
-        <div class="exam-question-body">
-          គេឱ្យអនុគមន៍ $f(x) = \frac{x^2 - 3x + 6}{x - 2}$ តាងក្រាបដោយ $(C)$។ <br>
-          ១. រកដែនកំណត់នៃអនុគមន៍ $f$។ <br>
-          ២. បង្ហាញថា $f(x) = x - 1 + \frac{4}{x - 2}$។ <br>
-          ៣. គណនាលីមីតត្រង់ចុងដែនកំណត់ និងទាញរកសមីការបន្ទាត់អាស៊ីមតូតឈរ និងអាស៊ីមតូតទ្រេតនៃ $(C)$។ <br>
-          ៤. គណនាដេរីវេ $f'(x)$ សិក្សាសញ្ញា និងគូសតារាងអថេរភាព។ <br>
-          ៥. បង្ហាញថាចំណុច $I(2, 1)$ ជាផ្ចិតឆ្លុះនៃក្រាប $(C)$។ <br>
-          ៦. សង់បន្ទាត់អាស៊ីមតូត និងក្រាប $(C)$ ក្នុងតម្រុយអរតូណរមេ។
-        </div>
-        <div class="exam-mark-scheme-drawer">
-          <div class="mark-scheme-title">✅ ការបែងចែកពិន្ទុ (Mark Scheme)៖</div>
-          <ul class="mark-scheme-list">
-            <li>ដែនកំណត់ $D = \mathbb{R} \setminus \{2\}$: <strong>៥ ពិន្ទុ</strong></li>
-            <li>ទម្រង់កាណូនិច $f(x) = x - 1 + \frac{4}{x-2}$: <strong>៥ ពិន្ទុ</strong></li>
-            <li>លីមីត និងអាស៊ីមតូតឈរ $x=2$, ទ្រេត $y=x-1$: <strong>១០ ពិន្ទុ</strong></li>
-            <li>ដេរីវេ $f'(x) = \frac{x(x-4)}{(x-2)^2}$ និងតារាងអថេរភាព: <strong>១៥ ពិន្ទុ</strong></li>
-            <li>ផ្ចិតឆ្លុះ $I(2, 1)$ តាមរូបមន្ត $f(4-x) + f(x) = 2$: <strong>៥ ពិន្ទុ</strong></li>
-            <li>សង់ក្រាប $(C)$ ស្អាត ត្រឹមត្រូវ មានបន្ទាត់អាស៊ីមតូត៖ <strong>១៥ ពិន្ទុ</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Action buttons -->
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
-        <button class="btn btn-outline" onclick="window.print()">
-          <span>🖨️ បោះពុម្ពក្រដាសវិញ្ញាសា</span>
-        </button>
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <a href="lessons.html?grade=grade12" class="btn btn-outline">
-            <span>📖 មើលមេរៀនពាក់ព័ន្ធ</span>
-          </a>
-          <a href="exercises.html?grade=grade12" class="btn btn-primary">
-            <span>✍️ ហ្វឹកហាត់លំហាត់បន្ថែម</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <!-- ============================================================
-       4. FOOTER
+       4. SECTION 2: កិច្ចតែងការបង្រៀនគរុកោសល្យ (LESSON PLANS)
        ============================================================ -->
-  <footer class="site-footer">
+  <section class="section" id="lesson-plans" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="hub-section-head">
+        <div class="hub-section-title-wrap">
+          <div class="hub-section-icon" style="background: rgba(16, 185, 129, 0.12); color: #10b981;">
+            📋
+          </div>
+          <div>
+            <h2 class="hub-section-title">កិច្ចតែងការបង្រៀនគរុកោសល្យ (Lesson Plans Hub)</h2>
+            <div class="hub-section-subtitle">កិច្ចតែងការស្តង់ដារ ៥០ នាទី (៣ ជួរឈរ) និង 5E / Inquiry-Based Learning (IBL) គំរូពេញលេញ</div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" onclick="openLessonPlanModal(event)" style="background: #10b981; border-color: #10b981;">
+          <span>✨ បើក Modal កិច្ចតែងការទាំង ៦</span>
+        </button>
+      </div>
+
+      <!-- Modal Opener Featured Box -->
+      <div class="plans-modal-cta-box">
+        <div style="max-width: 680px;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+            <span class="chip-badge" style="background: #10b981; color: #ffffff; font-weight: 700; font-size: 0.68rem; padding: 2px 8px; border-radius: 4px;">INTERACTIVE MODAL</span>
+            <span style="font-size: 0.85rem; color: #10b981; font-weight: 700;">ទាញយកឯកសារ Word (.docx) & បោះពុម្ព A4 ភ្លាមៗ</span>
+          </div>
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin: 0 0 0.5rem;">
+            ផ្ទាំងមើលកិច្ចតែងការបង្រៀនគំរូទាំងអស់ (Interactive Hub)
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">
+            អ្នកគ្រូអាចជ្រើសរើសមើលកិច្ចតែងការនីមួយៗក្នុងផ្ទាំង Popup ធំទូលាយ មើលវត្ថុបំណង ជំហានបង្រៀន ៥ ជំហាន សន្លឹកកិច្ចការសិស្ស ព្រមទាំងចុចទាញយកឯកសារជា Word ឬបោះពុម្ពបានភ្លាមៗ។
+          </p>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary" onclick="openLessonPlanModal(event)" style="background: #10b981; border: none; padding: 0.75rem 1.4rem; font-weight: 700; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);">
+            <span>✨ បើកផ្ទាំង Modal ឥឡូវនេះ</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 6 Lesson Plan Cards -->
+      <div class="plans-hub-grid">
+        <!-- Plan 1 -->
+        <div class="plan-hub-card">
+          <div>
+            <div class="plan-badge-row">
+              <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; font-weight: 700;">ថ្នាក់ទី ១១</span>
+              <span class="chip-badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">៥០ នាទី</span>
+              <span class="chip-badge" style="background: rgba(16,185,129,0.15); color: #10b981;">៣ ជួរឈរ</span>
+            </div>
+            <h4 class="plan-title">ស្វ៊ីតនព្វន្ត៖ ការស្វែងរកតួទី n</h4>
+            <p class="plan-desc">
+              កិច្ចតែងការ ៥០ នាទី បង្រៀនរូបមន្ត $u_n = u_1 + (n-1)d$ តាមរយៈឧទាហរណ៍ជាក់ស្តែង ការសន្សំប្រាក់ និងបញ្ហាកៅអីកីឡដ្ឋាន។
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="lesson-plan-arithmetic-sequence.html" class="btn btn-outline btn-sm" style="flex: 1; text-align: center; border-color: rgba(245,158,11,0.4); color: #fbbf24;">
+              <span>មើលទំព័រពេញ &rarr;</span>
+            </a>
+            <button type="button" class="btn btn-sm" onclick="openLessonPlanModal(event)" style="background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3);" title="បើក Modal">
+              Modal
+            </button>
+          </div>
+        </div>
+
+        <!-- Plan 2 -->
+        <div class="plan-hub-card">
+          <div>
+            <div class="plan-badge-row">
+              <span class="chip-badge" style="background: rgba(6,182,212,0.2); color: #38bdf8; font-weight: 700;">ថ្នាក់ទី ១១</span>
+              <span class="chip-badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">៥០ នាទី</span>
+              <span class="chip-badge" style="background: rgba(6,182,212,0.15); color: #0284c7;">IBL Model</span>
+            </div>
+            <h4 class="plan-title">ស្វ៊ីតចំនួនពិត៖ ម៉ោងទី ១ (និយមន័យ)</h4>
+            <p class="plan-desc">
+              សញ្ញាណទូទៅនៃស្វ៊ីតចំនួនពិត ភាពខុសគ្នារវាងស្វ៊ីតរាប់អស់ និងស្វ៊ីតអនន្ត តាមវិធីសាស្ត្ររិះរកសំណួរគន្លឹះ។
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="lesson-plan-sequences-ibl.html" class="btn btn-outline btn-sm" style="flex: 1; text-align: center; border-color: rgba(6,182,212,0.4); color: #0284c7;">
+              <span>មើលទំព័រពេញ &rarr;</span>
+            </a>
+            <button type="button" class="btn btn-sm" onclick="openLessonPlanModal(event)" style="background: rgba(6,182,212,0.15); color: #0284c7; border: 1px solid rgba(6,182,212,0.3);" title="បើក Modal">
+              Modal
+            </button>
+          </div>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="plan-hub-card">
+          <div>
+            <div class="plan-badge-row">
+              <span class="chip-badge" style="background: rgba(14,165,233,0.2); color: #0ea5e9; font-weight: 700;">ថ្នាក់ទី ១១</span>
+              <span class="chip-badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">៥០ នាទី</span>
+              <span class="chip-badge" style="background: rgba(16,185,129,0.15); color: #10b981;">៣ ជួរឈរ</span>
+            </div>
+            <h4 class="plan-title">ស្វ៊ីតចំនួនពិត៖ ម៉ោងទី ២ (ម៉ូណូតូន)</h4>
+            <p class="plan-desc">
+              ការកំណត់ស្វ៊ីតកើន ស្វ៊ីតចុះ និងស្វ៊ីតម៉ូណូតូន តាមរយៈផលដក $u_{n+1}-u_n$ និងផលធៀប $\frac{u_{n+1}}{u_n}$។
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="lesson-plan-sequences-hour2.html" class="btn btn-outline btn-sm" style="flex: 1; text-align: center; border-color: rgba(14,165,233,0.4); color: #0ea5e9;">
+              <span>មើលទំព័រពេញ &rarr;</span>
+            </a>
+            <button type="button" class="btn btn-sm" onclick="openLessonPlanModal(event)" style="background: rgba(14,165,233,0.15); color: #0ea5e9; border: 1px solid rgba(14,165,233,0.3);" title="បើក Modal">
+              Modal
+            </button>
+          </div>
+        </div>
+
+        <!-- Plan 4 -->
+        <div class="plan-hub-card">
+          <div>
+            <div class="plan-badge-row">
+              <span class="chip-badge" style="background: rgba(2,132,199,0.2); color: #38bdf8; font-weight: 700;">ថ្នាក់ទី ១១</span>
+              <span class="chip-badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">៥០ នាទី</span>
+              <span class="chip-badge" style="background: rgba(16,185,129,0.15); color: #10b981;">៣ ជួរឈរ</span>
+            </div>
+            <h4 class="plan-title">ស្វ៊ីតចំនួនពិត៖ ម៉ោងទី ៣ (ស្វ៊ីតទាល់)</h4>
+            <p class="plan-desc">
+              សញ្ញាណស្វ៊ីតទាល់លើ ស្វ៊ីតទាល់ក្រោម ស្វ៊ីតទាល់ និងកម្រងលំហាត់អនុវត្តសរុបស្វ៊ីតចំនួនពិត។
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="lesson-plan-sequences-hour3.html" class="btn btn-outline btn-sm" style="flex: 1; text-align: center; border-color: rgba(2,132,199,0.4); color: #0284c7;">
+              <span>មើលទំព័រពេញ &rarr;</span>
+            </a>
+            <button type="button" class="btn btn-sm" onclick="openLessonPlanModal(event)" style="background: rgba(2,132,199,0.15); color: #0284c7; border: 1px solid rgba(2,132,199,0.3);" title="បើក Modal">
+              Modal
+            </button>
+          </div>
+        </div>
+
+        <!-- Plan 5 -->
+        <div class="plan-hub-card">
+          <div>
+            <div class="plan-badge-row">
+              <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #34d399; font-weight: 700;">ថ្នាក់ទី ១១</span>
+              <span class="chip-badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">៥០ នាទី</span>
+              <span class="chip-badge" style="background: rgba(16,185,129,0.15); color: #10b981;">5E Model</span>
+            </div>
+            <h4 class="plan-title">អនុគមន៍អិចស្ប៉ូណង់ស្យែល (5E IBL)</h4>
+            <p class="plan-desc">
+              បង្រៀនតាមម៉ូដែល 5E (Engage, Explore, Explain, Elaborate, Evaluate) លើក្រាប $y=a^x$ និងលក្ខណៈសម្បត្តិ។
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="lesson-plan-exponential-ibl.html" class="btn btn-outline btn-sm" style="flex: 1; text-align: center; border-color: rgba(16,185,129,0.4); color: #10b981;">
+              <span>មើលទំព័រពេញ &rarr;</span>
+            </a>
+            <button type="button" class="btn btn-sm" onclick="openLessonPlanModal(event)" style="background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3);" title="បើក Modal">
+              Modal
+            </button>
+          </div>
+        </div>
+
+        <!-- Plan 6 -->
+        <div class="plan-hub-card">
+          <div>
+            <div class="plan-badge-row">
+              <span class="chip-badge" style="background: rgba(139,92,246,0.2); color: #a78bfa; font-weight: 700;">ថ្នាក់ទី ១១</span>
+              <span class="chip-badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">៥០ នាទី</span>
+              <span class="chip-badge" style="background: rgba(139,92,246,0.15); color: #8b5cf6;">5E Model</span>
+            </div>
+            <h4 class="plan-title">សមីការលោការីត (5E Model)</h4>
+            <p class="plan-desc">
+              ការដោះស្រាយសមីការ $\log_a x = b$ និងលក្ខខណ្ឌអត្ថិភាពនៃអថេរ តាមដំណាក់កាលរិះរកគរុកោសល្យទំនើប។
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="lesson-plan-logarithmic-equations.html" class="btn btn-outline btn-sm" style="flex: 1; text-align: center; border-color: rgba(139,92,246,0.4); color: #8b5cf6;">
+              <span>មើលទំព័រពេញ &rarr;</span>
+            </a>
+            <button type="button" class="btn btn-sm" onclick="openLessonPlanModal(event)" style="background: rgba(139,92,246,0.15); color: #8b5cf6; border: 1px solid rgba(139,92,246,0.3);" title="បើក Modal">
+              Modal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. SECTION 3: ឯកសារជំនួយ & ការវាយតម្លៃ (TEACHING AIDS)
+       ============================================================ -->
+  <section class="section" id="teaching-aids" style="padding-top: 1rem; background: rgba(255,255,255,0.01);">
+    <div class="container">
+      <div class="hub-section-head">
+        <div class="hub-section-title-wrap">
+          <div class="hub-section-icon" style="background: rgba(139, 92, 246, 0.12); color: #8b5cf6;">
+            ✨
+          </div>
+          <div>
+            <h2 class="hub-section-title">ឯកសារជំនួយ & ការវាយតម្លៃ (Aids & Assessment)</h2>
+            <div class="hub-section-subtitle">ស្លាយបង្ហាញអន្តរកម្ម ធនាគារលំហាត់ និងកម្រងវិញ្ញាសាប្រឡងជាតិគ្រប់ជំនាន់</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Featured Aid Cards -->
+      <div class="aids-hub-grid">
+        <!-- 1. Slides -->
+        <div class="aid-hub-card aid-card-slides">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <span style="font-size: 2.2rem;">🖥️</span>
+              <span class="chip-badge" style="background: rgba(139,92,246,0.2); color: #8b5cf6;">អន្តរកម្ម Interactive</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin: 0 0 0.5rem;">
+              ស្លាយបង្រៀនអន្តរកម្ម (Interactive Slides)
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+              ស្លាយឌីជីថលបង្ហាញតាមជំហាន ងាយស្រួលសម្រាប់លោកគ្រូ-អ្នកគ្រូនាំយកទៅបង្ហាញលើ Projector ឬ Smart TV ក្នុងថ្នាក់រៀន ជាមួយរូបមន្ត KaTeX ច្បាស់ត្រជាក់ភ្នែក។
+            </p>
+            <ul class="grade-topics-list">
+              <li>ស្លាយស្វ៊ីតនព្វន្ត & ស្វ៊ីតធរណីមាត្រ</li>
+              <li>ស្លាយអនុគមន៍អិចស្ប៉ូណង់ស្យែល & ក្រាប</li>
+              <li>ចលនាអន្តរកម្មបង្ហាញរូបមន្ត</li>
+            </ul>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="slides.html" class="btn btn-primary" style="width: 100%; text-align: center; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border: none;">
+              <span>ចូលទស្សនាស្លាយបង្រៀន &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Exercises -->
+        <div class="aid-hub-card aid-card-exercises">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <span style="font-size: 2.2rem;">📝</span>
+              <span class="chip-badge" style="background: rgba(59,130,246,0.2); color: #3b82f6;">លំហាត់អនុវត្ត</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin: 0 0 0.5rem;">
+              កម្រងលំហាត់អនុវត្ត (Practice Exercises)
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+              ធនាគារលំហាត់គណិតវិទ្យាបែងចែកតាមកម្រិតលំបាក ពីកម្រិតមូលដ្ឋាន មធ្យម ដល់កម្រិតសិស្សពូកែ អមជាមួយដំណោះស្រាយមួយជំហានម្តងៗយ៉ាងលម្អិត។
+            </p>
+            <ul class="grade-topics-list">
+              <li>លំហាត់តាមជំពូកថ្នាក់ទី ១០, ១១, ១២</li>
+              <li>គន្លឹះដោះស្រាយលំហាត់ស្មុគស្មាញ</li>
+              <li>ទាញយកជាឯកសារ PDF សម្រាប់ព្រីន</li>
+            </ul>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="exercises.html" class="btn btn-primary" style="width: 100%; text-align: center; background: linear-gradient(135deg, #3b82f6, #2563eb); border: none;">
+              <span>ចូលមើលកម្រងលំហាត់ &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Exams -->
+        <div class="aid-hub-card aid-card-exams">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <span style="font-size: 2.2rem;">🎯</span>
+              <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #f59e0b;">ប្រឡងបាក់ឌុប</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin: 0 0 0.5rem;">
+              វិញ្ញាសាប្រឡងជាតិ & តេស្ត (Exams & Tests)
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+              ប្រមូលផ្តុំវិញ្ញាសាប្រឡងបាក់ឌុបថ្នាក់ជាតិគ្រប់ឆ្នាំ វិញ្ញាសាឌីប្លូម និងវិញ្ញាសាប្រឡងសិស្សពូកែទូទាំងប្រទេស អមជាមួយអត្រាកំណែផ្លូវការ។
+            </p>
+            <ul class="grade-topics-list">
+              <li>វិញ្ញាសាបាក់ឌុបថ្នាក់វិទ្យាសាស្ត្រ & សង្គម</li>
+              <li>តេស្តវាស់សមត្ថភាពកំណត់ម៉ោងធ្វើ</li>
+              <li>អត្រាកំណែ និងពិន្ទុតាមដំណាក់កាល</li>
+            </ul>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="exams.html" class="btn btn-primary" style="width: 100%; text-align: center; background: linear-gradient(135deg, #f59e0b, #d97706); border: none;">
+              <span>ចូលមើលវិញ្ញាសា & តេស្ត &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. CTA SECTION
+       ============================================================ -->
+  <section class="section" style="padding: 3rem 0; border-top: 1px solid var(--border-color);">
+    <div class="container" style="text-align: center; max-width: 760px;">
+      <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem;">
+        ត្រូវការការប្រឹក្សាគរុកោសល្យ ឬចុះឈ្មោះរៀនបន្ថែម?
+      </h2>
+      <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.75rem;">
+        អ្នកគ្រូ ឆេង ឆវ័ន្ត រីករាយស្វាគមន៍ជានិច្ចក្នុងការពិភាក្សាអំពីវិធីសាស្ត្របង្រៀនគណិតវិទ្យា ក៏ដូចជាវគ្គបំប៉នពិសេសត្រៀមប្រឡងបាក់ឌុប និងថ្នាក់ពង្រឹងគ្រឹះ។
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="index.html#contact" class="btn btn-primary" style="padding: 0.75rem 1.6rem;">
+          <span>📞 ទាក់ទងអ្នកគ្រូផ្ទាល់</span>
+        </a>
+        <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.75rem 1.6rem; border-color: rgba(6,182,212,0.4); color: #0284c7;">
+          <span>✈️ ឆាតតាម Telegram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. FOOTER
+       ============================================================ -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
@@ -1197,21 +1711,20 @@
             </div>
           </div>
           <p class="footer-brand-desc">
-            វិញ្ញាសាប្រឡងគំរូ និងតេស្តវាស់ស្ទង់សមត្ថភាពបាក់ឌុប និងសិស្សពូកែទូទាំងប្រទេស។
+            មជ្ឈមណ្ឌលឯកសារបង្រៀនគណិតវិទ្យា សម្រាប់ពង្រឹងសមត្ថភាពសិស្សានុសិស្សឆ្ពោះទៅកាន់និទ្ទេស A។
           </p>
         </div>
 
         <div>
           <h4 class="footer-heading">ប្រព័ន្ធបង្រៀន</h4>
           <ul class="footer-links">
+            <li><a href="teaching-materials.html" class="footer-link" style="color: var(--accent-cyan); font-weight: 700;">📖 មជ្ឈមណ្ឌលឯកសារបង្រៀន</a></li>
             <li><a href="lessons.html" class="footer-link">មេរៀនលម្អិតតាមកម្រិតថ្នាក់</a></li>
             <li><a href="slides.html" class="footer-link">ស្លាយបង្រៀនអន្តរកម្ម</a></li>
             <li><a href="exercises.html" class="footer-link">កម្រងលំហាត់អនុវត្ត</a></li>
             <li><a href="exams.html" class="footer-link">វិញ្ញាសាប្រឡងជាតិ & តេស្ត</a></li>
             <li><a href="game-grade9.html" class="footer-link" style="color: #f59e0b;">⚔️ ល្បែងគណិតថ្នាក់ទី ៩</a></li>
             <li><a href="game-grade11.html" class="footer-link" style="color: #a78bfa;">🎮 ល្បែងគណិតថ្នាក់ទី ១១</a></li>
-            <li><a href="lesson-plan-exponential-ibl.html" class="footer-link" style="color: #34d399; font-weight: 600;">📝 កិច្ចតែងការបង្រៀន (IBL)</a></li>
-            <li><a href="index.html#arithmetic-video-studio" class="footer-link">វីដេអូបម្រើបម្រាស់ស្វ៊ីតនព្វន្ត</a></li>
           </ul>
         </div>
 
@@ -1221,6 +1734,7 @@
             <li><a href="lessons.html?grade=grade12" class="footer-link">ថ្នាក់ទី ១២ (ត្រៀមបាក់ឌុប)</a></li>
             <li><a href="lessons.html?grade=grade11" class="footer-link">ថ្នាក់ទី ១១ (ពង្រឹងគ្រឹះ)</a></li>
             <li><a href="lessons.html?grade=grade10" class="footer-link">ថ្នាក់ទី ១០ (ស្ពានចម្លង)</a></li>
+            <li><a href="game-grade9.html" class="footer-link">ថ្នាក់ទី ៩ (Math Hero)</a></li>
           </ul>
         </div>
 
@@ -1243,8 +1757,35 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/academic-data.js"></script>
-  <script src="js/academic.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/lesson-plan-modal.js"></script>
+  <script>
+    // Copy contact text
+    function copyContactText(event, text, btn) {
+      event.preventDefault();
+      event.stopPropagation();
+      navigator.clipboard.writeText(text).then(() => {
+        const span = btn.querySelector('span');
+        const orig = span ? span.innerText : 'ចម្លង';
+        if (span) span.innerText = 'បានចម្លង!';
+        setTimeout(() => {
+          if (span) span.innerText = orig;
+        }, 2000);
+      });
+    }
+
+    // Auto-render KaTeX math formulas
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
 </body>
 </html>

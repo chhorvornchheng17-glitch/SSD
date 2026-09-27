@@ -117,12 +117,16 @@
       });
     });
 
-    // Submenu Toggle on Click (កិច្ចតែងការបង្រៀន)
+    // Submenu Toggle on Click (កិច្ចតែងការបង្រៀន) -> Opens Modal Hub!
     const submenuToggles = document.querySelectorAll('.dropdown-submenu-toggle-btn');
     submenuToggles.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+        if (typeof window.openLessonPlanModal === 'function') {
+          window.openLessonPlanModal(e);
+          return;
+        }
         const wrapper = btn.closest('.dropdown-submenu-wrapper');
         if (!wrapper) return;
         const wasOpen = wrapper.classList.contains('is-open');
@@ -138,12 +142,16 @@
       });
     });
 
-    // Mobile Submenu Accordion Toggle (កិច្ចតែងការបង្រៀន)
+    // Mobile Submenu Accordion Toggle (កិច្ចតែងការបង្រៀន) -> Opens Modal Hub!
     const mobileSubToggles = document.querySelectorAll('.mobile-sub-accordion-btn');
     mobileSubToggles.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+        if (typeof window.openLessonPlanModal === 'function') {
+          window.openLessonPlanModal(e);
+          return;
+        }
         const wrapper = btn.closest('.mobile-sub-accordion-wrapper');
         if (!wrapper) return;
         const isOpen = wrapper.classList.toggle('is-open');

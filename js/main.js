@@ -172,14 +172,30 @@
       });
     });
 
-    // Submenu Toggle on Click (កិច្ចតែងការបង្រៀន)
+    // Submenu Toggle on Click / Touch
     const submenuToggles = document.querySelectorAll('.dropdown-submenu-toggle-btn');
     submenuToggles.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
         const wrapper = btn.closest('.dropdown-submenu-wrapper');
         if (!wrapper) return;
+        const submenuType = wrapper.dataset.submenu;
+        const isArrowClick = e.target.closest('.submenu-arrow-icon');
+
+        // If it's a link (such as lessons.html) and user clicked the link/content on desktop, allow standard navigation
+        if (btn.tagName === 'A' && !isArrowClick && window.innerWidth > 992) {
+          return;
+        }
+
+        // If it's lesson plans button and clicked directly (not the arrow):
+        if (submenuType === 'lesson-plans' && !isArrowClick && typeof window.openLessonPlanModal === 'function') {
+          e.preventDefault();
+          e.stopPropagation();
+          window.openLessonPlanModal(e);
+          return;
+        }
+
+        e.preventDefault();
+        e.stopPropagation();
         const wasOpen = wrapper.classList.contains('is-open');
         document.querySelectorAll('.dropdown-submenu-wrapper').forEach(w => {
           if (w !== wrapper) {
@@ -193,7 +209,7 @@
       });
     });
 
-    // Mobile Submenu Accordion Toggle (កិច្ចតែងការបង្រៀន)
+    // Mobile Submenu Accordion Toggle
     const mobileSubToggles = document.querySelectorAll('.mobile-sub-accordion-btn');
     mobileSubToggles.forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -203,6 +219,12 @@
         if (!wrapper) return;
         const isOpen = wrapper.classList.toggle('is-open');
         btn.setAttribute('aria-expanded', String(isOpen));
+
+        // Ensure parent mobile-accordion-content has sufficient room
+        const parentContent = wrapper.closest('.mobile-accordion-content');
+        if (parentContent && parentContent.style.maxHeight) {
+          parentContent.style.maxHeight = '1200px';
+        }
       });
     });
 

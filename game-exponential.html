@@ -279,128 +279,206 @@
             </a>
           </li>
 
-          <!-- 2. ឯកសារបង្រៀន (Teaching Hub) -->
+                              <!-- 2. ឯកសារបង្រៀន (Scrollable Dropdown Hub) -->
           <li class="nav-item nav-item-has-dropdown" data-nav-group="teaching">
-            <a href="lessons.html" class="nav-link nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
+            <a href="teaching-materials.html" class="nav-link nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-nav="teaching">
               <span>ឯកសារបង្រៀន</span>
               <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </a>
-            <div class="nav-dropdown-menu">
-              <div class="dropdown-menu-header">ការគ្រប់គ្រងការបង្រៀន</div>
-              <a href="lessons.html" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            <div class="nav-dropdown-menu teaching-scroll-dropdown">
+              <!-- Sticky Top Header -->
+              <div class="teaching-dropdown-head">
+                <div class="teaching-head-title">
+                  <span>📖 ឯកសារបង្រៀន & គរុកោសល្យ</span>
                 </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">មេរៀនលម្អិត</div>
-                  <div class="dropdown-item-desc">ជំពូកពេញលេញស្របតាមសៀវភៅគោលក្រសួង</div>
-                </div>
-              </a>
-              <!-- Sub-menu Grade Categories Grid -->
-              <div class="dropdown-grade-chips">
-                <a href="lessons.html?grade=grade11" class="dropdown-grade-chip" title="សៀវភៅគណិតថ្នាក់ទី១១ ភាគ១">
-                  <span class="chip-icon">📐</span>
-                  <span class="chip-text">ថ្នាក់ទី ១១ <small>(សៀវភៅគោល ភាគ១)</small></span>
-                  <span class="chip-badge">ថ្មី</span>
-                </a>
-                <a href="lessons.html?grade=grade12" class="dropdown-grade-chip" title="ថ្នាក់ទី ១២ ត្រៀមបាក់ឌុប">
-                  <span class="chip-icon">🎓</span>
-                  <span class="chip-text">ថ្នាក់ទី ១២ <small>(បាក់ឌុប)</small></span>
-                </a>
-                <a href="lessons.html?grade=grade10" class="dropdown-grade-chip" title="ថ្នាក់ទី ១០ ស្ពានចម្លង">
-                  <span class="chip-icon">🌱</span>
-                  <span class="chip-text">ថ្នាក់ទី ១០ <small>(ស្ពានចម្លង)</small></span>
-                </a>
-                <a href="game-grade9.html" class="dropdown-grade-chip" title="ថ្នាក់ទី ៩ Math Hero">
-                  <span class="chip-icon">⚔️</span>
-                  <span class="chip-text">ថ្នាក់ទី ៩ <small>(Math Hero)</small></span>
+                <a href="teaching-materials.html" class="teaching-head-hub-link" title="ចូលទំព័រមជ្ឈមណ្ឌលឯកសារបង្រៀនពេញលេញ">
+                  <span>ទំព័រ Hub ›</span>
                 </a>
               </div>
-              <!-- Submenu: កិច្ចតែងការបង្រៀន (Click-Only Flyout Submenu) -->
-              <div class="dropdown-submenu-wrapper">
-                <button type="button" class="dropdown-submenu-toggle-btn" aria-haspopup="true" aria-expanded="false">
-                  <div class="dropdown-item-icon" style="background: rgba(16, 185, 129, 0.12); color: #10b981;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                      <polyline points="14 2 14 8 20 8"></polyline>
-                      <line x1="16" y1="13" x2="8" y2="13"></line>
-                      <line x1="16" y1="17" x2="8" y2="17"></line>
-                      <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
-                  </div>
-                  <div class="dropdown-item-content" style="flex: 1;">
-                    <div class="dropdown-item-title" style="display: flex; align-items: center; justify-content: space-between;">
-                      <span>កិច្ចតែងការបង្រៀន</span>
-                      <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #10b981; font-size: 0.65rem; padding: 1px 7px; border-radius: 999px; font-weight: 700;">៣ មេរៀន</span>
+
+              <!-- Scrollable Body (អូសឡើងចុះក្រោមបានយ៉ាងស្រួល) -->
+              <div class="teaching-scroll-body">
+                <!-- Group 1: កម្រិតថ្នាក់សិក្សា -->
+                <div class="teaching-group-title">
+                  <span>📚 កម្រិតថ្នាក់សិក្សា (Curriculum)</span>
+                  <a href="lessons.html" style="font-size: 0.65rem; color: #0284c7; text-decoration: none; font-weight: 700;">មើលទាំងអស់</a>
+                </div>
+
+                <a href="lessons.html" class="dropdown-item teaching-scroll-item" title="មើលមេរៀនទាំងអស់">
+                  <span class="teaching-item-dot" style="background: #0284c7;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📖 មើលមេរៀនទាំងអស់ (All Lessons)</span>
+                      <span class="chip-badge" style="background: rgba(6,182,212,0.18); color: #0284c7; font-size: 0.62rem; padding: 1px 6px; border-radius: 999px;">ថ្នាក់ ៩-១២</span>
                     </div>
-                    <div class="dropdown-item-desc">ស្វ៊ីតនព្វន្ត, ស្វ៊ីតចំនួនពិត, អិចស្ប៉ូណង់ស្យែល (ចុចដើម្បីមើល)</div>
+                    <div class="teaching-item-desc">ជំពូកពេញលេញស្របតាមសៀវភៅគោលក្រសួង</div>
                   </div>
-                  <div class="submenu-arrow-icon" style="margin-left: 6px; color: var(--text-muted); transition: transform 0.2s ease;">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
+                </a>
+
+                <a href="lessons.html?grade=grade11" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ១១">
+                  <span class="teaching-item-dot" style="background: #0ea5e9;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📐 ថ្នាក់ទី ១១ (សៀវភៅគោល ភាគ១)</span>
+                      <span class="chip-badge" style="background: rgba(14,165,233,0.18); color: #0ea5e9; font-size: 0.6rem; padding: 1px 5px; border-radius: 4px;">ពេញនិយម</span>
+                    </div>
+                    <div class="teaching-item-desc">អនុគមន៍, ស្វ៊ីត, ធរណីមាត្រ និងស្ថិតិ</div>
                   </div>
-                </button>
-                <div class="dropdown-submenu-flyout">
-                  <div class="dropdown-submenu-flyout-header">
-                    <span>📋 ជ្រើសរើសកិច្ចតែងការបង្រៀន</span>
-                    <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #10b981; font-size: 0.65rem; padding: 1px 7px; border-radius: 999px;">៣ មេរៀន</span>
+                </a>
+
+                <a href="lessons.html?grade=grade12" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ១២">
+                  <span class="teaching-item-dot" style="background: #8b5cf6;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🎓 ថ្នាក់ទី ១២ (ត្រៀមបាក់ឌុប)</span>
+                    </div>
+                    <div class="teaching-item-desc">លីមីត, ដេរីវេ, អាំងតេក្រាល & វិញ្ញាសា</div>
                   </div>
-                  <div class="dropdown-sub-items-list">
-                    <a href="lesson-plan-arithmetic-sequence.html" class="dropdown-sub-item-link" title="កិច្ចតែងការបង្រៀន៖ ស្វ៊ីតនព្វន្ត (តួទី n)">
-                      <span class="sub-link-dot" style="background: #f59e0b;"></span>
-                      <span class="sub-link-text">
-                        <strong>ស្វ៊ីតនព្វន្ត៖ តួទី n</strong>
-                        <small>រូបមន្ត $u_n = u_1 + (n-1)d$ (៥០ នាទី)</small>
-                      </span>
-                      <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; font-size: 0.62rem; padding: 1px 5px; border-radius: 4px;">ថ្មី</span>
-                    </a>
-                    <a href="lesson-plan-sequences-ibl.html" class="dropdown-sub-item-link" title="កិច្ចតែងការបង្រៀន៖ ស្វ៊ីតចំនួនពិត">
-                      <span class="sub-link-dot" style="background: #0284c7;"></span>
-                      <span class="sub-link-text">
-                        <strong>ស្វ៊ីតចំនួនពិត (ម៉ោងទី១)</strong>
-                        <small>ស្វ៊ីតរាប់អស់ ស្វ៊ីតអនន្ត និងនិយមន័យ (៥០ នាទី)</small>
-                      </span>
-                    </a>
-                    <a href="lesson-plan-exponential-ibl.html" class="dropdown-sub-item-link" onclick="openLessonPlanModal(event)" title="កិច្ចតែងការបង្រៀន៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល">
-                      <span class="sub-link-dot" style="background: #10b981;"></span>
-                      <span class="sub-link-text">
-                        <strong>អនុគមន៍អិចស្ប៉ូណង់ស្យែល</strong>
-                        <small>គរុកោសល្យរិះរក 5E Model (Print/PDF)</small>
-                      </span>
-                    </a>
+                </a>
+
+                <a href="lessons.html?grade=grade10" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ១០">
+                  <span class="teaching-item-dot" style="background: #10b981;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🌱 ថ្នាក់ទី ១០ (ស្ពានចម្លងគ្រឹះ)</span>
+                    </div>
+                    <div class="teaching-item-desc">ពង្រឹងគ្រឹះពីអនុវិទ្យាល័យទៅវិទ្យាល័យ</div>
                   </div>
+                </a>
+
+                <a href="game-grade9.html" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ៩">
+                  <span class="teaching-item-dot" style="background: #f59e0b;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>⚔️ ថ្នាក់ទី ៩ (Math Hero & ឌីប្លូម)</span>
+                    </div>
+                    <div class="teaching-item-desc">មូលដ្ឋានគ្រឹះ & ល្បែងគណិតវិទ្យា</div>
+                  </div>
+                </a>
+
+                <!-- Group 2: កិច្ចតែងការបង្រៀន -->
+                <div class="teaching-group-title">
+                  <span>📋 កិច្ចតែងការបង្រៀនគរុកោសល្យ</span>
+                  <span style="font-size: 0.65rem; color: #10b981; font-weight: 700;">៦ កិច្ចតែងការ</span>
                 </div>
+
+                <a href="javascript:void(0)" onclick="openLessonPlanModal(event)" class="dropdown-item teaching-scroll-item" style="background: rgba(16, 185, 129, 0.1); border: 1px dashed rgba(16, 185, 129, 0.4);" title="បើកផ្ទាំង Modal កិច្ចតែងការ">
+                  <span class="teaching-item-dot" style="background: #10b981;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span style="color: #10b981; font-weight: 700;">✨ បើកផ្ទាំង Modal កិច្ចតែងការទាំង ៦</span>
+                      <span class="chip-badge" style="background: rgba(16,185,129,0.25); color: #10b981; font-size: 0.62rem; padding: 1px 6px; border-radius: 999px;">MODAL</span>
+                    </div>
+                    <div class="teaching-item-desc" style="color: #34d399;">ទាញយក Word, PDF និងបោះពុម្ព A4 ភ្លាមៗ</div>
+                  </div>
+                </a>
+
+                <a href="lesson-plan-arithmetic-sequence.html" class="dropdown-item teaching-scroll-item" title="ស្វ៊ីតនព្វន្ត៖ តួទី n">
+                  <span class="teaching-item-dot" style="background: #f59e0b;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>ស្វ៊ីតនព្វន្ត៖ តួទី n</span>
+                      <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; font-size: 0.6rem; padding: 1px 5px; border-radius: 3px;">ថ្មី</span>
+                    </div>
+                    <div class="teaching-item-desc">រូបមន្ត $u_n = u_1 + (n-1)d$ (៥០ នាទី)</div>
+                  </div>
+                </a>
+
+                <a href="lesson-plan-sequences-ibl.html" class="dropdown-item teaching-scroll-item" title="ស្វ៊ីតចំនួនពិត ម៉ោងទី១">
+                  <span class="teaching-item-dot" style="background: #0284c7;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>ស្វ៊ីតចំនួនពិត (ម៉ោងទី១)</span>
+                    </div>
+                    <div class="teaching-item-desc">និយមន័យ, ស្វ៊ីតរាប់អស់ និងអនន្ត (៥០ នាទី)</div>
+                  </div>
+                </a>
+
+                <a href="lesson-plan-sequences-hour2.html" class="dropdown-item teaching-scroll-item" title="ស្វ៊ីតចំនួនពិត ម៉ោងទី២">
+                  <span class="teaching-item-dot" style="background: #0ea5e9;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>ស្វ៊ីតចំនួនពិត (ម៉ោងទី២)</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្វ៊ីតកើន ស្វ៊ីតចុះ ម៉ូណូតូន (៥០ នាទី)</div>
+                  </div>
+                </a>
+
+                <a href="lesson-plan-sequences-hour3.html" class="dropdown-item teaching-scroll-item" title="ស្វ៊ីតចំនួនពិត ម៉ោងទី៣">
+                  <span class="teaching-item-dot" style="background: #0284c7;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>ស្វ៊ីតចំនួនពិត (ម៉ោងទី៣)</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្វ៊ីតទាល់ និងលំហាត់សរុប (៥០ នាទី)</div>
+                  </div>
+                </a>
+
+                <a href="lesson-plan-exponential-ibl.html" class="dropdown-item teaching-scroll-item" title="អនុគមន៍អិចស្ប៉ូណង់ស្យែល">
+                  <span class="teaching-item-dot" style="background: #10b981;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>អនុគមន៍អិចស្ប៉ូណង់ស្យែល</span>
+                    </div>
+                    <div class="teaching-item-desc">កិច្ចតែងការ 5E Model (Print/PDF)</div>
+                  </div>
+                </a>
+
+                <a href="lesson-plan-logarithmic-equations.html" class="dropdown-item teaching-scroll-item" title="សមីការលោការីត">
+                  <span class="teaching-item-dot" style="background: #8b5cf6;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>សមីការលោការីត</span>
+                    </div>
+                    <div class="teaching-item-desc">កិច្ចតែងការ 5E Model (Print/PDF)</div>
+                  </div>
+                </a>
+
+                <!-- Group 3: ឯកសារជំនួយ & ការវាយតម្លៃ -->
+                <div class="teaching-group-title">
+                  <span>📑 ឯកសារជំនួយ & ការវាយតម្លៃ</span>
+                </div>
+
+                <a href="slides.html" class="dropdown-item teaching-scroll-item" title="ស្លាយបង្រៀន (Slides)">
+                  <span class="teaching-item-dot" style="background: #8b5cf6;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🖥️ ស្លាយបង្រៀន (Slides)</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្លាយបទបង្ហាញអន្តរកម្មសម្រាប់បង្រៀន</div>
+                  </div>
+                </a>
+
+                <a href="exercises.html" class="dropdown-item teaching-scroll-item" title="កម្រងលំហាត់អនុវត្ត">
+                  <span class="teaching-item-dot" style="background: #0ea5e9;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📝 កម្រងលំហាត់អនុវត្ត</span>
+                    </div>
+                    <div class="teaching-item-desc">លំហាត់អនុវត្តតាមជំពូក និងដំណោះស្រាយ</div>
+                  </div>
+                </a>
+
+                <a href="exams.html" class="dropdown-item teaching-scroll-item" title="វិញ្ញាសាប្រឡងជាតិ & តេស្ត">
+                  <span class="teaching-item-dot" style="background: #f59e0b;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🏆 វិញ្ញាសាប្រឡងជាតិ & តេស្ត</span>
+                    </div>
+                    <div class="teaching-item-desc">វិញ្ញាសាបាក់ឌុប សិស្សពូកែ & Mock Exam</div>
+                  </div>
+                </a>
               </div>
-              <a href="slides.html" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">ស្លាយបង្រៀន</div>
-                  <div class="dropdown-item-desc">ស្លាយបង្ហាញមេរៀនអន្តរកម្ម</div>
-                </div>
-              </a>
-              <a href="exercises.html" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">កម្រងលំហាត់</div>
-                  <div class="dropdown-item-desc">លំហាត់អនុវត្តតាមកម្រិតថ្នាក់</div>
-                </div>
-              </a>
-              <a href="exams.html" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-                </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">វិញ្ញាសាប្រឡង</div>
-                  <div class="dropdown-item-desc">វិញ្ញាសាបាក់ឌុប & តេស្តសមត្ថភាព</div>
-                </div>
-              </a>
+
+              <!-- Sticky Bottom Footer -->
+              <div class="teaching-dropdown-foot">
+                <a href="teaching-materials.html" class="teaching-foot-link">
+                  <span>📂 មើលមជ្ឈមណ្ឌលឯកសារពេញលេញ (Teaching Hub)</span>
+                  <span>›</span>
+                </a>
+              </div>
             </div>
           </li>
 
@@ -444,61 +522,175 @@
             </div>
           </li>
 
-          <!-- 4. ឧបករណ៍ & វីដេអូ (Active Menu) -->
-          <li class="nav-item nav-item-has-dropdown active" data-nav-group="tools">
-            <a href="game-exponential.html" class="nav-link nav-dropdown-toggle active" role="button" aria-haspopup="true" aria-expanded="false">
+                    <!-- 4. ឧបករណ៍ & វីដេអូ (Mega Dropdown) -->
+          <li class="nav-item nav-item-has-dropdown" data-nav-group="tools">
+            <a href="index.html#playground" class="nav-link nav-dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-nav="tools">
               <span>ឧបករណ៍ & វីដេអូ</span>
               <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </a>
-            <div class="nav-dropdown-menu">
-              <div class="dropdown-menu-header">ស្ទូឌីយោ & ល្បែងគណិតវិទ្យា</div>
-              <a href="game-exponential.html" class="dropdown-item active-sub">
-                <div class="dropdown-item-icon">
-                  <span style="font-size: 1.15rem;">🚀</span>
+            <div class="nav-dropdown-menu tools-mega-menu">
+              <div class="tools-mega-header">
+                <div class="tools-mega-title">
+                  <span>⚡ បច្ចេកវិទ្យា & ស្ទូឌីយោគណិតវិទ្យា (Digital Suite)</span>
                 </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">ល្បែងអនុគមន៍អិចស្ប៉ូណង់ស្យែល</div>
-                  <div class="dropdown-item-desc">Exponential Odyssey (ថ្នាក់ទី១១ ភាគ១)</div>
+                <span class="tools-mega-count">១៣ ឧបករណ៍ & វីដេអូ</span>
+              </div>
+
+              <div class="tools-mega-grid">
+                <!-- Column 1: បន្ទប់ពិសោធន៍ & ឯកសារ -->
+                <div class="tools-mega-col">
+                  <div class="tools-col-header">
+                    <span>🛠️ បន្ទប់ពិសោធន៍ & ឯកសារ</span>
+                  </div>
+                  <div class="tools-col-items">
+                    <a href="grapher-3d.html" class="dropdown-item tools-mega-item" title="បន្ទប់ពិសោធន៍ក្រាហ្វិក 3D (Oxyz)">
+                      <div class="tools-item-icon">🧊</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>ក្រាហ្វិក 3D (Oxyz)</span>
+                          <span class="tools-chip chip-3d">3D</span>
+                        </div>
+                        <div class="tools-item-sub">សង់ក្រាប $z=f(x,y)$ & វ៉ិចទ័រ</div>
+                      </div>
+                    </a>
+                    <a href="index.html#playground" class="dropdown-item tools-mega-item" data-section="playground" title="បន្ទប់ពិសោធន៍ក្រាហ្វិក 2D">
+                      <div class="tools-item-icon">📈</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>ក្រាហ្វិកអនុគមន៍ 2D</span>
+                          <span class="tools-chip chip-3d">2D</span>
+                        </div>
+                        <div class="tools-item-sub">ពិសោធន៍អនុគមន៍អន្តរកម្ម</div>
+                      </div>
+                    </a>
+                    <a href="index.html#formulas" class="dropdown-item tools-mega-item" data-section="formulas" title="បណ្ណាល័យរូបមន្តគន្លឹះ">
+                      <div class="tools-item-icon">📐</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>បណ្ណាល័យរូបមន្តគន្លឹះ</span>
+                        </div>
+                        <div class="tools-item-sub">អាំងតេក្រាល លីមីត ធរណីមាត្រ</div>
+                      </div>
+                    </a>
+                    <a href="index.html#resources" class="dropdown-item tools-mega-item" data-section="resources" title="វិញ្ញាសា & ឯកសារទាញយក">
+                      <div class="tools-item-icon">📥</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>វិញ្ញាសា & ឯកសារទាញយក</span>
+                        </div>
+                        <div class="tools-item-sub">វិញ្ញាសាគំរូ & PDF ឥតគិតថ្លៃ</div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </a>
-              <a href="game-grade11.html" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <span style="font-size: 1.15rem;">🎮</span>
+
+                <!-- Column 2: សង្វៀនល្បែងសិក្សា -->
+                <div class="tools-mega-col">
+                  <div class="tools-col-header">
+                    <span>🎮 សង្វៀនល្បែងសិក្សា</span>
+                  </div>
+                  <div class="tools-col-items">
+                    <a href="game-activities.html" class="dropdown-item tools-mega-item" title="សង្វៀនល្បែងសិក្សាទាំង ៦">
+                      <div class="tools-item-icon">🎲</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>សង្វៀនល្បែងទាំង ៦</span>
+                          <span class="tools-chip chip-hot">HOT</span>
+                        </div>
+                        <div class="tools-item-sub">Kahoot, Bingo, Dice, Escape...</div>
+                      </div>
+                    </a>
+                    <a href="game-grade9.html" class="dropdown-item tools-mega-item" title="ល្បែងគណិតវិទ្យាថ្នាក់ទី ៩">
+                      <div class="tools-item-icon">⚔️</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>Math Hero ថ្នាក់ទី ៩</span>
+                        </div>
+                        <div class="tools-item-sub">និនចាកាប់រ៉ាឌីកាល់ & ពិជគណិត</div>
+                      </div>
+                    </a>
+                    <a href="game-exponential.html" class="dropdown-item tools-mega-item" title="ល្បែងអនុគមន៍អិចស្ប៉ូណង់ស្យែល">
+                      <div class="tools-item-icon">🚀</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>ល្បែងអិចស្ប៉ូណង់ស្យែល</span>
+                        </div>
+                        <div class="tools-item-sub">Exponential Odyssey (ថ្នាក់១១)</div>
+                      </div>
+                    </a>
+                    <a href="game-grade11.html" class="dropdown-item tools-mega-item" title="ល្បែងគណិតវិទ្យាថ្នាក់ទី១១">
+                      <div class="tools-item-icon">👾</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>Math Quest ថ្នាក់ទី ១១</span>
+                        </div>
+                        <div class="tools-item-sub">ផ្សងព្រេងប្រយុទ្ធ & សំឡេង FX</div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">ល្បែងគណិតវិទ្យាថ្នាក់ទី១១</div>
-                  <div class="dropdown-item-desc">Math Quest 11 & សំឡេង FX</div>
+
+                <!-- Column 3: ស្ទូឌីយោវីដេអូបង្រៀន -->
+                <div class="tools-mega-col">
+                  <div class="tools-col-header">
+                    <span>🎬 ស្ទូឌីយោវីដេអូបង្រៀន</span>
+                  </div>
+                  <div class="tools-col-items">
+                    <a href="index.html#curve-video-studio" class="dropdown-item tools-mega-item" data-section="curve-video-studio" title="វីដេអូគូសក្រាបខ្សែកោង">
+                      <div class="tools-item-icon">🎥</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>វីដេអូគូសក្រាបខ្សែកោង</span>
+                        </div>
+                        <div class="tools-item-sub">ស្ទូឌីយោបង្រៀនគូសក្រាប</div>
+                      </div>
+                    </a>
+                    <a href="index.html#trig-video-studio" class="dropdown-item tools-mega-item" data-section="trig-video-studio" title="វីដេអូអនុវត្តត្រីកោណមាត្រ">
+                      <div class="tools-item-icon">🌐</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>វីដេអូត្រីកោណមាត្រ</span>
+                        </div>
+                        <div class="tools-item-sub">រង្វង់ត្រីកោណមាត្រ & រលក Sine</div>
+                      </div>
+                    </a>
+                    <a href="index.html#derivative-video-studio" class="dropdown-item tools-mega-item" data-section="derivative-video-studio" title="វីដេអូបម្រើបម្រាស់ដេរីវេ">
+                      <div class="tools-item-icon">⚡</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>វីដេអូបម្រើបម្រាស់ដេរីវេ</span>
+                        </div>
+                        <div class="tools-item-sub">ចលនារ៉ុក្កែត សេដ្ឋកិច្ច & អតិបរមា</div>
+                      </div>
+                    </a>
+                    <a href="index.html#arithmetic-video-studio" class="dropdown-item tools-mega-item" data-section="arithmetic-video-studio" title="វីដេអូបម្រើបម្រាស់ស្វ៊ីតនព្វន្ត">
+                      <div class="tools-item-icon">📊</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>វីដេអូស្វ៊ីតនព្វន្ត</span>
+                        </div>
+                        <div class="tools-item-sub">សន្សំប្រាក់ កីឡដ្ឋាន ម៉ារ៉ាតុង</div>
+                      </div>
+                    </a>
+                    <a href="index.html#geometric-video-studio" class="dropdown-item tools-mega-item" data-section="geometric-video-studio" title="វីដេអូបម្រើបម្រាស់ស្វ៊ីតធរណីមាត្រ">
+                      <div class="tools-item-icon">📈</div>
+                      <div class="tools-item-body">
+                        <div class="tools-item-name">
+                          <span>វីដេអូស្វ៊ីតធរណីមាត្រ</span>
+                        </div>
+                        <div class="tools-item-sub">បាក់តេរី ការប្រាក់សមាស បាល់លោត</div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </a>
-              <a href="game-activities.html" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <span style="font-size: 1.15rem;">🎲</span>
-                </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">សង្វៀនល្បែងសិក្សាទាំង ៦</div>
-                  <div class="dropdown-item-desc">Kahoot, Bingo, Dice, Escape, Match, Monty Hall</div>
-                </div>
-              </a>
-              <a href="game-grade9.html" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <span style="font-size: 1.15rem;">⚔️</span>
-                </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">ល្បែងគណិតវិទ្យាថ្នាក់ទី ៩</div>
-                  <div class="dropdown-item-desc">Math Hero 9 & និនចាកាប់រ៉ាឌីកាល់</div>
-                </div>
-              </a>
-              <a href="index.html#playground" class="dropdown-item">
-                <div class="dropdown-item-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path><line x1="8.5" y1="2" x2="15.5" y2="2"></line></svg>
-                </div>
-                <div class="dropdown-item-content">
-                  <div class="dropdown-item-title">បន្ទប់ពិសោធន៍ក្រាហ្វិក</div>
-                  <div class="dropdown-item-desc">គូសអនុគមន៍ 2D អន្តរកម្ម</div>
-                </div>
-              </a>
+              </div>
+
+              <div class="tools-mega-footer">
+                <span>💡 គន្លឹះ៖ ចុចលើឧបករណ៍ ឬវីដេអូណាមួយ ដើម្បីចូលទៅកាន់ផ្នែកអនុវត្តផ្ទាល់</span>
+                <span style="color: var(--accent-cyan); font-weight: 600;">អ្នកគ្រូ ឆេង ឆវ័ន្ត</span>
+              </div>
             </div>
           </li>
 
@@ -539,99 +731,277 @@
         <span>ទំព័រដើម</span>
       </a>
 
-      <!-- Submenu: Teaching Hub -->
-      <div class="mobile-accordion-group">
-        <button class="mobile-accordion-toggle">
-          <div class="toggle-label">
+                  <!-- 2. ឯកសារបង្រៀន Accordion -->
+      <div class="mobile-accordion" data-mobile-group="teaching">
+        <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+          <span class="mobile-link-text">
             <span class="mobile-link-icon">📖</span>
             <span>ឯកសារបង្រៀន</span>
-          </div>
-          <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <span class="chip-badge" style="background: rgba(6,182,212,0.2); color: #38bdf8; font-size: 0.65rem; padding: 1px 7px; border-radius: 999px;">១៥</span>
+          </span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="mobile-accordion-content">
-          <a href="lessons.html" class="mobile-sub-link">
-            <span class="sub-dot"></span>
-            <div><div class="sub-title">មេរៀនលម្អិត</div><div class="sub-desc">ជំពូកពេញលេញស្របតាមសៀវភៅគោល</div></div>
-          </a>
-          <!-- Mobile Grade Chips -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; padding: 0.25rem 0.5rem 0.55rem 1.6rem;">
-            <a href="lessons.html?grade=grade11" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.4); border-radius: 6px; color: #38bdf8; text-decoration: none; font-weight: 700;">📐 ថ្នាក់ទី ១១ (ភាគ១)</a>
-            <a href="lessons.html?grade=grade12" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-secondary); text-decoration: none;">🎓 ថ្នាក់ទី ១២</a>
-            <a href="lessons.html?grade=grade10" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-secondary); text-decoration: none;">🌱 ថ្នាក់ទី ១០</a>
-            <a href="game-grade9.html" style="font-size: 0.75rem; padding: 0.35rem 0.5rem; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); border-radius: 6px; color: #f59e0b; text-decoration: none;">⚔️ ថ្នាក់ទី ៩</a>
-          </div>
-          <!-- Submenu: កិច្ចតែងការបង្រៀន (Mobile Click-to-Toggle Accordion) -->
-          <div class="mobile-sub-accordion-wrapper">
-            <button type="button" class="mobile-sub-accordion-btn">
-              <span style="font-size: 0.8rem; font-weight: 700; color: #10b981; display: flex; align-items: center; gap: 0.4rem;">
-                <span>📋</span>
-                <span>កិច្ចតែងការបង្រៀន</span>
-                <span class="chip-badge" style="background: rgba(16,185,129,0.25); color: #10b981; font-size: 0.62rem; padding: 1px 6px; border-radius: 999px;">៣ មេរៀន</span>
-              </span>
-              <span class="mobile-sub-chevron" style="color: #10b981; transition: transform 0.2s ease; font-size: 0.85rem;">▾</span>
-            </button>
-            <div class="mobile-sub-accordion-panel">
-              <a href="lesson-plan-arithmetic-sequence.html" class="mobile-sub-link" style="padding: 0.35rem 0.45rem; background: rgba(255,255,255,0.03); border-radius: 6px;">
-                <span class="sub-dot" style="background: #f59e0b;"></span>
-                <div>
-                  <div class="sub-title" style="color: #fbbf24; font-size: 0.8rem;">ស្វ៊ីតនព្វន្ត (តួទី n) <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; font-size: 0.58rem; padding: 0 4px; border-radius: 3px;">ថ្មី</span></div>
-                  <div class="sub-desc" style="font-size: 0.68rem;">កិច្ចតែងការ ៥០ នាទី (៣ ជួរឈរ)</div>
-                </div>
-              </a>
-              <a href="lesson-plan-sequences-ibl.html" class="mobile-sub-link" style="padding: 0.35rem 0.45rem; background: rgba(255,255,255,0.03); border-radius: 6px;">
-                <span class="sub-dot" style="background: #0284c7;"></span>
-                <div>
-                  <div class="sub-title" style="color: #38bdf8; font-size: 0.8rem;">ស្វ៊ីតចំនួនពិត</div>
-                  <div class="sub-desc" style="font-size: 0.68rem;">កិច្ចតែងការ ៥០ នាទី (៣ ជួរឈរ)</div>
-                </div>
-              </a>
-              <a href="lesson-plan-exponential-ibl.html" class="mobile-sub-link" onclick="openLessonPlanModal(event)" style="padding: 0.35rem 0.45rem; background: rgba(255,255,255,0.03); border-radius: 6px;">
-                <span class="sub-dot" style="background: #10b981;"></span>
-                <div>
-                  <div class="sub-title" style="color: #34d399; font-size: 0.8rem;">អនុគមន៍អិចស្ប៉ូណង់ស្យែល</div>
-                  <div class="sub-desc" style="font-size: 0.68rem;">កិច្ចតែងការ 5E Model (Print/PDF)</div>
-                </div>
-              </a>
+          <!-- Hub banner link -->
+          <a href="teaching-materials.html" class="mobile-hub-banner">
+            <span style="font-size: 1.15rem;">🏛️</span>
+            <div style="flex: 1;">
+              <div style="font-weight: 700; color: #0284c7; font-size: 0.82rem;">មជ្ឈមណ្ឌលឯកសារបង្រៀន (Hub)</div>
+              <div style="color: var(--text-muted); font-size: 0.68rem;">ចូលទំព័រមជ្ឈមណ្ឌលរួមគ្រប់មុខងារ</div>
             </div>
-          </div>
-          <a href="slides.html" class="mobile-sub-link">
-            <span class="sub-dot"></span>
-            <div><div class="sub-title">ស្លាយបង្រៀន</div><div class="sub-desc">ស្លាយបង្ហាញអន្តរកម្ម</div></div>
+            <span style="color: #0284c7; font-weight: 700;">›</span>
           </a>
+
+          <!-- Category 1: មេរៀនតាមកម្រិតថ្នាក់ -->
+          <div class="mobile-tool-category">
+            <div class="mobile-tool-cat-title">
+              <span>📚 មេរៀនតាមកម្រិតថ្នាក់</span>
+            </div>
+            <a href="lessons.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #0284c7;"></span>
+              <div>
+                <div class="sub-title">📖 មើលមេរៀនទាំងអស់ (All Lessons)</div>
+                <div class="sub-desc">ជំពូកពេញលេញស្របតាមសៀវភៅគោល</div>
+              </div>
+            </a>
+            <a href="lessons.html?grade=grade11" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #0ea5e9;"></span>
+              <div>
+                <div class="sub-title">📐 ថ្នាក់ទី ១១ (សៀវភៅគោល ភាគ១)</div>
+                <div class="sub-desc">អនុគមន៍, ស្វ៊ីត, ធរណីមាត្រ & ស្ថិតិ</div>
+              </div>
+            </a>
+            <a href="lessons.html?grade=grade12" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #8b5cf6;"></span>
+              <div>
+                <div class="sub-title">🎓 ថ្នាក់ទី ១២ (ត្រៀមបាក់ឌុប)</div>
+                <div class="sub-desc">លីមីត, ដេរីវេ, អាំងតេក្រាល & វិញ្ញាសា</div>
+              </div>
+            </a>
+            <a href="lessons.html?grade=grade10" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #10b981;"></span>
+              <div>
+                <div class="sub-title">🌱 ថ្នាក់ទី ១០ (ស្ពានចម្លងគ្រឹះ)</div>
+                <div class="sub-desc">ពង្រឹងគ្រឹះពីអនុវិទ្យាល័យទៅវិទ្យាល័យ</div>
+              </div>
+            </a>
+            <a href="game-grade9.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #f59e0b;"></span>
+              <div>
+                <div class="sub-title">⚔️ ថ្នាក់ទី ៩ (Math Hero & ឌីប្លូម)</div>
+                <div class="sub-desc">មូលដ្ឋានគ្រឹះ & ល្បែងគណិតវិទ្យា</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Category 2: កិច្ចតែងការបង្រៀន -->
+          <div class="mobile-tool-category">
+            <div class="mobile-tool-cat-title">
+              <span>📋 កិច្ចតែងការបង្រៀនគរុកោសល្យ</span>
+            </div>
+            <a href="javascript:void(0)" onclick="openLessonPlanModal(event)" class="mobile-sub-link" style="background: rgba(16, 185, 129, 0.1); border-radius: 6px;">
+              <span class="sub-dot" style="background: #10b981;"></span>
+              <div>
+                <div class="sub-title" style="color: #10b981; font-weight: 700;">✨ បើកផ្ទាំង Modal កិច្ចតែងការទាំង ៦</div>
+                <div class="sub-desc" style="color: #6ee7b7;">មើលជាមុន, ទាញយក Word, PDF & Print</div>
+              </div>
+            </a>
+            <a href="lesson-plan-arithmetic-sequence.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #f59e0b;"></span>
+              <div>
+                <div class="sub-title">ស្វ៊ីតនព្វន្ត៖ តួទី n <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; font-size: 0.58rem; padding: 1px 4px; border-radius: 3px;">ថ្មី</span></div>
+                <div class="sub-desc">រូបមន្ត $u_n = u_1 + (n-1)d$ (៥០ នាទី)</div>
+              </div>
+            </a>
+            <a href="lesson-plan-sequences-ibl.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #0284c7;"></span>
+              <div>
+                <div class="sub-title">ស្វ៊ីតចំនួនពិត (ម៉ោងទី១)</div>
+                <div class="sub-desc">ស្វ៊ីតរាប់អស់ ស្វ៊ីតអនន្ត (៥០ នាទី)</div>
+              </div>
+            </a>
+            <a href="lesson-plan-sequences-hour2.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #0ea5e9;"></span>
+              <div>
+                <div class="sub-title">ស្វ៊ីតចំនួនពិត (ម៉ោងទី២)</div>
+                <div class="sub-desc">ស្វ៊ីតកើន ស្វ៊ីតចុះ ម៉ូណូតូន (៥០ នាទី)</div>
+              </div>
+            </a>
+            <a href="lesson-plan-sequences-hour3.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #0284c7;"></span>
+              <div>
+                <div class="sub-title">ស្វ៊ីតចំនួនពិត (ម៉ោងទី៣)</div>
+                <div class="sub-desc">ស្វ៊ីតទាល់ និងលំហាត់សរុប (៥០ នាទី)</div>
+              </div>
+            </a>
+            <a href="lesson-plan-exponential-ibl.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #10b981;"></span>
+              <div>
+                <div class="sub-title">អនុគមន៍អិចស្ប៉ូណង់ស្យែល</div>
+                <div class="sub-desc">កិច្ចតែងការ 5E Model (Print/PDF)</div>
+              </div>
+            </a>
+            <a href="lesson-plan-logarithmic-equations.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #8b5cf6;"></span>
+              <div>
+                <div class="sub-title">សមីការលោការីត</div>
+                <div class="sub-desc">កិច្ចតែងការ 5E Model (Print/PDF)</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Category 3: ឯកសារជំនួយ & ការវាយតម្លៃ -->
+          <div class="mobile-tool-category">
+            <div class="mobile-tool-cat-title">
+              <span>📑 ឯកសារជំនួយ & ការវាយតម្លៃ</span>
+            </div>
+            <a href="slides.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #8b5cf6;"></span>
+              <div>
+                <div class="sub-title">🖥️ ស្លាយបង្រៀន (Slides)</div>
+                <div class="sub-desc">ស្លាយបទបង្ហាញអន្តរកម្ម</div>
+              </div>
+            </a>
+            <a href="exercises.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #0ea5e9;"></span>
+              <div>
+                <div class="sub-title">📝 កម្រងលំហាត់អនុវត្ត</div>
+                <div class="sub-desc">លំហាត់អនុវត្ត & ដំណោះស្រាយ</div>
+              </div>
+            </a>
+            <a href="exams.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #f59e0b;"></span>
+              <div>
+                <div class="sub-title">🏆 វិញ្ញាសាប្រឡងជាតិ & តេស្ត</div>
+                <div class="sub-desc">វិញ្ញាសាបាក់ឌុប & Mock Exam</div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- Submenu: Tools & Videos -->
-      <div class="mobile-accordion-group open">
-        <button class="mobile-accordion-toggle">
-          <div class="toggle-label">
+            <!-- 4. ឧបករណ៍ & វីដេអូ Accordion -->
+      <div class="mobile-accordion" data-mobile-group="tools">
+        <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+          <span class="mobile-link-text">
             <span class="mobile-link-icon">🛠️</span>
             <span>ឧបករណ៍ & វីដេអូ</span>
-          </div>
-          <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <span class="chip-badge" style="background: rgba(6,182,212,0.2); color: #38bdf8; font-size: 0.65rem; padding: 1px 7px; border-radius: 999px;">១៣</span>
+          </span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
-        <div class="mobile-accordion-content" style="max-height: 500px;">
-          <a href="game-exponential.html" class="mobile-sub-link active">
-            <span class="sub-dot"></span>
-            <div>
-              <div class="sub-title">🚀 ល្បែងអនុគមន៍អិចស្ប៉ូណង់ស្យែល</div>
-              <div class="sub-desc">Exponential Odyssey (ថ្នាក់ទី១១ ភាគ១)</div>
+        <div class="mobile-accordion-content">
+          <!-- Category 1: បន្ទប់ពិសោធន៍ & ឯកសារ -->
+          <div class="mobile-tool-category">
+            <div class="mobile-tool-cat-title">
+              <span>🛠️ បន្ទប់ពិសោធន៍ & ឯកសារ</span>
             </div>
-          </a>
-          <a href="game-grade11.html" class="mobile-sub-link">
-            <span class="sub-dot"></span>
-            <div>
-              <div class="sub-title">🎮 ល្បែងគណិតវិទ្យាថ្នាក់ទី ១១</div>
-              <div class="sub-desc">Math Quest 11 & សំឡេង FX</div>
+            <a href="grapher-3d.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #0284c7;"></span>
+              <div>
+                <div class="sub-title">🧊 បន្ទប់ពិសោធន៍ក្រាហ្វិក 3D (Oxyz)</div>
+                <div class="sub-desc">សង់ក្រាប $z=f(x,y)$ & វ៉ិចទ័រ, ប្លង់</div>
+              </div>
+            </a>
+            <a href="index.html#playground" class="mobile-sub-link" data-section="playground">
+              <span class="sub-dot" style="background: #0ea5e9;"></span>
+              <div>
+                <div class="sub-title">📈 ក្រាហ្វិកអនុគមន៍ 2D</div>
+                <div class="sub-desc">ពិសោធន៍អនុគមន៍អន្តរកម្មផ្ទាល់</div>
+              </div>
+            </a>
+            <a href="index.html#formulas" class="mobile-sub-link" data-section="formulas">
+              <span class="sub-dot" style="background: #8b5cf6;"></span>
+              <div>
+                <div class="sub-title">📐 បណ្ណាល័យរូបមន្តគន្លឹះ</div>
+                <div class="sub-desc">រូបមន្តសង្ខេប អាំងតេក្រាល លីមីត</div>
+              </div>
+            </a>
+            <a href="index.html#resources" class="mobile-sub-link" data-section="resources">
+              <span class="sub-dot" style="background: #10b981;"></span>
+              <div>
+                <div class="sub-title">📥 វិញ្ញាសា & ឯកសារទាញយក PDF</div>
+                <div class="sub-desc">វិញ្ញាសាគំរូ & PDF ឥតគិតថ្លៃ</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Category 2: សង្វៀនល្បែងសិក្សា -->
+          <div class="mobile-tool-category">
+            <div class="mobile-tool-cat-title">
+              <span>🎮 សង្វៀនល្បែងសិក្សា</span>
             </div>
-          </a>
-          <a href="game-grade9.html" class="mobile-sub-link">
-            <span class="sub-dot"></span>
-            <div>
-              <div class="sub-title">⚔️ ល្បែងគណិតវិទ្យាថ្នាក់ទី ៩</div>
-              <div class="sub-desc">Math Hero 9 & និនចាកាប់រ៉ាឌីកាល់</div>
+            <a href="game-activities.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #f59e0b;"></span>
+              <div>
+                <div class="sub-title">🎲 សង្វៀនល្បែងសិក្សាទាំង ៦ <span class="chip-badge" style="background: rgba(245,158,11,0.25); color: #f59e0b; font-size: 0.6rem; padding: 1px 5px; border-radius: 4px;">HOT</span></div>
+                <div class="sub-desc">Kahoot, Bingo, Dice, Escape, Match...</div>
+              </div>
+            </a>
+            <a href="game-grade9.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #ef4444;"></span>
+              <div>
+                <div class="sub-title">⚔️ Math Hero ថ្នាក់ទី ៩</div>
+                <div class="sub-desc">និនចាកាប់រ៉ាឌីកាល់ & ពិជគណិត</div>
+              </div>
+            </a>
+            <a href="game-exponential.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #ec4899;"></span>
+              <div>
+                <div class="sub-title">🚀 ល្បែងអិចស្ប៉ូណង់ស្យែល</div>
+                <div class="sub-desc">Exponential Odyssey (ថ្នាក់ទី១១)</div>
+              </div>
+            </a>
+            <a href="game-grade11.html" class="mobile-sub-link">
+              <span class="sub-dot" style="background: #6366f1;"></span>
+              <div>
+                <div class="sub-title">👾 Math Quest ថ្នាក់ទី ១១</div>
+                <div class="sub-desc">ផ្សងព្រេងប្រយុទ្ធ & សំឡេង FX</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Category 3: ស្ទូឌីយោវីដេអូបង្រៀន -->
+          <div class="mobile-tool-category">
+            <div class="mobile-tool-cat-title">
+              <span>🎬 ស្ទូឌីយោវីដេអូបង្រៀន</span>
             </div>
-          </a>
+            <a href="index.html#curve-video-studio" class="mobile-sub-link" data-section="curve-video-studio">
+              <span class="sub-dot" style="background: #0284c7;"></span>
+              <div>
+                <div class="sub-title">🎥 វីដេអូគូសក្រាបខ្សែកោង</div>
+                <div class="sub-desc">ស្ទូឌីយោបង្រៀនគូសក្រាប & អថេរភាព</div>
+              </div>
+            </a>
+            <a href="index.html#trig-video-studio" class="mobile-sub-link" data-section="trig-video-studio">
+              <span class="sub-dot" style="background: #0ea5e9;"></span>
+              <div>
+                <div class="sub-title">🌐 វីដេអូអនុវត្តត្រីកោណមាត្រ</div>
+                <div class="sub-desc">រង្វង់ត្រីកោណមាត្រ & រលក Sine</div>
+              </div>
+            </a>
+            <a href="index.html#derivative-video-studio" class="mobile-sub-link" data-section="derivative-video-studio">
+              <span class="sub-dot" style="background: #f59e0b;"></span>
+              <div>
+                <div class="sub-title">⚡ វីដេអូបម្រើបម្រាស់ដេរីវេ</div>
+                <div class="sub-desc">ចលនារ៉ុក្កែត សេដ្ឋកិច្ច ប្រអប់អតិបរមា</div>
+              </div>
+            </a>
+            <a href="index.html#arithmetic-video-studio" class="mobile-sub-link" data-section="arithmetic-video-studio">
+              <span class="sub-dot" style="background: #10b981;"></span>
+              <div>
+                <div class="sub-title">📊 វីដេអូបម្រើបម្រាស់ស្វ៊ីតនព្វន្ត</div>
+                <div class="sub-desc">សន្សំប្រាក់ កៅអីកីឡដ្ឋាន ម៉ារ៉ាតុង</div>
+              </div>
+            </a>
+            <a href="index.html#geometric-video-studio" class="mobile-sub-link" data-section="geometric-video-studio">
+              <span class="sub-dot" style="background: #14b8a6;"></span>
+              <div>
+                <div class="sub-title">📈 វីដេអូបម្រើបម្រាស់ស្វ៊ីតធរណីមាត្រ</div>
+                <div class="sub-desc">បាក់តេរី ការប្រាក់សមាស បាល់លោត</div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
