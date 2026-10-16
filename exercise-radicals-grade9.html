@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>កម្រងលំហាត់អនុវត្ត៖ រកឫសការេនៃមួយចំនួន ថ្នាក់ទី៩ (A4 Worksheet) | អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
+  <meta name="description" content="កម្រងលំហាត់អនុវត្តគណិតវិទ្យាថ្នាក់ទី៩ មេរៀនទី១ រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣៖ ការរកឫសការេនៃមួយចំនួន (២០ លំហាត់ធំ ៨០ សំណួរ ចែកជា ៣ កម្រិត៖ ស្រាល មធ្យម ខ្ពស់) រៀបចំជាសន្លឹកកិច្ចការ A4 ដោយអ្នកគ្រូ ឆេង ឆវ័ន្ត។">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/academic.css">
+
+  <!-- KaTeX for High Quality Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="if(typeof window.triggerMathRender==='function'){window.triggerMathRender(document.body);}else if(typeof renderMathInElement==='function'){renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}"></script>
+
+  <style>
+    .worksheet-section {
+      margin-bottom: 1.2rem;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .worksheet-section-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border-left: 4px solid #10b981;
+      margin-bottom: 0.65rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .worksheet-section-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #047857;
+      background: rgba(16, 185, 129, 0.15);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .worksheet-item-math {
+      font-size: 0.9rem;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+    .worksheet-item-answer {
+      display: none;
+      color: #047857;
+      font-weight: 700;
+      font-size: 0.84rem;
+      margin-left: 6px;
+    }
+    .show-answers .worksheet-item-answer {
+      display: inline-block;
+    }
+    .rad-category-title {
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #065f46;
+      border-bottom: 2px solid #a7f3d0;
+      padding-bottom: 4px;
+      margin: 1.25rem 0 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .difficulty-tag-basic {
+      background: rgba(16, 185, 129, 0.18);
+      color: #047857;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .difficulty-tag-medium {
+      background: rgba(245, 158, 11, 0.18);
+      color: #b45309;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    .difficulty-tag-hard {
+      background: rgba(239, 68, 68, 0.18);
+      color: #b91c1c;
+      border: 1px solid rgba(239, 68, 68, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. MAIN NAVBAR
+       ============================================================ -->
+  <header class="navbar scrolled" id="main-navbar">
+    <div class="container nav-container">
+      <div class="nav-brand-container">
+        <a href="index.html" class="nav-brand" title="Hover ដើម្បីមើលព័ត៌មានទំនាក់ទំនង">
+          <div class="brand-icon">f(x)</div>
+          <div class="brand-text">
+            <span class="brand-name">
+              ឆេង ឆវ័ន្ត
+              <span class="brand-contact-indicator" title="Hover ដើម្បីមើលលេខទូរស័ព្ទ & អ៊ីមែល">
+                <span class="indicator-pulse"></span>
+                <span>ទំនាក់ទំនង</span>
+              </span>
+            </span>
+            <span class="brand-sub">MATH SPECIALIST</span>
+          </div>
+        </a>
+
+        <!-- Popover Hover Card for Teacher Contact Info -->
+        <div class="teacher-hover-card" role="tooltip" aria-label="ព័ត៌មានទំនាក់ទំនងអ្នកគ្រូ ឆេង ឆវ័ន្ត">
+          <div class="hover-card-header">
+            <div class="hover-avatar-box">
+              <img src="assets/images/teacher-chhovorn.png" alt="អ្នកគ្រូ ឆេង ឆវ័ន្ត" class="hover-avatar-img" onerror="this.onerror=null; this.src='assets/images/teacher-chhovorn.jpg';">
+              <span class="hover-status-dot" title="កំពុងបម្រើការងារ & អាចទាក់ទងបាន"></span>
+            </div>
+            <div class="hover-header-text">
+              <div class="hover-name">
+                អ្នកគ្រូ ឆេង ឆវ័ន្ត
+                <span class="hover-verified" title="គ្រូបង្រៀនគណិតវិទ្យាផ្លូវការ">✓</span>
+              </div>
+              <div class="hover-title">Teacher Chheng Chhovorn</div>
+              <div class="hover-tag">គ្រូបង្រៀនគណិតវិទ្យាឯកទេស (NIE & RUPP)</div>
+            </div>
+          </div>
+          <div class="hover-card-body">
+            <div class="hover-info-row">
+              <span class="hover-icon">📞</span>
+              <div class="hover-info-content">
+                <div class="hover-info-label">ទូរស័ព្ទ / Telegram</div>
+                <div class="hover-info-val"><a href="tel:099775501">099 77 5501</a></div>
+              </div>
+            </div>
+            <div class="hover-info-row">
+              <span class="hover-icon">✈️</span>
+              <div class="hover-info-content">
+                <div class="hover-info-label">Telegram Handle</div>
+                <div class="hover-info-val"><a href="https://t.me/chhovorn_math" target="_blank" rel="noopener">@chhovorn_math</a></div>
+              </div>
+            </div>
+            <div class="hover-info-row">
+              <span class="hover-icon">📧</span>
+              <div class="hover-info-content">
+                <div class="hover-info-label">អ៊ីមែលផ្លូវការ</div>
+                <div class="hover-info-val"><a href="mailto:chhorvornk@gmail.com">chhorvornk@gmail.com</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" data-nav="home"><span>ទំព័រដើម</span></a>
+          </li>
+
+          <!-- 2. ឯកសារបង្រៀន (Scrollable Dropdown Hub) -->
+          <li class="nav-item nav-item-has-dropdown active" data-nav-group="teaching">
+            <a href="teaching-materials.html" class="nav-link nav-dropdown-toggle active" role="button" aria-haspopup="true" aria-expanded="false" data-nav="teaching">
+              <span>ឯកសារបង្រៀន</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu teaching-scroll-dropdown">
+              <div class="teaching-dropdown-head">
+                <div class="teaching-head-title">
+                  <span>📖 ឯកសារបង្រៀន & គរុកោសល្យ</span>
+                </div>
+                <a href="teaching-materials.html" class="teaching-head-hub-link" title="ចូលទំព័រមជ្ឈមណ្ឌលឯកសារបង្រៀនពេញលេញ">
+                  <span>ទំព័រ Hub ›</span>
+                </a>
+              </div>
+
+              <div class="teaching-scroll-body">
+                <div class="teaching-group-title">
+                  <span>📚 កម្រិតថ្នាក់សិក្សា (Curriculum)</span>
+                  <a href="lessons.html" style="font-size: 0.65rem; color: #0284c7; text-decoration: none; font-weight: 700;">មើលទាំងអស់</a>
+                </div>
+
+                <a href="lesson-radicals-grade9.html" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ៩៖ មេរៀនរ៉ាឌីកាល់">
+                  <span class="teaching-item-dot" style="background: #10b981;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📗 ថ្នាក់ទី ៩៖ រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣</span>
+                      <span class="chip-badge" style="background: rgba(16,185,129,0.18); color: #10b981; font-size: 0.6rem; padding: 1px 5px; border-radius: 4px;">ថ្មី</span>
+                    </div>
+                    <div class="teaching-item-desc">ឫសការេ, ឫសគូប, លក្ខខណ្ឌ & ប្រមាណវិធី</div>
+                  </div>
+                </a>
+
+                <a href="lessons.html?grade=grade11" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ១១">
+                  <span class="teaching-item-dot" style="background: #0ea5e9;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📐 ថ្នាក់ទី ១១ (សៀវភៅគោល ភាគ១)</span>
+                      <span class="chip-badge" style="background: rgba(14,165,233,0.18); color: #0ea5e9; font-size: 0.6rem; padding: 1px 5px; border-radius: 4px;">ពេញនិយម</span>
+                    </div>
+                    <div class="teaching-item-desc">អនុគមន៍, ស្វ៊ីត, ធរណីមាត្រ និងស្ថិតិ</div>
+                  </div>
+                </a>
+
+                <a href="lessons.html?grade=grade12" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ១២">
+                  <span class="teaching-item-dot" style="background: #8b5cf6;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🎓 ថ្នាក់ទី ១២ (ត្រៀមបាក់ឌុប)</span>
+                    </div>
+                    <div class="teaching-item-desc">លីមីត, ដេរីវេ, អាំងតេក្រាល & វិញ្ញាសា</div>
+                  </div>
+                </a>
+
+                <div class="teaching-group-title">
+                  <span>📑 ឯកសារជំនួយ & ការវាយតម្លៃ</span>
+                </div>
+
+                <a href="slides.html" class="dropdown-item teaching-scroll-item" title="ស្លាយបង្រៀន (Slides)">
+                  <span class="teaching-item-dot" style="background: #8b5cf6;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🖥️ ស្លាយបង្រៀន (Slides)</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្លាយបទបង្ហាញអន្តរកម្មសម្រាប់បង្រៀន</div>
+                  </div>
+                </a>
+
+                <a href="exercises.html" class="dropdown-item teaching-scroll-item" title="កម្រងលំហាត់អនុវត្ត">
+                  <span class="teaching-item-dot" style="background: #0ea5e9;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📝 កម្រងលំហាត់អនុវត្ត</span>
+                    </div>
+                    <div class="teaching-item-desc">លំហាត់អនុវត្តតាមជំពូក និងដំណោះស្រាយ</div>
+                  </div>
+                </a>
+
+                <a href="exercise-radicals-grade9.html" class="dropdown-item teaching-scroll-item active" style="padding-left: 1.75rem;" title="សន្លឹកកិច្ចការ៖ រកឫសការេនៃមួយចំនួន (ថ្នាក់ទី៩ - A4)">
+                  <span class="teaching-item-dot" style="background: #10b981; width: 6px; height: 6px;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span style="font-size: 0.82rem; color: #10b981; font-weight: 700;">✦ លំហាត់ឫសការេ (ថ្នាក់ទី៩)</span>
+                      <span class="badge-mini" style="background: rgba(16,185,129,0.2); color: #10b981; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">ថ្មី • ២០ លំហាត់</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្រាល មធ្យម ខ្ពស់ • A4, Word, PDF & ចម្លើយ</div>
+                  </div>
+                </a>
+
+                <a href="exercise-sequences-grade11.html" class="dropdown-item teaching-scroll-item" style="padding-left: 1.75rem;" title="សន្លឹកកិច្ចការ៖ ស្វ៊ីតចំនួនពិត (ថ្នាក់ទី១១ - A4)">
+                  <span class="teaching-item-dot" style="background: #0284c7; width: 6px; height: 6px;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span style="font-size: 0.82rem; color: #38bdf8; font-weight: 700;">✦ លំហាត់ស្វ៊ីតចំនួនពិត (ថ្នាក់ទី១១)</span>
+                      <span class="badge-mini" style="background: rgba(14,165,233,0.2); color: #38bdf8; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">១៦ លំហាត់</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្រង់ចេញពីសៀវភៅកិច្ចការផ្ទះ ២០២៦</div>
+                  </div>
+                </a>
+
+                <a href="exams.html" class="dropdown-item teaching-scroll-item" title="វិញ្ញាសាប្រឡងជាតិ & តេស្ត">
+                  <span class="teaching-item-dot" style="background: #f59e0b;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🏆 វិញ្ញាសាប្រឡងជាតិ & តេស្ត</span>
+                    </div>
+                    <div class="teaching-item-desc">វិញ្ញាសាបាក់ឌុប សិស្សពូកែ & Mock Exam</div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="teaching-dropdown-foot">
+                <a href="teaching-materials.html" class="teaching-foot-link">
+                  <span>📂 មើលមជ្ឈមណ្ឌលឯកសារពេញលេញ (Teaching Hub)</span>
+                  <span>›</span>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 3. អំពីអ្នកគ្រូ -->
+          <li class="nav-item">
+            <a href="index.html#about" class="nav-link" data-nav="about"><span>អំពីអ្នកគ្រូ</span></a>
+          </li>
+          <!-- 4. ទំនាក់ទំនង -->
+          <li class="nav-item">
+            <a href="index.html#contact" class="nav-link" data-nav="contact"><span>ទំនាក់ទំនង</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="lesson-radicals-grade9.html" class="btn btn-outline btn-sm" style="border-color: #10b981; color: #34d399;">
+          <span>📖 មេរៀនរ៉ាឌីកាល់ ៩</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       2. HERO HEADER
+       ============================================================ -->
+  <section class="academic-hero">
+    <div class="container">
+      <div class="academic-breadcrumb">
+        <a href="index.html">ទំព័រដើម</a>
+        <span class="separator">/</span>
+        <a href="teaching-materials.html">ឯកសារបង្រៀន</a>
+        <span class="separator">/</span>
+        <a href="exercises.html">កម្រងលំហាត់អនុវត្ត</a>
+        <span class="separator">/</span>
+        <span class="current" style="color: #34d399;">រកឫសការេនៃមួយចំនួន (ថ្នាក់ទី៩)</span>
+      </div>
+
+      <div class="academic-badge-row">
+        <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #34d399; font-weight: 700;">ថ្នាក់ទី ៩ (ជំពូកទី ១)</span>
+        <span class="chip-badge" style="background: rgba(6,182,212,0.2); color: #38bdf8; font-weight: 700;">មេរៀនទី ១៖ ឫសការេ និងរ៉ាឌីកាល់</span>
+        <span class="chip-badge" style="background: rgba(245,158,11,0.2); color: #fbbf24; font-weight: 700;">២០ លំហាត់ធំ • ៨០ សំណួរ</span>
+        <span class="chip-badge" style="background: rgba(255,255,255,0.08); color: var(--text-muted);">A4 Print Ready</span>
+      </div>
+
+      <h1 class="academic-title">
+        កម្រងលំហាត់អនុវត្ត៖ រកឫសការេនៃមួយចំនួន <br>
+        <span class="text-gradient" style="background: linear-gradient(135deg, #10b981, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ថ្នាក់ទី៩ (បែងចែកជា ៣ កម្រិត៖ ស្រាល មធ្យម និងខ្ពស់)</span>
+      </h1>
+
+      <p class="academic-desc">
+        ប្រជុំលំហាត់អនុវត្តគ្រប់ជ្រុងជ្រោយស្តីពី «ការរកឫសការេនៃមួយចំនួន» ស្របតាមកម្មវិធីសិក្សាគណិតវិទ្យាថ្នាក់ទី៩ របស់ក្រសួងអប់រំ យុវជន និងកីឡា។ រៀបចំជា ២០ លំហាត់ធំ ៨០ សំណួរ ចែកតាមលំដាប់លំដោយគរុកោសល្យ៖ កម្រិតស្រាល (៧ លំហាត់), កម្រិតមធ្យម (៧ លំហាត់) និងកម្រិតខ្ពស់ (៦ លំហាត់) ជាមួយចម្លើយសង្ខេបផ្ទៀងផ្ទាត់ និងការនាំចេញជា Word/A4 Print។
+      </p>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem;">
+        <a href="lesson-radicals-grade9.html" class="btn btn-outline btn-sm" style="border-color: rgba(16,185,129,0.5); color: #34d399;">
+          <span>📖 មើលមេរៀនទ្រឹស្តីរ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣ &rarr;</span>
+        </a>
+        <a href="game-grade9.html" class="btn btn-outline btn-sm" style="border-color: rgba(239,68,68,0.5); color: #f87171;">
+          <span>⚔️ លេងល្បែង Math Hero ថ្នាក់ទី ៩ (កាប់រ៉ាឌីកាល់) &rarr;</span>
+        </a>
+        <a href="exercises.html" class="btn btn-outline btn-sm" style="border-color: rgba(6,182,212,0.4); color: #38bdf8;">
+          <span>📝 ធនាគារកម្រងលំហាត់អនុវត្តទាំងអស់ &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. MAIN CONTENT: A4 WORKSHEET & ACTIONS
+       ============================================================ -->
+  <div class="container" style="padding-bottom: 5rem;">
+
+    <!-- Action Toolbar -->
+    <div class="worksheet-action-bar">
+      <div>
+        <h3 id="worksheet-active-title" style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin: 0 0 0.25rem;">
+          សន្លឹកកិច្ចការលំហាត់អនុវត្ត៖ រកឫសការេនៃមួយចំនួន (Square Roots - Grade 9)
+        </h3>
+        <p id="worksheet-active-desc" style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
+          ២០ លំហាត់ពេញលេញ ចែកជា ៣ ផ្នែកតាមកម្រិតសមត្ថភាព (ស្រាល ៧, មធ្យម ៧, ខ្ពស់ ៦) លើក្រដាស A4
+        </p>
+      </div>
+      <div class="worksheet-action-btns">
+        <button class="btn btn-primary btn-sm" onclick="openWorksheetPreviewModal()" title="មើលផ្ទាំង A4 មុនបោះពុម្ព & នាំចេញ" style="background: linear-gradient(135deg, #059669, #047857); border: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          <span>👁️ មើលជាមុន (Print Preview)</span>
+        </button>
+        <button class="btn btn-outline btn-sm" onclick="printActiveWorksheet()" title="បោះពុម្ពលើក្រដាស A4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <span>🖨️ បោះពុម្ព A4</span>
+        </button>
+        <button class="btn btn-outline btn-sm" onclick="exportActiveWorksheetWord()" style="border-color: #3b82f6; color: #60a5fa;" title="នាំចេញជាឯកសារ Microsoft Word (.doc)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>📄 នាំចេញជា Word</span>
+        </button>
+        <button class="btn btn-outline btn-sm" id="btn-toggle-answers" onclick="toggleWorksheetAnswers()" title="បង្ហាញ/លាក់ គន្លឹះចម្លើយសង្ខេប">
+          👁️ បង្ហាញចម្លើយ
+        </button>
+      </div>
+    </div>
+
+    <!-- Curriculum Callout -->
+    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 1.1rem 1.35rem; margin-bottom: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; max-width: 720px;">
+        <div style="width: 48px; height: 48px; min-width: 48px; border-radius: 10px; background: rgba(16, 185, 129, 0.18); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800;">
+          √
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <h4 style="margin: 0; font-size: 0.98rem; font-weight: 800; color: #34d399;">សន្លឹកកិច្ចការគំរូគរុកោសល្យ ថ្នាក់ទី៩ (ក្រសួងអប់រំ យុវជន និងកីឡា)</h4>
+            <span style="background: #10b981; color: #022c22; font-size: 0.7rem; font-weight: 800; padding: 2px 7px; border-radius: 999px;">២០ លំហាត់ពេញលេញ</span>
+          </div>
+          <p style="margin: 0.25rem 0 0; font-size: 0.83rem; color: var(--text-secondary); line-height: 1.5;">
+            រៀបចំដោយអនុវត្តតាមទ្រឹស្តីបទផលគុណ ផលចែក ការេពេញលេញ សនិទានកម្មភាគបែង និងការដោះស្រាយសមីការរ៉ាឌីកាល់។ ចុចប៊ូតុង <strong style="color: #34d399;">«👁️ បង្ហាញចម្លើយ»</strong> ដើម្បីផ្ទៀងផ្ទាត់លទ្ធផលភ្លាមៗ ឬបោះពុម្ពជាក្រដាសកិច្ចការសម្រាប់សិស្ស។
+          </p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+        <button type="button" class="btn btn-sm" onclick="exportActiveWorksheetWord()" style="background: #10b981; color: #ffffff; border: none; font-weight: 700; padding: 0.5rem 0.9rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          <span>ទាញយកជា Word (.doc)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         A4 WORKSHEET CONTAINER: រកឫសការេនៃមួយចំនួន (GRADE 9)
+         ======================================================== -->
+    <div class="worksheet-a4-sheet" id="worksheet-radicals-grade9-sheet">
+      <!-- Watermark -->
+      <div class="worksheet-watermark">CHHENG CHHORVORN</div>
+
+      <div class="worksheet-content">
+        <!-- Header -->
+        <div class="worksheet-header-top">
+          <div>វិទ្យាល័យ ឧដុង្គ • គណិតវិទ្យាថ្នាក់ទី៩</div>
+          <div class="worksheet-main-title">កម្រងលំហាត់អនុវត្ត</div>
+          <div>រកឫសការេនៃមួយចំនួន (២០២៥-២០២៦)</div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: #475569; margin-bottom: 1.25rem; border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px;">
+          <div><strong>រៀបរៀងដោយ៖</strong> អ្នកគ្រូ ឆេង ឆវ័ន្ត (CVN Math)</div>
+          <div><strong>កម្រិតសិក្សា៖</strong> ថ្នាក់ទី៩ (ជំពូកទី ១)</div>
+          <div><strong>ចំនួនលំហាត់៖</strong> ២០ លំហាត់ធំ (៨០ សំណួរ)</div>
+        </div>
+
+        <!-- ========================================================
+             ផ្នែកទី ១៖ កម្រិតស្រាល (BASIC LEVEL - 7 EXERCISES)
+             ======================================================== -->
+        <div class="rad-category-title">
+          <span>🟢 ផ្នែកទី ១៖ កម្រិតស្រាល (Basic Level — ៧ លំហាត់ដំបូង)</span>
+        </div>
+
+        <!-- Exercise 1 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១. គណនាឫសការេនៃចំនួនការេពេញលេញខាងក្រោម៖</span>
+            <span class="worksheet-section-badge difficulty-tag-basic">ស្រាល • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\sqrt{49}$</span>
+              <span class="worksheet-item-answer">$= 7$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{81}$</span>
+              <span class="worksheet-item-answer">$= 9$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$\sqrt{144}$</span>
+              <span class="worksheet-item-answer">$= 12$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\sqrt{225}$</span>
+              <span class="worksheet-item-answer">$= 15$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ២. រកឫសការេទាំងអស់ (ទាំងវិជ្ជមាន និងអវិជ្ជមាន) នៃចំនួនខាងក្រោម៖</span>
+            <span class="worksheet-section-badge difficulty-tag-basic">ស្រាល • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">ចំនួន $64$</span>
+              <span class="worksheet-item-answer">$\to \pm 8$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">ចំនួន $100$</span>
+              <span class="worksheet-item-answer">$\to \pm 10$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">ចំនួន $\dfrac{4}{9}$</span>
+              <span class="worksheet-item-answer">$\to \pm \dfrac{2}{3}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">ចំនួន $0.36$</span>
+              <span class="worksheet-item-answer">$\to \pm 0.6$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៣. គណនាឫសការេនៃចំនួនទសភាគខាងក្រោម៖</span>
+            <span class="worksheet-section-badge difficulty-tag-basic">ស្រាល • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\sqrt{0.04}$</span>
+              <span class="worksheet-item-answer">$= 0.2$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{0.25}$</span>
+              <span class="worksheet-item-answer">$= 0.5$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$\sqrt{1.21}$</span>
+              <span class="worksheet-item-answer">$= 1.1$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\sqrt{0.0081}$</span>
+              <span class="worksheet-item-answer">$= 0.09$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៤. គណនាឫសការេនៃប្រភាគ និងចំនួនចម្រុះខាងក្រោម៖</span>
+            <span class="worksheet-section-badge difficulty-tag-basic">ស្រាល • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\sqrt{\dfrac{25}{36}}$</span>
+              <span class="worksheet-item-answer">$= \dfrac{5}{6}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{\dfrac{49}{100}}$</span>
+              <span class="worksheet-item-answer">$= \dfrac{7}{10}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$\sqrt{\dfrac{121}{169}}$</span>
+              <span class="worksheet-item-answer">$= \dfrac{11}{13}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\sqrt{1\dfrac{7}{9}}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{\dfrac{16}{9}} = \dfrac{4}{3}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៥. គណនាតម្លៃនៃកន្សោមប្រមាណវិធីសាមញ្ញ៖</span>
+            <span class="worksheet-section-badge difficulty-tag-basic">ស្រាល • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$A = \sqrt{9} + \sqrt{16}$</span>
+              <span class="worksheet-item-answer">$= 3 + 4 = 7$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$B = \sqrt{100} - \sqrt{36}$</span>
+              <span class="worksheet-item-answer">$= 10 - 6 = 4$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$C = 3\sqrt{25} - 2\sqrt{4}$</span>
+              <span class="worksheet-item-answer">$= 15 - 4 = 11$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$D = \dfrac{\sqrt{64}}{\sqrt{16}}$</span>
+              <span class="worksheet-item-answer">$= \dfrac{8}{4} = 2$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 6 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៦. រកតម្លៃ $x$ ពីសមីការសាមញ្ញរាង $x^2 = a$៖</span>
+            <span class="worksheet-section-badge difficulty-tag-basic">ស្រាល • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$x^2 = 36$</span>
+              <span class="worksheet-item-answer">$\to x = \pm 6$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$x^2 = 121$</span>
+              <span class="worksheet-item-answer">$\to x = \pm 11$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$x^2 = \dfrac{16}{49}$</span>
+              <span class="worksheet-item-answer">$\to x = \pm \dfrac{4}{7}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$x^2 - 81 = 0$</span>
+              <span class="worksheet-item-answer">$\to x = \pm 9$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 7 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៧. ប្រៀបធៀបតម្លៃនៃចំនួន (ដោយមិនប្រើម៉ាស៊ីនគិតលេខ)៖</span>
+            <span class="worksheet-section-badge difficulty-tag-basic">ស្រាល • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\sqrt{25}$ និង $6$</span>
+              <span class="worksheet-item-answer">$\to \sqrt{25} < 6$ ($5 < 6$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{48}$ និង $7$</span>
+              <span class="worksheet-item-answer">$\to \sqrt{48} < 7$ ($48 < 49$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$2\sqrt{3}$ និង $\sqrt{11}$</span>
+              <span class="worksheet-item-answer">$\to 2\sqrt{3} > \sqrt{11}$ ($\sqrt{12} > \sqrt{11}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\sqrt{0.5}$ និង $0.5$</span>
+              <span class="worksheet-item-answer">$\to \sqrt{0.5} > 0.5$ ($0.5 > 0.25$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             ផ្នែកទី ២៖ កម្រិតមធ្យម (MEDIUM LEVEL - 7 EXERCISES)
+             ======================================================== -->
+        <div class="rad-category-title">
+          <span>🟡 ផ្នែកទី ២៖ កម្រិតមធ្យម (Medium Level — ៧ លំហាត់កណ្តាល)</span>
+        </div>
+
+        <!-- Exercise 8 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៨. បញ្ចេញកត្តាពីក្រោមរ៉ាឌីកាល់ (សម្រួលរ៉ាឌីកាល់ទៅជាទម្រង់សាមញ្ញ)៖</span>
+            <span class="worksheet-section-badge difficulty-tag-medium">មធ្យម • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\sqrt{12}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{4 \times 3} = 2\sqrt{3}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{50}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{25 \times 2} = 5\sqrt{2}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$\sqrt{72}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{36 \times 2} = 6\sqrt{2}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\sqrt{180}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{36 \times 5} = 6\sqrt{5}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 9 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៩. បញ្ចូលកត្តាទៅក្នុងរ៉ាឌីកាល់ ($a\sqrt{b} = \sqrt{a^2 b}$)៖</span>
+            <span class="worksheet-section-badge difficulty-tag-medium">មធ្យម • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$3\sqrt{2}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{9 \times 2} = \sqrt{18}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$5\sqrt{3}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{25 \times 3} = \sqrt{75}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$2\sqrt{7}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{4 \times 7} = \sqrt{28}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\dfrac{1}{2}\sqrt{20}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{\dfrac{20}{4}} = \sqrt{5}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 10 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១០. គណនាផលគុណ និងផលចែករ៉ាឌីកាល់៖</span>
+            <span class="worksheet-section-badge difficulty-tag-medium">មធ្យម • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\sqrt{8} \times \sqrt{2}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{16} = 4$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{3} \times \sqrt{27}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{81} = 9$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$\dfrac{\sqrt{75}}{\sqrt{3}}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{\dfrac{75}{3}} = \sqrt{25} = 5$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\sqrt{32}\times\sqrt{2} - \dfrac{\sqrt{98}}{\sqrt{2}}$</span>
+              <span class="worksheet-item-answer">$= 8 - 7 = 1$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 11 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១១. គណនាផលបូក និងផលដករ៉ាឌីកាល់ដូចគ្នា (Like Radicals)៖</span>
+            <span class="worksheet-section-badge difficulty-tag-medium">មធ្យម • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$2\sqrt{5} + 6\sqrt{5} - 3\sqrt{5}$</span>
+              <span class="worksheet-item-answer">$= 5\sqrt{5}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{18} + \sqrt{50} - \sqrt{8}$</span>
+              <span class="worksheet-item-answer">$= 3\sqrt{2} + 5\sqrt{2} - 2\sqrt{2} = 6\sqrt{2}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$3\sqrt{20} - \sqrt{45} + 2\sqrt{80}$</span>
+              <span class="worksheet-item-answer">$= 6\sqrt{5} - 3\sqrt{5} + 8\sqrt{5} = 11\sqrt{5}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\sqrt{27} - 2\sqrt{12} + \sqrt{75}$</span>
+              <span class="worksheet-item-answer">$= 3\sqrt{3} - 4\sqrt{3} + 5\sqrt{3} = 4\sqrt{3}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 12 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១២. ពង្រាយ និងគណនាកន្សោមរ៉ាឌីកាល់ដោយប្រើរូបមន្តស្វ័យគុណ៖</span>
+            <span class="worksheet-section-badge difficulty-tag-medium">មធ្យម • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$(\sqrt{3} + \sqrt{2})^2$</span>
+              <span class="worksheet-item-answer">$= 3 + 2\sqrt{6} + 2 = 5 + 2\sqrt{6}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$(\sqrt{5} - 1)^2$</span>
+              <span class="worksheet-item-answer">$= 5 - 2\sqrt{5} + 1 = 6 - 2\sqrt{5}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$(\sqrt{7} + \sqrt{3})(\sqrt{7} - \sqrt{3})$</span>
+              <span class="worksheet-item-answer">$= 7 - 3 = 4$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$(2\sqrt{3} - \sqrt{5})(2\sqrt{3} + \sqrt{5})$</span>
+              <span class="worksheet-item-answer">$= 12 - 5 = 7$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 13 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៣. សនិទានកម្មភាគបែង (បំបាត់រ៉ាឌីកាល់ពីភាគបែង)៖</span>
+            <span class="worksheet-section-badge difficulty-tag-medium">មធ្យម • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\dfrac{6}{\sqrt{3}}$</span>
+              <span class="worksheet-item-answer">$= \dfrac{6\sqrt{3}}{3} = 2\sqrt{3}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\dfrac{10}{\sqrt{5}}$</span>
+              <span class="worksheet-item-answer">$= \dfrac{10\sqrt{5}}{5} = 2\sqrt{5}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$\dfrac{4}{\sqrt{7} - \sqrt{3}}$</span>
+              <span class="worksheet-item-answer">$= \dfrac{4(\sqrt{7}+\sqrt{3})}{4} = \sqrt{7}+\sqrt{3}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\dfrac{\sqrt{2}}{\sqrt{3} + 1}$</span>
+              <span class="worksheet-item-answer">$= \dfrac{\sqrt{6} - \sqrt{2}}{2}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 14 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៤. ដោះស្រាយសមីការមានរ៉ាឌីកាល់៖</span>
+            <span class="worksheet-section-badge difficulty-tag-medium">មធ្យម • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$2x^2 - 50 = 0$</span>
+              <span class="worksheet-item-answer">$\to x = \pm 5$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$(x - 1)^2 = 25$</span>
+              <span class="worksheet-item-answer">$\to x = 6$ ឬ $x = -4$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$\sqrt{x} = 5$</span>
+              <span class="worksheet-item-answer">$\to x = 25$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\sqrt{2x + 1} = 3$</span>
+              <span class="worksheet-item-answer">$\to 2x+1 = 9 \implies x = 4$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             ផ្នែកទី ៣៖ កម្រិតខ្ពស់ (ADVANCED LEVEL - 6 EXERCISES)
+             ======================================================== -->
+        <div class="rad-category-title">
+          <span>🔴 ផ្នែកទី ៣៖ កម្រិតខ្ពស់ (Advanced Level — ៦ លំហាត់ចុងក្រោយ)</span>
+        </div>
+
+        <!-- Exercise 15 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៥. សម្រួលកន្សោមរ៉ាឌីកាល់ស្មុគស្មាញរាង $\sqrt{A \pm 2\sqrt{B}}$ (ឫសក្នុងឫស)៖</span>
+            <span class="worksheet-section-badge difficulty-tag-hard">ខ្ពស់ • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\sqrt{7 + 2\sqrt{10}}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{(\sqrt{5}+\sqrt{2})^2} = \sqrt{5} + \sqrt{2}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{8 - 2\sqrt{15}}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{(\sqrt{5}-\sqrt{3})^2} = \sqrt{5} - \sqrt{3}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$\sqrt{11 + 2\sqrt{30}}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{(\sqrt{6}+\sqrt{5})^2} = \sqrt{6} + \sqrt{5}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\sqrt{9 - 4\sqrt{5}}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{9 - 2\sqrt{20}} = \sqrt{5} - 2$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 16 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៦. គណនាតម្លៃនៃកន្សោមបន្សាបរ៉ាឌីកាល់ខាងក្រោម៖</span>
+            <span class="worksheet-section-badge difficulty-tag-hard">ខ្ពស់ • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$P = \sqrt{4 + 2\sqrt{3}} - \sqrt{4 - 2\sqrt{3}}$</span>
+              <span class="worksheet-item-answer">$= (\sqrt{3}+1) - (\sqrt{3}-1) = 2$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$Q = \sqrt{6 + 2\sqrt{5}} + \sqrt{6 - 2\sqrt{5}}$</span>
+              <span class="worksheet-item-answer">$= (\sqrt{5}+1) + (\sqrt{5}-1) = 2\sqrt{5}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$R = \sqrt{(2-\sqrt{5})^2} + \sqrt{(3-\sqrt{5})^2}$</span>
+              <span class="worksheet-item-answer">$= (\sqrt{5}-2) + (3-\sqrt{5}) = 1$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$S = \sqrt{3 + \sqrt{5}} \cdot \sqrt{3 - \sqrt{5}}$</span>
+              <span class="worksheet-item-answer">$= \sqrt{9 - 5} = \sqrt{4} = 2$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 17 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៧. សម្រួលកន្សោមរ៉ាឌីកាល់មានអថេរ (អនុវត្តរូបមន្ត $\sqrt{A^2} = |A|$)៖</span>
+            <span class="worksheet-section-badge difficulty-tag-hard">ខ្ពស់ • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\sqrt{9x^2}$ ចំពោះ $x < 0$</span>
+              <span class="worksheet-item-answer">$= 3|x| = -3x$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{16x^4 y^2}$ ចំពោះ $y \ge 0$</span>
+              <span class="worksheet-item-answer">$= 4x^2 |y| = 4x^2 y$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$\sqrt{x^2 - 6x + 9}$ ($x \ge 3$ និង $x < 3$)</span>
+              <span class="worksheet-item-answer">$= x - 3$ (បើ $x \ge 3$) ; $3 - x$ (បើ $x < 3$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">$\dfrac{\sqrt{a^3 b}}{\sqrt{ab}}$ ចំពោះ $a > 0, b > 0$</span>
+              <span class="worksheet-item-answer">$= \sqrt{a^2} = a$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 18 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៨. គណនាតម្លៃនៃផលបូកបំបាត់រ៉ាឌីកាល់បន្តបន្ទាប់ (Telescoping Sum)៖</span>
+            <span class="worksheet-section-badge difficulty-tag-hard">ខ្ពស់ • សំណួរគន្លឹះ</span>
+          </div>
+          <div class="worksheet-grid-item" style="padding: 10px 14px;">
+            <div class="worksheet-item-math">
+              $$S = \frac{1}{1 + \sqrt{2}} + \frac{1}{\sqrt{2} + \sqrt{3}} + \frac{1}{\sqrt{3} + \sqrt{4}} + \dots + \frac{1}{\sqrt{99} + \sqrt{100}}$$
+            </div>
+            <div class="worksheet-item-answer" style="margin-top: 6px;">
+              $\to$ ដោយគុណកន្សោមឆ្លាស់ $\dfrac{1}{\sqrt{n}+\sqrt{n+1}} = \sqrt{n+1} - \sqrt{n}$ នាំឱ្យ $S = (\sqrt{2}-1) + (\sqrt{3}-\sqrt{2}) + \dots + (\sqrt{100}-\sqrt{99}) = \sqrt{100} - 1 = 10 - 1 = \mathbf{9}$
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 19 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៩. រកតម្លៃ $x$ ពីសមីការរ៉ាឌីកាល់កម្រិតខ្ពស់៖</span>
+            <span class="worksheet-section-badge difficulty-tag-hard">ខ្ពស់ • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">$\sqrt{x^2 - 4x + 4} = 3$</span>
+              <span class="worksheet-item-answer">$\to |x-2|=3 \implies x = 5$ ឬ $x = -1$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">$\sqrt{2x - 1} = x - 2$</span>
+              <span class="worksheet-item-answer">$\to x = 5$ (លក្ខខណ្ឌ $x \ge 2$, ចោល $x=1$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">$x^2 - 2\sqrt{3}x + 2 = 0$</span>
+              <span class="worksheet-item-answer">$\to (x-\sqrt{3})^2 = 1 \implies x = \sqrt{3} \pm 1$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">សម្រួល $\sqrt{x + 2\sqrt{x-1}} + \sqrt{x - 2\sqrt{x-1}}$ ($x \ge 2$)</span>
+              <span class="worksheet-item-answer">$= (\sqrt{x-1}+1) + (\sqrt{x-1}-1) = 2\sqrt{x-1}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 20 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ២០. លំហាត់អនុវត្តជាក់ស្តែង & ធរណីមាត្រ (Geometry & Real-world Applications)៖</span>
+            <span class="worksheet-section-badge difficulty-tag-hard">ខ្ពស់ • ៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ក.</span>
+              <span class="worksheet-item-math">ត្រីកោណកែងមានជ្រុងកែង $a=6\text{ cm}, b=8\text{ cm}$។ រកអ៊ីប៉ូតេនុស $c$។</span>
+              <span class="worksheet-item-answer">$\to c = \sqrt{6^2+8^2} = \sqrt{100} = 10\text{ cm}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ខ.</span>
+              <span class="worksheet-item-math">ការេមានផ្ទៃ $S = 72\text{ cm}^2$។ រករង្វាស់ជ្រុង $a$ និងអង្កត់ទ្រូង $d$។</span>
+              <span class="worksheet-item-answer">$\to a = \sqrt{72} = 6\sqrt{2}\text{ cm}$, $d = 12\text{ cm}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">គ.</span>
+              <span class="worksheet-item-math">បន្ទប់រាងចតុកោណកែងមានបណ្តោយ $2\times$ ទទឹង និងផ្ទៃ $98\text{ m}^2$។ រកវិមាត្រ។</span>
+              <span class="worksheet-item-answer">$\to 2x^2=98 \implies \text{ទទឹង } 7\text{ m}, \text{បណ្តោយ } 14\text{ m}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">ឃ.</span>
+              <span class="worksheet-item-math">បង្ហាញថា $M = \sqrt{5+2\sqrt{6}} + \sqrt{5-2\sqrt{6}}$ មាន $M^2 = 12$ រួចទាញរក $M$។</span>
+              <span class="worksheet-item-answer">$\to M^2 = 10 + 2 = 12 \implies M = \sqrt{12} = 2\sqrt{3}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="worksheet-footer-bottom">
+          <div>រៀបរៀង & បង្រៀនដោយ៖ អ្នកគ្រូ ឆេង ឆវ័ន្ត (CVN Math Specialist)</div>
+          <div>ទូរស័ព្ទ / Telegram: ០៩៩ ៧៧ ៥៥ ០១</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       WORKSHEET PRINT PREVIEW MODAL
+       ============================================================ -->
+  <div id="worksheet-preview-modal" class="modal-overlay" style="display: none; z-index: 99999; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(15, 23, 42, 0.78);">
+    <div style="width: 96%; max-width: 1100px; height: 92vh; display: flex; flex-direction: column; background: #0f172a; border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(16, 185, 129, 0.15); overflow: hidden; margin: auto;">
+      
+      <!-- Top Floating Toolbar -->
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.5rem; background: rgba(30, 41, 59, 0.85); border-bottom: 1px solid rgba(255, 255, 255, 0.1); flex-wrap: wrap; gap: 0.75rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.5rem;">📄</span>
+          <div>
+            <div style="font-weight: 700; font-size: 1rem; color: #f8fafc;" id="preview-modal-title">
+              ទម្រង់បោះពុម្ពសន្លឹកកិច្ចការ A4៖ រកឫសការេនៃមួយចំនួន (ថ្នាក់ទី៩)
+            </div>
+            <div style="font-size: 0.78rem; color: #94a3b8;">
+              ទំហំក្រដាស A4 បញ្ឈរ (210mm × 297mm) • ២០ លំហាត់ (៨០ សំណួរ) • KaTeX Vector Math
+            </div>
+          </div>
+        </div>
+
+        <!-- Zoom & View Controls -->
+        <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(15, 23, 42, 0.6); padding: 4px 10px; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <button type="button" class="btn btn-outline btn-sm" onclick="zoomWorksheetPreview(-0.1)" style="padding: 2px 8px; border-radius: 20px;" title="បង្រួម (Zoom Out)">➖</button>
+          <span id="preview-zoom-val" style="font-size: 0.82rem; font-weight: 700; color: #34d399; min-width: 45px; text-align: center;">85%</span>
+          <button type="button" class="btn btn-outline btn-sm" onclick="zoomWorksheetPreview(0.1)" style="padding: 2px 8px; border-radius: 20px;" title="ពង្រីក (Zoom In)">➕</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="setWorksheetPreviewZoom(1.0)" style="padding: 2px 8px; border-radius: 20px;" title="ទំហំដើម 100%">100%</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="fitWorksheetPreviewWidth()" style="padding: 2px 10px; border-radius: 20px;" title="សមល្មមអេក្រង់">📐 សមល្មម</button>
+        </div>
+
+        <!-- Action Export Buttons -->
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <button type="button" class="btn btn-outline btn-sm" id="btn-preview-toggle-answers" onclick="toggleWorksheetAnswers()" style="font-size: 0.82rem;">
+            👁️ បង្ហាញចម្លើយ
+          </button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="exportActiveWorksheetWord()" style="border-color: #3b82f6; color: #60a5fa; font-size: 0.82rem;" title="នាំចេញជា Word">
+            📄 Word
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()" style="background: linear-gradient(135deg, #059669, #047857); border: none; font-size: 0.82rem;" title="បោះពុម្ពលើក្រដាស A4 ឬ Save as PDF">
+            🖨️ បោះពុម្ព
+          </button>
+          <button type="button" class="modal-close-btn" onclick="closeWorksheetPreviewModal()" style="position: static; width: 32px; height: 32px; margin-left: 0.4rem;" aria-label="បិទ">✕</button>
+        </div>
+      </div>
+
+      <!-- Preview Viewport -->
+      <div id="preview-viewport-scroll" style="flex: 1; overflow: auto; padding: 2.5rem 1rem; background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); display: flex; justify-content: center; align-items: flex-start;">
+        <div id="preview-sheet-stage" style="transform-origin: top center; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);">
+          <div id="preview-sheet-clone-container">
+            <!-- Active A4 Worksheet will be cloned and injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inline Script for Worksheet Handling & High-Fidelity Export -->
+  <script>
+    let currentPreviewZoom = 0.85;
+
+    function getActiveWorksheetElement() {
+      return document.getElementById('worksheet-radicals-grade9-sheet');
+    }
+
+    function toggleWorksheetAnswers() {
+      const activeSheet = getActiveWorksheetElement();
+      const btn = document.getElementById('btn-toggle-answers');
+      const previewBtn = document.getElementById('btn-preview-toggle-answers');
+      if (!activeSheet) return;
+
+      activeSheet.classList.toggle('show-answers');
+      const isShown = activeSheet.classList.contains('show-answers');
+
+      const text = isShown ? '👁️ លាក់ចម្លើយ' : '👁️ បង្ហាញចម្លើយ';
+      if (btn) {
+        btn.textContent = text;
+        btn.style.color = isShown ? '#34d399' : '';
+      }
+      if (previewBtn) {
+        previewBtn.textContent = text;
+        previewBtn.style.color = isShown ? '#34d399' : '';
+      }
+
+      const clone = document.querySelector('#preview-sheet-clone-container .worksheet-a4-sheet');
+      if (clone) {
+        clone.classList.toggle('show-answers', isShown);
+      }
+    }
+
+    function printActiveWorksheet() {
+      window.print();
+    }
+
+    function openWorksheetPreviewModal() {
+      const modal = document.getElementById('worksheet-preview-modal');
+      const cloneContainer = document.getElementById('preview-sheet-clone-container');
+      const activeSheet = getActiveWorksheetElement();
+      if (!modal || !cloneContainer || !activeSheet) return;
+
+      cloneContainer.innerHTML = '';
+      const clone = activeSheet.cloneNode(true);
+      clone.style.display = 'block';
+      clone.style.margin = '0 auto';
+      clone.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.45)';
+      cloneContainer.appendChild(clone);
+
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        fitWorksheetPreviewWidth();
+        if (typeof triggerMathRender === 'function') {
+          triggerMathRender(cloneContainer);
+        } else if (typeof renderMathInElement === 'function') {
+          renderMathInElement(cloneContainer, {
+            delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+            throwOnError: false
+          });
+        }
+      }, 50);
+    }
+
+    function closeWorksheetPreviewModal() {
+      const modal = document.getElementById('worksheet-preview-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    function setWorksheetPreviewZoom(val) {
+      currentPreviewZoom = Math.min(1.5, Math.max(0.4, val));
+      const stage = document.getElementById('preview-sheet-stage');
+      const label = document.getElementById('preview-zoom-val');
+      if (stage) stage.style.transform = `scale(${currentPreviewZoom})`;
+      if (label) label.textContent = `${Math.round(currentPreviewZoom * 100)}%`;
+    }
+
+    function zoomWorksheetPreview(delta) {
+      setWorksheetPreviewZoom(currentPreviewZoom + delta);
+    }
+
+    function fitWorksheetPreviewWidth() {
+      const scrollArea = document.getElementById('preview-viewport-scroll');
+      if (!scrollArea) return;
+      const availableW = scrollArea.clientWidth - 48;
+      const fitZoom = Math.min(1.15, Math.max(0.45, availableW / 820));
+      setWorksheetPreviewZoom(fitZoom);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeWorksheetPreviewModal();
+    });
+
+    function exportActiveWorksheetWord() {
+      const element = getActiveWorksheetElement();
+      if (!element) return;
+
+      const title = 'សន្លឹកកិច្ចការ_រកឫសការេនៃមួយចំនួន_ថ្នាក់ទី៩_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត';
+      const clone = element.cloneNode(true);
+      const watermark = clone.querySelector('.worksheet-watermark');
+      if (watermark) watermark.remove();
+
+      // Convert KaTeX formulas to plain text if needed
+      const katexEls = clone.querySelectorAll('.katex');
+      katexEls.forEach(el => {
+        const annotation = el.querySelector('annotation[encoding="application/x-tex"]');
+        if (annotation) {
+          const span = document.createElement('span');
+          span.textContent = annotation.textContent;
+          el.parentNode.replaceChild(span, el);
+        }
+      });
+
+      const styles = `
+        <style>
+          @page WordSection1 { size: 595.3pt 841.9pt; margin: 36.0pt 36.0pt 36.0pt 36.0pt; }
+          div.WordSection1 { page: WordSection1; }
+          body { font-family: 'Khmer OS Siemreap', 'Kantumruy Pro', 'Segoe UI', Arial, sans-serif; font-size: 11pt; line-height: 1.4; color: #000; }
+          .worksheet-header-top { text-align: center; font-weight: bold; margin-bottom: 15pt; }
+          .worksheet-main-title { font-size: 16pt; color: #047857; text-transform: uppercase; margin: 4pt 0; }
+          .rad-category-title { font-size: 13pt; font-weight: bold; color: #065f46; border-bottom: 2pt solid #10b981; padding-bottom: 3pt; margin-top: 14pt; margin-bottom: 8pt; }
+          .worksheet-section { margin-bottom: 10pt; }
+          .worksheet-section-title { font-size: 11pt; font-weight: bold; background: #e2e8f0; padding: 4pt 8pt; border-left: 4pt solid #10b981; margin-bottom: 5pt; }
+          table { width: 100%; border-collapse: collapse; margin-bottom: 6pt; }
+          td { width: 50%; padding: 4pt 6pt; vertical-align: top; font-size: 10.5pt; }
+          .worksheet-item-label { font-weight: bold; color: #047857; margin-right: 4pt; }
+          .worksheet-item-answer { color: #047857; font-weight: bold; margin-left: 6pt; }
+          .worksheet-footer-bottom { border-top: 1pt solid #cbd5e1; margin-top: 15pt; padding-top: 5pt; font-size: 9pt; text-align: center; color: #64748b; }
+        </style>
+      `;
+
+      // Transform grid-2 to HTML tables for MS Word compatibility
+      const grids = clone.querySelectorAll('.worksheet-grid-2');
+      grids.forEach(grid => {
+        const items = Array.from(grid.children);
+        let tableHtml = '<table border="0" cellspacing="0" cellpadding="4">';
+        for (let i = 0; i < items.length; i += 2) {
+          tableHtml += '<tr>';
+          tableHtml += `<td>${items[i] ? items[i].innerHTML : ''}</td>`;
+          tableHtml += `<td>${items[i+1] ? items[i+1].innerHTML : ''}</td>`;
+          tableHtml += '</tr>';
+        }
+        tableHtml += '</table>';
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = tableHtml;
+        grid.parentNode.replaceChild(wrapper.firstChild, grid);
+      });
+
+      const htmlContent = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+        <head>
+          <meta charset='utf-8'>
+          <title>${title}</title>
+          ${styles}
+        </head>
+        <body>
+          <div class="WordSection1">
+            ${clone.innerHTML}
+          </div>
+        </body>
+        </html>
+      `;
+
+      const blob = new Blob(['\ufeff', htmlContent], { type: 'application/msword;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `${title}.doc`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>

@@ -51,6 +51,7 @@ CVN app/
 ├── LESSON-RADICALS-GRADE9.md         # Full Markdown & LaTeX docs for Grade 9 Lesson 1
 ├── lesson-plan-*.html                # IBL & 5E Lesson Plans
 ├── exercises.html                    # Student exercises
+├── exercise-radicals-grade9.html     # Grade 9 Square Roots Worksheet (20 Exercises: Basic, Medium, High)
 ├── exercise-sequences-grade11.html   # Grade 11 Sequences Worksheet
 ├── exams.html                        # Mock exam system
 ├── game-grade9.html                  # Grade 9 Math Hero Game

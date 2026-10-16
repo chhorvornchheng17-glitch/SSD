@@ -3291,6 +3291,614 @@ const EXERCISES_DATA = [
     `
   },
 
+,
+  /* ============================================================
+     GRADE 9 RADICALS & SQUARE ROOTS EXERCISES (20 EXERCISES)
+     ស្រង់ចេញ និងរៀបចំតាមកម្រិត ស្រាល មធ្យម និងខ្ពស់
+     ============================================================ */
+  {
+    id: 'ex-g9-rad-01',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'basic',
+    difficultyLabel: 'ស្រាល',
+    difficultyColor: 'emerald',
+    title: 'លំហាត់ទី ១. គណនាឫសការេនៃចំនួនការេពេញលេញ',
+    problem: `គណនាឫសការេនៃចំនួនការេពេញលេញខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\sqrt{49}$</div>
+        <div><strong>ខ.</strong> $\\sqrt{81}$</div>
+        <div><strong>គ.</strong> $\\sqrt{144}$</div>
+        <div><strong>ឃ.</strong> $\\sqrt{225}$</div>
+      </div>`,
+    hint: 'រកចំនួនវិជ្ជមាន $b$ ដែល $b^2 = a$ នោះ $\\sqrt{a} = b$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\sqrt{49} = \\sqrt{7^2} = 7$ (ព្រោះ $7 > 0$ និង $7^2 = 49$)</li>
+        <li><strong>ខ.</strong> $\\sqrt{81} = \\sqrt{9^2} = 9$ (ព្រោះ $9 > 0$ និង $9^2 = 81$)</li>
+        <li><strong>គ.</strong> $\\sqrt{144} = \\sqrt{12^2} = 12$ (ព្រោះ $12^2 = 144$)</li>
+        <li><strong>ឃ.</strong> $\\sqrt{225} = \\sqrt{15^2} = 15$ (ព្រោះ $15^2 = 225$)</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $7$ ; ខ. $9$ ; គ. $12$ ; ឃ. $15$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-02',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'basic',
+    difficultyLabel: 'ស្រាល',
+    difficultyColor: 'emerald',
+    title: 'លំហាត់ទី ២. រកឫសការេទាំងអស់ (ទាំងវិជ្ជមាន និងអវិជ្ជមាន)',
+    problem: `រកឫសការេទាំងអស់នៃចំនួនខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> ចំនួន $64$</div>
+        <div><strong>ខ.</strong> ចំនួន $100$</div>
+        <div><strong>គ.</strong> ចំនួន $\\dfrac{4}{9}$</div>
+        <div><strong>ឃ.</strong> ចំនួន $0.36$</div>
+      </div>`,
+    hint: 'គ្រប់ចំនួនពិតវិជ្ជមាន $a > 0$ តែងតែមានឫសការេពីរផ្ទុយគ្នាជានិច្ច គឺ $\\sqrt{a}$ និង $-\\sqrt{a}$ (សរសេរ $\\pm\\sqrt{a}$)។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> ដោយ $8^2 = 64$ និង $(-8)^2 = 64$ នាំឱ្យ $64$ មានឫសការេពីរគឺ $8$ និង $-8$ (សរសេរ $\\pm 8$)</li>
+        <li><strong>ខ.</strong> ដោយ $10^2 = 100$ និង $(-10)^2 = 100$ នាំឱ្យ $100$ មានឫសការេពីរគឺ $10$ និង $-10$ (សរសេរ $\\pm 10$)</li>
+        <li><strong>គ.</strong> ដោយ $\\left(\\frac{2}{3}\\right)^2 = \\frac{4}{9}$ និង $\\left(-\\frac{2}{3}\\right)^2 = \\frac{4}{9}$ នាំឱ្យ $\\frac{4}{9}$ មានឫសការេពីរគឺ $\\frac{2}{3}$ និង $-\\frac{2}{3}$ (សរសេរ $\\pm \\frac{2}{3}$)</li>
+        <li><strong>ឃ.</strong> ដោយ $(0.6)^2 = 0.36$ និង $(-0.6)^2 = 0.36$ នាំឱ្យ $0.36$ មានឫសការេពីរគឺ $0.6$ និង $-0.6$ (សរសេរ $\\pm 0.6$)</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $\\pm 8$ ; ខ. $\\pm 10$ ; គ. $\\pm \\frac{2}{3}$ ; ឃ. $\\pm 0.6$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-03',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'basic',
+    difficultyLabel: 'ស្រាល',
+    difficultyColor: 'emerald',
+    title: 'លំហាត់ទី ៣. គណនាឫសការេនៃចំនួនទសភាគ',
+    problem: `គណនាឫសការេនៃចំនួនទសភាគខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\sqrt{0.04}$</div>
+        <div><strong>ខ.</strong> $\\sqrt{0.25}$</div>
+        <div><strong>គ.</strong> $\\sqrt{1.21}$</div>
+        <div><strong>ឃ.</strong> $\\sqrt{0.0081}$</div>
+      </div>`,
+    hint: 'បំប្លែងចំនួនទសភាគទៅជាប្រភាគទសភាគ រួចអនុវត្ត $\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\sqrt{0.04} = \\sqrt{\\frac{4}{100}} = \\frac{\\sqrt{4}}{\\sqrt{100}} = \\frac{2}{10} = 0.2$</li>
+        <li><strong>ខ.</strong> $\\sqrt{0.25} = \\sqrt{\\frac{25}{100}} = \\frac{\\sqrt{25}}{\\sqrt{100}} = \\frac{5}{10} = 0.5$</li>
+        <li><strong>គ.</strong> $\\sqrt{1.21} = \\sqrt{\\frac{121}{100}} = \\frac{\\sqrt{121}}{\\sqrt{100}} = \\frac{11}{10} = 1.1$</li>
+        <li><strong>ឃ.</strong> $\\sqrt{0.0081} = \\sqrt{\\frac{81}{10000}} = \\frac{\\sqrt{81}}{\\sqrt{10000}} = \\frac{9}{100} = 0.09$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $0.2$ ; ខ. $0.5$ ; គ. $1.1$ ; ឃ. $0.09$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-04',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'basic',
+    difficultyLabel: 'ស្រាល',
+    difficultyColor: 'emerald',
+    title: 'លំហាត់ទី ៤. គណនាឫសការេនៃប្រភាគ និងចំនួនចម្រុះ',
+    problem: `គណនាឫសការេនៃប្រភាគ និងចំនួនចម្រុះខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\sqrt{\\dfrac{25}{36}}$</div>
+        <div><strong>ខ.</strong> $\\sqrt{\\dfrac{49}{100}}$</div>
+        <div><strong>គ.</strong> $\\sqrt{\\dfrac{121}{169}}$</div>
+        <div><strong>ឃ.</strong> $\\sqrt{1\\dfrac{7}{9}}$</div>
+      </div>`,
+    hint: 'ចំពោះចំនួនចម្រុះ $1\\frac{7}{9}$ ត្រូវបំប្លែងទៅជាប្រភាគមិនសុទ្ធ $\\frac{9 \\times 1 + 7}{9} = \\frac{16}{9}$ ជាមុន។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\sqrt{\\frac{25}{36}} = \\frac{\\sqrt{25}}{\\sqrt{36}} = \\frac{5}{6}$</li>
+        <li><strong>ខ.</strong> $\\sqrt{\\frac{49}{100}} = \\frac{\\sqrt{49}}{\\sqrt{100}} = \\frac{7}{10}$</li>
+        <li><strong>គ.</strong> $\\sqrt{\\frac{121}{169}} = \\frac{\\sqrt{121}}{\\sqrt{169}} = \\frac{11}{13}$</li>
+        <li><strong>ឃ.</strong> $\\sqrt{1\\frac{7}{9}} = \\sqrt{\\frac{1 \\times 9 + 7}{9}} = \\sqrt{\\frac{16}{9}} = \\frac{\\sqrt{16}}{\\sqrt{9}} = \\frac{4}{3}$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $\\frac{5}{6}$ ; ខ. $\\frac{7}{10}$ ; គ. $\\frac{11}{13}$ ; ឃ. $\\frac{4}{3}$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-05',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'basic',
+    difficultyLabel: 'ស្រាល',
+    difficultyColor: 'emerald',
+    title: 'លំហាត់ទី ៥. គណនាតម្លៃនៃកន្សោមប្រមាណវិធីសាមញ្ញ',
+    problem: `គណនាតម្លៃនៃកន្សោមប្រមាណវិធីខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $A = \\sqrt{9} + \\sqrt{16}$</div>
+        <div><strong>ខ.</strong> $B = \\sqrt{100} - \\sqrt{36}$</div>
+        <div><strong>គ.</strong> $C = 3\\sqrt{25} - 2\\sqrt{4}$</div>
+        <div><strong>ឃ.</strong> $D = \\dfrac{\\sqrt{64}}{\\sqrt{16}}$</div>
+      </div>`,
+    hint: 'គណនាតម្លៃឫសការេនីមួយៗជាមុន រួចទើបធ្វើប្រមាណវិធីបូក ដក គុណ ចែក។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $A = 3 + 4 = 7$ (កត់សម្គាល់៖ $\\sqrt{9+16} = \\sqrt{25} = 5 \\ne \\sqrt{9} + \\sqrt{16}$)</li>
+        <li><strong>ខ.</strong> $B = 10 - 6 = 4$</li>
+        <li><strong>គ.</strong> $C = 3(5) - 2(2) = 15 - 4 = 11$</li>
+        <li><strong>ឃ.</strong> $D = \\frac{8}{4} = 2$ ឬ $D = \\sqrt{\\frac{64}{16}} = \\sqrt{4} = 2$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> $A = 7$, $B = 4$, $C = 11$, $D = 2$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-06',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'basic',
+    difficultyLabel: 'ស្រាល',
+    difficultyColor: 'emerald',
+    title: 'លំហាត់ទី ៦. រកតម្លៃ x ពីសមីការសាមញ្ញរាង x² = a',
+    problem: `រកតម្លៃ $x$ ពីសមីការខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $x^2 = 36$</div>
+        <div><strong>ខ.</strong> $x^2 = 121$</div>
+        <div><strong>គ.</strong> $x^2 = \\dfrac{16}{49}$</div>
+        <div><strong>ឃ.</strong> $x^2 - 81 = 0$</div>
+      </div>`,
+    hint: 'បើ $a > 0$ នោះ $x^2 = a \\iff x = \\sqrt{a}$ ឬ $x = -\\sqrt{a}$ (សរសេរ $x = \\pm\\sqrt{a}$)។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $x^2 = 36 \\implies x = \\pm\\sqrt{36} \\implies x = 6$ ឬ $x = -6$</li>
+        <li><strong>ខ.</strong> $x^2 = 121 \\implies x = \\pm\\sqrt{121} \\implies x = 11$ ឬ $x = -11$</li>
+        <li><strong>គ.</strong> $x^2 = \\frac{16}{49} \\implies x = \\pm\\sqrt{\\frac{16}{49}} \\implies x = \\frac{4}{7}$ ឬ $x = -\\frac{4}{7}$</li>
+        <li><strong>ឃ.</strong> $x^2 - 81 = 0 \\iff x^2 = 81 \\implies x = \\pm\\sqrt{81} \\implies x = 9$ ឬ $x = -9$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $x = \\pm 6$ ; ខ. $x = \\pm 11$ ; គ. $x = \\pm \\frac{4}{7}$ ; ឃ. $x = \\pm 9$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-07',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'basic',
+    difficultyLabel: 'ស្រាល',
+    difficultyColor: 'emerald',
+    title: 'លំហាត់ទី ៧. ប្រៀបធៀបតម្លៃនៃចំនួន',
+    problem: `ប្រៀបធៀបតម្លៃនៃគូនៃចំនួនខាងក្រោមដោយមិនប្រើម៉ាស៊ីនគិតលេខ៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\sqrt{25}$ និង $6$</div>
+        <div><strong>ខ.</strong> $\\sqrt{48}$ និង $7$</div>
+        <div><strong>គ.</strong> $2\\sqrt{3}$ និង $\\sqrt{11}$</div>
+        <div><strong>ឃ.</strong> $\\sqrt{0.5}$ និង $0.5$</div>
+      </div>`,
+    hint: 'លើកចំនួនទាំងពីរជាការេ រួចប្រៀបធៀបលទ្ធផល (បើ $0 < a < b$ នោះ $\\sqrt{a} < \\sqrt{b}$)។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\sqrt{25} = 5$។ ដោយ $5 < 6$ នាំឱ្យ $\\sqrt{25} < 6$</li>
+        <li><strong>ខ.</strong> លើកជាការេ៖ $(\\sqrt{48})^2 = 48$ និង $7^2 = 49$។ ដោយ $48 < 49$ នាំឱ្យ $\\sqrt{48} < 7$</li>
+        <li><strong>គ.</strong> បញ្ចូលក្នុងរ៉ាឌីកាល់៖ $2\\sqrt{3} = \\sqrt{4 \\times 3} = \\sqrt{12}$។ ដោយ $12 > 11$ នាំឱ្យ $2\\sqrt{3} > \\sqrt{11}$</li>
+        <li><strong>ឃ.</strong> លើកជាការេ៖ $(\\sqrt{0.5})^2 = 0.5$ និង $(0.5)^2 = 0.25$។ ដោយ $0.5 > 0.25$ នាំឱ្យ $\\sqrt{0.5} > 0.5$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $\\sqrt{25} < 6$ ; ខ. $\\sqrt{48} < 7$ ; គ. $2\\sqrt{3} > \\sqrt{11}$ ; ឃ. $\\sqrt{0.5} > 0.5$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-08',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'លំហាត់ទី ៨. បញ្ចេញកត្តាពីក្រោមរ៉ាឌីកាល់ (សម្រួលរ៉ាឌីកាល់)',
+    problem: `បញ្ចេញកត្តាពីក្រោមរ៉ាឌីកាល់ដើម្បីសម្រួលកន្សោមខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\sqrt{12}$</div>
+        <div><strong>ខ.</strong> $\\sqrt{50}$</div>
+        <div><strong>គ.</strong> $\\sqrt{72}$</div>
+        <div><strong>ឃ.</strong> $\\sqrt{180}$</div>
+      </div>`,
+    hint: 'បំបែករ៉ាឌីកង់ជាផលគុណដែលមានកត្តាមួយជាការេពេញលេញធំបំផុត៖ $\\sqrt{a^2 b} = a\\sqrt{b}$ ($a > 0$)។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\sqrt{12} = \\sqrt{4 \\times 3} = \\sqrt{2^2 \\times 3} = 2\\sqrt{3}$</li>
+        <li><strong>ខ.</strong> $\\sqrt{50} = \\sqrt{25 \\times 2} = \\sqrt{5^2 \\times 2} = 5\\sqrt{2}$</li>
+        <li><strong>គ.</strong> $\\sqrt{72} = \\sqrt{36 \\times 2} = \\sqrt{6^2 \\times 2} = 6\\sqrt{2}$</li>
+        <li><strong>ឃ.</strong> $\\sqrt{180} = \\sqrt{36 \\times 5} = \\sqrt{6^2 \\times 5} = 6\\sqrt{5}$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $2\\sqrt{3}$ ; ខ. $5\\sqrt{2}$ ; គ. $6\\sqrt{2}$ ; ឃ. $6\\sqrt{5}$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-09',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'លំហាត់ទី ៩. បញ្ចូលកត្តាទៅក្នុងរ៉ាឌីកាល់',
+    problem: `បញ្ចូលកត្តានៅក្រៅរ៉ាឌីកាល់ទៅក្នុងរ៉ាឌីកាល់វិញ៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $3\\sqrt{2}$</div>
+        <div><strong>ខ.</strong> $5\\sqrt{3}$</div>
+        <div><strong>គ.</strong> $2\\sqrt{7}$</div>
+        <div><strong>ឃ.</strong> $\\dfrac{1}{2}\\sqrt{20}$</div>
+      </div>`,
+    hint: 'ចំពោះ $a > 0$ គេបាន $a\\sqrt{b} = \\sqrt{a^2 \\cdot b}$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $3\\sqrt{2} = \\sqrt{3^2 \\times 2} = \\sqrt{9 \\times 2} = \\sqrt{18}$</li>
+        <li><strong>ខ.</strong> $5\\sqrt{3} = \\sqrt{5^2 \\times 3} = \\sqrt{25 \\times 3} = \\sqrt{75}$</li>
+        <li><strong>គ.</strong> $2\\sqrt{7} = \\sqrt{2^2 \\times 7} = \\sqrt{4 \\times 7} = \\sqrt{28}$</li>
+        <li><strong>ឃ.</strong> $\\frac{1}{2}\\sqrt{20} = \\sqrt{\\left(\\frac{1}{2}\\right)^2 \\times 20} = \\sqrt{\\frac{20}{4}} = \\sqrt{5}$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $\\sqrt{18}$ ; ខ. $\\sqrt{75}$ ; គ. $\\sqrt{28}$ ; ឃ. $\\sqrt{5}$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-10',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'លំហាត់ទី ១០. គណនាផលគុណ និងផលចែករ៉ាឌីកាល់',
+    problem: `គណនាតម្លៃនៃកន្សោមខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\sqrt{8} \\times \\sqrt{2}$</div>
+        <div><strong>ខ.</strong> $\\sqrt{3} \\times \\sqrt{27}$</div>
+        <div><strong>គ.</strong> $\\dfrac{\\sqrt{75}}{\\sqrt{3}}$</div>
+        <div><strong>ឃ.</strong> $\\sqrt{32} \\times \\sqrt{2} - \\dfrac{\\sqrt{98}}{\\sqrt{2}}$</div>
+      </div>`,
+    hint: 'ប្រើវិធានផលគុណ $\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{ab}$ និងផលចែក $\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}}$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\sqrt{8} \\times \\sqrt{2} = \\sqrt{8 \\times 2} = \\sqrt{16} = 4$</li>
+        <li><strong>ខ.</strong> $\\sqrt{3} \\times \\sqrt{27} = \\sqrt{3 \\times 27} = \\sqrt{81} = 9$</li>
+        <li><strong>គ.</strong> $\\frac{\\sqrt{75}}{\\sqrt{3}} = \\sqrt{\\frac{75}{3}} = \\sqrt{25} = 5$</li>
+        <li><strong>ឃ.</strong> $\\sqrt{32} \\times \\sqrt{2} - \\frac{\\sqrt{98}}{\\sqrt{2}} = \\sqrt{64} - \\sqrt{49} = 8 - 7 = 1$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $4$ ; ខ. $9$ ; គ. $5$ ; ឃ. $1$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-11',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'លំហាត់ទី ១១. គណនាផលបូក និងផលដករ៉ាឌីកាល់ដូចគ្នា',
+    problem: `គណនា និងសម្រួលកន្សោមរ៉ាឌីកាល់ខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $2\\sqrt{5} + 6\\sqrt{5} - 3\\sqrt{5}$</div>
+        <div><strong>ខ.</strong> $\\sqrt{18} + \\sqrt{50} - \\sqrt{8}$</div>
+        <div><strong>គ.</strong> $3\\sqrt{20} - \\sqrt{45} + 2\\sqrt{80}$</div>
+        <div><strong>ឃ.</strong> $\\sqrt{27} - 2\\sqrt{12} + \\sqrt{75}$</div>
+      </div>`,
+    hint: 'បំប្លែងរ៉ាឌីកាល់នីមួយៗឱ្យទៅជារ៉ាឌីកាល់ដូចគ្នា (Like Radicals) រួចបូកដកមេគុណ។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $2\\sqrt{5} + 6\\sqrt{5} - 3\\sqrt{5} = (2 + 6 - 3)\\sqrt{5} = 5\\sqrt{5}$</li>
+        <li><strong>ខ.</strong> $\\sqrt{18} + \\sqrt{50} - \\sqrt{8} = 3\\sqrt{2} + 5\\sqrt{2} - 2\\sqrt{2} = (3 + 5 - 2)\\sqrt{2} = 6\\sqrt{2}$</li>
+        <li><strong>គ.</strong> $3\\sqrt{20} - \\sqrt{45} + 2\\sqrt{80} = 3(2\\sqrt{5}) - 3\\sqrt{5} + 2(4\\sqrt{5}) = 6\\sqrt{5} - 3\\sqrt{5} + 8\\sqrt{5} = 11\\sqrt{5}$</li>
+        <li><strong>ឃ.</strong> $\\sqrt{27} - 2\\sqrt{12} + \\sqrt{75} = 3\\sqrt{3} - 2(2\\sqrt{3}) + 5\\sqrt{3} = 3\\sqrt{3} - 4\\sqrt{3} + 5\\sqrt{3} = 4\\sqrt{3}$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $5\\sqrt{5}$ ; ខ. $6\\sqrt{2}$ ; គ. $11\\sqrt{5}$ ; ឃ. $4\\sqrt{3}$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-12',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'លំហាត់ទី ១២. ពង្រាយ និងគណនាកន្សោមរ៉ាឌីកាល់',
+    problem: `ពង្រាយ និងសម្រួលកន្សោមរ៉ាឌីកាល់ដោយប្រើរូបមន្តស្វ័យគុណ៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $(\\sqrt{3} + \\sqrt{2})^2$</div>
+        <div><strong>ខ.</strong> $(\\sqrt{5} - 1)^2$</div>
+        <div><strong>គ.</strong> $(\\sqrt{7} + \\sqrt{3})(\\sqrt{7} - \\sqrt{3})$</div>
+        <div><strong>ឃ.</strong> $(2\\sqrt{3} - \\sqrt{5})(2\\sqrt{3} + \\sqrt{5})$</div>
+      </div>`,
+    hint: 'ប្រើរូបមន្ត $(a+b)^2 = a^2 + 2ab + b^2$, $(a-b)^2 = a^2 - 2ab + b^2$ និង $(a+b)(a-b) = a^2 - b^2$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $(\\sqrt{3} + \\sqrt{2})^2 = (\\sqrt{3})^2 + 2(\\sqrt{3})(\\sqrt{2}) + (\\sqrt{2})^2 = 3 + 2\\sqrt{6} + 2 = 5 + 2\\sqrt{6}$</li>
+        <li><strong>ខ.</strong> $(\\sqrt{5} - 1)^2 = (\\sqrt{5})^2 - 2\\sqrt{5}(1) + 1^2 = 5 - 2\\sqrt{5} + 1 = 6 - 2\\sqrt{5}$</li>
+        <li><strong>គ.</strong> $(\\sqrt{7} + \\sqrt{3})(\\sqrt{7} - \\sqrt{3}) = (\\sqrt{7})^2 - (\\sqrt{3})^2 = 7 - 3 = 4$</li>
+        <li><strong>ឃ.</strong> $(2\\sqrt{3} - \\sqrt{5})(2\\sqrt{3} + \\sqrt{5}) = (2\\sqrt{3})^2 - (\\sqrt{5})^2 = 4(3) - 5 = 12 - 5 = 7$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $5 + 2\\sqrt{6}$ ; ខ. $6 - 2\\sqrt{5}$ ; គ. $4$ ; ឃ. $7$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-13',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'លំហាត់ទី ១៣. សនិទានកម្មភាគបែង (បំបាត់រ៉ាឌីកាល់ពីភាគបែង)',
+    problem: `បំបាត់រ៉ាឌីកាល់ពីភាគបែងនៃប្រភាគខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\dfrac{6}{\\sqrt{3}}$</div>
+        <div><strong>ខ.</strong> $\\dfrac{10}{\\sqrt{5}}$</div>
+        <div><strong>គ.</strong> $\\dfrac{4}{\\sqrt{7} - \\sqrt{3}}$</div>
+        <div><strong>ឃ.</strong> $\\dfrac{\\sqrt{2}}{\\sqrt{3} + 1}$</div>
+      </div>`,
+    hint: 'គុណភាគយក និងភាគបែងនឹងរ៉ាឌីកាល់ដូចគ្នា ឬនឹងកន្សោមឆ្លាស់នៃភាគបែង។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\frac{6}{\\sqrt{3}} = \\frac{6\\sqrt{3}}{\\sqrt{3} \\times \\sqrt{3}} = \\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}$</li>
+        <li><strong>ខ.</strong> $\\frac{10}{\\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$</li>
+        <li><strong>គ.</strong> គុណកន្សោមឆ្លាស់ $(\\sqrt{7}+\\sqrt{3})$៖ $\\frac{4(\\sqrt{7}+\\sqrt{3})}{(\\sqrt{7}-\\sqrt{3})(\\sqrt{7}+\\sqrt{3})} = \\frac{4(\\sqrt{7}+\\sqrt{3})}{7-3} = \\frac{4(\\sqrt{7}+\\sqrt{3})}{4} = \\sqrt{7}+\\sqrt{3}$</li>
+        <li><strong>ឃ.</strong> គុណកន្សោមឆ្លាស់ $(\\sqrt{3}-1)$៖ $\\frac{\\sqrt{2}(\\sqrt{3}-1)}{(\sqrt{3}+1)(\\sqrt{3}-1)} = \\frac{\\sqrt{6}-\\sqrt{2}}{3-1} = \\frac{\\sqrt{6}-\\sqrt{2}}{2}$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $2\\sqrt{3}$ ; ខ. $2\\sqrt{5}$ ; គ. $\\sqrt{7}+\\sqrt{3}$ ; ឃ. $\\frac{\\sqrt{6}-\\sqrt{2}}{2}$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-14',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'medium',
+    difficultyLabel: 'មធ្យម',
+    difficultyColor: 'amber',
+    title: 'លំហាត់ទី ១៤. ដោះស្រាយសមីការមានរ៉ាឌីកាល់',
+    problem: `ដោះស្រាយសមីការខាងក្រោមក្នុង $\\mathbb{R}$៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $2x^2 - 50 = 0$</div>
+        <div><strong>ខ.</strong> $(x - 1)^2 = 25$</div>
+        <div><strong>គ.</strong> $\\sqrt{x} = 5$</div>
+        <div><strong>ឃ.</strong> $\\sqrt{2x + 1} = 3$</div>
+      </div>`,
+    hint: 'ចំពោះសមីការមានរ៉ាឌីកាល់ $\\sqrt{A} = B$ ត្រូវកត់សម្គាល់លក្ខខណ្ឌ $A \\ge 0$ និង $B \\ge 0$ រួចលើកជាការេទាំងសងខាង។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $2x^2 = 50 \\iff x^2 = 25 \\implies x = \\pm\\sqrt{25} = \\pm 5$</li>
+        <li><strong>ខ.</strong> $(x - 1)^2 = 25 \\implies x - 1 = \\pm 5 \\implies x = 1 + 5 = 6$ ឬ $x = 1 - 5 = -4$</li>
+        <li><strong>គ.</strong> $\\sqrt{x} = 5$ (លក្ខខណ្ឌ $x \\ge 0$) លើកជាការេបាន $x = 5^2 = 25$ (ផ្ទៀងផ្ទាត់)</li>
+        <li><strong>ឃ.</strong> $\\sqrt{2x + 1} = 3$ (លក្ខខណ្ឌ $2x + 1 \\ge 0 \\iff x \\ge -\\frac{1}{2}$) លើកជាការេបាន $2x + 1 = 3^2 = 9 \\iff 2x = 8 \\iff x = 4$ (ផ្ទៀងផ្ទាត់)</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $x = \\pm 5$ ; ខ. $x = 6; -4$ ; គ. $x = 25$ ; ឃ. $x = 4$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-15',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'advanced',
+    difficultyLabel: 'ខ្ពស់',
+    difficultyColor: 'rose',
+    title: 'លំហាត់ទី ១៥. សម្រួលកន្សោមរ៉ាឌីកាល់ស្មុគស្មាញរាង √(A ± 2√B)',
+    problem: `សម្រួលកន្សោមរ៉ាឌីកាល់ខាងក្រោមឱ្យទៅជាផលបូក ឬផលដករ៉ាឌីកាល់សាមញ្ញ៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\sqrt{7 + 2\\sqrt{10}}$</div>
+        <div><strong>ខ.</strong> $\\sqrt{8 - 2\\sqrt{15}}$</div>
+        <div><strong>គ.</strong> $\\sqrt{11 + 2\\sqrt{30}}$</div>
+        <div><strong>ឃ.</strong> $\\sqrt{9 - 4\\sqrt{5}}$</div>
+      </div>`,
+    hint: 'រកពីរចំនួន $x, y$ ដែល $x + y = A$ និង $x \\cdot y = B$ នោះ $\\sqrt{A \\pm 2\\sqrt{B}} = |\\sqrt{x} \\pm \\sqrt{y}|$ ($x \\ge y$)។ ចំពោះ ឃ. ប្តូរ $4\\sqrt{5} = 2\\sqrt{20}$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> រកពីរចំនួនដែលបូកស្មើ $7$ គុណស្មើ $10$ គឺ $5$ និង $2$៖<br>
+        $\\sqrt{7 + 2\\sqrt{10}} = \\sqrt{5 + 2\\sqrt{5 \\times 2} + 2} = \\sqrt{(\\sqrt{5} + \\sqrt{2})^2} = \\sqrt{5} + \\sqrt{2}$</li>
+        <li><strong>ខ.</strong> រកពីរចំនួនដែលបូកស្មើ $8$ គុណស្មើ $15$ គឺ $5$ និង $3$៖<br>
+        $\\sqrt{8 - 2\\sqrt{15}} = \\sqrt{(\\sqrt{5} - \\sqrt{3})^2} = \\sqrt{5} - \\sqrt{3}$ (ព្រោះ $\\sqrt{5} > \\sqrt{3}$)</li>
+        <li><strong>គ.</strong> រកពីរចំនួនដែលបូកស្មើ $11$ គុណស្មើ $30$ គឺ $6$ និង $5$៖<br>
+        $\\sqrt{11 + 2\\sqrt{30}} = \\sqrt{(\\sqrt{6} + \\sqrt{5})^2} = \\sqrt{6} + \\sqrt{5}$</li>
+        <li><strong>ឃ.</strong> ប្តូរ $4\\sqrt{5} = 2\\sqrt{4 \\times 5} = 2\\sqrt{20}$។ រកពីរចំនួនបូកស្មើ $9$ គុណស្មើ $20$ គឺ $5$ និង $4$៖<br>
+        $\\sqrt{9 - 4\\sqrt{5}} = \\sqrt{9 - 2\\sqrt{20}} = \\sqrt{(\\sqrt{5} - \\sqrt{4})^2} = \\sqrt{5} - 2$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $\\sqrt{5}+\\sqrt{2}$ ; ខ. $\\sqrt{5}-\\sqrt{3}$ ; គ. $\\sqrt{6}+\\sqrt{5}$ ; ឃ. $\\sqrt{5}-2$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-16',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'advanced',
+    difficultyLabel: 'ខ្ពស់',
+    difficultyColor: 'rose',
+    title: 'លំហាត់ទី ១៦. គណនាតម្លៃនៃកន្សោមបន្សាបរ៉ាឌីកាល់',
+    problem: `គណនាតម្លៃពិតប្រាកដនៃកន្សោមខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $P = \\sqrt{4 + 2\\sqrt{3}} - \\sqrt{4 - 2\\sqrt{3}}$</div>
+        <div><strong>ខ.</strong> $Q = \\sqrt{6 + 2\\sqrt{5}} + \\sqrt{6 - 2\\sqrt{5}}$</div>
+        <div><strong>គ.</strong> $R = \\sqrt{(2-\\sqrt{5})^2} + \\sqrt{(3-\\sqrt{5})^2}$</div>
+        <div><strong>ឃ.</strong> $S = \\sqrt{3 + \\sqrt{5}} \\cdot \\sqrt{3 - \\sqrt{5}}$</div>
+      </div>`,
+    hint: 'ចំពោះ $R$ ត្រូវប្រយ័ត្នសញ្ញាដាច់ខាត $\\sqrt{A^2} = |A|$។ ចំពោះ $2 - \\sqrt{5} < 0$ នាំឱ្យ $|2-\\sqrt{5}| = \\sqrt{5}-2$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\sqrt{4 \\pm 2\\sqrt{3}} = \\sqrt{(\\sqrt{3} \\pm 1)^2} = \\sqrt{3} \\pm 1$ នាំឱ្យ៖<br>
+        $P = (\\sqrt{3} + 1) - (\\sqrt{3} - 1) = \\sqrt{3} + 1 - \\sqrt{3} + 1 = 2$</li>
+        <li><strong>ខ.</strong> $\\sqrt{6 \\pm 2\\sqrt{5}} = \\sqrt{(\\sqrt{5} \\pm 1)^2} = \\sqrt{5} \\pm 1$ នាំឱ្យ៖<br>
+        $Q = (\\sqrt{5} + 1) + (\\sqrt{5} - 1) = 2\\sqrt{5}$</li>
+        <li><strong>គ.</strong> ដោយ $2 = \\sqrt{4} < \\sqrt{5} \\implies 2 - \\sqrt{5} < 0$ នាំឱ្យ $|2-\\sqrt{5}| = \\sqrt{5} - 2$<br>
+        និង $3 = \\sqrt{9} > \\sqrt{5} \\implies 3 - \\sqrt{5} > 0$ នាំឱ្យ $|3-\\sqrt{5}| = 3 - \\sqrt{5}$<br>
+        $\\implies R = (\\sqrt{5} - 2) + (3 - \\sqrt{5}) = 1$</li>
+        <li><strong>ឃ.</strong> $S = \\sqrt{(3+\\sqrt{5})(3-\\sqrt{5})} = \\sqrt{3^2 - (\\sqrt{5})^2} = \\sqrt{9 - 5} = \\sqrt{4} = 2$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> $P = 2$, $Q = 2\\sqrt{5}$, $R = 1$, $S = 2$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-17',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'advanced',
+    difficultyLabel: 'ខ្ពស់',
+    difficultyColor: 'rose',
+    title: 'លំហាត់ទី ១៧. សម្រួលកន្សោមរ៉ាឌីកាល់មានអថេរ',
+    problem: `សម្រួលកន្សោមរ៉ាឌីកាល់មានអថេរខាងក្រោម (ផ្អែកលើលក្ខខណ្ឌនៃអថេរ)៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\sqrt{9x^2}$ ចំពោះ $x < 0$</div>
+        <div><strong>ខ.</strong> $\\sqrt{16x^4 y^2}$ ចំពោះ $y \\ge 0$</div>
+        <div><strong>គ.</strong> $\\sqrt{x^2 - 6x + 9}$ ($x \\ge 3$ និង $x < 3$)</div>
+        <div><strong>ឃ.</strong> $\\dfrac{\\sqrt{a^3 b}}{\\sqrt{ab}}$ ចំពោះ $a > 0, b > 0$</div>
+      </div>`,
+    hint: 'ចងចាំរូបមន្តគ្រឹះ $\\sqrt{A^2} = |A|$៖ បើ $A \\ge 0$ នោះ $|A| = A$ ; បើ $A < 0$ នោះ $|A| = -A$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\sqrt{9x^2} = \\sqrt{(3x)^2} = |3x| = 3|x|$។ ដោយ $x < 0$ នាំឱ្យ $|x| = -x \\implies \\sqrt{9x^2} = -3x$</li>
+        <li><strong>ខ.</strong> $\\sqrt{16x^4 y^2} = \\sqrt{(4x^2 y)^2} = |4x^2 y| = 4x^2 |y|$ (ព្រោះ $x^2 \\ge 0$)។ ដោយ $y \\ge 0 \\implies |y| = y$ នាំឱ្យបាន $4x^2 y$</li>
+        <li><strong>គ.</strong> $\\sqrt{x^2 - 6x + 9} = \\sqrt{(x-3)^2} = |x - 3|$៖<br>
+        - បើ $x \\ge 3 \\implies x - 3 \\ge 0 \\implies |x-3| = x - 3$<br>
+        - បើ $x < 3 \\implies x - 3 < 0 \\implies |x-3| = -(x-3) = 3 - x$</li>
+        <li><strong>ឃ.</strong> $\\frac{\\sqrt{a^3 b}}{\\sqrt{ab}} = \\sqrt{\\frac{a^3 b}{ab}} = \\sqrt{a^2} = |a| = a$ (ដោយ $a > 0$)</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $-3x$ ; ខ. $4x^2 y$ ; គ. $x-3$ ($x\\ge 3$) និង $3-x$ ($x<3$) ; ឃ. $a$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-18',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'advanced',
+    difficultyLabel: 'ខ្ពស់',
+    difficultyColor: 'rose',
+    title: 'លំហាត់ទី ១៨. គណនាផលបូកបំបាត់រ៉ាឌីកាល់បន្តបន្ទាប់ (Telescoping Sum)',
+    problem: `គណនាតម្លៃពិតប្រាកដនៃផលបូក $S$ ខាងក្រោម៖
+      $$S = \\frac{1}{1 + \\sqrt{2}} + \\frac{1}{\\sqrt{2} + \\sqrt{3}} + \\frac{1}{\\sqrt{3} + \\sqrt{4}} + \\dots + \\frac{1}{\\sqrt{99} + \\sqrt{100}}$$ `,
+    hint: 'សនិទានកម្មភាគបែងនៃតួទូទៅ $\\frac{1}{\\sqrt{n} + \\sqrt{n+1}}$ ដោយគុណកន្សោមឆ្លាស់ $(\\sqrt{n+1} - \\sqrt{n})$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <p>១. ពិនិត្យតួទូទៅទី $n$៖</p>
+      <p>$$\\frac{1}{\\sqrt{n} + \\sqrt{n+1}} = \\frac{\\sqrt{n+1} - \\sqrt{n}}{(\\sqrt{n+1} + \\sqrt{n})(\\sqrt{n+1} - \\sqrt{n})} = \\frac{\\sqrt{n+1} - \\sqrt{n}}{(n+1) - n} = \\sqrt{n+1} - \\sqrt{n}$$</p>
+      <p>២. ជំនួស $n = 1, 2, 3, \\dots, 99$ ចូលក្នុងផលបូក៖</p>
+      <ul>
+        <li>តួទី ១ ($n=1$)៖ $\\frac{1}{1+\\sqrt{2}} = \\sqrt{2} - 1$</li>
+        <li>តួទី ២ ($n=2$)៖ $\\frac{1}{\\sqrt{2}+\\sqrt{3}} = \\sqrt{3} - \\sqrt{2}$</li>
+        <li>តួទី ៣ ($n=3$)៖ $\\frac{1}{\\sqrt{3}+\\sqrt{4}} = \\sqrt{4} - \\sqrt{3}$</li>
+        <li>...</li>
+        <li>តួទី ៩៩ ($n=99$)៖ $\\frac{1}{\\sqrt{99}+\\sqrt{100}} = \\sqrt{100} - \\sqrt{99}$</li>
+      </ul>
+      <p>៣. បូកបញ្ជូលគ្នា តួកណ្តាលទាំងអស់ត្រូវបានទូទាត់សូន្យ (Telescoping Cancellation)៖</p>
+      <p>$$S = (\\sqrt{2} - 1) + (\\sqrt{3} - \\sqrt{2}) + (\\sqrt{4} - \\sqrt{3}) + \\dots + (\\sqrt{100} - \\sqrt{99})$$</p>
+      <p>$$S = -1 + \\sqrt{100} = -1 + 10 = 9$$</p>
+      <p><strong>ចម្លើយ៖</strong> $S = 9$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-19',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'advanced',
+    difficultyLabel: 'ខ្ពស់',
+    difficultyColor: 'rose',
+    title: 'លំហាត់ទី ១៩. រកតម្លៃ x ពីសមីការរ៉ាឌីកាល់កម្រិតខ្ពស់',
+    problem: `ដោះស្រាយសមីការ និងសម្រួលកន្សោមខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> $\\sqrt{x^2 - 4x + 4} = 3$</div>
+        <div><strong>ខ.</strong> $\\sqrt{2x - 1} = x - 2$</div>
+        <div><strong>គ.</strong> $x^2 - 2\\sqrt{3}x + 2 = 0$</div>
+        <div><strong>ឃ.</strong> សម្រួល $K = \\sqrt{x + 2\\sqrt{x-1}} + \\sqrt{x - 2\\sqrt{x-1}}$ ($x \\ge 2$)</div>
+      </div>`,
+    hint: 'ចំពោះ ខ. លក្ខខណ្ឌ $x - 2 \\ge 0 \\implies x \\ge 2$។ ចំពោះ ឃ. កត់សម្គាល់ $x \\pm 2\\sqrt{x-1} = (x-1) \\pm 2\\sqrt{x-1} + 1 = (\\sqrt{x-1} \\pm 1)^2$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> $\\sqrt{(x-2)^2} = 3 \\iff |x-2| = 3 \\implies x - 2 = 3$ ឬ $x - 2 = -3 \\implies x = 5$ ឬ $x = -1$</li>
+        <li><strong>ខ.</strong> លក្ខខណ្ឌ $x - 2 \\ge 0 \\iff x \\ge 2$ និង $2x - 1 \\ge 0 \\iff x \\ge \\frac{1}{2}$ (រួមគឺ $x \\ge 2$)៖<br>
+        លើកជាការេ៖ $2x - 1 = (x - 2)^2 = x^2 - 4x + 4 \\iff x^2 - 6x + 5 = 0$<br>
+        $(x - 1)(x - 5) = 0 \\implies x = 1$ (មិនយក ព្រោះ $1 < 2$) ឬ $x = 5$ (យក ព្រោះ $5 \\ge 2$)</li>
+        <li><strong>គ.</strong> $x^2 - 2\\sqrt{3}x + 2 = 0 \\iff (x - \\sqrt{3})^2 - 3 + 2 = 0 \\iff (x - \\sqrt{3})^2 = 1 \\implies x - \\sqrt{3} = \\pm 1 \\implies x = \\sqrt{3} \\pm 1$</li>
+        <li><strong>ឃ.</strong> ដោយ $x \\pm 2\\sqrt{x-1} = (\\sqrt{x-1} \\pm 1)^2$ នាំឱ្យ៖<br>
+        $K = |\\sqrt{x-1} + 1| + |\\sqrt{x-1} - 1|$។ ចំពោះ $x \\ge 2 \\implies x-1 \\ge 1 \\implies \\sqrt{x-1} \\ge 1$ នាំឱ្យ $|\\sqrt{x-1} - 1| = \\sqrt{x-1} - 1$<br>
+        $\\implies K = (\\sqrt{x-1} + 1) + (\\sqrt{x-1} - 1) = 2\\sqrt{x-1}$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $x = 5; -1$ ; ខ. $x = 5$ ; គ. $x = \\sqrt{3} \\pm 1$ ; ឃ. $K = 2\\sqrt{x-1}$</p>
+    `
+  },
+  {
+    id: 'ex-g9-rad-20',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    chapterId: 'g9-ch1',
+    chapterName: 'រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    difficulty: 'advanced',
+    difficultyLabel: 'ខ្ពស់',
+    difficultyColor: 'rose',
+    title: 'លំហាត់ទី ២០. លំហាត់អនុវត្តជាក់ស្តែង & ធរណីមាត្រ',
+    problem: `ដោះស្រាយចំណោទអនុវត្តជាក់ស្តែង និងធរណីមាត្រខាងក្រោម៖
+      <div style="display: grid; grid-template-columns: 1fr; gap: 0.65rem; margin-top: 0.5rem;">
+        <div><strong>ក.</strong> ត្រីកោណកែងមួយមានរង្វាស់ជ្រុងមុំកែង $a = 6\\text{ cm}$ និង $b = 8\\text{ cm}$។ គណនារង្វាស់អ៊ីប៉ូតេនុស $c$។</div>
+        <div><strong>ខ.</strong> ការេមួយមានផ្ទៃក្រឡា $S = 72\\text{ cm}^2$។ រករង្វាស់ជ្រុង $a$ និងរង្វាស់អង្កត់ទ្រូង $d$ ជាទម្រង់រ៉ាឌីកាល់សម្រួលរួច។</div>
+        <div><strong>គ.</strong> បន្ទប់រាងចតុកោណកែងមួយមានបណ្តោយស្មើពីរដងនៃទទឹង ហើយមានផ្ទៃក្រឡា $98\\text{ m}^2$។ រកវិមាត្រនៃបន្ទប់នោះ។</div>
+        <div><strong>ឃ.</strong> បង្ហាញថា $M = \\sqrt{5 + 2\\sqrt{6}} + \\sqrt{5 - 2\\sqrt{6}}$ ផ្ទៀងផ្ទាត់ $M^2 = 12$ រួចទាញរកតម្លៃពិតប្រាកដនៃ $M$។</div>
+      </div>`,
+    hint: 'អនុវត្តទ្រឹស្តីបទពីតាក័រ $c = \\sqrt{a^2 + b^2}$, រូបមន្តផ្ទៃក្រឡាការេ $S = a^2$ និងលើកកន្សោម $M$ ជាការេ $(x+y)^2 = x^2 + 2xy + y^2$។',
+    solution: `
+      <p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+      <ul>
+        <li><strong>ក.</strong> តាមទ្រឹស្តីបទពីតាក័រ៖ $c^2 = a^2 + b^2 = 6^2 + 8^2 = 36 + 64 = 100 \\implies c = \\sqrt{100} = 10\\text{ cm}$</li>
+        <li><strong>ខ.</strong> ផ្ទៃក្រឡាការេ $S = a^2 = 72 \\implies a = \\sqrt{72} = \\sqrt{36 \\times 2} = 6\\sqrt{2}\\text{ cm}$<br>
+        អង្កត់ទ្រូងការេ $d = a\\sqrt{2} = 6\\sqrt{2} \\times \\sqrt{2} = 6 \\times 2 = 12\\text{ cm}$</li>
+        <li><strong>គ.</strong> តាងទទឹងបន្ទប់ជា $x\\text{ (m)} > 0 \\implies$ បណ្តោយគឺ $2x\\text{ (m)}$<br>
+        ផ្ទៃក្រឡា៖ $x \\times 2x = 98 \\iff 2x^2 = 98 \\iff x^2 = 49 \\implies x = \\sqrt{49} = 7\\text{ m}$<br>
+        ដូចនេះ ទទឹងគឺ $7\\text{ m}$ និងបណ្តោយគឺ $2 \\times 7 = 14\\text{ m}$</li>
+        <li><strong>ឃ.</strong> លើកជាការេ៖<br>
+        $M^2 = (\\sqrt{5+2\\sqrt{6}})^2 + 2\\sqrt{(5+2\\sqrt{6})(5-2\\sqrt{6})} + (\\sqrt{5-2\\sqrt{6}})^2$<br>
+        $= (5+2\\sqrt{6}) + 2\\sqrt{25 - 24} + (5-2\\sqrt{6}) = 10 + 2(1) = 12$ (ពិត)<br>
+        ដោយ $M > 0$ នាំឱ្យ $M = \\sqrt{12} = 2\\sqrt{3}$</li>
+      </ul>
+      <p><strong>ចម្លើយ៖</strong> ក. $c = 10\\text{ cm}$ ; ខ. $a = 6\\sqrt{2}\\text{ cm}, d = 12\\text{ cm}$ ; គ. ទទឹង $7\\text{ m}$, បណ្តោយ $14\\text{ m}$ ; ឃ. $M = 2\\sqrt{3}$</p>
+    `
+  }
+
 ];
 
 /* ============================================================
