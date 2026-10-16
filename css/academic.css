@@ -1710,6 +1710,44 @@
   break-inside: avoid;
 }
 
+/* Multi-Page Worksheets */
+.worksheet-pages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.worksheet-page-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.difficulty-tag-easy {
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.difficulty-tag-med {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.difficulty-tag-hard {
+  background: rgba(239, 68, 68, 0.18);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
 /* ============================================================
    8. PRINT MEDIA STYLES
    ============================================================ */
@@ -1720,9 +1758,9 @@
   }
 
   html, body {
-    height: 100% !important;
-    max-height: 297mm !important;
-    overflow: hidden !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
     background: #ffffff !important;
     color: #000000 !important;
     padding: 0 !important;
@@ -1735,12 +1773,18 @@
   .lesson-top-bar, .grade-tabs-wrap, .slides-controls, .filter-bar,
   .academic-hero, .worksheet-view-tabs, .worksheet-action-bar,
   #exercises-list, #worksheet-bank-view, .nav-container, .mobile-drawer,
-  .worksheet-topic-bar, #worksheet-preview-modal {
+  .worksheet-topic-bar, #worksheet-preview-modal, .curriculum-callout-box {
     display: none !important;
   }
 
-  .worksheet-a4-sheet[style*="display: none"] {
+  .worksheet-a4-sheet[style*="display: none"],
+  .worksheet-pages-container[style*="display: none"] {
     display: none !important;
+  }
+
+  .worksheet-pages-container {
+    display: block !important;
+    gap: 0 !important;
   }
 
   .academic-container {
@@ -1757,13 +1801,24 @@
     margin: 0 auto !important;
     max-width: 100% !important;
     width: 100% !important;
-    max-height: 284mm !important;
-    overflow: hidden !important;
     box-sizing: border-box !important;
-    page-break-before: avoid !important;
-    page-break-after: avoid !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+  }
+
+  .worksheet-a4-sheet.worksheet-page {
+    page-break-after: always !important;
+    break-after: page !important;
+    margin-bottom: 0 !important;
+  }
+
+  .worksheet-a4-sheet.worksheet-page:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .worksheet-page-indicator {
+    display: none !important;
   }
 
   .worksheet-content {
