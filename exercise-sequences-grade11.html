@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>កម្រងលំហាត់អនុវត្ត៖ ស្វ៊ីតចំនួនពិត ថ្នាក់ទី១១ (A4 Worksheet) | អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
+  <meta name="description" content="កម្រងលំហាត់អនុវត្តគណិតវិទ្យាថ្នាក់ទី១១ មេរៀនទី១ ស្វ៊ីតចំនួនពិត ស្រង់ចេញពីសៀវភៅកិច្ចការផ្ទះ ២០២៦ (១៦ លំហាត់ធំ ១២៨ សំណួរ) រៀបចំជាសន្លឹកកិច្ចការ A4 ដោយអ្នកគ្រូ ឆេង ឆវ័ន្ត។">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔢</text></svg>">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/academic.css">
+
+  <!-- KaTeX for High Quality Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="if(typeof window.triggerMathRender==='function'){window.triggerMathRender(document.body);}else if(typeof renderMathInElement==='function'){renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}"></script>
+
+  <style>
+    .worksheet-section {
+      margin-bottom: 1.3rem;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .worksheet-section-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border-left: 4px solid #0284c7;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .worksheet-section-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #0284c7;
+      background: rgba(2, 132, 199, 0.12);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .worksheet-item-math {
+      font-size: 0.9rem;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+    .worksheet-item-answer {
+      display: none;
+      color: #0284c7;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-left: 6px;
+    }
+    .show-answers .worksheet-item-answer {
+      display: inline-block;
+    }
+    .seq-category-title {
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #1e3a8a;
+      border-bottom: 2px solid #cbd5e1;
+      padding-bottom: 4px;
+      margin: 1.25rem 0 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. MAIN NAVBAR
+       ============================================================ -->
+  <header class="navbar scrolled" id="main-navbar">
+    <div class="container nav-container">
+      <div class="nav-brand-container">
+        <a href="index.html" class="nav-brand" title="Hover ដើម្បីមើលព័ត៌មានទំនាក់ទំនង">
+          <div class="brand-icon">f(x)</div>
+          <div class="brand-text">
+            <span class="brand-name">
+              ឆេង ឆវ័ន្ត
+              <span class="brand-contact-indicator" title="Hover ដើម្បីមើលលេខទូរស័ព្ទ & អ៊ីមែល">
+                <span class="indicator-pulse"></span>
+                <span>ទំនាក់ទំនង</span>
+              </span>
+            </span>
+            <span class="brand-sub">MATH SPECIALIST</span>
+          </div>
+        </a>
+
+        <!-- Popover Hover Card for Teacher Contact Info -->
+        <div class="teacher-hover-card" role="tooltip" aria-label="ព័ត៌មានទំនាក់ទំនងអ្នកគ្រូ ឆេង ឆវ័ន្ត">
+          <div class="hover-card-header">
+            <div class="hover-avatar-box">
+              <img src="assets/images/teacher-chhovorn.png" alt="អ្នកគ្រូ ឆេង ឆវ័ន្ត" class="hover-avatar-img" onerror="this.onerror=null; this.src='assets/images/teacher-chhovorn.jpg';">
+              <span class="hover-status-dot" title="កំពុងបម្រើការងារ & អាចទាក់ទងបាន"></span>
+            </div>
+            <div class="hover-header-text">
+              <div class="hover-name">
+                អ្នកគ្រូ ឆេង ឆវ័ន្ត
+                <span class="hover-verified" title="គ្រូបង្រៀនគណិតវិទ្យាផ្លូវការ">✓</span>
+              </div>
+              <div class="hover-title">Teacher Chheng Chhovorn</div>
+              <div class="hover-tag">គ្រូបង្រៀនគណិតវិទ្យាឯកទេស (NIE & RUPP)</div>
+            </div>
+          </div>
+          <div class="hover-card-body">
+            <div class="hover-info-row">
+              <span class="hover-icon">📞</span>
+              <div class="hover-info-content">
+                <div class="hover-info-label">ទូរស័ព្ទ / Telegram</div>
+                <div class="hover-info-val"><a href="tel:099775501">099 77 5501</a></div>
+              </div>
+            </div>
+            <div class="hover-info-row">
+              <span class="hover-icon">✈️</span>
+              <div class="hover-info-content">
+                <div class="hover-info-label">Telegram Handle</div>
+                <div class="hover-info-val"><a href="https://t.me/chhovorn_math" target="_blank" rel="noopener">@chhovorn_math</a></div>
+              </div>
+            </div>
+            <div class="hover-info-row">
+              <span class="hover-icon">📧</span>
+              <div class="hover-info-content">
+                <div class="hover-info-label">អ៊ីមែលផ្លូវការ</div>
+                <div class="hover-info-val"><a href="mailto:chhorvornk@gmail.com">chhorvornk@gmail.com</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" data-nav="home"><span>ទំព័រដើម</span></a>
+          </li>
+
+          <!-- 2. ឯកសារបង្រៀន (Scrollable Dropdown Hub) -->
+          <li class="nav-item nav-item-has-dropdown active" data-nav-group="teaching">
+            <a href="teaching-materials.html" class="nav-link nav-dropdown-toggle active" role="button" aria-haspopup="true" aria-expanded="false" data-nav="teaching">
+              <span>ឯកសារបង្រៀន</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu teaching-scroll-dropdown">
+              <div class="teaching-dropdown-head">
+                <div class="teaching-head-title">
+                  <span>📖 ឯកសារបង្រៀន & គរុកោសល្យ</span>
+                </div>
+                <a href="teaching-materials.html" class="teaching-head-hub-link" title="ចូលទំព័រមជ្ឈមណ្ឌលឯកសារបង្រៀនពេញលេញ">
+                  <span>ទំព័រ Hub ›</span>
+                </a>
+              </div>
+
+              <div class="teaching-scroll-body">
+                <div class="teaching-group-title">
+                  <span>📚 កម្រិតថ្នាក់សិក្សា (Curriculum)</span>
+                  <a href="lessons.html" style="font-size: 0.65rem; color: #0284c7; text-decoration: none; font-weight: 700;">មើលទាំងអស់</a>
+                </div>
+
+                <a href="lessons.html" class="dropdown-item teaching-scroll-item" title="មើលមេរៀនទាំងអស់">
+                  <span class="teaching-item-dot" style="background: #0284c7;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📖 មើលមេរៀនទាំងអស់ (All Lessons)</span>
+                      <span class="chip-badge" style="background: rgba(6,182,212,0.18); color: #0284c7; font-size: 0.62rem; padding: 1px 6px; border-radius: 999px;">ថ្នាក់ ៩-១២</span>
+                    </div>
+                    <div class="teaching-item-desc">ជំពូកពេញលេញស្របតាមសៀវភៅគោលក្រសួង</div>
+                  </div>
+                </a>
+
+                <a href="lessons.html?grade=grade11" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ១១">
+                  <span class="teaching-item-dot" style="background: #0ea5e9;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📐 ថ្នាក់ទី ១១ (សៀវភៅគោល ភាគ១)</span>
+                      <span class="chip-badge" style="background: rgba(14,165,233,0.18); color: #0ea5e9; font-size: 0.6rem; padding: 1px 5px; border-radius: 4px;">ពេញនិយម</span>
+                    </div>
+                    <div class="teaching-item-desc">អនុគមន៍, ស្វ៊ីត, ធរណីមាត្រ និងស្ថិតិ</div>
+                  </div>
+                </a>
+                <a href="grade 11 part 1 (2026).pdf" target="_blank" class="dropdown-item teaching-scroll-item" title="សៀវភៅកិច្ចការផ្ទះ ថ្នាក់ទី១១ ភាគ១ (២០២៦) - អ្នកគ្រូ ឆេង ឆវ័ន្ត">
+                  <span class="teaching-item-dot" style="background: #ec4899;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span style="color: #ec4899; font-weight: 700;">📘 សៀវភៅកិច្ចការផ្ទះ ថ្នាក់ទី១១ (២០២៦)</span>
+                      <span class="chip-badge" style="background: rgba(236,72,153,0.2); color: #f472b6; font-size: 0.6rem; padding: 1px 5px; border-radius: 4px;">PDF</span>
+                    </div>
+                    <div class="teaching-item-desc">រៀបរៀងដោយ អ្នកគ្រូ ឆេង ឆវ័ន្ត (១៨៩ ទំព័រ)</div>
+                  </div>
+                </a>
+
+                <a href="lessons.html?grade=grade12" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ១២">
+                  <span class="teaching-item-dot" style="background: #8b5cf6;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🎓 ថ្នាក់ទី ១២ (ត្រៀមបាក់ឌុប)</span>
+                    </div>
+                    <div class="teaching-item-desc">លីមីត, ដេរីវេ, អាំងតេក្រាល & វិញ្ញាសា</div>
+                  </div>
+                </a>
+
+                <div class="teaching-group-title">
+                  <span>📑 ឯកសារជំនួយ & ការវាយតម្លៃ</span>
+                </div>
+
+                <a href="slides.html" class="dropdown-item teaching-scroll-item" title="ស្លាយបង្រៀន (Slides)">
+                  <span class="teaching-item-dot" style="background: #8b5cf6;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🖥️ ស្លាយបង្រៀន (Slides)</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្លាយបទបង្ហាញអន្តរកម្មសម្រាប់បង្រៀន</div>
+                  </div>
+                </a>
+
+                <a href="exercises.html" class="dropdown-item teaching-scroll-item active" title="កម្រងលំហាត់អនុវត្ត">
+                  <span class="teaching-item-dot" style="background: #0ea5e9;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📝 កម្រងលំហាត់អនុវត្ត</span>
+                    </div>
+                    <div class="teaching-item-desc">លំហាត់អនុវត្តតាមជំពូក និងដំណោះស្រាយ</div>
+                  </div>
+                </a>
+
+                <a href="exercise-sequences-grade11.html" class="dropdown-item teaching-scroll-item active" style="padding-left: 1.75rem;" title="សន្លឹកកិច្ចការ៖ ស្វ៊ីតចំនួនពិត (ថ្នាក់ទី១១ - A4)">
+                  <span class="teaching-item-dot" style="background: #0284c7; width: 6px; height: 6px;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span style="font-size: 0.82rem; color: #38bdf8; font-weight: 700;">✦ លំហាត់ស្វ៊ីតចំនួនពិត (ថ្នាក់ទី១១)</span>
+                      <span class="badge-mini" style="background: rgba(14,165,233,0.2); color: #38bdf8; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">១៦ លំហាត់</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្រង់ចេញពីសៀវភៅកិច្ចការផ្ទះ ២០២៦</div>
+                  </div>
+                </a>
+
+                <a href="exercises.html" class="dropdown-item teaching-scroll-item" style="padding-left: 1.75rem;" title="សន្លឹកកិច្ចការ៖ អនុគមន៍លោការីត (A4 Print)">
+                  <span class="teaching-item-dot" style="background: #0ea5e9; width: 6px; height: 6px;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span style="font-size: 0.82rem; color: var(--primary);">✦ លំហាត់អនុគមន៍លោការីត (A4)</span>
+                    </div>
+                    <div class="teaching-item-desc">សន្លឹកកិច្ចការ A4, Word, PDF & ដំណោះស្រាយ</div>
+                  </div>
+                </a>
+
+                <a href="exams.html" class="dropdown-item teaching-scroll-item" title="វិញ្ញាសាប្រឡងជាតិ & តេស្ត">
+                  <span class="teaching-item-dot" style="background: #f59e0b;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🏆 វិញ្ញាសាប្រឡងជាតិ & តេស្ត</span>
+                    </div>
+                    <div class="teaching-item-desc">វិញ្ញាសាបាក់ឌុប សិស្សពូកែ & Mock Exam</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a href="lessons.html" class="nav-link" data-nav="lessons"><span>មេរៀន</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="slides.html" class="nav-link" data-nav="slides"><span>ស្លាយ</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="exercises.html" class="nav-link active" data-nav="exercises"><span>លំហាត់</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="exams.html" class="nav-link" data-nav="exams"><span>វិញ្ញាសា</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="grapher-3d.html" class="nav-link" data-nav="grapher"><span>3D Grapher</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       2. HERO SECTION & BREADCRUMB
+       ============================================================ -->
+  <section class="section academic-hero" style="padding-top: 5rem; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="academic-breadcrumbs">
+        <a href="index.html">ទំព័រដើម</a>
+        <span class="separator">/</span>
+        <a href="teaching-materials.html">ឯកសារបង្រៀន</a>
+        <span class="separator">/</span>
+        <a href="exercises.html">កម្រងលំហាត់អនុវត្ត</a>
+        <span class="separator">/</span>
+        <span class="current">ស្វ៊ីតចំនួនពិត (ថ្នាក់ទី១១)</span>
+      </div>
+
+      <div class="academic-badge-row">
+        <span class="chip-badge" style="background: rgba(6,182,212,0.2); color: #38bdf8; font-weight: 700;">ថ្នាក់ទី ១១ (ភាគ១)</span>
+        <span class="chip-badge" style="background: rgba(236,72,153,0.2); color: #f472b6; font-weight: 700;">សៀវភៅកិច្ចការផ្ទះ ២០២៦</span>
+        <span class="chip-badge" style="background: rgba(16,185,129,0.2); color: #34d399; font-weight: 700;">១៦ លំហាត់ធំ • ១២៨ សំណួរ</span>
+        <span class="chip-badge" style="background: rgba(255,255,255,0.08); color: var(--text-muted);">A4 Print Ready</span>
+      </div>
+
+      <h1 class="academic-title">
+        កម្រងលំហាត់អនុវត្ត៖ ស្វ៊ីតចំនួនពិត <br>
+        <span class="text-gradient">ថ្នាក់ទី១១ (ស្រង់ចេញពីសៀវភៅកិច្ចការផ្ទះ ២០២៦)</span>
+      </h1>
+
+      <p class="academic-desc">
+        ប្រជុំលំហាត់អនុវត្តគ្រប់ប្រភេទពីមេរៀនទី១ «ស្វ៊ីតចំនួនពិត» (ទំព័រ ០១ ដល់ ២២ នៃសៀវភៅកិច្ចការផ្ទះ) រួមមាន៖ ការរកតួបន្តបន្ទាប់, ការសរសេរតួតគ្នានៃស្វ៊ីតរាប់អស់, ការកំណត់រូបមន្តតួទី $n$, ការសិក្សាភាពកើន-ចុះ និងម៉ូណូតូន, ព្រមទាំងការស្រាយបញ្ជាក់ស្វ៊ីតទាល់លើ ទាល់ក្រោម និងទាល់។
+      </p>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem;">
+        <a href="grade 11 part 1 (2026).pdf" target="_blank" class="btn btn-outline btn-sm" style="border-color: rgba(236,72,153,0.5); color: #f472b6;">
+          <span>📘 បើកសៀវភៅកិច្ចការផ្ទះដើម (PDF ១៨៩ ទំព័រ) &rarr;</span>
+        </a>
+        <a href="lesson-plan-sequences-ibl.html" class="btn btn-outline btn-sm" style="border-color: rgba(6,182,212,0.4); color: #38bdf8;">
+          <span>📋 មើលកិច្ចតែងការបង្រៀនស្វ៊ីតចំនួនពិត (IBL) &rarr;</span>
+        </a>
+        <a href="slides.html?ch=slide-sequences-g11" class="btn btn-outline btn-sm" style="border-color: rgba(139,92,246,0.4); color: #a78bfa;">
+          <span>🖥️ មើលស្លាយបង្រៀនស្វ៊ីតចំនួនពិត &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. MAIN CONTENT: A4 WORKSHEET & ACTIONS
+       ============================================================ -->
+  <div class="container" style="padding-bottom: 5rem;">
+
+    <!-- Action Toolbar -->
+    <div class="worksheet-action-bar">
+      <div>
+        <h3 id="worksheet-active-title" style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin: 0 0 0.25rem;">
+          សន្លឹកកិច្ចការលំហាត់អនុវត្ត៖ ស្វ៊ីតចំនួនពិត (Real Number Sequences)
+        </h3>
+        <p id="worksheet-active-desc" style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
+          រៀបចំតាមកម្រិតលំដាប់លំដោយគរុកោសល្យ ៦ ផ្នែកធំៗ លើក្រដាស A4 (KaTeX Typography ពេញលេញ)
+        </p>
+      </div>
+      <div class="worksheet-action-btns">
+        <a href="worksheet-sequences-grade11.tex" download class="btn btn-outline btn-sm" style="border-color: #10b981; color: #34d399;" title="ទាញយកកូដ LaTeX (.tex) សម្រាប់បើក & Run ក្នុង TeXstudio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <span>📥 កូដ LaTeX (.tex)</span>
+        </a>
+        <a href="worksheet-sequences-grade11.pdf" target="_blank" class="btn btn-outline btn-sm" style="border-color: #ef4444; color: #f87171;" title="ទាញយកជាឯកសារ PDF ច្បាស់កម្រិតខ្ពស់ (XeLaTeX ៤ ទំព័រ)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>📘 PDF ឡាតិច (៤ ទំព័រ)</span>
+        </a>
+        <button class="btn btn-primary btn-sm" onclick="openWorksheetPreviewModal()" title="មើលផ្ទាំង A4 មុនបោះពុម្ព & នាំចេញ">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          <span>👁️ មើលជាមុន (Print Preview)</span>
+        </button>
+        <button class="btn btn-outline btn-sm" onclick="printActiveWorksheet()" title="បោះពុម្ពលើក្រដាស A4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <span>🖨️ បោះពុម្ព A4</span>
+        </button>
+        <button class="btn btn-outline btn-sm" onclick="exportActiveWorksheetWord()" style="border-color: #3b82f6; color: #60a5fa;" title="នាំចេញជាឯកសារ Microsoft Word (.doc)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>📄 នាំចេញជា Word</span>
+        </button>
+        <button class="btn btn-outline btn-sm" id="btn-toggle-answers" onclick="toggleWorksheetAnswers()" title="បង្ហាញ/លាក់ គន្លឹះចម្លើយសង្ខេប">
+          👁️ បង្ហាញចម្លើយ
+        </button>
+      </div>
+    </div>
+
+    <!-- TeXstudio & XeLaTeX Integration Callout -->
+    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 1.1rem 1.35rem; margin-bottom: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; max-width: 680px;">
+        <div style="width: 48px; height: 48px; min-width: 48px; border-radius: 10px; background: rgba(16, 185, 129, 0.18); color: #34d399; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800;">
+          TeX
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <h4 style="margin: 0; font-size: 0.98rem; font-weight: 800; color: #34d399;">កូដ LaTeX សម្រាប់ TeXstudio (XeLaTeX Ready)</h4>
+            <span style="background: #10b981; color: #022c22; font-size: 0.7rem; font-weight: 800; padding: 2px 7px; border-radius: 999px;">Run បាន ១០០%</span>
+          </div>
+          <p style="margin: 0.25rem 0 0; font-size: 0.83rem; color: var(--text-secondary); line-height: 1.5;">
+            រចនាឡើងយ៉ាងផ្ចិតផ្ចង់តាមទម្រង់គំរូសន្លឹកកិច្ចការរបស់អ្នកគ្រូ ៖ ស៊ុមទំព័រ A4, ក្បាល & បាតទំព័រ, និង Watermark <strong style="color: #f97316;">CHHENG CHHORVORN</strong>។ រៀបចំជា ៤ ទំព័រពេញលេញ អាចបើកក្នុង TeXstudio និងចុច <kbd style="background: #1e293b; color: #38bdf8; padding: 1px 6px; border-radius: 4px; border: 1px solid #334155; font-size: 0.75rem;">F5</kbd> ដើម្បី Build បានភ្លាមៗ!
+          </p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+        <a href="worksheet-sequences-grade11.tex" download class="btn btn-sm" style="background: #10b981; color: #ffffff; border: none; font-weight: 700; padding: 0.5rem 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <span>ទាញយក .tex (TeXstudio)</span>
+        </a>
+        <a href="worksheet-sequences-grade11.pdf" target="_blank" class="btn btn-sm btn-outline" style="border-color: #ef4444; color: #f87171; font-weight: 700; padding: 0.5rem 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>បើកមើល PDF (៤ ទំព័រ)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         A4 WORKSHEET CONTAINER: ស្វ៊ីតចំនួនពិត (SEQUENCES - G11)
+         ======================================================== -->
+    <div class="worksheet-a4-sheet" id="worksheet-sequences-sheet">
+      <!-- Watermark -->
+      <div class="worksheet-watermark">CHHENG CHHORVORN</div>
+
+      <div class="worksheet-content">
+        <!-- Header -->
+        <div class="worksheet-header-top">
+          <div>វិទ្យាល័យ ឧដុង្គ • គណិតវិទ្យាថ្នាក់ទី១១</div>
+          <div class="worksheet-main-title">កម្រងលំហាត់អនុវត្ត</div>
+          <div>ស្វ៊ីតចំនួនពិត (២០២៥-២០២៦)</div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: #475569; margin-bottom: 1.25rem; border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px;">
+          <div><strong>រៀបរៀងដោយ៖</strong> អ្នកគ្រូ ឆេង ឆវ័ន្ត (CVN Math)</div>
+          <div><strong>កម្រិតសិក្សា៖</strong> ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រពិត)</div>
+          <div><strong>ចំនួនលំហាត់៖</strong> ១៦ លំហាត់ធំ (១២៨ សំណួរ)</div>
+        </div>
+
+        <!-- CATEGORY 1: រកតួបន្តបន្ទាប់នៃស្វ៊ីត -->
+        <div class="seq-category-title">
+          <span>🎯 ផ្នែកទី ១៖ រកតួបន្តបន្ទាប់នៃស្វ៊ីត (Next Terms of Sequences)</span>
+        </div>
+
+        <!-- Exercise 1 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១. ចូរសរសេរបីតួបន្តទៀតនៃស្វ៊ីតខាងក្រោម៖</span>
+            <span class="worksheet-section-badge">៨ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$0, 3, 6, 9, \dots$</span>
+              <span class="worksheet-item-answer">$\to 12, 15, 18$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$1, 3, 6, 10, \dots$</span>
+              <span class="worksheet-item-answer">$\to 15, 21, 28$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$10, 6, 2, -2, \dots$</span>
+              <span class="worksheet-item-answer">$\to -6, -10, -14$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$2, 5, 10, 17, \dots$</span>
+              <span class="worksheet-item-answer">$\to 26, 37, 50$ ($n^2+1$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$1, 6, 11, 16, \dots$</span>
+              <span class="worksheet-item-answer">$\to 21, 26, 31$ ($+5$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$10, 7, 3, -2, \dots$</span>
+              <span class="worksheet-item-answer">$\to -8, -15, -23$ ($-3,-4,-5,\dots$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$3, 6, 12, 24, \dots$</span>
+              <span class="worksheet-item-answer">$\to 48, 96, 192$ ($\times 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$0, 1, 3, 4, 6, \dots$</span>
+              <span class="worksheet-item-answer">$\to 7, 9, 10$ ($+1, +2, +1, +2$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ២. ចូរសរសេរបីតួបន្តទៀតនៃស្វ៊ីតខាងក្រោម (លំនាំស្មុគស្មាញ)៖</span>
+            <span class="worksheet-section-badge">១០ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$3, 6, 11, 18, \dots$</span>
+              <span class="worksheet-item-answer">$\to 27, 38, 51$ ($n^2+2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$1, 2, 6, 15, 31, \dots$</span>
+              <span class="worksheet-item-answer">$\to 56, 92, 141$ ($+n^2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$12, 15, 21, 30, \dots$</span>
+              <span class="worksheet-item-answer">$\to 42, 57, 75$ ($+3,+6,+9,\dots$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$1, 3, 7, 15, \dots$</span>
+              <span class="worksheet-item-answer">$\to 31, 63, 127$ ($2^n-1$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$12, 10, 11, 9, 10, \dots$</span>
+              <span class="worksheet-item-answer">$\to 8, 9, 7$ ($-2, +1$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$0, 1, 9, 36, 100, \dots$</span>
+              <span class="worksheet-item-answer">$\to 225, 441, 784$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$0, 2, 5, 7, 10, \dots$</span>
+              <span class="worksheet-item-answer">$\to 12, 15, 17$ ($+2, +3$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៩.</span>
+              <span class="worksheet-item-math">$1, 2, 4, 8, 16, \dots$</span>
+              <span class="worksheet-item-answer">$\to 32, 64, 128$ ($2^{n-1}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$50, 45, 44, 39, 38, \dots$</span>
+              <span class="worksheet-item-answer">$\to 33, 32, 27$ ($-5, -1$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១០.</span>
+              <span class="worksheet-item-math">$6, 12, 24, 48, \dots$</span>
+              <span class="worksheet-item-answer">$\to 96, 192, 384$ ($\times 2$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៣. ចូរសរសេរបីតួបន្តទៀតនៃស្វ៊ីតប្រភាគខាងក្រោម៖</span>
+            <span class="worksheet-section-badge">៤ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$\dfrac{1}{1}, \dfrac{3}{5}, \dfrac{5}{9}, \dfrac{7}{13}, \dots$</span>
+              <span class="worksheet-item-answer">$\to \dfrac{9}{17}, \dfrac{11}{21}, \dfrac{13}{25}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$\dfrac{1}{2}, \dfrac{2}{6}, \dfrac{3}{12}, \dfrac{4}{20}, \dots$</span>
+              <span class="worksheet-item-answer">$\to \dfrac{5}{30}, \dfrac{6}{42}, \dfrac{7}{56}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$\dfrac{1}{3}, \dfrac{2}{5}, \dfrac{4}{7}, \dfrac{8}{9}, \dots$</span>
+              <span class="worksheet-item-answer">$\to \dfrac{16}{11}, \dfrac{32}{13}, \dfrac{64}{15}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$\dfrac{2}{3}, \dfrac{4}{15}, \dfrac{8}{35}, \dfrac{16}{63}, \dots$</span>
+              <span class="worksheet-item-answer">$\to \dfrac{32}{99}, \dfrac{64}{143}, \dfrac{128}{195}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 2: សរសេរតួតគ្នានៃស្វ៊ីតរាប់អស់ -->
+        <div class="seq-category-title">
+          <span>🔢 ផ្នែកទី ២៖ សរសេរតួតគ្នានៃស្វ៊ីតរាប់អស់ (Finite Sequences)</span>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៤. សរសេរតួតគ្នានៃស្វ៊ីតរាប់អស់ខាងក្រោម៖</span>
+            <span class="worksheet-section-badge">៨ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2n}{n+1}$ ចំពោះ $1 \le n \le 4$</span>
+              <span class="worksheet-item-answer">$\to 1, \dfrac{4}{3}, \dfrac{3}{2}, \dfrac{8}{5}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = 2^{-n+2}$ ចំពោះ $1 \le n \le 5$</span>
+              <span class="worksheet-item-answer">$\to 2, 1, \dfrac{1}{2}, \dfrac{1}{4}, \dfrac{1}{8}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$w_n = n + \dfrac{1}{n^2}$ ចំពោះ $1 \le n \le 5$</span>
+              <span class="worksheet-item-answer">$\to 2, \dfrac{9}{4}, \dfrac{28}{9}, \dfrac{65}{16}, \dfrac{126}{25}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$b_n = \dfrac{(-1)^{n+1}}{2n+1}$ ចំពោះ $0 \le n < 4$</span>
+              <span class="worksheet-item-answer">$\to -1, \dfrac{1}{3}, -\dfrac{1}{5}, \dfrac{1}{7}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = 3 - \dfrac{1}{n^2}$ ចំពោះ $0 < n \le 4$</span>
+              <span class="worksheet-item-answer">$\to 2, \dfrac{11}{4}, \dfrac{26}{9}, \dfrac{47}{16}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$v_n = (-1)^n(n+1)^2$ ចំពោះ $1 \le n < 6$</span>
+              <span class="worksheet-item-answer">$\to -4, 9, -16, 25, -36$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{(-1)^n}{n} + 2n$ ចំពោះ $1 \le n \le 5$</span>
+              <span class="worksheet-item-answer">$\to 1, \dfrac{9}{2}, \dfrac{17}{3}, \dfrac{33}{4}, \dfrac{49}{5}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{n!}{2^n}$ ចំពោះ $1 \le n \le 4$</span>
+              <span class="worksheet-item-answer">$\to \dfrac{1}{2}, \dfrac{1}{2}, \dfrac{3}{4}, \dfrac{3}{2}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៥. សរសេរតួតគ្នានៃស្វ៊ីតរាប់អស់ (កន្សោមស្មុគស្មាញ)៖</span>
+            <span class="worksheet-section-badge">៧ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2026\pi}{n}$ ចំពោះ $1 \le n \le 4$</span>
+              <span class="worksheet-item-answer">$\to 2026\pi, 1013\pi, \dfrac{2026\pi}{3}, \dfrac{1013\pi}{2}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = (-1)^n + \cos(n\pi)$ ចំពោះ $1 \le n < 5$</span>
+              <span class="worksheet-item-answer">$\to -2, 2, -2, 2$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$w_n = \dfrac{e^n}{n^2+3n-4}$ ចំពោះ $2 \le n \le 4$</span>
+              <span class="worksheet-item-answer">$\to \dfrac{e^2}{6}, \dfrac{e^3}{14}, \dfrac{e^4}{24}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$b_n = \dfrac{(-1)^{n+1}}{n+1}$ ចំពោះ $1 \le n < 5$</span>
+              <span class="worksheet-item-answer">$\to \dfrac{1}{2}, -\dfrac{1}{3}, \dfrac{1}{4}, -\dfrac{1}{5}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{n^3+2n^2-1}{n^2+1}$ ចំពោះ $2 \le n \le 5$</span>
+              <span class="worksheet-item-answer">$\to 3, \dfrac{22}{5}, \dfrac{95}{17}, \dfrac{87}{13}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$v_n = (n\sqrt{n})^{n+1}$ ចំពោះ $1 \le n \le 4$</span>
+              <span class="worksheet-item-answer">$\to 1, 16\sqrt{2}, 243\sqrt{3}, 32768$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = \sqrt{n^2+1}-n$ ចំពោះ $0 \le n < 5$</span>
+              <span class="worksheet-item-answer">$\to 1, \sqrt{2}-1, \sqrt{5}-2, \sqrt{10}-3, \sqrt{17}-4$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 3: កំណត់រូបមន្តតួទី n ($a_n$) នៃស្វ៊ីត -->
+        <div class="seq-category-title">
+          <span>📐 ផ្នែកទី ៣៖ កំណត់រូបមន្តតួទី n ($a_n$) នៃស្វ៊ីត</span>
+        </div>
+
+        <!-- Exercise 6 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៦. កំណត់តួទី n ចំពោះ $\forall n \in \mathbb{N}$ នៃស្វ៊ីតខាងក្រោម៖</span>
+            <span class="worksheet-section-badge">៨ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$(a_n): 2, 5, 8, 11, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = 3n - 1$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$(a_n): 2, 4, 8, 16, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = 2^n$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$(a_n): 5, 7, 9, 11, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = 2n + 3$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$(a_n): 1, 4, 9, 16, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = n^2$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$(a_n): 16, 13, 10, 7, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = 19 - 3n$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$(a_n): 1, 3, 9, 27, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = 3^{n-1}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$(a_n): 3, 0, -3, -6, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = 6 - 3n$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$(a_n): 2, 6, 18, 54, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = 2 \cdot 3^{n-1}$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 7 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៧. កំណត់តួទី n ចំពោះ $\forall n \in \mathbb{N}$ (ប្រភាគ និងស្វ៊ីតពិសេស)៖</span>
+            <span class="worksheet-section-badge">៦ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$(a_n): -2, 2, -2, 2, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = 2(-1)^n$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$(a_n): \dfrac{2}{3}, \dfrac{4}{9}, \dfrac{8}{27}, \dfrac{16}{81}, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = \left(\dfrac{2}{3}\right)^n$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$(a_n): \dfrac{1}{2}, \dfrac{2}{3}, \dfrac{3}{4}, \dfrac{4}{5}, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = \dfrac{n}{n+1}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$(a_n): 9, 99, 999, 9999, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = 10^n - 1$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$(a_n): \dfrac{1}{4}, \dfrac{3}{9}, \dfrac{5}{16}, \dfrac{7}{25}, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = \dfrac{2n-1}{(n+1)^2}$</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$(a_n): 2, 22, 222, 2222, \dots$</span>
+              <span class="worksheet-item-answer">$\to a_n = \dfrac{2}{9}(10^n - 1)$</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 4: សិក្សាភាពកើន ចុះ និងម៉ូណូតូន -->
+        <div class="seq-category-title">
+          <span>📈 ផ្នែកទី ៤៖ សិក្សាភាពកើន ចុះ និងម៉ូណូតូននៃស្វ៊ីត</span>
+        </div>
+
+        <!-- Exercise 8 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៨. សិក្សាភាពកើន ឬចុះនៃស្វ៊ីតខាងក្រោម៖</span>
+            <span class="worksheet-section-badge">៩ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-3">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = 3n + 1$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{3n}{2} + 3$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$a_n = n^2 + 1$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$a_n = 4n - 5$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = -2n + 5$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតចុះ)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{3}{n}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតចុះ)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{1}{2}n - 2$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$a_n = 12 - 2n$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតចុះ)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៩.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2}{n+1}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតចុះ)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 9 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ៩. សិក្សាភាពកើន ឬចុះនៃស្វ៊ីតខាងក្រោម (សនិទាន & ស្វ័យគុណ)៖</span>
+            <span class="worksheet-section-badge">១០ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{n}{n+1}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$a_n = \left(\dfrac{2}{3}\right)^{n+1}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតចុះ)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2n}{n+2}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$a_n = \left(\dfrac{4}{3}\right)^{n-1}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{3-n}{n+1}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតចុះ)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$a_n = \left(\dfrac{5}{2}\right)^{-2n+3}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតចុះ)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = 2^{2n-1}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៩.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{1}{\sqrt{n}}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតចុះ)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = 4^{2n-1}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១០.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{n!}{n+1}$</span>
+              <span class="worksheet-item-answer">(ស្វ៊ីតកើន)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 10 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១០. បញ្ជាក់បណ្ដាស្វ៊ីតខាងក្រោមណាខ្លះជាស្វ៊ីតម៉ូណូតូន ឬមិនម៉ូណូតូន៖</span>
+            <span class="worksheet-section-badge">១០ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = 4^n$</span>
+              <span class="worksheet-item-answer">(ម៉ូណូតូនកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{(n+1)!}{3^n}$</span>
+              <span class="worksheet-item-answer">(ម៉ូណូតូនកើន ចំពោះ $n \ge 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$a_n = n^2$</span>
+              <span class="worksheet-item-answer">(ម៉ូណូតូនកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$a_n = (2n-1)(-1)^n$</span>
+              <span class="worksheet-item-answer">(មិនម៉ូណូតូន • ឆ្លាស់សញ្ញា)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{n^2-3n+2}{n+1}$</span>
+              <span class="worksheet-item-answer">(ម៉ូណូតូនកើន ចំពោះ $n \ge 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{n+2}{2n}$</span>
+              <span class="worksheet-item-answer">(ម៉ូណូតូនចុះ)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = n^2 - 6n + 5$</span>
+              <span class="worksheet-item-answer">(មិនម៉ូណូតូន លើ $\mathbb{N}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៩.</span>
+              <span class="worksheet-item-math">$a_n = (n-3)^2$</span>
+              <span class="worksheet-item-answer">(មិនម៉ូណូតូន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = n^2 + n + 1$</span>
+              <span class="worksheet-item-answer">(ម៉ូណូតូនកើន)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១០.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{n}{2}$</span>
+              <span class="worksheet-item-answer">(ម៉ូណូតូនកើន)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 5: ស្វ៊ីតទាល់លើ និងស្វ៊ីតទាល់ក្រោម -->
+        <div class="seq-category-title">
+          <span>🛡️ ផ្នែកទី ៥៖ ស្វ៊ីតទាល់លើ និងស្វ៊ីតទាល់ក្រោម (Bounded Above & Below)</span>
+        </div>
+
+        <!-- Exercise 11 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១១. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់លើ និងបញ្ជាក់គោលលើរបស់វា៖</span>
+            <span class="worksheet-section-badge">៩ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-3">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = -2n + 2$</span>
+              <span class="worksheet-item-answer">($M = 0$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = -\dfrac{1}{2}n + 6$</span>
+              <span class="worksheet-item-answer">($M = 5.5$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$a_n = 3 - (n+1)^2$</span>
+              <span class="worksheet-item-answer">($M = -1$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$a_n = 7 - 3n$</span>
+              <span class="worksheet-item-answer">($M = 4$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = -n^2 + 1$</span>
+              <span class="worksheet-item-answer">($M = 0$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$a_n = -2(n+1)^2 + 5$</span>
+              <span class="worksheet-item-answer">($M = -3$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = 10 - 5n$</span>
+              <span class="worksheet-item-answer">($M = 5$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$a_n = 2 - 3n^2$</span>
+              <span class="worksheet-item-answer">($M = -1$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៩.</span>
+              <span class="worksheet-item-math">$a_n = 10 - 4(n+2)^2$</span>
+              <span class="worksheet-item-answer">($M = -26$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 12 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១២. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់លើ (ប្រភាគ & ស្វ័យគុណ)៖</span>
+            <span class="worksheet-section-badge">៩ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-3">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2}{n}$</span>
+              <span class="worksheet-item-answer">($M = 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{3}{n^2+1}$</span>
+              <span class="worksheet-item-answer">($M = 1.5$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$a_n = 10 - 5 \cdot 2^{n+1}$</span>
+              <span class="worksheet-item-answer">($M = -10$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2}{n+2}$</span>
+              <span class="worksheet-item-answer">($M = \dfrac{2}{3}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = 2 + \dfrac{1}{n^2}$</span>
+              <span class="worksheet-item-answer">($M = 3$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2^n}{3^n}$</span>
+              <span class="worksheet-item-answer">($M = \dfrac{2}{3}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2}{(n+1)^2}$</span>
+              <span class="worksheet-item-answer">($M = \dfrac{1}{2}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$a_n = 4 - 3 \cdot 2^n$</span>
+              <span class="worksheet-item-answer">($M = -2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៩.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{3^{n+1}}{4^n}$</span>
+              <span class="worksheet-item-answer">($M = \dfrac{9}{4}$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 13 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៣. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់ក្រោម និងបញ្ជាក់គោលក្រោមរបស់វា៖</span>
+            <span class="worksheet-section-badge">៩ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-3">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = 2n + 2$</span>
+              <span class="worksheet-item-answer">($m = 4$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = (n+1)^2 - n^2$</span>
+              <span class="worksheet-item-answer">($m = 3$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$a_n = 2^{n+1} + 3^n$</span>
+              <span class="worksheet-item-answer">($m = 7$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{3}{4}n - 3$</span>
+              <span class="worksheet-item-answer">($m = -2.25$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = 7 \cdot 2^n - 1$</span>
+              <span class="worksheet-item-answer">($m = 13$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$a_n = (n+1)2^n$</span>
+              <span class="worksheet-item-answer">($m = 4$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = 5n^2 - 4$</span>
+              <span class="worksheet-item-answer">($m = 1$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$a_n = n^2 + 2$</span>
+              <span class="worksheet-item-answer">($m = 3$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៩.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{4^n}{2^{n+1}}$</span>
+              <span class="worksheet-item-answer">($m = 1$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 6: បង្ហាញជាស្វ៊ីតទាល់ -->
+        <div class="seq-category-title">
+          <span>🌟 ផ្នែកទី ៦៖ បង្ហាញជាស្វ៊ីតទាល់ និងកំណត់គោលក្រោម $m$ ព្រមទាំងគោលលើ $M$</span>
+        </div>
+
+        <!-- Exercise 14 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៤. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់ (ប្រភាគសនិទាន & រ៉ាឌីកាល់)៖</span>
+            <span class="worksheet-section-badge">៩ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-3">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2n+1}{n+1}$</span>
+              <span class="worksheet-item-answer">($1.5 \le a_n < 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{3n^2+2}{2n^2+1}$</span>
+              <span class="worksheet-item-answer">($1.5 < a_n \le \dfrac{5}{3}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៧.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{\sqrt{4n^2-3}}{4n+1}$</span>
+              <span class="worksheet-item-answer">($0.2 \le a_n < 0.5$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{3n+2}{2n+1}$</span>
+              <span class="worksheet-item-answer">($1.5 < a_n \le \dfrac{5}{3}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2n^2-n}{n^2+1}$</span>
+              <span class="worksheet-item-answer">($0.5 \le a_n < 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៨.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2n+1}{\sqrt{n^2+3n}}$</span>
+              <span class="worksheet-item-answer">($1.5 \le a_n < 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{n+1}{4n+3}$</span>
+              <span class="worksheet-item-answer">($0.25 < a_n \le \dfrac{2}{7}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2n^2-n+1}{n^2+n+1}$</span>
+              <span class="worksheet-item-answer">($\dfrac{2}{3} \le a_n < 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៩.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{\sqrt{n^2+3}-n}{n+2}$</span>
+              <span class="worksheet-item-answer">($0 < a_n \le \dfrac{1}{3}$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 15 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៥. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់ (ហ្វាក់តូរីយ៉ែល & ស្វ័យគុណ)៖</span>
+            <span class="worksheet-section-badge">៦ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{4}{(n+1)!}$</span>
+              <span class="worksheet-item-answer">($0 < a_n \le 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = \sqrt{n^2+n}-n$</span>
+              <span class="worksheet-item-answer">($\sqrt{2}-1 \le a_n < 0.5$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2^n-n}{2^n+3}$</span>
+              <span class="worksheet-item-answer">($0 < a_n < 1$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = \sqrt{n^2+8n}-n$</span>
+              <span class="worksheet-item-answer">($2 \le a_n < 4$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{2n+5}{n!+n}$</span>
+              <span class="worksheet-item-answer">($0 < a_n \le 3.5$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$a_n = \sqrt{n!}-\sqrt{n!+1}$</span>
+              <span class="worksheet-item-answer">($\dfrac{-1}{1+\sqrt{2}} \le a_n < 0$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 16 -->
+        <div class="worksheet-section">
+          <div class="worksheet-section-title">
+            <span>លំហាត់ទី ១៦. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់ (ស្វ៊ីតត្រីកោណមាត្រ $\sin, \cos$)៖</span>
+            <span class="worksheet-section-badge">៦ សំណួរ</span>
+          </div>
+          <div class="worksheet-grid-2">
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">១.</span>
+              <span class="worksheet-item-math">$a_n = 4\cos\left(\dfrac{n\pi}{4}\right) + 9\sin\left(\dfrac{n\pi}{5}\right)$</span>
+              <span class="worksheet-item-answer">($-13 \le a_n \le 13$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៤.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{8}{7+3\cos^2\left(\dfrac{n\pi}{3}\right)}$</span>
+              <span class="worksheet-item-answer">($\dfrac{4}{5} \le a_n \le \dfrac{8}{7}$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">២.</span>
+              <span class="worksheet-item-math">$a_n = 2\cos\left(\dfrac{n\pi}{2}\right) + 7\sin^2\left(\dfrac{n\pi}{3}\right)$</span>
+              <span class="worksheet-item-answer">($-2 \le a_n \le 9$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៥.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{21}{3+4\sin^2\left(\dfrac{n\pi}{10}\right)}$</span>
+              <span class="worksheet-item-answer">($3 \le a_n \le 7$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៣.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{4}{2+3\cos^2\left(\dfrac{n\pi}{5}\right)}$</span>
+              <span class="worksheet-item-answer">($\dfrac{4}{5} \le a_n \le 2$)</span>
+            </div>
+            <div class="worksheet-grid-item">
+              <span class="worksheet-item-label">៦.</span>
+              <span class="worksheet-item-math">$a_n = \dfrac{20}{7+2\cos^2\left(\dfrac{n\pi}{6}\right)}$</span>
+              <span class="worksheet-item-answer">($2 \le a_n \le \dfrac{20}{7}$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer within Sheet -->
+        <div style="margin-top: 2rem; border-top: 1.5px solid #0f172a; padding-top: 8px; display: flex; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+          <div>រៀបរៀងដោយ អ្នកគ្រូ ឆេង ឆវ័ន្ត • វិទ្យាល័យ ឧដុង្គ</div>
+          <div>សន្លឹកកិច្ចការគណិតវិទ្យាថ្នាក់ទី១១ • ស្វ៊ីតចំនួនពិត</div>
+          <div>ទំព័រទី 1 / 1</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       4. PREVIEW MODAL
+       ============================================================ -->
+  <div id="worksheet-preview-modal" class="worksheet-modal-overlay" style="display: none;">
+    <div class="worksheet-modal-box">
+      <div class="worksheet-modal-header">
+        <div class="worksheet-modal-title" id="preview-modal-title">
+          📄 មើលជាមុនលើក្រដាស A4៖ ស្វ៊ីតចំនួនពិត (Print Preview)
+        </div>
+        <div class="worksheet-modal-tools">
+          <button class="btn btn-sm btn-outline" onclick="zoomWorksheetPreview(-0.1)" title="បង្រួម">-</button>
+          <span id="preview-zoom-val" style="font-size: 0.82rem; font-weight: 700; min-width: 42px; text-align: center;">100%</span>
+          <button class="btn btn-sm btn-outline" onclick="zoomWorksheetPreview(0.1)" title="ពង្រីក">+</button>
+          <button class="btn btn-sm btn-outline" onclick="fitWorksheetPreviewWidth()" title="តម្រឹមតាមទទឹងអេក្រង់">Fit</button>
+          <button class="btn btn-sm btn-outline" id="btn-preview-toggle-answers" onclick="toggleWorksheetAnswers()">👁️ បង្ហាញចម្លើយ</button>
+          <button class="btn btn-sm btn-primary" onclick="printActiveWorksheet()">🖨️ បោះពុម្ព</button>
+          <button class="btn-close-modal" onclick="closeWorksheetPreviewModal()" title="បិទ">✕</button>
+        </div>
+      </div>
+      <div class="worksheet-modal-viewport" id="preview-viewport-scroll">
+        <div id="preview-sheet-stage" style="transform-origin: top center; transition: transform 0.15s ease;">
+          <div id="preview-sheet-clone-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       5. FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="nav-brand">
+            <div class="brand-icon">f(x)</div>
+            <div class="brand-text">
+              <span class="brand-name">ឆេង ឆវ័ន្ត</span>
+              <span class="brand-sub">MATH SPECIALIST</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            មជ្ឈមណ្ឌលឯកសារបង្រៀន និងកម្រងលំហាត់គណិតវិទ្យា សម្រាប់ពង្រឹងសមត្ថភាពសិស្សានុសិស្សឆ្ពោះទៅកាន់និទ្ទេស A។
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">ប្រព័ន្ធបង្រៀន</h4>
+          <ul class="footer-links">
+            <li><a href="lessons.html" class="footer-link">មេរៀនលម្អិតតាមកម្រិតថ្នាក់</a></li>
+            <li><a href="slides.html" class="footer-link">ស្លាយបង្រៀនអន្តរកម្ម</a></li>
+            <li><a href="exercises.html" class="footer-link">កម្រងលំហាត់អនុវត្ត</a></li>
+            <li><a href="exams.html" class="footer-link">វិញ្ញាសាប្រឡងជាតិ & តេស្ត</a></li>
+            <li><a href="grade 11 part 1 (2026).pdf" target="_blank" class="footer-link" style="color: #f472b6;">📘 សៀវភៅកិច្ចការផ្ទះ ១១ (PDF)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">កម្រិតថ្នាក់សិក្សា</h4>
+          <ul class="footer-links">
+            <li><a href="lessons.html?grade=grade12" class="footer-link">ថ្នាក់ទី ១២ (ត្រៀមបាក់ឌុប)</a></li>
+            <li><a href="lessons.html?grade=grade11" class="footer-link">ថ្នាក់ទី ១១ (ពង្រឹងគ្រឹះ)</a></li>
+            <li><a href="lessons.html?grade=grade10" class="footer-link">ថ្នាក់ទី ១០ (ស្ពានចម្លង)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">ទំនាក់ទំនង</h4>
+          <ul class="footer-links">
+            <li class="footer-link">📞 099 77 5501</li>
+            <li class="footer-link">✈️ Telegram: @chhovorn_math</li>
+            <li class="footer-link">📧 chhorvornk@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 អ្នកគ្រូ ឆេង ឆវ័ន្ត (Teacher Chheng Chhovorn). រក្សាសិទ្ធិគ្រប់យ៉ាង។
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/html2pdf.bundle.min.js"></script>
+  <script src="js/academic-data.js"></script>
+  <script src="js/academic.js"></script>
+
+  <script>
+    let currentPreviewZoom = 1.0;
+
+    function getActiveWorksheetElement() {
+      return document.getElementById('worksheet-sequences-sheet');
+    }
+
+    function toggleWorksheetAnswers() {
+      const activeSheet = getActiveWorksheetElement();
+      const btn = document.getElementById('btn-toggle-answers');
+      const previewBtn = document.getElementById('btn-preview-toggle-answers');
+      if (!activeSheet) return;
+
+      activeSheet.classList.toggle('show-answers');
+      const isShown = activeSheet.classList.contains('show-answers');
+
+      const text = isShown ? '👁️ លាក់ចម្លើយ' : '👁️ បង្ហាញចម្លើយ';
+      if (btn) {
+        btn.textContent = text;
+        btn.style.color = isShown ? 'var(--accent-cyan)' : '';
+      }
+      if (previewBtn) {
+        previewBtn.textContent = text;
+        previewBtn.style.color = isShown ? '#38bdf8' : '';
+      }
+
+      const clone = document.querySelector('#preview-sheet-clone-container .worksheet-a4-sheet');
+      if (clone) {
+        clone.classList.toggle('show-answers', isShown);
+      }
+    }
+
+    function printActiveWorksheet() {
+      window.print();
+    }
+
+    function openWorksheetPreviewModal() {
+      const modal = document.getElementById('worksheet-preview-modal');
+      const cloneContainer = document.getElementById('preview-sheet-clone-container');
+      const activeSheet = getActiveWorksheetElement();
+      if (!modal || !cloneContainer || !activeSheet) return;
+
+      cloneContainer.innerHTML = '';
+      const clone = activeSheet.cloneNode(true);
+      clone.style.display = 'block';
+      clone.style.margin = '0 auto';
+      clone.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.45)';
+      cloneContainer.appendChild(clone);
+
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        fitWorksheetPreviewWidth();
+        if (typeof triggerMathRender === 'function') {
+          triggerMathRender(cloneContainer);
+        } else if (typeof renderMathInElement === 'function') {
+          renderMathInElement(cloneContainer, {
+            delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+            throwOnError: false
+          });
+        }
+      }, 50);
+    }
+
+    function closeWorksheetPreviewModal() {
+      const modal = document.getElementById('worksheet-preview-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    function setWorksheetPreviewZoom(val) {
+      currentPreviewZoom = Math.min(1.5, Math.max(0.4, val));
+      const stage = document.getElementById('preview-sheet-stage');
+      const label = document.getElementById('preview-zoom-val');
+      if (stage) stage.style.transform = `scale(${currentPreviewZoom})`;
+      if (label) label.textContent = `${Math.round(currentPreviewZoom * 100)}%`;
+    }
+
+    function zoomWorksheetPreview(delta) {
+      setWorksheetPreviewZoom(currentPreviewZoom + delta);
+    }
+
+    function fitWorksheetPreviewWidth() {
+      const scrollArea = document.getElementById('preview-viewport-scroll');
+      if (!scrollArea) return;
+      const availableW = scrollArea.clientWidth - 48;
+      const fitZoom = Math.min(1.15, Math.max(0.45, availableW / 820));
+      setWorksheetPreviewZoom(fitZoom);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeWorksheetPreviewModal();
+    });
+
+    async function downloadActiveWorksheetPDF() {
+      const element = getActiveWorksheetElement();
+      const btn = document.getElementById('btn-download-pdf');
+      if (!element) return;
+
+      if (typeof html2pdf === 'undefined') {
+        window.print();
+        return;
+      }
+
+      const originalText = btn ? btn.innerHTML : '';
+      if (btn) {
+        btn.innerHTML = '⏳ កំពុងបង្កើត PDF...';
+        btn.disabled = true;
+      }
+
+      if (document.fonts && document.fonts.ready) {
+        try { await document.fonts.ready; } catch (e) {}
+      }
+
+      const exportClone = element.cloneNode(true);
+      exportClone.id = 'worksheet-pdf-clone';
+      exportClone.style.display = 'block';
+      exportClone.style.position = 'fixed';
+      exportClone.style.top = '-99999px';
+      exportClone.style.left = '0';
+      exportClone.style.width = '794px';
+      exportClone.style.boxSizing = 'border-box';
+      exportClone.style.background = '#ffffff';
+      exportClone.style.color = '#0f172a';
+      exportClone.style.padding = '16px 20px';
+      exportClone.style.margin = '0';
+      exportClone.style.border = '2px solid #0f172a';
+      exportClone.style.boxShadow = 'none';
+
+      document.body.appendChild(exportClone);
+
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(exportClone, {
+          delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+          throwOnError: false
+        });
+      }
+
+      const opt = {
+        margin: [8, 8, 8, 8],
+        filename: 'សន្លឹកកិច្ចការ_ស្វ៊ីតចំនួនពិត_ថ្នាក់ទី១១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['css', 'legacy'], avoid: ['.worksheet-section', '.seq-category-title'] }
+      };
+
+      try {
+        await html2pdf().set(opt).from(exportClone).save();
+      } catch (err) {
+        console.error('html2pdf error:', err);
+        window.print();
+      } finally {
+        if (exportClone.parentNode) exportClone.parentNode.removeChild(exportClone);
+        if (btn) {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }
+      }
+    }
+
+    function exportActiveWorksheetWord() {
+      const element = getActiveWorksheetElement();
+      if (!element) return;
+
+      const title = 'សន្លឹកកិច្ចការ_ស្វ៊ីតចំនួនពិត_ថ្នាក់ទី១១_អ្នកគ្រូ_ឆេង_ឆវ័ន្ត';
+      const clone = element.cloneNode(true);
+      const watermark = clone.querySelector('.worksheet-watermark');
+      if (watermark) watermark.remove();
+
+      const htmlContent = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+        <head>
+          <meta charset='utf-8'>
+          <title>${title}</title>
+          <style>
+            body { font-family: 'Kantumruy Pro', 'Khmer OS Battambang', Arial, sans-serif; font-size: 10.5pt; line-height: 1.5; color: #000; }
+            h2, h3, h4 { color: #1e3a8a; }
+            .worksheet-grid-2, .worksheet-grid-3 { display: table; width: 100%; }
+            .worksheet-grid-item { display: inline-block; width: 48%; vertical-align: top; margin-bottom: 8px; }
+            .worksheet-item-label { font-weight: bold; margin-right: 4px; }
+          </style>
+        </head>
+        <body>
+          ${clone.innerHTML}
+        </body>
+        </html>`;
+
+      const blob = new Blob(['\ufeff' + htmlContent], { type: 'application/msword' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${title}.doc`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

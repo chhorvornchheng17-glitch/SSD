@@ -1,0 +1,359 @@
+% ==============================================================================
+% កម្រងលំហាត់អនុវត្ត៖ ស្វ៊ីតចំនួនពិត ថ្នាក់ទី១១ (ស្រង់ចេញពីសៀវភៅកិច្ចការផ្ទះ ២០២៦)
+% រៀបរៀងដោយ៖ អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP) - វិទ្យាល័យសសរស្តម្ភ
+% 
+% របៀបដំណើរការក្នុងកម្មវិធី TeXstudio (How to compile in TeXstudio):
+% 1. បើកឯកសារនេះក្នុង TeXstudio
+% 2. ចូល Options -> Configure TeXstudio -> Build -> Default Compiler ជ្រើសយក "XeLaTeX"
+% 3. ចុចគ្រាប់ចុច F5 (Build & View) ដើម្បី Run ចេញជា PDF ពេញលេញដោយជោគជ័យ
+% ==============================================================================
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,left=1.2cm,right=1.2cm,top=2.2cm,bottom=1.8cm,headheight=22pt,headsep=10pt,footskip=20pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{fancyhdr}
+\usepackage[no-math]{fontspec}
+
+% ------------------------------------------------------------------------------
+% កំណត់ពុម្ពអក្សរខ្មែរ និងអង់គ្លេស (Font Specifications)
+% ------------------------------------------------------------------------------
+\setmainfont{Khmer OS Battambang}[
+  BoldFeatures={FakeBold=2.2}
+]
+\newcommand{\kml}{\fontspec{Khmer OS Muol Light}\selectfont}
+\newcommand{\en}{\fontspec{Times New Roman}\selectfont}
+
+\everymath{\protect\displaystyle}
+
+% ------------------------------------------------------------------------------
+% ស៊ុមទំព័រជុំវិញ និង Watermark (Page Border & Diagonal Watermark)
+% ------------------------------------------------------------------------------
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+    % បន្ទាត់ស៊ុមទំព័រ (Outer Page Border Frame)
+    \draw[line width=1.2pt]
+      ([xshift=0.8cm,yshift=-0.8cm]current page.north west)
+      rectangle
+      ([xshift=-0.8cm,yshift=0.8cm]current page.south east);
+    % Watermark រាងទ្រេតកាត់ចំកណ្តាលទំព័រ
+    \node[rotate=35, scale=4.2, text=orange!35!red!25] at (current page.center) {{\en\textbf{CHHENG CHHORVORN}}};
+  \end{tikzpicture}%
+}
+
+% ------------------------------------------------------------------------------
+% ក្បាលទំព័រ និងបាតទំព័រ (Header & Footer Setup)
+% ------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1.2pt}
+\renewcommand{\footrulewidth}{1.2pt}
+
+% Header
+\fancyhead[L]{\textbf{គណិតវិទ្យាថ្នាក់ទី១១(សង្ខេប)}}
+\fancyhead[C]{{\large\kml លំហាត់}}
+\fancyhead[R]{\textbf{ស្វ៊ីតចំនួនពិត(២០២៥-២០២៦)}}
+
+% Footer
+\fancyfoot[L]{\textbf{បង្រៀនដោយ៖ អ្នកគ្រូ ឆេង ឆវ័ន្ត} {\en\textbf{(NIE \& RUPP)}}}
+\fancyfoot[R]{\textbf{វិទ្យាល័យសសរស្តម្ភ} {\en\textbf{|}} \textbf{០៩៩ ៧៧ ៥៥ ០១}}
+
+% ការកំណត់គម្លាត
+\setlength{\columnsep}{16pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% ==============================================================================
+% តួសេចក្តីនៃឯកសារ (Document Body)
+% ==============================================================================
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% ផ្នែកទី ១៖ រកតួបន្តបន្ទាប់នៃស្វ៊ីត
+% ------------------------------------------------------------------------------
+\textbf{១. សរសេរបីតួបន្តទៀតនៃស្វ៊ីតខាងក្រោម៖}
+\begin{multicols}{3}
+\textbf{ក.} $0, 3, 6, 9, \dots$\\[5pt]
+\textbf{ឃ.} $3, 6, 12, 24, \dots$\\[5pt]
+\textbf{ឆ.} $10, 7, 3, -2, \dots$
+
+\columnbreak
+\textbf{ខ.} $10, 6, 2, -2, \dots$\\[5pt]
+\textbf{ង.} $1, 3, 6, 10, \dots$\\[5pt]
+\textbf{ជ.} $0, 1, 3, 4, 6, \dots$
+
+\columnbreak
+\textbf{គ.} $1, 6, 11, 16, \dots$\\[5pt]
+\textbf{ច.} $2, 5, 10, 17, \dots$
+\end{multicols}
+
+\vspace{1pt}
+\textbf{២. សរសេរបីតួបន្តទៀតនៃស្វ៊ីតខាងក្រោម (លំនាំស្មុគស្មាញ)៖}
+\begin{multicols}{3}
+\textbf{ក.} $3, 6, 11, 18, \dots$\\[5pt]
+\textbf{ឃ.} $0, 2, 5, 7, 10, \dots$\\[5pt]
+\textbf{ឆ.} $1, 3, 7, 15, \dots$\\[5pt]
+\textbf{ញ.} $6, 12, 24, 48, \dots$
+
+\columnbreak
+\textbf{ខ.} $12, 15, 21, 30, \dots$\\[5pt]
+\textbf{ង.} $50, 45, 44, 39, 38, \dots$\\[5pt]
+\textbf{ជ.} $0, 1, 9, 36, 100, \dots$
+
+\columnbreak
+\textbf{គ.} $12, 10, 11, 9, 10, \dots$\\[5pt]
+\textbf{ច.} $1, 2, 6, 15, 31, \dots$\\[5pt]
+\textbf{ឈ.} $1, 2, 4, 8, 16, \dots$
+\end{multicols}
+
+\vspace{1pt}
+\textbf{៣. សរសេរបីតួបន្តទៀតនៃស្វ៊ីតប្រភាគខាងក្រោម៖}
+\begin{multicols}{2}
+\textbf{ក.} $\dfrac{1}{1}, \dfrac{3}{5}, \dfrac{5}{9}, \dfrac{7}{13}, \dots$\\[8pt]
+\textbf{គ.} $\dfrac{1}{2}, \dfrac{2}{6}, \dfrac{3}{12}, \dfrac{4}{20}, \dots$
+
+\columnbreak
+\textbf{ខ.} $\dfrac{1}{3}, \dfrac{2}{5}, \dfrac{4}{7}, \dfrac{8}{9}, \dots$\\[8pt]
+\textbf{ឃ.} $\dfrac{2}{3}, \dfrac{4}{15}, \dfrac{8}{35}, \dfrac{16}{63}, \dots$
+\end{multicols}
+
+\vspace{2pt}
+% ------------------------------------------------------------------------------
+% ផ្នែកទី ២៖ សរសេរតួតគ្នានៃស្វ៊ីតរាប់អស់
+% ------------------------------------------------------------------------------
+\textbf{៤. សរសេរតួតគ្នានៃស្វ៊ីតរាប់អស់ខាងក្រោម៖}
+\begin{multicols}{2}
+\textbf{ក.} $a_n = \dfrac{2n}{n+1}$ ចំពោះ $1 \le n \le 4$\\[7pt]
+\textbf{គ.} $a_n = 3 - \dfrac{1}{n^2}$ ចំពោះ $0 < n \le 4$\\[7pt]
+\textbf{ង.} $a_n = 2^{-n+2}$ ចំពោះ $1 \le n \le 5$\\[7pt]
+\textbf{ឆ.} $v_n = (-1)^n(n+1)^2$ ចំពោះ $1 \le n < 6$
+
+\columnbreak
+\textbf{ខ.} $w_n = n + \dfrac{1}{n^2}$ ចំពោះ $1 \le n \le 5$\\[7pt]
+\textbf{ឃ.} $a_n = \dfrac{(-1)^n}{n} + 2n$ ចំពោះ $1 \le n \le 5$\\[7pt]
+\textbf{ច.} $b_n = \dfrac{(-1)^{n+1}}{2n+1}$ ចំពោះ $0 \le n < 4$\\[7pt]
+\textbf{ជ.} $a_n = \dfrac{n!}{2^n}$ ចំពោះ $1 \le n \le 4$
+\end{multicols}
+
+\newpage
+
+% ------------------------------------------------------------------------------
+% ទំព័រទី ២៖ ស្វ៊ីតរាប់អស់ (ត) និងការកំណត់តួទី n
+% ------------------------------------------------------------------------------
+\textbf{៥. សរសេរតួតគ្នានៃស្វ៊ីតរាប់អស់ខាងក្រោម៖}
+\begin{multicols}{2}
+\textbf{ក.} $a_n = \dfrac{2026\pi}{n}$ ចំពោះ $1 \le n \le 4$\\[8pt]
+\textbf{គ.} $a_n = \dfrac{n^3+2n^2-1}{n^2+1}$ ចំពោះ $2 \le n \le 5$\\[8pt]
+\textbf{ង.} $a_n = (-1)^n + \cos(n\pi)$ ចំពោះ $1 \le n < 5$\\[8pt]
+\textbf{ឆ.} $v_n = (n\sqrt{n})^{n+1}$ ចំពោះ $1 \le n \le 4$
+
+\columnbreak
+\textbf{ខ.} $w_n = \dfrac{e^n}{n^2+3n-4}$ ចំពោះ $2 \le n \le 4$\\[8pt]
+\textbf{ឃ.} $a_n = \sqrt{n^2+1}-n$ ចំពោះ $0 \le n < 5$\\[8pt]
+\textbf{ច.} $b_n = \dfrac{(-1)^{n+1}}{n+1}$ ចំពោះ $1 \le n < 5$
+\end{multicols}
+
+\vspace{3pt}
+% ------------------------------------------------------------------------------
+% ផ្នែកទី ៣៖ កំណត់រូបមន្តតួទី n ($a_n$) នៃស្វ៊ីត
+% ------------------------------------------------------------------------------
+\textbf{៦. កំណត់តួទី $n$ ចំពោះគ្រប់ $n \in \mathbb{N}$ នៃស្វ៊ីតខាងក្រោម៖}
+\begin{multicols}{2}
+\textbf{ក.} $(a_n): 2, 5, 8, 11, \dots$\\[6pt]
+\textbf{គ.} $(a_n): 16, 13, 10, 7, \dots$\\[6pt]
+\textbf{ង.} $(a_n): 2, 4, 8, 16, \dots$\\[6pt]
+\textbf{ឆ.} $(a_n): 1, 3, 9, 27, \dots$
+
+\columnbreak
+\textbf{ខ.} $(a_n): 5, 7, 9, 11, \dots$\\[6pt]
+\textbf{ឃ.} $(a_n): 3, 0, -3, -6, \dots$\\[6pt]
+\textbf{ច.} $(a_n): 1, 4, 9, 16, \dots$\\[6pt]
+\textbf{ជ.} $(a_n): 2, 6, 18, 54, \dots$
+\end{multicols}
+
+\vspace{3pt}
+\textbf{៧. កំណត់តួទី $n$ ចំពោះគ្រប់ $n \in \mathbb{N}$ (ប្រភាគ និងស្វ៊ីតពិសេស)៖}
+\begin{multicols}{2}
+\textbf{ក.} $(a_n): -2, 2, -2, 2, \dots$\\[8pt]
+\textbf{គ.} $(a_n): \dfrac{1}{4}, \dfrac{3}{9}, \dfrac{5}{16}, \dfrac{7}{25}, \dots$\\[8pt]
+\textbf{ង.} $(a_n): 9, 99, 999, 9999, \dots$
+
+\columnbreak
+\textbf{ខ.} $(a_n): \dfrac{1}{2}, \dfrac{2}{3}, \dfrac{3}{4}, \dfrac{4}{5}, \dots$\\[8pt]
+\textbf{ឃ.} $(a_n): \dfrac{2}{3}, \dfrac{4}{9}, \dfrac{8}{27}, \dfrac{16}{81}, \dots$\\[8pt]
+\textbf{ច.} $(a_n): 2, 22, 222, 2222, \dots$
+\end{multicols}
+
+\vspace{3pt}
+% ------------------------------------------------------------------------------
+% ផ្នែកទី ៤៖ សិក្សាភាពកើន ចុះ និងម៉ូណូតូននៃស្វ៊ីត
+% ------------------------------------------------------------------------------
+\textbf{៨. សិក្សាភាពកើន ឬចុះនៃស្វ៊ីតខាងក្រោម៖}
+\begin{multicols}{3}
+\textbf{ក.} $a_n = 3n + 1$\\[8pt]
+\textbf{ឃ.} $a_n = \dfrac{3n}{2} + 3$\\[8pt]
+\textbf{ឆ.} $a_n = n^2 + 1$
+
+\columnbreak
+\textbf{ខ.} $a_n = 4n - 5$\\[8pt]
+\textbf{ង.} $a_n = -2n + 5$\\[8pt]
+\textbf{ជ.} $a_n = \dfrac{3}{n}$
+
+\columnbreak
+\textbf{គ.} $a_n = \dfrac{1}{2}n - 2$\\[8pt]
+\textbf{ច.} $a_n = 12 - 2n$\\[8pt]
+\textbf{ឈ.} $a_n = \dfrac{2}{n+1}$
+\end{multicols}
+
+\newpage
+
+% ------------------------------------------------------------------------------
+% ទំព័រទី ៣៖ ភាពកើន ចុះ, ម៉ូណូតូន និងស្វ៊ីតទាល់លើ
+% ------------------------------------------------------------------------------
+\textbf{៩. សិក្សាភាពកើន ឬចុះនៃស្វ៊ីតខាងក្រោម (សនិទាន និងស្វ័យគុណ)៖}
+\begin{multicols}{3}
+\textbf{ក.} $a_n = \dfrac{n}{n+1}$\\[8pt]
+\textbf{ឃ.} $a_n = 2^{2n-1}$\\[8pt]
+\textbf{ឆ.} $a_n = \left(\dfrac{4}{3}\right)^{n-1}$\\[8pt]
+\textbf{ញ.} $a_n = \dfrac{n!}{n+1}$
+
+\columnbreak
+\textbf{ខ.} $a_n = \dfrac{2n}{n+2}$\\[8pt]
+\textbf{ង.} $a_n = 4^{2n-1}$\\[8pt]
+\textbf{ជ.} $a_n = \left(\dfrac{5}{2}\right)^{-2n+3}$
+
+\columnbreak
+\textbf{គ.} $a_n = \dfrac{3-n}{n+1}$\\[8pt]
+\textbf{ច.} $a_n = \left(\dfrac{2}{3}\right)^{n+1}$\\[8pt]
+\textbf{ឈ.} $a_n = \dfrac{1}{\sqrt{n}}$
+\end{multicols}
+
+\vspace{3pt}
+\textbf{១០. បញ្ជាក់បណ្ដាស្វ៊ីតខាងក្រោមណាខ្លះជាស្វ៊ីតម៉ូណូតូន ឬមិនម៉ូណូតូន៖}
+\begin{multicols}{2}
+\textbf{ក.} $a_n = 4^n$\\[7pt]
+\textbf{គ.} $a_n = \dfrac{n^2-3n+2}{n+1}$\\[7pt]
+\textbf{ង.} $a_n = n^2 + n + 1$\\[7pt]
+\textbf{ឆ.} $a_n = (2n-1)(-1)^n$\\[7pt]
+\textbf{ឈ.} $a_n = (n-3)^2$
+
+\columnbreak
+\textbf{ខ.} $a_n = n^2$\\[7pt]
+\textbf{ឃ.} $a_n = n^2 - 6n + 5$\\[7pt]
+\textbf{ច.} $a_n = \dfrac{(n+1)!}{3^n}$\\[7pt]
+\textbf{ជ.} $a_n = \dfrac{n+2}{2n}$\\[7pt]
+\textbf{ញ.} $a_n = \dfrac{n}{2}$
+\end{multicols}
+
+\vspace{3pt}
+% ------------------------------------------------------------------------------
+% ផ្នែកទី ៥៖ ស្វ៊ីតទាល់លើ និងស្វ៊ីតទាល់ក្រោម
+% ------------------------------------------------------------------------------
+\textbf{១១. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់លើ និងបញ្ជាក់គោលលើរបស់វា៖}
+\begin{multicols}{3}
+\textbf{ក.} $a_n = -2n + 2$\\[8pt]
+\textbf{ឃ.} $a_n = -\dfrac{1}{2}n + 6$\\[8pt]
+\textbf{ឆ.} $a_n = 3 - (n+1)^2$
+
+\columnbreak
+\textbf{ខ.} $a_n = 7 - 3n$\\[8pt]
+\textbf{ង.} $a_n = -n^2 + 1$\\[8pt]
+\textbf{ជ.} $a_n = -2(n+1)^2 + 5$
+
+\columnbreak
+\textbf{គ.} $a_n = 10 - 5n$\\[8pt]
+\textbf{ច.} $a_n = 2 - 3n^2$\\[8pt]
+\textbf{ឈ.} $a_n = 10 - 4(n+2)^2$
+\end{multicols}
+
+\newpage
+
+% ------------------------------------------------------------------------------
+% ទំព័រទី ៤៖ ស្វ៊ីតទាល់ក្រោម និងស្វ៊ីតទាល់
+% ------------------------------------------------------------------------------
+\textbf{១២. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់លើ (ប្រភាគ និងស្វ័យគុណ)៖}
+\begin{multicols}{3}
+\textbf{ក.} $a_n = \dfrac{2}{n}$\\[8pt]
+\textbf{ឃ.} $a_n = \dfrac{3}{n^2+1}$\\[8pt]
+\textbf{ឆ.} $a_n = 10 - 5 \cdot 2^{n+1}$
+
+\columnbreak
+\textbf{ខ.} $a_n = \dfrac{2}{n+2}$\\[8pt]
+\textbf{ង.} $a_n = 2 + \dfrac{1}{n^2}$\\[8pt]
+\textbf{ជ.} $a_n = \dfrac{2^n}{3^n}$
+
+\columnbreak
+\textbf{គ.} $a_n = \dfrac{2}{(n+1)^2}$\\[8pt]
+\textbf{ច.} $a_n = 4 - 3 \cdot 2^n$\\[8pt]
+\textbf{ឈ.} $a_n = \dfrac{3^{n+1}}{4^n}$
+\end{multicols}
+
+\vspace{3pt}
+\textbf{១៣. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់ក្រោម និងបញ្ជាក់គោលក្រោមរបស់វា៖}
+\begin{multicols}{3}
+\textbf{ក.} $a_n = 2n + 2$\\[8pt]
+\textbf{ឃ.} $a_n = (n+1)^2 - n^2$\\[8pt]
+\textbf{ឆ.} $a_n = 2^{n+1} + 3^n$
+
+\columnbreak
+\textbf{ខ.} $a_n = \dfrac{3}{4}n - 3$\\[8pt]
+\textbf{ង.} $a_n = 7 \cdot 2^n - 1$\\[8pt]
+\textbf{ជ.} $a_n = (n+1)2^n$
+
+\columnbreak
+\textbf{គ.} $a_n = 5n^2 - 4$\\[8pt]
+\textbf{ច.} $a_n = n^2 + 2$\\[8pt]
+\textbf{ឈ.} $a_n = \dfrac{4^n}{2^{n+1}}$
+\end{multicols}
+
+\vspace{3pt}
+% ------------------------------------------------------------------------------
+% ផ្នែកទី ៦៖ បង្ហាញជាស្វ៊ីតទាល់
+% ------------------------------------------------------------------------------
+\textbf{១៤. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់ (ប្រភាគសនិទាន និងរ៉ាឌីកាល់)៖}
+\begin{multicols}{3}
+\textbf{ក.} $a_n = \dfrac{2n+1}{n+1}$\\[9pt]
+\textbf{ឃ.} $a_n = \dfrac{3n^2+2}{2n^2+1}$\\[9pt]
+\textbf{ឆ.} $a_n = \dfrac{\sqrt{4n^2-3}}{4n+1}$
+
+\columnbreak
+\textbf{ខ.} $a_n = \dfrac{3n+2}{2n+1}$\\[9pt]
+\textbf{ង.} $a_n = \dfrac{2n^2-n}{n^2+1}$\\[9pt]
+\textbf{ជ.} $a_n = \dfrac{2n+1}{\sqrt{n^2+3n}}$
+
+\columnbreak
+\textbf{គ.} $a_n = \dfrac{n+1}{4n+3}$\\[9pt]
+\textbf{ច.} $a_n = \dfrac{2n^2-n+1}{n^2+n+1}$\\[9pt]
+\textbf{ឈ.} $a_n = \dfrac{\sqrt{n^2+3}-n}{n+2}$
+\end{multicols}
+
+\vspace{3pt}
+\textbf{១៥. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់ (ហ្វាក់តូរីយ៉ែល និងស្វ័យគុណ)៖}
+\begin{multicols}{2}
+\textbf{ក.} $a_n = \dfrac{4}{(n+1)!}$\\[9pt]
+\textbf{គ.} $a_n = \dfrac{2n+5}{n!+n}$\\[9pt]
+\textbf{ង.} $a_n = \sqrt{n^2+8n}-n$
+
+\columnbreak
+\textbf{ខ.} $a_n = \dfrac{2^n-n}{2^n+3}$\\[9pt]
+\textbf{ឃ.} $a_n = \sqrt{n^2+n}-n$\\[9pt]
+\textbf{ច.} $a_n = \sqrt{n!}-\sqrt{n!+1}$
+\end{multicols}
+
+\vspace{3pt}
+\textbf{១៦. បង្ហាញខាងក្រោមជាស្វ៊ីតទាល់ (ស្វ៊ីតត្រីកោណមាត្រ $\sin, \cos$)៖}
+\begin{multicols}{2}
+\textbf{ក.} $a_n = 4\cos\left(\dfrac{n\pi}{4}\right) + 9\sin\left(\dfrac{n\pi}{5}\right)$\\[9pt]
+\textbf{គ.} $a_n = \dfrac{4}{2+3\cos^2\left(\dfrac{n\pi}{5}\right)}$\\[9pt]
+\textbf{ង.} $a_n = \dfrac{21}{3+4\sin^2\left(\dfrac{n\pi}{10}\right)}$
+
+\columnbreak
+\textbf{ខ.} $a_n = 2\cos\left(\dfrac{n\pi}{2}\right) + 7\sin^2\left(\dfrac{n\pi}{3}\right)$\\[9pt]
+\textbf{ឃ.} $a_n = \dfrac{8}{7+3\cos^2\left(\dfrac{n\pi}{3}\right)}$\\[9pt]
+\textbf{ច.} $a_n = \dfrac{20}{7+2\cos^2\left(\dfrac{n\pi}{6}\right)}$
+\end{multicols}
+
+\end{document}

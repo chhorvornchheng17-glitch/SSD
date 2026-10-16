@@ -501,6 +501,12 @@ const ACADEMIC_CURRICULUM = {
       lessonsCount: 16,
       pdfFile: 'សៀវភៅគណិតថ្នាក់ទី១១(ភាគ១).pdf'
     },
+    homeworkBook: {
+      title: 'សៀវភៅកិច្ចការផ្ទះ គណិតវិទ្យា ថ្នាក់ទី១១ ភាគ១ (២០២៦)',
+      author: 'អ្នកគ្រូ ឆេង ឆវ័ន្ត',
+      totalPages: 189,
+      pdfFile: 'grade 11 part 1 (2026).pdf'
+    },
     chapters: [
       {
         id: 'g11-ch1',
@@ -1120,6 +1126,363 @@ const ACADEMIC_CURRICULUM = {
    TEACHING SLIDES DATA
    ============================================================ */
 const TEACHING_SLIDES_DATA = [
+  {
+    id: 'slide-radicals-g9',
+    grade: 'grade9',
+    gradeLabel: 'ថ្នាក់ទី ៩',
+    title: 'ជំពូកទី ១ មេរៀនទី ១៖ ប្រមាណវិធីលើរ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+    author: 'អ្នកគ្រូ ឆេង ឆវ័ន្ត (NIE & RUPP)',
+    slidesCount: 10,
+    badge: 'សៀវភៅគោលក្រសួងអប់រំ / លម្អិត',
+    slides: [
+      {
+        number: 1,
+        title: 'ប្រមាណវិធីលើរ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣',
+        subtitle: 'ជំពូកទី ១៖ ចំនួនពិត និងរ៉ាឌីកាល់ (ថ្នាក់ទី ៩ ក្រសួងអប់រំ យុវជន និងកីឡា)',
+        type: 'intro',
+        content: `
+          <div class="slide-intro-badge">⚔️ ថ្នាក់ទី ៩ | ជំពូកទី ១៖ មេរៀនទី ១</div>
+          <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 800; color: #fbbf24; margin: 0.5rem 0;">
+            ប្រមាណវិធីលើរ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣
+          </h2>
+          <p class="slide-lead">រៀបចំ និងបង្រៀនដោយ៖ <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong> (NIE &amp; RUPP | វិទ្យាល័យសសរស្តម្ភ &amp; SHINE)</p>
+
+          <div class="slide-highlight-card" style="border-left: 4px solid #f59e0b; margin-top: 1.25rem;">
+            <div style="font-weight: 700; color: #fbbf24; margin-bottom: 0.5rem; font-size: 1.05rem;">
+              🎯 វត្ថុបំណងមេរៀន ៣ ដែន (Core Competency Framework)៖
+            </div>
+            <div class="slide-grid-3" style="margin-top: 0.75rem;">
+              <div style="background: rgba(2, 132, 199, 0.1); padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(2, 132, 199, 0.25);">
+                <strong style="color: #38bdf8; display: block; margin-bottom: 0.35rem;">១. វិជ្ជាសម្បទា</strong>
+                កំណត់និយមន័យឫសការេ ($\\sqrt{a}$), ឫសគូប ($\\sqrt[3]{a}$), ចំនួនអសនិទាន, និងរូបមន្តផលគុណ/ផលចែករ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣។
+              </div>
+              <div style="background: rgba(16, 185, 129, 0.1); padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.25);">
+                <strong style="color: #34d399; display: block; margin-bottom: 0.35rem;">២. បំណិនសម្បទា</strong>
+                ដោះស្រាយសមីការ $x^2 = a$, $x^3 = a$ និងអនុវត្តវិធីគុណ ចែករ៉ាឌីកាល់ ដើម្បីសម្រួលកន្សោមទៅជាទម្រង់សាមញ្ញបំផុត។
+              </div>
+              <div style="background: rgba(245, 158, 11, 0.1); padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.25);">
+                <strong style="color: #fbbf24; display: block; margin-bottom: 0.35rem;">៣. ចរិយាសម្បទា</strong>
+                បណ្តុះការគិតស៊ីជម្រៅ ភាពច្បាស់លាស់ក្នុងការគណនាលេខ និងការសរសេរនិមិត្តសញ្ញាគណិតវិទ្យាបានត្រឹមត្រូវនិងមានរបៀប។
+              </div>
+            </div>
+          </div>
+        `,
+        notes: 'សូមស្វាគមន៍ប្អូនៗថ្នាក់ទី ៩ មកកាន់មេរៀនទី ១! មេរៀននេះជាគ្រឹះដ៏សំខាន់សម្រាប់ប្រឡងឌីប្លូម និងការត្រៀមបន្តទៅថ្នាក់វិទ្យាល័យ។'
+      },
+      {
+        number: 2,
+        title: 'រំលឹកពីចំនួនសនិទាន & ការកកើតចំនួនអសនិទាន',
+        subtitle: 'ហេតុអ្វីបានជាយើងចាំបាច់ត្រូវមាននិមិត្តសញ្ញារ៉ាឌីកាល់?',
+        type: 'concept',
+        content: `
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div style="background: rgba(2, 132, 199, 0.08); border-left: 4px solid #0284c7; padding: 1rem; border-radius: 0 8px 8px 0;">
+              <strong style="color: #38bdf8;">📌 រំលឹកពីចំនួនសនិទាន ($\\mathbb{Q}$)៖</strong>
+              <ul style="margin: 0.5rem 0 0; padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.8;">
+                <li>$x + 5 = 3 \\implies x = 3 - 5 = -2$</li>
+                <li>$2x = 5 \\implies x = \\frac{5}{2} = 2.5$</li>
+              </ul>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem;">
+                $-2, \\frac{5}{2}, 2.5$ ជាចំនួនសនិទាន។
+              </div>
+            </div>
+
+            <div style="background: rgba(236, 72, 153, 0.08); border-left: 4px solid #ec4899; padding: 1rem; border-radius: 0 8px 8px 0;">
+              <strong style="color: #f472b6;">❓ បញ្ហាប្រឈម៖ រក $x$ ដែល $x^2 = 3$</strong>
+              <div style="font-size: 0.92rem; line-height: 1.7; margin-top: 0.4rem;">
+                • $x = 1 \\implies 1^2 = 1 < 3$<br>
+                • $x = 1.5 \\implies (1.5)^2 = 2.25 < 3$<br>
+                • $x = 1.66 \\implies (1.66)^2 \\approx 2.77 < 3$<br>
+                • $x = 2 \\implies 2^2 = 4 > 3$
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-highlight-card" style="border-left: 4px solid #f59e0b;">
+            <strong style="color: #fbbf24; font-size: 1.05rem;">💡 ការសន្និដ្ឋានគរុកោសល្យ៖</strong>
+            <p style="margin: 0.4rem 0 0; line-height: 1.7;">
+              គ្មានចំនួនសនិទានណាដែលការេវាស្មើនឹង $3$ ឡើយ! ដូចនេះគេសន្មតតាង <strong>$\\sqrt{3}$</strong> ជាចំនួនមួយដែល $(\\sqrt{3})^2 = 3$។<br>
+              ចំនួន $\\sqrt{3} \\approx 1.7320...$ ហៅថា <strong>ចំនួនអសនិទាន</strong>។
+            </p>
+          </div>
+        `,
+        notes: 'ពន្យល់សិស្សឱ្យយល់ពីប្រវត្តិ និងភាពចាំបាច់ដែលត្រូវបង្កើតនិមិត្តសញ្ញារ៉ាឌីកាល់មកប្រើប្រាស់។'
+      },
+      {
+        number: 3,
+        title: 'ខ្លឹមសារទី ១៖ ឫសការេ (Square Root)',
+        subtitle: 'និយមន័យ, សន្ទស្សន៍រ៉ាឌីកាល់, រ៉ាឌីកង់ និងលក្ខខណ្ឌអត្ថិភាព',
+        type: 'concept',
+        content: `
+          <div class="slide-highlight-card" style="border-left: 4px solid #0284c7; margin-bottom: 1.25rem;">
+            <h4 style="color: #38bdf8; margin: 0 0 0.5rem; font-size: 1.2rem;">✨ និយមន័យជាទូទៅ៖</h4>
+            <div style="font-size: 1.1rem; line-height: 1.8;">
+              បើ $a > 0$ សមីការ $x^2 = a$ នាំឱ្យ <strong>$x = \\sqrt{a}$</strong> និង <strong>$x = -\\sqrt{a}$</strong>
+            </div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.35rem;">
+              $\\sqrt{a}$ ហៅថាឫសការេវិជ្ជមាន និង $-\\sqrt{a}$ ហៅថាឫសការេអវិជ្ជមាននៃ $a$។
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem;">
+              <strong style="color: #34d399; font-size: 1rem;">🔍 សមាសភាគនៃរ៉ាឌីកាល់៖</strong>
+              <div style="font-size: 1.15rem; text-align: center; margin: 0.75rem 0; font-weight: 700;">
+                $\\sqrt[2]{a} = \\sqrt{a}$
+              </div>
+              <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.6;">
+                <li>$\\sqrt{}$ ជារ៉ាឌីកាល់សន្ទស្សន៍ $2$ (ជាទូទៅមិនបាច់សរសេរលេខ ២ ទេ)</li>
+                <li>$a$ ហៅថារ៉ាឌីកង់</li>
+              </ul>
+            </div>
+
+            <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 1rem;">
+              <strong style="color: #ef4444; font-size: 1rem;">⚠️ លក្ខខណ្ឌអត្ថិភាពសំខាន់៖</strong>
+              <div style="font-size: 0.92rem; line-height: 1.7; margin-top: 0.5rem;">
+                • បើ $a = 0 \\implies x^2 = 0 \\implies x = 0$<br>
+                • បើ $a < 0 \\implies x^2 = a$ <strong>គ្មានឫសការេទេ</strong> ក្នុង $\\mathbb{R}$ ព្រោះគ្រប់ចំនួនពិត $x^2 \\ge 0$ ជានិច្ច!
+              </div>
+            </div>
+          </div>
+        `,
+        notes: 'សង្កត់ធ្ងន់ថា ចំនួនអវិជ្ជមានគ្មានឫសការេទេក្នុងសំណុំចំនួនពិត ឧទាហរណ៍ -81 គ្មានឫសការេទេ។'
+      },
+      {
+        number: 4,
+        title: 'លំហាត់គំរូ & ប្រតិបត្តិទី ១៖ ឫសការេ',
+        subtitle: 'អនុវត្តដោះស្រាយសមីការ $x^2 = a$ និងរកឫសការេនៃចំនួន',
+        type: 'example',
+        content: `
+          <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.25rem;">
+            <div>
+              <strong style="color: #38bdf8; font-size: 1rem;">💡 លំហាត់គំរូ៖ រកឫសនៃសមីការ $x^2 = a$</strong>
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem 1rem; margin-top: 0.5rem; font-size: 0.92rem; line-height: 1.9;">
+                • $x^2 = 16 \\implies x = \\sqrt{16} = 4$ ឬ $x = -4$<br>
+                • $x^2 = 7 \\implies x = \\sqrt{7}$ ឬ $x = -\\sqrt{7}$<br>
+                • $x^2 = \\frac{49}{9} \\implies x = \\frac{7}{3}$ ឬ $x = -\\frac{7}{3}$<br>
+                • $x^2 = -81 \\implies$ <strong>គ្មានឫសការេទេ</strong><br>
+                • $x^2 = 1 \\implies x = 1$ ឬ $x = -1$<br>
+                • $x^2 = 0 \\implies x = 0$
+              </div>
+            </div>
+
+            <div>
+              <strong style="color: #fbbf24; font-size: 1rem;">✍️ ប្រតិបត្តិសិស្សអនុវត្ត៖</strong>
+              <div style="background: rgba(245, 158, 11, 0.06); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 0.85rem 1rem; margin-top: 0.5rem; font-size: 0.92rem; line-height: 1.9;">
+                ក. រកឫសការេនៃ $0.04 \\implies \\mathbf{\\pm 0.2}$<br>
+                ខ. រកឫសការេនៃ $0.01 \\implies \\mathbf{\\pm 0.1}$<br>
+                គ. រកឫសការេនៃ $5 \\implies \\mathbf{\\pm\\sqrt{5}}$<br>
+                ឃ. រកឫសការេនៃ $-1 \\implies$ <strong style="color:#ef4444;">គ្មានឫស</strong><br>
+                ង. រកឫសការេនៃ $\\frac{25}{36} \\implies \\mathbf{\\pm\\frac{5}{6}}$<br>
+                ច. រកឫសការេនៃ $0.1 \\implies \\mathbf{\\pm\\sqrt{0.1}}$
+              </div>
+            </div>
+          </div>
+        `,
+        notes: 'ឱ្យសិស្សឡើងធ្វើលើក្តារខៀន ឬឆ្លើយផ្ទាល់មាត់ដើម្បីវាស់ស្ទង់ការយល់ដឹង។'
+      },
+      {
+        number: 5,
+        title: 'ខ្លឹមសារទី ២៖ ឫសគូប (Cube Root)',
+        subtitle: 'និយមន័យ និងភាពខុសគ្នាសំខាន់រវាងឫសការេ និងឫសគូប',
+        type: 'concept',
+        content: `
+          <div class="slide-highlight-card" style="border-left: 4px solid #10b981; margin-bottom: 1.25rem;">
+            <h4 style="color: #34d399; margin: 0 0 0.5rem; font-size: 1.2rem;">✨ និយមន័យជាទូទៅ៖</h4>
+            <div style="font-size: 1.1rem; line-height: 1.8;">
+              បើ $x^3 = a$ គេបាន <strong>$x = \\sqrt[3]{a}$</strong> ($a$ អាចជាចំនួនវិជ្ជមាន, អវិជ្ជមាន ឬសូន្យ)
+            </div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.35rem;">
+              សញ្ញា $\\sqrt[3]{}$ ជារ៉ាឌីកាល់សន្ទស្សន៍ $3$ ហើយ $a$ ជារ៉ាឌីកង់។
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div style="background: rgba(16, 185, 129, 0.08); border-left: 4px solid #10b981; padding: 1rem; border-radius: 0 8px 8px 0;">
+              <strong style="color: #34d399;">💎 លក្ខណៈពិសេសនៃឫសគូប៖</strong>
+              <ul style="margin: 0.4rem 0 0; padding-left: 1.25rem; font-size: 0.92rem; line-height: 1.7;">
+                <li>គ្រប់ចំនួនពិត <strong>មានឫសគូបតែមួយគត់ជានិច្ច</strong>!</li>
+                <li>ចំនួនវិជ្ជមាន $\\implies$ ឫសគូបវិជ្ជមាន ($\\sqrt[3]{64} = 4$)</li>
+                <li>ចំនួនអវិជ្ជមាន $\\implies$ ឫសគូបអវិជ្ជមាន ($\\sqrt[3]{-27} = -3$)</li>
+                <li>រូបមន្តសញ្ញា៖ $\\sqrt[3]{-a} = -\\sqrt[3]{a}$</li>
+              </ul>
+            </div>
+
+            <div style="background: rgba(14, 165, 233, 0.08); border-left: 4px solid #0ea5e9; padding: 1rem; border-radius: 0 8px 8px 0;">
+              <strong style="color: #38bdf8;">⚖️ ប្រៀបធៀបឫសការេ និងឫសគូប៖</strong>
+              <div style="font-size: 0.9rem; line-height: 1.7; margin-top: 0.4rem;">
+                • <strong>ឫសការេ៖</strong> ចំនួនអវិជ្ជមានគ្មានឫសការេទេ; ចំនួនវិជ្ជមានមានឫសការេពីរផ្ទុយគ្នា ($\\pm\\sqrt{a}$)។<br>
+                • <strong>ឫសគូប៖</strong> ចំនួនអវិជ្ជមាននៅតែមានឫសគូប; មានឫសគូបតែមួយគត់ជានិច្ច!
+              </div>
+            </div>
+          </div>
+        `,
+        notes: 'សិស្សច្រើនតែច្រឡំថា ចំនួនអវិជ្ជមានគ្មានឫសគូប។ ត្រូវបញ្ជាក់ឱ្យច្បាស់ថា ឫសគូបនៃចំនួនអវិជ្ជមាននៅតែមាន គឺចេញមកអវិជ្ជមាន។'
+      },
+      {
+        number: 6,
+        title: 'លំហាត់គំរូ & ប្រតិបត្តិទី ២៖ ឫសគូប',
+        subtitle: 'គណនាឫសគូបនៃចំនួនគត់ ប្រភាគ និងទសភាគ',
+        type: 'example',
+        content: `
+          <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.25rem;">
+            <div>
+              <strong style="color: #34d399; font-size: 1rem;">💡 លំហាត់គំរូ៖ រកឫសនៃសមីការ $x^3 = a$</strong>
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem 1rem; margin-top: 0.5rem; font-size: 0.92rem; line-height: 1.9;">
+                • $x^3 = -64 \\implies x = \\sqrt[3]{-64} = -4$<br>
+                • $x^3 = -1 \\implies x = \\sqrt[3]{-1} = -1$<br>
+                • $x^3 = 1 \\implies x = \\sqrt[3]{1} = 1$<br>
+                • $x^3 = -8 \\implies x = \\sqrt[3]{-8} = -2$<br>
+                • $x^3 = 4 \\implies x = \\sqrt[3]{4}$ (អសនិទាន)<br>
+                • $x^3 = \\frac{27}{125} \\implies x = \\frac{3}{5}$<br>
+                • $x^3 = -\\frac{1}{1000} \\implies x = -\\frac{1}{10}$
+              </div>
+            </div>
+
+            <div>
+              <strong style="color: #fbbf24; font-size: 1rem;">✍️ ប្រតិបត្តិសិស្សអនុវត្ត៖</strong>
+              <div style="background: rgba(245, 158, 11, 0.06); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 0.85rem 1rem; margin-top: 0.5rem; font-size: 0.92rem; line-height: 1.9;">
+                ក. រកឫសគូបនៃ $0.008 \\implies \\mathbf{0.2}$<br>
+                <span style="font-size: 0.82rem; color: var(--text-muted);">(ព្រោះ $0.2^3 = 0.008$)</span><br>
+                ខ. រកឫសគូបនៃ $-0.001 \\implies \\mathbf{-0.1}$<br>
+                <span style="font-size: 0.82rem; color: var(--text-muted);">(ព្រោះ $(-0.1)^3 = -0.001$)</span><br>
+                គ. រកឫសគូបនៃ $0.08 \\implies \\mathbf{\\sqrt[3]{0.08}}$<br>
+                ឃ. រកឫសគូបនៃ $-0.4 \\implies \\mathbf{-\\sqrt[3]{0.4}}$
+              </div>
+            </div>
+          </div>
+        `,
+        notes: 'កត់សម្គាល់ពីភាពខុសគ្នារវាង 0.008 (មានឫសគូប 0.2) និង 0.08 (គ្មានឫសគូបប្រាកដ ជាចំនួនអសនិទាន)។'
+      },
+      {
+        number: 7,
+        title: 'ខ្លឹមសារទី ៣.១៖ វិធីគុណរ៉ាឌីកាល់ (Multiplication)',
+        subtitle: 'រូបមន្តផលគុណនៃរ៉ាឌីកាល់ដែលមានសន្ទស្សន៍ដូចគ្នា',
+        type: 'formula',
+        content: `
+          <div class="slide-highlight-card" style="border-left: 4px solid #8b5cf6; margin-bottom: 1.25rem;">
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.35rem;">
+              ពិនិត្យការប្រៀបធៀប៖
+              $\\sqrt{4} \\times \\sqrt{9} = 2 \\times 3 = 6$ និង $\\sqrt{4 \\times 9} = \\sqrt{36} = 6$
+            </div>
+            <h4 style="color: #a78bfa; font-size: 1.25rem; margin: 0.5rem 0;">
+              ✨ រូបមន្តផលគុណរ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣៖
+            </h4>
+            <div style="font-size: 1.25rem; font-weight: 700; margin: 0.75rem 0;">
+              $\\sqrt{a} \\times \\sqrt{b} = \\sqrt{a \\cdot b} \\quad (a \\ge 0, \\; b \\ge 0)$
+              $\\sqrt[3]{a} \\times \\sqrt[3]{b} = \\sqrt[3]{a \\cdot b} \\quad (a, b \\in \\mathbb{R})$
+            </div>
+          </div>
+
+          <div style="background: rgba(139, 92, 246, 0.08); border-radius: 8px; padding: 1rem; border: 1px solid rgba(139, 92, 246, 0.25);">
+            <strong style="color: #a78bfa;">💡 វិធានគន្លឹះក្នុងការអនុវត្ត៖</strong>
+            <p style="margin: 0.4rem 0 0; line-height: 1.7; font-size: 0.95rem;">
+              «ផលគុណនៃរ៉ាឌីកាល់ដែលមានសន្ទស្សន៍ដូចគ្នា គឺស្មើនឹងរ៉ាឌីកាល់នៃផលគុណ»។ យើងអាចគុណរ៉ាឌីកង់បញ្ចូលគ្នាក្រោមរ៉ាឌីកាល់តែមួយ រួចទើបបញ្ចេញឫសតាមក្រោយ!
+            </p>
+          </div>
+        `,
+        notes: 'បញ្ជាក់លក្ខខណ្ឌវិជ្ជមានចំពោះឫសការេ a, b >= 0។ ចំពោះឫសគូប a, b អាចជាចំនួនអវិជ្ជមានបាន។'
+      },
+      {
+        number: 8,
+        title: 'ខ្លឹមសារទី ៣.២៖ វិធីចែករ៉ាឌីកាល់ (Division)',
+        subtitle: 'រូបមន្តផលចែកនៃរ៉ាឌីកាល់ដែលមានសន្ទស្សន៍ដូចគ្នា',
+        type: 'formula',
+        content: `
+          <div class="slide-highlight-card" style="border-left: 4px solid #0284c7; margin-bottom: 1.25rem;">
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.35rem;">
+              ពិនិត្យការប្រៀបធៀប៖
+              $\\frac{\\sqrt{36}}{\\sqrt{4}} = \\frac{6}{2} = 3$ និង $\\sqrt{\\frac{36}{4}} = \\sqrt{9} = 3$
+            </div>
+            <h4 style="color: #38bdf8; font-size: 1.25rem; margin: 0.5rem 0;">
+              ✨ រូបមន្តផលចែករ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣៖
+            </h4>
+            <div style="font-size: 1.25rem; font-weight: 700; margin: 0.75rem 0;">
+              $\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}} \\quad (a \\ge 0, \\; b > 0)$
+              $\\frac{\\sqrt[3]{a}}{\\sqrt[3]{b}} = \\sqrt[3]{\\frac{a}{b}} \\quad (b \\ne 0)$
+            </div>
+          </div>
+
+          <div style="background: rgba(2, 132, 199, 0.08); border-radius: 8px; padding: 1rem; border: 1px solid rgba(2, 132, 199, 0.25);">
+            <strong style="color: #38bdf8;">💡 វិធានគន្លឹះក្នុងការអនុវត្ត៖</strong>
+            <p style="margin: 0.4rem 0 0; line-height: 1.7; font-size: 0.95rem;">
+              «ផលចែកនៃរ៉ាឌីកាល់ដែលមានសន្ទស្សន៍ដូចគ្នា គឺស្មើនឹងរ៉ាឌីកាល់នៃផលចែក»។ យើងអាចចែករ៉ាឌីកង់បញ្ចូលគ្នាក្រោមរ៉ាឌីកាល់តែមួយ រួចទើបសម្រួល!
+            </p>
+          </div>
+        `,
+        notes: 'រំលឹកកុំភ្លេចលក្ខខណ្ឌភាគបែង b > 0 ចំពោះឫសការេ និង b != 0 ចំពោះឫសគូប។'
+      },
+      {
+        number: 9,
+        title: 'លំហាត់គំរូ & ប្រតិបត្តិ ៣-៤៖ ប្រមាណវិធីគុណ-ចែក',
+        subtitle: 'គណនាសម្រួលកន្សោមរ៉ាឌីកាល់ជាក់ស្តែង',
+        type: 'example',
+        content: `
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+            <div>
+              <strong style="color: #8b5cf6; font-size: 1rem;">💡 វិធីគុណរ៉ាឌីកាល់៖</strong>
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem 1rem; margin-top: 0.4rem; font-size: 0.92rem; line-height: 1.8;">
+                • $\\sqrt{2} \\times \\sqrt{8} = \\sqrt{16} = 4$<br>
+                • $\\sqrt{3} \\times \\sqrt{27} = \\sqrt{81} = 9$<br>
+                • $\\sqrt[3]{2} \\times \\sqrt[3]{4} = \\sqrt[3]{8} = 2$<br>
+                • $\\sqrt[3]{2} \\times \\sqrt[3]{\\frac{1}{16}} = \\sqrt[3]{\\frac{1}{8}} = \\frac{1}{2}$<br>
+                • <em>ប្រតិបត្តិ៖</em> $\\sqrt{10} \\times \\sqrt{0.1} = \\sqrt{1} = \\mathbf{1}$
+              </div>
+            </div>
+
+            <div>
+              <strong style="color: #0284c7; font-size: 1rem;">💡 វិធីចែករ៉ាឌីកាល់៖</strong>
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem 1rem; margin-top: 0.4rem; font-size: 0.92rem; line-height: 1.8;">
+                • $\\frac{\\sqrt{8}}{\\sqrt{2}} = \\sqrt{\\frac{8}{2}} = \\sqrt{4} = 2$<br>
+                • $\\frac{\\sqrt[3]{48}}{\\sqrt[3]{6}} = \\sqrt[3]{\\frac{48}{6}} = \\sqrt[3]{8} = 2$<br>
+                • $\\frac{\\sqrt{288}}{\\sqrt{2}} = \\sqrt{144} = 12$<br>
+                • $\\frac{\\sqrt[3]{25}}{\\sqrt[3]{0.2}} = \\sqrt[3]{125} = 5$<br>
+                • <em>ប្រតិបត្តិ៖</em> $\\frac{\\sqrt{45}}{\\sqrt{5}} = \\sqrt{9} = \\mathbf{3}$
+              </div>
+            </div>
+          </div>
+        `,
+        notes: 'ណែនាំសិស្សឱ្យចេះគុណ ឬចែកលេខខាងក្នុងរ៉ាឌីកាល់មុន នោះនឹងងាយស្រួលបញ្ចេញឫសជាង។'
+      },
+      {
+        number: 10,
+        title: 'សង្ខេបមេរៀន & កិច្ចការផ្ទះ (Summary & Homework)',
+        subtitle: 'សង្ខេបចំណុចគន្លឹះ និងកិច្ចការផ្ទះ ៤ លំហាត់ (១០ ពិន្ទុ)',
+        type: 'summary',
+        content: `
+          <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.25rem;">
+            <div>
+              <div style="background: rgba(2, 132, 199, 0.08); border: 1px solid rgba(2, 132, 199, 0.3); border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 0.75rem;">
+                <strong style="color: #38bdf8;">🧠 ចំណុចចងចាំសំខាន់៖</strong>
+                <ul style="margin: 0.3rem 0 0; padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+                  <li>$x^2 = a \\implies x = \\pm\\sqrt{a}$ ($a > 0$)</li>
+                  <li>$x^3 = a \\implies x = \\sqrt[3]{a}$</li>
+                  <li>$\\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab}$</li>
+                  <li>$\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}}$ ($b > 0$)</li>
+                </ul>
+              </div>
+              <a href="lesson-radicals-grade9.html" class="btn btn-primary" style="width: 100%; text-align: center; font-size: 0.85rem; padding: 0.5rem;">
+                📖 មើលមេរៀន & បោះពុម្ព A4
+              </a>
+            </div>
+
+            <div>
+              <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 0.85rem 1rem;">
+                <strong style="color: #fbbf24;">🏠 កិច្ចការផ្ទះសិស្ស (Homework ៤ លំហាត់)៖</strong>
+                <div style="font-size: 0.88rem; line-height: 1.8; margin-top: 0.4rem;">
+                  <strong>១.</strong> រកឫសការេនៃ $0.49, 121, \\frac{16}{81}$ &amp; ដោះស្រាយ $x^2 = 144$ (២.៥ពិន្ទុ)<br>
+                  <strong>២.</strong> រកឫសគូបនៃ $125, -216, 0.027$ &amp; ដោះស្រាយ $x^3 = 1000$ (២.៥ពិន្ទុ)<br>
+                  <strong>៣.</strong> គណនា $\\sqrt{5}\\times\\sqrt{20}$, $\\sqrt[3]{3}\\times\\sqrt[3]{9}$, $\\frac{\\sqrt{72}}{\\sqrt{2}}$ (២.៥ពិន្ទុ)<br>
+                  <strong>៤.</strong> គណនាកន្សោមចម្រុះ $A, B$ &amp; រកជ្រុងបន្ទប់ការេ $S=64\\text{ m}^2$ (២.៥ពិន្ទុ)
+                </div>
+              </div>
+            </div>
+          </div>
+        `,
+        notes: 'រំលឹកសិស្សឱ្យយកកិច្ចការផ្ទះទៅធ្វើ និងប្រគល់នៅម៉ោងសិក្សាបន្ទាប់។'
+      }
+    ]
+  },
   {
     id: 'slide-sequences-g11',
     grade: 'grade11',

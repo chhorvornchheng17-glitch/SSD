@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>មេរៀនទី ១៖ ប្រមាណវិធីលើរ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣ (ថ្នាក់ទី ៩) | អ្នកគ្រូ ឆេង ឆវ័ន្ត</title>
+  <meta name="description" content="មេរៀនទី ១ គណិតវិទ្យាថ្នាក់ទី៩៖ ប្រមាណវិធីលើរ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣ រួមមាន ឫសការេ ឫសគូប វិធីគុណនិងចែករ៉ាឌីកាល់ លំហាត់គំរូ ប្រតិបត្តិ និងកិច្ចការផ្ទះ ដោយអ្នកគ្រូ ឆេង ឆវ័ន្ត។">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/academic.css">
+
+  <!-- KaTeX for High Quality Math Typography -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="if(typeof renderMathInElement==='function'){renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}"></script>
+
+  <style>
+    /* Custom Styling for Lesson Page */
+    .lesson-tab-nav {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      background: var(--card-bg);
+      padding: 0.5rem 0.75rem;
+      border-radius: 12px;
+    }
+    .lesson-tab-btn {
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      font-family: 'Kantumruy Pro', sans-serif;
+    }
+    .lesson-tab-btn:hover {
+      color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.08);
+    }
+    .lesson-tab-btn.active {
+      color: #ffffff;
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    }
+
+    .lesson-content-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .math-callout {
+      border-left: 4px solid var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.08);
+      border-radius: 0 10px 10px 0;
+      padding: 1.15rem 1.4rem;
+      margin: 1.25rem 0;
+    }
+
+    .math-rule-box {
+      border: 2px solid #0284c7;
+      background: rgba(2, 132, 199, 0.06);
+      border-radius: 12px;
+      padding: 1.35rem;
+      margin: 1.25rem 0;
+      text-align: center;
+    }
+
+    .example-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: all 0.2s ease;
+    }
+    .example-box:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .example-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .example-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(14, 165, 233, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(14, 165, 233, 0.3);
+    }
+
+    .solution-body {
+      background: rgba(16, 185, 129, 0.05);
+      border-left: 3px solid #10b981;
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 0.75rem;
+    }
+
+    .practice-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .practice-answer-reveal {
+      display: none;
+      margin-top: 0.85rem;
+      padding: 0.85rem 1.15rem;
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 3px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      color: var(--text-primary);
+    }
+    .show-practice-answers .practice-answer-reveal {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .homework-card {
+      border: 2px dashed rgba(2, 132, 199, 0.45);
+      background: rgba(2, 132, 199, 0.02);
+      border-radius: 14px;
+      padding: 2.25rem;
+    }
+
+    .homework-rubric {
+      display: flex;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      margin: 1.25rem 0;
+      font-size: 0.88rem;
+      border: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* Print styles for A4 sheet */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+      .navbar, .lesson-tab-nav, .controls-print-row, footer, .btn-no-print {
+        display: none !important;
+      }
+      .lesson-content-block, .homework-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        padding: 1.2rem !important;
+        background: #fff !important;
+        color: #000 !important;
+        page-break-inside: avoid;
+      }
+      .practice-answer-reveal {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. MAIN NAVBAR
+       ============================================================ -->
+  <header class="navbar scrolled" id="main-navbar">
+    <div class="container nav-container">
+      <div class="nav-brand-container">
+        <a href="index.html" class="nav-brand" title="Hover ដើម្បីមើលព័ត៌មានទំនាក់ទំនង">
+          <div class="brand-icon">f(x)</div>
+          <div class="brand-text">
+            <span class="brand-name">
+              ឆេង ឆវ័ន្ត
+              <span class="brand-contact-indicator" title="Hover ដើម្បីមើលលេខទូរស័ព្ទ & អ៊ីមែល">
+                <span class="indicator-pulse"></span>
+                <span>ទំនាក់ទំនង</span>
+              </span>
+            </span>
+            <span class="brand-sub">MATH SPECIALIST</span>
+          </div>
+        </a>
+
+        <!-- Popover Hover Card for Teacher Contact Info -->
+        <div class="teacher-hover-card" role="tooltip" aria-label="ព័ត៌មានទំនាក់ទំនងអ្នកគ្រូ ឆេង ឆវ័ន្ត">
+          <div class="hover-card-header">
+            <div class="hover-avatar-box">
+              <img src="assets/images/teacher-chhovorn.png" alt="អ្នកគ្រូ ឆេង ឆវ័ន្ត" class="hover-avatar-img" onerror="this.onerror=null; this.src='assets/images/teacher-chhovorn.jpg';">
+              <span class="hover-status-dot" title="កំពុងបម្រើការងារ & អាចទាក់ទងបាន"></span>
+            </div>
+            <div class="hover-header-text">
+              <div class="hover-name">
+                អ្នកគ្រូ ឆេង ឆវ័ន្ត
+                <span class="hover-verified" title="គ្រូបង្រៀនគណិតវិទ្យាផ្លូវការ">✓</span>
+              </div>
+              <div class="hover-title">Teacher Chheng Chhovorn</div>
+              <div class="hover-tag">គ្រូបង្រៀនគណិតវិទ្យាឯកទេស (NIE & RUPP)</div>
+            </div>
+          </div>
+
+          <div class="hover-card-divider"></div>
+
+          <div class="hover-contact-list">
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">លេខទូរស័ព្ទទំនាក់ទំនង (Phone)</div>
+                <a href="tel:099775501" class="hover-contact-val hover-contact-link">099 77 5501</a>
+              </div>
+            </div>
+
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">អ៊ីមែលផ្លូវការ (Email)</div>
+                <a href="mailto:chhorvornk@gmail.com" class="hover-contact-val hover-contact-link">chhorvornk@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="hover-contact-item">
+              <div class="hover-contact-icon icon-telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </div>
+              <div class="hover-contact-info">
+                <div class="hover-contact-label">Telegram ផ្លូវការ</div>
+                <a href="https://t.me/chhovorn_math" target="_blank" rel="noopener" class="hover-contact-val hover-contact-link">@chhovorn_math</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="navbar-menu">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span>ទំព័រដើម</span>
+            </a>
+          </li>
+
+          <!-- 2. ឯកសារបង្រៀន (Active Hub) -->
+          <li class="nav-item nav-item-has-dropdown active" data-nav-group="teaching">
+            <a href="teaching-materials.html" class="nav-link nav-dropdown-toggle active" role="button" aria-haspopup="true" aria-expanded="false" data-nav="teaching">
+              <span>ឯកសារបង្រៀន</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu teaching-scroll-dropdown">
+              <div class="teaching-dropdown-head">
+                <div class="teaching-head-title">
+                  <span>📖 ឯកសារបង្រៀន & គរុកោសល្យ</span>
+                </div>
+                <a href="teaching-materials.html" class="teaching-head-hub-link">
+                  <span>ទំព័រ Hub ›</span>
+                </a>
+              </div>
+
+              <div class="teaching-scroll-body">
+                <div class="teaching-group-title">
+                  <span>📚 កម្រិតថ្នាក់សិក្សា (Curriculum)</span>
+                  <a href="lessons.html" style="font-size: 0.65rem; color: #0284c7; text-decoration: none; font-weight: 700;">មើលទាំងអស់</a>
+                </div>
+
+                <a href="lesson-radicals-grade9.html" class="dropdown-item teaching-scroll-item" style="background: rgba(245, 158, 11, 0.08);" title="មេរៀនទី១៖ រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣">
+                  <span class="teaching-item-dot" style="background: #f59e0b;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span style="color: #fbbf24; font-weight: 700;">⚔️ ថ្នាក់ទី ៩៖ រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣</span>
+                      <span class="chip-badge" style="background: rgba(245,158,11,0.25); color: #fbbf24; font-size: 0.6rem; padding: 1px 5px; border-radius: 4px;">ថ្មី</span>
+                    </div>
+                    <div class="teaching-item-desc">មេរៀន, លំហាត់គំរូ, ប្រតិបត្តិ & កិច្ចការផ្ទះ</div>
+                  </div>
+                </a>
+
+                <a href="lessons.html?grade=grade11" class="dropdown-item teaching-scroll-item" title="ថ្នាក់ទី ១១">
+                  <span class="teaching-item-dot" style="background: #0ea5e9;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📐 ថ្នាក់ទី ១១ (សៀវភៅគោល ភាគ១)</span>
+                    </div>
+                    <div class="teaching-item-desc">អនុគមន៍, ស្វ៊ីត, ធរណីមាត្រ និងស្ថិតិ</div>
+                  </div>
+                </a>
+
+                <div class="teaching-group-title">
+                  <span>📑 ឯកសារជំនួយ & ការវាយតម្លៃ</span>
+                </div>
+
+                <a href="slides.html?ch=slide-radicals-g9" class="dropdown-item teaching-scroll-item" title="ស្លាយ៖ រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣ (ថ្នាក់ទី៩)">
+                  <span class="teaching-item-dot" style="background: #f59e0b; width: 6px; height: 6px;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span style="font-size: 0.82rem; color: #fbbf24; font-weight: 700;">✦ ស្លាយ៖ រ៉ាឌីកាល់ (ថ្នាក់ទី៩)</span>
+                      <span class="badge-mini" style="background: rgba(245,158,11,0.2); color: #fbbf24; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">១០ ស្លាយ</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្លាយបញ្ចាំងអន្តរកម្ម & KaTeX</div>
+                  </div>
+                </a>
+
+                <a href="slides.html" class="dropdown-item teaching-scroll-item" title="ស្លាយបង្រៀនទាំងអស់">
+                  <span class="teaching-item-dot" style="background: #8b5cf6;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>🖥️ ស្លាយបង្រៀនទាំងអស់ (Slides Hub)</span>
+                    </div>
+                    <div class="teaching-item-desc">ស្លាយបទបង្ហាញអន្តរកម្មសម្រាប់បង្រៀន</div>
+                  </div>
+                </a>
+
+                <a href="exercises.html" class="dropdown-item teaching-scroll-item" title="កម្រងលំហាត់អនុវត្ត">
+                  <span class="teaching-item-dot" style="background: #0ea5e9;"></span>
+                  <div class="teaching-item-content">
+                    <div class="teaching-item-title">
+                      <span>📝 កម្រងលំហាត់អនុវត្តទាំងអស់</span>
+                    </div>
+                    <div class="teaching-item-desc">លំហាត់អនុវត្តតាមជំពូក និងដំណោះស្រាយ</div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="teaching-dropdown-foot">
+                <a href="teaching-materials.html" class="teaching-foot-link">
+                  <span>📂 មើលមជ្ឈមណ្ឌលឯកសារពេញលេញ (Teaching Hub)</span>
+                  <span>›</span>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 3. អំពីអ្នកគ្រូ -->
+          <li class="nav-item">
+            <a href="index.html#about" class="nav-link">
+              <span>អំពីអ្នកគ្រូ</span>
+            </a>
+          </li>
+
+          <!-- 4. ឧបករណ៍ & វីដេអូ -->
+          <li class="nav-item">
+            <a href="game-grade9.html" class="nav-link">
+              <span>⚔️ Math Hero ៩</span>
+            </a>
+          </li>
+
+          <!-- 5. ទំនាក់ទំនង -->
+          <li class="nav-item">
+            <a href="index.html#contact" class="nav-link">
+              <span>ទំនាក់ទំនង</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" title="ប្តូរពណ៌ Theme">
+          <span id="theme-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+        </button>
+
+        <a href="slides.html?ch=slide-radicals-g9" class="btn btn-primary btn-sm">
+          <span>🖥️ បើកស្លាយបង្រៀន</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="បើក Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-inner">
+      <a href="index.html" class="mobile-nav-link">
+        <span class="mobile-link-icon">🏠</span>
+        <span>ទំព័រដើម</span>
+      </a>
+      <a href="teaching-materials.html" class="mobile-nav-link">
+        <span class="mobile-link-icon">📖</span>
+        <span>មជ្ឈមណ្ឌលឯកសារបង្រៀន</span>
+      </a>
+      <a href="lesson-radicals-grade9.html" class="mobile-nav-link active" style="color: #fbbf24;">
+        <span class="mobile-link-icon">⚔️</span>
+        <span>ថ្នាក់ទី ៩៖ រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣</span>
+      </a>
+      <a href="slides.html?ch=slide-radicals-g9" class="mobile-nav-link">
+        <span class="mobile-link-icon">🖥️</span>
+        <span>ស្លាយបង្រៀនរ៉ាឌីកាល់</span>
+      </a>
+      <a href="game-grade9.html" class="mobile-nav-link">
+        <span class="mobile-link-icon">🎮</span>
+        <span>ល្បែង Math Hero ថ្នាក់ទី ៩</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2. HERO HEADER SECTION
+       ============================================================ -->
+  <section class="academic-hero" style="padding: 3rem 0 2rem;">
+    <div class="container">
+      <div class="academic-breadcrumb">
+        <a href="index.html">ទំព័រដើម</a>
+        <span>/</span>
+        <a href="teaching-materials.html">ឯកសារបង្រៀន</a>
+        <span>/</span>
+        <span style="color: var(--accent-cyan);">ថ្នាក់ទី ៩ &rsaquo; មេរៀនទី ១</span>
+      </div>
+
+      <div class="academic-badge" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.12); color: #fbbf24;">
+        <span>⚔️ កម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៩ ក្រសួងអប់រំ យុវជន និងកីឡា</span>
+      </div>
+
+      <h1 class="academic-title">
+        មេរៀនទី ១៖ ប្រមាណវិធីលើរ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣ <br>
+        <span class="text-gradient" style="background: linear-gradient(135deg, #fbbf24, #f59e0b, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          ឫសការេ, ឫសគូប, វិធីគុណ និងវិធីចែករ៉ាឌីកាល់
+        </span>
+      </h1>
+
+      <p class="academic-desc">
+        ចងក្រងតាមសៀវភៅគោលក្រសួងអប់រំ យុវជន និងកីឡា (ទំព័រ ១-៥) ដោយរួមបញ្ចូលនូវ <strong>១. ខ្លឹមសារមេរៀនពេញលេញ</strong>, <strong>២. លំហាត់គំរូនិងដំណោះស្រាយលម្អិត</strong>, <strong>៣. ប្រតិបត្តិអនុវត្តក្នុងថ្នាក់</strong>, និង <strong>៤. កិច្ចការផ្ទះសមល្មម</strong> ឆ្លើយតបនឹងការវាស់ស្ទង់សមត្ថភាពសិស្ស។
+      </p>
+
+      <!-- Objectives Quick Card -->
+      <div class="math-callout" style="border-left-color: #f59e0b; background: rgba(245, 158, 11, 0.08); margin-top: 1.5rem;">
+        <div style="font-weight: 700; color: #fbbf24; font-size: 1.05rem; margin-bottom: 0.5rem;">
+          🎯 វត្ថុបំណងចម្បងនៃមេរៀន (Learning Objectives)៖
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem; font-size: 0.92rem;">
+          <div><strong style="color: #38bdf8;">១.</strong> រកឫសការេនៃមួយចំនួន និងដោះស្រាយសមីការ $x^2 = a$។</div>
+          <div><strong style="color: #34d399;">២.</strong> រកឫសគូបនៃមួយចំនួន និងដោះស្រាយសមីការ $x^3 = a$។</div>
+          <div><strong style="color: #fbbf24;">៣.</strong> ធ្វើប្រមាណវិធីគុណ និងចែកលើចំនួនអសនិទាន/រ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣។</div>
+        </div>
+      </div>
+
+      <!-- Action Toolbar Row -->
+      <div class="controls-print-row" style="display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
+        <a href="slides.html?ch=slide-radicals-g9" class="btn btn-primary" style="background: linear-gradient(135deg, #6366f1, #4f46e5); border: none;">
+          <span>🖥️ បញ្ចាំងស្លាយបង្រៀន (Slides Deck)</span>
+        </a>
+        <button type="button" class="btn btn-outline" onclick="window.print()" style="border-color: rgba(255,255,255,0.25);">
+          <span>🖨️ បោះពុម្ព / រក្សាទុកជា PDF (A4)</span>
+        </button>
+        <button type="button" class="btn btn-outline" id="toggle-all-answers-btn" onclick="toggleAllAnswers()">
+          <span>👁️ បង្ហាញចម្លើយប្រតិបត្តិ</span>
+        </button>
+        <a href="game-grade9.html" class="btn btn-outline" style="border-color: rgba(245, 158, 11, 0.4); color: #fbbf24;">
+          <span>🎮 លេង Math Hero ថ្នាក់ទី ៩</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. MAIN CONTENT CONTAINER WITH TAB CONTROLS
+       ============================================================ -->
+  <main class="container" style="padding-bottom: 5rem;">
+
+    <!-- Navigation Tabs -->
+    <div class="lesson-tab-nav">
+      <button class="lesson-tab-btn active" onclick="switchLessonTab('tab-all', this)">
+        <span>📑 មើលទាំងអស់ (All in One)</span>
+      </button>
+      <button class="lesson-tab-btn" onclick="switchLessonTab('tab-theory', this)">
+        <span>📖 ១. ខ្លឹមសារមេរៀន (Theory)</span>
+      </button>
+      <button class="lesson-tab-btn" onclick="switchLessonTab('tab-examples', this)">
+        <span>💡 ២. លំហាត់គំរូ (Worked Examples)</span>
+      </button>
+      <button class="lesson-tab-btn" onclick="switchLessonTab('tab-practice', this)">
+        <span>✍️ ៣. ប្រតិបត្តិអនុវត្ត (Practice)</span>
+      </button>
+      <button class="lesson-tab-btn" onclick="switchLessonTab('tab-homework', this)">
+        <span>🏠 ៤. កិច្ចការផ្ទះ (Homework)</span>
+      </button>
+    </div>
+
+    <!-- ============================================================
+         SECTION 1: ខ្លឹមសារមេរៀន (LESSON THEORY)
+         ============================================================ -->
+    <section id="tab-theory" class="lesson-section-pane">
+      <div class="lesson-content-block">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #38bdf8; margin: 0;">
+            ផ្នែកទី ១៖ ខ្លឹមសារមេរៀនគន្លឹះ (Theory & Concepts)
+          </h2>
+          <span class="chip-badge" style="background: rgba(14, 165, 233, 0.2); color: #38bdf8;">សៀវភៅគោលទំព័រ ១-៥</span>
+        </div>
+
+        <!-- 1. ឫសការេ -->
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="background: #0284c7; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem;">១</span>
+            ឫសការេ (Square Root)
+          </h3>
+
+          <div class="math-callout">
+            <strong style="color: #38bdf8;">📌 រំលឹកពីចំនួនសនិទាន៖</strong>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+              <li>ដោះស្រាយសមីការ $x + 5 = 3 \implies x = 3 - 5 = -2$</li>
+              <li>ដោះស្រាយសមីការ $2x = 5 \implies x = \frac{5}{2} = 2.5$</li>
+            </ul>
+            <p style="margin-top: 0.5rem; margin-bottom: 0;">
+              ចំនួន $-2$, $\frac{5}{2}$, $2.5$ ហៅថា <strong>ចំនួនសនិទាន ($\mathbb{Q}$)</strong>។ ប៉ុន្តែមានករណីខ្លះ ចំនួនសនិទានពុំអាចបំពេញលក្ខខណ្ឌនៃសមីការបានឡើយ។
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <div class="example-box">
+              <strong style="color: #38bdf8;">ឧទាហរណ៍ ១៖</strong> រក $x$ ដែល $x^2 = 9$<br>
+              ដោយ $3^2 = 9$ និង $(-3)^2 = 9$ នាំឱ្យ $x = 3$ ឬ $x = -3$។<br>
+              គេថា <strong>$3$ និង $-3$ ជាឫសការេនៃ $9$</strong>។
+            </div>
+            <div class="example-box">
+              <strong style="color: #38bdf8;">ឧទាហរណ៍ ២៖</strong> រក $x$ ដែល $x^2 = \frac{25}{4}$<br>
+              ដោយ $\left(\frac{5}{2}\right)^2 = \frac{25}{4}$ និង $\left(-\frac{5}{2}\right)^2 = \frac{25}{4}$<br>
+              គេបាន $\frac{25}{4}$ មានឫសការេពីរផ្ទុយគ្នាគឺ $\frac{5}{2}$ និង $-\frac{5}{2}$។
+            </div>
+          </div>
+
+          <div class="math-callout" style="border-left-color: #ec4899; background: rgba(236, 72, 153, 0.08);">
+            <strong style="color: #f472b6;">🔎 ឧទាហរណ៍ ៣ (ការកកើតចំនួនអសនិទាន)៖ រក $x$ ដែល $x^2 = 3$</strong>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; line-height: 1.8;">
+              <li>បើឱ្យ $x = 1 \implies 1^2 = 1 < 3$</li>
+              <li>បើឱ្យ $x = \frac{3}{2} = 1.5 \implies (1.5)^2 = 2.25 < 3$</li>
+              <li>បើឱ្យ $x = \frac{5}{3} \approx 1.66 \implies \left(\frac{5}{3}\right)^2 = \frac{25}{9} \approx 2.77 < 3$</li>
+              <li>បើឱ្យ $x = 2 \implies 2^2 = 4 > 3$</li>
+            </ul>
+            <p style="margin-top: 0.5rem; margin-bottom: 0;">
+              យើងឃើញថា <strong>គ្មានចំនួនសនិទានណាដែលការេរបស់វាស្មើនឹង $3$ ឡើយ</strong>! ក្នុងករណីនេះ គេសន្មតតាង $\sqrt{3}$ ជាចំនួនមួយដែល $(\sqrt{3})^2 = 3$។<br>
+              ចំនួន $\sqrt{3} \approx 1.7320...$ ហៅថា <strong>ចំនួនអសនិទាន</strong>។ ឫសការេនៃ $3$ គឺ $\sqrt{3}$ (ឫសការេវិជ្ជមាន) និង $-\sqrt{3}$ (ឫសការេអវិជ្ជមាន)។
+            </p>
+          </div>
+
+          <div class="math-callout" style="border-left-color: #ef4444; background: rgba(239, 68, 68, 0.08);">
+            <strong style="color: #ef4444;">⚠️ ឧទាហរណ៍ ៤ (លក្ខខណ្ឌឫសការេ)៖ រក $x$ បើ $x^2 = -3$</strong><br>
+            គេដឹងថា គ្រប់ចំនួនពិត $x$ ការេរបស់វាជានិច្ចកាល $x^2 \ge 0$ គ្មានតម្លៃ $x$ ណាធ្វើឱ្យ $x^2 < 0$ ឡើយ។ ដូចនេះ <strong>ចំនួនអវិជ្ជមានគ្មានឫសការេទេក្នុងសំណុំចំនួនពិត</strong>។
+          </div>
+
+          <!-- ជាទូទៅ ឫសការេ -->
+          <div class="math-rule-box">
+            <h4 style="color: #38bdf8; font-size: 1.15rem; margin-bottom: 0.75rem; font-weight: 800;">
+              ✨ ជាទូទៅ៖ ឫសការេនៃចំនួនពិត
+            </h4>
+            <p style="font-size: 1.05rem; margin-bottom: 0.5rem;">
+              បើ $a > 0$ សមីការ $x^2 = a$ នាំឱ្យ <strong>$x = \sqrt{a}$</strong> និង <strong>$x = -\sqrt{a}$</strong>
+            </p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">
+              សញ្ញា $\sqrt{}$ ហៅថារ៉ាឌីកាល់មានសន្ទស្សន៍ $2$, ចំនួន $a$ ហៅថារ៉ាឌីកង់។ បើ $a = 0$ នាំឱ្យ $x = 0$។
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. ឫសគូប -->
+        <div style="margin-bottom: 2.5rem; border-top: 1px dashed var(--border-color); padding-top: 2rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="background: #10b981; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem;">២</span>
+            ឫសគូប (Cube Root)
+          </h3>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <div class="example-box">
+              <strong style="color: #34d399;">ឧទាហរណ៍ ១ (ចំនួនវិជ្ជមាន)៖</strong> រក $x$ ដែល $x^3 = 64$<br>
+              ដោយ $4^3 = 64$ និង $(-4)^3 = -64 \ne 64$ នាំឱ្យ $x = 4$។<br>
+              គេថា $64$ មានឫសគូបតែមួយគត់គឺ $x = \sqrt[3]{64} = 4$។
+            </div>
+            <div class="example-box">
+              <strong style="color: #34d399;">ឧទាហរណ៍ ២ (ចំនួនអវិជ្ជមាន)៖</strong> រក $x$ ដែល $x^3 = -27$<br>
+              ដោយ $(-3)^3 = -27$ នាំឱ្យ $x = -3$។<br>
+              គេថា $-27$ មានឫសគូបតែមួយគត់គឺ $x = \sqrt[3]{-27} = -3$។
+            </div>
+          </div>
+
+          <div class="math-callout" style="border-left-color: #10b981;">
+            <strong style="color: #34d399;">💡 ការសង្កេតសំខាន់៖</strong>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+              <li>គ្រប់ចំនួនពិត (វិជ្ជមាន អវិជ្ជមាន ឬសូន្យ) <strong>សុទ្ធតែមានឫសគូបតែមួយគត់ជានិច្ច</strong>!</li>
+              <li>ឫសគូបនៃចំនួនវិជ្ជមាន ជាចំនួនវិជ្ជមាន ($\sqrt[3]{a} > 0$ កាលណា $a > 0$)</li>
+              <li>ឫសគូបនៃចំនួនអវិជ្ជមាន ជាចំនួនអវិជ្ជមាន ($\sqrt[3]{-a} = -\sqrt[3]{a}$)</li>
+              <li>ចំពោះចំនួនដែលគ្មានតម្លៃគូបប្រាកដ ដូចជា $x^3 = 17$ នោះ $x = \sqrt[3]{17}$ ជាចំនួនអសនិទាន។</li>
+            </ul>
+          </div>
+
+          <!-- ជាទូទៅ ឫសគូប -->
+          <div class="math-rule-box" style="border-color: #10b981; background: rgba(16, 185, 129, 0.06);">
+            <h4 style="color: #34d399; font-size: 1.15rem; margin-bottom: 0.75rem; font-weight: 800;">
+              ✨ ជាទូទៅ៖ ឫសគូបនៃចំនួនពិត
+            </h4>
+            <p style="font-size: 1.05rem; margin-bottom: 0.5rem;">
+              បើ $x^3 = a$ គេបាន <strong>$x = \sqrt[3]{a}$</strong> ($a$ អាចវិជ្ជមាន, អវិជ្ជមាន ឬសូន្យ)
+            </p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">
+              សញ្ញា $\sqrt[3]{}$ ជារ៉ាឌីកាល់ដែលមានសន្ទស្សន៍ស្មើ $3$ ហើយ $a$ ជារ៉ាឌីកង់។
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. ប្រមាណវិធីលើរ៉ាឌីកាល់ -->
+        <div style="border-top: 1px dashed var(--border-color); padding-top: 2rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="background: #8b5cf6; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem;">៣</span>
+            ប្រមាណវិធីលើរ៉ាឌីកាល់ (Operations on Radicals)
+          </h3>
+
+          <!-- 3.1 វិធីគុណ -->
+          <div style="margin-bottom: 1.75rem;">
+            <h4 style="color: #a78bfa; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.65rem;">
+              ៣.១ វិធីគុណរ៉ាឌីកាល់ (Multiplication of Radicals)
+            </h4>
+            <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">
+              ពិនិត្យការប្រៀបធៀប៖
+              $\sqrt{4} \times \sqrt{9} = 2 \times 3 = 6$ និង $\sqrt{4 \times 9} = \sqrt{36} = 6 \implies \sqrt{4} \times \sqrt{9} = \sqrt{4 \times 9}$<br>
+              $\sqrt[3]{8} \times \sqrt[3]{27} = 2 \times 3 = 6$ និង $\sqrt[3]{8 \times 27} = \sqrt[3]{216} = 6 \implies \sqrt[3]{8} \times \sqrt[3]{27} = \sqrt[3]{8 \times 27}$
+            </p>
+
+            <div class="math-rule-box" style="border-color: #8b5cf6; background: rgba(139, 92, 246, 0.06);">
+              <h5 style="color: #a78bfa; font-size: 1.1rem; margin-bottom: 0.5rem;">រូបមន្តផលគុណរ៉ាឌីកាល់សន្ទស្សន៍ដូចគ្នា៖</h5>
+              <div style="font-size: 1.15rem; font-weight: 700; margin: 0.5rem 0;">
+                $$\sqrt{a} \times \sqrt{b} = \sqrt{a \cdot b} \quad (a \ge 0, \; b \ge 0)$$
+                $$\sqrt[3]{a} \times \sqrt[3]{b} = \sqrt[3]{a \cdot b} \quad (a, b \in \mathbb{R})$$
+              </div>
+              <div style="color: var(--text-muted); font-size: 0.88rem;">«ផលគុណនៃរ៉ាឌីកាល់ដែលមានសន្ទស្សន៍ដូចគ្នា ស្មើនឹងរ៉ាឌីកាល់នៃផលគុណ»</div>
+            </div>
+          </div>
+
+          <!-- 3.2 វិធីចែក -->
+          <div>
+            <h4 style="color: #38bdf8; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.65rem;">
+              ៣.២ វិធីចែករ៉ាឌីកាល់ (Division of Radicals)
+            </h4>
+            <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">
+              ពិនិត្យការប្រៀបធៀប៖
+              $\frac{\sqrt{36}}{\sqrt{4}} = \frac{6}{2} = 3$ និង $\sqrt{\frac{36}{4}} = \sqrt{9} = 3 \implies \frac{\sqrt{36}}{\sqrt{4}} = \sqrt{\frac{36}{4}}$<br>
+              $\frac{\sqrt[3]{27}}{\sqrt[3]{8}} = \frac{3}{2}$ និង $\sqrt[3]{\frac{27}{8}} = \frac{3}{2} \implies \frac{\sqrt[3]{27}}{\sqrt[3]{8}} = \sqrt[3]{\frac{27}{8}}$
+            </p>
+
+            <div class="math-rule-box" style="border-color: #0284c7; background: rgba(2, 132, 199, 0.06);">
+              <h5 style="color: #38bdf8; font-size: 1.1rem; margin-bottom: 0.5rem;">រូបមន្តផលចែករ៉ាឌីកាល់សន្ទស្សន៍ដូចគ្នា៖</h5>
+              <div style="font-size: 1.15rem; font-weight: 700; margin: 0.5rem 0;">
+                $$\frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}} \quad (a \ge 0, \; b > 0)$$
+                $$\frac{\sqrt[3]{a}}{\sqrt[3]{b}} = \sqrt[3]{\frac{a}{b}} \quad (b \ne 0)$$
+              </div>
+              <div style="color: var(--text-muted); font-size: 0.88rem;">«ផលចែកនៃរ៉ាឌីកាល់ដែលមានសន្ទស្សន៍ដូចគ្នា ស្មើនឹងរ៉ាឌីកាល់នៃផលចែក»</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: លំហាត់គំរូ & ដំណោះស្រាយ (WORKED EXAMPLES)
+         ============================================================ -->
+    <section id="tab-examples" class="lesson-section-pane">
+      <div class="lesson-content-block">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #10b981; margin: 0;">
+            ផ្នែកទី ២៖ លំហាត់គំរូ និងដំណោះស្រាយយ៉ាងក្បោះក្បាយ
+          </h2>
+          <span class="chip-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">៤ សំណុំលំហាត់គំរូពេញលេញ</span>
+        </div>
+
+        <!-- លំហាត់គំរូទី ១ -->
+        <div class="example-box" style="border-left: 4px solid #0284c7;">
+          <div class="example-header">
+            <div>
+              <strong style="color: #38bdf8; font-size: 1.1rem;">លំហាត់គំរូទី ១៖</strong>
+              <span style="font-weight: 600;"> រកឫសនៃសមីការខាងក្រោម (ឫសការេ)៖</span>
+            </div>
+            <span class="example-badge">សៀវភៅគោល ទំព័រ ២</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem; font-size: 0.95rem; margin-bottom: 0.75rem;">
+            <div>ក. $x^2 = 16$</div>
+            <div>ខ. $x^2 = 7$</div>
+            <div>គ. $x^2 = \frac{49}{9}$</div>
+            <div>ឃ. $x^2 = -81$</div>
+            <div>ង. $x^2 = 1$</div>
+            <div>ច. $x^2 = 0$</div>
+          </div>
+          <div class="solution-body">
+            <strong style="color: #10b981; display: block; margin-bottom: 0.5rem;">📝 ដំណោះស្រាយលម្អិត៖</strong>
+            <ul style="padding-left: 1.25rem; line-height: 1.9; margin: 0;">
+              <li><strong>ក.</strong> $4^2 = 16$ និង $(-4)^2 = 16$។ បើ $x^2 = 16$ ដូចនេះ <strong>$x = \sqrt{16} = 4$</strong> ឬ <strong>$x = -\sqrt{16} = -4$</strong>។</li>
+              <li><strong>ខ.</strong> ពុំមានចំនួនសនិទានណាដែលការេវាស្មើនឹង $7$ ទេ។ ដូចនេះឫសការេវាជាចំនួនអសនិទាន៖ <strong>$x = \sqrt{7}$</strong> ឬ <strong>$x = -\sqrt{7}$</strong>។</li>
+              <li><strong>គ.</strong> ដោយ $\left(\frac{7}{3}\right)^2 = \frac{49}{9}$ និង $\left(-\frac{7}{3}\right)^2 = \frac{49}{9}$ ដូចនេះ <strong>$x = \frac{7}{3}$</strong> ឬ <strong>$x = -\frac{7}{3}$</strong>។</li>
+              <li><strong>ឃ.</strong> គ្មានចំនួនពិតណាដែលការេវាជាចំនួនអវិជ្ជមានឡើយ ($x^2 \ge 0$ ជានិច្ច)។ ដូចនេះ <strong>$-81$ គ្មានឫសការេទេក្នុង $\mathbb{R}$</strong>។</li>
+              <li><strong>ង.</strong> ដោយ $1^2 = 1$ និង $(-1)^2 = 1$ ដូចនេះ <strong>$x = \sqrt{1} = 1$</strong> ឬ <strong>$x = -\sqrt{1} = -1$</strong>។</li>
+              <li><strong>ច.</strong> ដោយ $0^2 = 0$ ដូចនេះ <strong>$x = 0$ ជាឫសការេតែមួយគត់នៃ $0$</strong>។</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- លំហាត់គំរូទី ២ -->
+        <div class="example-box" style="border-left: 4px solid #10b981; margin-top: 1.5rem;">
+          <div class="example-header">
+            <div>
+              <strong style="color: #34d399; font-size: 1.1rem;">លំហាត់គំរូទី ២៖</strong>
+              <span style="font-weight: 600;"> រកឫសនៃសមីការខាងក្រោម (ឫសគូប)៖</span>
+            </div>
+            <span class="example-badge">សៀវភៅគោល ទំព័រ ៣-៤</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem; font-size: 0.95rem; margin-bottom: 0.75rem;">
+            <div>ក. $x^3 = -64$</div>
+            <div>ខ. $x^3 = -1$</div>
+            <div>គ. $x^3 = 1$</div>
+            <div>ឃ. $x^3 = -8$</div>
+            <div>ង. $x^3 = 4$</div>
+            <div>ច. $x^3 = 0$</div>
+            <div>ឆ. $x^3 = \frac{1}{8}$</div>
+            <div>ជ. $x^3 = \frac{27}{125}$</div>
+            <div>ឈ. $x^3 = -\frac{1}{1000}$</div>
+          </div>
+          <div class="solution-body">
+            <strong style="color: #10b981; display: block; margin-bottom: 0.5rem;">📝 ដំណោះស្រាយលម្អិត៖</strong>
+            <ul style="padding-left: 1.25rem; line-height: 1.9; margin: 0;">
+              <li><strong>ក.</strong> $(-4)^3 = -64$ ដូចនេះ <strong>$x = \sqrt[3]{-64} = -4$</strong></li>
+              <li><strong>ខ.</strong> $(-1)^3 = -1$ ដូចនេះ <strong>$x = \sqrt[3]{-1} = -1$</strong></li>
+              <li><strong>គ.</strong> $1^3 = 1$ ដូចនេះ <strong>$x = \sqrt[3]{1} = 1$</strong></li>
+              <li><strong>ឃ.</strong> $(-2)^3 = -8$ ដូចនេះ <strong>$x = \sqrt[3]{-8} = -2$</strong></li>
+              <li><strong>ង.</strong> គ្មានចំនួនសនិទានណាដែលគូបវាស្មើនឹង $4$ ឡើយ។ ដូចនេះ <strong>$x = \sqrt[3]{4}$</strong> (ជាចំនួនអសនិទាន)</li>
+              <li><strong>ច.</strong> $0^3 = 0$ ដូចនេះ <strong>$x = 0$</strong></li>
+              <li><strong>ឆ.</strong> $\left(\frac{1}{2}\right)^3 = \frac{1}{8}$ ដូចនេះ <strong>$x = \sqrt[3]{\frac{1}{8}} = \frac{1}{2}$</strong></li>
+              <li><strong>ជ.</strong> $\left(\frac{3}{5}\right)^3 = \frac{27}{125}$ ដូចនេះ <strong>$x = \sqrt[3]{\frac{27}{125}} = \frac{3}{5}$</strong></li>
+              <li><strong>ឈ.</strong> $\left(-\frac{1}{10}\right)^3 = -\frac{1}{1000}$ ដូចនេះ <strong>$x = \sqrt[3]{-\frac{1}{1000}} = -\frac{1}{10}$</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- លំហាត់គំរូទី ៣ -->
+        <div class="example-box" style="border-left: 4px solid #8b5cf6; margin-top: 1.5rem;">
+          <div class="example-header">
+            <div>
+              <strong style="color: #a78bfa; font-size: 1.1rem;">លំហាត់គំរូទី ៣៖</strong>
+              <span style="font-weight: 600;"> គណនាផលគុណនៃរ៉ាឌីកាល់ខាងក្រោម៖</span>
+            </div>
+            <span class="example-badge">សៀវភៅគោល ទំព័រ ៤</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; font-size: 0.95rem; margin-bottom: 0.75rem;">
+            <div>ក. $\sqrt{2} \times \sqrt{8}$</div>
+            <div>ខ. $\sqrt{3} \times \sqrt{27}$</div>
+            <div>គ. $\sqrt[3]{2} \times \sqrt[3]{4}$</div>
+            <div>ឃ. $\sqrt[3]{2} \times \sqrt[3]{\frac{1}{16}}$</div>
+            <div>ង. $\sqrt{2} \times \sqrt{32}$</div>
+            <div>ច. $\sqrt{50} \times \sqrt{2}$</div>
+          </div>
+          <div class="solution-body">
+            <strong style="color: #10b981; display: block; margin-bottom: 0.5rem;">📝 ដំណោះស្រាយលម្អិត៖</strong>
+            <ul style="padding-left: 1.25rem; line-height: 1.9; margin: 0;">
+              <li><strong>ក.</strong> $\sqrt{2} \times \sqrt{8} = \sqrt{2 \times 8} = \sqrt{16} = \sqrt{4^2} = 4$</li>
+              <li><strong>ខ.</strong> $\sqrt{3} \times \sqrt{27} = \sqrt{3 \times 27} = \sqrt{81} = \sqrt{9^2} = 9$</li>
+              <li><strong>គ.</strong> $\sqrt[3]{2} \times \sqrt[3]{4} = \sqrt[3]{2 \times 4} = \sqrt[3]{8} = \sqrt[3]{2^3} = 2$</li>
+              <li><strong>ឃ.</strong> $\sqrt[3]{2} \times \sqrt[3]{\frac{1}{16}} = \sqrt[3]{2 \times \frac{1}{16}} = \sqrt[3]{\frac{1}{8}} = \sqrt[3]{\left(\frac{1}{2}\right)^3} = \frac{1}{2}$</li>
+              <li><strong>ង.</strong> $\sqrt{2} \times \sqrt{32} = \sqrt{2 \times 32} = \sqrt{64} = \sqrt{8^2} = 8$</li>
+              <li><strong>ច.</strong> $\sqrt{50} \times \sqrt{2} = \sqrt{50 \times 2} = \sqrt{100} = \sqrt{10^2} = 10$</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- លំហាត់គំរូទី ៤ -->
+        <div class="example-box" style="border-left: 4px solid #f59e0b; margin-top: 1.5rem;">
+          <div class="example-header">
+            <div>
+              <strong style="color: #fbbf24; font-size: 1.1rem;">លំហាត់គំរូទី ៤៖</strong>
+              <span style="font-weight: 600;"> គណនាផលចែកនៃរ៉ាឌីកាល់ខាងក្រោម៖</span>
+            </div>
+            <span class="example-badge">សៀវភៅគោល ទំព័រ ៥</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.5rem; font-size: 0.95rem; margin-bottom: 0.75rem;">
+            <div>ក. $\frac{\sqrt{8}}{\sqrt{2}}$</div>
+            <div>ខ. $\frac{\sqrt[3]{48}}{\sqrt[3]{6}}$</div>
+            <div>គ. $\frac{\sqrt{3}}{\sqrt{27}}$</div>
+            <div>ឃ. $\frac{\sqrt{288}}{\sqrt{2}}$</div>
+            <div>ង. $\frac{\sqrt[3]{16}}{\sqrt[3]{2}}$</div>
+            <div>ច. $\frac{\sqrt[3]{1/2}}{\sqrt[3]{4}}$</div>
+            <div>ឆ. $\frac{\sqrt{10}}{\sqrt{0.1}}$</div>
+            <div>ជ. $\frac{\sqrt[3]{25}}{\sqrt[3]{0.2}}$</div>
+          </div>
+          <div class="solution-body">
+            <strong style="color: #10b981; display: block; margin-bottom: 0.5rem;">📝 ដំណោះស្រាយលម្អិត៖</strong>
+            <ul style="padding-left: 1.25rem; line-height: 1.9; margin: 0;">
+              <li><strong>ក.</strong> $\frac{\sqrt{8}}{\sqrt{2}} = \sqrt{\frac{8}{2}} = \sqrt{4} = \sqrt{2^2} = 2$</li>
+              <li><strong>ខ.</strong> $\frac{\sqrt[3]{48}}{\sqrt[3]{6}} = \sqrt[3]{\frac{48}{6}} = \sqrt[3]{8} = \sqrt[3]{2^3} = 2$</li>
+              <li><strong>គ.</strong> $\frac{\sqrt{3}}{\sqrt{27}} = \sqrt{\frac{3}{27}} = \sqrt{\frac{1}{9}} = \sqrt{\left(\frac{1}{3}\right)^2} = \frac{1}{3}$</li>
+              <li><strong>ឃ.</strong> $\frac{\sqrt{288}}{\sqrt{2}} = \sqrt{\frac{288}{2}} = \sqrt{144} = \sqrt{12^2} = 12$</li>
+              <li><strong>ង.</strong> $\frac{\sqrt[3]{16}}{\sqrt[3]{2}} = \sqrt[3]{\frac{16}{2}} = \sqrt[3]{8} = \sqrt[3]{2^3} = 2$</li>
+              <li><strong>ច.</strong> $\frac{\sqrt[3]{1/2}}{\sqrt[3]{4}} = \sqrt[3]{\frac{1/2}{4}} = \sqrt[3]{\frac{1}{8}} = \sqrt[3]{\left(\frac{1}{2}\right)^3} = \frac{1}{2}$</li>
+              <li><strong>ឆ.</strong> $\frac{\sqrt{10}}{\sqrt{0.1}} = \sqrt{\frac{10}{0.1}} = \sqrt{100} = \sqrt{10^2} = 10$</li>
+              <li><strong>ជ.</strong> $\frac{\sqrt[3]{25}}{\sqrt[3]{0.2}} = \sqrt[3]{\frac{25}{0.2}} = \sqrt[3]{125} = \sqrt[3]{5^3} = 5$</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: ប្រតិបត្តិសម្រាប់សិស្សអនុវត្ត (STUDENT PRACTICE)
+         ============================================================ -->
+    <section id="tab-practice" class="lesson-section-pane">
+      <div class="lesson-content-block">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #fbbf24; margin: 0;">
+            ផ្នែកទី ៣៖ ប្រតិបត្តិសម្រាប់សិស្សអនុវត្តក្នុងថ្នាក់រៀន
+          </h2>
+          <button type="button" class="btn btn-outline btn-sm" onclick="toggleAllAnswers()">
+            <span>👁️ បង្ហាញ/លាក់ចម្លើយទាំងអស់</span>
+          </button>
+        </div>
+
+        <!-- ប្រតិបត្តិ ១ -->
+        <div class="practice-item" id="prac-1">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: #38bdf8; font-size: 1.05rem;">ប្រតិបត្តិ ១៖ រកឫសការេនៃចំនួនខាងក្រោម</strong>
+            <button type="button" class="btn btn-outline btn-sm" style="font-size: 0.75rem; padding: 2px 8px;" onclick="toggleAnswer('prac-1')">
+              មើលចម្លើយ
+            </button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; font-size: 1rem; margin-top: 0.75rem;">
+            <div>ក. $0.04$</div>
+            <div>ខ. $0.01$</div>
+            <div>គ. $5$</div>
+            <div>ឃ. $-1$</div>
+            <div>ង. $\frac{25}{36}$</div>
+            <div>ច. $0.1$</div>
+          </div>
+          <div class="practice-answer-reveal">
+            <strong>💡 ចម្លើយត្រឹមត្រូវ៖</strong>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-top: 0.4rem; font-size: 0.92rem;">
+              <div>ក. $\pm\sqrt{0.04} = \mathbf{\pm 0.2}$</div>
+              <div>ខ. $\pm\sqrt{0.01} = \mathbf{\pm 0.1}$</div>
+              <div>គ. $\mathbf{\sqrt{5}}$ និង $\mathbf{-\sqrt{5}}$</div>
+              <div>ឃ. <strong style="color:#ef4444;">គ្មានឫសការេទេ</strong> ($-1 < 0$)</div>
+              <div>ង. $\pm\sqrt{\frac{25}{36}} = \mathbf{\pm \frac{5}{6}}$</div>
+              <div>ច. $\mathbf{\sqrt{0.1}}$ និង $\mathbf{-\sqrt{0.1}}$</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ប្រតិបត្តិ ២ -->
+        <div class="practice-item" id="prac-2">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: #34d399; font-size: 1.05rem;">ប្រតិបត្តិ ២៖ រកឫសគូបនៃចំនួនខាងក្រោម</strong>
+            <button type="button" class="btn btn-outline btn-sm" style="font-size: 0.75rem; padding: 2px 8px;" onclick="toggleAnswer('prac-2')">
+              មើលចម្លើយ
+            </button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; font-size: 1rem; margin-top: 0.75rem;">
+            <div>ក. $0.008$</div>
+            <div>ខ. $-0.001$</div>
+            <div>គ. $0.08$</div>
+            <div>ឃ. $-0.4$</div>
+          </div>
+          <div class="practice-answer-reveal">
+            <strong>💡 ចម្លើយត្រឹមត្រូវ៖</strong>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-top: 0.4rem; font-size: 0.92rem;">
+              <div>ក. $\sqrt[3]{0.008} = \mathbf{0.2}$ (ព្រោះ $0.2^3 = 0.008$)</div>
+              <div>ខ. $\sqrt[3]{-0.001} = \mathbf{-0.1}$ (ព្រោះ $(-0.1)^3 = -0.001$)</div>
+              <div>គ. $\mathbf{\sqrt[3]{0.08}}$ (ចំនួនអសនិទាន)</div>
+              <div>ឃ. $\sqrt[3]{-0.4} = \mathbf{-\sqrt[3]{0.4}}$ (ចំនួនអសនិទាន)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ប្រតិបត្តិ ៣ -->
+        <div class="practice-item" id="prac-3">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: #a78bfa; font-size: 1.05rem;">ប្រតិបត្តិ ៣៖ គណនាផលគុណរ៉ាឌីកាល់</strong>
+            <button type="button" class="btn btn-outline btn-sm" style="font-size: 0.75rem; padding: 2px 8px;" onclick="toggleAnswer('prac-3')">
+              មើលចម្លើយ
+            </button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; font-size: 1rem; margin-top: 0.75rem;">
+            <div>ក. $\sqrt{10} \times \sqrt{0.1}$</div>
+            <div>ខ. $\sqrt[3]{10} \times \sqrt[3]{0.1}$</div>
+          </div>
+          <div class="practice-answer-reveal">
+            <strong>💡 ចម្លើយត្រឹមត្រូវ៖</strong>
+            <div style="line-height: 1.8; margin-top: 0.4rem; font-size: 0.92rem;">
+              <div>ក. $\sqrt{10} \times \sqrt{0.1} = \sqrt{10 \times 0.1} = \sqrt{1} = \mathbf{1}$</div>
+              <div>ខ. $\sqrt[3]{10} \times \sqrt[3]{0.1} = \sqrt[3]{10 \times 0.1} = \sqrt[3]{1} = \mathbf{1}$</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ប្រតិបត្តិ ៤ -->
+        <div class="practice-item" id="prac-4">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: #fbbf24; font-size: 1.05rem;">ប្រតិបត្តិ ៤ (បន្ថែមពង្រឹង)៖ គណនាផលចែករ៉ាឌីកាល់</strong>
+            <button type="button" class="btn btn-outline btn-sm" style="font-size: 0.75rem; padding: 2px 8px;" onclick="toggleAnswer('prac-4')">
+              មើលចម្លើយ
+            </button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; font-size: 1rem; margin-top: 0.75rem;">
+            <div>ក. $\frac{\sqrt{45}}{\sqrt{5}}$</div>
+            <div>ខ. $\frac{\sqrt[3]{54}}{\sqrt[3]{2}}$</div>
+          </div>
+          <div class="practice-answer-reveal">
+            <strong>💡 ចម្លើយត្រឹមត្រូវ៖</strong>
+            <div style="line-height: 1.8; margin-top: 0.4rem; font-size: 0.92rem;">
+              <div>ក. $\frac{\sqrt{45}}{\sqrt{5}} = \sqrt{\frac{45}{5}} = \sqrt{9} = \mathbf{3}$</div>
+              <div>ខ. $\frac{\sqrt[3]{54}}{\sqrt[3]{2}} = \sqrt[3]{\frac{54}{2}} = \sqrt[3]{27} = \mathbf{3}$</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: កិច្ចការផ្ទះសមល្មមសម្រាប់សិស្ស (HOMEWORK WORKSHEET)
+         ============================================================ -->
+    <section id="tab-homework" class="lesson-section-pane">
+      <div class="homework-card">
+        <div style="text-align: center; margin-bottom: 1.5rem; border-bottom: 2px dashed var(--border-color); padding-bottom: 1.25rem;">
+          <div style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">
+            ព្រះរាជាណាចក្រកម្ពុជា • ជាតិ សាសនា ព្រះមហាក្សត្រ
+          </div>
+          <h2 style="font-size: 1.45rem; font-weight: 800; color: #38bdf8; margin: 0.4rem 0 0.2rem;">
+            សន្លឹកកិច្ចការផ្ទះគណិតវិទ្យា ថ្នាក់ទី ៩ (Homework Worksheet)
+          </h2>
+          <div style="font-weight: 700; color: #fbbf24; font-size: 1.05rem;">
+            ជំពូកទី ១ • មេរៀនទី ១៖ «ប្រមាណវិធីលើរ៉ាឌីកាល់សន្ទស្សន៍ ២ និង ៣»
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">
+            រៀបរៀងដោយ៖ <strong>អ្នកគ្រូ ឆេង ឆវ័ន្ត</strong> (វិទ្យាល័យសសរស្តម្ភ & វិទ្យាស្ថាន SHINE)
+          </div>
+        </div>
+
+        <!-- Student Info Header -->
+        <div class="homework-rubric">
+          <div><strong>ឈ្មោះសិស្ស៖</strong> ....................................................</div>
+          <div><strong>ថ្នាក់ទី៖</strong> ៩ / ......</div>
+          <div><strong>កាលបរិច្ឆេទប្រគល់៖</strong> ...... / ...... / ២០២...</div>
+          <div><strong>ពិន្ទុសរុប៖</strong> ......... / ១០</div>
+        </div>
+
+        <div class="math-callout" style="border-left-color: #38bdf8; background: rgba(2, 132, 199, 0.05); margin-bottom: 1.5rem;">
+          <strong>📌 សេចក្តីណែនាំដល់សិស្ស៖</strong>
+          <ul style="margin: 0.35rem 0 0; padding-left: 1.25rem; font-size: 0.9rem;">
+            <li>សូមសរសេរដំណោះស្រាយឱ្យមានរបៀប និងបញ្ជាក់ជំហាននីមួយៗឱ្យបានច្បាស់លាស់។</li>
+            <li>កុំភ្លេចផ្ទៀងផ្ទាត់លក្ខខណ្ឌនៃរ៉ាឌីកង់ ($a \ge 0$ ចំពោះឫសការេ) មុននឹងទាញសន្និដ្ឋាន។</li>
+            <li>ចម្លើយចុងក្រោយត្រូវសម្រួលឱ្យស្ថិតក្នុងទម្រង់រ៉ាឌីកាល់សាមញ្ញបំផុត។</li>
+          </ul>
+        </div>
+
+        <!-- លំហាត់ទី ១ -->
+        <div class="worksheet-section" style="margin-bottom: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(2, 132, 199, 0.12); padding: 8px 14px; border-radius: 8px; margin-bottom: 0.85rem; border-left: 4px solid #0284c7;">
+            <strong style="color: #38bdf8; font-size: 1rem;">លំហាត់ទី ១ (កម្រិតគ្រឹះ ឫសការេ - ២.៥ ពិន្ទុ)</strong>
+            <span class="worksheet-section-badge">២.៥ ពិន្ទុ</span>
+          </div>
+          <ol type="1" style="padding-left: 1.5rem; line-height: 2;">
+            <li>
+              <strong>រកឫសការេនៃចំនួនខាងក្រោម៖</strong><br>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-top: 0.3rem;">
+                <div>ក. $0.49$</div>
+                <div>ខ. $121$</div>
+                <div>គ. $\frac{16}{81}$</div>
+                <div>ឃ. $13$</div>
+              </div>
+            </li>
+            <li style="margin-top: 0.5rem;">
+              <strong>ដោះស្រាយសមីការខាងក្រោមក្នុងសំណុំចំនួនពិត $\mathbb{R}$៖</strong><br>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-top: 0.3rem;">
+                <div>ក. $x^2 = 144$</div>
+                <div>ខ. $x^2 = 11$</div>
+                <div>គ. $x^2 = -25$</div>
+                <div>ឃ. $x^2 - \frac{36}{49} = 0$</div>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- លំហាត់ទី ២ -->
+        <div class="worksheet-section" style="margin-bottom: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(16, 185, 129, 0.12); padding: 8px 14px; border-radius: 8px; margin-bottom: 0.85rem; border-left: 4px solid #10b981;">
+            <strong style="color: #34d399; font-size: 1rem;">លំហាត់ទី ២ (កម្រិតគ្រឹះ ឫសគូប - ២.៥ ពិន្ទុ)</strong>
+            <span class="worksheet-section-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">២.៥ ពិន្ទុ</span>
+          </div>
+          <ol type="1" style="padding-left: 1.5rem; line-height: 2;">
+            <li>
+              <strong>រកឫសគូបនៃចំនួនខាងក្រោម៖</strong><br>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-top: 0.3rem;">
+                <div>ក. $125$</div>
+                <div>ខ. $-216$</div>
+                <div>គ. $0.027$</div>
+                <div>ឃ. $-\frac{8}{27}$</div>
+              </div>
+            </li>
+            <li style="margin-top: 0.5rem;">
+              <strong>ដោះស្រាយសមីការខាងក្រោម៖</strong><br>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-top: 0.3rem;">
+                <div>ក. $x^3 = 1000$</div>
+                <div>ខ. $x^3 = -64$</div>
+                <div>គ. $x^3 = 9$</div>
+                <div>ឃ. $8x^3 + 27 = 0$</div>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- លំហាត់ទី ៣ -->
+        <div class="worksheet-section" style="margin-bottom: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(139, 92, 246, 0.12); padding: 8px 14px; border-radius: 8px; margin-bottom: 0.85rem; border-left: 4px solid #8b5cf6;">
+            <strong style="color: #a78bfa; font-size: 1rem;">លំហាត់ទី ៣ (ប្រមាណវិធីគុណ និងចែករ៉ាឌីកាល់ - ២.៥ ពិន្ទុ)</strong>
+            <span class="worksheet-section-badge" style="background: rgba(139, 92, 246, 0.2); color: #a78bfa;">២.៥ ពិន្ទុ</span>
+          </div>
+          <div style="padding-left: 0.5rem;">
+            <p style="margin-bottom: 0.5rem; font-weight: 600;">គណនាតម្លៃនៃកន្សោមរ៉ាឌីកាល់ខាងក្រោម៖</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.85rem; line-height: 1.8;">
+              <div>ក. $\sqrt{5} \times \sqrt{20}$</div>
+              <div>ខ. $\sqrt[3]{3} \times \sqrt[3]{9}$</div>
+              <div>គ. $\frac{\sqrt{72}}{\sqrt{2}}$</div>
+              <div>ឃ. $\frac{\sqrt[3]{135}}{\sqrt[3]{5}}$</div>
+              <div>ង. $\sqrt{0.2} \times \sqrt{0.8}$</div>
+              <div>ច. $\frac{\sqrt[3]{32}}{\sqrt[3]{0.5}}$</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- លំហាត់ទី ៤ -->
+        <div class="worksheet-section" style="margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(245, 158, 11, 0.12); padding: 8px 14px; border-radius: 8px; margin-bottom: 0.85rem; border-left: 4px solid #f59e0b;">
+            <strong style="color: #fbbf24; font-size: 1rem;">លំហាត់ទី ៤ (កម្រិតពង្រឹងសមត្ថភាព & អនុវត្តជាក់ស្តែង - ២.៥ ពិន្ទុ)</strong>
+            <span class="worksheet-section-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">២.៥ ពិន្ទុ</span>
+          </div>
+          <ol type="1" style="padding-left: 1.5rem; line-height: 2;">
+            <li>
+              <strong>គណនាតម្លៃនៃកន្សោមចម្រុះ៖</strong><br>
+              ក. $A = \sqrt{12} \times \sqrt{3} - \frac{\sqrt{50}}{\sqrt{2}}$<br>
+              ខ. $B = \sqrt[3]{16} \times \sqrt[3]{4} + \frac{\sqrt[3]{250}}{\sqrt[3]{2}}$
+            </li>
+            <li style="margin-top: 0.5rem;">
+              <strong>អនុវត្តជាក់ស្តែង៖</strong> បន្ទប់រៀនរាងការេមួយមានក្រឡាផ្ទៃ $S = 64 \text{ m}^2$។<br>
+              ក. រកប្រវែងជ្រុងនៃបន្ទប់រៀននោះ។<br>
+              ខ. ប្រសិនបើប្រអប់ឈើគូបមួយមានមាឌ $V = 125 \text{ dm}^3$ ចូររកប្រវែងទ្រនុងនៃប្រអប់នោះ។
+            </li>
+          </ol>
+        </div>
+
+        <!-- Footer Actions inside homework card -->
+        <div class="btn-no-print" style="margin-top: 2rem; border-top: 1px dashed var(--border-color); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="color: var(--text-muted); font-size: 0.85rem;">
+            💡 ឯកសារនេះអាចបោះពុម្ពជាសន្លឹកកិច្ចការ A4 ចែកជូនសិស្សធ្វើក្នុងថ្នាក់ ឬធ្វើនៅផ្ទះបានភ្លាមៗ។
+          </div>
+          <button type="button" class="btn btn-primary" onclick="window.print()">
+            <span>🖨️ បោះពុម្ពសន្លឹកកិច្ចការនេះ</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       4. FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-name" style="font-size: 1.15rem;">អ្នកគ្រូ ឆេង ឆវ័ន្ត</span>
+            <span class="brand-sub">MATH SPECIALIST • NIE & RUPP</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            បណ្តុះបណ្តាលសិស្សានុសិស្សឆ្ពោះទៅកាន់ឧត្តមភាពគណិតវិទ្យា ថ្នាក់ទី ៩ ដល់ទី ១២។
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">ឯកសារបង្រៀន</h4>
+          <ul class="footer-links">
+            <li><a href="teaching-materials.html">មជ្ឈមណ្ឌលឯកសារបង្រៀន</a></li>
+            <li><a href="lesson-radicals-grade9.html">មេរៀនទី១ ថ្នាក់ទី៩ (រ៉ាឌីកាល់)</a></li>
+            <li><a href="slides.html?ch=slide-radicals-g9">ស្លាយបង្រៀនរ៉ាឌីកាល់</a></li>
+            <li><a href="exercise-sequences-grade11.html">លំហាត់ស្វ៊ីតចំនួនពិត (ថ្នាក់១១)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">ឧបករណ៍សិក្សា</h4>
+          <ul class="footer-links">
+            <li><a href="game-grade9.html">Math Hero ថ្នាក់ទី ៩</a></li>
+            <li><a href="slides.html">ស្លាយបទបង្ហាញអន្តរកម្ម</a></li>
+            <li><a href="grapher-3d.html">បន្ទប់ពិសោធន៍ 3D Oxyz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 អ្នកគ្រូ ឆេង ឆវ័ន្ត (Teacher Chheng Chhovorn). រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Tab switching function
+    function switchLessonTab(tabId, btn) {
+      const allButtons = document.querySelectorAll('.lesson-tab-btn');
+      allButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const allPanes = document.querySelectorAll('.lesson-section-pane');
+      if (tabId === 'tab-all') {
+        allPanes.forEach(p => p.style.display = 'block');
+      } else {
+        allPanes.forEach(p => {
+          if (p.id === tabId) {
+            p.style.display = 'block';
+            p.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            p.style.display = 'none';
+          }
+        });
+      }
+    }
+
+    // Toggle individual practice answers
+    function toggleAnswer(pracId) {
+      const el = document.getElementById(pracId);
+      if (el) {
+        el.classList.toggle('show-practice-answers');
+      }
+    }
+
+    // Toggle all practice answers
+    let allAnswersShown = false;
+    function toggleAllAnswers() {
+      allAnswersShown = !allAnswersShown;
+      const practiceItems = document.querySelectorAll('.practice-item');
+      practiceItems.forEach(item => {
+        if (allAnswersShown) {
+          item.classList.add('show-practice-answers');
+        } else {
+          item.classList.remove('show-practice-answers');
+        }
+      });
+      const btn = document.getElementById('toggle-all-answers-btn');
+      if (btn) {
+        btn.querySelector('span').innerText = allAnswersShown ? '🙈 លាក់ចម្លើយប្រតិបត្តិ' : '👁️ បង្ហាញចម្លើយប្រតិបត្តិ';
+      }
+    }
+
+    // Render KaTeX automatically after load
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

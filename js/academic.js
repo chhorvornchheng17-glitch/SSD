@@ -312,6 +312,10 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span>អាន / ទាញយក PDF</span>
               </a>
+              ${gradeData.homeworkBook ? `
+              <a href="${gradeData.homeworkBook.pdfFile}" target="_blank" class="btn-pdf-download" style="background: linear-gradient(135deg, #ec4899, #db2777); border-color: #f472b6; color: #ffffff;" title="បើកសៀវភៅកិច្ចការផ្ទះ ថ្នាក់ទី១១ ភាគ១ (២០២៦) - អ្នកគ្រូ ឆេង ឆវ័ន្ត">
+                <span>📘 សៀវភៅកិច្ចការផ្ទះ (១៨៩ ទំព័រ)</span>
+              </a>` : ''}
               <a href="lesson-plan-exponential-ibl.html" class="btn-view-toggle" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.45); color: #34d399; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;" title="កិច្ចតែងការបង្រៀនគរុកោសល្យបែបការរិះរក (IBL - 5E Model)">
                 <span>📝 កិច្ចតែងការ (IBL)</span>
               </a>
