@@ -45,10 +45,15 @@
 ```
 CVN app/
 ├── index.html                        # Main menu / homepage
+├── teaching-materials.html           # Teaching Materials Hub
 ├── lessons.html                      # Lesson documents hub
-├── lesson-plan-exponential-ibl.html  # IBL Lesson Plan (Grade 11)
+├── lesson-radicals-grade9.html       # Grade 9 Lesson 1: Radicals (Index 2 & 3)
+├── LESSON-RADICALS-GRADE9.md         # Full Markdown & LaTeX docs for Grade 9 Lesson 1
+├── lesson-plan-*.html                # IBL & 5E Lesson Plans
 ├── exercises.html                    # Student exercises
+├── exercise-sequences-grade11.html   # Grade 11 Sequences Worksheet
 ├── exams.html                        # Mock exam system
+├── game-grade9.html                  # Grade 9 Math Hero Game
 ├── game-*.html                       # Interactive math games
 ├── slides.html                       # Slide presentation viewer
 ├── grapher-3d.html                   # 3D function grapher
